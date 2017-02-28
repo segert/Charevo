@@ -1,0 +1,736 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 17, 2015, 10:14:59 PM
+    Author     : Owner
+*/
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+  background-color:#eeeeee;
+  font-family: sans-serif;
+}
+
+
+a {
+    text-decoration: none !important;
+    font-family: sans-serif;
+}
+
+p, button{
+    font: 16px arial, sans-serif;
+    
+}
+
+
+header {
+    background-color: #98CAAA;
+    color:white;
+    text-align:center;
+    
+    //padding:1px; 
+    
+    
+}
+
+
+nav ul li ul { 
+    position: absolute;
+    background: #ccc;
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+    display: none;
+    
+}
+nav ul li ul li { 
+    text-align: center;
+    width: 100%;
+    border-style: solid;
+    border-color: red;
+}
+nav ul li ul a { 
+    padding: 10px 0; 
+    
+}
+nav ul li:hover ul { 
+    display: block;
+    color: white;
+}
+
+section {
+   //height: 300px;
+   //height: 75vh; 
+   width: 75vw;
+   //height: 31.25%;
+   //width: 90vw;
+    float:left;
+    padding:10px; 
+    background-color:white;
+    //margin-bottom: 31.25%;
+    //padding-top: 3.25%;
+    //padding-bottom: 29.5%;
+    padding-top: 25px;
+    //padding-bottom: 300px;
+    //top: 4.25%;
+    top: 6%;
+    //position: fixed;
+    //left: 7%;
+    //background-color: #ccc;
+}
+
+.section{
+     //height: 300px;
+   //height: 75vh; 
+   width: 85vw;
+   
+   //height: 31.25%;
+   //width: 90vw;
+    float:left;
+    padding:10px; 
+    
+    //margin-bottom: 31.25%;
+    //padding-top: 3.25%;
+    //padding-bottom: 29.5%;
+    padding-top: 25px;
+    //padding-bottom: 300px;
+    //top: 4.25%;
+    top: 6%;
+    //position: fixed;
+    //left: 7%;
+    //background-color: #ccc;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -120px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 380px; 
+}
+.site-footer {
+  position: relative;
+  width: 85vw;
+  left: -1%;
+  background: black;
+  color: white;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  height: auto !important;
+  min-height: 100%;
+  margin: 0 auto -155px;
+}
+
+
+
+.div1 {
+    background-color: lightgrey;
+    width: 50px;
+    padding: 25px;
+    border: 25px solid navy;
+    margin: 25px;
+    height: 1000px;
+    position: absolute;
+    left: 23%;
+    
+}
+
+.div2{
+    height: 100px;
+    padding-top: 3.125%;
+    padding-left: 1.95%;
+}
+
+.heading{
+    width: 100%;
+    //background-color: #269abc;
+    position: absolute; 
+    left: 13%;
+    top: 3.9%;
+    font-size: 45px;
+    text-align: center;
+    padding: 15px;
+    border-bottom: 2px solid black;
+}
+
+.quizheading{
+    width: 70%;
+    background-color: #99ccff;
+    position: absolute; 
+    left: 0%;
+    top: 6.1%;
+    height: 10%;
+    //z-index: -1;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.submitdiv{
+    width: 30%;
+    background-color: #99ccff;
+    position: absolute; 
+    left: 70%;
+    top: 6.1%;
+    height: 10%;
+    //z-index: -2;
+    
+    border-left: 2px solid #99ccff;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.submitanswer{
+    position: absolute;
+    top: 7.8%;
+    left: 10%;
+    background-color: #ac2925;
+    color: black;
+    width: 80%;
+    height: 80%;
+    //z-index: -1;
+}
+
+.footers{
+    position: fixed;
+    background-color: #99ccff;
+   // background-color: black;
+    color:black;
+    
+    text-align:left;
+    //padding:15px; 
+    //height: 19%;
+    height: 20vh;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.tempfooters{
+
+    background-color: black;
+    color:black;
+    
+    text-align:left;
+    //padding:15px; 
+    //height: 19%;
+    height: 20vh;
+
+    width: 100%;
+}
+
+
+.hmenu1{
+    color: aqua;
+    
+}
+
+.imgmenu1{
+    position: fixed;
+    top: 46.87%;
+    left: 39%;
+    
+    animation-name: menuenter;
+    animation-duration: .4s;
+}
+
+.quizimageleft{
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    width: 10%;
+    height: 15%;
+}
+
+.quizimageright{
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    width: 10%;
+    height: 15%;
+}
+
+.liabout{
+    display:block;
+}
+
+.liabout-a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 3% 4%;
+    text-decoration: none;
+    font-size:20px;
+    
+}
+
+.liabout-a:hover{
+    background-color: #67b168;
+    color: #FFFFFF;
+}
+
+
+.limenu1 {
+    display: inline;
+    text-decoration: none;
+    color: black;
+}
+
+.li-a-menu1{
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: .5% .8%;
+    text-decoration: none;
+    font-size:20px;
+}
+
+.menu-selected{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: .5% .8%;
+    text-decoration: none;
+    font-size:20px;
+}
+
+
+
+.li-a-menu1-selected{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: .5% .8%;
+    text-decoration: none;
+    background-color: #0066FF;
+    
+}
+
+.li-a-menu1-selected:hover{
+    color: white;
+    
+}
+
+.menu-selected:hover{
+    color: white;
+    
+}
+
+@keyframes menuenter {
+    0%   {left:0%; top:46.87%;}
+    100% {left:39%; top:46.87%;}
+}
+
+.pfooter{
+    margin-left: 17%;
+    margin-right: 17%;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #a94442;
+    height: 90%;
+    
+}
+
+.pmenu1{
+    position: absolute;
+    left: 8.5%;
+    bottom:0;
+}
+
+.psection1{
+    position: absolute;
+    top: 200px;
+    left:0;
+}
+
+
+.sub-menu{
+    list-style-type: none;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    overflow: visible;
+    background-color: blue;
+    width: 18%;
+    position:fixed;
+    font-size:20px;
+}
+
+.ulmenu1 {
+    list-style-type: none;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: #98CAAA;
+    width:100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    font-size:0px;
+    z-index: 1;
+    background: rgba(0, 255, 0, .2);
+}
+
+.prevbutton{
+    position: fixed;
+    bottom: 7.3%;
+    left: 4%;
+    width: 8%;
+    height: 7.6%;
+    text-align: center;
+    background-color: blue;
+    color: yellow;
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 5px 3px 5px #888888;
+}
+
+.nextbutton{
+    position: fixed;
+    bottom: 7.3%;
+    right: 4%;
+    width: 8%;
+    height: 7.6%;
+    text-align: center;
+    background-color: blue;
+    color: yellow;
+    margin: 10px;
+    border-radius: 12px;
+    box-shadow: 5px 3px 5px #888888;
+}
+
+.storyul1{
+    list-style-type: none;
+    text-align: center;
+    margin: 10px;
+    padding-top: 4%;
+    width: 100px;
+    background-color: yellow;
+    position:fixed;
+    left: 600px;
+    top: 100px;
+    font-size:20px;
+}
+
+.storybutton{
+    
+    text-align: center;
+    margin: 2%;
+    color: black;
+    //padding-bottom: 1%;
+    //padding-top: 1%;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    //width: 8%;
+    width: 450px;
+    //background-color: yellow;
+    //position:absolute;
+    //left: 8%;
+    display: block;
+    left: 100px;
+    font-size:20px;
+    //z-index: -1;
+}
+
+.storyli1{
+    display: block;
+}
+
+.quiztable{
+    text-align: left;
+    padding: 5%;
+    border: black;
+    
+    border-collapse: collapse;
+    width: 700px;
+}
+
+.quizquestion{
+    position: absolute; 
+    top: 0%; 
+    left: 3%;
+    padding: 6px;
+    //width: 50%;
+    //z-index: -1;
+}
+
+.selector1{
+    position: absolute; 
+    top: 18.2%;
+    left: 3.85%;
+    //z-index: -1;
+}
+
+.selector2{
+    position: absolute; 
+    top: 18.2%;
+    left: 46.8%;
+    //z-index: -1;
+}
+
+.selector3{
+    position: absolute; 
+    top: 29.5%;
+    left: 3.85%;
+    //z-index: -1;
+}
+
+.selector4{
+    position: absolute; 
+    top: 29.8%; 
+    left: 46.8%;
+    //z-index: -1;
+}
+
+.answer1{
+    position: absolute; 
+    top: 18.2%;
+    left: 6.9%;
+    width: 40%;
+   // z-index: -1;
+}
+
+.answer2{
+    position: absolute; 
+    top: 18.2%;
+    left: 50%;
+    width: 40%;
+    //z-index: -1;
+}
+
+.answer3{
+    position: absolute; 
+    top: 29.5%;
+    left: 6.9%;
+    width: 40%;
+    //z-index: -1;
+}
+
+.answer4{
+    position: absolute; 
+    top: 29.8%;
+    left: 50%;
+    width: 40%;
+   // z-index: -1;
+}
+
+.answer1label{
+    position: absolute; 
+    top: 22%;
+    left: 4.1%;
+   // z-index: -1;
+}
+
+.answer2label{
+    position: absolute; 
+    top: 22%;
+    left: 47.0%;
+   // z-index: -1;
+}
+
+.answer3label{
+    position: absolute; 
+    top: 33%; 
+    left: 4.1%;
+   // z-index: -1;
+}
+
+.answer4label{
+    position: absolute; 
+    top: 33%;
+    left: 47.0%;
+   // z-index: -1;
+}
+
+
+
+td{
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+tr:nth-child(even){background-color: aquamarine};
+
+.hidenames{
+    
+    cursor: pointer;
+}
+
+.hidenames:hover{
+    
+    color: blue;
+}
+
+.charnames{
+    //display: inline;
+    //padding-left: 15%;
+    //padding-right: 15%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.newnav{
+    line-height:30px;
+    background-color:#eeeeee;
+    height:100vh;
+    width:13%;
+    float:left;
+    position: relative;
+    
+    z-index: -1;
+    left:0;
+    padding:5px;
+    overflow: auto;
+    
+    //padding-top: 8%;
+}
+
+.characterinfo{
+    padding-top: 2%; 
+    width: 85vw; 
+    //width: 870px;
+    float:left; 
+    //margin:0 0.7px 0.2px 0; 
+    border:2px solid #3B587E; 
+    background:#FFFFFF;
+    //border-radius: 25px;
+    padding-bottom: 10%;
+    margin-bottom: 50px;
+    position: relative; 
+    left: 0%;
+    //border-style: solid;
+}
+
+.characterheader{
+    position: relative; 
+    left: 0%;
+}
+
+.char-image-select{
+    margin-top: 2%; 
+    position: absolute; 
+    right: 30%; 
+    width:12%;
+    height:10%;
+}
+
+.geneinfo{
+    padding-top: 2%; 
+    width: 75vw; 
+    //width: 870px;
+    float:left; 
+    //margin:0 0.7px 0.2px 0; 
+    border:2px solid #3B587E; 
+    background:#FFFFFF;
+    border-radius: 25px;
+    padding-bottom: 10%;
+    margin-bottom: 50px;
+    position: relative; 
+    left: 0%;
+    //border-style: solid;
+}
+
+.city-image-select{
+    margin-top: 12%; 
+    position: absolute;
+    top: 20%;
+    right: 40%; 
+    width:400px;
+    height:500px;
+   // z-index: 1;
+}
+
+.cityinfo{
+    padding-top: 2%; 
+    width: 80vw; 
+    //width: 870px;
+    //float:left; 
+    //border-radius: 25px;
+    padding-bottom: 6%;
+    margin-bottom: 10px;
+    //border-style: solid;
+}
+
+.backtoquiz{
+    text-align: center;
+    text-height:auto;
+    position: absolute;
+    top: 50.8%;
+    right: 19%;
+    background-color:gold;
+    color: black;
+    width: 19%;
+    height: 7.8%;
+    cursor: pointer;
+    font: 16px arial, sans-serif;
+    padding: .8% .8%;
+    border-radius: 25px;
+}
+
+.footercontent{
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 5px;
+}
+
+.footercontent2{
+    height: 50px; 
+    top: 180px; 
+    position: absolute; 
+    width: 100%; 
+    border-style: solid; 
+    border-right-color: black;
+    border-left-color:black; 
+    border-bottom-color:black; 
+    border-top-color: white;
+}
+
+.footerlist{
+    list-style-type:none;
+    margin: 5px;
+    padding: 5px;
+    font: 20px arial, sans-serif;
+    
+    
+}
+.footerlist li{
+    display: inline;
+    padding: 20px;
+    margin-right: 50px;
+    position: relative;
+    width: 200px;
+}
+
+.subfooterlist{
+    margin: 0px;
+    font: 14px arial, sans-serif;
+    position: absolute;
+    left: 0;
+    padding-left: 20px;
+}
+
+.subfooterlist li{
+    padding-left: 0px ;
+    padding-bottom: 1px;
+    margin-left: 0px ;
+    text-indent: 0px ;
+    display: block;
+    //position: absolute;
+}

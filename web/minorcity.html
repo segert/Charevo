@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/charevo.css" rel="stylesheet" type="text/css">
+        <link href='styles.css?version=2' rel='stylesheet'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/cities.js"></script>
+
+
+
+
+    </head>
+
+    <body>
+
+
+        <nav>
+            <ul class = "ulmenu1" >
+                <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
+                <li id = "test2" class = "li-a-menu1-selected "> <a class = "menu-selected " href="#about"><b>About</b></a>
+                    <ul id = "testmenu" class = "sub-menu" >
+                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
+                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
+                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li>
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                    <ul class = "sub-menu" style = "left: 42.9%;">
+                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+                    
+                    </ul>
+                </li>
+
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                    <ul class = "sub-menu" style = "left: 48.2%;">
+                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html?char=Beauty"><b>Beauty Short Stories</b></a></li>
+
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+                    
+                </li>
+            </ul>
+        </nav>
+
+        <div class = "newnav">
+
+        </div>
+
+        <section style = "margin-top: 60px; padding-bottom: 100px; height: 90%;">
+
+                <h1 class="heading" style="width: 85vw;">Minor City</h1>
+                
+                <div id="main-wrapper" class="page-wrap">
+
+<img id = "city" src = "p" alt = "Minor City PlaceHolder" class = "city-image-select">
+
+                <div class = "cityinfo" style = "position: relative; top: 60%; ">
+                    
+<img id = "city1" src = "p" alt = "PlaceHolder 1" width = "300" height = "200" align = "right" style = "padding: 50px;">
+
+<p style = "margin-left: 50px; margin-right: 50px;"></p>
+                </div>
+
+
+<div class = "cityinfo" style = "position: relative; top: 60%; ">
+<img id = "city2" src = "p" alt = "PlaceHolder 2" width = "300" height = "200" align = "right" style = "padding: 50px;">
+<p style = "margin-left: 50px; margin-right: 50px;"></p>
+</div>
+
+                </div>
+                
+<footer id = "footer" class = "site-footer">
+                <div class = "footercontent">
+                    <ul class="footerlist">
+                        <li>
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li>
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                <li><a href="cities.html">Cities</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="switchcharacter.html"><b>Switch Character</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                </div>
+            </footer>
+
+
+        </section>
+
+
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .6;" onclick = "prev();">
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" onclick = "next();">
+                Next >>
+            </button>
+
+
+        </div>
+
+    </body>
+</html>

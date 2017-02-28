@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/charevo.css" rel="stylesheet" type="text/css">
+        <link href='styles.css?version=2' rel='stylesheet'>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/charevo.js"></script>
+        <script src="js/quizjs.js"></script>
+
+
+    </head>
+
+    <body>
+
+
+        <nav>
+            <ul class = "ulmenu1" >
+                <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
+                <li id = "test2" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
+                    <ul id = "testmenu" class = "sub-menu" >
+                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
+                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
+                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li>
+                    </ul>
+                </li>
+                <li class = "li-a-menu1-selected"> <a class = "menu-selected" href="#quiz"><b>Quiz</b></a>
+                    <ul class = "sub-menu" style = "left: 42.9%;">
+                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+                    
+                    </ul>
+                </li>
+
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                    <ul class = "sub-menu" style = "left: 48.2%;">
+                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html?char=Beauty"><b>Beauty Short Stories</b></a></li>
+
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+                    
+                </li>
+            </ul>
+        </nav>
+
+        <div class = "newnav">
+
+        </div>
+        
+        
+        <section class="section" style = "margin-top: 50px; padding-bottom: 100px;  height: 110%;">
+            <div id="main-wrapper" class="page-wrap">
+            <h1 class = "heading" style="width: 85vw;">Select a Quiz</h1>
+            <table class = "quiztable" style = "margin-top: 60px;">
+                <tr style = "background-color: darkslateblue; color: white;">
+                    <th>Level</th>
+                    <th>Story</th>
+                    <th>Questions</th>
+                </tr>
+                <tr style = "margin-bottom: 5%;">
+                    <td><a href = "beautystory1_quiz.html" onclick = "alert('Did you read &#34A Minor Cold (that leads to a colossal failure)&#34? Spoilers ahead!');">Level 1</a></td>
+                    <td>A Minor Cold (that leads to a colossal failure)</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td><a href = "beautystory2_quiz.html" onclick = "alert('Did you read &#34Knowledge is Power (and none is just funny)&#34? Spoilers ahead!');">Level 2</a></td>
+                    <td>Knowledge is Power (and none is just funny)</td>
+                    <td>16</td>
+                </tr>
+                <tr>
+                    <td><a href = "beautystory3_quiz.html" onclick = "alert('Did you read &#34Truth or Dare (the choice is obvious)&#34? Spoilers ahead!');">Level 3</a></td>
+                    <td>Truth or Dare (the choice is obvious)</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td><a href = "beautystory4_quiz.html" onclick = "alert('Did you read &#34To Love or to Die (as in me or you will)&#34? Spoilers ahead!');">Level 4</a></td>
+                    <td>To Love or to Die (as in me or you will)</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td><a href = "beautystory5_quiz.html" onclick = "alert('Did you read &#34This Title is False (or I am true)&#34? Spoilers ahead!');">Level 5</a></td>
+                    <td>This Title is False (or I am true)</td>
+                    <td>17</td>
+                </tr>
+            </table>
+
+
+            
+
+            <script>
+
+                character = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
+
+
+            </script>
+            </div>
+            <footer id = "footer" class = "site-footer">
+                <div class = "footercontent">
+                    <ul class="footerlist">
+                        <li>
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li>
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                <li><a href="cities.html">Cities</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="switchcharacter.html"><b>Switch Character</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                </div>
+            </footer>
+        </section>
+
+        <p></p>
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .6;" >
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" style = "opacity: .6;">
+                Next >>
+            </button>
+
+
+        </div>
+</html>

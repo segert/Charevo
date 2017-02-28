@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/charevo.css" rel="stylesheet" type="text/css">
+        <link href='styles.css?version=2' rel='stylesheet'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="js/menu.js"></script>
+        <script src="js/characters.js"></script>
+
+
+    </head>
+
+    <body>
+
+
+        <nav>
+            <ul class = "ulmenu1" >
+                <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
+                <li id = "test2" class = "li-a-menu1-selected "> <a class = "menu-selected " href="#about"><b>About</b></a>
+                    <ul id = "testmenu" class = "sub-menu" >
+                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
+                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
+                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li>
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                    <ul class = "sub-menu" style = "left: 42.9%;">
+                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+                    
+                    </ul>
+                </li>
+
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                    <ul class = "sub-menu" style = "left: 48.2%;">
+                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html?char=Beauty"><b>Beauty Short Stories</b></a></li>
+
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+                    
+                </li>
+            </ul>
+        </nav>
+
+        <div class = "newnav">
+
+        </div>
+
+       <!-- <section style = "background-image: url(images/light-blue-pattern.jpg);margin-top: 60px; padding-bottom: 100px; padding-left: 0px;"> -->
+        <section style = "margin-top: 60px; padding-bottom: 100px; width: 85vw; padding-left: 0px;">
+            <h1 class = "heading" style="width: 85vw;">Characters</h1>
+            <div id="main-wrapper" class="page-wrap">
+                <div>
+
+                    <div class = "panel-group" style = "margin-top: 35px;">
+                        <div class="panel-heading">
+                            <h3 class="hidenames" style = "cursor: pointer" id = "heroes">Heroes</h3>
+
+
+                        </div>
+                        <div class = "collapse characterinfo"  id = "heroesdiv" >
+
+                            <nav class="navbar navbar-inverse" style = "background-color: gold; width: 90%; position: relative; left: 5%;">
+                                <div class="container-fluid" style = "border-radius: 20px; width: 90%;">
+
+                                    <ul class="nav navbar-nav">
+                                        <li ><a class = "active" id = "AllHero" style="cursor: pointer; color: black; background-color: #ffff99;">All</a></li>
+                                        <li  ><a id = "MinorHero" style = "cursor: pointer">Minor City</a></li>
+                                        <li ><a id = "GrinHero" style = "cursor: pointer;">Grin City</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+
+
+                            <img id = "hero" src = "htm" alt = "Beauty PlaceHolder" class = "char-image-select">
+
+
+                            <ul id = "herolist" style = "text-align: left;">
+
+                                <li class = "charnames"><a href = "beauty.html">Beauty</a></li>
+                                <li class = "charnames">Tel-E</li>
+                                <li class = "charnames">Pyra</li>
+                                <li class = "charnames"><a href = "race.html">Race</a></li>
+                                <li class = "charnames">Bendy</li>
+                                <li class = "charnames">Nator</li>
+                                <li class = "charnames">Negator</li>
+                                <li class = "charnames">Inflator</li>
+
+                            </ul>
+
+
+
+
+
+                        </div>
+                        <div class="panel-heading">
+                            <h3 id = "villains" class = "hidenames" style = "cursor: pointer">Villains</h3>
+
+
+                        </div>
+                        <div class = "collapse characterinfo" id = "villainsdiv" >
+
+                            <nav class="navbar navbar-inverse" style = "background-color: gold; width: 90%; position: relative; left: 5%;">
+                                <div class="container-fluid" style = "border-radius: 20px; width: 90%;">
+
+                                    <ul class="nav navbar-nav">
+                                        <li ><a id = "AllVillain" class="active" style = "color: black; background-color: #ffff99; cursor: pointer">All</a></li>
+                                        <li ><a id = "MinorVillain" style = "cursor: pointer">Minor City</a></li>
+                                        <li ><a id = "GrinVillain" style = "cursor: pointer">Grin City</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+
+                            <img id = "villain" src = "htm" alt = "Fourize PlaceHolder" class = "char-image-select">
+
+
+                            <ul id = "villainlist" style = "text-align: left">
+
+                                <li class = "charnames">Fourize</li>
+                                <li class = "charnames">Dinomight</li>
+                                <li class = "charnames">Tammy Time</li>
+                                <li class = "charnames">Ninja</li>
+                                <li class = "charnames">Cyhack</li>
+                                <li class = "charnames">Cold Miner</li>
+                                <li class = "charnames">Christy Ferguson</li>
+                                <li class = "charnames">Captain D</li>
+                                <li class = "charnames">Whitney Trainor</li>
+                                <li class = "charnames">One and Oh</li>
+
+                            </ul>
+
+                        </div>
+                        <div class="panel-heading">
+                            <h3 id = "other" class = "hidenames" style = "cursor: pointer">Other Characters</h3>
+
+
+                        </div>
+                        <div class = "collapse characterinfo" id = "otherdiv" >
+
+                            <nav class="navbar navbar-inverse" style = "background-color: gold; width: 90%; position: relative; left: 5%;">
+                                <div class="container-fluid" style = "border-radius: 20px; width: 90%;">
+
+                                    <ul class="nav navbar-nav">
+                                        <li ><a id = "AllOther" class="active" style = "color: black; background-color: #ffff99; cursor: pointer">All</a></li>
+                                        <li ><a id = "MinorOther" style = "cursor: pointer">Minor City</a></li>
+                                        <li ><a id = "GrinOther" style = "cursor: pointer">Grin City</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+
+                            <img id = "oth" src = "htm" alt = "Chief PlaceHolder" class = "char-image-select">
+
+
+                            <ul id = "otherlist" style = "text-align: left">
+
+                                <li class = "charnames">Chief Lou Trotter</li>
+
+
+
+                            </ul>
+
+                        </div>           
+                        <div class="panel-heading" style = "height: 300px">
+                            <h3 id = "other2" class = "hidenames" style = "cursor: pointer"></h3>
+
+                            <div class = "collapse characterinfo" id = "otherdiv2" >
+
+                                <nav class="navbar navbar-inverse" style = "background-color: gold; width: 90%; position: relative; left: 5%;">
+                                    <div class="container-fluid" style = "border-radius: 20px; width: 90%;">
+
+                                        <ul class="nav navbar-nav">
+                                            <li ><a id = "AllOther2" class="active" style = "color: black; background-color: #ffff99; cursor: pointer">All</a></li>
+                                            <li ><a id = "MinorOther2" style = "cursor: pointer">Minor City</a></li>
+                                            <li ><a id = "GrinOther2" style = "cursor: pointer">Grin City</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+
+                                <img id = "oth2" src = "htm" alt = "Chief PlaceHolder" class = "char-image-select">
+
+
+                                <ul id = "otherlist2" style = "text-align: left">
+
+                                    <li class = "charnames">Chief Lou Trotter</li>
+
+
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <footer id = "footer" class = "site-footer" style="left: 0%;">
+                <div class = "footercontent">
+                    <ul class="footerlist">
+                        <li>
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li>
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                <li><a href="cities.html">Cities</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="switchcharacter.html"><b>Switch Character</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                </div>
+            </footer>
+        </section>
+
+
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .6;" onclick = "prev();">
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" onclick = "next();">
+                Next >>
+            </button>
+
+
+        </div>
+
+    </body>
+</html>

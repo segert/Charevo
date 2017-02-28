@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/charevo.css" rel="stylesheet">
+          <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+          <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+          <script src="js/menu.js"></script>
+        <script src="js/beautystories.js"></script>
+        
+
+    </head>
+
+    <body>
+
+        <nav>
+            <ul class = "ulmenu1" >
+                <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
+                <li id = "test2" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
+                    <ul id = "testmenu" class = "sub-menu" >
+                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
+                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
+                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li>
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                    <ul class = "sub-menu" style = "left: 42.9%;">
+                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+                    
+                    </ul>
+                </li>
+
+                <li class = "li-a-menu1-selected"> <a class = "menu-selected" href="#stories"><b>Stories</b></a>
+                    <ul class = "sub-menu" style = "left: 48.2%;">
+                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html?char=Beauty"><b>Beauty Short Stories</b></a></li>
+
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+                    
+                </li>
+            </ul>
+        </nav>
+
+
+       <div class = "newnav">
+
+        </div>
+       
+       <section class="section" style = "margin-top: 50px; padding-bottom: 100px;  height: 120%;">
+           <div id="main-wrapper" class="page-wrap">
+           <div>
+       <a id = "story1" onmouseover = "storydescription(1);" href = "Beauty-Short-Stories.pdf" 
+          class = "storybutton" style = ""><b>A Minor Cold (that leads to a colossal failure)</b></a>
+       <a id = "story2" onmouseover = "storydescription(2);" href = "Beauty-Short-Stories.pdf#page=40" 
+          class = "storybutton" style = ""><b>Knowledge is Power (and none is just funny)</b></a>
+       <a id = "story3" onmouseover = "storydescription(3);" href = "Beauty-Short-Stories.pdf#page=81" 
+          class = "storybutton" style = ""><b>Truth or Dare (the choice is obvious)</b></a>
+       <a id = "story4" onmouseover = "storydescription(4);" href = "Beauty-Short-Stories.pdf#page=124" 
+          class = "storybutton" style = ""><b>To Love or to Die (as in me or you will)</b></a>
+       <a id = "story5" onmouseover = "storydescription(5);" href = "Beauty-Short-Stories.pdf#page=167" 
+          class = "storybutton" style = ""><b>This Title is False (or I am true)</b></a>
+           </div>
+       
+           </div>
+           <footer id = "footer" class = "site-footer">
+                <div class = "footercontent">
+                    <ul class="footerlist">
+                        <li>
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li>
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                <li><a href="cities.html">Cities</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="switchcharacter.html"><b>Switch Character</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                </div>
+            </footer>
+            <script>
+                
+                character = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
+
+            </script>
+       </section>
+
+        <p></p>
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .6;" >
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" style = "opacity: .6;">
+                Next >>
+            </button>
+
+
+        </div>
+
+
+
+    </body>
+</html>
+

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Example</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        
+        <link href='styles.css?version=2' rel='stylesheet'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <script src="js/switchcharacter.js"></script>
+        <script src="js/menu.js"></script>
+        <link href="css/charevo.css" rel="stylesheet" type="text/css">
+
+        
+        <style>
+            .carousel-inner > .item > img,
+            .carousel-inner > .item > a > img {
+                width: 70%;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+
+        <nav>
+            <ul class = "ulmenu1" >
+                <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
+                <li id = "test2" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
+                    <ul id = "testmenu" class = "sub-menu" >
+                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
+                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
+                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li>
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                    <ul class = "sub-menu" style = "left: 42.9%;">
+                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+                    
+                    </ul>
+                </li>
+
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                    <ul class = "sub-menu" style = "left: 48.2%;">
+                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html?char=Beauty"><b>Beauty Short Stories</b></a></li>
+
+                    </ul>
+                </li>
+                <li class = "li-a-menu1-selected"> <a id = "switch" class = "menu-selected" href="switchcharacter.html"><b>Switch Character</b></a>
+                    
+                </li>
+            </ul>
+        </nav>
+
+        <section class="section" style = "margin-top: 50px; padding-bottom: 100px; width: 100vw;  height: 110%;">
+            <h1 class="heading" style = "left: 0px;  margin-bottom: 10%;">Select a Character</h1>
+            <div id="main-wrapper" class="page-wrap">
+            <div style="margin-top: 50px;"></div>
+            <div class="container" style = "z-index: 0; position: absolute; top: 120px;">
+                
+                <br>
+                <div id="myCarousel" class="carousel slide" style="margin-top: 35px; " data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li id = "a0" data-target="#myCarousel" data-slide-to="0"  class = "active" style = "background-color: blue;" ></li>
+                        <li id = "a1" data-target="#myCarousel" data-slide-to="1" style = "background-color: blue;"></li>
+                        <li id = "a2" data-target="#myCarousel" data-slide-to="2" style = "background-color: blue;"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <ul class="carousel-inner" >
+                        
+                        <li class="item active" id = "0">
+                        
+                            <a href = "index.html?char=Beauty">
+                            <img src="png" alt="Beauty PlaceHolder" width="460" height="345">
+                            
+                            <div class="carousel-caption">
+                                
+                                <h3>Beauty</h3>
+                            </div>
+                            </a>
+                            
+                        </li>
+
+                        <li class="item" id = "1">
+                            <a href = "index.html?char=Tel-E">
+                            <img src="png" alt="Tel-E PlaceHolder" width="460" height="345">
+                            <div class="carousel-caption">
+                                <h3>Tel-E</h3>
+                            </div>
+                            </a>
+                            
+                        </li>
+
+                        <li class="item" id = "2">
+                            <a href = "index.html?char=Pyra">
+                            <img src="png" alt="Pyra PlaceHolder" width="460" height="345">
+                            <div class="carousel-caption">
+                                <h3>Pyra</h3>
+                            </div>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                    <!-- Left and right controls -->
+                     <a class="left carousel-control" style = "background-color: blue;" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" style = "background-color: blue;" href="#myCarousel" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            
+            </div>
+            <footer id = "footer" class = "site-footer" style="left: -.8%; width: 100%;">
+                <div class = "footercontent" style="padding-left: 200px;">
+                    <ul class="footerlist">
+                        <li>
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li>
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                <li><a href="cities.html">Cities</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="switchcharacter.html"><b>Switch Character</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                </div>
+            </footer>
+        </section>
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .6;" onclick = "prev();">
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" onclick = "next();">
+                Next >>
+            </button>
+
+
+        </div>
+
+
+    </body>
+</html>
