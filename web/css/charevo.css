@@ -120,7 +120,7 @@ section {
 }
 .site-footer {
   position: relative;
-  width: 85vw;
+  width: 100vw;
   left: -1%;
   background: black;
   color: white;
@@ -157,7 +157,7 @@ section {
     width: 100%;
     //background-color: #269abc;
     position: absolute; 
-    left: 13%;
+    //left: 13%;
     top: 3.9%;
     font-size: 45px;
     text-align: center;
@@ -325,7 +325,6 @@ section {
 
 .menu-selected:hover{
     color: white;
-    
 }
 
 @keyframes menuenter {
@@ -371,6 +370,19 @@ section {
     width: 18%;
     position:fixed;
     font-size:20px;
+}
+
+.sub-menu-selected{
+    list-style-type: none;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    overflow: visible;
+    background-color: blue;
+    width: 18%;
+    position:fixed;
+    font-size:20px;
+    margin-top: .5%;
 }
 
 .ulmenu1 {
@@ -597,7 +609,7 @@ tr:nth-child(even){background-color: aquamarine};
     z-index: -1;
     left:0;
     padding:5px;
-    overflow: auto;
+    //overflow: auto;
     
     //padding-top: 8%;
 }
@@ -610,7 +622,7 @@ tr:nth-child(even){background-color: aquamarine};
     //margin:0 0.7px 0.2px 0; 
     border:2px solid #3B587E; 
     background:#FFFFFF;
-    //border-radius: 25px;
+    border-radius: 25px;
     padding-bottom: 10%;
     margin-bottom: 50px;
     position: relative; 
@@ -686,8 +698,9 @@ tr:nth-child(even){background-color: aquamarine};
 
 .footercontent{
     padding-top: 10px;
-    padding-left: 100px;
+    padding-left: 200px;
     padding-right: 5px;
+    
 }
 
 .footercontent2{
