@@ -64,11 +64,9 @@ nav ul li:hover ul {
 }
 
 section {
-   //height: 300px;
-   //height: 75vh; 
-   width: 75vw;
-   //height: 31.25%;
-   //width: 90vw;
+   
+   //width: 75vw;
+   
     float:left;
     padding:10px; 
     background-color:white;
@@ -183,7 +181,7 @@ section {
     background-color: #99ccff;
     position: absolute; 
     left: 70%;
-    top: 6.1%;
+    top: 6.0%;
     height: 10%;
     //z-index: -2;
     
@@ -292,7 +290,7 @@ section {
     display: inline-block;
     color: black;
     text-align: center;
-    padding: .5% .8%;
+    padding: .6% .8%;
     text-decoration: none;
     font-size:20px;
 }
@@ -301,7 +299,7 @@ section {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: .5% .8%;
+    padding: .6% .8%;
     text-decoration: none;
     font-size:20px;
 }
@@ -312,7 +310,7 @@ section {
     display: inline-block;
     color: white;
     text-align: center;
-    padding: .5% .8%;
+    padding: .6% .8%;
     text-decoration: none;
     background-color: #0066FF;
     
@@ -370,6 +368,7 @@ section {
     width: 18%;
     position:fixed;
     font-size:20px;
+    margin-top: -.1%;
 }
 
 .sub-menu-selected{
