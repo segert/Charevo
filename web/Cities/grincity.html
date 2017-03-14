@@ -12,48 +12,57 @@ and open the template in the editor.
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="css/charevo.css" rel="stylesheet" type="text/css">
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../css/charevo.css" rel="stylesheet" type="text/css">
         <link href='styles.css?version=2' rel='stylesheet'>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="js/menu.js"></script>
-        <script src="js/cities.js"></script>
-
-
+        <script src="../js/menu.js"></script>
+        <script src="../js/cities.js"></script>
+        <link href="../css/custom.css" rel="stylesheet" type="text/css">
 
 
     </head>
 
-    <body>
+    <body ng-app="Demo">
 
+        <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
 
+            <!-- <p>Selected state: {{ state }}</p> -->
+            <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+            <span>
+                <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                    <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                </button> 
+                <input type="submit" style="display: none"/>
+            </span>
+        </form>
         <nav>
             <ul class = "ulmenu1" >
-                <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
+                <li class = "limenu1" > <a class = "li-a-menu1" href="../index.html"><b>Home</b></a></li>
                 <li id = "test2" class = "li-a-menu1-selected "> <a class = "menu-selected " href="#about"><b>About</b></a>
                     <ul id = "testmenu" class = "sub-menu-selected" >
-                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
-                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
-                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li>
+                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="../characters.html"><b>Characters</b></a></li>
+                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="../charevogene.html"><b>Charevo Gene</b></a></li>
+                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="../cities.html"><b>Cities</b></a></li>
                     </ul>
                 </li>
                 <li class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
                     <ul class = "sub-menu" style = "left: 42.9%;">
-                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="../beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
                     
                     </ul>
                 </li>
 
                 <li class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
                     <ul class = "sub-menu" style = "left: 48.2%;">
-                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html?char=Beauty"><b>Beauty Short Stories</b></a></li>
+                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="../beautystories.html?char=Beauty"><b>Beauty Short Stories</b></a></li>
 
                     </ul>
                 </li>
-                <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+                <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="../switchcharacter.html"><b>Switch Character</b></a>
                     
                 </li>
             </ul>
@@ -62,14 +71,14 @@ and open the template in the editor.
         
 
         <section style = "width: 100vw; margin-top: 60px; padding-bottom: 100px; height: 90%;">
+            
+                <h1 class="heading" style="width: 100vw;">Grin City</h1>
 
-                <h1 class="heading" style="width: 100vw;">Minor City</h1>
-                
                 <div id="main-wrapper" class="page-wrap">
                     
                     <div style="margin-left: 13%;">
 
-<img id = "city" src = "p" alt = "Minor City PlaceHolder" class = "city-image-select">
+<img id = "city" src = "p" alt = "Grin City PlaceHolder" class = "city-image-select">
 
                 <div class = "cityinfo" style = "position: relative; top: 60%; ">
                     
@@ -86,35 +95,34 @@ and open the template in the editor.
 
                 </div>
                 </div>
-                
 <footer id = "footer" class = "site-footer">
                 <div class = "footercontent">
                     <ul class="footerlist">
                         <li>
-                            <a href="index.html"><b>Home</b></a>
+                            <a href="../index.html"><b>Home</b></a>
                         </li>
                         <li>
                             <a href="#About"><b>About</b></a>
                             <ul class="subfooterlist">
-                                <li><a href="characters.html">Characters</a></li>
-                                <li><a href="charevogene.html">Charevo Gene</a></li>
-                                <li><a href="cities.html">Cities</a></li>
+                                <li><a href="../characters.html">Characters</a></li>
+                                <li><a href="../charevogene.html">Charevo Gene</a></li>
+                                <li><a href="../cities.html">Cities</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#Quiz"><b>Quiz</b></a>
                             <ul class="subfooterlist">
-                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                                <li><a href="../beautyquizzes.html">Beauty Quizzes</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="#Stories"><b>Stories</b></a>
                             <ul class="subfooterlist">
-                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                                <li><a href="../beautystories.html">Beauty Short Stories</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="switchcharacter.html"><b>Switch Character</b></a>
+                            <a href="../switchcharacter.html"><b>Switch Character</b></a>
                         </li>
                     </ul>
                 </div>
@@ -142,6 +150,11 @@ and open the template in the editor.
 
 
         </div>
+        
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="../js/select_page.js" type="text/javascript"></script>
+        <script src="../js/search_list.js" type="text/javascript"></script>
 
     </body>
 </html>

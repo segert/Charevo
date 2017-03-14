@@ -55,6 +55,7 @@ can start the quiz.");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 $("#BeautyLeft1").animate({left: '22%'});
                 $("input").show();
+                $("#searchSubmit").hide();
                 $("label").show();
                 $("#question").show();
                 $("#dialogue").text("");

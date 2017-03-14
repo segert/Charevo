@@ -23,7 +23,7 @@ and open the template in the editor.
         <script src="js/switchcharacter.js"></script>
         <script src="js/menu.js"></script>
         <link href="css/charevo.css" rel="stylesheet" type="text/css">
-
+        <link href="css/custom.css" rel="stylesheet" type="text/css">
         
         <style>
             .carousel-inner > .item > img,
@@ -32,9 +32,24 @@ and open the template in the editor.
                 margin: auto;
             }
         </style>
-    </head>
-    <body>
+     
 
+
+    </head>
+
+    <body ng-app="Demo">
+
+        <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+
+            <!-- <p>Selected state: {{ state }}</p> -->
+            <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+            <span>
+                <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                    <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                </button> 
+                <input type="submit" style="display: none"/>
+            </span>
+        </form>
         <nav>
             <ul class = "ulmenu1" >
                 <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
@@ -180,6 +195,11 @@ and open the template in the editor.
 
 
         </div>
+        
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="js/select_page.js" type="text/javascript"></script>
+        <script src="js/search_list.js" type="text/javascript"></script>
 
 
     </body>

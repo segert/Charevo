@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../css/charevo.css" rel="stylesheet" type="text/css">
+        <link href='styles.css?version=2' rel='stylesheet'>
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        
+        <script src = "../js/beauty.js"></script>
+        <script src="../js/menu.js"></script>
+        <link href="../css/custom.css" rel="stylesheet" type="text/css">
+
+        <style>
+            tr:nth-child(even){background-color: yellow}
+            tr{
+                background-color:#e6e6e6;
+            }
+            td{
+                vertical-align: top;
+                padding: 10px;
+            }
+        </style>
+
+
+
+    </head>
+
+    <body ng-app="Demo">
+
+        <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+
+            <!-- <p>Selected state: {{ state }}</p> -->
+            <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+            <span>
+                <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                    <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                </button> 
+                <input type="submit" style="display: none"/>
+            </span>
+        </form>
+        <nav>
+            <ul class = "ulmenu1" >
+                <li class = "limenu1" > <a class = "li-a-menu1" href="../index.html"><b>Home</b></a></li>
+                <li id = "test2" class = "li-a-menu1-selected "> <a class = "menu-selected " href="#about"><b>About</b></a>
+                    <ul id = "testmenu" class = "sub-menu-selected" >
+                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="../characters.html"><b>Characters</b></a></li>
+                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="../charevogene.html"><b>Charevo Gene</b></a></li>
+                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="../cities.html"><b>Cities</b></a></li>
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                    <ul class = "sub-menu" style = "left: 42.9%;">
+                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="../beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+                    
+                    </ul>
+                </li>
+
+                <li class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                    <ul class = "sub-menu" style = "left: 48.2%;">
+                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="../beautystories.html?char=Beauty"><b>Beauty Short Stories</b></a></li>
+
+                    </ul>
+                </li>
+                <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="../switchcharacter.html"><b>Switch Character</b></a>
+                    
+                </li>
+            </ul>
+        </nav>
+
+
+        <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 330%;">
+            <div id="main-wrapper" class="page-wrap">
+            <div style = "width: 100vw;">
+                <h1 class="heading" style = "width: 100vw; margin-bottom: 10%;">Beauty</h1>
+                <div style="margin-top: 30px;"></div>
+                <img src = "htm" alt = "Beauty PlaceHolder" width = 250 height = 500 style = "position: absolute; top: 25%; left: 40%;">
+                <img src = "htm" alt = "Beauty Emblem PlaceHolder" width = 100 height = 100 style = "position: absolute; top: 25%; left: 10%;">
+
+                <div style = "position: absolute; top: 25%; right: 5%; ">
+                    <img id = "behaviorimage" src = "htm" alt = "Beauty Fiction PlaceHolder" width = 100 height = 100 style = "display: block; margin-bottom: 10px;">
+                    <img id = "mentalityimage" src = "htm" alt = "Beauty Imagination PlaceHolder" width = 100 height = 100 style = "display: block; margin-bottom: 10px;">
+                    <img id = "identificationimage" src = "htm" alt = "Beauty Femininity PlaceHolder" width = 100 height = 100 style = "display: block; margin-bottom: 10px;">
+                </div>
+                
+                <div style = "position: absolute; top: 400px; margin-left: 10%; width: 600px; ">
+                    <h3>Charevo Fairy Guidance</h3>
+                <div style = "background-color: #a6e1ec; padding: 15px;">
+                    <p id = "Behavior" style = "">Fiction: </p>
+                    <p id = "Mentality">Imagination: </p>
+                    <p id = "Identification">Femininity: </p>
+                </div>
+                </div>
+
+                <div style = "position: absolute; margin-left: 10%; top: 700px;">
+                    <table style = "">
+                        <tr>
+                            <th>Name: </th>
+                            <td>Beauty</td>
+                        </tr>
+                        <tr>
+                            <th>Real Name: </th>
+                            <td>Ellie Bellavitz</td>
+                        </tr>
+                        <tr>
+                            <th>Behavior Element: </th>
+                            <td>Fiction</td>
+                        </tr>
+                        <tr>
+                            <th>Mentality Element: </th>
+                            <td>Imagination</td>
+                        </tr>
+                        <tr>
+                            <th>Identification Element: </th>
+                            <td>Femininity</td>
+                        </tr>
+                        <tr style = "">
+                            <th style = "vertical-align: top; padding-top: 5px;">Powers and Abilities: </th>
+                            <td >
+                                
+                                <ul style = "list-style-type: none; padding: 0px;">
+                                    <li>Ability to form weapons and other objects out of her hair</li>
+                                    <li>Ability to grow and control her hair</li>
+                                    <li>Ability to shape shift into any female character from TV, movies, and video games</li>
+                                    <li>As a character, she can summon compatible female characters</li>
+                                    <li>Ability to transform her wardrobe into however she wants</li>
+                                    
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style = "vertical-align: top; padding-top: 5px;">Weaknesses: </th>
+                            <td>
+                                <ul style = "list-style-type: none; padding: 0px;">
+                                    <li>Fire and large amount of water in her hair causes her hair powers to be inactive</li>
+                                    <li>Cannot transform when her arms and hands are restrained</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div style = "position: absolute; margin-left: 10%; top: 1200px;">
+
+
+                    <h3>Bio:</h3>
+
+
+
+                    <div class = "characterinfo" style = "left: -10px;">
+
+                        <p style = "margin-left: 50px; margin-right: 50px;">
+                            Beauty grew up in a small town in Ohio born to parents who wanted her to always dress nice, causing her to be used to these outfits and often wearing an elegant wardrobe. This made her be seen as a pretty girl that guys liked, but she was never interested in relationships since her interests were too different from everyone else. 
+                            She mostly liked TV, video games, and comics. Because of this, she didn’t really connect with her friends too well, and while they liked how she would dress, she never really cared how she looked. As a result, Beauty often felt alone when around most people.
+                             In addition, in making herself look nice, she thought the most beautiful people were the animated characters she would watch, rather than real women. Her friends all thought she was weird because of that, but she continued to like what she likes, even though she would be the only girl she knew who thought like her. She often felt like she connected more with the female characters she would watch than her actual friends, and would always want to meet these characters, because they do things that no other girl she knows would ever do. The only friend who understood her was Couch Potato as they both shared a love of pop culture. Beauty and Couch Potato met when they were eight after she saved him from a bully.
+                             At age fourteen, Beauty and Couch Potato both received their powers after watching TV when the town's power plant experienced an accident, briefly affecting the electricity and causing their TVs to have too strong of an image. As they watched for too long, they suddenly gained their abilities. As someone who dreamed of being a superhero, Beauty was ecstatic to see this take place.
+                             Beauty and Couch Potato eventually left for Minor City to fight crime like they always wanted, but split up after defeating the Gamer. Not long after, she joined the Neo Brigade.
+                            <br><br>
+                            As one of the few people not originally from a city with anyone who carries an active Charevo Gene, Beauty's only main prior association with superpowers has been through TV and comic books. By not having been familiar with anyone besides Couch Potato with powers, she often gets overly excited about seeing another person use their powers, even if it's a villain attacking her.
+                             While she is generally independent and capable of handling a situation by herself, Beauty prefers to be around others so she can share good moments with people. She thinks enjoying success alone is impossible and likes to have friends in her life who she can talk to, which she did not have in Ohio (besides Couch Potato). By not wanting to go through life alone, she sometimes becomes separate from her own team by not taking things as seriously as them because she treats part of her life like a TV show.
+                             While Beauty has embraced her powers, she does resent her Identification Element being Femininity and how she’s seen as just a pretty girl with nothing more to her.
+                            
+                        </p>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+            </div>
+            
+           <!-- <a class="twitter-timeline" data-width="420" data-height="400" href="https://twitter.com/TwitterDev">Tweets by TwitterDev</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+            
+            
+            <footer id = "footer" class = "site-footer">
+                <div class = "footercontent">
+                    <ul class="footerlist">
+                        <li>
+                            <a href="../index.html"><b>Home</b></a>
+                        </li>
+                        <li>
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="../characters.html">Characters</a></li>
+                                <li><a href="../charevogene.html">Charevo Gene</a></li>
+                                <li><a href="../cities.html">Cities</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="../beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="../beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="../switchcharacter.html"><b>Switch Character</b></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                </div>
+            </footer>
+
+        </section>
+
+
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .6;" onclick = "prev();">
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" onclick = "next();">
+                Next >>
+            </button>
+
+
+        </div>
+        
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="../js/select_page.js" type="text/javascript"></script>
+        <script src="../js/search_list.js" type="text/javascript"></script>
+
+    </body>
+</html>
