@@ -82,6 +82,16 @@ section {
     //background-color: #ccc;
 }
 
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -120px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
 .section{
      //height: 300px;
    //height: 75vh; 
@@ -104,15 +114,7 @@ section {
     //background-color: #ccc;
 }
 
-.page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-  margin-bottom: -120px; 
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
+
 .site-footer, .page-wrap:after {
   height: 380px; 
 }

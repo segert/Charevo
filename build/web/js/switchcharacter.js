@@ -7,9 +7,8 @@
 
 $(document).ready(function() {
 
-    character = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
-    if (character.charAt(character.length - 1) === '/')
-        character = "Beauty";
+    character = sessionStorage.getItem("SessionCharacter");
+ 
 
     if (character === "Tel-E")
     {
@@ -17,7 +16,7 @@ $(document).ready(function() {
         $("#a1").attr("class", "active");
         $("#0").attr("class", "item");
         $("#1").attr("class", "item active");
-        $("#d").text("1");
+        $("#d").html("<b>Tel-E:</b> 1");
     }
     else if (character === "Pyra")
     {
@@ -25,14 +24,19 @@ $(document).ready(function() {
         $("#a2").attr("class", "active");
         $("#0").attr("class", "item");
         $("#2").attr("class", "item active");
-        $("#d").text("2");
+        $("#d").html("<b>Pyra:</b> 2");
     }
     else
-        $("#d").text("0");
+        $("#d").html("<b>Beauty:</b> 0");
 
     $('#myCarousel').on('slide.bs.carousel', function(ev) {
         var id = ev.relatedTarget.id;
 
-        $("#d").text(id);
+        if(id === "0")
+            $("#d").html("<b>Beauty:</b> 0");
+        else if(id === "1")
+            $("#d").html("<b>Tel-E:</b> 1");
+        else if(id === "2")
+            $("#d").html("<b>Pyra:</b> 2");
     });
 });

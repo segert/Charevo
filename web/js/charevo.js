@@ -8,29 +8,41 @@
 
 
 $(document).ready(function() {
-    character = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
-    if (character.charAt(character.length - 1) === '/' || character.substring(character.length - 4, character.length) === "html")
-        character = "Beauty";
-    dialogue = 1;
-    document.getElementById("d").innerHTML = character;
 
+        switchcharacter = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
+        if (switchcharacter.charAt(switchcharacter.length - 1) === '/' 
+                || switchcharacter.substring(switchcharacter.length - 4, switchcharacter.length) === "html"
+                || switchcharacter === "")
+            character = "Beauty";
+        else
+            character = switchcharacter;
+        
+        sessionStorage.setItem("SessionCharacter",character);
+    //else
+       // character = "Beauty";
+    dialogue = 1;
+    //document.getElementById("d").innerHTML = switchcharacter;
+
+    var beautyBold = "Beauty: ";
+    beautyBold = beautyBold.bold();
+    var teleBold = "Tel-E: ";
+    teleBold = teleBold.bold();
 
     if (character === "Beauty")
     {
-        document.getElementById("d").innerHTML = "Beauty: Hello World ";
+        document.getElementById("d").innerHTML = beautyBold + "Hello World ";
     }
     else if (character === "Tel-E")
     {
-        document.getElementById("switch").setAttribute("href", "switchcharacter.html?char=Tel-E");
-        document.getElementById("beautystories").setAttribute("href", "beautystories.html?char=Tel-E");
+       
     }
     else if (character === "Pyra")
     {
-        document.getElementById("switch").setAttribute("href", "switchcharacter.html?char=Pyra");
-        document.getElementById("beautystories").setAttribute("href", "beautystories.html?char=Pyra");
+        
     }
-    else
-        document.getElementById("d").innerHTML = "Beauty: Hello World ";
+    //else
+     //   document.getElementById("d").innerHTML = "Beauty: Hello World ";
+        
 });
 
 
@@ -66,19 +78,28 @@ function prev() {
 }
 
 function DialogueChangeMenu() {
+    var beautyBold = "Beauty: ";
+    beautyBold = beautyBold.bold();
+    var teleBold = "Tel-E: ";
+    teleBold = teleBold.bold();
+    
     if (character === "Beauty") 
     {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = "Beauty: Hello World";
+                document.getElementById("d").innerHTML = beautyBold + "Hello World";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = "Beauty: Hi";
+                document.getElementById("d").innerHTML = beautyBold + "Hi";
                 break;
         }
 
     }
+}
+
+function QuizDialogue(){
+    
 }
 
 

@@ -5,6 +5,8 @@
  */
 
 $(document).ready(function() {
+    
+    
 
     $("#story1").mouseover(function() {
         storydescription(1);
@@ -61,49 +63,53 @@ $(document).ready(function() {
     });
 
 function storydescription(story) {
+    
+    var beautyBold = "Beauty: ";
+    beautyBold = beautyBold.bold();
+    var teleBold = "Tel-E: ";
+    teleBold = teleBold.bold();
 
-    if (character === "Beauty") {
+    if (sessionStorage.getItem("SessionCharacter") === "Beauty") {
         switch (story)
         {
             case(1):
-                document.getElementById("d").innerHTML = "Beauty: Alright! This is the one where I join the Neo Brigade! And also struggle to become accepted by them. Yeah!";
-                
+                document.getElementById("d").innerHTML = beautyBold + "Alright! This is the one where I join the Neo Brigade! And also struggle to become accepted by them. Yeah!";   
                 break;
             case(2):
-                document.getElementById("d").innerHTML = "Beauty: Game shows? Trivia? Someone not wanting to cheat? Now I'm excited!";
+                document.getElementById("d").innerHTML = beautyBold + "Game shows? Trivia? Someone not wanting to cheat? Now I'm excited!";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = "Beauty: It's the one where we get to see a little too much risk being taken. And, for me, too much of a certain person's TV show.";
+                document.getElementById("d").innerHTML = beautyBold + "It's the one where we get to see a little too much risk being taken. And, for me, too much of a certain person's TV show.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = "Beauty: Oh! Here's where I get to see myself battling all kinds of monsters with my friends! I don't do it, but I get to see it.";
+                document.getElementById("d").innerHTML = beautyBold + "Oh! Here's where I get to see myself battling all kinds of monsters with my friends! I don't do it, but I get to see it.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = "Beauty: If you like seeing people who act like those who think they're smarter than you, this one's for you. Would I lie to you?";
+                document.getElementById("d").innerHTML = beautyBold + "If you like seeing people who act like those who think they're smarter than you, this one's for you. Would I lie to you?";
                 break;
         }
     }
-    else if (character === "Tel-E") {
+    else if (sessionStorage.getItem("SessionCharacter") === "Tel-E") {
         switch (story)
         {
             case(1):
-                document.getElementById("d").innerHTML = "Tel-E: Hello World";
+                document.getElementById("d").innerHTML = teleBold + "Hello World";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = "Tel-E: Hi";
+                document.getElementById("d").innerHTML = teleBold + "Hi";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = "Tel-E: Hello World";
+                document.getElementById("d").innerHTML = teleBold + "Hello World";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = "Tel-E: Hi";
+                document.getElementById("d").innerHTML = teleBold + "Hi";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = "Tel-E: lsdkfjsl";
+                document.getElementById("d").innerHTML = teleBold + "lsdkfjsl";
                 break;
         }
     }
-    else
+   /* else
     {
         switch (story)
         {
@@ -123,6 +129,6 @@ function storydescription(story) {
                 document.getElementById("d").innerHTML = "Beauty: lsdkfjsl";
                 break;
         }
-    }
+    }*/
 }
 });
