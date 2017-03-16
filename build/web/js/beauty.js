@@ -87,11 +87,11 @@ function NewMentality() {
 
 function NewIdentification() {
 
-    ident = Math.floor(Math.random() * 3);
+    ident = Math.floor(Math.random() * 1);
     if(x === 1)
     {
         while(ident === curident)
-            ident = Math.floor(Math.random() * 3);
+            ident = Math.floor(Math.random() * 1);
     }
 
 

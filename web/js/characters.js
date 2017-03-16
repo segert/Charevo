@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 $(document).ready(function(){
     
     $("#heroes").click(function(){
@@ -21,12 +20,12 @@ $(document).ready(function(){
     $("#AllHero").click(function(){
         $("#herolist").empty();
         
-        $("#herolist").append("<li class = 'charnames'>Beauty</li>");
-        $("#herolist").append("<li class = 'charnames'>Tel-E</li>");
-        $("#herolist").append("<li class = 'charnames'>Pyra</li>");
-        $("#herolist").append("<li class = 'charnames'>Race</li>");
-        $("#herolist").append("<li class = 'charnames'>Bendy</li>");
-        $("#herolist").append("<li class = 'charnames'>Nator</li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Beauty</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Tel-E</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Pyra</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Race</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Bendy</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Nator</a></li>");
         $("#herolist").append("<li class = 'charnames'>Negator</li>");
         $("#herolist").append("<li class = 'charnames'>Inflator</li>");
         
@@ -41,12 +40,12 @@ $(document).ready(function(){
     $("#MinorHero").click(function(){
         $("#herolist").empty();
         
-        $("#herolist").append("<li class = 'charnames'>Beauty</li>");
-        $("#herolist").append("<li class = 'charnames'>Tel-E</li>");
-        $("#herolist").append("<li class = 'charnames'>Pyra</li>");
-        $("#herolist").append("<li class = 'charnames'>Race</li>");
-        $("#herolist").append("<li class = 'charnames'>Bendy</li>");
-        $("#herolist").append("<li class = 'charnames'>Nator</li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Beauty</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Tel-E</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Pyra</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Race</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Bendy</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Nator</a></li>");
         
         $("#AllHero").attr("class", "");
         $("#MinorHero").attr("class", "active");
@@ -163,4 +162,5 @@ $(document).ready(function(){
         $("#MinorOther").attr("style", "cursor: pointer; background-color: gold");
         $("#GrinOther").attr("style", "cursor: pointer; background-color: #ffff99; color: black;");
     });
+
 });

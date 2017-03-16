@@ -591,6 +591,12 @@ tr:nth-child(even){background-color: aquamarine};
     color: blue;
 }
 
+.charevofairy{
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
 .charnames{
     //display: inline;
     //padding-left: 15%;
