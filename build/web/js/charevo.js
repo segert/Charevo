@@ -21,6 +21,7 @@ $(document).ready(function() {
     //else
        // character = "Beauty";
     dialogue = 1;
+    max = 0;
     //document.getElementById("d").innerHTML = switchcharacter;
 
     var beautyBold = "Beauty: ";
@@ -31,14 +32,17 @@ $(document).ready(function() {
     if (character === "Beauty")
     {
         document.getElementById("d").innerHTML = beautyBold + "Hello World ";
+        max = 2;
     }
     else if (character === "Tel-E")
     {
-       
+       document.getElementById("d").innerHTML = beautyBold + "Hello World ";
+       max = 2;
     }
     else if (character === "Pyra")
     {
-        
+        document.getElementById("d").innerHTML = beautyBold + "Hello World ";
+        max = 2;
     }
     //else
      //   document.getElementById("d").innerHTML = "Beauty: Hello World ";
@@ -62,9 +66,14 @@ function getcharacter() {
 
 
 function next() {
-    dialogue++;
-    DialogueChangeMenu();
-    document.getElementById("prev").setAttribute("style", "opacity: 1");
+    if(dialogue < max)
+    {
+        dialogue++;
+        DialogueChangeMenu();
+        document.getElementById("prev").setAttribute("style", "opacity: 1");
+    }
+    if (dialogue === max)
+        document.getElementById("next").setAttribute("style", "opacity: .6");
 }
 
 function prev() {
@@ -72,6 +81,7 @@ function prev() {
     {
         dialogue--;
         DialogueChangeMenu();
+        document.getElementById("next").setAttribute("style", "opacity: 1");
     }
     if (dialogue === 1)
         document.getElementById("prev").setAttribute("style", "opacity: .6");

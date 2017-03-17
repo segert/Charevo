@@ -16,7 +16,7 @@ $(document).ready(function() {
         $("#a1").attr("class", "active");
         $("#0").attr("class", "item");
         $("#1").attr("class", "item active");
-        $("#d").html("<b>Tel-E:</b> 1");
+        $("#d").html("<b>Tel-E:</b> I am Tel-E of Planet Knowlgia. I've ");
     }
     else if (character === "Pyra")
     {
@@ -27,13 +27,13 @@ $(document).ready(function() {
         $("#d").html("<b>Pyra:</b> 2");
     }
     else
-        $("#d").html("<b>Beauty:</b> 0");
+        $("#d").html("<b>Beauty:</b> Hey, guys. I'm Beauty. Well, you probably knew that since I'm the default character. Anyway, if you wanna hear from someone else, just select them on this page. Go ahead. I'm not the only one with a story and insight in this world.");
 
     $('#myCarousel').on('slide.bs.carousel', function(ev) {
         var id = ev.relatedTarget.id;
 
         if(id === "0")
-            $("#d").html("<b>Beauty:</b> 0");
+            $("#d").html("<b>Beauty:</b> Hey, guys. I'm Beauty. Well, you probably knew that since I'm the default character. Anyway, if you wanna hear from someone else, just select them on this page. Go ahead. I'm not the only one with a story and insight in this world.");
         else if(id === "1")
             $("#d").html("<b>Tel-E:</b> 1");
         else if(id === "2")
