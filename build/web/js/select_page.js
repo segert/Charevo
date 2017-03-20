@@ -1,3 +1,12 @@
+/*
+ * 
+ * 
+ * author: axel-zarate
+ * github repository: js-custom-select
+ * January 2017
+ * https://github.com/axel-zarate/js-custom-select/tree/master/js
+ */
+
 (function (angular, undefined) {
 	'use strict';
 
@@ -43,7 +52,7 @@
 	var module = angular.module('AxelSoft', []);
 
 	module.value('customSelectDefaults', {
-		displayText: 'Select...',
+		displayText: 'Select Page...',
 		emptyListText: 'There are no items to display',
 		emptySearchResultText: 'No results match "$0"',
 		addText: 'Add',
@@ -139,7 +148,10 @@
 					}
 					childScope.$apply(function () {
 						lastSearch = '';
-						childScope.searchTerm = '';
+                                                if(childScope.displayText === 'Select Page...')
+                                                    childScope.searchTerm = '';
+                                                else
+                                                    childScope.searchTerm = childScope.displayText;
 					});
 					
 					focusedIndex = -1;

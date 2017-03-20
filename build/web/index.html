@@ -22,7 +22,48 @@ and open the template in the editor.
         <link href="css/charevo.css" rel="stylesheet" type="text/css">
         <link href="css/custom.css" rel="stylesheet" type="text/css">
 
-
+     <!--   
+        <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-animate.js"></script>
+    <script src="js/angular.js"></script>
+    <script>
+            angular.module('sui.select')
+        .controller('DemoCtrl', function () {
+            var vm = this;
+            vm.selected = {
+                label: 'Beauty',
+                value: 'Charevo/Characters/beauty.html',
+            };
+            vm.ajaxSelected = '';
+            vm.countryOptions = [{
+                label: 'Tel-E',
+                value: 'Charevo/Characters/tel-e.html',
+            }, {
+                label: 'Bendy',
+                value: 'Charevo/Characters/bendy.html',
+            }, 
+            {
+                label: 'Beauty',
+                value: 'Charevo/Characters/beauty.html',
+            },
+            {
+                label: 'Race',
+                value: 'Charevo/Characters/race.html',
+            }, {
+                label: 'Nator',
+                value: 'Charevo/Characters/nator.html',
+            }];
+            vm.onSelect = function (model) {
+                vm.valueAfterSelect = model;
+            };
+            vm.goToPage = function(){
+                window.location.pathname = vm.selected.value;
+            }
+        });
+    </script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.7/semantic.css">
+-->
     </head>
 
     <body ng-app="Demo">
@@ -38,6 +79,27 @@ and open the template in the editor.
                 <input type="submit" style="display: none"/>
             </span>
         </form>
+        
+     <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+            <div  ng-controller="DemoCtrl as vm">
+        <div >
+            <div ng-keyup="$event.keyCode === 13 && vm.goToPage()">
+                <div sui-select indicating-text="select a page" on-select="vm.onSelect(model)" options="vm.countryOptions" model="vm.selected" label="Country: " searchable="true" disabled=""></div>
+                <span>
+                <button type="button" class="btn" style ="z-index: 2" ng-click="vm.goToPage()" >
+                    <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                </button> 
+                <input type="submit" style="display: none"/>
+            </span> 
+            </div>
+            
+        </div>
+
+               
+    </div>
+ 
+        </form> -->
+        
         <nav>
             <ul class = "ulmenu1" >
                 <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
@@ -83,6 +145,7 @@ and open the template in the editor.
                 <p id="demo"></p>
 
 
+                
             </div>
 
             <footer id = "footer" class = "site-footer">
