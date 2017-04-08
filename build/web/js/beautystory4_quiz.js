@@ -70,7 +70,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NinjaRight1").show();
-                $("#NinjaRight1").animate({right: '22%'});
+                $("#NinjaRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Ninja:</b> They say a warrior is judged not by his strength but by the collective strength of those he can humiliate while remaining unscathed.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -89,7 +89,7 @@ can start the quiz.");
                     $("#NinjaRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> Don’t listen to him. He’s just in his half-Zen half-jerk mode.");
             }
             else if (dialogue === 4)
@@ -158,7 +158,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NinjaRight1").show();
-                $("#NinjaRight1").animate({right: '22%'});
+                $("#NinjaRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Ninja:</b> Just to give her that look of a deranged killer in case she needed more of it.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -230,7 +230,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> Ugh. She is such an attention hog. Does she really need this big a role in this thing?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -314,7 +314,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> That being said, I'm glad this story just has text and no audio.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -387,7 +387,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> Gee, Pyra, how do you think most music was enjoyed the first time?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -406,7 +406,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> You know what I mean.  You're paying money, standing in line, and making the drive there and back to listen to music you don't know. You can waste your time on that. Just don't waste mine.");
             }
             else if (dialogue === 4)
@@ -433,7 +433,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> Gee, our creator seems like a real open-minded guy, by which I mean he isn’t.");
 
             }
@@ -480,7 +480,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Bendy:</b> But she still goes to school? Man, if I had her excuse, I'd just make it into one long vacation and just go skateboarding.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -499,7 +499,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> I still don't see why you don't just go in like the rest of us. Sure, Bendy's safe, but we all have powers that can hurt people and we're around everyone.");
             }
             else if (dialogue === 4)
@@ -526,7 +526,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> I still find it weird that Mister Sensitive here is even allowed to go to school with a mechanical body full of guns. What school board approved of that?");
 
             }
@@ -568,7 +568,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Race:</b> You know, of all of us for my dad to arrest, for some reason, I always thought it would be Nator.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -587,7 +587,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Come on, Nator. Don't be mad. You do have those qualities that just scream out “Mad Scientist!”");
             }
             else if (dialogue === 4)
@@ -609,7 +609,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '22%'});
+                $("#Tel-ERight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Tel-E:</b> I still can't believe the Chief didn't trust me and thought I would commit a kidnapping.");
 
             }
@@ -629,7 +629,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> Okay, who's gonna tell him?");
 
             }
@@ -667,7 +667,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> And ironically, for that power to activate, people have to see her first.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -708,7 +708,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#TrainorRight1").show();
-                $("#TrainorRight1").animate({right: '22%'});
+                $("#TrainorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Whitney Trainor:</b> It's one thing to make people see their nightmares and want to escape. It's another to make them see what they love and not want to leave. That's where my Charevo Element of Popularity comes in to sweeten up the sights.");
 
             }
@@ -760,7 +760,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Race:</b> How do you know she doesn't want to marry someone else?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -779,7 +779,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> So who was the one with the fantasy?");
             }
             else if (dialogue === 4)
@@ -797,7 +797,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> No way! Like I'd ever be interested in Tel-E.");
             }
             else if (dialogue === 6)
@@ -816,7 +816,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> Are we really starting a witch hunt over a crush on Tel-E?");
 
             }
@@ -836,7 +836,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#TrainorRight1").show();
-                $("#TrainorRight1").animate({right: '22%'});
+                $("#TrainorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Whitney Trainor:</b> If you're trying to get it out of me, I'm afraid all fantasies and dreams are confidential.");
 
             }
@@ -887,7 +887,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#TrainorRight1").show();
-                $("#TrainorRight1").animate({right: '22%'});
+                $("#TrainorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Whitney Trainor:</b> In other words, pretentious wind toy, pretentious string toy, and big pretentious string toy.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -970,7 +970,7 @@ can start the quiz.");
            if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Race:</b> And I guess she wasn't a fan of her family's music either.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1053,7 +1053,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#TrainorRight1").show();
-                $("#TrainorRight1").animate({right: '22%'});
+                $("#TrainorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Whitney Trainor:</b> That Fairy sure has some interesting timing. I thought I might've gone easy on my family before it came out.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1080,7 +1080,7 @@ can start the quiz.");
                     $("#TrainorRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> To be fair, that is what you thought of me at first.");
             }
             else if (dialogue === 6)
@@ -1141,7 +1141,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#TrainorRight1").show();
-                $("#TrainorRight1").animate({right: '22%'});
+                $("#TrainorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Whitney Trainor:</b> In their fantasies, Bendy dreamed of being the next Captain D and Nator dreamed of being an Olympic mathematician. The latter’s math weapons were certainly a lovely sight for me.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1160,7 +1160,7 @@ can start the quiz.");
                     $("#TrainorRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> A guy can dream, can’t he? One day we’ll have more intellectual sports that get celebrated every four years. And I’ll be its champion. It could happen.");
             }
             else if (dialogue === 4)
@@ -1173,7 +1173,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#TrainorRight1").show();
-                $("#TrainorRight1").animate({right: '22%'});
+                $("#TrainorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Whitney Trainor:</b> There’s nothing wrong with celebrating intelligence. That is my kind of guy, you know.");
             }
             else if (dialogue === 6)
@@ -1187,7 +1187,7 @@ can start the quiz.");
                     $("#TrainorRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Bendy:</b> I don’t wanna do EVERYTHING he did. I just wanna be as cool as he used to be, and then take over his TV show.");
 
             }
@@ -1234,7 +1234,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> Not to interrupt, but I think we kind of gave this answer away a few questions back.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1253,7 +1253,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Well, in any case, Pyra can only really fight when she’s with people she doesn’t think will be afraid of her if she hurts them. Those are her friends and pretty much any villain.");
             }
             else if (dialogue === 4)
@@ -1271,7 +1271,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '22%'});
+                $("#Tel-ERight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Tel-E:</b> We’re always here for you, Pyra. Don’t ever forget that.");
             }
             else if (dialogue === 6)
@@ -1300,7 +1300,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Bendy:</b> And sarcastic Pyra is back! You’re welcome!");
 
             }
@@ -1337,7 +1337,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#TrainorRight1").show();
-                $("#TrainorRight1").animate({right: '22%'});
+                $("#TrainorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Whitney Trainor:</b> A nice fantasy. Though I think her dream could’ve included a lot more people admiring her. I mean, come on, it’s a dream. Go big! This is real life and I wanted everyone to love me.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1351,7 +1351,7 @@ can start the quiz.");
                     $("#TrainorRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> I know this is where I’d talk more about how I don’t want to be feared, but . . .");
             }
             else if (dialogue === 4)

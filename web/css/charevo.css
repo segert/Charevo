@@ -27,6 +27,11 @@ p, button{
     
 }
 
+td{
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+tr:nth-child(even){background-color: aquamarine};
 
 header {
     background-color: #98CAAA;
@@ -82,11 +87,6 @@ section {
     //background-color: #ccc;
 }
 
-td{
-    padding-bottom: 3%;
-    padding-top: 3%;
-}
-tr:nth-child(even){background-color: aquamarine};
 
 .answer1{
     position: absolute; 
@@ -347,6 +347,8 @@ tr:nth-child(even){background-color: aquamarine};
     
     animation-name: menuenter;
     animation-duration: .4s;
+    //-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+    //animation-delay: 2s;
 }
 
 .liabout{
@@ -504,28 +506,29 @@ tr:nth-child(even){background-color: aquamarine};
     background-color: #99ccff;
     position: absolute; 
     left: 0%;
-    top: 6.1%;
+    top: 45px;
     height: 10%;
     //z-index: -1;
     border-left: 2px solid black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
 
 .quizimageleft{
     position: fixed;
-    top: 50%;
+    top: 40%;
     left: 0%;
-    width: 10%;
-    height: 15%;
+    width: 30%;
+    height: 60%;
 }
 
 .quizimageright{
     position: fixed;
-    top: 50%;
+    top: 40%;
     right: 0%;
-    width: 10%;
-    height: 15%;
+    width: 30%;
+    height: 60%;
 }
 
 .quizquestion{
@@ -703,13 +706,14 @@ tr:nth-child(even){background-color: aquamarine};
     background-color: #99ccff;
     position: absolute; 
     left: 70%;
-    top: 6.0%;
+    top: 45px;
     height: 10%;
     //z-index: -2;
     
     border-left: 2px solid #99ccff;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
+    border-top: 2px solid black;
 }
 
 .tempfooters{

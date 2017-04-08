@@ -9,15 +9,24 @@
 
 $(document).ready(function() {
 
-        switchcharacter = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
-        if (switchcharacter.charAt(switchcharacter.length - 1) === '/' 
-                || switchcharacter.substring(switchcharacter.length - 4, switchcharacter.length) === "html"
-                || switchcharacter === "")
-            character = "Beauty";
-        else
-            character = switchcharacter;
+        var characters = ["Beauty", "Tel-E", "Pyra"];
+        //switchcharacter = "";
+        //if(sessionStorage.getItem("SessionCharacter") === null)
+            switchcharacter = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
+        //else
+         //   switchcharacter = sessionStorage.getItem("SessionCharacter");
+         if(characters.includes(switchcharacter))
+             sessionStorage.setItem("SessionCharacter",switchcharacter);
         
-        sessionStorage.setItem("SessionCharacter",character);
+        if(sessionStorage.getItem("SessionCharacter") !== null)
+            character = sessionStorage.getItem("SessionCharacter");
+        else
+        {
+            sessionStorage.setItem("SessionCharacter", "Beauty");
+            character = "Beauty";
+        }
+        
+        document.getElementById("d").innerHTML = character;
     //else
        // character = "Beauty";
     dialogue = 1;
@@ -32,16 +41,22 @@ $(document).ready(function() {
     if (character === "Beauty")
     {
         document.getElementById("d").innerHTML = beautyBold + "Hello World ";
+        document.getElementById("character").src = "images/beautyleft1.png";
+        document.getElementById("character").alt = "Beauty Placeholder";
         max = 2;
     }
     else if (character === "Tel-E")
     {
-       document.getElementById("d").innerHTML = beautyBold + "Hello World ";
+       document.getElementById("d").innerHTML = teleBold + "Hello World ";
+       document.getElementById("character").src = "images/Tel-Eleft1.png";
+       document.getElementById("character").alt = "Tel-E Placeholder";
        max = 2;
     }
     else if (character === "Pyra")
     {
-        document.getElementById("d").innerHTML = beautyBold + "Hello World ";
+        document.getElementById("d").innerHTML = pyraBold + "Hello World ";
+        document.getElementById("character").src = "images/pyraleft1.png";
+        document.getElementById("character").alt = "Pyra Placeholder";
         max = 2;
     }
     //else

@@ -78,7 +78,7 @@ can start the quiz.");
             else if (dialogue === 2)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '20%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> Hang on. Are we even supposed to talk about that?");
                 //$("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -92,7 +92,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Bendy:</b> Cool! No narrative or stage direction getting in my way now!");
             }
             else if (dialogue === 5)
@@ -110,7 +110,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '22%'});
+                $("#Tel-ERight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Tel-E:</b> Right. Back to the question then. It’s worth noting that those other choices are real cities in our world. Minor City was also named from its first AND incumbent mayor appearing like a child. We’ll see him later on.");
             }
             else if (dialogue === 7)
@@ -128,7 +128,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Race:</b> Hey, it’s not a competition, you guys.");
             }
             else if (dialogue === 9)
@@ -175,7 +175,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#FourizeRight1").show();
-                $("#FourizeRight1").animate({right: '22%'});
+                $("#FourizeRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Fourize:</b> And I also have the honor of winning the first battle seen in these stories.");
                 //$("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -259,7 +259,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#ColdMinerRight1").show();
-                $("#ColdMinerRight1").animate({right: '22%'});
+                $("#ColdMinerRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Cold Miner:</b> Don’t forget I’m immune to heat, which I’m sure Race forgot to tell you about.");
                 // $("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -286,7 +286,7 @@ can start the quiz.");
                     $("#ColdMinerRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '22%'});
+                $("#Tel-ERight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Tel-E:</b> Though that wasn’t too far off.");
             }
             else if (dialogue === 6)
@@ -295,7 +295,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Fun fact: The first five stories were actually written after a few others. In addition, Cold Miner was originally conceived as a name our creator used in a later story that was meant to allude to a time an ice villain froze Bendy.");
             }
             else if (dialogue === 7)
@@ -313,7 +313,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#ColdMinerRight1").show();
-                $("#ColdMinerRight1").animate({right: '22%'});
+                $("#ColdMinerRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Cold Miner:</b> And yet they threaten you so easily. Actually, they were originally going to be called the Ice Pack, but our creator discovered that some ice villains from DC comics already had that as their team name, so he settled on Chill-dren.");
             }
             else if (dialogue === 10)
@@ -362,7 +362,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> The hiring process for a lot of office jobs takes nearly a month. How does becoming a protector of the city take such short time?");
                 // $("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -381,7 +381,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Bendy:</b> Gee, Race, are you gonna propose to a girl you like as soon as you meet her too?");
             }
             else if (dialogue === 4)
@@ -399,7 +399,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> Sure. And yet committing to someone you’ll be living with as part of the Neo Brigade is COMPLETELY okay on the fly.");
             }
             else if (dialogue === 6)
@@ -412,7 +412,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> I guess this means I should be sending Cold Miner a gift basket for what he did, huh?");
             }
             else if (dialogue === 8)
@@ -430,7 +430,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> True. But there’s a difference between “It worked out” and “It WILL work out.”");
             }
             else if (dialogue === 10)
@@ -448,7 +448,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Bendy:</b> I know. “Okay, powerful girl, you’re in.” One hour later. “What? Your weakness is ice? Wow, did I screw up.”");
             }
             else if (dialogue === 12)
@@ -466,7 +466,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Yeah. It’s not like my weakness is ice. Although, my hair powers don’t work when I’m drenched in water.");
             }
             else if (dialogue === 14)
@@ -507,7 +507,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> And that’s even if we’re just out doing innocent activity like going out for lunch or studying at the library.");
                 // $("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -526,7 +526,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '22%'});
+                $("#ChiefRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Chief:</b> Roll call is standard regulation. You question regulation, you question the law. And only criminals question the law!");
             }
             else if (dialogue === 4)
@@ -539,7 +539,7 @@ can start the quiz.");
                     $("#ChiefRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Anyway, fun fact: When the Chief took roll call, he chose to call our names as he read them rather than just see who was there as if he didn’t know his own team. This is loosely based on a scene from an episode of McHale’s Navy where Binghamton took a roll call.");
             }
             else if (dialogue === 6)
@@ -557,7 +557,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '22%'});
+                $("#ChiefRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Chief:</b> What? I’m no imitation! I’m my own person! Who are you citing with these accusations? Who? Who? Who?");
             }
             else if (dialogue === 8)
@@ -619,7 +619,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Race:</b> I guess it would make sense for the name to have “crime” right in the name.");
                 //$("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -638,7 +638,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '22%'});
+                $("#Tel-ERight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Tel-E:</b> Truth be told, I actually did notice that.");
             }
             else if (dialogue === 4)
@@ -678,7 +678,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> I guess she asked for the definition and country of origin and went from there.");
             }
             else if (dialogue === 9)
@@ -714,7 +714,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> Gee, Beauty, could you have made this any easier? Of course the guy who worked in a coal mine would be underground. You might as well have had the team HQ as an answer.");
                 //$("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -768,7 +768,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Race:</b> I still can’t believe you lost that thing, Bendy. You know the Chief makes us pay for those.");
                 //$("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -809,7 +809,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '22%'});
+                $("#Tel-ERight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Tel-E:</b> Right. That, and Nator is still skeptical of the Charevo Gene’s features despite the evidence.");
             }
             else if (dialogue === 7)
@@ -827,7 +827,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> You use your will to open a communication channel through your gene, think of three Charevo Elements to add the person with that trinity, keep adding who you want to talk to, talk to them, then close it. There. Done.");
             }
             else if (dialogue === 9)
@@ -840,7 +840,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Someone write down the instructions and put it in a manual with a famous scientist’s name. I’m sure that’ll convince him.");
 
             }
@@ -877,7 +877,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#ColdMinerRight1").show();
-                $("#ColdMinerRight1").animate({right: '22%'});
+                $("#ColdMinerRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Cold Miner:</b> That’s right. Whenever five people stand on that floor panel, the overhead tube closes on them. That’s why I made sure my Chill-dren were never in groups of five or more.");
                 // $("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -912,7 +912,7 @@ can start the quiz.");
                     $("#ColdMinerRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Anyway, fun fact: The idea of a number of people standing on an elevator and revealing a big surprise was based on the elevator scene from Metal Gear Solid. It seemed fitting since we spent most of our time using stealth in Cold Miner’s hideout.");
 
             }
@@ -957,7 +957,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> You say that, and yet how many times did I have to tell you I can’t teleport?");
                 //$("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -1026,7 +1026,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Race:</b> Hey, I’m sure if he knew you better at the time, he’d make fun of you for hiding too.");
                 //$("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -1062,7 +1062,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Indeed, I did. You like ‘em?");
 
             }
@@ -1111,7 +1111,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Race:</b> Yeah, but it wasn’t my decision to agree to his decision.");
                 //$("#prevlevel1a").attr("style", "opacity: 1");
             }
@@ -1130,7 +1130,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Bendy:</b> I still can’t believe Race gets to be leader. I’ve endangered myself way more than he has.");
             }
             else if (dialogue === 4)
@@ -1148,7 +1148,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> Oh, what? ‘Cause he’s your son and you’re perfect. I’m sure if you ran a track team, you’d make pre-speedy Race the team captain too.");
             }
             else if (dialogue === 6)
@@ -1166,7 +1166,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> And for the role of leader, the bidding starts at fifty dollars!");
             }
             else if (dialogue === 8)
@@ -1179,7 +1179,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Bendy:</b> I got five bucks and a bottle cap saying I win a free soda.");
             }
             else if (dialogue === 10)
@@ -1224,7 +1224,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Race:</b> Why’d you have to make the answers so similar? You couldn’t just put one that was different?");
             }
             else if (dialogue === 2)
@@ -1259,7 +1259,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '22%'});
+                $("#Tel-ERight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Tel-E:</b> It’s not the lead-up. It’s the end result that matters. I mean, by your logic, Race getting us captured and then saving us would be the same as him saving us and then getting us captured.");
             }
             else if (dialogue === 7)
@@ -1277,7 +1277,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Ooh. Tel-E using logic on Nator. How will he retaliate?");
             }
             else if (dialogue === 9)
@@ -1295,7 +1295,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> Well, let’s just say in the case of Race bringing Beauty in, when you buy a computer, you read the specs and don’t just go for the shiny one.");
             }
             else if (dialogue === 11)
@@ -1313,7 +1313,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> You’re lucky you were quick on that.");
             }
             else if (dialogue === 13)
@@ -1322,7 +1322,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Pyra:</b> Next time, though. ");
             }
             else if (dialogue === 14)
@@ -1358,7 +1358,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '22%'});
+                $("#Tel-ERight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Tel-E:</b> And I suppose if Nator was here, he would call the Charevo Fairies hallucinations to those who possess the Charevo Gene and object to his Logic Element being included with Race’s elements, which would be right before he denies the very concept of the Charevo Elements.");
             }
             else if (dialogue === 2)
@@ -1414,7 +1414,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Beauty:</b> Not that you’d think so based on that little fear of yours.");
             }
             else if (dialogue === 11)
@@ -1454,7 +1454,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Nator:</b> Hang on. Race has super speed. Why did he need a bus pass?");
             }
             else if (dialogue === 2)
@@ -1494,7 +1494,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({right: '12%'});
                 $("#dialogue").html("<b>Bendy:</b> Aw. Why couldn’t the award be based on a story with a hero receiving gold? Now, that would be a happy ending.");
             }
             else if (dialogue === 7)
