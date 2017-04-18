@@ -70,7 +70,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#TammyRight1").show();
-                $("#TammyRight1").animate({right: '12%'});
+                $("#TammyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tammy Time:</b> Gee, I thought I was just the class clown in regular school. Who knew I’d be so popular in another classroom?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -106,7 +106,7 @@ can start the quiz.");
                     $("#TammyRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Well, Tammy does have some cool powers. I mean, there’s self-duplication, duplication of anything she touches, flight, the ability to enlarge her head to a dangerous size . . .");
 
             }
@@ -126,7 +126,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#TammyRight1").show();
-                $("#TammyRight1").animate({right: '12%'});
+                $("#TammyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tammy Time:</b> And before I got all these abilities I have right now. You like?");
 
             }
@@ -148,7 +148,7 @@ can start the quiz.");
                     $("#TammyRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Nobody asked, but okay.");
             }
             else if (dialogue === 15)
@@ -183,7 +183,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CaptainDRight1").show();
-                $("#CaptainDRight1").animate({right: '12%'});
+                $("#CaptainDRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Captain D:</b> Hmph. That depends who you ask. Would you mind telling those protesting parents the Neo Brigade approves Captain D’s show for kids?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -210,7 +210,7 @@ can start the quiz.");
                     $("#CaptainDRight1").hide();
                 });
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> Bendy, I thought you were over this guy.");
             }
             else if (dialogue === 6)
@@ -224,7 +224,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> And all those other complaints I had.");
 
             }
@@ -287,7 +287,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> What are you talking about? He likes us just fine.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -309,7 +309,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '12%'});
+                $("#ChiefRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Chief:</b> Are you saying what I favor is wrong? I should take away your lunch discounts at the police station for that!");
             }
             else if (dialogue === 5)
@@ -337,7 +337,7 @@ can start the quiz.");
                     $("#ChiefRight1").hide();
                 });
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> My dad is just one step away from making Beauty’s character transformations members of the Neo Brigade.");
 
             }
@@ -373,7 +373,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CaptainDRight1").show();
-                $("#CaptainDRight1").animate({right: '12%'});
+                $("#CaptainDRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Captain D:</b> Black and yellow are the warning colors. You don’t think I’d put that stuff in any of my stunts.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -474,7 +474,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> That’s some nice reasoning there. We’ll probably lose the room again the same way so what’s the point of going in? I’d like to see someone get out of going to school for suggesting the possibility of a snow day on a ninety degree day.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -488,7 +488,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> I know. We’re all gonna die. What’s the point of going outside?");
             }
             else if (dialogue === 4)
@@ -506,7 +506,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> Yeah. He’s a cop. He doesn’t wanna break Murphy’s Law.");
             }
             else if (dialogue === 6)
@@ -515,7 +515,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Hey, Chief. Since someone’s probably going to break into your office, do you want me to destroy a few police files? ");
 
             }
@@ -576,7 +576,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> And surprisingly, you are not that good of an actor.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -594,7 +594,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#CaptainDRight1").show();
-                $("#CaptainDRight1").animate({right: '12%'});
+                $("#CaptainDRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Captain D:</b> Criticize my acting all you want. My show’s got sixty-five episodes and counting.");
             }
             else if (dialogue === 5)
@@ -619,7 +619,7 @@ can start the quiz.");
                     $("#CaptainDRight1").hide();
                 });
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '12%'});
+                $("#ChiefRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Chief:</b> Beauty! Cease your disrespectful yammering at once!");
             }
             else if (dialogue === 9)
@@ -643,7 +643,7 @@ can start the quiz.");
                     $("#ChiefRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> Man, the Chief was quick on that one.");
             }
             else if (dialogue === 12)
@@ -688,7 +688,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> I gotta say, you really need to read the story to get this one. All those other choices sound like something Bendy could’ve said.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -707,7 +707,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> Yeah, well, that’s the last you’re getting outta me. Now that I know for sure you’re not a good influence on anyone, you fight your own debates.");
             }
             else if (dialogue === 4)
@@ -740,7 +740,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Right. Well, fun fact here: That whole run about Bendy responding to accusations and criticism against Captain D with all those questions is based on a bit from comedian Greg Warren.");
 
             }
@@ -783,7 +783,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> Going after the accuser, huh? Even in post-hero-worship, it still goes on.");
             }
             else if (dialogue === 14)
@@ -820,7 +820,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> You’d think with an element called Defiance, it was gonna encourage me to not do what you wanted. Nope! All it does is give guilt.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -873,7 +873,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CremateRight1").show();
-                $("#CremateRight1").animate({right: '12%'});
+                $("#CremateRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Cremate:</b> Hello? Someone mention my name?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -892,7 +892,7 @@ can start the quiz.");
                     $("#CremateRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> Hey, we're not too busy to not learn something about a new character.");
             }
             else if (dialogue === 4)
@@ -905,7 +905,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Don't worry, Pyra. We'll make this quick. Anyway, as Bendy would probably notice, Cremate's a model, but she’s also an accomplished boxer, so it makes sense she decided to cause trouble at a gym.");
             }
             else if (dialogue === 6)
@@ -939,7 +939,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#CremateRight1").show();
-                $("#CremateRight1").animate({right: '12%'});
+                $("#CremateRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Cremate:</b> Unlike you where they wouldn’t be caught dead in your proximity.");
 
             }
@@ -976,7 +976,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CremateRight1").show();
-                $("#CremateRight1").animate({right: '12%'});
+                $("#CremateRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Cremate:</b> What can I say? I’ve been a girl in high school. I know what works. Too bad Pyra doesn’t know that for her face.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1030,7 +1030,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CaptainDRight1").show();
-                $("#CaptainDRight1").animate({right: '12%'});
+                $("#CaptainDRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Captain D:</b> And if you’re referring the name to someone else, the D would stand for “Dem muscles.” It works in multiple scenarios.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1123,7 +1123,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> Unless that person has nothing good about them. Then it’s not worth trying.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1229,7 +1229,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> Ha! A voice actor? My hero does all the best stunts on TV. He may have been a villain, but at least he was cool.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1251,7 +1251,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> Why those two?");
             }
             else if (dialogue === 6)
@@ -1312,7 +1312,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> No doubt loosely based on Muhammad Ali, am I right?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1385,7 +1385,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> Yeah, that’s a nice advertisement for the Minor City police department.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1399,7 +1399,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '12%'});
+                $("#ChiefRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Chief:</b> Stop defaming our city! You represent this town, you know!");
             }
             else if (dialogue === 4)

@@ -71,7 +71,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> Well, you certainly know how to pack your information in.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -123,7 +123,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#DinomightRight1").show();
-                $("#DinomightRight1").animate({right: '12%'});
+                $("#DinomightRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Dinomight:</b> And who’s you callin’ stupid? Why I oughta knock you out faster ‘an a runaway pickup goin’ into a mule. I mean, I would if I knew how fast the truck was goin’ an’ if that mule had a protective plate in its head, but . . . what were we talkin’ about?");
             }
             else if (dialogue === 11)
@@ -132,7 +132,7 @@ can start the quiz.");
                     $("#DinomightRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> I take it back. Judge away.");
             }
             else if (dialogue === 12)
@@ -167,7 +167,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> Suggesting the possibility of foreshadowing in lieu of confirming an act as foreshadowing. Well played.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -181,7 +181,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#DinomightRight1").show();
-                $("#DinomightRight1").animate({right: '12%'});
+                $("#DinomightRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Dinomight:</b> Yer darn right you will. We got us a stronger force that’ll make y’all look like li’l ants under our feet.");
             }
             else if (dialogue === 4)
@@ -207,7 +207,7 @@ can start the quiz.");
                     $("#DinomightRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> But you can trust me in knowing the potential of it. By the way, I like how we’re acting like we’re talking about a future event as if we don’t know what happens.");
             }
             else if (dialogue === 8)
@@ -259,7 +259,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#FergusonRight1").show();
-                $("#FergusonRight1").animate({right: '12%'});
+                $("#FergusonRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Christy Ferguson:</b> Hold it. I’m the trivia girl here. I’ll take this one.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -297,7 +297,7 @@ can start the quiz.");
                     $("#FergusonRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> She is quite knowledgeable on this subject, though. I say we let her have this one.");
             }
             else if (dialogue === 10)
@@ -336,7 +336,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> I’m assuming that was because that was the same question I asked her after Dinomight beat her silly.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -346,7 +346,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> Yeah. ‘Cause for Nator, the digits of pi is his version of “How many fingers am I holding up?”");
             }
             else if (dialogue === 3)
@@ -359,7 +359,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#FergusonRight1").show();
-                $("#FergusonRight1").animate({right: '12%'});
+                $("#FergusonRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Christy Ferguson:</b> So he’s copying my thing, huh? It’s a shame since I know more than him.");
             }
             else if (dialogue === 5)
@@ -398,7 +398,7 @@ can start the quiz.");
                     $("#FergusonRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> It sure would be an interesting question if our creator was born on March 14th.");
             }
             else if (dialogue === 11)
@@ -416,7 +416,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> And 26 seconds.");
             }
             else if (dialogue === 13)
@@ -451,7 +451,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#FergusonRight1").show();
-                $("#FergusonRight1").animate({right: '12%'});
+                $("#FergusonRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Christy Ferguson:</b> Plus it never hurts to expose stupidity. Well, I guess it hurts some people’s egos and reputations, but what do I care? I get free comedy out of it.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -474,7 +474,7 @@ can start the quiz.");
                     $("#FergusonRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> No offense, Tel-E, but I would not watch your show.");
             }
             else if (dialogue === 5)
@@ -487,7 +487,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#FergusonRight1").show();
-                $("#FergusonRight1").animate({right: '12%'});
+                $("#FergusonRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Christy Ferguson:</b> And THAT is why you’re the least funny member of your team. Fun fact: me asking people questions on the street is based on Jay Leno’s Jaywalking bit on the Tonight Show.");
             }
             else if (dialogue === 7)
@@ -549,7 +549,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '12%'});
+                $("#ChiefRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Chief:</b> Are you kids talking about that TV appearance again? You’d better not be, or everyone will be doing mandatory exercise for a month.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -629,7 +629,7 @@ can start the quiz.");
                     $("#ChiefRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> All we need is for the Chief to get mad over coffee that’s too hot and Ferguson’s got all the material she’ll need.");
             }
             else if (dialogue === 13)
@@ -665,7 +665,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#AlRight1").show();
-                $("#AlRight1").animate({right: '12%'});
+                $("#AlRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Al:</b> We kind of had limited time when we did Host Conquer, so I really needed her to get going.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -684,7 +684,7 @@ can start the quiz.");
                     $("#AlRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Al seems like a good sidekick for someone who needs to keep track of time.");
             }
             else if (dialogue === 4)
@@ -702,7 +702,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#FergusonRight1").show();
-                $("#FergusonRight1").animate({right: '12%'});
+                $("#FergusonRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Christy Ferguson:</b> He doesn’t do a whole lot when I’m doing my hosting duties, but he’s good to keep around for preparation. Here’s a little side note: I mentioned I was named after Craig Ferguson. Well, me insulting Al was based on how Craig would insult his producer Michael on the Late Late Show whenever he would disapprove of Craig swearing too much or going over the time he was given.");
             }
             else if (dialogue === 6)
@@ -720,7 +720,7 @@ can start the quiz.");
                     $("#FergusonRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> I don’t think he’d go along with that.");
             }
             else if (dialogue === 8)
@@ -733,7 +733,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#FergusonRight1").show();
-                $("#FergusonRight1").animate({right: '12%'});
+                $("#FergusonRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Christy Ferguson:</b> Well, for us, our creator is actually a big fan of Craig Ferguson and while watching him talk to his producer, he thought the idea of a comedian having someone act as a reluctant designated straight man would be fun for me to use.");
             }
             else if (dialogue === 10)
@@ -792,7 +792,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#FergusonRight1").show();
-                $("#FergusonRight1").animate({right: '12%'});
+                $("#FergusonRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Christy Ferguson:</b> Of course. Like the network executives whom I used to work for, my own Charevo Gene doesn’t think I’m funny.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -863,7 +863,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> And that’s how she was able to escape and kidnap my dad. Uh, not that I’m blaming her for that.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -908,7 +908,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Arrest Race at once!");
             }
             else if (dialogue === 8)
@@ -926,7 +926,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> Teehee. Relax, Race. We’re just teasing.");
             }
             else if (dialogue === 10)
@@ -962,7 +962,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> Too bad she didn’t use it on Bendy. He could withstand that attack and give Ferguson the satisfaction of saying he’s wrong.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -990,7 +990,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> Yeah? Well, it wouldn’t be a perfect strategy on Tel-E since you forgot to provide some defense against lightning in case she got the question right.");
             }
             else if (dialogue === 5)
@@ -1003,7 +1003,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> You didn’t know she wouldn’t do it.");
             }
             else if (dialogue === 7)
@@ -1051,7 +1051,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> You call it cruel. I call it getting the job done.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1083,7 +1083,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> Nator’s pretty much like an actor who watches a movie he’s in and leaves whenever he’s not on screen.");
             }
             else if (dialogue === 6)
@@ -1096,7 +1096,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> Well, he was kind of right in that somebody needed to get hurt for me to use my telepathy. Let’s see how long it takes him to jump for credit on that one.");
             }
             else if (dialogue === 8)
@@ -1109,7 +1109,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> Oh great. So now Nator’s probably gonna use this as evidence for some claim that he’s as likeable as Bill Murray.");
             }
             else if (dialogue === 10)
@@ -1149,7 +1149,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> On my home planet of Knowlgia, we use our powers to help us in our daily lives, but never to use against others. I know superheroes are very much admired on Earth for their abilities and what they do, but we Knowlgians are peaceful and respect everyone by limiting our powers.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1259,7 +1259,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#FergusonRight1").show();
-                $("#FergusonRight1").animate({right: '12%'});
+                $("#FergusonRight1").animate({right: '22%'});
                 $("#dialogue").html("Christy Ferugson: Calling that guy a game show host is like calling Tel-E a fighter. There are way better ones than him.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1370,7 +1370,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> Nator got a math question wrong? Someone take note. The apocalypse is nigh!");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1389,7 +1389,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> You had a problem doing the math. That’s a pretty good math problem.");
             }
             else if (dialogue === 4)
@@ -1407,7 +1407,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> But it was a trick question! You can’t hold that against me!");
             }
             else if (dialogue === 6)
@@ -1425,7 +1425,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> I think for a multiple choice question where you have to choose the one that’s not true, Nator would be the first to complain if the word “not” wasn’t in bold and caps.");
             }
             else if (dialogue === 8)
@@ -1478,7 +1478,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> It sure was some helpful guidance. I knew I didn’t want to abuse my powers, but losing my friends would far outweigh the guilt.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1505,7 +1505,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> I don’t think our Charevo Fairies are meant to force everything at us.");
             }
             else if (dialogue === 6)
@@ -1514,7 +1514,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> Unless you’re evil. ");
             }
             else if (dialogue === 7)
@@ -1550,7 +1550,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> I must admit it was clever of Ferguson to choose a large number with a decimal as if I had to remember eight-billion had 10 digits in it.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1590,7 +1590,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#FergusonRight1").show();
-                $("#FergusonRight1").animate({right: '12%'});
+                $("#FergusonRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Christy Ferguson:</b> Thanks for the tip, though. I’ll be sure to try that next time.");
             }
             else if (dialogue === 8)
@@ -1608,7 +1608,7 @@ can start the quiz.");
                     $("#FergusonRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> So if it wasn’t some random number for Ferguson, it was for someone else.");
             }
             else if (dialogue === 10)

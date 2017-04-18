@@ -37,6 +37,8 @@ $(document).ready(function() {
     beautyBold = beautyBold.bold();
     var teleBold = "Tel-E: ";
     teleBold = teleBold.bold();
+    var pyraBold = "Pyra: ";
+    pyraBold = pyraBold.bold();
 
     if (character === "Beauty")
     {
@@ -48,7 +50,7 @@ $(document).ready(function() {
     else if (character === "Tel-E")
     {
        document.getElementById("d").innerHTML = teleBold + "Hello World ";
-       document.getElementById("character").src = "images/Tel-Eleft1.png";
+       document.getElementById("character").src = "images/tel-eleft1.png";
        document.getElementById("character").alt = "Tel-E Placeholder";
        max = 2;
     }

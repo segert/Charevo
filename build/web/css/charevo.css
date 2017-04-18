@@ -90,7 +90,7 @@ section {
 
 .answer1{
     position: absolute; 
-    top: 18.2%;
+    top: 120px;
     left: 6.9%;
     width: 40%;
    // z-index: -1;
@@ -98,7 +98,7 @@ section {
 
 .answer2{
     position: absolute; 
-    top: 18.2%;
+    top: 120px;
     left: 50%;
     width: 40%;
     //z-index: -1;
@@ -106,7 +106,7 @@ section {
 
 .answer3{
     position: absolute; 
-    top: 29.5%;
+    top: 180px;
     left: 6.9%;
     width: 40%;
     //z-index: -1;
@@ -114,7 +114,7 @@ section {
 
 .answer4{
     position: absolute; 
-    top: 29.8%;
+    top: 180px;
     left: 50%;
     width: 40%;
    // z-index: -1;
@@ -122,28 +122,28 @@ section {
 
 .answer1label{
     position: absolute; 
-    top: 22%;
+    top: 139px;
     left: 4.1%;
    // z-index: -1;
 }
 
 .answer2label{
     position: absolute; 
-    top: 22%;
+    top: 139px;
     left: 47.0%;
    // z-index: -1;
 }
 
 .answer3label{
     position: absolute; 
-    top: 33%; 
+    top: 199px; 
     left: 4.1%;
    // z-index: -1;
 }
 
 .answer4label{
     position: absolute; 
-    top: 33%;
+    top: 199px;
     left: 47.0%;
    // z-index: -1;
 }
@@ -192,11 +192,11 @@ section {
 }
 
 .char-image-select{
-    margin-top: 2%; 
+    //margin-top: 5px; 
     position: absolute; 
     right: 30%; 
-    width:12%;
-    height:10%;
+    //width:12%;
+    //height:10%;
 }
 
 .charnames{
@@ -297,7 +297,7 @@ section {
 }
 
 .geneinfo{
-    padding-top: 2%; 
+    padding-top: 20px; 
     width: 75vw; 
     //width: 870px;
     float:left; 
@@ -305,7 +305,7 @@ section {
     border:2px solid #3B587E; 
     background:#FFFFFF;
     border-radius: 25px;
-    padding-bottom: 10%;
+    padding-bottom: 60px;
     margin-bottom: 50px;
     position: relative; 
     left: 0%;
@@ -341,7 +341,7 @@ section {
 }
 
 .imgmenu1{
-    position: fixed;
+    position: absolute;
     top: 16.87%;
     left: 29%;
     
@@ -516,7 +516,7 @@ section {
 }
 
 .quizimageleft{
-    position: fixed;
+    position: absolute;
     top: 40%;
     left: 0%;
     width: 30%;
@@ -524,7 +524,7 @@ section {
 }
 
 .quizimageright{
-    position: fixed;
+    position: absolute;
     top: 40%;
     right: 0%;
     width: 30%;
@@ -573,28 +573,28 @@ section {
 
 .selector1{
     position: absolute; 
-    top: 18.2%;
+    top: 120px;
     left: 3.85%;
     //z-index: -1;
 }
 
 .selector2{
     position: absolute; 
-    top: 18.2%;
+    top: 120px;
     left: 46.8%;
     //z-index: -1;
 }
 
 .selector3{
     position: absolute; 
-    top: 29.5%;
+    top: 180px;
     left: 3.85%;
     //z-index: -1;
 }
 
 .selector4{
     position: absolute; 
-    top: 29.8%; 
+    top: 180px; 
     left: 46.8%;
     //z-index: -1;
 }

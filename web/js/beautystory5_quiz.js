@@ -72,7 +72,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> Um. Is that a typo? Why would a movie theater be called a multiplexor?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -91,7 +91,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> If we don’t see why up front, it’s probably not funny.");
             }
             else if (dialogue === 4)
@@ -104,7 +104,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Ughhhhhh.");
             }
             else if (dialogue === 6)
@@ -130,7 +130,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> Well, our creator wrote this while he was majoring in computer science. Besides, what's wrong with smart references? Logic is what makes the world make sense. There's no reason it can't be fun too.");
             }
             else if (dialogue === 10)
@@ -174,7 +174,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CyhackRight1").show();
-                $("#CyhackRight1").animate({right: '12%'});
+                $("#CyhackRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Cyhack:</b> What can I say? The Cyhack knows how to attract an audience. All you need to do is use more of the Cyhack.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -201,7 +201,7 @@ can start the quiz.");
                     $("#CyhackRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Uh . . . so are you, Nator.");
             }
             else if (dialogue === 6)
@@ -261,7 +261,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> Wasn't Oh's name originally Un? You know, like a prefix for negation?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -289,7 +289,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> So we have some other people besides Nator making computer science references? This seems like a good time for the rest of us to go to the bathroom.");
             }
             else if (dialogue === 5)
@@ -311,7 +311,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> How come you get the smart names and I'm named after fictional robots? Ugh. Even here, you have to one-up me?");
             }
             else if (dialogue === 8)
@@ -359,7 +359,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> Oh? I thought it was One. That's Tiffany, right?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -386,7 +386,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#OhRight1").show();
-                $("#OhRight1").animate({right: '12%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Oh:</b> In Nator's case, we're not really needed for that.");
             }
             else if (dialogue === 6)
@@ -399,7 +399,7 @@ can start the quiz.");
                     $("#OhRight1").hide();
                 });
                 $("#OneRight1").show();
-                $("#OneRight1").animate({right: '12%'});
+                $("#OneRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>One:</b> You realize not all insults have to be based on facts.");
             }
             else if (dialogue === 8)
@@ -443,7 +443,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> So the police station is right next door, yet we need our own security for keeping things safe? Seems kinda pointless that we had to wait to give the earthquake device to the Chief.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -462,7 +462,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#OhRight1").show();
-                $("#OhRight1").animate({right: '12%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Oh:</b> Yeah, that thing protected you REAL good.");
             }
             else if (dialogue === 4)
@@ -471,7 +471,7 @@ can start the quiz.");
                     $("#OhRight1").hide();
                 });
                 $("#OneRight1").show();
-                $("#OneRight1").animate({right: '12%'});
+                $("#OneRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>One:</b> Scanning fingerprints is quite effective. Too bad you didn't know my sister could shapeshift and have her own copy of a person's fingerprints.");
             }
             else if (dialogue === 5)
@@ -484,7 +484,7 @@ can start the quiz.");
                     $("#OneRight1").hide();
                 });
                 $("#OhRight1").show();
-                $("#OhRight1").animate({right: '12%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Oh:</b> Sure. And I'm Jim Carrey.");
             }
             else if (dialogue === 7)
@@ -493,7 +493,7 @@ can start the quiz.");
                     $("#OhRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Here's an idea. How 'bout a password that only we would know and our bodies wouldn't?");
             }
             else if (dialogue === 8)
@@ -537,7 +537,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> Interesting how One tricked him, but Oh is the one with the Deception element.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -556,7 +556,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> Bendy sure knows how to pay attention when a girl talks, huh?");
             }
             else if (dialogue === 4)
@@ -574,7 +574,7 @@ can start the quiz.");
                     $("#PyraRight1").hide();
                 });
                 $("#OneRight1").show();
-                $("#OneRight1").animate({right: '12%'});
+                $("#OneRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>One:</b> I bet you’ve tried to practice with those compatibility tests in magazines though.");
             }
             else if (dialogue === 6)
@@ -587,7 +587,7 @@ can start the quiz.");
                     $("#OneRight1").hide();
                 });
                 $("#OhRight1").show();
-                $("#OhRight1").animate({right: '12%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Oh:</b> Too bad you missed a key question that was worth everything with One, and I’m sure you’ll miss it again in a few minutes.");
             }
             else if (dialogue === 8)
@@ -605,7 +605,7 @@ can start the quiz.");
                     $("#OhRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '12%'});
+                $("#BendyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Bendy:</b> It wasn’t my fault. It’s not like I can see an invisible contract that comes my way. She could’ve tricked any one of you guys.");
             }
             else if (dialogue === 10)
@@ -623,7 +623,7 @@ can start the quiz.");
                     $("#BendyRight1").hide();
                 });
                 $("#OneRight1").show();
-                $("#OneRight1").animate({right: '12%'});
+                $("#OneRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>One:</b> I don’t think you have any other options available.");
             }
             else if (dialogue === 12)
@@ -659,7 +659,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> This is based on how in algorithms, it is almost impossible for an interpretation of a formula to make the formula true.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -771,8 +771,8 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '12%'});
-                $("#OhRight1").animate({right: '12%'});
+                $("#ChiefRight1").animate({right: '22%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Chief:</b> And for missing roll call, I’m going to double Bendy’s assigned paperwork for next Monday at the station.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -842,7 +842,7 @@ can start the quiz.");
                     $("#OhRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Well, that explains that. Oh was just disguised as the Chief. Quite convincingly, I’d say.");
             }
             else if (dialogue === 14)
@@ -855,7 +855,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#OhRight1").show();
-                $("#OhRight1").animate({right: '12%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Oh:</b> Teehee. I agree.");
             }
             else if (dialogue === 16)
@@ -895,7 +895,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> Gee, someone seeing Pyra hurt one of her own? That’s not gonna help her much.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -905,7 +905,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '12%'});
+                $("#PyraRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Pyra:</b> Ugh. I do not need this. Do you know how much damage I’ve had to undo to build a helpful image?");
             }
             else if (dialogue === 3)
@@ -966,7 +966,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> Well, this simply comes down to getting both One and Oh to tell a lie. Obviously, they can’t say the exact same thing, but they can say what they would say in their scenario.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1025,7 +1025,7 @@ can start the quiz.");
            if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> And as I mentioned before, this is an example of a conjunction of statements. For One, she’s giving a true AND true statement, which is true. And Oh is giving a false AND true statement, which is false. Of course, these are both possible for them to say.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1052,7 +1052,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#OneRight1").show();
-                $("#OneRight1").animate({right: '12%'});
+                $("#OneRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>One:</b> We’re not stupid. We know how to speak to keep people from knowing who’s true and who’s false.");
             }
             else if (dialogue === 6)
@@ -1061,7 +1061,7 @@ can start the quiz.");
                     $("#OneRight1").hide();
                 });
                 $("#OhRight1").show();
-                $("#OhRight1").animate({right: '12%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Oh:</b> We’re just that good at knowing the logic, which includes all the negations One uses to steal someone’s powers . . . and I had waffles for breakfast today.");
             }
             else if (dialogue === 7)
@@ -1106,7 +1106,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> A lie detector would be pretty redundant for them if you knew who they were and wanted information from them.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1125,7 +1125,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#OhRight1").show();
-                $("#OhRight1").animate({right: '12%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Oh:</b> Well, I’m One and I’ll bet you couldn’t tell when I try to lie.");
             }
             else if (dialogue === 4)
@@ -1224,7 +1224,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> This is an example of a disjunctive statement where if you say a bunch of false statements and then add a true one with the word or, the whole thing is true.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1247,7 +1247,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> Hey, since I’m assuming you’ll be going to court for your crimes, are they gonna have to make you swear to tell the truth, the whole truth, and nothing but the truth?");
             }
             else if (dialogue === 5)
@@ -1265,7 +1265,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> Not true. Her powers could be neutralized and she’d have the option to lie.");
             }
             else if (dialogue === 7)
@@ -1283,7 +1283,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '12%'});
+                $("#RaceRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Race:</b> If they didn’t have them neutralized, how can Oh be under oath?");
             }
             else if (dialogue === 9)
@@ -1301,7 +1301,7 @@ can start the quiz.");
                     $("#RaceRight1").hide();
                 });
                 $("#OhRight1").show();
-                $("#OhRight1").animate({right: '12%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Oh:</b> And I’d be the best testimony ever to grace a courtroom. You can count on that.");
             }
             else if (dialogue === 11)
@@ -1346,7 +1346,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> It’s a reference to the algorithmic problem of constructing the shortest possible path on a graph that visits each vertex exactly once and returns to the start. It’s an NP-complete problem that is very difficult to complete.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1391,7 +1391,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#OhRight1").show();
-                $("#OhRight1").animate({right: '12%'});
+                $("#OhRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Oh:</b> Yeah, I’m sure you’ll pass an algorithms class with that answer.");
             }
             else if (dialogue === 8)
@@ -1404,7 +1404,7 @@ can start the quiz.");
                     $("#OhRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> The O(n<sup>12</sup>) algorithm?");
             }
             else if (dialogue === 10)
@@ -1457,7 +1457,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> Careful. We mustn’t use the C word in front of Nator.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1476,7 +1476,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> Hey, I believe in the mark on the hand being a side effect of having the Charevo Gene, but I just don’t think it’s based on anything else. There are no elements involved in it.");
             }
             else if (dialogue === 4)
@@ -1494,7 +1494,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> Anyway, it’s a good thing Nator knew binary or we would never have found the twins.");
             }
             else if (dialogue === 6)
@@ -1512,7 +1512,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> Well, I stopped you the first time. So I think it proves I’m not as dumb as a plant as you might say.");
             }
             else if (dialogue === 8)
@@ -1573,7 +1573,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> It’s pretty simple since you just have to think of how they would respond differently versus how they would respond identically.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1592,7 +1592,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> I think he just wanted to get me out of his way first.");
             }
             else if (dialogue === 4)
@@ -1610,7 +1610,7 @@ can start the quiz.");
                     $("#Tel-ERight1").hide();
                 });
                 $("#OneRight1").show();
-                $("#OneRight1").animate({right: '12%'});
+                $("#OneRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>One:</b> Also, he needed a girl’s help on how to think of a way to fight us. I’m surprised he was able to swallow his pride at all for that.");
             }
             else if (dialogue === 6)
@@ -1628,7 +1628,7 @@ can start the quiz.");
                     $("#OneRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '12%'});
+                $("#Tel-ERight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Tel-E:</b> Why thank you, Nator. Ahem. Well, since One can only tell the truth and Oh can only lie, when asked who the liar is, they will give different answers. To get the same response, we simply negate Oh's answer . . .");
             }
             else if (dialogue === 8)
@@ -1682,7 +1682,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> This is based on how in computer science, a boolean variable can't be assigned both a true and false value. Doing this would only produce an error. Therefore, One couldn't talk.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1701,7 +1701,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '12%'});
+                $("#BeautyRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Beauty:</b> I feel like that was less of Nator being clever and more of our creator just trying to point out why One doesn't just copy Oh's powers and why Oh doesn't shapeshift into One so they could have all of each other's powers.");
             }
             else if (dialogue === 4)
@@ -1728,7 +1728,7 @@ can start the quiz.");
                     $("#BeautyRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '12%'});
+                $("#NatorRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>Nator:</b> I wouldn't do that! If there's one thing I'd point out, it's why Tel-E didn't figure out your plan from the beginning with her telepathy. If she did, we wouldn't have had to deal with the twins.");
             }
             else if (dialogue === 7)
@@ -1746,7 +1746,7 @@ can start the quiz.");
                     $("#NatorRight1").hide();
                 });
                 $("#OneRight1").show();
-                $("#OneRight1").animate({right: '12%'});
+                $("#OneRight1").animate({right: '22%'});
                 $("#dialogue").html("<b>One:</b> And then Nator REALLY wouldn't be featured in this.");
             }
             else if (dialogue === 9)
