@@ -5,6 +5,46 @@
  */
 $(document).ready(function(){
     
+    character = sessionStorage.getItem("SessionCharacter");
+    
+    $("#paddingdiv").attr("style", "height: " + (window.screen.height / 2) + "px");
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+
+
+    if (character === "Beauty")
+    {
+        document.getElementById("hero").src = "images/beautyright1.png";
+        document.getElementById("hero").alt = "Beauty Placeholder";
+        
+        document.getElementById("villain").src = "images/fourizeright1.png";
+        document.getElementById("villain").alt = "Fourize Placeholder";
+        
+        document.getElementById("oth").src = "images/chiefright1.png";
+        document.getElementById("oth").alt = "Chief Placeholder";
+    }
+    else if (character === "Tel-E")
+    {
+       document.getElementById("hero").src = "images/tel-eright1.png";
+       document.getElementById("hero").alt = "Tel-E Placeholder";
+       
+       document.getElementById("villain").src = "images/fergusonright1.png";
+       document.getElementById("villain").alt = "Christy Ferguson Placeholder";
+       
+       document.getElementById("oth").src = "images/chiefright1.png";
+       document.getElementById("oth").alt = "Chief Placeholder";
+    }
+    else if (character === "Pyra")
+    {
+        document.getElementById("hero").src = "images/pyraright1.png";
+        document.getElementById("hero").alt = "Pyra Placeholder";
+        
+        document.getElementById("villain").src = "images/trainorright1.png";
+        document.getElementById("villain").alt = "Whitney Trainor Placeholder";
+        
+        document.getElementById("oth").src = "images/chiefright1.png";
+        document.getElementById("oth").alt = "Chief Placeholder";
+    }
+    
     $("#heroes").click(function(){
         $("#heroesdiv").collapse("toggle");
     });

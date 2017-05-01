@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 $(document).ready(function() {
+    
+    $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.outerHeight + "px");
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
 
     $("#score").hide();
     $("#prevlevel1a").attr("style", "opacity: .6");
@@ -262,7 +265,7 @@ can start the quiz.");
                 });
                 $("#BeautyLeft1").show();
                 $("#BeautyLeft1").animate({left: '22%'});
-                $("#dialogue").html("<b>Beauty:</b> Fun fact: Trainor is named after singer Meghan Trainor. When our creator wanted a pop star villain, he decided to give her a real pop star's name. As it turns out, Trainor was the only he liked, so the name was chosen.");
+                $("#dialogue").html("<b>Beauty:</b> Fun fact: Trainor is named after singer Meghan Trainor. When our creator wanted a pop star villain, he decided to give her a real pop star's name. As it turns out, Trainor was the only one he liked, so the name was chosen.");
 
             }
             else if (dialogue === 7)

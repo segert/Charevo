@@ -8,6 +8,7 @@
 $(document).ready(function() {
 
     character = sessionStorage.getItem("SessionCharacter");
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
  
 
     if (character === "Tel-E")

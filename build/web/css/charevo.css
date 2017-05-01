@@ -164,6 +164,37 @@ section {
     border-radius: 25px;
 }
 
+.beautyblogfront{
+    padding-top: 2%; 
+    width: 65vw; 
+    //width: 870px;
+    float:left; 
+    //margin:0 0.7px 0.2px 0; 
+    border:2px solid #3B587E; 
+    background:#FFFFFF;
+    border-radius: 25px;
+    padding-bottom: 130px;
+    margin-bottom: 50px;
+    position: relative; 
+    left: 0%;
+    border-width: 20px;
+    display:block;
+    //border-style: solid;
+}
+
+.beautyblogtitle{
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    height: 115px;
+    background-color: whitesmoke;
+    width: 60vw;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
 .characterheader{
     position: relative; 
     left: 0%;
@@ -187,7 +218,7 @@ section {
 
 .charevofairy{
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     cursor: pointer;
 }
 
@@ -248,7 +279,7 @@ section {
 
 .footercontent{
     padding-top: 10px;
-    padding-left: 200px;
+    padding-left: 150px;
     padding-right: 5px;
     
 }
@@ -501,6 +532,34 @@ section {
     left:0;
 }
 
+.pyrablogfront{
+    padding-top: 2%; 
+    width: 65vw; 
+    //width: 870px;
+    float:left; 
+    //margin:0 0.7px 0.2px 0; 
+    border:2px solid #3B587E; 
+    background:#FFFFFF;
+    border-radius: 25px;
+    padding-bottom: 130px;
+    margin-bottom: 50px;
+    position: relative; 
+    left: 0%;
+    border-width: 20px;
+    //border-style: solid;
+}
+
+.pyrablogtitle{
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    height: 115px;
+    background-color: whitesmoke;
+    width: 60vw;
+    padding: 10px;
+}
+
 .quizheading{
     width: 70%;
     background-color: #99ccff;
@@ -714,6 +773,34 @@ section {
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
+}
+
+.teleblogfront{
+    padding-top: 2%; 
+    width: 65vw; 
+    //width: 870px;
+    float:left; 
+    //margin:0 0.7px 0.2px 0; 
+    border:2px solid #3B587E; 
+    background:#FFFFFF;
+    border-radius: 25px;
+    padding-bottom: 130px;
+    margin-bottom: 50px;
+    position: relative; 
+    left: 0%;
+    border-width: 20px;
+    //border-style: solid;
+}
+
+.teleblogtitle{
+    position: relative;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    height: 115px;
+    background-color: whitesmoke;
+    width: 60vw;
+    padding: 10px;
 }
 
 .tempfooters{

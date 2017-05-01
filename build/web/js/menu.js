@@ -22,12 +22,36 @@ $(document).ready(function() {
         $(this).animate({backgroundColor: color, color: "#000000"}, 400);
     });
     
-    var position = $("#test2").position();
+    var position = $("#test").position();
     $("#testmenu").css({"position": "fixed", "left": position.left});
     
     $( window ).resize(function() {
-        var position2 = $("#test2").position();
-        $("#testmenu").css({"position": "fixed", "left": position2.left});
+        var position12 = $("#test").position();
+        $("#testmenu").css({"position": "fixed", "left": position12.left});
+    });
+    
+    var position2 = $("#test2").position();
+    $("#testmenu2").css({"position": "fixed", "left": position2.left});
+    
+    $( window ).resize(function() {
+        var position22 = $("#test2").position();
+        $("#testmenu2").css({"position": "fixed", "left": position22.left});
+    });
+    
+    var position3 = $("#test3").position();
+    $("#testmenu3").css({"position": "fixed", "left": position3.left});
+    
+    $( window ).resize(function() {
+        var position32 = $("#test3").position();
+        $("#testmenu3").css({"position": "fixed", "left": position32.left});
+    });
+    
+    var position4 = $("#test4").position();
+    $("#testmenu4").css({"position": "fixed", "left": position4.left});
+    
+    $( window ).resize(function() {
+        var position42 = $("#test4").position();
+        $("#testmenu4").css({"position": "fixed", "left": position42.left});
     });
 });
 

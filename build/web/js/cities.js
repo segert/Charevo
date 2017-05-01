@@ -6,6 +6,7 @@
 
 $(document).ready(function() {
 
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
 
     $("#MinorCity").click(function() {
         $("#cityinfo").empty();

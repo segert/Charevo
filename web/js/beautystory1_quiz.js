@@ -5,6 +5,9 @@
  */
 
 $(document).ready(function() {
+    
+    $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.screen.height + "px");
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
 
     $("#score").hide();
     $("#prevlevel1a").attr("style", "opacity: .6");

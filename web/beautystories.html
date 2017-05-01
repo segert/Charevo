@@ -38,39 +38,49 @@ and open the template in the editor.
 
         <nav>
             <ul class = "ulmenu1" >
-                <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
-                <li id = "test2" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
+                <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
+                <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
                     <ul id = "testmenu" class = "sub-menu" >
                         <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
                         <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
-                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li>
+                        <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
                     </ul>
                 </li>
-                <li class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
-                    <ul class = "sub-menu" style = "left: 42.9%;">
+                <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                    <ul id="testmenu2" class = "sub-menu" >
                         <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
 
                     </ul>
                 </li>
 
-                <li class = "li-a-menu1-selected"> <a class = "menu-selected" href="#stories"><b>Stories</b></a>
-                    <ul class = "sub-menu-selected" style = "left: 48.2%;">
-                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html?char=Beauty"><b>Beauty Short Stories</b></a></li>
+                <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                    <ul id= "testmenu3" class = "sub-menu" >
+                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html"><b>Beauty Short Stories</b></a></li>
 
                     </ul>
                 </li>
-                <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+               <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
 
+                </li> -->
+                <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                    <ul id= "testmenu4" class = "sub-menu">
+                        <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="switchcharacter.html"><b>Switch Character</b></a></li>
+                        <li class = "liabout"> <a id = "blog" class = "liabout-a" href="blog.html"><b>Blog</b></a></li>
+                    </ul>
                 </li>
+
             </ul>
+
+
         </nav>
 
 
 
 
         <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 600px;">
-            <div id="main-wrapper" class="page-wrap">
-                <div style="margin-left: 13%;">
+            <h1 class = "heading" style="width: 100vw;">Beauty Stories</h1>
+            <div id="main-wrapper" class="page-wrap" style="margin-bottom: -300px">
+                <div style="margin-left: 13%; margin-top: 70px; ">
                     <a id = "story1" onmouseover = "storydescription(1);" href = "Beauty-Short-Stories.pdf" 
                        class = "storybutton" style = ""><b>A Minor Cold (that leads to a colossal failure)</b></a>
                     <a id = "story2" onmouseover = "storydescription(2);" href = "Beauty-Short-Stories.pdf#page=40" 
@@ -81,6 +91,8 @@ and open the template in the editor.
                        class = "storybutton" style = ""><b>To Love or to Die (as in me or you will)</b></a>
                     <a id = "story5" onmouseover = "storydescription(5);" href = "Beauty-Short-Stories.pdf#page=167" 
                        class = "storybutton" style = ""><b>This Title is False (or I am true)</b></a>
+                       
+                       <img style="position: absolute; right: 100px; top: 150px;" id = "storycharacter" src="" alt="" width="400" height="500"> 
                 </div>
 
             </div>
@@ -95,7 +107,7 @@ and open the template in the editor.
                             <ul class="subfooterlist">
                                 <li><a href="characters.html">Characters</a></li>
                                 <li><a href="charevogene.html">Charevo Gene</a></li>
-                                <li><a href="cities.html">Cities</a></li>
+                                <!-- <li><a href="cities.html">Cities</a></li> -->
                             </ul>
                         </li>
                         <li>

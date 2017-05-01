@@ -5,6 +5,9 @@
  */
 
 $(document).ready(function() {
+    
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    
     x = 0;
 
     NewBehavior();

@@ -28,7 +28,8 @@ and open the template in the editor.
         <style>
             .carousel-inner > .item > img,
             .carousel-inner > .item > a > img {
-                width: 70%;
+                width: 500px;
+                height: 500px;
                 margin: auto;
             }
         </style>
@@ -52,38 +53,47 @@ and open the template in the editor.
         </form>
         <nav>
             <ul class = "ulmenu1" >
-                <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
-                <li id = "test2" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
+                <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
+                <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
                     <ul id = "testmenu" class = "sub-menu" >
                         <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
                         <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
-                        <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li>
+                        <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
                     </ul>
                 </li>
-                <li class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
-                    <ul class = "sub-menu" style = "left: 42.9%;">
+                <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                    <ul id="testmenu2" class = "sub-menu" >
                         <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
-                    
+
                     </ul>
                 </li>
 
-                <li class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
-                    <ul class = "sub-menu" style = "left: 48.2%;">
+                <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                    <ul id= "testmenu3" class = "sub-menu" >
                         <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html"><b>Beauty Short Stories</b></a></li>
 
                     </ul>
                 </li>
-                <li class = "li-a-menu1-selected"> <a id = "switch" class = "menu-selected" href="switchcharacter.html"><b>Switch Character</b></a>
-                    
+               <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+
+                </li> -->
+                <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                    <ul id= "testmenu4" class = "sub-menu">
+                        <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="switchcharacter.html"><b>Switch Character</b></a></li>
+                        <li class = "liabout"> <a id = "blog" class = "liabout-a" href="blog.html"><b>Blog</b></a></li>
+                    </ul>
                 </li>
+
             </ul>
+
+
         </nav>
 
-        <section style = "margin-top: 60px; padding-bottom: 100px; width: 100vw;  height: 160%;">
+        <section style = "margin-top: 60px; padding-bottom: 100px; width: 100vw;  height: 800px;">
             <h1 class="heading" style = "left: 0px;  margin-bottom: 10%;">Select a Character</h1>
             <div id="main-wrapper" class="page-wrap">
             <div style="margin-top: 50px;"></div>
-            <div class="container" style = "z-index: 0; position: absolute; top: 120px;">
+            <div class="container" style = "z-index: 0; position: absolute; margin-left: 5%; top: 120px;">
                 
                 <br>
                 <div id="myCarousel" class="carousel slide" style="margin-top: 35px; " data-ride="carousel">
@@ -95,7 +105,7 @@ and open the template in the editor.
                     </ol>
 
                     <!-- Wrapper for slides -->
-                    <ul class="carousel-inner" >
+                    <ul class="carousel-inner" style="height: 70%;">
                         
                         <li class="item active" id = "0">
                         
@@ -156,7 +166,7 @@ and open the template in the editor.
                             <ul class="subfooterlist">
                                 <li><a href="characters.html">Characters</a></li>
                                 <li><a href="charevogene.html">Charevo Gene</a></li>
-                                <li><a href="cities.html">Cities</a></li>
+                                <!-- <li><a href="cities.html">Cities</a></li> -->
                             </ul>
                         </li>
                         <li>
