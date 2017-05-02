@@ -9,7 +9,8 @@ $(document).ready(function(){
     
     $("#paddingdiv").attr("style", "height: " + (window.screen.height / 2) + "px");
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
-
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
     if (character === "Beauty")
     {

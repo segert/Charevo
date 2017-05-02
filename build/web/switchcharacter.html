@@ -11,20 +11,20 @@ and open the template in the editor.
         <title>Charevo</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-        
+
         <link href='styles.css?version=2' rel='stylesheet'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        
+
         <script src="js/switchcharacter.js"></script>
         <script src="js/menu.js"></script>
         <link href="css/charevo.css" rel="stylesheet" type="text/css">
         <link href="css/custom.css" rel="stylesheet" type="text/css">
-        
+
         <style>
             .carousel-inner > .item > img,
             .carousel-inner > .item > a > img {
@@ -33,127 +33,155 @@ and open the template in the editor.
                 margin: auto;
             }
         </style>
-     
+
 
 
     </head>
 
     <body ng-app="Demo">
 
-        <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+        <div id="maindiv">
 
-            <!-- <p>Selected state: {{ state }}</p> -->
-            <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
-            <span>
-                <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
-                    <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
-                </button> 
-                <input type="submit" style="display: none"/>
-            </span>
-        </form>
-        <nav>
-            <ul class = "ulmenu1" >
-                <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
-                <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
-                    <ul id = "testmenu" class = "sub-menu" >
-                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
-                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
-                        <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
-                    </ul>
-                </li>
-                <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
-                    <ul id="testmenu2" class = "sub-menu" >
-                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+            <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
 
-                    </ul>
-                </li>
+                <!-- <p>Selected state: {{ state }}</p> -->
+                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                <span>
+                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                        <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                    </button> 
+                    <input type="submit" style="display: none"/>
+                </span>
+            </form>
 
-                <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
-                    <ul id= "testmenu3" class = "sub-menu" >
-                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html"><b>Beauty Short Stories</b></a></li>
+            <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+                   <div  ng-controller="DemoCtrl as vm">
+               <div >
+                   <div ng-keyup="$event.keyCode === 13 && vm.goToPage()">
+                       <div sui-select indicating-text="select a page" on-select="vm.onSelect(model)" options="vm.countryOptions" model="vm.selected" label="Country: " searchable="true" disabled=""></div>
+                       <span>
+                       <button type="button" class="btn" style ="z-index: 2" ng-click="vm.goToPage()" >
+                           <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                       </button> 
+                       <input type="submit" style="display: none"/>
+                   </span> 
+                   </div>
+                   
+               </div>
+       
+                      
+           </div>
+        
+               </form> -->
 
-                    </ul>
-                </li>
-               <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+            <nav>
+                <ul class = "ulmenu1" >
+                    <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
+                        <ul id = "testmenu" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
+                            <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
+                            <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
+                        </ul>
+                    </li>
+                    <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                        <ul id="testmenu2" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
 
-                </li> -->
-                <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
-                    <ul id= "testmenu4" class = "sub-menu">
-                        <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="switchcharacter.html"><b>Switch Character</b></a></li>
-                        <li class = "liabout"> <a id = "blog" class = "liabout-a" href="blog.html"><b>Blog</b></a></li>
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
 
-            </ul>
+                    <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                        <ul id= "testmenu3" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html"><b>Beauty Short Stories</b></a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+     
+                     </li> -->
+                    <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                        <ul id= "testmenu4" class = "sub-menu">
+                            <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="switchcharacter.html"><b>Switch Character</b></a></li>
+                            <li class = "liabout"> <a id = "blog" class = "liabout-a" href="blog.html"><b>Blog</b></a></li>
+                        </ul>
+                    </li>
+
+                </ul>
 
 
-        </nav>
+            </nav>
+            <!--    <div style="width: 100%; position: absolute; top: 43px;">
+                   <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
+               </div>
+            --> 
+        </div>
 
         <section style = "margin-top: 60px; padding-bottom: 100px; width: 100vw;  height: 800px;">
             <h1 class="heading" style = "left: 0px;  margin-bottom: 10%;">Select a Character</h1>
             <div id="main-wrapper" class="page-wrap">
-            <div style="margin-top: 50px;"></div>
-            <div class="container" style = "z-index: 0; position: absolute; margin-left: 5%; top: 120px;">
-                
-                <br>
-                <div id="myCarousel" class="carousel slide" style="margin-top: 35px; " data-ride="carousel">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                        <li id = "a0" data-target="#myCarousel" data-slide-to="0"  class = "active" style = "background-color: blue;" ></li>
-                        <li id = "a1" data-target="#myCarousel" data-slide-to="1" style = "background-color: blue;"></li>
-                        <li id = "a2" data-target="#myCarousel" data-slide-to="2" style = "background-color: blue;"></li>
-                    </ol>
+                <div style="margin-top: 50px;"></div>
+                <div class="container" style = "z-index: 0; position: absolute; margin-left: 5%; top: 120px;">
 
-                    <!-- Wrapper for slides -->
-                    <ul class="carousel-inner" style="height: 70%;">
-                        
-                        <li class="item active" id = "0">
-                        
-                            <a href = "index.html?char=Beauty">
-                            <img src="images/beautyleft1.png" alt="Beauty PlaceHolder" width="10" height="10">
-                            
-                            <div class="carousel-caption">
-                                
-                                <h3>Beauty</h3>
-                            </div>
-                            </a>
-                            
-                        </li>
+                    <br>
+                    <div id="myCarousel" class="carousel slide" style="margin-top: 35px; " data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li id = "a0" data-target="#myCarousel" data-slide-to="0"  class = "active" style = "background-color: blue;" ></li>
+                            <li id = "a1" data-target="#myCarousel" data-slide-to="1" style = "background-color: blue;"></li>
+                            <li id = "a2" data-target="#myCarousel" data-slide-to="2" style = "background-color: blue;"></li>
+                        </ol>
 
-                        <li class="item" id = "1">
-                            <a href = "index.html?char=Tel-E">
-                            <img src="images/tel-eleft1.png" alt="Tel-E PlaceHolder" width="10" height="10">
-                            <div class="carousel-caption">
-                                <h3>Tel-E</h3>
-                            </div>
-                            </a>
-                            
-                        </li>
+                        <!-- Wrapper for slides -->
+                        <ul class="carousel-inner" style="height: 70%;">
 
-                        <li class="item" id = "2">
-                            <a href = "index.html?char=Pyra">
-                            <img src="images/pyraleft1.png" alt="Pyra PlaceHolder" width="10" height="10">
-                            <div class="carousel-caption">
-                                <h3>Pyra</h3>
-                            </div>
-                            </a>
-                        </li>
+                            <li class="item active" id = "0">
+
+                                <a href = "index.html?char=Beauty">
+                                    <img src="images/beautyleft1.png" alt="Beauty PlaceHolder" width="10" height="10">
+
+                                    <div class="carousel-caption">
+
+                                        <h3>Beauty</h3>
+                                    </div>
+                                </a>
+
+                            </li>
+
+                            <li class="item" id = "1">
+                                <a href = "index.html?char=Tel-E">
+                                    <img src="images/tel-eleft1.png" alt="Tel-E PlaceHolder" width="10" height="10">
+                                    <div class="carousel-caption">
+                                        <h3>Tel-E</h3>
+                                    </div>
+                                </a>
+
+                            </li>
+
+                            <li class="item" id = "2">
+                                <a href = "index.html?char=Pyra">
+                                    <img src="images/pyraleft1.png" alt="Pyra PlaceHolder" width="10" height="10">
+                                    <div class="carousel-caption">
+                                        <h3>Pyra</h3>
+                                    </div>
+                                </a>
+                            </li>
 
 
-                    </ul>
+                        </ul>
 
-                    <!-- Left and right controls -->
-                     <a class="left carousel-control" style = "background-color: blue;" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" style = "background-color: blue;" href="#myCarousel" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" style = "background-color: blue;" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" style = "background-color: blue;" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            
+
             </div>
             <footer id = "footer" class = "site-footer" style="left: -.8%; width: 100%;">
                 <div class = "footercontent" style="padding-left: 200px;">
@@ -182,7 +210,11 @@ and open the template in the editor.
                             </ul>
                         </li>
                         <li>
-                            <a href="switchcharacter.html"><b>Switch Character</b></a>
+                            <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="switchcharacter.html">Switch Character</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -205,7 +237,7 @@ and open the template in the editor.
 
 
         </div>
-        
+
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="js/select_page.js" type="text/javascript"></script>

@@ -15,163 +15,175 @@ and open the template in the editor.
         <link href="css/custom.css" rel="stylesheet" type="text/css">
         <link href="css/charevo.css" rel="stylesheet" type="text/css">
         <link href='styles.css?version=2' rel='stylesheet'>
-        
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="js/menu.js"></script>
         <!-- <script src="js/charevo.js"></script> -->
         <script src="js/quizjs.js"></script>
-        
+
 
     </head>
 
     <body ng-app="Demo">
 
-        <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+        <div id="maindiv">
 
-            <!-- <p>Selected state: {{ state }}</p> -->
-            <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
-            <span>
-                <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
-                    <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
-                </button> 
-                <input type="submit" style="display: none"/>
-            </span>
-        </form>
-        <nav>
-            <ul class = "ulmenu1" >
-                <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
-                <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
-                    <ul id = "testmenu" class = "sub-menu" >
-                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
-                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
-                        <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
-                    </ul>
-                </li>
-                <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
-                    <ul id="testmenu2" class = "sub-menu" >
-                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+            <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
 
-                    </ul>
-                </li>
-
-                <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
-                    <ul id= "testmenu3" class = "sub-menu" >
-                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html"><b>Beauty Short Stories</b></a></li>
-
-                    </ul>
-                </li>
-               <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
-
-                </li> -->
-                <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
-                    <ul id= "testmenu4" class = "sub-menu">
-                        <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="switchcharacter.html"><b>Switch Character</b></a></li>
-                        <li class = "liabout"> <a id = "blog" class = "liabout-a" href="blog.html"><b>Blog</b></a></li>
-                    </ul>
-                </li>
-
-            </ul>
+                <!-- <p>Selected state: {{ state }}</p> -->
+                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                <span>
+                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                        <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                    </button> 
+                    <input type="submit" style="display: none"/>
+                </span>
+            </form>
 
 
-        </nav>
+            <nav>
+                <ul class = "ulmenu1" >
+                    <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
+                        <ul id = "testmenu" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
+                            <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
+                            <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
+                        </ul>
+                    </li>
+                    <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                        <ul id="testmenu2" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
 
-        
-        
-        
+                        </ul>
+                    </li>
+
+                    <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                        <ul id= "testmenu3" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html"><b>Beauty Short Stories</b></a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+     
+                     </li> -->
+                    <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                        <ul id= "testmenu4" class = "sub-menu">
+                            <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="switchcharacter.html"><b>Switch Character</b></a></li>
+                            <li class = "liabout"> <a id = "blog" class = "liabout-a" href="blog.html"><b>Blog</b></a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+            </nav>
+
+        </div>
+
+
+
+
         <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 110%;">
             <div id="main-wrapper" class="page-wrap">
-            <h1 class = "heading" style="width: 100vw;">Beauty Quizzes</h1>
-            <div style="margin-left: 13%;">
-            <table class = "quiztable" style = "margin-top: 60px;">
-                <tr style = "background-color: darkslateblue; color: white;">
-                    <th>Level</th>
-                    <th>Story</th>
-                    <th>Questions</th>
-                </tr>
-                <tr style = "margin-bottom: 5%;">
-                    <td><a href = "Quizzes/beautystory1_quiz.html" onclick = "alert('Did you read &#34A Minor Cold (that leads to a colossal failure)&#34? Spoilers ahead!');">Level 1</a></td>
-                    <td>A Minor Cold (that leads to a colossal failure)</td>
-                    <td>15</td>
-                </tr>
-                <tr>
-                    <td><a href = "Quizzes/beautystory2_quiz.html" onclick = "alert('Did you read &#34Knowledge is Power (and none is just funny)&#34? Spoilers ahead!');">Level 2</a></td>
-                    <td>Knowledge is Power (and none is just funny)</td>
-                    <td>16</td>
-                </tr>
-                <tr>
-                    <td><a href = "Quizzes/beautystory3_quiz.html" onclick = "alert('Did you read &#34Truth or Dare (the choice is obvious)&#34? Spoilers ahead!');">Level 3</a></td>
-                    <td>Truth or Dare (the choice is obvious)</td>
-                    <td>15</td>
-                </tr>
-                <tr>
-                    <td><a href = "Quizzes/beautystory4_quiz.html" onclick = "alert('Did you read &#34To Love or to Die (as in me or you will)&#34? Spoilers ahead!');">Level 4</a></td>
-                    <td>To Love or to Die (as in me or you will)</td>
-                    <td>15</td>
-                </tr>
-                <tr>
-                    <td><a href = "Quizzes/beautystory5_quiz.html" onclick = "alert('Did you read &#34This Title is False (or I am true)&#34? Spoilers ahead!');">Level 5</a></td>
-                    <td>This Title is False (or I am true)</td>
-                    <td>17</td>
-                </tr>
-            </table>
-                
-                <img style="position: absolute; right: 50px; top: 100px;" id = "quizcharacter" src="images/beautyright1.png" alt="Beauty Placeholder" width="400" height="500">
-                
+                <h1 class = "heading" style="width: 100vw;">Beauty Quizzes</h1>
+                <div style="margin-left: 13%;">
+                    <table class = "quiztable" style = "margin-top: 60px;">
+                        <tr style = "background-color: darkslateblue; color: white;">
+                            <th>Level</th>
+                            <th>Story</th>
+                            <th>Questions</th>
+                        </tr>
+                        <tr style = "margin-bottom: 5%;">
+                            <td><a href = "Quizzes/beautystory1_quiz.html" onclick = "alert('Did you read &#34A Minor Cold (that leads to a colossal failure)&#34? Spoilers ahead!');">Level 1</a></td>
+                            <td>A Minor Cold (that leads to a colossal failure)</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td><a href = "Quizzes/beautystory2_quiz.html" onclick = "alert('Did you read &#34Knowledge is Power (and none is just funny)&#34? Spoilers ahead!');">Level 2</a></td>
+                            <td>Knowledge is Power (and none is just funny)</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td><a href = "Quizzes/beautystory3_quiz.html" onclick = "alert('Did you read &#34Truth or Dare (the choice is obvious)&#34? Spoilers ahead!');">Level 3</a></td>
+                            <td>Truth or Dare (the choice is obvious)</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td><a href = "Quizzes/beautystory4_quiz.html" onclick = "alert('Did you read &#34To Love or to Die (as in me or you will)&#34? Spoilers ahead!');">Level 4</a></td>
+                            <td>To Love or to Die (as in me or you will)</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td><a href = "Quizzes/beautystory5_quiz.html" onclick = "alert('Did you read &#34This Title is False (or I am true)&#34? Spoilers ahead!');">Level 5</a></td>
+                            <td>This Title is False (or I am true)</td>
+                            <td>17</td>
+                        </tr>
+                    </table>
+
+                    <img style="position: absolute; right: 50px; top: 100px;" id = "quizcharacter" src="images/beautyright1.png" alt="Beauty Placeholder" width="400" height="500">
+
+                </div>
+
+
+
+
+                <script>
+
+                    character = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
+
+                    document.getElementById("quizcharacter").width = (window.screen.width / 3.2);
+                    document.getElementById("quizcharacter").height = (window.screen.height / 1.44);
+                    $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.screen.height + "px");
+
+
+                </script>
             </div>
-
-
-            
-
-            <script>
-
-                character = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
-
-                document.getElementById("quizcharacter").width = (window.screen.width / 3.2);
-                document.getElementById("quizcharacter").height = (window.screen.height / 1.44);
-                $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.screen.height + "px");
-                
-
-            </script>
-            </div>
-            <footer id = "footer" class = "site-footer" style="left: -1%;">
+            <footer id = "footer" class = "site-footer">
                 <div class = "footercontent">
-                    <ul class="footerlist">
-                        <li>
-                            <a href="index.html"><b>Home</b></a>
-                        </li>
-                        <li>
-                            <a href="#About"><b>About</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="characters.html">Characters</a></li>
-                                <li><a href="charevogene.html">Charevo Gene</a></li>
-                               <!-- <li><a href="cities.html">Cities</a></li> -->
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#Quiz"><b>Quiz</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#Stories"><b>Stories</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="switchcharacter.html"><b>Switch Character</b></a>
-                        </li>
-                    </ul>
+                    <div id="maindiv2">
+                        <ul class="footerlist">
+                            <li>
+                                <a href="index.html"><b>Home</b></a>
+                            </li>
+                            <li>
+                                <a href="#About"><b>About</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="characters.html">Characters</a></li>
+                                    <li><a href="charevogene.html">Charevo Gene</a></li>
+                                    <!-- <li><a href="cities.html">Cities</a></li> -->
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Quiz"><b>Quiz</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Stories"><b>Stories</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="switchcharacter.html">Switch Character</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class = "footercontent2">
                     <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                    <div style="position: absolute; left: 47%;">
+                        <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
+                    </div>
                 </div>
-                <script>
-                    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
-                </script>
             </footer>
         </section>
 
@@ -189,12 +201,15 @@ and open the template in the editor.
 
 
         </div>
-        
+
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="js/select_page.js" type="text/javascript"></script>
         <script src="js/search_list.js" type="text/javascript"></script>
-        
-        
+        <script>
+                $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+                //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+        </script>
+
     </body>
 </html>

@@ -10,6 +10,10 @@
 $(document).ready(function() {
     
         $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+        $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+        //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+        document.getElementById("character").width = (window.screen.width / 3.2);
+        document.getElementById("character").height = (window.screen.height / 1.44);
 
         var characters = ["Beauty", "Tel-E", "Pyra"];
         //switchcharacter = "";
@@ -44,7 +48,7 @@ $(document).ready(function() {
 
     if (character === "Beauty")
     {
-        document.getElementById("d").innerHTML = beautyBold + "Hi there. I'm Beauty. And welcome to the Charevo website! I'll be your guide for this site. Just keep an eye on this dialogue box for what I have to say and just press the Next and Prev buttons.";
+        document.getElementById("d").innerHTML = beautyBold + "Hi there. I'm Beauty. And welcome to the Charevo website! I'll be your host and guide for this site. Just keep an eye on this dialogue box for what I have to say and just press the Next and Prev buttons.";
         document.getElementById("character").src = "images/beautyleft1.png";
         document.getElementById("character").alt = "Beauty Placeholder";
         max = 6;

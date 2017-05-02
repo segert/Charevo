@@ -503,6 +503,7 @@ section {
     border-style: solid;
     border-color: #a94442;
     height: 90%;
+    overflow: auto;
     
 }
 

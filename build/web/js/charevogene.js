@@ -9,6 +9,8 @@ $(document).ready(function () {
 
     character = sessionStorage.getItem("SessionCharacter");
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
     dialogue = 1;
     max = 0;

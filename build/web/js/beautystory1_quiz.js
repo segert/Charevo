@@ -8,6 +8,8 @@ $(document).ready(function() {
     
     $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.screen.height + "px");
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
     $("#score").hide();
     $("#prevlevel1a").attr("style", "opacity: .6");
