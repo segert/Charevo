@@ -8,6 +8,9 @@
 
 
 $(document).ready(function() {
+
+    
+    
     var color;
     $(".li-a-menu1:not(.li-a-menu1-selected)").mouseover(function() {
         color = $(".limenu1:not(.li-a-menu1-selected)").css( "background-color" );
@@ -22,6 +25,58 @@ $(document).ready(function() {
         $(this).animate({backgroundColor: color, color: "#000000"}, 400);
     });
     
+    document.getElementById("searchIcon").width = (window.screen.width * .015625);
+    document.getElementById("searchIcon").height = (window.screen.height * .0277777);
+    
+    $("footer").css({"width": window.screen.width});
+    $("section").css({"width": window.screen.width});
+    
+    $(".footerlist td").attr("style", "padding-right: " + (window.screen.width / 16) + "px");
+        $(".footerlist th").attr("style", "padding-right: " + (window.screen.width / 16) + "px");
+        
+        $(".footercontent").css({"padding-left": (window.screen.width / 13)});
+    
+    //$(".footerlist td").css({"font": "14px arial, sans-serif"});
+    
+    
+    var menuposition = document.getElementById("menudiv").clientHeight;
+    if(window.screen.width > 700)
+        $("#formdiv").css({"position": "relative", "background-color": "#98CAAA", "width": "100%", "height": (menuposition + 5) + "px", "top": menuposition + "px",});
+    else
+        $("#formdiv").css({"position": "relative", "background-color": "#98CAAA", "width": "100%", "height": (menuposition + 15) + "px", "top": menuposition + "px",});
+    
+    $(".footers").css({"width": window.screen.width});
+    $(".footers").css({"height": (window.screen.height / 6)});
+
+    
+    $(window).resize(function(){
+        $(".footerlist td").attr("style", "padding-right: " + (window.screen.width / 16) + "px");
+        $(".footerlist th").attr("style", "padding-right: " + (window.screen.width / 16) + "px");
+        
+        $(".footercontent").css({"padding-left": (window.screen.width / 13)});
+        
+        $("footer").css({"width": window.screen.width});
+        $(".footercontent").css({"width": window.screen.width});
+        $(".ulmenu1").css({"width": window.screen.width});
+        var menuposition = document.getElementById("menudiv").clientHeight;
+    $("#formdiv").css({"position": "relative", "background-color": "#98CAAA", "width": window.screen.width, "height": (menuposition + 5) + "px", "top": menuposition + "px",});
+    
+        
+        $("section").css({"width": window.screen.width});
+        
+        $(".footers").css({"width": window.screen.width});
+        $(".footers").css({"height": (window.screen.height / 6)});
+
+    })
+    
+    
+    
+    
+    
+    
+    
+    
+    
     var position = $("#test").position();
     $("#testmenu").css({"position": "fixed", "left": position.left});
     
@@ -29,7 +84,7 @@ $(document).ready(function() {
         var position123 = $("#test").position();
         var windowposition = $(window).scrollLeft();
         $("#testmenu").css({"position": "fixed", "left": (position123.left - windowposition)});
-    })
+    });
     $( window ).resize(function() {
         var position12 = $("#test").position();
         var windowposition = $(window).scrollLeft();
@@ -43,7 +98,7 @@ $(document).ready(function() {
         var position123 = $("#test2").position();
         var windowposition = $(window).scrollLeft();
         $("#testmenu2").css({"position": "fixed", "left": (position123.left - windowposition)});
-    })
+    });
     $( window ).resize(function() {
         var position22 = $("#test2").position();
         var windowposition = $(window).scrollLeft();
@@ -57,7 +112,7 @@ $(document).ready(function() {
         var position123 = $("#test3").position();
         var windowposition = $(window).scrollLeft();
         $("#testmenu3").css({"position": "fixed", "left": (position123.left - windowposition)});
-    })
+    });
     $( window ).resize(function() {
         var position32 = $("#test3").position();
         var windowposition = $(window).scrollLeft();
@@ -71,7 +126,7 @@ $(document).ready(function() {
         var position123 = $("#test4").position();
         var windowposition = $(window).scrollLeft();
         $("#testmenu4").css({"position": "fixed", "left": (position123.left - windowposition)});
-    })
+    });
     $( window ).resize(function() {
         var position42 = $("#test4").position();
         var windowposition = $(window).scrollLeft();

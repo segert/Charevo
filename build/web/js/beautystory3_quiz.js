@@ -5,9 +5,17 @@
  */
 $(document).ready(function() {
     
-    $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.outerHeight + "px");
+    $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.screen.height + "px");
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+
+    $(".quizimageleft").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
+    $(".quizimageright").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
+
+    $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .76), "height": (window.screen.height * .078), "width": (window.screen.width * .19)});
+    $("#score").css({"top": (window.screen.height * .2)});
+
 
     $("#score").hide();
     $("#prevlevel1a").attr("style", "opacity: .6");
@@ -20,7 +28,109 @@ $(document).ready(function() {
     $("#searchIcon").show();
     $("#BeautyLeft1").show();
     $("#dialogue").html("<b>Beauty:</b> Hi");
-    $("#BeautyLeft1").animate({left: '35%'});
+    $("#BeautyLeft1").animate({left: (window.screen.width * .35)});
+    
+    var position = document.getElementById("menudiv").clientHeight;
+
+
+    if (question === 0 || question === 16)
+    {
+        $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
+    }
+    else
+        $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
+    $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
+    $(".quizheading").css({"top": position, "height": (window.screen.height * .1), "width": (window.screen.width * .69)});
+    $(".submitdiv").css({"top": position, "left": (window.screen.width * .69), "height": (window.screen.height * .1), "width": (window.screen.width * .31)});
+
+    $("#formdiv").hide();
+    //$("#backquiz").show();
+
+
+
+    if (window.screen.width > 700)
+    {
+        $(".selector1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .0385)});
+        $(".selector2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .462)});
+        $(".selector3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .0385)});
+        $(".selector4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .462)});
+
+        $(".answer1label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .041)});
+        $(".answer2label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .465)});
+        $(".answer3label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .041)});
+        $(".answer4label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .465)});
+
+        $(".answer1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .069)});
+        $(".answer2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .5)});
+        $(".answer3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .069)});
+        $(".answer4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .5)});
+
+
+
+    }
+    else
+    {
+        if (question === 0 || question === 16)
+        {
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
+        }
+        else
+        {
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
+        }
+        $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
+        $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .118), "width": (window.screen.width * .25)});
+    }
+
+    $(window).resize(function () {
+        if (question === 0 || question === 16)
+        {
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
+        }
+        else
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
+
+        $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
+        $(".quizheading").css({"top": (window.screen.height * .061), "height": (window.screen.height * .1), "width": (window.screen.width * .70)});
+        $(".submitdiv").css({"top": (window.screen.height * .061), "left": (window.screen.width * .70), "height": (window.screen.height * .1), "width": (window.screen.width * .31)});
+
+        $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .76), "height": (window.screen.height * .078), "width": (window.screen.width * .19)});
+        $("#score").css({"top": (window.screen.height * .2)});
+
+        if (window.screen.width > 700)
+        {
+            $(".selector1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .0385)});
+            $(".selector2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .462)});
+            $(".selector3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .0385)});
+            $(".selector4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .462)});
+
+            $(".answer1label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .041)});
+            $(".answer2label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .465)});
+            $(".answer3label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .041)});
+            $(".answer4label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .465)});
+
+            $(".answer1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .069)});
+            $(".answer2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .5)});
+            $(".answer3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .069)});
+            $(".answer4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .5)});
+        }
+        else
+    {
+        if (question === 0 || question === 16)
+        {
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
+        }
+        else
+        {
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
+        }
+        $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
+    }
+    });
 
 
     $("#nextlevel1a").click(function() {
@@ -57,7 +167,7 @@ can start the quiz.");
                 nextline = 0;
                 //$("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
-                $("#BeautyLeft1").animate({left: '22%'});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -74,7 +184,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#TammyRight1").show();
-                $("#TammyRight1").animate({right: '22%'});
+                $("#TammyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Tammy Time:</b> Gee, I thought I was just the class clown in regular school. Who knew I’d be so popular in another classroom?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -88,11 +198,11 @@ can start the quiz.");
             }
             else if (dialogue === 4)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: '22%'});
+                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Bendy:</b> You ain’t as good as me, though. Why don’t you go back to talking to yourself while everyone else talks to me?");
             }
             else if (dialogue === 5)
@@ -106,11 +216,11 @@ can start the quiz.");
             }
             else if (dialogue === 7)
             {
-                $("#TammyRight1").animate({right: '0px'}, function() {
+                $("#TammyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#TammyRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Beauty:</b> Well, Tammy does have some cool powers. I mean, there’s self-duplication, duplication of anything she touches, flight, the ability to enlarge her head to a dangerous size . . .");
 
             }
@@ -126,11 +236,11 @@ can start the quiz.");
             }
             else if (dialogue === 10)
             {
-                $("#BeautyRight1").animate({right: '0px'}, function() {
+                $("#BeautyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BeautyRight1").hide();
                 });
                 $("#TammyRight1").show();
-                $("#TammyRight1").animate({right: '22%'});
+                $("#TammyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Tammy Time:</b> And before I got all these abilities I have right now. You like?");
 
             }
@@ -148,29 +258,29 @@ can start the quiz.");
             }
             else if (dialogue === 14)
             {
-                $("#TammyRight1").animate({right: '0px'}, function() {
+                $("#TammyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#TammyRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Beauty:</b> Nobody asked, but okay.");
             }
             else if (dialogue === 15)
             {
-                 $("#BendyLeft1").animate({left: '0px'}, function() {
+                 $("#BendyLeft1").animate({left: '-50px'}, function() {
                     $("#BendyLeft1").hide();
                 });
-                $("#BeautyRight1").animate({right: '0px'}, function() {
+                $("#BeautyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BeautyRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 2;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -187,7 +297,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CaptainDRight1").show();
-                $("#CaptainDRight1").animate({right: '22%'});
+                $("#CaptainDRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Captain D:</b> Hmph. That depends who you ask. Would you mind telling those protesting parents the Neo Brigade approves Captain D’s show for kids?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -201,20 +311,20 @@ can start the quiz.");
             }
             else if (dialogue === 4)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: '22%'});
+                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Bendy:</b> I think I already have one of those shirts. I’ll have to pass on that, D.");
             }
             else if (dialogue === 5)
             {
-                $("#CaptainDRight1").animate({right: '0px'}, function() {
+                $("#CaptainDRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#CaptainDRight1").hide();
                 });
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Race:</b> Bendy, I thought you were over this guy.");
             }
             else if (dialogue === 6)
@@ -224,11 +334,11 @@ can start the quiz.");
             }
             else if (dialogue === 7)
             {
-                $("#RaceRight1").animate({right: '0px'}, function() {
+                $("#RaceRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#RaceRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Beauty:</b> And all those other complaints I had.");
 
             }
@@ -261,20 +371,20 @@ can start the quiz.");
             }
             else if (dialogue === 14)
             {
-                 $("#BendyLeft1").animate({left: '0px'}, function() {
+                 $("#BendyLeft1").animate({left: '-50px'}, function() {
                     $("#BendyLeft1").hide();
                 });
-                $("#BeautyRight1").animate({right: '0px'}, function() {
+                $("#BeautyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BeautyRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 3;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -291,16 +401,16 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Race:</b> What are you talking about? He likes us just fine.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
             else if (dialogue === 2)
-            {$("#BeautyLeft1").animate({left: '0px'}, function() {
+            {$("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: '22%'});
+                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Pyra:</b> Yeah, but he made you the leader.");
             }
             else if (dialogue === 3)
@@ -309,11 +419,11 @@ can start the quiz.");
             }
             else if (dialogue === 4)
             {
-                $("#RaceRight1").animate({right: '0px'}, function() {
+                $("#RaceRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#RaceRight1").hide();
                 });
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '22%'});
+                $("#ChiefRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Chief:</b> Are you saying what I favor is wrong? I should take away your lunch discounts at the police station for that!");
             }
             else if (dialogue === 5)
@@ -327,40 +437,40 @@ can start the quiz.");
             }
             else if (dialogue === 7)
             {
-                $("#PyraLeft1").animate({left: '0px'}, function() {
+                $("#PyraLeft1").animate({left: '-50px'}, function() {
                     $("#PyraLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: '22%'});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Beauty:</b> Chief, take it from the girl with Fiction as a Charevo Element. (whispering) He didn’t actually do that stuff. That was a TV show.");
 
             }
             else if (dialogue === 8)
             {
-                $("#ChiefRight1").animate({right: '0px'}, function() {
+                $("#ChiefRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#ChiefRight1").hide();
                 });
                 $("#RaceRight1").show();
-                $("#RaceRight1").animate({right: '22%'});
+                $("#RaceRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Race:</b> My dad is just one step away from making Beauty’s character transformations members of the Neo Brigade.");
 
             }
             else if (dialogue === 9)
             {
-                 $("#BeautyLeft1").animate({left: '0px'}, function() {
+                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
-                $("#RaceRight1").animate({right: '0px'}, function() {
+                $("#RaceRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#RaceRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 4;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -377,7 +487,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CaptainDRight1").show();
-                $("#CaptainDRight1").animate({right: '22%'});
+                $("#CaptainDRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Captain D:</b> Black and yellow are the warning colors. You don’t think I’d put that stuff in any of my stunts.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -395,11 +505,11 @@ can start the quiz.");
             }
             else if (dialogue === 5)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: '22%'});
+                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Bendy:</b> You sure know how to boast a performance. I’ll give you that.");
             }
             else if (dialogue === 6)
@@ -409,11 +519,11 @@ can start the quiz.");
             }
             else if (dialogue === 7)
             {
-                $("#BendyLeft1").animate({left: '0px'}, function() {
+                $("#BendyLeft1").animate({left: '-50px'}, function() {
                     $("#BendyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: '22%'});
+                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Nator:</b> Just one question. When you do get hurt, what exactly do you put on your insurance claim?");
 
             }
@@ -424,21 +534,21 @@ can start the quiz.");
             }
             else if (dialogue === 9)
             {
-                $("#NatorLeft1").animate({left: '0px'}, function() {
+                $("#NatorLeft1").animate({left: '-50px'}, function() {
                     $("#NatorLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: '22%'});
+                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Pyra:</b> Right. And if you tried to survive being in a cage with lions, you’d say you didn’t want them to feel lonely and they became angry from being neglected by people in the past.");
 
             }
             else if (dialogue === 10)
             {
-                $("#PyraLeft1").animate({left: '0px'}, function() {
+                $("#PyraLeft1").animate({left: '-50px'}, function() {
                     $("#PyraLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: '22%'});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Beauty:</b> Or if you tried to jump the Grand Canyon on a motorcycle, you’d say you were taking a shortcut through Arizona and the state forgot to fill a large pothole.");
 
             }
@@ -448,20 +558,20 @@ can start the quiz.");
             }
             else if (dialogue === 12)
             {
-                 $("#BeautyLeft1").animate({left: '0px'}, function() {
+                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
-                $("#CaptainDRight1").animate({right: '0px'}, function() {
+                $("#CaptainDRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#CaptainDRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 5;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -478,7 +588,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Pyra:</b> That’s some nice reasoning there. We’ll probably lose the room again the same way so what’s the point of going in? I’d like to see someone get out of going to school for suggesting the possibility of a snow day on a ninety degree day.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -488,38 +598,38 @@ can start the quiz.");
             }
             else if (dialogue === 3)
             {
-                $("#PyraRight1").animate({right: '0px'}, function() {
+                $("#PyraRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#PyraRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Bendy:</b> I know. We’re all gonna die. What’s the point of going outside?");
             }
             else if (dialogue === 4)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#ChiefLeft1").show();
-                $("#ChiefLeft1").animate({left: '22%'});
+                $("#ChiefLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Chief:</b> That’s enough outta you kids!");
             }
             else if (dialogue === 5)
             {
-                $("#BendyRight1").animate({right: '0px'}, function() {
+                $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                 });
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Nator:</b> Yeah. He’s a cop. He doesn’t wanna break Murphy’s Law.");
             }
             else if (dialogue === 6)
             {
-                $("#NatorRight1").animate({right: '0px'}, function() {
+                $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Beauty:</b> Hey, Chief. Since someone’s probably going to break into your office, do you want me to destroy a few police files? ");
 
             }
@@ -535,11 +645,11 @@ can start the quiz.");
             }
             else if (dialogue === 9)
             {
-                $("#ChiefLeft1").animate({left: '0px'}, function() {
+                $("#ChiefLeft1").animate({left: '-50px'}, function() {
                     $("#ChiefLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: '22%'});
+                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Pyra:</b> Right. Like you put a stop to it yourself?");
 
             }
@@ -550,20 +660,20 @@ can start the quiz.");
             }
             else if (dialogue === 11)
             {
-                 $("#PyraLeft1").animate({left: '0px'}, function() {
+                 $("#PyraLeft1").animate({left: '-50px'}, function() {
                     $("#PyraLeft1").hide();
                 });
-                $("#BeautyRight1").animate({right: '0px'}, function() {
+                $("#BeautyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BeautyRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 6;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -580,7 +690,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Bendy:</b> And surprisingly, you are not that good of an actor.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -594,11 +704,11 @@ can start the quiz.");
             }
             else if (dialogue === 4)
             {
-                $("#BendyRight1").animate({right: '0px'}, function() {
+                $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                 });
                 $("#CaptainDRight1").show();
-                $("#CaptainDRight1").animate({right: '22%'});
+                $("#CaptainDRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Captain D:</b> Criticize my acting all you want. My show’s got sixty-five episodes and counting.");
             }
             else if (dialogue === 5)
@@ -619,20 +729,20 @@ can start the quiz.");
             }
             else if (dialogue === 8)
             {
-                $("#CaptainDRight1").animate({right: '0px'}, function() {
+                $("#CaptainDRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#CaptainDRight1").hide();
                 });
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '22%'});
+                $("#ChiefRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Chief:</b> Beauty! Cease your disrespectful yammering at once!");
             }
             else if (dialogue === 9)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#CaptainDLeft1").show();
-                $("#CaptainDLeft1").animate({left: '22%'});
+                $("#CaptainDLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Captain D:</b> Thanks, Louie.");
 
             }
@@ -643,38 +753,38 @@ can start the quiz.");
             }
             else if (dialogue === 11)
             {
-                $("#ChiefRight1").animate({right: '0px'}, function() {
+                $("#ChiefRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#ChiefRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Bendy:</b> Man, the Chief was quick on that one.");
             }
             else if (dialogue === 12)
             {
-                $("#CaptainDLeft1").animate({left: '0px'}, function() {
+                $("#CaptainDLeft1").animate({left: '-50px'}, function() {
                     $("#CaptainDLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: '22%'});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Beauty:</b> I think I found Captain D’s next love interest for his show. ");
             }
             else if (dialogue === 13)
             {
-                 $("#BeautyLeft1").animate({left: '0px'}, function() {
+                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
-                $("#BendyRight1").animate({right: '0px'}, function() {
+                $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 7;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -692,35 +802,35 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Pyra:</b> I gotta say, you really need to read the story to get this one. All those other choices sound like something Bendy could’ve said.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
             else if (dialogue === 2)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#CaptainDLeft1").show();
-                $("#CaptainDLeft1").animate({left: '22%'});
+                $("#CaptainDLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Captain D:</b> My fans know how to show their devotion. What can I say?");
             }
             else if (dialogue === 3)
             {
-                $("#PyraRight1").animate({right: '0px'}, function() {
+                $("#PyraRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#PyraRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Bendy:</b> Yeah, well, that’s the last you’re getting outta me. Now that I know for sure you’re not a good influence on anyone, you fight your own debates.");
             }
             else if (dialogue === 4)
             {
-                $("#CaptainDLeft1").animate({left: '0px'}, function() {
+                $("#CaptainDLeft1").animate({left: '-50px'}, function() {
                     $("#CaptainDLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: '22%'});
+                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Pyra:</b> How come you defended him so well, but when Nator accused me of eating the last of those brownies the Chief gave us, which you knew about, you couldn’t think of an excuse for me?");
             }
             else if (dialogue === 5)
@@ -730,21 +840,21 @@ can start the quiz.");
             }
             else if (dialogue === 6)
             {
-                $("#PyraLeft1").animate({left: '0px'}, function() {
+                $("#PyraLeft1").animate({left: '-50px'}, function() {
                     $("#PyraLeft1").hide();
                 });
                 $("#CaptainDLeft1").show();
-                $("#CaptainDLeft1").animate({left: '22%'});
+                $("#CaptainDLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Captain D:</b> So Bendy’s done with me, but we can still see how daredevils and actual heroes are ranked for him.");
 
             }
             else if (dialogue === 7)
             {
-                $("#BendyRight1").animate({right: '0px'}, function() {
+                $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Beauty:</b> Right. Well, fun fact here: That whole run about Bendy responding to accusations and criticism against Captain D with all those questions is based on a bit from comedian Greg Warren.");
 
             }
@@ -760,11 +870,11 @@ can start the quiz.");
             }
             else if (dialogue === 10)
             {
-                $("#CaptainDLeft1").animate({left: '0px'}, function() {
+                $("#CaptainDLeft1").animate({left: '-50px'}, function() {
                     $("#CaptainDLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: '22%'});
+                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Pyra:</b> True. Bendy sure liked sticking up for his hero turned enemy. I’ll bet if you showed him a photo of Captain D hurting someone, he’d deny it and blame you for killing trees by printing the picture.");
 
             }
@@ -774,38 +884,38 @@ can start the quiz.");
             }
             else if (dialogue === 12)
             {
-                $("#PyraLeft1").animate({left: '0px'}, function() {
+                $("#PyraLeft1").animate({left: '-50px'}, function() {
                     $("#PyraLeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: '22%'});
+                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Bendy:</b> You’re just jealous no one ever looked up to you two.");
             }
             else if (dialogue === 13)
             {
-                $("#BeautyRight1").animate({right: '0px'}, function() {
+                $("#BeautyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BeautyRight1").hide();
                 });
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Pyra:</b> Going after the accuser, huh? Even in post-hero-worship, it still goes on.");
             }
             else if (dialogue === 14)
             {
-                 $("#BendyLeft1").animate({left: '0px'}, function() {
+                 $("#BendyLeft1").animate({left: '-50px'}, function() {
                     $("#BendyLeft1").hide();
                 });
-                $("#PyraRight1").animate({right: '0px'}, function() {
+                $("#PyraRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#PyraRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 8;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -824,7 +934,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Bendy:</b> You’d think with an element called Defiance, it was gonna encourage me to not do what you wanted. Nope! All it does is give guilt.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -846,20 +956,20 @@ can start the quiz.");
             }
             else if (dialogue === 6)
             {
-                 $("#BeautyLeft1").animate({left: '0px'}, function() {
+                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
-                $("#BendyRight1").animate({right: '0px'}, function() {
+                $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 9;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -877,26 +987,26 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CremateRight1").show();
-                $("#CremateRight1").animate({right: '22%'});
+                $("#CremateRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Cremate:</b> Hello? Someone mention my name?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
             else if (dialogue === 2)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: '22%'});
+                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Pyra:</b> Get lost, Cremate. We're busy here.");
             }
             else if (dialogue === 3)
             {
-                $("#CremateRight1").animate({right: '0px'}, function() {
+                $("#CremateRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#CremateRight1").hide();
                 });
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Bendy:</b> Hey, we're not too busy to not learn something about a new character.");
             }
             else if (dialogue === 4)
@@ -905,20 +1015,20 @@ can start the quiz.");
             }
             else if (dialogue === 5)
             {
-                $("#BendyRight1").animate({right: '0px'}, function() {
+                $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                 });
                 $("#BeautyRight1").show();
-                $("#BeautyRight1").animate({right: '22%'});
+                $("#BeautyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Beauty:</b> Don't worry, Pyra. We'll make this quick. Anyway, as Bendy would probably notice, Cremate's a model, but she’s also an accomplished boxer, so it makes sense she decided to cause trouble at a gym.");
             }
             else if (dialogue === 6)
             {
-                $("#PyraLeft1").animate({left: '0px'}, function() {
+                $("#PyraLeft1").animate({left: '-50px'}, function() {
                     $("#PyraLeft1").hide();
                 });
                 $("#CremateLeft1").show();
-                $("#CremateLeft1").animate({left: '22%'});
+                $("#CremateLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Cremate:</b> It was either that or a beauty school. Screwing up how others look is fun, but humiliating the tough ones is much more fun.");
 
             }
@@ -929,40 +1039,40 @@ can start the quiz.");
             }
             else if (dialogue === 8)
             {
-                $("#CremateLeft1").animate({left: '0px'}, function() {
+                $("#CremateLeft1").animate({left: '-50px'}, function() {
                     $("#CremateLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: '22%'});
+                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Pyra:</b> I suppose that fits her well. You’d have to associate being around her with being dead first.");
 
             }
             else if (dialogue === 9)
             {
-                $("#BeautyRight1").animate({right: '0px'}, function() {
+                $("#BeautyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BeautyRight1").hide();
                 });
                 $("#CremateRight1").show();
-                $("#CremateRight1").animate({right: '22%'});
+                $("#CremateRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Cremate:</b> Unlike you where they wouldn’t be caught dead in your proximity.");
 
             }
             else if (dialogue === 10)
             {
-                 $("#PyraLeft1").animate({left: '0px'}, function() {
+                 $("#PyraLeft1").animate({left: '-50px'}, function() {
                     $("#PyraLeft1").hide();
                 });
-                $("#CremateRight1").animate({right: '0px'}, function() {
+                $("#CremateRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#CremateRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 10;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -980,17 +1090,17 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CremateRight1").show();
-                $("#CremateRight1").animate({right: '22%'});
+                $("#CremateRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Cremate:</b> What can I say? I’ve been a girl in high school. I know what works. Too bad Pyra doesn’t know that for her face.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
             else if (dialogue === 2)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: '22%'});
+                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Pyra:</b> Excuse me? You know scars don’t come off so easily.");
             }
             else if (dialogue === 3)
@@ -1003,20 +1113,20 @@ can start the quiz.");
             }
             else if (dialogue === 5)
             {
-                 $("#PyraLeft1").animate({left: '0px'}, function() {
+                 $("#PyraLeft1").animate({left: '-50px'}, function() {
                     $("#PyraLeft1").hide();
                 });
-                $("#CremateRight1").animate({right: '0px'}, function() {
+                $("#CremateRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#CremateRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 11;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1034,17 +1144,17 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#CaptainDRight1").show();
-                $("#CaptainDRight1").animate({right: '22%'});
+                $("#CaptainDRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Captain D:</b> And if you’re referring the name to someone else, the D would stand for “Dem muscles.” It works in multiple scenarios.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
             else if (dialogue === 2)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: '22%'});
+                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Nator:</b> What if someone refers to you with you not being present?");
             }
             else if (dialogue === 3)
@@ -1053,11 +1163,11 @@ can start the quiz.");
             }
             else if (dialogue === 4)
             {
-                $("#NatorLeft1").animate({left: '0px'}, function() {
+                $("#NatorLeft1").animate({left: '-50px'}, function() {
                     $("#NatorLeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: '22%'});
+                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Bendy:</b> Geez. Pick a catchphrase, man.");
             }
             else if (dialogue === 5)
@@ -1076,11 +1186,11 @@ can start the quiz.");
             }
             else if (dialogue === 8)
             {
-                $("#BendyLeft1").animate({left: '0px'}, function() {
+                $("#BendyLeft1").animate({left: '-50px'}, function() {
                     $("#BendyLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: '22%'});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Beauty:</b> Speaking of catch phrases, Captain D saying the D stood for different things is based on Sanford and Son where Fred would say his middle initial stood for something new depending on the scene.");
 
             }
@@ -1096,20 +1206,20 @@ can start the quiz.");
             }
             else if (dialogue === 11)
             {
-                 $("#BeautyLeft1").animate({left: '0px'}, function() {
+                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
-                $("#CaptainDRight1").animate({right: '0px'}, function() {
+                $("#CaptainDRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#CaptainDRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 12;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1127,17 +1237,17 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#NatorRight1").show();
-                $("#NatorRight1").animate({right: '22%'});
+                $("#NatorRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Nator:</b> Unless that person has nothing good about them. Then it’s not worth trying.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
             else if (dialogue === 2)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#Tel-ELeft1").show();
-                $("#Tel-ELeft1").animate({left: '22%'});
+                $("#Tel-ELeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Tel-E:</b> But if you can see something not inherently bad about them, then there could be some good you just can’t see.");
             }
             else if (dialogue === 3)
@@ -1164,11 +1274,11 @@ can start the quiz.");
             }
             else if (dialogue === 8)
             {
-                $("#Tel-ELeft1").animate({left: '0px'}, function() {
+                $("#Tel-ELeft1").animate({left: '-50px'}, function() {
                     $("#Tel-ELeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: '22%'});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Beauty:</b> Hey! Take it outside, you two! Mom’s busy here!");
 
             }
@@ -1179,11 +1289,11 @@ can start the quiz.");
             }
             else if (dialogue === 10)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#Tel-ELeft1").show();
-                $("#Tel-ELeft1").animate({left: '22%'});
+                $("#Tel-ELeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Tel-E:</b> Nator, would you not welcome a stranger into your home during a storm just because you were suspicious of them?");
 
             }
@@ -1193,29 +1303,29 @@ can start the quiz.");
             }
             else if (dialogue === 12)
             {
-                $("#Tel-ELeft1").animate({left: '0px'}, function() {
+                $("#Tel-ELeft1").animate({left: '-50px'}, function() {
                     $("#Tel-ELeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: '22%'});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Beauty:</b> Hey, what did I say about having debates in the house, you kids?");
             }
             else if (dialogue === 13)
             {
-                 $("#BeautyLeft1").animate({left: '0px'}, function() {
+                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
-                $("#NatorRight1").animate({right: '0px'}, function() {
+                $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 13;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1233,7 +1343,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Bendy:</b> Ha! A voice actor? My hero does all the best stunts on TV. He may have been a villain, but at least he was cool.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1251,11 +1361,11 @@ can start the quiz.");
             }
             else if (dialogue === 5)
             {
-                $("#BendyRight1").animate({right: '0px'}, function() {
+                $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                 });
                 $("#Tel-ERight1").show();
-                $("#Tel-ERight1").animate({right: '22%'});
+                $("#Tel-ERight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Tel-E:</b> Why those two?");
             }
             else if (dialogue === 6)
@@ -1285,20 +1395,20 @@ can start the quiz.");
             }
             else if (dialogue === 11)
             {
-                 $("#BeautyLeft1").animate({left: '0px'}, function() {
+                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
-                $("#Tel-ERight1").animate({right: '0px'}, function() {
+                $("#Tel-ERight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#Tel-ERight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 14;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1316,17 +1426,17 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#BendyRight1").show();
-                $("#BendyRight1").animate({right: '22%'});
+                $("#BendyRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Bendy:</b> No doubt loosely based on Muhammad Ali, am I right?");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
             else if (dialogue === 2)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#RaceLeft1").show();
-                $("#RaceLeft1").animate({left: '22%'});
+                $("#RaceLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Race:</b> I’m just glad you were there to get hurt for us. I wouldn’t wanna be you for any amount of attacks.");
             }
             else if (dialogue === 3)
@@ -1335,11 +1445,11 @@ can start the quiz.");
             }
             else if (dialogue === 4)
             {
-                $("#RaceLeft1").animate({left: '0px'}, function() {
+                $("#RaceLeft1").animate({left: '-50px'}, function() {
                     $("#RaceLeft1").hide();
                 });
                 $("#CaptainDLeft1").show();
-                $("#CaptainDLeft1").animate({left: '22%'});
+                $("#CaptainDLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Captain D:</b> How ‘bout you and I trade roles and I’ll let you be Captain D for a day?");
             }
             else if (dialogue === 5)
@@ -1358,20 +1468,20 @@ can start the quiz.");
             }
             else if (dialogue === 8)
             {
-                 $("#CaptainDLeft1").animate({left: '0px'}, function() {
+                 $("#CaptainDLeft1").animate({left: '-50px'}, function() {
                     $("#CaptainDLeft1").hide();
                 });
-                $("#BendyRight1").animate({right: '0px'}, function() {
+                $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 15;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: '22%'});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1389,7 +1499,7 @@ can start the quiz.");
             if (dialogue === 1)
             {
                 $("#PyraRight1").show();
-                $("#PyraRight1").animate({right: '22%'});
+                $("#PyraRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Pyra:</b> Yeah, that’s a nice advertisement for the Minor City police department.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -1399,20 +1509,20 @@ can start the quiz.");
             }
             else if (dialogue === 3)
             {
-                $("#PyraRight1").animate({right: '0px'}, function() {
+                $("#PyraRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#PyraRight1").hide();
                 });
                 $("#ChiefRight1").show();
-                $("#ChiefRight1").animate({right: '22%'});
+                $("#ChiefRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Chief:</b> Stop defaming our city! You represent this town, you know!");
             }
             else if (dialogue === 4)
             {
-                $("#BeautyLeft1").animate({left: '0px'}, function() {
+                $("#BeautyLeft1").animate({left: '-50px'}, function() {
                     $("#BeautyLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: '22%'});
+                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Pyra:</b> And yet you wanted to give Captain D your gun?");
             }
             else if (dialogue === 5)
@@ -1421,11 +1531,11 @@ can start the quiz.");
             }
             else if (dialogue === 6)
             {
-                $("#PyraLeft1").animate({left: '0px'}, function() {
+                $("#PyraLeft1").animate({left: '-50px'}, function() {
                     $("#PyraLeft1").hide();
                 });
                 $("#RaceLeft1").show();
-                $("#RaceLeft1").animate({left: '22%'});
+                $("#RaceLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Race:</b> Dad, just lie and say you didn’t have your gun loaded and we can move on.");
 
             }
@@ -1436,11 +1546,11 @@ can start the quiz.");
             }
             else if (dialogue === 8)
             {
-                $("#RaceLeft1").animate({left: '0px'}, function() {
+                $("#RaceLeft1").animate({left: '-50px'}, function() {
                     $("#RaceLeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: '22%'});
+                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
                 $("#dialogue").html("<b>Bendy:</b> Get over it, Chief. If I can stop worshipping Captain D to a degree, maybe you put an end to this and then, I don’t know, you could start giving that praise and admiration to your own team and police force who protect the city.");
 
             }
@@ -1451,15 +1561,15 @@ can start the quiz.");
             }
             else if (dialogue === 10)
             {
-                 $("#BendyLeft1").animate({left: '0px'}, function() {
+                 $("#BendyLeft1").animate({left: '-50px'}, function() {
                     $("#BendyLeft1").hide();
                 });
-                $("#ChiefRight1").animate({right: '0px'}, function() {
+                $("#ChiefRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#ChiefRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '22%'});
-                });
-                nextline = 1;
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .35)});
+                    
+                    nextline = 1;
                     question = 16;
                     dialogue = 0;
 
@@ -1470,6 +1580,8 @@ can start the quiz.");
                     $("img").hide();
                     $("#BeautyLeft1").show();
                     $("#dialogue").html("<b>Beauty:</b> That's the end of that quiz. Let's see how you did.");
+                });
+                
             }
         }
         else if (question === 16)

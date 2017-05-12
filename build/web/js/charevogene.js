@@ -8,9 +8,37 @@
 $(document).ready(function () {
 
     character = sessionStorage.getItem("SessionCharacter");
-    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    //$(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+
+    $(".geneinfo").css({"width": (window.screen.width * .80)});
+    $(".characterheader").css({"width": (window.screen.width * .80)});
+
+    if (window.screen.width > 500)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 1.00)});
+    }
+    else
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 2.00), "margin-bottom": (window.screen.height * 1.5)});
+    }
+
+    $(window).resize(function () {
+        $(".geneinfo").css({"width": (window.screen.width * .80)});
+        $(".characterheader").css({"width": (window.screen.width * .80)});
+
+        //if(window.screen.width > 900)
+        if (window.screen.width > 500)
+        {
+            $("#paddeddiv").css({"height": (window.screen.height * 1.00)});
+        }
+        else
+        {
+            $("#paddeddiv").css({"height": (window.screen.height * 2.00), "margin-bottom": (window.screen.height * 1.5)});
+        }
+    });
+
 
     dialogue = 1;
     max = 0;

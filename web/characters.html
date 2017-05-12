@@ -30,23 +30,32 @@ and open the template in the editor.
 
         <div id="maindiv">
 
-            <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+            
 
-                <!-- <p>Selected state: {{ state }}</p> -->
-                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
-                <span>
-                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
-                        <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
-                    </button> 
-                    <input type="submit" style="display: none"/>
-                </span>
-            </form>
-
+            <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+                   <div  ng-controller="DemoCtrl as vm">
+               <div >
+                   <div ng-keyup="$event.keyCode === 13 && vm.goToPage()">
+                       <div sui-select indicating-text="select a page" on-select="vm.onSelect(model)" options="vm.countryOptions" model="vm.selected" label="Country: " searchable="true" disabled=""></div>
+                       <span>
+                       <button type="button" class="btn" style ="z-index: 2" ng-click="vm.goToPage()" >
+                           <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                       </button> 
+                       <input type="submit" style="display: none"/>
+                   </span> 
+                   </div>
+                   
+               </div>
+       
+                      
+           </div>
+        
+               </form> -->
 
             <nav>
-                <ul class = "ulmenu1" >
-                    <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
-                    <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
+                <ul id = "menudiv" class = "ulmenu1" >
+                    <li class = "limenu1" > <a class = "li-a-menu1" href="index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "li-a-menu1-selected"> <a class = "menu-selected" href="#about"><b>About</b></a>
                         <ul id = "testmenu" class = "sub-menu" >
                             <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
                             <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
@@ -80,14 +89,31 @@ and open the template in the editor.
 
 
             </nav>
+            
+            <div id="formdiv">
+                <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
 
+                <!-- <p>Selected state: {{ state }}</p> -->
+                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                <span>
+                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                        <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                    </button> 
+                    <input type="submit" style="display: none"/>
+                </span>
+            </form>
+            </div>
+            <!--    <div style="width: 100%; position: absolute; top: 43px;">
+                   <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
+               </div>
+            --> 
         </div>
 
 
 
         <!-- <section style = "background-image: url(images/light-blue-pattern.jpg);margin-top: 60px; padding-bottom: 100px; padding-left: 0px;"> -->
-        <section style = "margin-top: 60px; padding-bottom: 100px; width: 100vw; padding-left: 0px;">
-            <h1 class = "heading" style="width: 100vw;">Characters</h1>
+        <section style = "margin-top: 30px; padding-bottom: 100px; width: 100vw; padding-left: 0px; position: relative;">
+            <h1 class = "heading">Characters</h1>
             <div id="main-wrapper" class="page-wrap">
                 <div style="margin-left: 13%;">
 
@@ -111,7 +137,7 @@ and open the template in the editor.
                             </nav>
 
 
-                            <img id = "hero" src = "htm" alt = "Beauty PlaceHolder" class = "char-image-select" width = 300 height = 400>
+                            <img id = "hero" src = "htm" alt = "Beauty PlaceHolder" class = "char-image-select" >
 
 
                             <ul id = "herolist" style = "text-align: left;">
@@ -132,7 +158,7 @@ and open the template in the editor.
 
 
                         </div>
-                        <div class="panel-heading">
+                        <div class="panel-heading" >
                             <h3 id = "villains" class = "hidenames" style = "cursor: pointer">Villains</h3>
 
 
@@ -211,45 +237,96 @@ and open the template in the editor.
 
                 </div>
             </div>
-            <footer id = "footer" class = "site-footer" style="left: 0%;">
-                <div class = "footercontent">
-                    <ul class="footerlist">
-                        <li>
-                            <a href="index.html"><b>Home</b></a>
-                        </li>
-                        <li>
-                            <a href="#About"><b>About</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="characters.html">Characters</a></li>
-                                <li><a href="charevogene.html">Charevo Gene</a></li>
-                                <!-- <li><a href="cities.html">Cities</a></li> -->
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#Quiz"><b>Quiz</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#Stories"><b>Stories</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#Miscellaneous"><b>Miscellaneous</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="switchcharacter.html">Switch Character</a></li>
-                                <li><a href="blog.html">Blog</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class = "footercontent2">
-                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
-                </div>
-            </footer>
+            <footer id = "footer" class = "site-footer">
+                    <div class = "footercontent">
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="index.html"><b>Home</b></a></th>
+                                
+                                
+                                
+                                
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#About"><b>About</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="characters.html">Characters</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="charevogene.html">Charevo Gene</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Quiz"><b>Quiz</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="beautyquizzes.html">Beauty Quizzes</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Stories"><b>Stories</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="beautystories.html">Beauty Short Stories</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="switchcharacter.html">Switch Character</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="blog.html">Blog</a></td>
+                            </tr>
+                        </table>
+
+                        <!--<ul class="footerlist">
+                            <li >
+                                <a href="index.html"><b>Home</b></a>
+                            </li>
+                            <li >
+                                <a href="#About"><b>About</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="characters.html">Characters</a></li>
+                                    <li><a href="charevogene.html">Charevo Gene</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Quiz"><b>Quiz</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Stories"><b>Stories</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="switchcharacter.html">Switch Character</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class = "footercontent2" style="height: 120px;">
+                        <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                        <div style="position: absolute; left: 47%;">
+                            <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
+                        </div>
+                    </div>
+                </footer>
         </section>
 
 

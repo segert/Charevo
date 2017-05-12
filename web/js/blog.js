@@ -9,6 +9,13 @@ $(document).ready(function(){
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+    
+    $(window).resize(function () {
+        $("#2017").css({"width": window.screen.width});
+        $(".beautyblogfront").css({"width": (window.screen.width * .65)});
+        $(".beautyblogtitle").css({"width": (window.screen.width * .6)});
+ 
+    });
 
     
     $("#allblogs").click(function(){

@@ -69,17 +69,7 @@ and open the template in the editor.
     <body ng-app="Demo">
         <div id="maindiv">
 
-            <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
-
-                <!-- <p>Selected state: {{ state }}</p> -->
-                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
-                <span>
-                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
-                        <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
-                    </button> 
-                    <input type="submit" style="display: none"/>
-                </span>
-            </form>
+            
 
             <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
                    <div  ng-controller="DemoCtrl as vm">
@@ -102,7 +92,7 @@ and open the template in the editor.
                </form> -->
 
             <nav>
-                <ul class = "ulmenu1" >
+                <ul id = "menudiv" class = "ulmenu1" >
                     <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
                     <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
                         <ul id = "testmenu" class = "sub-menu" >
@@ -138,6 +128,20 @@ and open the template in the editor.
 
 
             </nav>
+            
+            <div id="formdiv">
+                <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
+
+                <!-- <p>Selected state: {{ state }}</p> -->
+                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                <span>
+                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                        <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                    </button> 
+                    <input type="submit" style="display: none"/>
+                </span>
+            </form>
+            </div>
             <!--    <div style="width: 100%; position: absolute; top: 43px;">
                    <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
                </div>
@@ -146,9 +150,9 @@ and open the template in the editor.
 
 
         <!-- <section class="section" style = "background-image: url(images/light-blue-pattern.jpg); margin-top: 60px; padding-bottom: 100px;  height: 110%;"> -->
-        <section style = "margin-top: 60px; padding-bottom: 100px; width: 100vw; height: 115%;">
+        <section style = "margin-top: 30px; padding-bottom: 0px; width: 100vw; height: 100%; position:relative;">
             <div id="main-wrapper" class="page-wrap">
-                <img class = "imgmenu1" id = "character" src="images/beautyleft1.png" alt="Beauty Placeholder" style="width:40%;height:80%;"> 
+                <img class = "imgmenu1" id = "character" src="images/beautyleft1.png" alt="Beauty Placeholder" > 
                 <p id="demo"></p>
 
 
@@ -167,20 +171,68 @@ and open the template in the editor.
 
             </div>
 
-            <div id="maindiv">
+            <div id="maindiv2">
 
                 <footer id = "footer" class = "site-footer">
                     <div class = "footercontent">
-                        <ul class="footerlist">
-                            <li>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="index.html"><b>Home</b></a></th>
+                                
+                                
+                                
+                                
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#About"><b>About</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="characters.html">Characters</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="charevogene.html">Charevo Gene</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Quiz"><b>Quiz</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="beautyquizzes.html">Beauty Quizzes</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Stories"><b>Stories</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="beautystories.html">Beauty Short Stories</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="switchcharacter.html">Switch Character</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="blog.html">Blog</a></td>
+                            </tr>
+                        </table>
+
+                        <!--<ul class="footerlist">
+                            <li >
                                 <a href="index.html"><b>Home</b></a>
                             </li>
-                            <li>
+                            <li >
                                 <a href="#About"><b>About</b></a>
                                 <ul class="subfooterlist">
                                     <li><a href="characters.html">Characters</a></li>
                                     <li><a href="charevogene.html">Charevo Gene</a></li>
-                                    <!-- <li><a href="cities.html">Cities</a></li> -->
+                                    
                                 </ul>
                             </li>
                             <li>
@@ -196,9 +248,13 @@ and open the template in the editor.
                                 </ul>
                             </li>
                             <li>
-                                <a href="switchcharacter.html"><b>Switch Character</b></a>
+                                <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="switchcharacter.html">Switch Character</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                </ul>
                             </li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <div class = "footercontent2">
                         <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>

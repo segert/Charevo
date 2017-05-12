@@ -7,34 +7,72 @@
 
 
 
-$(document).ready(function() {
-    
-        $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
-        $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
-        //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-        document.getElementById("character").width = (window.screen.width / 3.2);
-        document.getElementById("character").height = (window.screen.height / 1.44);
+$(document).ready(function () {
 
-        var characters = ["Beauty", "Tel-E", "Pyra"];
-        //switchcharacter = "";
-        //if(sessionStorage.getItem("SessionCharacter") === null)
-            switchcharacter = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
-        //else
-         //   switchcharacter = sessionStorage.getItem("SessionCharacter");
-         if(characters.includes(switchcharacter))
-             sessionStorage.setItem("SessionCharacter",switchcharacter);
-        
-        if(sessionStorage.getItem("SessionCharacter") !== null)
-            character = sessionStorage.getItem("SessionCharacter");
-        else
-        {
-            sessionStorage.setItem("SessionCharacter", "Beauty");
-            character = "Beauty";
-        }
-        
-        document.getElementById("d").innerHTML = character;
+
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+    if (window.screen.width > 1000 && window.screen.height > 1000)
+    {
+        $("#character").css({"width": (window.screen.width / 1.5)});
+        $("#character").css({"height": (window.screen.height / 1.44)});
+    }
+    else if (window.screen.width > 1000)
+    {
+        $("#character").css({"width": (window.screen.width / 2.7)});
+        $("#character").css({"height": (window.screen.height / 1.44)});
+    }
+    else
+    {
+        $("#character").css({"width": (window.screen.width / 1.4)});
+        $("#character").css({"height": (window.screen.height / 1.44)});
+    }
+
+
+
+    $("section").css({"height": (window.screen.height * 1.05)});
+
+    $(window).resize(function () {
+        if (window.screen.width > 1000 && window.screen.height > 1000)
+    {
+        $("#character").css({"width": (window.screen.width / 1.5)});
+        $("#character").css({"height": (window.screen.height / 1.44)});
+    }
+    else if (window.screen.width > 1000)
+    {
+        $("#character").css({"width": (window.screen.width / 2.7)});
+        $("#character").css({"height": (window.screen.height / 1.44)});
+    }
+    else
+    {
+        $("#character").css({"width": (window.screen.width / 1.4)});
+        $("#character").css({"height": (window.screen.height / 1.44)});
+    }
+
+        $("section").css({"height": (window.screen.height * 1.05)});
+
+    });
+
+    var characters = ["Beauty", "Tel-E", "Pyra"];
+    //switchcharacter = "";
+    //if(sessionStorage.getItem("SessionCharacter") === null)
+    switchcharacter = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
     //else
-       // character = "Beauty";
+    //   switchcharacter = sessionStorage.getItem("SessionCharacter");
+    if (characters.includes(switchcharacter))
+        sessionStorage.setItem("SessionCharacter", switchcharacter);
+
+    if (sessionStorage.getItem("SessionCharacter") !== null)
+        character = sessionStorage.getItem("SessionCharacter");
+    else
+    {
+        sessionStorage.setItem("SessionCharacter", "Beauty");
+        character = "Beauty";
+    }
+
+    document.getElementById("d").innerHTML = character;
+    //else
+    // character = "Beauty";
     dialogue = 1;
     max = 0;
     //document.getElementById("d").innerHTML = switchcharacter;
@@ -55,21 +93,21 @@ $(document).ready(function() {
     }
     else if (character === "Tel-E")
     {
-       document.getElementById("d").innerHTML = teleBold + "Hello. My name is Tel-E";
-       document.getElementById("character").src = "images/tel-eleft1.png";
-       document.getElementById("character").alt = "Tel-E Placeholder";
-       max = 2;
+        document.getElementById("d").innerHTML = teleBold + "Hello. Thank you for selecting me as your host. I'm Tel-E. And, like Beauty, I'll be guiding you throughout this site to share some information, though perhaps a bit more in detail.";
+        document.getElementById("character").src = "images/tel-eleft1.png";
+        document.getElementById("character").alt = "Tel-E Placeholder";
+        max = 2;
     }
     else if (character === "Pyra")
     {
-        document.getElementById("d").innerHTML = pyraBold + "Hello World ";
+        document.getElementById("d").innerHTML = pyraBold + "Hey. So you've chosen me, Pyra as your host. Now, Beauty may be the cheerful and friendly guide and Tel-E's the more detail-oriented one. Me? I'm here to make this site honest.";
         document.getElementById("character").src = "images/pyraleft1.png";
         document.getElementById("character").alt = "Pyra Placeholder";
         max = 2;
     }
     //else
-     //   document.getElementById("d").innerHTML = "Beauty: Hello World ";
-        
+    //   document.getElementById("d").innerHTML = "Beauty: Hello World ";
+
 });
 
 
@@ -89,7 +127,7 @@ function getcharacter() {
 
 
 function next() {
-    if(dialogue < max)
+    if (dialogue < max)
     {
         dialogue++;
         DialogueChangeMenu();
@@ -117,8 +155,8 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
-    
-    if (character === "Beauty") 
+
+    if (character === "Beauty")
     {
         switch (dialogue)
         {
@@ -143,7 +181,7 @@ function DialogueChangeMenu() {
         }
 
     }
-    if (character === "Tel-E") 
+    if (character === "Tel-E")
     {
         switch (dialogue)
         {
@@ -168,7 +206,7 @@ function DialogueChangeMenu() {
         }
 
     }
-    if (character === "Pyra") 
+    if (character === "Pyra")
     {
         switch (dialogue)
         {
@@ -195,8 +233,8 @@ function DialogueChangeMenu() {
     }
 }
 
-function QuizDialogue(){
-    
+function QuizDialogue() {
+
 }
 
 

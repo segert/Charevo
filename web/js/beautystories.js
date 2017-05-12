@@ -7,12 +7,36 @@
 $(document).ready(function () {
 
     character = sessionStorage.getItem("SessionCharacter");
-    
+
     $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.outerHeight + "px");
     document.getElementById("storycharacter").width = (window.screen.width / 3.2);
     document.getElementById("storycharacter").height = (window.screen.height / 1.44);
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     //$("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    
+    $("#storycharacter").hide();
+
+    if(window.screen.width < 400)
+    {
+        $(".storybutton").css({"font-size": "16px", "width": "300px"});
+        $("#stories").css({"margin-left": "0px"});
+    }
+    else if(window.screen.width < 600)
+    {
+        $(".storybutton").css({"width": "300px"});
+    }
+
+    $("#storycharacter").css({"left": (window.screen.width * .6)});
+
+    $(window).resize(function () {
+        $("#storycharacter").css({"left": (window.screen.width * .6)});
+        
+        if(window.screen.width < 600)
+        $(".storybutton").css({"width": "400px"});
+
+    });
+
+
 
     dialogue = 1;
     max = 0;
@@ -22,6 +46,8 @@ $(document).ready(function () {
 
     $("#story1").mouseover(function () {
         storydescription(1);
+        if (window.screen.width > 900)
+            $("#storycharacter").show();
         document.getElementById("storycharacter").src = "images/raceright1.png";
         document.getElementById("storycharacter").alt = "Race Placeholder";
         $(this).clearQueue().stop();
@@ -30,6 +56,8 @@ $(document).ready(function () {
     });
     $("#story2").mouseover(function () {
         storydescription(2);
+        if (window.screen.width > 900)
+            $("#storycharacter").show();
         document.getElementById("storycharacter").src = "images/tel-eright1.png";
         document.getElementById("storycharacter").alt = "Tel-E Placeholder";
         $(this).clearQueue().stop();
@@ -37,6 +65,8 @@ $(document).ready(function () {
     });
     $("#story3").mouseover(function () {
         storydescription(3);
+        if (window.screen.width > 900)
+            $("#storycharacter").show();
         document.getElementById("storycharacter").src = "images/bendyright1.png";
         document.getElementById("storycharacter").alt = "Bendy Placeholder";
         $(this).clearQueue().stop();
@@ -44,6 +74,8 @@ $(document).ready(function () {
     });
     $("#story4").mouseover(function () {
         storydescription(4);
+        if (window.screen.width > 900)
+            $("#storycharacter").show();
         document.getElementById("storycharacter").src = "images/pyraright1.png";
         document.getElementById("storycharacter").alt = "Pyra Placeholder";
         $(this).clearQueue().stop();
@@ -51,6 +83,8 @@ $(document).ready(function () {
     });
     $("#story5").mouseover(function () {
         storydescription(5);
+        if (window.screen.width > 900)
+            $("#storycharacter").show();
         document.getElementById("storycharacter").src = "images/natorright1.png";
         document.getElementById("storycharacter").alt = "Nator Placeholder";
         $(this).clearQueue().stop();
@@ -59,26 +93,31 @@ $(document).ready(function () {
 
     $("#story1").mouseout(function () {
         defaultdialogue();
+        //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story1").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story2").mouseout(function () {
         defaultdialogue();
+        //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story2").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story3").mouseout(function () {
         defaultdialogue();
+        //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story3").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story4").mouseout(function () {
         defaultdialogue();
+        //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story4").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story5").mouseout(function () {
         defaultdialogue();
+        //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story5").animate({backgroundColor: "", color: "#000000"}, 400);
     });
