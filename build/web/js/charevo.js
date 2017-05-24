@@ -10,47 +10,14 @@
 $(document).ready(function () {
 
 
-    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
-    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    if (window.screen.width > 1000 && window.screen.height > 1000)
-    {
-        $("#character").css({"width": (window.screen.width / 1.5)});
-        $("#character").css({"height": (window.screen.height / 1.44)});
-    }
-    else if (window.screen.width > 1000)
-    {
-        $("#character").css({"width": (window.screen.width / 2.7)});
-        $("#character").css({"height": (window.screen.height / 1.44)});
-    }
-    else
-    {
-        $("#character").css({"width": (window.screen.width / 1.4)});
-        $("#character").css({"height": (window.screen.height / 1.44)});
-    }
-
-
-
-    $("section").css({"height": (window.screen.height * 1.05)});
+    checkResolution();
 
     $(window).resize(function () {
-        if (window.screen.width > 1000 && window.screen.height > 1000)
-    {
-        $("#character").css({"width": (window.screen.width / 1.5)});
-        $("#character").css({"height": (window.screen.height / 1.44)});
-    }
-    else if (window.screen.width > 1000)
-    {
-        $("#character").css({"width": (window.screen.width / 2.7)});
-        $("#character").css({"height": (window.screen.height / 1.44)});
-    }
-    else
-    {
-        $("#character").css({"width": (window.screen.width / 1.4)});
-        $("#character").css({"height": (window.screen.height / 1.44)});
-    }
-
-        $("section").css({"height": (window.screen.height * 1.05)});
-
+        resizeResolution();
+    });
+    
+    $(window).on("orientationchange", function (event) {
+        checkResolution();
     });
 
     var characters = ["Beauty", "Tel-E", "Pyra"];
@@ -84,26 +51,26 @@ $(document).ready(function () {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
-    {
-        document.getElementById("d").innerHTML = beautyBold + "Hi there. I'm Beauty. And welcome to the Charevo website! I'll be your host and guide for this site. Just keep an eye on this dialogue box for what I have to say and just press the Next and Prev buttons.";
-        document.getElementById("character").src = "images/beautyleft1.png";
-        document.getElementById("character").alt = "Beauty Placeholder";
-        max = 6;
-    }
-    else if (character === "Tel-E")
+    if (character === "Tel-E")
     {
         document.getElementById("d").innerHTML = teleBold + "Hello. Thank you for selecting me as your host. I'm Tel-E. And, like Beauty, I'll be guiding you throughout this site to share some information, though perhaps a bit more in detail.";
         document.getElementById("character").src = "images/tel-eleft1.png";
         document.getElementById("character").alt = "Tel-E Placeholder";
-        max = 2;
+        max = 6;
     }
     else if (character === "Pyra")
     {
         document.getElementById("d").innerHTML = pyraBold + "Hey. So you've chosen me, Pyra as your host. Now, Beauty may be the cheerful and friendly guide and Tel-E's the more detail-oriented one. Me? I'm here to make this site honest.";
         document.getElementById("character").src = "images/pyraleft1.png";
         document.getElementById("character").alt = "Pyra Placeholder";
-        max = 2;
+        max = 6;
+    }
+    else
+    {
+        document.getElementById("d").innerHTML = beautyBold + "Hi there. I'm Beauty. And welcome to the Charevo website! I'll be your host and guide for this site. Just keep an eye on this dialogue box for what I have to say and just press the Next and Prev buttons.";
+        document.getElementById("character").src = "images/beautyleft1.png";
+        document.getElementById("character").alt = "Beauty Placeholder";
+        max = 6;
     }
     //else
     //   document.getElementById("d").innerHTML = "Beauty: Hello World ";
@@ -132,9 +99,13 @@ function next() {
         dialogue++;
         DialogueChangeMenu();
         document.getElementById("prev").setAttribute("style", "opacity: 1");
+        document.getElementById("prev").disabled = false;
     }
     if (dialogue === max)
-        document.getElementById("next").setAttribute("style", "opacity: .6");
+    {
+        document.getElementById("next").setAttribute("style", "opacity: .4");
+        document.getElementById("next").disabled = true;
+    }
 }
 
 function prev() {
@@ -143,9 +114,13 @@ function prev() {
         dialogue--;
         DialogueChangeMenu();
         document.getElementById("next").setAttribute("style", "opacity: 1");
+        document.getElementById("next").disabled = false;
     }
     if (dialogue === 1)
-        document.getElementById("prev").setAttribute("style", "opacity: .6");
+    {
+        document.getElementById("prev").setAttribute("style", "opacity: .4");
+        document.getElementById("prev").disabled = true;
+    }
 }
 
 function DialogueChangeMenu() {
@@ -156,31 +131,7 @@ function DialogueChangeMenu() {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
-    {
-        switch (dialogue)
-        {
-            case(1):
-                document.getElementById("d").innerHTML = beautyBold + "Hi there. I'm Beauty. And welcome to the Charevo website! I'll be your host and guide for this site. Just keep an eye on this dialogue box for what I have to say and just press the Next and Prev buttons.";
-                break;
-            case(2):
-                document.getElementById("d").innerHTML = beautyBold + "If you wanna learn more about my world, including our power source as well as my friends and enemies, select it from the About tab above.";
-                break;
-            case(3):
-                document.getElementById("d").innerHTML = beautyBold + "You can also select from the Stories tab if you'd like to read some samples of me and my friends' adventures.";
-                break;
-            case(4):
-                document.getElementById("d").innerHTML = beautyBold + "If you read those stories and think you know them well, you can take a quiz based on them where you might learn some neat trivia from that trivia.";
-                break;
-            case(5):
-                document.getElementById("d").innerHTML = beautyBold + "I'll continue to guide you with my own point of view, though if you'd like to hear from one of my other friends, just go to the Switch Character page from the Miscellaneous tab.";
-                break;
-            case(6):
-                document.getElementById("d").innerHTML = beautyBold + "So have fun. Believe me, I'm new here, and I got that all taken care of.";
-                break;
-        }
-
-    }
+    
     if (character === "Tel-E")
     {
         switch (dialogue)
@@ -206,7 +157,7 @@ function DialogueChangeMenu() {
         }
 
     }
-    if (character === "Pyra")
+    else if (character === "Pyra")
     {
         switch (dialogue)
         {
@@ -231,12 +182,127 @@ function DialogueChangeMenu() {
         }
 
     }
+    else
+    {
+        switch (dialogue)
+        {
+            case(1):
+                document.getElementById("d").innerHTML = beautyBold + "Hi there. I'm Beauty. And welcome to the Charevo website! I'll be your host and guide for this site. Just keep an eye on this dialogue box for what I have to say and just press the Next and Prev buttons.";
+                break;
+            case(2):
+                document.getElementById("d").innerHTML = beautyBold + "If you wanna learn more about my world, including our power source as well as my friends and enemies, select it from the About tab above.";
+                break;
+            case(3):
+                document.getElementById("d").innerHTML = beautyBold + "You can also select from the Stories tab if you'd like to read some samples of me and my friends' adventures.";
+                break;
+            case(4):
+                document.getElementById("d").innerHTML = beautyBold + "If you read those stories and think you know them well, you can take a quiz based on them where you might learn some neat trivia from that trivia.";
+                break;
+            case(5):
+                document.getElementById("d").innerHTML = beautyBold + "I'll continue to guide you with my own point of view, though if you'd like to hear from one of my other friends, just go to the Switch Character page from the Miscellaneous tab.";
+                break;
+            case(6):
+                document.getElementById("d").innerHTML = beautyBold + "So have fun. Believe me, I'm new here, and I got that all taken care of.";
+                break;
+        }
+
+    }
 }
 
-function QuizDialogue() {
+function checkResolution(){
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+    
+    if (window.screen.width > 1300 && window.screen.height > 1500)
+    {
+        $("#character").css({"width": (window.screen.width / 1.55)});
+        $("#character").css({"height": (window.screen.height / 1.14)});
+        $("section").css({"height": (window.screen.height * 0.85)});
+        
+        characterWidth = (window.screen.width / 1.55);
+        characterHeight = (window.screen.height / 1.14);
+        sectionHeight = (window.screen.height * .85);
+    }
+    else if (window.screen.width > 1000 && window.screen.height > 1000)
+    {
+        $("#character").css({"width": (window.screen.width / 1.5)});
+        $("#character").css({"height": (window.screen.height / 1.44)});
+        $("section").css({"height": (window.screen.height * 1.05)});
+        
+        characterWidth = (window.screen.width / 1.5);
+        characterHeight = (window.screen.height / 1.44);
+        sectionHeight = (window.screen.height * 1.05);
+    }
+    else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
+    {
+        $("#character").css({"width": (window.screen.width / 2.4)});
+        $("#character").css({"height": (window.screen.height / .8)});
+        $("section").css({"height": (window.screen.height * 1.45)});
+        
+        characterWidth = (window.screen.width / 2.4);
+        characterHeight = (window.screen.height / .8);
+        sectionHeight = (window.screen.height * 1.45);
+    }
+    else if (window.screen.width > 1000)
+    {
+        $("#character").css({"width": (window.screen.width / 2.7)});
+        $("#character").css({"height": (window.screen.height / 1.44)});
+        $("section").css({"height": (window.screen.height * 1.05)});
+        
+        characterWidth = (window.screen.width / 2.7);
+        characterHeight = (window.screen.height / 1.44);
+        sectionHeight = (window.screen.height * 1.05);
+    }
+    else
+    {
+        $("#character").css({"width": (window.screen.width / 1.4)});
+        $("#character").css({"height": (window.screen.height / 1.44)});
+        $("section").css({"height": (window.screen.height * 1.05)});
+        
+        characterWidth = (window.screen.width / 1.4);
+        characterHeight = (window.screen.height / 1.44);
+        sectionHeight = (window.screen.height * 1.05);
+    }
 
+
+    
 }
 
+function resizeResolution(){
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+    
+    if (window.screen.width > 1300 && window.screen.height > 1500)
+    {
+        $("#character").css({"width": characterWidth});
+        $("#character").css({"height": characterHeight});
+        $("section").css({"height": sectionHeight});
+    }
+    else if (window.screen.width > 1000 && window.screen.height > 1000)
+    {
+        $("#character").css({"width": characterWidth});
+        $("#character").css({"height": characterHeight});
+        $("section").css({"height": sectionHeight});
+    }
+    else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
+    {
+        $("#character").css({"width": characterWidth});
+        $("#character").css({"height": characterHeight});
+        $("section").css({"height": sectionHeight});
+    }
+    else if (window.screen.width > 1000)
+    {
+        $("#character").css({"width": characterWidth});
+        $("#character").css({"height": characterHeight});
+        $("section").css({"height": sectionHeight});
+    }
+    else
+    {
+        $("#character").css({"width": characterWidth});
+        $("#character").css({"height": characterHeight});
+        $("section").css({"height": sectionHeight});
+    }
 
 
-
+    
+}

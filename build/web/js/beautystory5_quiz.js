@@ -5,131 +5,14 @@
  */
 $(document).ready(function() {
     
-    $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.screen.height + "px");
-    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
-    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
-    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-
-    $(".quizimageleft").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
-    $(".quizimageright").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
-
-    $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .76), "height": (window.screen.height * .078), "width": (window.screen.width * .19)});
-    $("#score").css({"top": (window.screen.height * .2)});
-
-
-    $("#score").hide();
-    $("#prevlevel1a").attr("style", "opacity: .6");
-    $("#backquiz").hide();
-    $("input").hide();
-    $("label").hide();
-    $("#question").hide();
-    $("#submitanswer").hide();
-    $("img").hide();
-    $("#searchIcon").show();
-    $("#BeautyLeft1").show();
-    $("#dialogue").html("<b>Beauty:</b> Hi");
-    $("#BeautyLeft1").animate({left: (window.screen.width * .35)});
-    
-    var position = document.getElementById("menudiv").clientHeight;
-
-
-    if (question === 0 || question === 16)
-    {
-        $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
-    }
-    else
-        $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
-    $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
-    $(".quizheading").css({"top": position, "height": (window.screen.height * .1), "width": (window.screen.width * .69)});
-    $(".submitdiv").css({"top": position, "left": (window.screen.width * .69), "height": (window.screen.height * .1), "width": (window.screen.width * .31)});
-
-    $("#formdiv").hide();
-    //$("#backquiz").show();
-
-
-
-    if (window.screen.width > 700)
-    {
-        $(".selector1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .0385)});
-        $(".selector2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .462)});
-        $(".selector3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .0385)});
-        $(".selector4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .462)});
-
-        $(".answer1label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .041)});
-        $(".answer2label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .465)});
-        $(".answer3label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .041)});
-        $(".answer4label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .465)});
-
-        $(".answer1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .069)});
-        $(".answer2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .5)});
-        $(".answer3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .069)});
-        $(".answer4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .5)});
-
-
-
-    }
-    else
-    {
-        if (question === 0 || question === 16)
-        {
-            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
-        }
-        else
-        {
-            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
-        }
-        $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
-        $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
-        $("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
-        $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .118), "width": (window.screen.width * .25)});
-    }
+    checkResolution();
 
     $(window).resize(function () {
-        if (question === 0 || question === 16)
-        {
-            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
-        }
-        else
-            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
-
-        $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .25)});
-        $(".quizheading").css({"top": (window.screen.height * .061), "height": (window.screen.height * .1), "width": (window.screen.width * .70)});
-        $(".submitdiv").css({"top": (window.screen.height * .061), "left": (window.screen.width * .70), "height": (window.screen.height * .1), "width": (window.screen.width * .31)});
-
-        $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .76), "height": (window.screen.height * .078), "width": (window.screen.width * .19)});
-        $("#score").css({"top": (window.screen.height * .2)});
-
-        if (window.screen.width > 700)
-        {
-            $(".selector1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .0385)});
-            $(".selector2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .462)});
-            $(".selector3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .0385)});
-            $(".selector4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .462)});
-
-            $(".answer1label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .041)});
-            $(".answer2label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .465)});
-            $(".answer3label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .041)});
-            $(".answer4label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .465)});
-
-            $(".answer1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .069)});
-            $(".answer2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .5)});
-            $(".answer3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .069)});
-            $(".answer4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .5)});
-        }
-        else
-    {
-        if (question === 0 || question === 16)
-        {
-            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
-        }
-        else
-        {
-            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
-        }
-        $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
-        $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
-        $("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
-    }
+       resizeResolution();
+    });
+    
+    $(window).on("orientationchange", function (event) {
+        checkResolution();
     });
 
 
@@ -167,7 +50,7 @@ can start the quiz.");
                 nextline = 0;
                 //$("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").show();
                 $("#searchSubmit").hide();
                 $("label").show();
@@ -196,7 +79,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> Heh heh heh. You don’t see why it’s funny?");
             }
             else if (dialogue === 3)
@@ -235,7 +118,7 @@ can start the quiz.");
                     $("#NatorLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
+                $("#PyraLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Pyra:</b> It's Nator's story, so I guess we're on his turf now.");
             }
             else if (dialogue === 9)
@@ -253,7 +136,7 @@ can start the quiz.");
                     $("#PyraLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> Ugh. This should NOT have been the last story.");
             }
             else if (dialogue === 11)
@@ -264,14 +147,14 @@ can start the quiz.");
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 2;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -298,7 +181,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> Does the Cyhack know when to shut up and mind her own business?");
             }
             else if (dialogue === 3)
@@ -340,7 +223,7 @@ can start the quiz.");
                     $("#NatorLeft1").hide();
                 });
                 $("#CyhackLeft1").show();
-                $("#CyhackLeft1").animate({left: (window.screen.width * .22)});
+                $("#CyhackLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Cyhack:</b> The Cyhack approves of this fangirl.");
             }
             else if (dialogue === 11)
@@ -351,14 +234,14 @@ can start the quiz.");
                 $("#BeautyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BeautyRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 3;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -385,7 +268,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#OneLeft1").show();
-                $("#OneLeft1").animate({left: (window.screen.width * .22)});
+                $("#OneLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>One:</b> True. But it was finally settled on One and Oh.");
             }
             else if (dialogue === 3)
@@ -394,7 +277,7 @@ can start the quiz.");
                     $("#OneLeft1").hide();
                 });
                 $("#OhLeft1").show();
-                $("#OhLeft1").animate({left: (window.screen.width * .22)});
+                $("#OhLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Oh:</b> I'm sure you all know that in computer science, one is the binary digit to represent a true statement, and oh, or zero, represents a false statement.");
             }
             else if (dialogue === 4)
@@ -416,7 +299,7 @@ can start the quiz.");
                     $("#OhLeft1").hide();
                 });
                 $("#OneLeft1").show();
-                $("#OneLeft1").animate({left: (window.screen.width * .22)});
+                $("#OneLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>One:</b> Boole is short for Boolean, the type for a variable with a true or false value. And our first names are meant to contain the words “if” and “else” as a reference to if-else statements in computer science.");
             }
             else if (dialogue === 7)
@@ -438,7 +321,7 @@ can start the quiz.");
                     $("#OneLeft1").hide();
                 });
                 $("#OhLeft1").show();
-                $("#OhLeft1").animate({left: (window.screen.width * .22)});
+                $("#OhLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Oh:</b> Just in case people couldn't already tell what doesn’t belong.");
             }
             else if (dialogue === 10)
@@ -449,14 +332,14 @@ can start the quiz.");
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 4;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -483,7 +366,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> Yeah, but she's also the truth teller and the one who asked you out said she had a lot of respect for us and she liked you. You know that's not true.");
             }
             else if (dialogue === 3)
@@ -522,7 +405,7 @@ can start the quiz.");
                     $("#NatorLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> If they were, I'm sure Nator would just be debunking a bunch of “yo momma” jokes.");
             }
             else if (dialogue === 9)
@@ -533,14 +416,14 @@ can start the quiz.");
                 $("#OneRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#OneRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 5;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -567,7 +450,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> Still, you can never be too safe. I always like to keep a good security system, and biometrics is a great method.");
             }
             else if (dialogue === 3)
@@ -626,14 +509,14 @@ can start the quiz.");
                 $("#BeautyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BeautyRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 6;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -661,7 +544,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#OhLeft1").show();
-                $("#OhLeft1").animate({left: (window.screen.width * .22)});
+                $("#OhLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Oh:</b> I taught her well and it paid off for all of us with your yes man there.");
             }
             else if (dialogue === 3)
@@ -679,7 +562,7 @@ can start the quiz.");
                     $("#OhLeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BendyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Bendy:</b> Hey, I was feeling relaxed. I didn’t know I was gonna be taking a pop quiz on a date.");
             }
             else if (dialogue === 5)
@@ -710,7 +593,7 @@ can start the quiz.");
                     $("#BendyLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> That’s what happens when you don’t read the terms and conditions in full.");
             }
             else if (dialogue === 9)
@@ -728,7 +611,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> Not me. I’d never date her to lead up to the question in the first place.");
             }
             else if (dialogue === 11)
@@ -748,14 +631,14 @@ can start the quiz.");
                 $("#OneRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#OneRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 7;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -791,7 +674,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
+                $("#PyraLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Pyra:</b> Okay. Throwing in cool references doesn't make you cool after that.");
             }
             else if (dialogue === 5)
@@ -800,7 +683,7 @@ can start the quiz.");
                     $("#PyraLeft1").hide();
                 });
                 $("#OhLeft1").show();
-                $("#OhLeft1").animate({left: (window.screen.width * .22)});
+                $("#OhLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Oh:</b> I'm sure you won't mind if we check your conclusion to that proof, Nator.");
             }
             else if (dialogue === 6)
@@ -809,7 +692,7 @@ can start the quiz.");
                     $("#OhLeft1").hide();
                 });
                 $("#OneLeft1").show();
-                $("#OneLeft1").animate({left: (window.screen.width * .22)});
+                $("#OneLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>One:</b> Satisfiability is undecidable for first-order-logic, but in propositional logic, it is actually quite possible to achieve satisfiability.");
             }
             else if (dialogue === 7)
@@ -822,7 +705,7 @@ can start the quiz.");
                     $("#OneLeft1").hide();
                 });
                 $("#OhLeft1").show();
-                $("#OhLeft1").animate({left: (window.screen.width * .22)});
+                $("#OhLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Oh:</b> Maybe when you learn satisfiability.");
             }
             else if (dialogue === 9)
@@ -831,7 +714,7 @@ can start the quiz.");
                     $("#OhLeft1").hide();
                 });
                 $("#Tel-ELeft1").show();
-                $("#Tel-ELeft1").animate({left: (window.screen.width * .22)});
+                $("#Tel-ELeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Tel-E:</b> They were only trying to clarify a slight error you made, Nator.");
             }
             else if (dialogue === 10)
@@ -844,7 +727,7 @@ can start the quiz.");
                     $("#Tel-ELeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> Gee, Nator. You hate One and Oh. You hate Cyhack. You don't think Tel-E's as smart as she is or believe what she tells us about the Charevo Gene. You seem to have a problem with smart women.");
             }
             else if (dialogue === 12)
@@ -859,14 +742,14 @@ can start the quiz.");
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 8;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -896,7 +779,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BendyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Bendy:</b> What? But I was kidnapped. That totally counts as an alibi.");
             }
             else if (dialogue === 3)
@@ -917,7 +800,7 @@ can start the quiz.");
                     $("#BendyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> Me do what now? No thank you!");
             }
             else if (dialogue === 7)
@@ -984,14 +867,14 @@ can start the quiz.");
                 $("#OhRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#OhRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 9;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1036,7 +919,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> Hey, your inner struggle was from the last story. We’re focusing on me now.");
             }
             else if (dialogue === 6)
@@ -1055,14 +938,14 @@ can start the quiz.");
                 $("#PyraRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#PyraRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 10;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1090,7 +973,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#Tel-ELeft1").show();
-                $("#Tel-ELeft1").animate({left: (window.screen.width * .22)});
+                $("#Tel-ELeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Tel-E:</b> So One can tell the truth by saying Oh would lie and Oh could lie by saying One would lie. In this case, both stick to their true and false statements while providing false information.");
             }
             else if (dialogue === 3)
@@ -1103,7 +986,7 @@ can start the quiz.");
                     $("#Tel-ELeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
+                $("#PyraLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Pyra:</b> Okay. Let’s go back to the beginning again. Nator didn’t get his way.");
             }
             else if (dialogue === 5)
@@ -1114,14 +997,14 @@ can start the quiz.");
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 11;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1149,7 +1032,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#RaceLeft1").show();
-                $("#RaceLeft1").animate({left: (window.screen.width * .22)});
+                $("#RaceLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Race:</b> With the way these two pair up and respond, I wouldn’t wanna gather any information from them. I don’t know who to trust and who not to trust.");
             }
             else if (dialogue === 3)
@@ -1184,7 +1067,7 @@ can start the quiz.");
                     $("#RaceLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
+                $("#PyraLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Pyra:</b> Yeah, that’s how you hide your identity.");
             }
             else if (dialogue === 8)
@@ -1195,14 +1078,14 @@ can start the quiz.");
                 $("#OhRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#OhRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 12;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1230,7 +1113,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> True. There’s not much reason to check on them since they’d have ways of revealing themselves.");
             }
             else if (dialogue === 3)
@@ -1260,7 +1143,7 @@ can start the quiz.");
                     $("#NatorLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> Come on. Of course you’re Oh. We can see your name in the dialogue box.");
             }
             else if (dialogue === 8)
@@ -1273,7 +1156,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> It’s still true. And with no “and” in between. That is One.");
             }
             else if (dialogue === 10)
@@ -1294,7 +1177,7 @@ can start the quiz.");
                     $("#NatorLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> How’d you do that? It must’ve been that fine print at the end of your text, right?");
             }
             else if (dialogue === 14)
@@ -1313,14 +1196,14 @@ can start the quiz.");
                 $("#OhRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#OhRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 13;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1348,7 +1231,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#OneLeft1").show();
-                $("#OneLeft1").animate({left: (window.screen.width * .22)});
+                $("#OneLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>One:</b> And if you do one statement or the opposite, the result is always One.");
             }
             else if (dialogue === 3)
@@ -1370,7 +1253,7 @@ can start the quiz.");
                     $("#OneLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> I think she’ll just look at the judge and go, “Seriously?”");
             }
             else if (dialogue === 6)
@@ -1388,7 +1271,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#OneLeft1").show();
-                $("#OneLeft1").animate({left: (window.screen.width * .22)});
+                $("#OneLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>One:</b> Plus, that whole “nothing but the truth” part would kind of make it difficult to couple the truth with lies as part of one whole true statement.");
             }
             else if (dialogue === 8)
@@ -1406,7 +1289,7 @@ can start the quiz.");
                     $("#OneLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> I think God would be cool with her situation.");
             }
             else if (dialogue === 10)
@@ -1424,7 +1307,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
+                $("#PyraLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Pyra:</b> And whatever lawyers call you as a witness for anything is totally losing their job.");
             }
             else if (dialogue === 12)
@@ -1435,14 +1318,14 @@ can start the quiz.");
                 $("#OhRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#OhRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 14;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1470,7 +1353,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#Tel-ELeft1").show();
-                $("#Tel-ELeft1").animate({left: (window.screen.width * .22)});
+                $("#Tel-ELeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Tel-E:</b> And it alludes to a traveling salesman going from location to location to make a sale in the shortest amount of time for efficiency. Yes?");
             }
             else if (dialogue === 3)
@@ -1483,7 +1366,7 @@ can start the quiz.");
                     $("#Tel-ELeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BendyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Bendy:</b> Hmm. What if the salesman knows he can sell all his stuff to one guy at a certain place? He’d save all his time right there.");
             }
             else if (dialogue === 5)
@@ -1496,7 +1379,7 @@ can start the quiz.");
                     $("#BendyLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> Or instead of going to each place himself, why doesn’t he just call or email them and give everyone the same information all from one place?");
             }
             else if (dialogue === 7)
@@ -1535,7 +1418,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#OhLeft1").show();
-                $("#OhLeft1").animate({left: (window.screen.width * .22)});
+                $("#OhLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Oh:</b> Oh, we’re not that mean.");
             }
             else if (dialogue === 13)
@@ -1546,14 +1429,14 @@ can start the quiz.");
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 15;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1581,7 +1464,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#BendyLeft1").show();
-                $("#BendyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BendyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Bendy:</b> So everyone who has powers from the Charevo Gene has a Charevo Emblem and Nator doesn’t believe in the correlation? How is it this guy was the one I trusted to save us?");
             }
             else if (dialogue === 3)
@@ -1599,7 +1482,7 @@ can start the quiz.");
                     $("#BendyLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
+                $("#PyraLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Pyra:</b> Have you even been to the rest of this website? It explains the whole thing.");
             }
             else if (dialogue === 5)
@@ -1617,7 +1500,7 @@ can start the quiz.");
                     $("#PyraLeft1").hide();
                 });
                 $("#OneLeft1").show();
-                $("#OneLeft1").animate({left: (window.screen.width * .22)});
+                $("#OneLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>One:</b> I’d say it was better for you that our names were One and Oh. I doubt you would’ve succeeded without the use of binary.");
             }
             else if (dialogue === 7)
@@ -1651,7 +1534,7 @@ can start the quiz.");
                     $("#OneLeft1").hide();
                 });
                 $("#OhLeft1").show();
-                $("#OhLeft1").animate({left: (window.screen.width * .22)});
+                $("#OhLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Oh:</b> Though, if you wanna be called the other thing, I think your friends would be fine with it.");
             }
             else if (dialogue === 13)
@@ -1662,14 +1545,14 @@ can start the quiz.");
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 16;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1697,7 +1580,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#PyraLeft1").show();
-                $("#PyraLeft1").animate({left: (window.screen.width * .22)});
+                $("#PyraLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Pyra:</b> If it’s so simple, why did it take so long for you to come up with the question?");
             }
             else if (dialogue === 3)
@@ -1715,7 +1598,7 @@ can start the quiz.");
                     $("#PyraLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> In other words, get his competition out of the way.");
             }
             else if (dialogue === 5)
@@ -1733,7 +1616,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#NatorLeft1").show();
-                $("#NatorLeft1").animate({left: (window.screen.width * .22)});
+                $("#NatorLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Nator:</b> I can let others help me any time I want. In fact, I’ll let Tel-E explain how the question distinguishes you two right now.");
             }
             else if (dialogue === 7)
@@ -1759,7 +1642,7 @@ can start the quiz.");
                     $("#NatorLeft1").hide();
                 });
                 $("#RaceLeft1").show();
-                $("#RaceLeft1").animate({left: (window.screen.width * .22)});
+                $("#RaceLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Race:</b> This is the same guy who won't let you win a Chess game when he's clearly gonna lose.");
             }
             else if (dialogue === 11)
@@ -1770,14 +1653,14 @@ can start the quiz.");
                 $("#Tel-ERight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#Tel-ERight1").hide();
                     $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 $("#nextlevel1a").attr("style", "opacity: .6");
                 nextline = 0;
                 question = 17;
                 dialogue = 0;
-                // $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("input").not("#searchSubmit").show();
                 $("label").show();
                 $("#question").show();
@@ -1806,7 +1689,7 @@ can start the quiz.");
                     $("#BeautyLeft1").hide();
                 });
                 $("#Tel-ELeft1").show();
-                $("#Tel-ELeft1").animate({left: (window.screen.width * .22)});
+                $("#Tel-ELeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Tel-E:</b> That was quite clever of you to think of that rule when considering the side effects of their powers.");
             }
             else if (dialogue === 3)
@@ -1824,7 +1707,7 @@ can start the quiz.");
                     $("#Tel-ELeft1").hide();
                 });
                 $("#OneLeft1").show();
-                $("#OneLeft1").animate({left: (window.screen.width * .22)});
+                $("#OneLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>One:</b> Truth be told, it was the latter.");
             }
             else if (dialogue === 5)
@@ -1833,7 +1716,7 @@ can start the quiz.");
                     $("#OneLeft1").hide();
                 });
                 $("#OhLeft1").show();
-                $("#OhLeft1").animate({left: (window.screen.width * .22)});
+                $("#OhLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Oh:</b> Because you just know if Nator was reading the story, he'd be calling us out on how we weren't using our abilities to their maximum potential, and he'd also complain that he wasn't featured in this too much.");
             }
             else if (dialogue === 6)
@@ -1851,7 +1734,7 @@ can start the quiz.");
                     $("#OhLeft1").hide();
                 });
                 $("#BeautyLeft1").show();
-                $("#BeautyLeft1").animate({left: (window.screen.width * .22)});
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> If she did, then we'd have no story.");
             }
             else if (dialogue === 8)
@@ -1923,14 +1806,15 @@ can start the quiz.");
 
         if (question === 1)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Yes. That is what the theater SHOULD have been called. But, no, that's now what it was called.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> A valid answer. But, sorry. Incorrect. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "c")
@@ -1947,25 +1831,26 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> That's a good try. Unfortunately, it wasn't a correct try. Try again.");
                 missed = 1;
             }
         }
         else if (question === 2)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Sorry. Fourize didn't make a return. In fact, none of those previous villains appear more than once. So if your memory wasn't good enough for THIS story, let's hope it's good enough for the previous four.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Dinomight's not in this. He has the potential to create tremors in the earth, but he wasn't the one to do it this time. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Incorrect. It wasn't Ninja. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")
@@ -1983,6 +1868,7 @@ can start the quiz.");
         }
         else if (question === 3)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
                 
@@ -1998,26 +1884,27 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> One and Un? Nope. I know a lot of the cool villain pairings have names that rhyme, but these girls are a bit different.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> It wasn't One and No. It's close though. I'll just pretend you misheard part of it even though there's no audio version of this story.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Not True and Un. In fact, not True or Un. If you can remember what happened in the story, maybe that syntax will act as a clue.");
                 missed = 1;
             }
         }
         else if (question === 4)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. She said she was One, but that was just a lie.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
@@ -2034,31 +1921,32 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No, it wasn't both. Bendy's not that big of a casanova, so don't try and encourage him into believing it.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. One of them did ask him out if you can believe it. Of course, it was only to deceive him later. So, no, you shouldn't believe it.");
                 missed = 1;
             }
         }
         else if (question === 5)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No. He wasn't fixing the doorbell. We don't really get visitors, so fixing it isn't really on the to-do list.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Not a new weapon. Nator's got enough of those inside him. He doesn't need any more to keep his mind off getting back to work on inventions for health. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No. Sadly, he wasn't making a robot puppy. Although, how cute would that be? I SO wanna see someone make one of those.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")
@@ -2076,6 +1964,7 @@ can start the quiz.");
         }
         else if (question === 6)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
@@ -2090,22 +1979,23 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No. She didn't kiss him. She doesn't have to go THAT far for that facade.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> That'd be something to see to spite Nator, but it wasn't what she did. Maybe in the future if Bendy falls for her again. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No. Bendy figured that out later, but the Boole twins wouldn't be that up front about it. I mean, One is honest, but only in her own way to toy with others.");
                 missed = 1;
             }
         }
         else if (question === 7)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
@@ -2122,17 +2012,17 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "b")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Close. If it were up to me, I'd just give it to you, but then I'd have to hear from Nator about what an important difference it is. So, according to Nator, that's wrong.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> I'm sure Nator's said peace of mind with the Boole twins is impossible, but I can't accept that. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. He didn't say peace in general being impossible. Don't count on him to argue against that claim, though.");
                 missed = 1;
             }
         }
@@ -2141,7 +2031,7 @@ can start the quiz.");
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Of course I was there. I was the one telling the story. I wasn't giving a transcript of one of the other Brigade members giving an account of it.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
@@ -2159,26 +2049,27 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "c")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Nator was there. He wasn't sneaking off with anyone. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No. Someone was missing. The team as a whole used to be five, but it's six now. Surely you remember how many of us were there that time, right? Right?");
                 missed = 1;
             }
         }
         else if (question === 9)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No, it wasn't Race. I know. Wouldn't it be great to see the Chief finally get upset with Race? Oh well. One can only imagine.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Sorry. She didn't turn into Bendy a second time. She was already exposed, so there wasn't much holding her back from using all of us and our powers.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "c")
@@ -2195,21 +2086,22 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No, it wasn't me! Don't be silly. Who apart from the new girl in town really doesn't need people to make them look bad? There's a way better choice than me.");
                 missed = 1;
             }
         }
         else if (question === 10)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Try again. Frankly, I don't have any interesting responses to these kinds of choices, so just don't expect anything fantastic.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Sorry. Try again. By the way, you can expect some generic responses to these types of answers. Not interesting answers, not interesting responses. Just a heads up.");
                 missed = 1;
 
             }
@@ -2227,16 +2119,17 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Incorrect. Try again. That's about all you can expect me to say to a choice like that. So just give it another shot.");
                 missed = 1;
             }
         }
         else if (question === 11)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Try again. I don't have any hints on this question. Sorry.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
@@ -2254,22 +2147,23 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Uh, nope. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Not that one. Sorry.");
                 missed = 1;
             }
         }
         else if (question === 12)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Not a lie detector test. Admittedly, it would probably take a lot of effort to hook up a lie detector to someone round the clock. I'm sure it would still help though.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
@@ -2287,34 +2181,38 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Not a nervous stomach. Sorry. I don't know how that would work, to be honest. I mean, that's not a visible indication of someone lying, so how would that help you tell if someone's lying? Now, I realize I was the one who put the choice there, so I think I'll just shut up now.");
                 missed = 1;
 
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Not a bad poker face. Oh is a really good liar. I'm sure she'd think to cover her face if she reacted to her own lies with her face, by the way. Try again.");
                 missed = 1;
 
             }
         }
         else if (question === 13)
         {
+            $("#answera").text("“I’m Oh”");
+                $("#answerb").text("“She’s Oh”");
+                $("#answerc").text("“I’m Oh and I’m not Oh”");
+                $("#answerd").text("“I’m Oh or I’m not Oh”");
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> That is incorrect. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Sorry. Try again.");
                 missed = 1;
 
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Give it another shot.");
                 missed = 1;
 
             }
@@ -2333,22 +2231,23 @@ can start the quiz.");
         }
         else if (question === 14)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Sorry. She didn't mention Race not having his powers when referring to being slow. Although, that is pretty slow, to be honest. I mean, I never knew Race before he got his super speed, but from how much I've heard him treasure his speed, I'd say he was seriously sluggish prior.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Not . . . that. Now, before you ask, Nator gave me these choices, so he'll have to explain this to you. For now, let's move on.");
                 missed = 1;
 
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No. She didn't say he was slower than a car with no wheels. Believe it or not, she's much smarter than that. So that should narrow it down, slightly.");
                 missed = 1;
 
             }
@@ -2367,16 +2266,17 @@ can start the quiz.");
         }
         else if (question === 15)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> No. They don't have a secret twin language, or anything. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Close. It stood for something, but it wasn't a cipher code. Not even letters were involved. Try again.");
                 missed = 1;
 
             }
@@ -2394,23 +2294,24 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Sorry. It was one of those three. You probably would've thought it was something I listed above, but just don't remember exactly what and just went with the safe bet. Sorry to disappoint you, but no.");
                 missed = 1;
 
             }
         }
         else if (question === 16)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Nope. Next.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Sorry. Try again.");
                 missed = 1;
 
             }
@@ -2428,17 +2329,18 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Sorry. Incorrect.");
                 missed = 1;
 
             }
         }
         else if (question === 17)
         {
+
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Not exactly. It wasn't the quantity of power that did her in. Try again.");
                 missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "b")
@@ -2456,13 +2358,13 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "c")
             {
                 
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Oh, come on. We're talking about one of the Boole twins. Now, granted, One is the honest girl, but they're basically the same deceptive villain. They're not gonna listen to Charevo Fairies advise them to go against evil. Especially since the Charevo Fairies tell you to act worse than you are if you're evil. So no.");
                 missed = 1;
 
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
-                $("#dialogue").html("");
+                $("#dialogue").html("<b>Beauty:</b> Oh, no. This wasn't my doing. I give Nator all the credit for this idea. Whatever happened to One, Nator saw it coming, not me.");
                 missed = 1;
 
             }
@@ -2470,3 +2372,497 @@ can start the quiz.");
 
     });
 });
+
+function checkResolution()
+{
+    $("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.screen.height + "px");
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+
+    $(".quizimageleft").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
+    $(".quizimageright").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
+
+    $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .76), "height": (window.screen.height * .078), "width": (window.screen.width * .19)});
+    $("#score").css({"top": (window.screen.height * .2)});
+
+
+    $("#score").hide();
+    $("#prevlevel1a").attr("style", "opacity: .6");
+    $("#backquiz").hide();
+    $("input").hide();
+    $("label").hide();
+    $("#question").hide();
+    $("#submitanswer").hide();
+    $("img").hide();
+    $("#searchIcon").show();
+    $("#BeautyLeft1").show();
+    $("#dialogue").html("<b>Beauty:</b> Hi");
+    $("#BeautyLeft1").animate({left: (window.screen.width * .35)});
+
+    var position = document.getElementById("menudiv").clientHeight;
+
+
+    if (question === 0 || question === 18)
+    {
+        $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
+    }
+    else
+        $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
+    $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
+
+    if (window.screen.width > 550 && window.screen.width < 700 && window.screen.height > 900)
+    {
+        $(".quizheading").css({"top": position, "height": (window.screen.height * .07), "width": (window.screen.width * .69)});
+        $(".submitdiv").css({"top": position, "left": (window.screen.width * .69), "height": (window.screen.height * .07), "width": (window.screen.width * .31)});
+    }
+    else
+    {
+        $(".quizheading").css({"top": position, "height": (window.screen.height * .1), "width": (window.screen.width * .69)});
+        $(".submitdiv").css({"top": position, "left": (window.screen.width * .69), "height": (window.screen.height * .1), "width": (window.screen.width * .31)});
+    }
+
+    $("#formdiv").hide();
+    //$("#backquiz").show();
+
+
+
+    if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
+    {
+        $("section").css({"height": (window.screen.height * 1.9)});
+        
+        $(".selector1").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .0385)});
+        $(".selector2").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .462)});
+        $(".selector3").css({"top": (window.screen.height * .35), "left": (window.screen.width * .0385)});
+        $(".selector4").css({"top": (window.screen.height * .35), "left": (window.screen.width * .462)});
+
+        $(".answer1label").css({"top": (window.screen.height * .263), "left": (window.screen.width * .041)});
+        $(".answer2label").css({"top": (window.screen.height * .263), "left": (window.screen.width * .465)});
+        $(".answer3label").css({"top": (window.screen.height * .386), "left": (window.screen.width * .041)});
+        $(".answer4label").css({"top": (window.screen.height * .386), "left": (window.screen.width * .465)});
+
+        $(".answer1").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .069)});
+        $(".answer2").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .5)});
+        $(".answer3").css({"top": (window.screen.height * .35), "left": (window.screen.width * .069)});
+        $(".answer4").css({"top": (window.screen.height * .35), "left": (window.screen.width * .5)});
+        
+        $(".quizimageleft").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
+            $(".quizimageright").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
+            $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .158), "width": (window.screen.width * .25)});
+    }
+    else if (window.screen.width > 700)
+    {
+        $(".selector1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .0385)});
+        $(".selector2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .462)});
+        $(".selector3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .0385)});
+        $(".selector4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .462)});
+
+        $(".answer1label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .041)});
+        $(".answer2label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .465)});
+        $(".answer3label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .041)});
+        $(".answer4label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .465)});
+
+        $(".answer1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .069)});
+        $(".answer2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .5)});
+        $(".answer3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .069)});
+        $(".answer4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .5)});
+
+        if (window.screen.height > 1000)
+        {
+            $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
+            $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
+        }
+
+    }
+    else
+    {
+        if (question === 0 || question === 18)
+        {
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
+        }
+        else
+        {
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
+        }
+
+        $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
+        $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .118), "width": (window.screen.width * .25)});
+    }
+}
+
+function checkResolution2()
+{
+    //$("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.screen.height + "px");
+    $("section").css({"margin-top": "50px", "padding-bottom": "100px", "width": window.screen.width, "height": window.screen.height});
+
+
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+
+    sectionWidth = window.screen.width;
+    sectionHeight = window.screen.height;
+
+    $(".quizimageleft").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
+    $(".quizimageright").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
+
+    quizimageTop = (window.screen.height * .32);
+    quizimageHeight = (window.screen.height * .5);
+    quizimageWidth = (window.screen.width * .35);
+
+    $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .76), "height": (window.screen.height * .078), "width": (window.screen.width * .19)});
+    $("#score").css({"top": (window.screen.height * .2)});
+
+    backquizTop = (window.screen.height * .508);
+    backquizLeft = (window.screen.width * .76);
+    backquizHeight = (window.screen.height * .078);
+    backquizWidth = (window.screen.width * .19);
+
+    scoreTop = (window.screen.height * .2);
+
+
+    $("#score").hide();
+    $("#prevlevel1a").attr("style", "opacity: .6");
+    $("#backquiz").hide();
+    $("input").hide();
+    $("label").hide();
+    $("#question").hide();
+    $("#submitanswer").hide();
+    $("img").hide();
+    $("#searchIcon").show();
+    $("#BeautyLeft1").show();
+    $("#dialogue").html("<b>Beauty:</b> Hi");
+    $("#BeautyLeft1").animate({left: (window.screen.width * .35)});
+
+    startLeft = (window.screen.width * .35);
+
+    var position = document.getElementById("menudiv").clientHeight;
+
+
+    if (question === 0 || question === 18)
+    {
+        $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
+
+        leftvisibleTop = (window.screen.height * .32);
+        leftvisibleLeft = (window.screen.width * .35);
+        leftvisibleHeight = (window.screen.height * .5);
+        leftvisibleWidth = (window.screen.width * .3);
+    }
+    else
+    {
+        $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
+
+        leftvisibleTop = (window.screen.height * .32);
+        leftvisibleLeft = (window.screen.width * .22);
+        leftvisibleHeight = (window.screen.height * .5);
+        leftvisibleWidth = (window.screen.width * .3);
+    }
+    $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
+
+    rightvisibleLeft = (window.screen.width * .48);
+
+
+    if (window.screen.width > 550 && window.screen.width < 700 && window.screen.height > 900)
+    {
+        $(".quizheading").css({"top": position, "height": (window.screen.height * .07), "width": (window.screen.width * .69)});
+        $(".submitdiv").css({"top": position, "left": (window.screen.width * .69), "height": (window.screen.height * .07), "width": (window.screen.width * .31)});
+
+        headingHeight = (window.screen.height * .07);
+        headingWidth = (window.screen.width * .69);
+
+        submitLeft = (window.screen.width * .69);
+        submitHeight = (window.screen.height * .07);
+        submitWidth = (window.screen.width * .31);
+    }
+    else
+    {
+        $(".quizheading").css({"top": position, "height": (window.screen.height * .1), "width": (window.screen.width * .69)});
+        $(".submitdiv").css({"top": position, "left": (window.screen.width * .69), "height": (window.screen.height * .1), "width": (window.screen.width * .31)});
+
+        headingHeight = (window.screen.height * .1);
+        headingWidth = (window.screen.width * .69);
+
+        submitLeft = (window.screen.width * .69);
+        submitHeight = (window.screen.height * .1);
+        submitWidth = (window.screen.width * .31);
+    }
+
+    $("#formdiv").hide();
+    //$("#backquiz").show();
+
+
+
+    if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
+    {
+        $("section").css({"height": (window.screen.height * 1.9)});
+        
+        sectionHeight = (window.screen.height * 1.9);
+
+        $(".selector1").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .0385)});
+        $(".selector2").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .462)});
+        $(".selector3").css({"top": (window.screen.height * .35), "left": (window.screen.width * .0385)});
+        $(".selector4").css({"top": (window.screen.height * .35), "left": (window.screen.width * .462)});
+
+        $(".answer1label").css({"top": (window.screen.height * .263), "left": (window.screen.width * .041)});
+        $(".answer2label").css({"top": (window.screen.height * .263), "left": (window.screen.width * .465)});
+        $(".answer3label").css({"top": (window.screen.height * .386), "left": (window.screen.width * .041)});
+        $(".answer4label").css({"top": (window.screen.height * .386), "left": (window.screen.width * .465)});
+
+        $(".answer1").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .069)});
+        $(".answer2").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .5)});
+        $(".answer3").css({"top": (window.screen.height * .35), "left": (window.screen.width * .069)});
+        $(".answer4").css({"top": (window.screen.height * .35), "left": (window.screen.width * .5)});
+
+        selector12Top = (window.screen.height * .226667);
+        selector13Left = (window.screen.width * .0385);
+        selector24Left = (window.screen.width * .462);
+        selector34Top = (window.screen.height * .35);
+
+        answer12labelTop = (window.screen.height * .263);
+        answer13labelLeft = (window.screen.width * .041);
+        answer24labelLeft = (window.screen.width * .465);
+        answer34labelTop = (window.screen.height * .386);
+
+        answer12Top = (window.screen.height * .226667);
+        answer13Left = (window.screen.width * .069);
+        answer24Left = (window.screen.width * .5);
+        answer34Top = (window.screen.height * .35);
+
+        $(".quizimageleft").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
+        $(".quizimageright").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
+        $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .158), "width": (window.screen.width * .25)});
+
+        quizimageTop = (window.screen.height * .42);
+        quizimageWidth = (window.screen.width * .4);
+        quizimageHeight = (window.screen.height * .54);
+
+
+        backquizTop = (window.screen.height * .508);
+        backquizLeft = (window.screen.width * .73);
+        backquizHeight = (window.screen.height * .158);
+        backquizWidth = (window.screen.width * .25);
+    }
+    else if (window.screen.width > 700)
+    {
+        $(".selector1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .0385)});
+        $(".selector2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .462)});
+        $(".selector3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .0385)});
+        $(".selector4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .462)});
+
+        $(".answer1label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .041)});
+        $(".answer2label").css({"top": (window.screen.height * .193), "left": (window.screen.width * .465)});
+        $(".answer3label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .041)});
+        $(".answer4label").css({"top": (window.screen.height * .276), "left": (window.screen.width * .465)});
+
+        $(".answer1").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .069)});
+        $(".answer2").css({"top": (window.screen.height * .166667), "left": (window.screen.width * .5)});
+        $(".answer3").css({"top": (window.screen.height * .25), "left": (window.screen.width * .069)});
+        $(".answer4").css({"top": (window.screen.height * .25), "left": (window.screen.width * .5)});
+
+        selector12Top = (window.screen.height * .166667);
+        selector13Left = (window.screen.width * .0385);
+        selector24Left = (window.screen.width * .462);
+        selector34Top = (window.screen.height * .25);
+
+        answer12labelTop = (window.screen.height * .193);
+        answer13labelLeft = (window.screen.width * .041);
+        answer24labelLeft = (window.screen.width * .465);
+        answer34labelTop = (window.screen.height * .276);
+
+        answer12Top = (window.screen.height * .166667);
+        answer13Left = (window.screen.width * .069);
+        answer24Left = (window.screen.width * .5);
+        answer34Top = (window.screen.height * .25);
+
+        if (window.screen.height > 1000)
+        {
+            $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
+            $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
+
+            quizimageTop = (window.screen.height * .39);
+            quizimageWidth = (window.screen.width * .4);
+            quizimageHeight = (window.screen.height * .5);
+        }
+
+    }
+    else
+    {
+        if (question === 0 || question === 18)
+        {
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .35), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
+
+            leftvisibleTop = (window.screen.height * .32);
+            leftvisibleLeft = (window.screen.width * .35);
+            leftvisibleHeight = (window.screen.height * .5);
+            leftvisibleWidth = (window.screen.width * .45);
+        }
+        else
+        {
+            $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .45)});
+
+            leftvisibleTop = (window.screen.height * .32);
+            leftvisibleLeft = (window.screen.width * .22);
+            leftvisibleHeight = (window.screen.height * .5);
+            leftvisibleWidth = (window.screen.width * .45);
+        }
+
+        $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        //$("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
+        $("section").css({"margin-top": "50px", "padding-bottom": "0px", "width": window.screen.width, "height": window.screen.height});
+
+        $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .118), "width": (window.screen.width * .25)});
+
+        quizimageTop = (window.screen.height * .39);
+        quizimageWidth = (window.screen.width * .45);
+        quizimageHeight = (window.screen.height * .5);
+
+        backquizTop = (window.screen.height * .508);
+        backquizLeft = (window.screen.width * .73);
+        backquizHeight = (window.screen.height * .118);
+        backquizWidth = (window.screen.width * .25);
+    }
+}
+
+function resizeResolution()
+{
+    //$("section").attr("style", "margin-top: 50px; padding-bottom: 100px; width:100%; height: " + window.screen.height + "px");
+    $("section").css({"margin-top": "50px", "padding-bottom": "100px", "width": sectionWidth, "height": sectionHeight});
+
+
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+
+
+    $(".quizimageleft").css({"top": quizimageTop, "height": quizimageHeight, "width": quizimageWidth});
+    $(".quizimageright").css({"top": quizimageTop, "height": quizimageHeight, "width": quizimageWidth});
+
+
+    $("#backquiz").css({"top": backquizTop, "left": backquizLeft, "height": backquizHeight, "width": backquizWidth});
+    $("#score").css({"top": scoreTop});
+
+
+    $("#score").hide();
+    $("#prevlevel1a").attr("style", "opacity: .6");
+    $("#backquiz").hide();
+    $("input").hide();
+    $("label").hide();
+    $("#question").hide();
+    $("#submitanswer").hide();
+    $("img").hide();
+    $("#searchIcon").show();
+    $("#BeautyLeft1").show();
+    $("#dialogue").html("<b>Beauty:</b> Hi");
+    //$("#BeautyLeft1").animate({left: startLeft});
+
+
+    var position = document.getElementById("menudiv").clientHeight;
+
+
+    if (question === 0 || question === 18)
+    {
+        $(".quizimageleft:visible").css({"top": leftvisibleTop, "left": leftvisibleLeft, "height": leftvisibleHeight, "width": leftvisibleWidth});
+
+    }
+    else
+    {
+        $(".quizimageleft:visible").css({"top": leftvisibleTop, "left": leftvisibleLeft, "height": leftvisibleHeight, "width": leftvisibleWidth});
+
+    }
+    $(".quizimageright:visible").css({"top": leftvisibleTop, "left": rightvisibleLeft, "height": leftvisibleHeight, "width": leftvisibleWidth});
+
+
+
+    if (window.screen.width > 550 && window.screen.width < 700 && window.screen.height > 900)
+    {
+        $(".quizheading").css({"top": position, "height": headingHeight, "width": headingWidth});
+        $(".submitdiv").css({"top": position, "left": submitLeft, "height": submitHeight, "width": submitWidth});
+
+    }
+    else
+    {
+        $(".quizheading").css({"top": position, "height": headingHeight, "width": headingWidth});
+        $(".submitdiv").css({"top": position, "left": submitLeft, "height": submitHeight, "width": submitWidth});
+
+    }
+
+    $("#formdiv").hide();
+    //$("#backquiz").show();
+
+
+
+    if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
+    {
+        $("section").css({"height": sectionHeight});
+
+        $(".selector1").css({"top": selector12Top, "left": selector13Left});
+        $(".selector2").css({"top": selector12Top, "left": selector24Left});
+        $(".selector3").css({"top": selector34Top, "left": selector13Left});
+        $(".selector4").css({"top": selector34Top, "left": selector24Left});
+
+        $(".answer1label").css({"top": answer12labelTop, "left":  answer13labelLeft});
+        $(".answer2label").css({"top": answer12labelTop, "left": answer24labelLeft});
+        $(".answer3label").css({"top": answer34labelTop, "left":  answer13labelLeft});
+        $(".answer4label").css({"top": answer34labelTop, "left": answer24labelLeft});
+
+        $(".answer1").css({"top": answer12Top, "left": answer13Left});
+        $(".answer2").css({"top": answer12Top, "left": answer24Left});
+        $(".answer3").css({"top": answer34Top, "left": answer13Left});
+        $(".answer4").css({"top": answer34Top, "left": answer24Left});
+
+        $(".quizimageleft").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+        $(".quizimageright").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+        $("#backquiz").css({"top": backquizTop, "left": backquizLeft, "height": backquizHeight, "width": backquizWidth});
+
+    }
+    else if (window.screen.width > 700)
+    {
+        $(".selector1").css({"top": selector12Top, "left": selector13Left});
+        $(".selector2").css({"top": selector12Top, "left": selector24Left});
+        $(".selector3").css({"top": selector34Top, "left": selector13Left});
+        $(".selector4").css({"top": selector34Top, "left": selector24Left});
+
+        $(".answer1label").css({"top": answer12labelTop, "left":  answer13labelLeft});
+        $(".answer2label").css({"top": answer12labelTop, "left": answer24labelLeft});
+        $(".answer3label").css({"top": answer34labelTop, "left":  answer13labelLeft});
+        $(".answer4label").css({"top": answer34labelTop, "left": answer24labelLeft});
+
+        $(".answer1").css({"top": answer12Top, "left": answer13Left});
+        $(".answer2").css({"top": answer12Top, "left": answer24Left});
+        $(".answer3").css({"top": answer34Top, "left": answer13Left});
+        $(".answer4").css({"top": answer34Top, "left": answer24Left});
+
+
+        if (window.screen.height > 1000)
+        {
+            $(".quizimageleft").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+        $(".quizimageright").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+
+        }
+
+    }
+    else
+    {
+        if (question === 0 || question === 18)
+        {
+            $(".quizimageleft:visible").css({"top": leftvisibleTop, "left": leftvisibleLeft, "height": leftvisibleHeight, "width": leftvisibleWidth});
+
+        }
+        else
+        {
+            $(".quizimageleft:visible").css({"top": leftvisibleTop, "left": leftvisibleLeft, "height": leftvisibleHeight, "width": leftvisibleWidth});
+
+        }
+
+        $(".quizimageleft").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+        $(".quizimageright").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+        //$("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
+        $("section").css({"margin-top": "50px", "padding-bottom": "0px", "width": sectionWidth, "height": sectionHeight});
+
+        $("#backquiz").css({"top": backquizTop, "left": backquizLeft, "height": backquizHeight, "width": backquizWidth});
+
+    }
+}

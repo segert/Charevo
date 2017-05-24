@@ -8,35 +8,16 @@
 $(document).ready(function () {
 
     character = sessionStorage.getItem("SessionCharacter");
-    //$(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
-    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
-    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-
-    $(".geneinfo").css({"width": (window.screen.width * .80)});
-    $(".characterheader").css({"width": (window.screen.width * .80)});
-
-    if (window.screen.width > 500)
-    {
-        $("#paddeddiv").css({"height": (window.screen.height * 1.00)});
-    }
-    else
-    {
-        $("#paddeddiv").css({"height": (window.screen.height * 2.00), "margin-bottom": (window.screen.height * 1.5)});
-    }
+    
+    checkResolution();
+   
 
     $(window).resize(function () {
-        $(".geneinfo").css({"width": (window.screen.width * .80)});
-        $(".characterheader").css({"width": (window.screen.width * .80)});
-
-        //if(window.screen.width > 900)
-        if (window.screen.width > 500)
-        {
-            $("#paddeddiv").css({"height": (window.screen.height * 1.00)});
-        }
-        else
-        {
-            $("#paddeddiv").css({"height": (window.screen.height * 2.00), "margin-bottom": (window.screen.height * 1.5)});
-        }
+        resizeResolution();
+    });
+    
+    $(window).on("orientationchange", function (event) {
+        checkResolution();
     });
 
 
@@ -50,24 +31,8 @@ $(document).ready(function () {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
-    {
-        document.getElementById("emblem").src = "images/Emblems/beautyemblem.png";
-        document.getElementById("emblem").alt = "Beauty Emblem Placeholder";
-
-        document.getElementById("behaviorfairy").src = "images/Fairies/beautyfictionfairy.png";
-        document.getElementById("behaviorfairy").alt = "Beauty Fiction Fairy Placeholder";
-
-        document.getElementById("mentalityfairy").src = "images/Fairies/beautyimaginationfairy.png";
-        document.getElementById("mentalityfairy").alt = "Beauty Imagination Fairy Placeholder";
-
-        document.getElementById("identificationfairy").src = "images/Fairies/beautyfemininityfairy.png";
-        document.getElementById("identificationfairy").alt = "Beauty Femininity Fairy Placeholder";
-
-        document.getElementById("d").innerHTML = beautyBold + "Ah, the Charevo Gene. The gene that only a certain number of people are born with to develop superpowers. And, coincidentally, the people who are most likely to be involved in a superhero story. That's our Charevo Gene, folks!";
-        max = 5;
-    }
-    else if (character === "Tel-E")
+    
+    if (character === "Tel-E")
     {
         document.getElementById("emblem").src = "images/Emblems/tel-eemblem.png";
         document.getElementById("emblem").alt = "Tel-E Emblem Placeholder";
@@ -101,6 +66,23 @@ $(document).ready(function () {
         document.getElementById("d").innerHTML = pyraBold + "So here's where you can learn about the Charevo Gene. If you're not into reading anything beyond this dialogue box, here's the short story behind it.";
         max = 7;
     }
+    else
+    {
+        document.getElementById("emblem").src = "images/Emblems/beautyemblem.png";
+        document.getElementById("emblem").alt = "Beauty Emblem Placeholder";
+
+        document.getElementById("behaviorfairy").src = "images/Fairies/beautyfictionfairy.png";
+        document.getElementById("behaviorfairy").alt = "Beauty Fiction Fairy Placeholder";
+
+        document.getElementById("mentalityfairy").src = "images/Fairies/beautyimaginationfairy.png";
+        document.getElementById("mentalityfairy").alt = "Beauty Imagination Fairy Placeholder";
+
+        document.getElementById("identificationfairy").src = "images/Fairies/beautyfemininityfairy.png";
+        document.getElementById("identificationfairy").alt = "Beauty Femininity Fairy Placeholder";
+
+        document.getElementById("d").innerHTML = beautyBold + "Ah, the Charevo Gene. The gene that only a certain number of people are born with to develop superpowers. And, coincidentally, the people who are most likely to be involved in a superhero story. That's our Charevo Gene, folks!";
+        max = 5;
+    }
 
 
 });
@@ -111,9 +93,13 @@ function next() {
         dialogue++;
         DialogueChangeMenu();
         document.getElementById("prev").setAttribute("style", "opacity: 1");
+        document.getElementById("prev").disabled = false;
     }
     if (dialogue === max)
-        document.getElementById("next").setAttribute("style", "opacity: .6");
+    {
+        document.getElementById("next").setAttribute("style", "opacity: .4");
+        document.getElementById("next").disabled = true;
+    }
 }
 
 function prev() {
@@ -122,9 +108,13 @@ function prev() {
         dialogue--;
         DialogueChangeMenu();
         document.getElementById("next").setAttribute("style", "opacity: 1");
+        document.getElementById("next").disabled = false;
     }
     if (dialogue === 1)
-        document.getElementById("prev").setAttribute("style", "opacity: .6");
+    {
+        document.getElementById("prev").setAttribute("style", "opacity: .4");
+        document.getElementById("prev").disabled = true;
+    }
 }
 
 function DialogueChangeMenu() {
@@ -213,4 +203,63 @@ function DialogueChangeMenu() {
         }
     }
 
+}
+
+function checkResolution(){
+      //$(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+
+    $(".geneinfo").css({"width": (window.screen.width * .80)});
+    $(".characterheader").css({"width": (window.screen.width * .80)});
+
+    if (window.screen.height < 500 && window.screen.width < 500 && window.screen.height < window.screen.width)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 2.00), "margin-bottom": (window.screen.height * 1.5)});
+        paddedHeight = (window.screen.height * 2.00);
+        paddedMargin = (window.screen.height * 1.5);
+    }
+    else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 1.00), "margin-bottom": (window.screen.height * 1.5)});
+        paddedHeight = (window.screen.height * 1.00);
+        paddedMargin = (window.screen.height * 1.5);
+    }
+    else if (window.screen.width > 500)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 1.00)});
+        paddedHeight = (window.screen.height * 1.00);
+    }
+    else
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 2.00), "margin-bottom": (window.screen.height * 1.5)});
+        paddedHeight = (window.screen.height * 2.00);
+        paddedMargin = (window.screen.height * 1.5);
+    }
+}
+
+function resizeResolution(){
+     //$(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+
+    $(".geneinfo").css({"width": (window.screen.width * .80)});
+    $(".characterheader").css({"width": (window.screen.width * .80)});
+
+    if (window.screen.height < 500 && window.screen.width < 500 && window.screen.height < window.screen.width)
+    {
+        $("#paddeddiv").css({"height": paddedHeight, "margin-bottom": paddedMargin});
+    }
+    else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
+    {
+        $("#paddeddiv").css({"height": paddedHeight, "margin-bottom": paddedMargin});
+    }
+    else if (window.screen.width > 500)
+    {
+        $("#paddeddiv").css({"height": paddedHeight});
+    }
+    else
+    {
+        $("#paddeddiv").css({"height": paddedHeight, "margin-bottom": paddedMargin});
+    }
 }

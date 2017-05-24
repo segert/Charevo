@@ -14,7 +14,14 @@ html, body {
   height: 100%;
   background-color:#eeeeee;
   font-family: sans-serif;
+  font-size: 16px;
 }
+/*
+@media (min-height: 1200px)
+{
+    body { font-size: 36px; 
+                    }
+}*/
 
 
 a {
@@ -336,7 +343,13 @@ section {
                     }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 400px){
+    .char-image-fairy { width: 150px; 
+                         height: 180px;
+                    }
+}
+
+@media (min-width: 500px) and (min-height: 500){
     .char-image-fairy { width: 200px; 
                          height: 200px;
                     }
@@ -562,6 +575,12 @@ section {
 
 }
 
+@media (min-width: 1500px){
+    .imgmenu1 {
+        left:17%;
+}
+}
+
 .liabout{
     display:block;
 }
@@ -641,11 +660,11 @@ section {
 }
 
 @media (min-width: 100px) {
-    .li-a-menu1 { font-size: 16px; 
+    .li-a-menu1 { font-size: 15px; 
                     }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 500px) and (min-height: 500px){
     .li-a-menu1 { font-size: 20px; 
                     }
 }
@@ -685,12 +704,12 @@ section {
 }
 
 @media (min-width: 100px) {
-    .menu-selected { font-size: 16px; 
+    .menu-selected { font-size: 15px; 
                     }
 }
 
-@media (min-width: 500px) {
-    .menu-selected { font-size: 20px; 
+@media (min-width: 500px) and (min-height: 500px){
+    .li-a-menu1 { font-size: 20px; 
                     }
 }
 
@@ -717,6 +736,13 @@ section {
 @keyframes menuenter {
     0%   {left:0%; top:0%;}
     100% {left:20%; top:0%;}
+}
+}
+
+@media (min-width: 1500px){
+@keyframes menuenter {
+    0%   {left:0%; top:0%;}
+    100% {left:17%; top:0%;}
 }
 }
 
@@ -891,6 +917,7 @@ section {
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
+    overflow: auto;
 }
 
 .quizimageleft{
@@ -994,6 +1021,19 @@ section {
 .site-footer, .page-wrap:after {
   height: 380px; 
 }
+
+@media (min-height: 100px) {
+    .site-footer, .page-wrap:after {
+  height: 380px; 
+}
+}
+
+@media (min-height: 1500px) {
+    .site-footer, .page-wrap:after {
+  height: 780px; 
+}
+}
+
 .site-footer {
   position: relative;
   width: 100vw;
@@ -1119,6 +1159,20 @@ section {
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
+}
+
+@media (min-height: 200px)
+{
+    .submitdiv button{
+        font-size: 10px;
+    }
+}
+
+@media (min-height: 500px)
+{
+    .submitdiv button{
+        font-size: 16px;
+    }
 }
 
 .teleblogfront{

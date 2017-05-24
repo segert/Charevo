@@ -7,28 +7,16 @@ $(document).ready(function () {
 
     character = sessionStorage.getItem("SessionCharacter");
 
-    $("#paddingdiv").attr("style", "height: " + (window.screen.height / 2) + "px");
-    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
-    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
-    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
-    $(".characterinfo").css({"width": (window.screen.width * .85)});
-        $(".characterheader").css({"width": (window.screen.width * .85)});
-    
-    if (window.screen.width < 700)
-    {
-        $("#hero").css({"right": "10px"});
-        $("#villain").css({"right": "10px"});
-        $("#oth").css({"right": "10px"});
-    }
+    checkResolution();
     
     
     $(window).resize(function () {
-        $(".characterinfo").css({"width": (window.screen.width * .85)});
-        $(".characterheader").css({"width": (window.screen.width * .85)});
-        //$(".navbar").css({"width": (window.screen.width * .90)});
-
+        resizeResolution();
         
+    });
+    
+    $(window).on("orientationchange", function (event) {
+        checkResolution();
     });
     
 
@@ -42,23 +30,8 @@ $(document).ready(function () {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
-    {
-        document.getElementById("hero").src = "images/beautyright1.png";
-        document.getElementById("hero").alt = "Beauty Placeholder";
-
-        document.getElementById("villain").src = "images/fourizeright1.png";
-        document.getElementById("villain").alt = "Fourize Placeholder";
-
-        document.getElementById("oth").src = "images/chiefright1.png";
-        document.getElementById("oth").alt = "Chief Placeholder";
-
-        document.getElementById("d").innerHTML = beautyBold + "And here we have all our characters! Hang on. First click on the Heroes, Villains, and Other Characters titles to reveal the names as they're categorized.";
-
-        max = 4;
-
-    }
-    else if (character === "Tel-E")
+    
+    if (character === "Tel-E")
     {
         document.getElementById("hero").src = "images/tel-eright1.png";
         document.getElementById("hero").alt = "Tel-E Placeholder";
@@ -87,6 +60,22 @@ $(document).ready(function () {
         document.getElementById("d").innerHTML = pyraBold + "So this is the page that lists all our characters. Pretty self explanatory. Just click on those words to reveal some names.";
 
         max = 4;
+    }
+    else
+    {
+        document.getElementById("hero").src = "images/beautyright1.png";
+        document.getElementById("hero").alt = "Beauty Placeholder";
+
+        document.getElementById("villain").src = "images/fourizeright1.png";
+        document.getElementById("villain").alt = "Fourize Placeholder";
+
+        document.getElementById("oth").src = "images/chiefright1.png";
+        document.getElementById("oth").alt = "Chief Placeholder";
+
+        document.getElementById("d").innerHTML = beautyBold + "And here we have all our characters! Hang on. First click on the Heroes, Villains, and Other Characters titles to reveal the names as they're categorized.";
+
+        max = 4;
+
     }
 
     $("#heroes").click(function () {
@@ -423,9 +412,13 @@ function next() {
         dialogue++;
         DialogueChangeMenu();
         document.getElementById("prev").setAttribute("style", "opacity: 1");
+        document.getElementById("prev").disabled = false;
     }
     if (dialogue === max)
-        document.getElementById("next").setAttribute("style", "opacity: .6");
+    {
+        document.getElementById("next").setAttribute("style", "opacity: .4");
+        document.getElementById("next").disabled = true;
+    }
 }
 
 function prev() {
@@ -434,9 +427,13 @@ function prev() {
         dialogue--;
         DialogueChangeMenu();
         document.getElementById("next").setAttribute("style", "opacity: 1");
+        document.getElementById("next").disabled = false;
     }
     if (dialogue === 1)
-        document.getElementById("prev").setAttribute("style", "opacity: .6");
+    {
+        document.getElementById("prev").setAttribute("style", "opacity: .4");
+        document.getElementById("prev").disabled = true;
+    }
 }
 
 function DialogueChangeMenu() {
@@ -501,4 +498,74 @@ function DialogueChangeMenu() {
         }
     }
 
+}
+
+function checkResolution(){
+    $("#paddingdiv").attr("style", "height: " + (window.screen.height / 2) + "px");
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+    
+    $(".characterinfo").css({"width": (window.screen.width * .85)});
+        $(".characterheader").css({"width": (window.screen.width * .85)});
+        
+        infoWidth = (window.screen.width * .85);
+        headerWidth = (window.screen.width * .85);
+        
+        
+    
+    if (window.screen.width < 700)
+    {
+        $("#hero").css({"right": "10px"});
+        $("#villain").css({"right": "10px"});
+        $("#oth").css({"right": "10px"});
+    }
+    else
+    {
+        $("#hero").css({"right": "30%"});
+        $("#villain").css({"right": "30%"});
+        $("#oth").css({"right": "30%"});
+    }
+    
+    if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
+    {
+        $(".char-image-select").css({"width": "200px", "height": "300px" });
+    }
+    
+    characterWidth = $("#hero").width();
+    characterHeight = $("#hero").height();
+    sectionWidth = window.screen.width;
+    paddingHeight = (window.screen.height / 2);
+}
+
+function resizeResolution(){
+    $("#paddingdiv").attr("style", "height: " + paddingHeight + "px");
+    $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
+    $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
+    //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
+    
+    $(".characterinfo").css({"width": infoWidth});
+        $(".characterheader").css({"width": headerWidth});
+        
+        $(".char-image-select").css({"width": characterWidth, "height": characterHeight});
+    
+    if (window.screen.width < 700)
+    {
+        $("#hero").css({"right": "10px"});
+        $("#villain").css({"right": "10px"});
+        $("#oth").css({"right": "10px"});
+    }
+    else
+    {
+        $("#hero").css({"right": "30%"});
+        $("#villain").css({"right": "30%"});
+        $("#oth").css({"right": "30%"});
+    }
+    
+    if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
+    {
+        //$(".char-image-select").css({"width": "200px", "height": "300px" });
+    }
+    
+    //$("section").css({"width": sectionWidth});
 }
