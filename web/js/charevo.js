@@ -15,10 +15,15 @@ $(document).ready(function () {
     $(window).resize(function () {
         resizeResolution();
     });
-    
+
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+
+    question = "";
+    teleAddressed = 0;
+
+
 
     var characters = ["Beauty", "Tel-E", "Pyra"];
     //switchcharacter = "";
@@ -72,24 +77,70 @@ $(document).ready(function () {
         document.getElementById("character").alt = "Beauty Placeholder";
         max = 6;
     }
-    //else
-    //   document.getElementById("d").innerHTML = "Beauty: Hello World ";
+
+    var curseWords = ["fuck", "shit", "cocksuck", "cock suck", "cunt", "twat", " tit ", " tits ", " tit.", " tits.", " tits?"];
+
+    $(document).keypress(function (e) {
+        if (character === "Tel-E")
+        {
+            var x = e.which || e.keycode;
+
+
+
+            if (x === 13)
+            {
+                askTelE(question);
+                question = "";
+            }
+            else
+            {
+                question = question + String.fromCharCode(x);
+                //document.getElementById("d").innerHTML = question;
+
+                for (var i = 0; i < curseWords.length; i++)
+                {
+                    if (question.toLowerCase().includes(curseWords[i]))
+                    {
+                        document.getElementById("d").innerHTML = teleBold + "Um. So sorry to interrupt your thoughts, but I would appreciate you staying away from profanity. I can hear your terrible language in my mind, you know.";
+
+                        if (teleAddressed === 0)
+                            teleAddressed = 1;
+
+                        question = "";
+                    }
+                }
+
+
+            }
+        }
+    });
 
 });
 
 
 
-function test() {
-    x++;
+function askTelE(newquestion)
+{
+    var teleBold = "Tel-E: ";
+    teleBold = teleBold.bold();
+    if (teleAddressed === 0)
+    {
+        var greeting = /^((hello)|(hi))[\.\!]*$/i;
+        if (greeting.test(newquestion))
+        {
+            document.getElementById("d").innerHTML = teleBold + "And hello to you. I hope I'm not freaking you out with responding to you, but I am a telepath. Don't believe me? Think (or type) something else then. I'll perfectly pick it up mentally. Go on then.";
+            teleAddressed = 1;
+        }
+    }
+    else
+    {
+        var question1 = /^((who)|(what)) are you[\.\?]*$/i;
 
-}
-
-function setcharacter(selected) {
-    character = selected;
-}
-
-function getcharacter() {
-    return character;
+        if (question1.test(newquestion))
+        {
+            document.getElementById("d").innerHTML = teleBold + "Who am I, you ask? Why, I'm Tel-E Vega of Planet Knowlgia. My home is a world of intelligent women with super abilities from our Charevo Genes. With my power of Telepathy, Telekinesis, and Energy Projection, I help rid Minor City of evil as part of the Neo Brigade, a team of super powered teens. I hope that answers your question.";
+        }
+    }
 }
 
 
@@ -131,7 +182,7 @@ function DialogueChangeMenu() {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    
+
     if (character === "Tel-E")
     {
         switch (dialogue)
@@ -209,16 +260,16 @@ function DialogueChangeMenu() {
     }
 }
 
-function checkResolution(){
+function checkResolution() {
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     if (window.screen.width > 1300 && window.screen.height > 1500)
     {
         $("#character").css({"width": (window.screen.width / 1.55)});
         $("#character").css({"height": (window.screen.height / 1.14)});
         $("section").css({"height": (window.screen.height * 0.85)});
-        
+
         characterWidth = (window.screen.width / 1.55);
         characterHeight = (window.screen.height / 1.14);
         sectionHeight = (window.screen.height * .85);
@@ -228,7 +279,7 @@ function checkResolution(){
         $("#character").css({"width": (window.screen.width / 1.5)});
         $("#character").css({"height": (window.screen.height / 1.44)});
         $("section").css({"height": (window.screen.height * 1.05)});
-        
+
         characterWidth = (window.screen.width / 1.5);
         characterHeight = (window.screen.height / 1.44);
         sectionHeight = (window.screen.height * 1.05);
@@ -238,7 +289,7 @@ function checkResolution(){
         $("#character").css({"width": (window.screen.width / 2.4)});
         $("#character").css({"height": (window.screen.height / .8)});
         $("section").css({"height": (window.screen.height * 1.45)});
-        
+
         characterWidth = (window.screen.width / 2.4);
         characterHeight = (window.screen.height / .8);
         sectionHeight = (window.screen.height * 1.45);
@@ -248,7 +299,7 @@ function checkResolution(){
         $("#character").css({"width": (window.screen.width / 2.7)});
         $("#character").css({"height": (window.screen.height / 1.44)});
         $("section").css({"height": (window.screen.height * 1.05)});
-        
+
         characterWidth = (window.screen.width / 2.7);
         characterHeight = (window.screen.height / 1.44);
         sectionHeight = (window.screen.height * 1.05);
@@ -258,20 +309,20 @@ function checkResolution(){
         $("#character").css({"width": (window.screen.width / 1.4)});
         $("#character").css({"height": (window.screen.height / 1.44)});
         $("section").css({"height": (window.screen.height * 1.05)});
-        
+
         characterWidth = (window.screen.width / 1.4);
         characterHeight = (window.screen.height / 1.44);
         sectionHeight = (window.screen.height * 1.05);
     }
 
 
-    
+
 }
 
-function resizeResolution(){
+function resizeResolution() {
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     if (window.screen.width > 1300 && window.screen.height > 1500)
     {
         $("#character").css({"width": characterWidth});
@@ -304,5 +355,5 @@ function resizeResolution(){
     }
 
 
-    
+
 }

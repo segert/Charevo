@@ -94,11 +94,11 @@ $(document).ready(function () {
         $("#herolist").empty();
 
         $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Beauty</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Tel-E</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Pyra</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Race</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Bendy</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Nator</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/tel-e.html'>Tel-E</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/pyra.html'>Pyra</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/race.html'>Race</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/bendy.html'>Bendy</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/nator.html'>Nator</a></li>");
         $("#herolist").append("<li class = 'charnames'>Negator</li>");
         $("#herolist").append("<li class = 'charnames'>Inflator</li>");
 
@@ -133,11 +133,11 @@ $(document).ready(function () {
         $("#herolist").empty();
 
         $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Beauty</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Tel-E</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Pyra</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Race</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Bendy</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Nator</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/tel-e.html'>Tel-E</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/pyra.html'>Pyra</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/race.html'>Race</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/bendy.html'>Bendy</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/nator.html'>Nator</a></li>");
 
         if (character === "Beauty")
         {
@@ -202,11 +202,11 @@ $(document).ready(function () {
     $("#AllVillain").click(function () {
         $("#villainlist").empty();
 
-        $("#villainlist").append("<li class = 'charnames'>Fourize</li>");
-        $("#villainlist").append("<li class = 'charnames'>Dinomight</li>");
-        $("#villainlist").append("<li class = 'charnames'>Tammy Time</li>");
-        $("#villainlist").append("<li class = 'charnames'>Ninja</li>");
-        $("#villainlist").append("<li class = 'charnames'>Cyhack</li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/fourize.html'>Fourize</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/cyhack.html'>Cyhack</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/dinomight.html'>Dinomight</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/ninja.html'>Ninja</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/tammytime.html'>Tammy Time</a></li>");
         $("#villainlist").append("<li class = 'charnames'>Cold Miner</li>");
         $("#villainlist").append("<li class = 'charnames'>Christy Ferguson</li>");
         $("#villainlist").append("<li class = 'charnames'>Captain D</li>");
@@ -243,11 +243,11 @@ $(document).ready(function () {
     $("#MinorVillain").click(function () {
         $("#villainlist").empty();
 
-        $("#villainlist").append("<li class = 'charnames'>Fourize</li>");
-        $("#villainlist").append("<li class = 'charnames'>Dinomight</li>");
-        $("#villainlist").append("<li class = 'charnames'>Tammy Time</li>");
-        $("#villainlist").append("<li class = 'charnames'>Ninja</li>");
-        $("#villainlist").append("<li class = 'charnames'>Cyhack</li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/fourize.html'>Fourize</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/cyhack.html'>Cyhack</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/dinomight.html'>Dinomight</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/ninja.html'>Ninja</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/tammytime.html'>Tammy Time</a></li>");
         $("#villainlist").append("<li class = 'charnames'>Cold Miner</li>");
         $("#villainlist").append("<li class = 'charnames'>Christy Ferguson</li>");
         $("#villainlist").append("<li class = 'charnames'>Captain D</li>");
@@ -315,7 +315,7 @@ $(document).ready(function () {
     $("#AllOther").click(function () {
         $("#otherlist").empty();
 
-        $("#otherlist").append("<li class = 'charnames'>Chief Lou Trotter</li>");
+        $("#otherlist").append("<li class = 'charnames'><a href = 'Characters/chieftrotterberg.html'>Chief Lou Trotterberg</a></li>");
 
         if (character === "Beauty")
         {
@@ -347,7 +347,7 @@ $(document).ready(function () {
     $("#MinorOther").click(function () {
         $("#otherlist").empty();
 
-        $("#otherlist").append("<li class = 'charnames'>Chief Lou Trotter</li>");
+        $("#otherlist").append("<li class = 'charnames'><a href = 'Characters/chieftrotterberg.html'>Chief Lou Trotterberg</a></li>");
 
         if (character === "Beauty")
         {

@@ -20,9 +20,12 @@ $(document).ready(function () {
         checkResolution();
     });
 
+    beautyrotations = 0;
+    telerotations = 0;
+    pyrarotations = 0;
 
 
-    
+
     if (character === "Tel-E")
     {
         $("#a0").attr("class", "");
@@ -36,11 +39,66 @@ $(document).ready(function () {
             var id = ev.relatedTarget.id;
 
             if (id === "0")
-                $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you probably already knew that since I'm the default character. Anyway, if you liked me at the start, I can talk to you some more. Just give me a click and I'll be your host again.");
+            {
+                if ((pyrarotations / 2) === 21)
+                {
+                    $(".left").click(function () {
+                        $("#2").remove();
+                        pyrarotations++;
+                    });
+                }
+                beautyrotations++;
+                if((pyrarotations / 2) >= 21)
+                {
+                    $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you . . . wait. Have you seen Pyra? Ugh. Lemme guess. You took too long to choose a host didn't you? Sorry about that.");
+                
+                }
+                else
+                    $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you probably already knew that since I'm the default character. Anyway, if you liked me at the start, I can talk to you some more. Just give me a click and I'll be your host again.");
+            }
             else if (id === "1")
-                $("#d").html("<b>Tel-E:</b> I see you've returned to the character selection page. No problem. Just choose from any of the other girls available on this menu and they'll help guide you through this site just as I have. I'll be right here if you wish to bring me back as host.");
+            {
+                if ((pyrarotations / 2) === 21)
+                {
+                    $(".right").click(function () {
+                        $("#2").remove();
+                        pyrarotations++;
+                    });
+                }
+                
+                if((pyrarotations / 2) >= 21)
+                {
+                    $("#d").html("<b>Tel-E:</b> Hello again. Sorry if you were expecting someone else. There's only the three of us girls to choose from as . . . wait. Where did Pyra go? Oh dear. Sorry. She's usually shy around others. What? She was impatient with you? Oh. Right then. Well, just me and Beauty here for now.");
+                
+                }
+                else if (beautyrotations >= 1 && pyrarotations >= 1)
+                {
+                    telerotations++;
+                    $("#d").html("<b>Tel-E:</b> Hello again. Sorry if you were expecting someone else. There's only the three of us girls to choose from as your host. I know. It would be nice for the gentlemen to be here to guide you as well, but we were the only ones called in for this. Feel free to select anyone available for now.");
+                }
+                else
+                    $("#d").html("<b>Tel-E:</b> I see you've returned to the character selection page. No problem. Just choose from any of the other girls available on this menu and they'll help guide you through this site just as I have. I'll be right here if you wish to bring me back as host.");
+
+            }
             else if (id === "2")
-                $("#d").html("<b>Pyra:</b> Oh, hey. So . . . I guess I'm Pyra. Yeah. Alright, look, I know I'm not that happy and trivia focused like the other two, but if you just wanna hear me stick it to our creator and his ideas, then just choose me. Or don't. I'm not trying to make you or anything.");
+            {
+                if ((pyrarotations / 2) >= 20)
+                {
+                    $("#d").html("<b>Pyra:</b> Alright. That's it. I can't do this anymore. You rotating me like this without choosing someone for this long is making me too sick and dizzy. See ya. You won't see me here again as long as you're here. I'm not kidding. I'm gettin' outta here. Peace out, folks.");
+                    pyrarotations++;
+                }
+                else if ((pyrarotations / 2) >= 10)
+                {
+                    pyrarotations++;
+                    $("#d").html("<b>Pyra:</b> Ugh. Could you pick a host already? Some of us get pretty dizzy here if you keep spinning the carousel like this, you know. ");
+
+                }
+                else
+                {
+                    pyrarotations++;
+                    $("#d").html("<b>Pyra:</b> Oh, hey. So . . . I guess I'm Pyra. Yeah. Alright, look, I know I'm not that happy and trivia focused like the other two, but if you just wanna hear me stick it to our creator and his ideas, then just choose me. Or don't. I'm not trying to make you or anything.");
+                }
+            }
         });
     }
     else if (character === "Pyra")
@@ -49,6 +107,7 @@ $(document).ready(function () {
         $("#a2").attr("class", "active");
         $("#0").attr("class", "item");
         $("#2").attr("class", "item active");
+        //$("#1").remove()
         $("#d").html("<b>Pyra:</b> Oh. You wanna hang with someone else? Okay. That's cool. I don't care. Beauty and Tel-E have time too. Just pick one of them and they'll be your new friend. I'll be here if you change your mind. Really . . . go ahead. I'm . . . I'm fine.");
 
 
@@ -56,25 +115,134 @@ $(document).ready(function () {
             var id = ev.relatedTarget.id;
 
             if (id === "0")
-                $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you probably already knew that since I'm the default character. Anyway, if you liked me at the start, I can talk to you some more. Just give me a click and I'll be your host again.");
+            {
+                if ((pyrarotations / 2) === 21)
+                {
+                    $(".left").click(function () {
+                        $("#2").remove();
+                        pyrarotations++;
+                    });
+                }
+                beautyrotations++;
+                if((pyrarotations / 2) >= 21)
+                {
+                    $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you . . . wait. Did Pyra just leave? I didn't know we could do that. Well, Tel-E and I are still here if you'd like either of us as your host. Seriously? She just left?");
+                
+                }
+                else
+                    $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you probably already knew that since I'm the default character. Anyway, if you liked me at the start, I can talk to you some more. Just give me a click and I'll be your host again.");
+            }
             else if (id === "1")
-                $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of Planet Knowlgia. I've only been on Earth for a little less than a year, but I'm more knowledgable than you think. So if you'd like some more details on this world, why not select me as your host? Go on then.");
+            {
+                if ((pyrarotations / 2) === 21)
+                {
+                    $(".right").click(function () {
+                        $("#2").remove();
+                        pyrarotations++;
+                    });
+                }
+                telerotations++;
+                if((pyrarotations / 2) >= 21)
+                {
+                    $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of . . . Uh oh. I'm sensing impatience and absence. Did something happen? And where's Pyra? She . . . oh. You must've taken too long then. Right. Just me and Beauty for now.");
+                
+                }
+                else 
+                    $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of Planet Knowlgia. I've only been on Earth for a little less than a year, but I'm more knowledgable than you think. So if you'd like some more details on this world, why not select me as your host? Go on then.");
+            }
             else if (id === "2")
-                $("#d").html("<b>Pyra:</b> Oh. You wanna hang with someone else? Okay. That's cool. I don't care. Beauty and Tel-E have time too. Just pick one of them and they'll be your new friend. I'll be here if you change your mind. Really . . . go ahead. I'm . . . I'm fine.");
+            {
+                if ((pyrarotations / 2) >= 20)
+                {
+                    $("#d").html("<b>Pyra:</b> Alright. That's it. I'm gettin' outta here. You rotating me over and over without choosing anyone is making me too sick and dizzy. Seriously, I gotta go. I don't even know why I'm here at all. I'm your current host. What are you gonna do? Pick me twice? You can just go to the home page and see me again. You don't need me here. Later.");
+                    pyrarotations++;
+                }
+                else if ((pyrarotations / 2) >= 10)
+                {
+                    pyrarotations++;
+                    $("#d").html("<b>Pyra:</b> Ugh. Could you pick a host already? Some of us get pretty dizzy here if you keep spinning the carousel like this, you know. ");
+
+                }
+                else if (beautyrotations >= 1 && telerotations >= 1)
+                {
+                    pyrarotations++;
+                    $("#d").html("<b>Pyra:</b> Well, look who's back. What? You wanted a fourth person to be here? Well, too bad. Our creator didn't wanna write for more than three hosts, and, for some reason, I got chosen as one of those hosts. So you can take another trip around this selection for someone if you want, but it's not gonna change.");
+                }
+                else
+                    $("#d").html("<b>Pyra:</b> Oh. You wanna hang with someone else? Okay. That's cool. I don't care. Beauty and Tel-E have time too. Just pick one of them and they'll be your new friend. I'll be here if you change your mind. Really . . . go ahead. I'm . . . I'm fine.");
+
+            }
         });
     }
     else
     {
+
         $("#d").html("<b>Beauty:</b> And here we have the character selection screen. You started with me, but if you wanna hear from someone else as your new host, just select them on this page. Go ahead. I'm not the only one with a story and insight in this world.");
         $('#myCarousel').on('slide.bs.carousel', function (ev) {
             var id = ev.relatedTarget.id;
 
             if (id === "0")
-                $("#d").html("<b>Beauty:</b> And here we have the character selection screen. You started with me, but if you wanna hear from someone else as your new host, just select them on this page. Go ahead. I'm not the only one with a story and insight in this world.");
+            {
+                if ((pyrarotations / 2) === 21)
+                {
+                    $(".left").click(function () {
+                        $("#2").remove();
+                        pyrarotations++;
+                    });
+                }
+
+                if((pyrarotations / 2) >= 21)
+                {
+                    $("#d").html("<b>Beauty:</b> Hi! Me again. So . . . wait. Where'd Pyra go? She was just here on the left. No? Uh . . . okay then. I was gonna remind you Tel-E and Pyra are still available, but I guess it's just Tel-E then. Take your time. We'll both still be here.");
+                
+                }
+                else if (pyrarotations >= 1 && telerotations >= 1)
+                {
+                    beautyrotations++;
+                    $("#d").html("<b>Beauty:</b> Hi. Me again. So . . . yeah. You started with me, but you can still hear from someone else as your new host. Tel-E and Pyra are the only other ones. So don't just skip them this time. Give one of 'em a pick.");
+                }
+                else
+                    $("#d").html("<b>Beauty:</b> And here we have the character selection screen. You started with me, but if you wanna hear from someone else as your new host, just select them on this page. Go ahead. I'm not the only one with a story and insight in this world.");
+
+            }
             else if (id === "1")
-                $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of Planet Knowlgia. I've only been on Earth for a little less than a year, but I'm more knowledgable than you think. So if you'd like some more details on this world, why not select me as your host? Go on then.");
+            {
+                if ((pyrarotations / 2) === 21)
+                {
+                    $(".right").click(function () {
+                        $("#2").remove();
+                        pyrarotations++;
+                    });
+                }
+
+                telerotations++;
+                if((pyrarotations / 2) >= 21)
+                {
+                    $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of Planet . . . hang on. Did this selection menu just get smaller?");
+                
+                }
+                else 
+                    $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of Planet Knowlgia. I've only been on Earth for a little less than a year, but I'm more knowledgable than you think. So if you'd like some more details on this world, why not select me as your host? Go on then.");
+            }
             else if (id === "2")
-                $("#d").html("<b>Pyra:</b> Oh, hey. So . . . I guess I'm Pyra. Yeah. Alright, look, I know I'm not that happy and trivia focused like the other two, but if you just wanna hear me stick it to our creator and his ideas, then just choose me. Or don't. I'm not trying to make you or anything.");
+            {
+                if ((pyrarotations / 2) >= 20)
+                {
+                    $("#d").html("<b>Pyra:</b> Alright. That's it. I'm gettin' outta here. You rotating me like this without choosing someone for this long is making me too sick and dizzy. See ya. You won't see me here again as long as you're here. I'm not kidding. I'm leaving. Peace out, folks.");
+                    pyrarotations++;
+                }
+                else if ((pyrarotations / 2) >= 10)
+                {
+                    pyrarotations++;
+                    $("#d").html("<b>Pyra:</b> Ugh. Could you pick a host already? Some of us get pretty dizzy here if you keep spinning the carousel like this, you know. ");
+
+                }
+                else
+                {
+                    pyrarotations++;
+                    $("#d").html("<b>Pyra:</b> Oh, hey. So . . . I guess I'm Pyra. Yeah. Alright, look, I know I'm not that happy and trivia focused like the other two, but if you just wanna hear me stick it to our creator and his ideas, then just choose me. Or don't. I'm not trying to make you or anything.");
+                }
+            }
         });
     }
 

@@ -22,19 +22,21 @@ and open the template in the editor.
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-        <script src = "../js/beauty.js"></script>
-        <script src="../js/menu.js"></script>
+        <script src = "../js/characters/nator.js"></script>
+        
         <link href="../css/custom.css" rel="stylesheet" type="text/css">
 
         <style>
-            tr:nth-child(even){background-color: yellow}
-            tr{
+            #charactertable tr:nth-child(even){background-color: yellow}
+            #charactertable tr{
                 background-color:#e6e6e6;
             }
-            td{
+            #charactertable td{
                 vertical-align: top;
                 padding: 10px;
             }
+            
+            
         </style>
 
 
@@ -45,115 +47,141 @@ and open the template in the editor.
 
         <div id="maindiv">
 
-        <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+            
 
-            <!-- <p>Selected state: {{ state }}</p> -->
-            <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
-            <span>
-                <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
-                    <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
-                </button> 
-                <input type="submit" style="display: none"/>
-            </span>
-        </form>
-
+            <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+                   <div  ng-controller="DemoCtrl as vm">
+               <div >
+                   <div ng-keyup="$event.keyCode === 13 && vm.goToPage()">
+                       <div sui-select indicating-text="select a page" on-select="vm.onSelect(model)" options="vm.countryOptions" model="vm.selected" label="Country: " searchable="true" disabled=""></div>
+                       <span>
+                       <button type="button" class="btn" style ="z-index: 2" ng-click="vm.goToPage()" >
+                           <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                       </button> 
+                       <input type="submit" style="display: none"/>
+                   </span> 
+                   </div>
+                   
+               </div>
+       
+                      
+           </div>
         
-        <nav>
-            <ul class = "ulmenu1" >
-                <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="../index.html"><b>Home</b></a></li>
-                <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
-                    <ul id = "testmenu" class = "sub-menu" >
-                        <li class = "liabout"> <a id = "characters" class = "liabout-a" href="../characters.html"><b>Characters</b></a></li>
-                        <li class = "liabout"> <a id = "gene" class = "liabout-a" href="../charevogene.html"><b>Charevo Gene</b></a></li>
-                        <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
-                    </ul>
-                </li>
-                <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
-                    <ul id="testmenu2" class = "sub-menu" >
-                        <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="../beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+               </form> -->
 
-                    </ul>
-                </li>
+            <nav>
+                <ul id = "menudiv" class = "ulmenu1" >
+                    <li class = "limenu1" > <a class = "li-a-menu1" href="../index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "li-a-menu1-selected"> <a class = "menu-selected" href="#about"><b>About</b></a>
+                        <ul id = "testmenu" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "characters" class = "liabout-a" href="../characters.html"><b>Characters</b></a></li>
+                            <li class = "liabout"> <a id = "gene" class = "liabout-a" href="../charevogene.html"><b>Charevo Gene</b></a></li>
+                            <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
+                        </ul>
+                    </li>
+                    <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                        <ul id="testmenu2" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="../beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
 
-                <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
-                    <ul id= "testmenu3" class = "sub-menu" >
-                        <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="../beautystories.html"><b>Beauty Short Stories</b></a></li>
+                        </ul>
+                    </li>
 
-                    </ul>
-                </li>
-               <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+                    <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                        <ul id= "testmenu3" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="../beautystories.html"><b>Beauty Short Stories</b></a></li>
 
-                </li> -->
-                <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
-                    <ul id= "testmenu4" class = "sub-menu">
-                        <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="../switchcharacter.html"><b>Switch Character</b></a></li>
-                        <li class = "liabout"> <a id = "blog" class = "liabout-a" href="../blog.html"><b>Blog</b></a></li>
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
+                    <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+     
+                     </li> -->
+                    <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                        <ul id= "testmenu4" class = "sub-menu">
+                            <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="../switchcharacter.html"><b>Switch Character</b></a></li>
+                            <li class = "liabout"> <a id = "blog" class = "liabout-a" href="../blog.html"><b>Blog</b></a></li>
+                        </ul>
+                    </li>
 
-            </ul>
-
-
-        </nav>
-</div>
+                </ul>
 
 
-        <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 2100px;">
+            </nav>
+            
+            <div id="formdiv">
+                <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
+
+                <!-- <p>Selected state: {{ state }}</p> -->
+                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                <span>
+                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                        <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                    </button> 
+                    <input type="submit" style="display: none"/>
+                </span>
+            </form>
+            </div>
+            <!--    <div style="width: 100%; position: absolute; top: 43px;">
+                   <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
+               </div>
+            --> 
+        </div>
+
+
+        <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 2100px; position: relative;">
             <div id="main-wrapper" class="page-wrap">
-                <div style = "width: 100vw;">
-                    <h1 class="heading" style = "width: 98vw; margin-bottom: 10%;">Beauty</h1>
+                <div style = "">
+                    <h1 class="heading" style = "margin-bottom: 10%;">Nator</h1>
                     <div style="margin-top: 30px;"></div>
-                    <img src = "../images/beautyleft1.png" alt = "Beauty PlaceHolder" width = 300 height = 400 style = "position: absolute; top: 100px; left: 480px;">
-                    <img src = "../images/Emblems/beautyemblem.png" alt = "Beauty Emblem PlaceHolder" width = 250 height = 250 style = "position: absolute; top: 130px; left: 120px;">
+                    <img src = "../images/natorleft1.png" alt = "Nator PlaceHolder" width = 300 height = 400 style = "position: absolute; top: 100px; left: 480px;">
+                    <img src = "../images/Emblems/natoremblem.png" alt = "Nator Emblem PlaceHolder" width = 250 height = 250 style = "position: absolute; top: 130px; left: 120px;">
 
                     <div style = "position: absolute; top: 150px; right: 60px; ">
-                        <img id = "behaviorimage" class="charevofairy" src = "../images/Fairies/beautyfictionfairy.png" alt = "Beauty Fiction PlaceHolder" width = 250 height = 250 >
-                        <img id = "mentalityimage" class="charevofairy" src = "../images/Fairies/beautyimaginationfairy.png" alt = "Beauty Imagination PlaceHolder" width = 250 height = 250 >
-                        <img id = "identificationimage" class="charevofairy" src = "../images/Fairies/beautyfemininityfairy.png" alt = "Beauty Femininity PlaceHolder" width = 250 height = 250 >
+                        <img id = "behaviorimage" class="charevofairy" src = "../images/Fairies/natorintelligencefairy.png" alt = "Nator Intelligence PlaceHolder" width = 250 height = 250 >
+                        <img id = "mentalityimage" class="charevofairy" src = "../images/Fairies/natorlogicfairy.png" alt = "Nator Logic PlaceHolder" width = 250 height = 250 >
+                        <img id = "identificationimage" class="charevofairy" src = "../images/Fairies/natordatafairy.png" alt = "Nator Data PlaceHolder" width = 250 height = 250 >
                     </div>
 
-                    <div style = "position: absolute; top: 450px; margin-left: 10%; width: 600px; ">
+                    <div id="guidance" style = " margin-top: 330px; margin-bottom: 20px; width: 600px; ">
                         <h3>Charevo Fairy Guidance</h3>
                         <div style = "background-color: #a6e1ec; padding: 15px;">
-                            <p id = "Behavior" style = "">Fiction: </p>
-                            <p id = "Mentality">Imagination: </p>
-                            <p id = "Identification">Femininity: </p>
+                            <p id = "Behavior" style = "">Intelligence: </p>
+                            <p id = "Mentality">Logic: </p>
+                            <p id = "Identification">Data: </p>
                         </div>
                     </div>
 
-                    <div style = "position: absolute; margin-left: 10%; top: 700px;">
-                        <table style = "">
+                    <div style = "margin-bottom: 20px;">
+                        <table id="charactertable" style = "">
                             <tr>
                                 <th>Name: </th>
-                                <td>Beauty</td>
+                                <td>Nator</td>
                             </tr>
                             <tr>
                                 <th>Real Name: </th>
-                                <td>Ellie Bellavitz</td>
+                                <td>Nate Rodriguez</td>
                             </tr>
                             <tr>
                                 <th>Behavior Element: </th>
-                                <td>Fiction</td>
+                                <td>Intelligence</td>
                             </tr>
                             <tr>
                                 <th>Mentality Element: </th>
-                                <td>Imagination</td>
+                                <td>Logic</td>
                             </tr>
                             <tr>
                                 <th>Identification Element: </th>
-                                <td>Femininity</td>
+                                <td>Data</td>
                             </tr>
                             <tr style = "">
                                 <th style = "vertical-align: top; padding-top: 5px;">Powers and Abilities: </th>
                                 <td >
 
                                     <ul style = "list-style-type: square; padding: 0px;">
-                                        <li>Ability to form weapons and other objects out of her hair</li>
-                                        <li>Ability to grow and control her hair</li>
-                                        <li>Ability to shape shift into any female character from TV, movies, and video games</li>
-                                        <li>As a character, she can summon compatible female characters</li>
-                                        <li>Ability to transform her wardrobe into however she wants</li>
-
+                                        <li>Control of various weapons from inside his robotic body</li>
+                                        <li>Genius level intellect</li>
+                                        <li>Brute strength</li>
+                                        <li>Enhanced memory</li>
+                                        
                                     </ul>
                                 </td>
                             </tr>
@@ -161,15 +189,14 @@ and open the template in the editor.
                                 <th style = "vertical-align: top; padding-top: 5px;">Weaknesses: </th>
                                 <td>
                                     <ul style = "list-style-type: square; padding: 0px;">
-                                        <li>Fire and large amount of water in her hair causes her hair powers to be inactive</li>
-                                        <li>Cannot transform when her arms and hands are restrained</li>
+                                        <li>Electromagnetic pulse</li>
                                     </ul>
                                 </td>
                             </tr>
                         </table>
                     </div>
 
-                    <div style = "position: absolute; margin-left: 10%; top: 1200px;">
+                    <div id="bio" style = "position: relative; ">
 
 
                         <h3>Bio:</h3>
@@ -179,16 +206,18 @@ and open the template in the editor.
                         <div class = "characterinfo" style = "left: -10px;">
 
                             <p style = "margin-left: 50px; margin-right: 50px;">
-                                Beauty grew up in a small town in Ohio born to parents who wanted her to always dress nice, causing her to be used to these outfits and often wearing an elegant wardrobe. This made her be seen as a pretty girl that guys liked, but she was never interested in relationships since her interests were too different from everyone else. 
-                                She mostly liked TV, video games, and comics. Because of this, she didn’t really connect with her friends too well, and while they liked how she would dress, she never really cared how she looked. As a result, Beauty often felt alone when around most people.
-                                In addition, in making herself look nice, she thought the most beautiful people were the animated characters she would watch, rather than real women. Her friends all thought she was weird because of that, but she continued to like what she likes, even though she would be the only girl she knew who thought like her. She often felt like she connected more with the female characters she would watch than her actual friends, and would always want to meet these characters, because they do things that no other girl she knows would ever do. The only friend who understood her was Couch Potato as they both shared a love of pop culture. Beauty and Couch Potato met when they were eight after she saved him from a bully.
-                                At age fourteen, Beauty and Couch Potato both received their powers after watching TV when the town's power plant experienced an accident, briefly affecting the electricity and causing their TVs to have too strong of an image. As they watched for too long, they suddenly gained their abilities. As someone who dreamed of being a superhero, Beauty was ecstatic to see this take place.
-                                Beauty and Couch Potato eventually left for Minor City to fight crime like they always wanted, but split up after defeating the Gamer. Not long after, she joined the Neo Brigade.
+                                As a young boy, Nator was smarter than average kids, and later developed an advanced intellect and memory from his Charevo Gene, allowing him to control gadgets he made with ease. He had a hobby of drawing blueprints for different types of technology he would later build when he got older, which he did. One of his biggest inventions was the robotic body he made that could allow a human brain to function. 
+                                He developed in interest in health solutions so he could save lives with what he built. His parents were very impressed by his gadgets, but would not let him try out his mechanical body, because they thought that would be too dangerous. 
                                 <br><br>
-                                As one of the few people not originally from a city with anyone who carries an active Charevo Gene, Beauty's only main prior association with superpowers has been through TV and comic books. By not having been familiar with anyone besides Couch Potato with powers, she often gets overly excited about seeing another person use their powers, even if it's a villain attacking her.
-                                While she is generally independent and capable of handling a situation by herself, Beauty prefers to be around others so she can share good moments with people. She thinks enjoying success alone is impossible and likes to have friends in her life who she can talk to, which she did not have in Ohio (besides Couch Potato). By not wanting to go through life alone, she sometimes becomes separate from her own team by not taking things as seriously as them because she treats part of her life like a TV show.
-                                While Beauty has embraced her powers, she does resent her Identification Element being Femininity and how she’s seen as just a pretty girl with nothing more to her.
-
+                                Although he was often very nice and energetic like a normal kid, other kids seemed a little uneasy when around him as a friend because of how smart he was. However, despite his intelligence, he was always sociable and decided not to skip any grades in school so he can be with his friends.
+                                He would even help them by being their tutor in many subjects, particularly logic and math, which he specializes in. He held a rivalry in math and science with the twins, Tiffany and Elsa Boole, and while he had the idea of a mechanical body for a while, he started building it just to show them up, in addition to hoping it could save a life.
+                                <br><br>
+                                On the night the alien ship Tel-E was on crashed in Minor City, Nator was walking home after tutoring a classmate. When it crashed, it caused several cars to go flying at him. This caused his body to get crushed, leading to his parents and doctors to take the mechanical body he built to keep his brain in to keep him alive. When he was kept alive in his robot body, he started out as just his robot skeleton look, and because of his powers to control his technology on a high level, he was able to walk and operate the whole body with his mind like it was his real body.
+                                He then decided to modify it by creating artificial skin and clothing for the body so he can look just like he did before the accident. To see what more he could do, mainly to protect himself from the dangerous criminals of Minor City, he customized his body with many technological weapons and objects for him to access at any time. 
+                                Over time, he wished he could get back to developing healthcare technology, and decided it may have been best not to include weapons in his body, because what he made wouldn't help anyone besides himself, but he finally found Bendy in trouble with Cold Miner and the Chill-dren to test out his weaponized mechanical body to do good. While finding his robot body to be a success in battle, he met the rest of the Neo Brigade and joined them to be a hero.
+                                <br><br>
+                                When with the Brigade, Nator is the intelligent inventor of the team, making the team communicators as well as the emergency computer system. He is never arrogant about his intelligence with his friends, although he does like to be proud of his intellect and sometimes has to argue with them over things that don’t make sense because of how logical he thinks. 
+                                His biggest nemesis is Cyhack, who would mock him for being nearly all robotic while Cyhack is just a cyborg, which Nator takes exception to since he needed to become mechanical to live while she just did it to look cool. His hobbies include building gadgets, playing Chess, and playing the drums.
                             </p>
 
                         </div>
@@ -205,42 +234,99 @@ and open the template in the editor.
 
 
             <footer id = "footer" class = "site-footer">
-                <div class = "footercontent">
-                    <ul class="footerlist">
-                        <li>
-                            <a href="../index.html"><b>Home</b></a>
-                        </li>
-                        <li>
-                            <a href="#About"><b>About</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="../characters.html">Characters</a></li>
-                                <li><a href="../charevogene.html">Charevo Gene</a></li>
-                                <!--  <li><a href="../cities.html">Cities</a></li> -->
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#Quiz"><b>Quiz</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="../beautyquizzes.html">Beauty Quizzes</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#Stories"><b>Stories</b></a>
-                            <ul class="subfooterlist">
-                                <li><a href="../beautystories.html">Beauty Short Stories</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="../switchcharacter.html"><b>Switch Character</b></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class = "footercontent2">
-                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
-                </div>
-            </footer>
+                    <div class = "footercontent">
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="../index.html"><b>Home</b></a></th>
+                                
+                                
+                                
+                                
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#About"><b>About</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="../characters.html">Characters</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="../charevogene.html">Charevo Gene</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Quiz"><b>Quiz</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="../beautyquizzes.html">Beauty Quizzes</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#../Stories"><b>Stories</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="../beautystories.html">Beauty Short Stories</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="../switchcharacter.html">Switch Character</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="../blog.html">Blog</a></td>
+                            </tr>
+                        </table>
+
+                        <!--<ul class="footerlist">
+                            <li >
+                                <a href="index.html"><b>Home</b></a>
+                            </li>
+                            <li >
+                                <a href="#About"><b>About</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="characters.html">Characters</a></li>
+                                    <li><a href="charevogene.html">Charevo Gene</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Quiz"><b>Quiz</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Stories"><b>Stories</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="switchcharacter.html">Switch Character</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class = "footercontent2">
+                        <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                        <div style="position: absolute; left: 47%;">
+                            <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
+                        </div>
+                    </div>
+                </footer>
 
         </section>
+        
+
 
 
 
@@ -263,6 +349,8 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="../js/select_page.js" type="text/javascript"></script>
         <script src="../js/search_list.js" type="text/javascript"></script>
+        
+        <script src="../js/menu.js"></script>
 
     </body>
 </html>

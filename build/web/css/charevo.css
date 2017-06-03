@@ -306,6 +306,7 @@ section {
     display: block;
     margin-bottom: 0px;
     cursor: pointer;
+    z-index: 5;
 }
 
 .char-image-emblem{

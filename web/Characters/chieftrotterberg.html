@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../css/charevo.css" rel="stylesheet" type="text/css">
+        <link href='styles.css?version=2' rel='stylesheet'>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <script src = "../js/characters/chieftrotterberg.js"></script>
+        
+
+        <link href="../css/custom.css" rel="stylesheet" type="text/css">
+
+        <style>
+            #charactertable tr:nth-child(even){background-color: yellow}
+            #charactertable tr{
+                background-color:#e6e6e6;
+            }
+            #charactertable td{
+                vertical-align: top;
+                padding: 10px;
+            }
+            
+            
+        </style>
+
+
+
+    </head>
+
+    <body ng-app="Demo">
+
+        <div id="maindiv">
+
+            
+
+            <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+                   <div  ng-controller="DemoCtrl as vm">
+               <div >
+                   <div ng-keyup="$event.keyCode === 13 && vm.goToPage()">
+                       <div sui-select indicating-text="select a page" on-select="vm.onSelect(model)" options="vm.countryOptions" model="vm.selected" label="Country: " searchable="true" disabled=""></div>
+                       <span>
+                       <button type="button" class="btn" style ="z-index: 2" ng-click="vm.goToPage()" >
+                           <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                       </button> 
+                       <input type="submit" style="display: none"/>
+                   </span> 
+                   </div>
+                   
+               </div>
+       
+                      
+           </div>
+        
+               </form> -->
+
+            <nav>
+                <ul id = "menudiv" class = "ulmenu1" >
+                    <li class = "limenu1" > <a class = "li-a-menu1" href="../index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "li-a-menu1-selected"> <a class = "menu-selected" href="#about"><b>About</b></a>
+                        <ul id = "testmenu" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "characters" class = "liabout-a" href="../characters.html"><b>Characters</b></a></li>
+                            <li class = "liabout"> <a id = "gene" class = "liabout-a" href="../charevogene.html"><b>Charevo Gene</b></a></li>
+                            <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
+                        </ul>
+                    </li>
+                    <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                        <ul id="testmenu2" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="../beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+
+                        </ul>
+                    </li>
+
+                    <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                        <ul id= "testmenu3" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="../beautystories.html"><b>Beauty Short Stories</b></a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+     
+                     </li> -->
+                    <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                        <ul id= "testmenu4" class = "sub-menu">
+                            <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="../switchcharacter.html"><b>Switch Character</b></a></li>
+                            <li class = "liabout"> <a id = "blog" class = "liabout-a" href="../blog.html"><b>Blog</b></a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+            </nav>
+            
+            <div id="formdiv">
+                <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
+
+                <!-- <p>Selected state: {{ state }}</p> -->
+                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                <span>
+                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                        <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                    </button> 
+                    <input type="submit" style="display: none"/>
+                </span>
+            </form>
+            </div>
+            <!--    <div style="width: 100%; position: absolute; top: 43px;">
+                   <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
+               </div>
+            --> 
+        </div>
+
+
+        <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 1500px; position: relative;">
+            <div id="main-wrapper" class="page-wrap">
+                <div style = "">
+                    <h1 class="heading" style = "margin-bottom: 10%;">Chief Lou Trotterberg</h1>
+                    <div style="margin-top: 30px;"></div>
+                    <img id="character" src = "../images/chiefleft1.png" alt = "Chief PlaceHolder" width = 300 height = 400 style = "position: absolute; top: 100px; left: 480px;">
+                    
+
+
+                    <div id="bio" style = "position: relative; ">
+
+
+                        <h3>Bio:</h3>
+
+
+
+                        <div class = "characterinfo" style = "left: -10px;">
+
+                            <p style = "margin-left: 50px; margin-right: 50px;">
+                                As a boy, Trotterberg was rebellious, and would always look for trouble. He loved to act tough to people to intimidate them because this made him seem cool. But as he would continue to be such a rebel, his parents thought he needed to be set straight. One day, they arranged for him to go on a ride along with some police officers. He was bored from it at first and wouldn’t consider any of the good stuff they were telling him about obeying the law. As he would just ignore the whole point of what they were telling him, Trotterberg would only hope to see some crime going on. He then got his wish when the cops got a report of a violent gang robbing a store.
+                                They drove down to the store to stop the robbery, and they left Trotterberg in the car as he would excitedly watch all the action go down from there. However, as he was looking out the car window, one of the street thugs who were robbing the store appeared in front of him and punched through the window with his gun and threatened to shoot. When Trotterberg started to cower the cops suddenly arrived to grab the criminal and arrest him. Trotterberg was so terrified by that experience that he gained a huge respect for the police, and vowed to end his rebellious ways and be on the side of law and order.
+                                <br><br>
+                                Trotterberg grew up to become a cop and later became chief of police, consistently being tough on crime. However, he found it difficult when dealing with the super powered villains of Minor City. He then got married and had his son Race. Race learned a lot about justice from his Dad, and when Race got his powers and met Tel-E as well as the rest of the Brigade, Trotterberg hired them to become Minor City superheroes for the city and formed the Neo Brigade. He also authorized them to operate as a team from an unused police building next to the police station, which became their team HQ.
+                                As Trotterberg allowed the kids to work as a superhero team, he would oversee all of their actions and inform them of any serious trouble that should occur when his department learns of it. He stays in contact with them via either their Emergency Room system, or their Neo Brigade communicators. When he allowed the kids to form the Neo Brigade, he assigned his son, Race, the job of team leader.
+                                <br><br>
+                                Trotterberg is impatient, forward, and stern as a police chief, and can also be impatient with the Brigade, but is also caring to Race and his friends and is proud of their efforts. Since he’s Race’s dad, he made him the team leader but acts very fatherly to him, often embarrassing him in front of the rest of the Brigade. 
+                                Trotterberg sometimes tends to screw up with his job by sometimes not reporting an emergency to the Brigade on time and also forgetting to turn off his video communicator when he’s done talking to the Brigade.
+                            </p>
+
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- <a class="twitter-timeline" data-width="420" data-height="400" href="https://twitter.com/TwitterDev">Tweets by TwitterDev</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+
+
+            <footer id = "footer" class = "site-footer">
+                    <div class = "footercontent">
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="../index.html"><b>Home</b></a></th>
+                                
+                                
+                                
+                                
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#About"><b>About</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="../characters.html">Characters</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="../charevogene.html">Charevo Gene</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Quiz"><b>Quiz</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="../beautyquizzes.html">Beauty Quizzes</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#../Stories"><b>Stories</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="../beautystories.html">Beauty Short Stories</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                            </tr>
+                            <tr>
+                                <td><a href="../switchcharacter.html">Switch Character</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="../blog.html">Blog</a></td>
+                            </tr>
+                        </table>
+
+                        <!--<ul class="footerlist">
+                            <li >
+                                <a href="index.html"><b>Home</b></a>
+                            </li>
+                            <li >
+                                <a href="#About"><b>About</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="characters.html">Characters</a></li>
+                                    <li><a href="charevogene.html">Charevo Gene</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Quiz"><b>Quiz</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Stories"><b>Stories</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                                <ul class="subfooterlist">
+                                    <li><a href="switchcharacter.html">Switch Character</a></li>
+                                    <li><a href="blog.html">Blog</a></li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class = "footercontent2">
+                        <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                        <div style="position: absolute; left: 47%;">
+                            <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
+                        </div>
+                    </div>
+                </footer>
+
+        </section>
+
+
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .4; " disabled="disabled"  onclick = "prev();">
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" onclick = "next();">
+                Next >>
+            </button>
+
+
+        </div>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="../js/select_page.js" type="text/javascript"></script>
+        <script src="../js/search_list.js" type="text/javascript"></script>
+
+        
+        <script src="../js/menu.js"></script>
+
+    </body>
+</html>

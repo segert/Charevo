@@ -7,6 +7,24 @@
 $(document).ready(function () {
 
     character = sessionStorage.getItem("SessionCharacter");
+    
+    $("#sessioncharacter").hide();
+    
+    if (character === "Tel-E")
+    {
+        document.getElementById("sessioncharacter").src = "images/tel-eleft1.png";
+        document.getElementById("sessioncharacter").alt = "Tel-E Placeholder";
+    }
+    else if (character === "Pyra")
+    {
+        document.getElementById("sessioncharacter").src = "images/pyraleft1.png";
+        document.getElementById("sessioncharacter").alt = "Pyra Placeholder";
+    }
+    else
+    {
+        document.getElementById("sessioncharacter").src = "images/beautyleft1.png";
+        document.getElementById("sessioncharacter").alt = "Beauty Placeholder";
+    }
 
     checkResolution();
 
@@ -14,7 +32,7 @@ $(document).ready(function () {
         resizeResolution();
 
     });
-    
+
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
@@ -23,6 +41,7 @@ $(document).ready(function () {
 
     dialogue = 1;
     max = 0;
+    mouseouts = 0;
 
     defaultdialogue();
 
@@ -75,34 +94,75 @@ $(document).ready(function () {
     });
 
     $("#story1").mouseout(function () {
-        defaultdialogue();
+        if(mouseouts < 150)
+            defaultdialogue();
+
         //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story1").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story2").mouseout(function () {
-        defaultdialogue();
+        if(mouseouts < 150)
+            defaultdialogue();
         //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story2").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story3").mouseout(function () {
-        defaultdialogue();
+        if(mouseouts < 150)
+            defaultdialogue();
         //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story3").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story4").mouseout(function () {
-        defaultdialogue();
+        if(mouseouts < 150)
+            defaultdialogue();
         //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story4").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story5").mouseout(function () {
-        defaultdialogue();
+        if(mouseouts < 150)
+            defaultdialogue();
         //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story5").animate({backgroundColor: "", color: "#000000"}, 400);
+    });
+
+    $(".storybutton").click(function () {
+        mouseouts = 0;
+        $(this).clearQueue().stop();
+
+    });
+
+    $(".storybutton").on("mouseleave", function () {
+        mouseouts++;
+        //document.getElementById("d").innerHTML = mouseouts;
+        if(mouseouts >= 150)
+        {
+            $("#storycharacter").hide();
+            $(".storybutton").hide();
+            
+            $("section").css({"height": (sectionHeight * 1.3) });
+            
+            $("#sessioncharacter").show();
+            $("#sessioncharacter").animate({left: (window.screen.width * .35)});
+            
+            if (character === "Beauty")
+            {
+                document.getElementById("d").innerHTML = beautyBold + "Okay. That's enough of that. I'm sorry, but if you can't make up your mind to choose from five stories, I'm gonna have to ask you to go to somewhere else on this site. When you're ready to take your story choice more seriously, I'll let you come back. But, until then, no stories for you right now.";
+            }
+            else if (character === "Tel-E")
+            {
+                document.getElementById("d").innerHTML = teleBold + "Right. I think it's time I cut you off. I'm sorry, but I've analyzed your thoughts, and you're clearly only interested in making me summarize these novellas for you. So if you won't select one to read, I'll have to nicely ask you to go somewhere else. Now, I know I've abruptly removed the stories for you, but try to take that as politely as possible.";
+            }
+            else if (character === "Pyra")
+            {
+                document.getElementById("d").innerHTML = pyraBold + "Alright. That's it. I told you to pick something, but you're clearly not interested in the free material provided for you. So guess what? No story time for anyone. We're done here. Yeah, you thought I was kidding, huh? Nope. The stories are gone. If you come back, they'll be here. But if you screw around, you get nothing. Bye now.";
+            }
+        }
+
     });
 
     function storydescription(story) {
@@ -114,7 +174,7 @@ $(document).ready(function () {
         var pyraBold = "Pyra: ";
         pyraBold = pyraBold.bold();
 
-       if (sessionStorage.getItem("SessionCharacter") === "Tel-E") {
+        if (sessionStorage.getItem("SessionCharacter") === "Tel-E") {
             switch (story)
             {
                 case(1):
@@ -180,54 +240,76 @@ $(document).ready(function () {
 
 
     function defaultdialogue() {
-        var beautyBold = "Beauty: ";
+        beautyBold = "Beauty: ";
         beautyBold = beautyBold.bold();
-        var teleBold = "Tel-E: ";
+        teleBold = "Tel-E: ";
         teleBold = teleBold.bold();
-        var pyraBold = "Pyra: ";
+        pyraBold = "Pyra: ";
         pyraBold = pyraBold.bold();
 
-        if (character === "Beauty")
+        if (mouseouts < 70)
         {
-            document.getElementById("d").innerHTML = beautyBold + "So here are the stories about me joining my friends and helping them out with all the action and conflict that comes with it. I can't wait for you to read them! Just move the cursor over each one for my summary if you don't wanna just click and read right away.";
+
+            if (character === "Tel-E")
+            {
+                document.getElementById("d").innerHTML = teleBold + "And here we have the novellas where myself and the Neo Brigade welcome Beauty to our team. If you're wondering about those titles, they're meant to look as if the villains are saying them with what's in parenthesis being specific to them. If you move the cursor over the title, I would be more than happy to provide a short synopsis for you.";
+            }
+            else if (character === "Pyra")
+            {
+                document.getElementById("d").innerHTML = pyraBold + "Here's where you can read the stories of Beauty doing her best to assimilate into the Neo Brigade one team member at a time. If these weird titles aren't making you curious enough, just hold the cursor over them and I'll give my two cents.";
+            }
+            else
+            {
+                document.getElementById("d").innerHTML = beautyBold + "So here are the stories about me joining my friends and helping them out with all the action and conflict that comes with it. I can't wait for you to read them! Just move the cursor over each one for my summary if you don't wanna just click and read right away.";
+            }
         }
-        else if (character === "Tel-E")
+        else if (mouseouts < 150)
         {
-            document.getElementById("d").innerHTML = teleBold + "And here we have the novellas where myself and the Neo Brigade welcome Beauty to our team. If you're wondering about those titles, they're meant to look as if the villains are saying them with what's in parenthesis being specific to them. If you move the cursor over the title, I would be more than happy to provide a short synopsis for you.";
+            
+            if (character === "Tel-E")
+            {
+                document.getElementById("d").innerHTML = teleBold + "Pardon me, but I've noticed you seem quite indecisive on which story to read. Might I suggest reading them all in sequence? I'd certainly recommend that over moving the cursor over the titles repeatedly. I mean, I like blue too, but I'm more of a reader myself. But, if you're not, I can suggest some other pages on this site for you.";
+            }
+            else if (character === "Pyra")
+            {
+                document.getElementById("d").innerHTML = pyraBold + "Ugh. Do you go back and forth like this when ordering food. Let's go already! You've got people waiting behind you! By which I mean me standing by to help you with this. So could you just make up your mind? I know I didn't rate these stories too well, but I can't talk so fast and switch these images of me and my friends over and over. Seriously. Just pick something. If you don't, I swear I'm gonna shut this page down.";
+            }
+            else
+            {
+                document.getElementById("d").innerHTML = beautyBold + "Hey, uh, you think you can choose a story soon? I'm getting pretty tired repeating my summaries and putting up pictures of my friends. Come on! Let's get to the stories already! Trust me. They're worth the read. If you don't think so, we'll just go somewhere else, but you don't have to keep me waiting.";
+            }
         }
-        else if (character === "Pyra")
-        {
-            document.getElementById("d").innerHTML = pyraBold + "Here's where you can read the stories of Beauty doing her best to assimilate into the Neo Brigade one team member at a time. If these weird titles aren't making you curious enough, just hold the cursor over them and I'll give my two cents.";
-        }
+
     }
+
 });
 
-function checkResolution(){
+function checkResolution() {
     $("section").css({"margin-top": "50px", "padding-bottom": "100px", "width": window.screen.width, "height": window.screen.height});
     sectionWidth = window.screen.width;
     sectionHeight = window.screen.height;
-    
+
     document.getElementById("storycharacter").width = (window.screen.width / 3.2);
     document.getElementById("storycharacter").height = (window.screen.height / 1.44);
-    
+
     characterWidth = (window.screen.width / 3.2);
     characterHeight = (window.screen.height / 1.44);
-    
+
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     //$("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     $("#storycharacter").hide();
 
-    if(window.screen.width < 400)
+    if (window.screen.width < 400)
     {
         $(".storybutton").css({"font-size": "16px", "width": "300px"});
         $("#stories").css({"margin-left": "0px"});
     }
-    else if(window.screen.width < 600)
+    else if (window.screen.width < 600)
     {
         $(".storybutton").css({"width": "300px"});
     }
-    
+
     if (window.screen.height < 600 && window.screen.width < 600 && window.screen.height < window.screen.width)
     {
         $("section").css({"height": (window.screen.height * 2.8)});
@@ -238,7 +320,7 @@ function checkResolution(){
         $("section").css({"height": (window.screen.height * 1.8)});
         sectionHeight = (window.screen.height * 1.8);
     }
-    else if(window.screen.height < 650)
+    else if (window.screen.height < 650)
     {
         $("section").css({"height": (window.screen.height * 1.2)});
         sectionHeight = (window.screen.height * 1.2);
@@ -248,29 +330,29 @@ function checkResolution(){
     characterLeft = (window.screen.width * .6);
 }
 
-function resizeResolution(){
+function resizeResolution() {
     $("section").css({"margin-top": "50px", "padding-bottom": "100px", "width": sectionWidth, "height": sectionHeight});
-    
-    
+
+
     document.getElementById("storycharacter").width = characterWidth;
     document.getElementById("storycharacter").height = characterHeight;
-    
-    
+
+
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     //$("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     //$("#storycharacter").hide();
 
-    if(window.screen.width < 400)
+    if (window.screen.width < 400)
     {
         $(".storybutton").css({"font-size": "16px", "width": "300px"});
         $("#stories").css({"margin-left": "0px"});
     }
-    else if(window.screen.width < 600)
+    else if (window.screen.width < 600)
     {
         $(".storybutton").css({"width": "300px"});
     }
-    
+
     if (window.screen.height < 600 && window.screen.width < 600 && window.screen.height < window.screen.width)
     {
         $("section").css({"height": sectionHeight});
@@ -279,7 +361,7 @@ function resizeResolution(){
     {
         $("section").css({"height": sectionHeight});
     }
-    else if(window.screen.height < 650)
+    else if (window.screen.height < 650)
     {
         $("section").css({"height": sectionHeight});
     }

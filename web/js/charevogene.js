@@ -64,7 +64,7 @@ $(document).ready(function () {
         document.getElementById("identificationfairy").alt = "Pyra Indifference Fairy Placeholder";
 
         document.getElementById("d").innerHTML = pyraBold + "So here's where you can learn about the Charevo Gene. If you're not into reading anything beyond this dialogue box, here's the short story behind it.";
-        max = 7;
+        max = 9;
     }
     else
     {
@@ -198,8 +198,14 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = pyraBold + "If you ask our creator, he'll say this is to symbolize the deception that villains will use on others. But that's a load of lies, frankly. The ability to hide a Charevo Emblem is just a way of not tipping off who has powers and who could be a potential villain.";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = pyraBold + "It's like how the Charevo Gene was originally conceived. Our creator didn't have it to start with. He just made something up to justify the ridiculous powers he came up for with certain villains. You're welcome for being honest, by the way.";
+                document.getElementById("d").innerHTML = pyraBold + "It's like how the Charevo Gene was originally conceived. Our creator didn't have it to start with. He just made something up to justify the ridiculous powers he came up for with certain villains.";
                 break;
+            case(8):
+                document.getElementById("d").innerHTML = pyraBold + "Speaking of which, we also have the Charevo Fairies, three things that represent your Charevo Elements. They basically give advice to a person based on their elements when they need it. Our creator basically wanted our Charevo Genes to do something more than give powers, so he just ripped off some cartoon where the hero gets cryptic advice from a book based on a given scenario.";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = pyraBold + "So to mask this existing idea as his own, he just looked at the Charevo Elements and made these sprites that look half like the person and half the element's symbol. He also thought of the 'super original' idea of these Charevo Fairies being used by the villains too where they're given negative guidance as opposed to the cliched positive wisdom. You're welcome for being honest, by the way.";
+                break;    
         }
     }
 

@@ -8,6 +8,8 @@ $(document).ready(function () {
 
     character = sessionStorage.getItem("SessionCharacter");
 
+    pageCharacter = "";
+    
 
     checkResolution();
 
@@ -50,6 +52,7 @@ $(document).ready(function () {
 
     NewBehavior();
     NewMentality();
+    NewIdentification();
 
     $("#behaviorimage").click(function () {
         x = 1;
@@ -73,27 +76,21 @@ $(document).ready(function () {
 
 function NewBehavior() {
 
-    behavior = Math.floor(Math.random() * 4);
+    behavior = Math.floor(Math.random() * 2);
     if (x === 1)
     {
         while (behavior === curbehavior)
-            behavior = Math.floor(Math.random() * 4);
+            behavior = Math.floor(Math.random() * 2);
     }
 
 
     switch (behavior)
     {
         case(0):
-            $("#Behavior").text("Fiction: Victory may be fiction from one view, but anyone can make it real.");
+            $("#Behavior").text("Inferiority: ");
             break;
         case(1):
-            $("#Behavior").text("Fiction: An idea right for your fiction can be wrong for your reality.");
-            break;
-        case(2):
-            $("#Behavior").text("Fiction: It is okay to admit you are wrong when you live in fiction.");
-            break;
-        case(3):
-            $("#Behavior").text("Fiction: What you have with you is real and important while what you see from afar and love can be misleading and false.");
+            $("#Behavior").text("Inferiority: ");
             break;
 
     }
@@ -102,24 +99,21 @@ function NewBehavior() {
 
 function NewMentality() {
 
-    mentality = Math.floor(Math.random() * 3);
+    mentality = Math.floor(Math.random() * 2);
     if (x === 1)
     {
         while (mentality === curmentality)
-            mentality = Math.floor(Math.random() * 3);
+            mentality = Math.floor(Math.random() * 2);
     }
 
 
     switch (mentality)
     {
         case(0):
-            $("#Mentality").text("Imagination: One with imagination can see what cannot be seen.");
+            $("#Mentality").text("Envy: ");
             break;
         case(1):
-            $("#Mentality").text("Imagination: Imagination is fun when contained to the thinker, but can bring harm to another when brought to life.");
-            break;
-        case(2):
-            $("#Mentality").text("Imagination: What one imagines herself wanting is often not what she is happier with.");
+            $("#Mentality").text("Envy: ");
             break;
 
     }
@@ -128,19 +122,22 @@ function NewMentality() {
 
 function NewIdentification() {
 
-    ident = Math.floor(Math.random() * 1);
+    ident = Math.floor(Math.random() * 2);
     if (x === 1)
     {
         while (ident === curident)
-            ident = Math.floor(Math.random() * 1);
+            ident = Math.floor(Math.random() * 2);
     }
 
 
     switch (ident)
     {
         case(0):
-            $("#Identification").text("Femininity: Never undermine a girl for her appearance, for the more feminine can wield the greater power.");
+            $("#Identification").text("Vision: ");
             break;
+        case(1):
+            $("#Identification").text("Vision: ");
+            break;  
 
     }
 
