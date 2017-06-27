@@ -180,6 +180,9 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    var tammyBold = "Tammy Time: ";
+    tammyBold = tammyBold.bold();
 
     
     if (character === "Tel-E")
@@ -187,20 +190,33 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
-                break;
-            case(2):
-                document.getElementById("d").innerHTML = teleBold + "Since her Charevo Trinity is Fiction, Imagination, and Femininity, the corresponding symbols are a unicorn, dragon, and princess as they are the symbols that represent her elements.";
-                break;
-            case(3):
-                document.getElementById("d").innerHTML = teleBold + "To the right, you can see these symbols merged with Beauty herself, acting as the manifestation of her Charevo Fairies. Should you click on them, you can change the guidance shown from each of them in the blue section. Since Beauty is good, her fairies always provide good advice, hence I recommend the clicks.";
-                break;
-            case(4):
-                document.getElementById("d").innerHTML = teleBold + "And below, you'll find Beauty's profile that includes her powers and below that is a taste of her background. Unlike everyone else in the Neo Brigade, Beauty doesn't have much experience in fighting villains. Actually, from a certain perspective . . . never mind. Let's not spoil anything.";
+                document.getElementById("d").innerHTML = teleBold + "This is the character page for yet another villain of Minor City. This one is Tammy Time of the J Gang. On the left is her Charevo Emblem, representing her Charevo Elements of Tomfoolery, Monologue, and Attention. These elements aren't much of a surprise just by looking Her Charevo Fairies for those elements are on the right as well.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = teleBold + "It's worth noting that while Beauty is the lead character in our stories, she was only the second character conceived by our creator for our world. Again, I won't give anything away, but that character also influenced the powers she has.";
+                document.getElementById("d").innerHTML = tammyBold + "";
                 break;
+            case(5):
+                document.getElementById("d").innerHTML = teleBold + "";
+                break;
+                break;
+            case(5):
+                document.getElementById("d").innerHTML = teleBold + "";
+                break;
+            case(2):
+                document.getElementById("d").innerHTML = tammyBold + "Ahahahahaha! I'm sorry, but those Charevo Fairies of me always crack me up. They got all the color with the symbols and everything. Man, I'm glad the colors are based on whatever clothes we wear, 'cause I'm never taking this clown suit off.";
+                break;
+            case(3):
+                document.getElementById("d").innerHTML = teleBold + "Good hygenic note to be given. Though, your fairies do look rather amusing. I'm sure it's no secret that our creator is not an artist, so if it wasn't clear, that Tomfoolery Element symbol is supposed to be those humorous glasses for resembling comedian, Groucho Marx.";
+                break;
+            case(4):
+                document.getElementById("d").innerHTML = tammyBold + "How dare you preface the legend's name with his occupation! Yes, I'm more of a Harpo girl, but show some respect. Everyone knows Groucho and his hilarious look.";
+                break;
+            case(5):
+                document.getElementById("d").innerHTML = teleBold + "";
+                break;
+            case(5):
+                document.getElementById("d").innerHTML = teleBold + "";    
+            
         }
 
     }
@@ -209,26 +225,56 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
+                document.getElementById("d").innerHTML = pyraBold + "Alright. Let me explain this girl for a minute. Who is this? This is one of our villains of the J Gang, Tammy Time. She has the Charevo Trinity of Tomfoolery, Monologue, and Attention giving her the power to duplicate herself and anything she touches and can also inflate her head to fly and hit people with. Why does she look like this? Well, our creator likes clown characters. So there you go.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, we have the guidance from her Charevo Fairies. Since the guidance is based on the elements the fairies represent, well, you get the idea.";
+                document.getElementById("d").innerHTML = tammyBold + "And being something he likes, it's no surprise that I'm our creator's favorite character. I guess it's just a matter of time until I get my own spinoff story.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = pyraBold + "If you'd like to see how many times you can go through the randomly selected guidance until you see it all, just keep clicking on the half beauty half unicorn, dragon, and princess to change the advice you see.";
+                document.getElementById("d").innerHTML = pyraBold + "Okay, first of all, I'M our creator's favorite. And second, you're just our creator's favorite in terms of the character design. Yours was the only one that our creator saw after drawing you where he said 'Finally! I got one right!' Looking at you and your wardrobe, though, I don't consider this much of an achievement.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, you can see Beauty's powers and bio. I'd talk more about her, but, since this is the first character page and probably the first one you visited, I feel like I have to apologize for our creator's poor art skills.";
+                document.getElementById("d").innerHTML = tammyBold + "But you are basically saying I look better than all the rest of you. And I'm clearly the one our creator is most proud of.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = pyraBold + "Believe me, NOBODY was consulted ahead of time for those Charevo Fairies. Frankly, I'm surprised he made us look as passable as we are. I guess compared to the other characters' Charevo Fairies, Beauty's looks okay. I'll definitely have to apologize for him A LOT along the way though.";
+                document.getElementById("d").innerHTML = pyraBold + "Yeah, but I think the ideal result would be our creator drawing ALL of us in a way he's proud of. You being his best is like a kid having a B- math test put on the refrigerator, but it's just one test on there. You're expected to do well the whole time. One is nothing to brag about.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = pyraBold + "I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
+                document.getElementById("d").innerHTML = tammyBold + "Oh, one is nothing to be all happy with?";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = pyraBold + "Seriously, just look at how lazy he was when he drew our left and right facing images. I'm surprised he didn't just leave my scar on the opposite side when he used the flip tool on me and a bunch of other asymmetrical characters. Anyway, uh, yeah. This is Beauty. She's my friend. She's pretty nice and cool. Thanks for visiting.";
+                document.getElementById("d").innerHTML = pyraBold + "No, it's not. It's just one good drawing against a bunch of mediocre ones. Again, the kid and the refrigerator. I bet the kid went through a bunch of drafts for drawings until her parents were proud enough to put one on the fridge. Believe me, no one likes the way I look. And, as one of the main characters, that is not a good result. You, we only see for a little bit.";
                 break;
+            case(8):
+                document.getElementById("d").innerHTML = tammyBold + "As long as I look good, that's the only result I need. But I ask you again. You think one good looking girl is a problem?";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = pyraBold + "Okay. I'll admit you look kinda cute. But let's not get hung up on the assumption that your more passable design means you're 'good looking'.";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = tammyBold + "I disagree. But, again, one good one is a problem?";
+                break; 
+            case(11):
+                document.getElementById("d").innerHTML = pyraBold + "Yes! Were you not listening? You can't just have one. You need more! At least a majority that draws attention from the bad stuff. More! Not one!";
+                break;
+            case(12):
+                document.getElementById("d").innerHTML = tammyBold + "Alright then. If you say so you want more . . .";
+                break;  
+            case(13):
+                document.getElementById("d").innerHTML = pyraBold + "Oh no. No. No! No! Okay. You! The user! Don't click that next button! Don't trigger anything!";
+                break;
+            case(14):
+                document.getElementById("d").innerHTML = tammyBold + "ManymanymanymanymanymanymanymanymanymanyMANY! Yah ha ha ha ha ha ha!";
+                break;
+            case(15):
+                document.getElementById("d").innerHTML = pyraBold + "Oh, for crying out loud. What did I just say?";
+                break;
+            case(16):
+                document.getElementById("d").innerHTML = tammyBold + "How you likin' that idea of just good lookin' girl now, Pyra?";
+                break;
+            case(17):
+                document.getElementById("d").innerHTML = pyraBold + "I'll show you what I think as soon as the user clicks on you! Come on, visitor. Get to it!";
+                break;    
         }
     }
     else
@@ -236,19 +282,19 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+                document.getElementById("d").innerHTML = beautyBold + "";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = beautyBold + "Anyway, that's my Charevo Emblem. Since I have the Charevo Trinity of Fiction, Imagination, and Femininity, that's a unicorn, a dragon, and a princess. If you look closely, you can see the emblem on my hand.";
+                document.getElementById("d").innerHTML = beautyBold + "";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = beautyBold + "To the right, you'll see my Charevo Fairies. Since they're half me half the element they represent, that explains those appearances. But the Charevo Fairies also give advice based on their elements, and said advice can be seen below me. If you click on a Charevo Fairy, the corresponding element's guidance will change.";
+                document.getElementById("d").innerHTML = beautyBold + "";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = beautyBold + "You can also see a description of my powers and bio. And if you noticed a name in that bio you didn't recognize from those novellas, he'll be coming up in a future story. God, I love setting stuff up!";
+                document.getElementById("d").innerHTML = beautyBold + "";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = beautyBold + "I will say if you've seen the powers I have, you'll notice the hair powers, wardrobe ability, and female character transformations. Fun fact: That was originally all it was. But when our creator wanted to give me more limits to my power, he made it so I have to always smile when people look at me. So thank you, creator and element of Femininity.";
+                document.getElementById("d").innerHTML = beautyBold + "";
                 break;
         }
 

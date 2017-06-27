@@ -142,7 +142,7 @@ can start the quiz.");
             else if (dialogue === 11)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
@@ -411,7 +411,7 @@ can start the quiz.");
             else if (dialogue === 9)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#OneRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#OneRight1").hide();
@@ -737,7 +737,7 @@ can start the quiz.");
             else if (dialogue === 13)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
@@ -1191,7 +1191,7 @@ can start the quiz.");
             else if (dialogue === 16)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#OhRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#OhRight1").hide();
@@ -1350,7 +1350,7 @@ can start the quiz.");
             else if (dialogue === 2)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#Tel-ELeft1").show();
                 $("#Tel-ELeft1").animate({left: (window.screen.width * .18)});
@@ -1749,7 +1749,7 @@ can start the quiz.");
             else if (dialogue === 9)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#OneRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#OneRight1").hide();
@@ -1823,8 +1823,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> Correct. The Minor City Multiplexor was the name of the theater.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1859,8 +1859,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> That's right. Cyhack was her name. Interesting note: of the five villains the Neo Brigade faced in the beginning of each story, Cyhack had the biggest role by both making an appearance at the end of one and being a key factor in the story.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1875,8 +1875,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> That's right. One and Oh were the names they used. Fun fact: Our creator had the idea for these two after doing a few brain teasers that had the classic town of liars and truth tellers.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1913,8 +1913,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> Very good. Oh was the one who asked him out.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1955,8 +1955,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> That's right. Nator was working on the security system for a room in the HQ that required biometrics.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1971,8 +1971,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> Correct. One has the ability to take away someone's abilities if she asks for them and the person says yes. By making Bendy say yes over and over to other questions and slipping this question in at the end, she was able to steal his powers.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2003,8 +2003,8 @@ can start the quiz.");
 
                 
                 $("#dialogue").html("<b>Beauty:</b> Correct. He mentioned satisfiability being impossible.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2040,8 +2040,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> Correct. Bendy was the one who was not there. It was actually Oh who took his place by shapeshifting into his form..");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2078,8 +2078,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> That’s right. Oh was disguised as Pyra when the Chief was hurt.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2111,8 +2111,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> That is correct. This is the kind of answer they would both give. I’d tell you why this is it, but I think this is where Nator wants to come in.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2138,8 +2138,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> Very good. They both claimed to tell the truth while providing the correct answer.");
-                //  $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2172,8 +2172,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> Correct. I said Oh needed a large nose, an obvious reference to Pinocchio.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2222,8 +2222,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> Correct. One said she was Oh or she wasn’t.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2257,7 +2257,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> Very good. They said Nator was slower than a traveling salesman, whatever that means.");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2286,7 +2287,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> That’s right. Their Charevo Emblems were meant to represent ones and zeroes as binary. Nator was able to translate it into the word “Beach.”");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2321,7 +2323,8 @@ can start the quiz.");
             {
                 
                 $("#dialogue").html("<b>Beauty:</b> Very good. He asked what both would tell us if asked who was Oh.");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -2348,7 +2351,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "b")
             {
                 $("#dialogue").html("<b>Beauty:</b> Correct. She couldn't lie and tell the truth.");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;

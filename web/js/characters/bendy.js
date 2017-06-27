@@ -34,18 +34,18 @@ $(document).ready(function () {
 
     if (character === "Beauty")
     {
-        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
-        max = 5;
+        document.getElementById("d").innerHTML = beautyBold + "And here we have my pal Bendy's character page. Here you'll gain some insight into the background of not just a Minor City kid, but a hero to his friends, his family, everyone who he will aid no matter the risks he will suffer. A hero who is . . . beloved by his team, his city, and . . . by all the ladies who swoon at the sight of him stretching his heart for . . . Ugh. Okay, Bendy, I'm not reading this!";
+        max = 6;
     }
     else if (character === "Tel-E")
     {
-        document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
-        max = 5;
+        document.getElementById("d").innerHTML = teleBold + "And here is the character page for our supporting friend, Bendy. He is quite a team player, that should be said. Where there is a tidal wave storming the seas of justice, where there is a typhoon whisking the structures of law off its foundation of goodness, where there is inferno scorching the forests of peace, there is a defender for all. Bendy is your guardian of all that is good and true to help all literate evil at every peak.";
+        max = 9;
     }
     else if (character === "Pyra")
     {
-        document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
-        max = 7;
+        document.getElementById("d").innerHTML = pyraBold + "And now we have the character page of ol' Benjamin 'Bendy' Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
+        max = 9;
     }
 
     x = 0;
@@ -190,25 +190,32 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
                 document.getElementById("d").innerHTML = teleBold + "And here is the character page for our supporting friend, Bendy. He is quite a team player, that should be said. Where there is a tidal wave storming the seas of justice, where there is a typhoon whisking the structures of law off its foundation of goodness, where there is inferno scorching the forests of peace, there is a defender for all. Bendy is your guardian of all that is good and true to help all literate evil at every peak.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = teleBold + "Since her Charevo Trinity is Fiction, Imagination, and Femininity, the corresponding symbols are a unicorn, dragon, and princess as they are the symbols that represent her elements.";
                 document.getElementById("d").innerHTML = bendyBold + "Help obliterate evil! OBLITERATE! Not help literate evil. Help obliterate evil!";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = teleBold + "To the right, you can see these symbols merged with Beauty herself, acting as the manifestation of her Charevo Fairies. Should you click on them, you can change the guidance shown from each of them in the blue section. Since Beauty is good, her fairies always provide good advice, hence I recommend the clicks.";
                 document.getElementById("d").innerHTML = teleBold + "Bendy, I'm reading the intro you wrote. And it says 'help all literate evil'. ";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = teleBold + "And below, you'll find Beauty's profile that includes her powers and below that is a taste of her background. Unlike everyone else in the Neo Brigade, Beauty doesn't have much experience in fighting villains. Actually, from a certain perspective . . . never mind. Let's not spoil anything.";
-                document.getElementById("d").innerHTML = teleBold + "";
+                document.getElementById("d").innerHTML = bendyBold + "Girl, I ain't supporting reading in the villain community. I'm here to destroy evil with my heroicness. Just take it from the top. And get it right this time.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = teleBold + "It's worth noting that while Beauty is the lead character in our stories, she was only the second character conceived by our creator for our world. Again, I won't give anything away, but that character also influenced the powers she has.";
-                document.getElementById("d").innerHTML = teleBold + "";
+                document.getElementById("d").innerHTML = teleBold + "I'd love to . . . but, no. I think I should go back to helping the user rather than playing up the inaccuracies of your own heroics. I hope you understand.";
                 break;
+            case(6):
+                document.getElementById("d").innerHTML = bendyBold + "Oh, I see how it is. Fine. I'll just ask Beauty and Pyra to read my intro just as soon as the user gets bored of you and visits the Switch Character page from the Miscellaneous tab and selects one of them. I'm just wait there in the meantime, not helping all literate evil.";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = teleBold + "You do that. Anyway, if you look to your left, you'll notice Bendy's Charevo Emblem made up of a pair of playing cards, a rubber band, and a motorcycle representing his Charevo Trinity of Overconfidence, Flexibility, and Defiance.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = teleBold + "To your right, you'll see his Charevo Fairies, acting as living manifestations of his Charevo Elements with their physical form resembling both him and the symbols of his Charevo Emblem that represent those symbols. Just below there, you'll see some samples of the guidance those Charevo Fairies provide Bendy.";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = teleBold + "And finally, at the bottom, you'll find Bendy's powers listed along with a taste of his background.";
+                break;  
         }
 
     }
@@ -217,33 +224,32 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
-                document.getElementById("d").innerHTML = pyraBold + "";
+                document.getElementById("d").innerHTML = bendyBold + "And now we have the character page of ol' Benjamin 'Bendy' Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, we have the guidance from her Charevo Fairies. Since the guidance is based on the elements the fairies represent, well, you get the idea.";
-                document.getElementById("d").innerHTML = pyraBold + "";
+                document.getElementById("d").innerHTML = pyraBold + "Bendy, get outta my spot! You're not the host here.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = pyraBold + "If you'd like to see how many times you can go through the randomly selected guidance until you see it all, just keep clicking on the half beauty half unicorn, dragon, and princess to change the advice you see.";
-                document.getElementById("d").innerHTML = pyraBold + "";
+                document.getElementById("d").innerHTML = bendyBold + "Aw, come on! I'm almost done. I mean, unless you wanna read the intro I wrote for my page yourself?";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, you can see Beauty's powers and bio. I'd talk more about her, but, since this is the first character page and probably the first one you visited, I feel like I have to apologize for our creator's poor art skills.";
-                document.getElementById("d").innerHTML = pyraBold + "";
+                document.getElementById("d").innerHTML = pyraBold + "Oh, sure. I can't wait to talk about that made up claim that you're at all strong, popular, and handsome. I think the user wants actual information about you and how bad our creator's ideas are, you being one of them. Now, get lost.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = pyraBold + "Believe me, NOBODY was consulted ahead of time for those Charevo Fairies. Frankly, I'm surprised he made us look as passable as we are. I guess compared to the other characters' Charevo Fairies, Beauty's looks okay. I'll definitely have to apologize for him A LOT along the way though.";
-                document.getElementById("d").innerHTML = pyraBold + "";
+                document.getElementById("d").innerHTML = bendyBold + "Fine. I'll go. This page is no good anyway. I think I'll suggest the user click the Miscellaneous tab, go to the Switch Character page, and choose the far nicer Beauty or Tel-E as the new host before returning here. I'm out.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = pyraBold + "I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
-                document.getElementById("d").innerHTML = pyraBold + "";
+                document.getElementById("d").innerHTML = pyraBold + "You had me at 'This page is no good'. Alright. Back to this mess here. So we have Bendy's Charevo Emblem to the left and his Charevo Fairies to the right with the symbols and fairies representing his Charevo Trinity of Overconfidence, Flexibility, and Defiance.";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = pyraBold + "Seriously, just look at how lazy he was when he drew our left and right facing images. I'm surprised he didn't just leave my scar on the opposite side when he used the flip tool on me and a bunch of other asymmetrical characters. Anyway, uh, yeah. This is Beauty. She's my friend. She's pretty nice and cool. Thanks for visiting.";
-                document.getElementById("d").innerHTML = pyraBold + "";
+                document.getElementById("d").innerHTML = pyraBold + "The guidance from the fairies are below followed by his powers and weaknesses, and finally his bio. Once again, I must give a disclaimer: Our creator is NOT an artist.";
                 break;
+             case(8):
+                document.getElementById("d").innerHTML = pyraBold + "I'm kinda doing Bendy a favor here, because, unless I pointed this out, I'm sure you'd assume Bendy designed those Charevo Fairies himself. But it was our creator, again, NOT an artist. I think his poor art skills are obvious when you look at that abomination of Bendy's Overconfidence fairy. Although, it's worth noting that the idea of the 10 and 7 playing cards to represent Overconfidence was supposed to be that an overconfident person playing Blackjack would hit on 17. So, based on that concept, I don't even think our creator's much of a writer either.";
+                break;   
+             case(9):
+                document.getElementById("d").innerHTML = pyraBold + "Now, that's not saying those other two fairies look any better. I kinda feel like our creator spent some extra effort on the Flexibility one, but then just said 'Oh yeah. I'm good at this', and then made no effort on the next one at all. Ugh. I can't even look at the Overconfidence Fairy. It only makes me wanna look at Bendy some more for contrast, which is another point against those stupid cards. Oh, and in case you couldn't catch it, that's supposed to be a lightning bolt on his shirt, which is also supposed to be formed by some 7's on that Overconfidence Fairy. I can't really add anything else, to be honest. These designs are just terrible.";
+                break;    
         }
     }
     else
@@ -268,7 +274,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = beautyBold + "Alright, get outta here, Bendy. Alright, I gotta get through this quick now. So if you look to the top left, you'll see Bendy's Charevo Emblem, which is a pair of playing cards, a rubberband, and a motorcycle, representing his Charevo Trinity of Overconfidence, Flexibility, and Defiance.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = beautyBold + "To the right, you'll see his Charevo Fairies, which look like half-Bendy, half-all-those-element-symbols. These fairies provide guidance based on the elements below Bendy, and if you click on them, you can see some different guidance. And below that is his powers and bio in case you wanna learn more about the guy. That's all there is to know for here.";
+                document.getElementById("d").innerHTML = beautyBold + "To the right, you'll see his Charevo Fairies, which look like half-Bendy, half-all-those-element-symbols. These fairies provide guidance based on the elements below Bendy, and if you click on them, you can see some different guidance. And below that is his powers and bio in case you wanna learn more about the guy. I suggest you learn all you can from here so Bendy doesn't force you to listen to him talk about himself if you run into him.";
                 break;
         }
 

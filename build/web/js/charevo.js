@@ -41,6 +41,8 @@ $(document).ready(function () {
         sessionStorage.setItem("SessionCharacter", "Beauty");
         character = "Beauty";
     }
+    
+    
 
     document.getElementById("d").innerHTML = character;
     //else
@@ -55,8 +57,23 @@ $(document).ready(function () {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    cyhack = 0;
+    
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        cyhack = 1;
+    }
 
-    if (character === "Tel-E")
+    if (cyhack === 1)
+    {
+        var cyhackBold = "Cyhack: ";
+        cyhackBold = cyhackBold.bold();
+        
+        document.getElementById("d").innerHTML = cyhackBold + "Sorry, boys and girls. The Cyhack's taken over as host. ";
+        
+    }
+    else if (character === "Tel-E")
     {
         document.getElementById("d").innerHTML = teleBold + "Hello. Thank you for selecting me as your host. I'm Tel-E. And, like Beauty, I'll be guiding you throughout this site to share some information, though perhaps a bit more in detail.";
         document.getElementById("character").src = "images/tel-eleft1.png";
@@ -81,7 +98,7 @@ $(document).ready(function () {
     var curseWords = ["fuck", "shit", "cocksuck", "cock suck", "cunt", "twat", " tit ", " tits ", " tit.", " tits.", " tits?"];
 
     $(document).keypress(function (e) {
-        if (character === "Tel-E")
+        if (character === "Tel-E" && cyhack === 0)
         {
             var x = e.which || e.keycode;
 

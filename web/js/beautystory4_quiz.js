@@ -126,13 +126,14 @@ can start the quiz.");
             else if (dialogue === 9)
             {
                  $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#PyraRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#PyraRight1").hide();
                     $("#BeautyLeft1").show();
                     $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
+                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                 document.getElementById("nextlevel1a").disabled = true;
@@ -200,7 +201,7 @@ can start the quiz.");
             else if (dialogue === 7)
             {
                  $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#NinjaRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NinjaRight1").hide();
@@ -947,7 +948,7 @@ can start the quiz.");
             else if (dialogue === 10)
             {
                  $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#TrainorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#TrainorRight1").hide();
@@ -1031,7 +1032,7 @@ can start the quiz.");
             else if (dialogue === 8)
             {
                  $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#RaceRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#RaceRight1").hide();
@@ -1212,7 +1213,7 @@ can start the quiz.");
             else if (dialogue === 9)
             {
                  $("#BeautyLeft1").animate({left: '-50px'}, function() {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
@@ -1477,8 +1478,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "c")
             {
                 $("#dialogue").html("<b>Beauty:</b> That’s right. Ninja was the one we faced off against.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1502,8 +1503,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "b")
             {
                 $("#dialogue").html("<b>Beauty:</b> That’s right. Pyra held Ninja over a building like she was about to drop him.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1542,8 +1543,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "d")
             {
                 $("#dialogue").html("<b>Beauty:</b> Correct. Whitney Trainor was her name and the villain of this story.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1570,8 +1571,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "c")
             {
                 $("#dialogue").html("<b>Beauty:</b> Very good. Pyra had a lot to say about Trainor, but she had no problem with her voice.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1595,8 +1596,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "b")
             {
                 $("#dialogue").html("<b>Beauty:</b> Very good. Pyra said if you don't know the songs, you can't enjoy the show.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1622,8 +1623,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> Correct. Pyra attends school remotely. Since she doesn't want to risk hurting anyone with her powers, she chooses to stay at home.");
-                //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1659,8 +1660,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> That's it. Tel-E was the one who got arrested.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1695,8 +1696,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> Correct. Whitney Trainor can make people see what they've always wanted to see.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1716,8 +1717,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> Correct. Tel-E was wearing a wedding dress. Since Trainor can produce copies of a person's greatest fantasies, this would imply that someone wants to marry Tel-E.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1759,8 +1760,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "c")
             {
                 $("#dialogue").html("<b>Beauty:</b> Very good. Brittney, Courtney, and Rodney Trainor play clarinet, violin, cello.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1797,8 +1798,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> That's right. Whitney Trainor has a lot of fans, but her family is not one of them. Since they had those problems growing up, she kidnapped her family for not supporting her.");
-                //  $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1818,8 +1819,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "b")
             {
                 $("#dialogue").html("<b>Beauty:</b> Correct. Trainor's fantasy fairy was the one who talked to her.");
-                // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1858,8 +1859,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "c")
             {
                 $("#dialogue").html("<b>Beauty:</b> That’s right. Bendy and Nator were the ones Trainor used to attack us.");
-                 // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1881,7 +1882,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> Exactly right. Despite Pyra’s tough and sarcastic exterior, she’s actually very shy and doesn’t like being in crowds out of fear that her powers will hurt others.");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;
@@ -1927,7 +1929,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "c")
             {
                 $("#dialogue").html("<b>Beauty:</b> That’s right. With Pyra not feeling like people liked her, her biggest dream was to be only admired and not feared.");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if(missed === 0)
                     correct++;

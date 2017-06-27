@@ -34,8 +34,9 @@ $(document).ready(function () {
 
     if (character === "Beauty")
     {
-        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
-        max = 5;
+        document.getElementById("d").innerHTML = beautyBold + "And this is the character page for . . . wait. Where is he? Hello? Ninja? You there?";
+        max = 12;
+        $("#character").hide();
     }
     else if (character === "Tel-E")
     {
@@ -180,6 +181,9 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    var ninjaBold = "Ninja: ";
+    ninjaBold = ninjaBold.bold();
 
     
     if (character === "Tel-E")
@@ -187,20 +191,50 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
+                document.getElementById("d").innerHTML = teleBold + "Here we have Ninja's character page. You can see his Charevo Emblem on the left and Charevo Fairies on the right, representing his Charevo Trinity of Stealth, Mischief, and Quiet. Together, these elements create his abilities of invisibility and teleportation. It is with these powers as well as his martial arts skills that he utilizes to serve the efforts of the villainous J Gang.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = teleBold + "Since her Charevo Trinity is Fiction, Imagination, and Femininity, the corresponding symbols are a unicorn, dragon, and princess as they are the symbols that represent her elements.";
+                document.getElementById("d").innerHTML = ninjaBold + ". . .";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = teleBold + "To the right, you can see these symbols merged with Beauty herself, acting as the manifestation of her Charevo Fairies. Should you click on them, you can change the guidance shown from each of them in the blue section. Since Beauty is good, her fairies always provide good advice, hence I recommend the clicks.";
+                document.getElementById("d").innerHTML = teleBold + "Um . . . It seems as though Ninja is busy with his meditation today. Moving along, if you read his bio below, you'll find that the Gang member was always the quiet kid in school, as is evident by that previous dialogue text, and this was used as a cover for his mischievous side to either unexpectedly insult someone or pull some prank, leaving a bigger impact on his victim who was oblivious to him the whole time. This is based on our creator who's often quiet, but likes to say something funny to people who becomes surprised by him.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = teleBold + "And below, you'll find Beauty's profile that includes her powers and below that is a taste of her background. Unlike everyone else in the Neo Brigade, Beauty doesn't have much experience in fighting villains. Actually, from a certain perspective . . . never mind. Let's not spoil anything.";
+                document.getElementById("d").innerHTML = ninjaBold + ". . .";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = teleBold + "It's worth noting that while Beauty is the lead character in our stories, she was only the second character conceived by our creator for our world. Again, I won't give anything away, but that character also influenced the powers she has.";
+                document.getElementById("d").innerHTML = teleBold + "It should be noted that Ninja's invisibility has its limits, for if he makes any noise and someone can hear him, he will become slightly visible. So if you ever face him in battle, just make sure you're hearing is sufficient.";
                 break;
+            case(6):
+                document.getElementById("d").innerHTML = ninjaBold + ". . .";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = teleBold + "Hmm? Ah. I see Ninja is breaking meditation tradition and directing thoughts at me. And, yes, Ninja, I am well aware that I am listening to you a little too much right now. But I think it would be wise to see if you're planning to jump in with something inappropriate.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = ninjaBold + ". . .";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = teleBold + "I'm sorry? No, I'm not being an intrusive hovering censor. I'm simply acting as a sufficient host.";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = ninjaBold + ". . .";
+                break;     
+            case(11):
+                document.getElementById("d").innerHTML = teleBold + "I can go host your what? I will not! You quiet your dirty mind, Ninja.";
+                break;
+            case(12):
+                document.getElementById("d").innerHTML = ninjaBold + ". . .";
+                break; 
+             case(13):
+                document.getElementById("d").innerHTML = teleBold + "Yes, Ninja, I am well aware of the fact that I do this again later on. It doesn't mean I can't object to your insults as you currently send them to me.";
+                break; 
+            case(14):
+                document.getElementById("d").innerHTML = ninjaBold + ". . .";
+                break; 
+            case(15):
+                document.getElementById("d").innerHTML = teleBold + "I'm a what? Well, I'm sorry. But that's your opinion.";
+                break;    
         }
 
     }
@@ -209,26 +243,35 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
+                document.getElementById("d").innerHTML = pyraBold + "And here we are at the character page for a teleporting teen villain known as Kyd Wykkyd. Now then . . .";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, we have the guidance from her Charevo Fairies. Since the guidance is based on the elements the fairies represent, well, you get the idea.";
+                document.getElementById("d").innerHTML = ninjaBold + "Whoa whoa whoa.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = pyraBold + "If you'd like to see how many times you can go through the randomly selected guidance until you see it all, just keep clicking on the half beauty half unicorn, dragon, and princess to change the advice you see.";
+                document.getElementById("d").innerHTML = pyraBold + "Ugh. What?";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, you can see Beauty's powers and bio. I'd talk more about her, but, since this is the first character page and probably the first one you visited, I feel like I have to apologize for our creator's poor art skills.";
+                document.getElementById("d").innerHTML = ninjaBold + "You may address me as my given name, Leonard Angel. You may address me as Ninja. But what was with that name you just introduced me as?";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = pyraBold + "Believe me, NOBODY was consulted ahead of time for those Charevo Fairies. Frankly, I'm surprised he made us look as passable as we are. I guess compared to the other characters' Charevo Fairies, Beauty's looks okay. I'll definitely have to apologize for him A LOT along the way though.";
+                document.getElementById("d").innerHTML = pyraBold + "You know I'm supposed to be the honest one here, right? Our creator based a bunch of us on characters from Teen Titans, because, for him, it started with imagining Beauty on that show. So when he came up with you, he basically ripped off the quiet, teleporting teen villain, Kyd Wykkyd.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = pyraBold + "I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
+                document.getElementById("d").innerHTML = ninjaBold + "I see. Well, a true warrior needs not to be hung up on lack of originality of his past, but the one original path he sets for his future.";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = pyraBold + "Seriously, just look at how lazy he was when he drew our left and right facing images. I'm surprised he didn't just leave my scar on the opposite side when he used the flip tool on me and a bunch of other asymmetrical characters. Anyway, uh, yeah. This is Beauty. She's my friend. She's pretty nice and cool. Thanks for visiting.";
+                document.getElementById("d").innerHTML = pyraBold + "Yeah, well, good luck following that original path, Kyd Wykkyd.";
                 break;
+            case(8):
+                document.getElementById("d").innerHTML = ninjaBold + "Why, thank you, Raven!";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = pyraBold + "At least our creator gave me abilities different from the character I was ripped off from. I'm sure I can pass for an original over you.";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = ninjaBold + "Oh, sure. All that darkness won't make anyone confuse you with someone else.";
+                break;   
         }
     }
     else
@@ -236,20 +279,49 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+                document.getElementById("d").innerHTML = beautyBold + "And this is the character page for . . . wait. Where is he? Hello? Ninja? You there?";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = beautyBold + "Anyway, that's my Charevo Emblem. Since I have the Charevo Trinity of Fiction, Imagination, and Femininity, that's a unicorn, a dragon, and a princess. If you look closely, you can see the emblem on my hand.";
+                document.getElementById("d").innerHTML = beautyBold + "Well, this is awkward. Everyone normally shows up to help greet the user on their character pages.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = beautyBold + "To the right, you'll see my Charevo Fairies. Since they're half me half the element they represent, that explains those appearances. But the Charevo Fairies also give advice based on their elements, and said advice can be seen below me. If you click on a Charevo Fairy, the corresponding element's guidance will change.";
+                document.getElementById("d").innerHTML = beautyBold + "Well, anyway, if he was here, you'd see this is the character page for one of our villains, J Gang member Ninja. You can see to the left of where he was supposed to be is his Charevo Emblem representing his Charevo Trinity of Stealth, Mischief, and Quiet. To what would've been the right of him are his Charevo Fairies.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = beautyBold + "You can also see a description of my powers and bio. And if you noticed a name in that bio you didn't recognize from those novellas, he'll be coming up in a future story. God, I love setting stuff up!";
+                document.getElementById("d").innerHTML = beautyBold + "Down at the bottom, you'll see Ninja's bio, which you can take a read if you'd like. Gee, if we're talking about the guy, it would really help if he was here. But, anyway, as you can see from his bio, Ninja was always a quiet kid who took advantage of how he was seen as not much of a presence to play jokes on people who would never expect anything from him. When he got his powers of teleportation and invisibility, he utilized it to become even more mischievous when surprising people.";
+                $("#character").fadeOut(500);
+                $(this).clearQueue().stop();
                 break;
             case(5):
-                document.getElementById("d").innerHTML = beautyBold + "I will say if you've seen the powers I have, you'll notice the hair powers, wardrobe ability, and female character transformations. Fun fact: That was originally all it was. But when our creator wanted to give me more limits to my power, he made it so I have to always smile when people look at me. So thank you, creator and element of Femininity.";
+                document.getElementById("d").innerHTML = ninjaBold + "Surprise!";
+                $("#character").fadeIn(500);
+                $(this).clearQueue().stop();
                 break;
+             case(6):
+                document.getElementById("d").innerHTML = beautyBold + "Ah!";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = ninjaBold + "Heh heh heh heh. What a time for that little trivia to occur.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = beautyBold + "Ugh. Please don't do that again.";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = ninjaBold + "Okay.";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = beautyBold + "Thank you. Now then, for Ninja's powers . . . wait a minute. You're just saying you won't scare me again so you can scare me more when you do it again later.";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = ninjaBold + "Heh heh heh. One's word is best taken for what's heard rather than for what's true. Good luck with the rest of the interpretation.";
+                $("#character").fadeIn(500);
+                $(this).clearQueue().stop();
+                break;
+            case(12):
+                document.getElementById("d").innerHTML = ninjaBold + "Oh yeah? Well, don't expect me to be as truthful as . . . Ah, geez. He's gone again. Okay. I'm just gonna stay looking in that direction until he comes back.";
+                $("#character").fadeOut(500);
+                $(this).clearQueue().stop();
+                break;  
         }
 
     }

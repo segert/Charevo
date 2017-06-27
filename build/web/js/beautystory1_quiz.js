@@ -742,7 +742,7 @@ can start the quiz.");
             else if (dialogue === 6)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function () {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#PyraRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#PyraRight1").hide();
@@ -1004,7 +1004,7 @@ can start the quiz.");
             else if (dialogue === 10)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function () {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#PyraRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#PyraRight1").hide();
@@ -1513,7 +1513,7 @@ can start the quiz.");
             else if (dialogue === 7)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function () {
-                    $("#BeautyLeft1").hide();
+                    //$("#BeautyLeft1").hide();
                 });
                 $("#RaceLeft1").show();
                 $("#RaceLeft1").animate({left: (window.screen.width * .18)});

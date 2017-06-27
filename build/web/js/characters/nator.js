@@ -180,6 +180,9 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    var natorBold = "Nator: ";
+    natorBold = natorBold.bold();
 
     
     if (character === "Tel-E")
@@ -187,20 +190,59 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
+                document.getElementById("d").innerHTML = teleBold + "Ah. Here we have a Neo Brigade friend of mine. This is Nate Rodriguez, or Nator as we call him. On the left is his Charevo Emblem. This mark you'll see on his hand represents his Charevo Trinity, which, for him, is Intelligence, Logic, and Data. To the right, you'll notice his Charevo Fairies, which take the form of a hybrid of Nator and the symbol representing their Charevo Elements. It is these fairies that provide guidance for him, which you can see below. Additionally, his bio is just below that should you wish to learn more of our friend.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = teleBold + "Since her Charevo Trinity is Fiction, Imagination, and Femininity, the corresponding symbols are a unicorn, dragon, and princess as they are the symbols that represent her elements.";
+                document.getElementById("d").innerHTML = natorBold + "Why are you telling them all that?";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = teleBold + "To the right, you can see these symbols merged with Beauty herself, acting as the manifestation of her Charevo Fairies. Should you click on them, you can change the guidance shown from each of them in the blue section. Since Beauty is good, her fairies always provide good advice, hence I recommend the clicks.";
+                document.getElementById("d").innerHTML = teleBold + "What do you mean? I'm simply showing everyone what they can find in your character page. The emblem, the fairies, the bio. You know, the basic layout.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = teleBold + "And below, you'll find Beauty's profile that includes her powers and below that is a taste of her background. Unlike everyone else in the Neo Brigade, Beauty doesn't have much experience in fighting villains. Actually, from a certain perspective . . . never mind. Let's not spoil anything.";
+                document.getElementById("d").innerHTML = natorBold + "Yeah, but I'm, like, the sixth name on the character list. A first time user surely would've visited the pages for the people above my name where they'd see that exact layout and know where everything was when they got to me. I mean, no offense, but you're just giving redundant information.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = teleBold + "It's worth noting that while Beauty is the lead character in our stories, she was only the second character conceived by our creator for our world. Again, I won't give anything away, but that character also influenced the powers she has.";
+                document.getElementById("d").innerHTML = teleBold + "That is correct in that you are not the first name on the list, but we can't expect every user to visit each page in order.";
                 break;
+            case(6):
+                document.getElementById("d").innerHTML = natorBold + "What? So if you were visiting a site for the first time, you'd just click randomly? Come on! We have to expect a little desire for order.";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = teleBold + "True. But someone may have read the stories and taken the quizzes before going to the character pages and, as unlikely as it may sound, the user may have found you to be their favorite character and couldn't wait to go to your page first.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = natorBold + "Pff. No one would do that. The character section was presented as a list. And you're supposed to go down the list in order. And the character section is also listed before the quiz and stories sections, so they surely would've visited this place first.";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = teleBold + "Nator, if you're expecting everyone to visit this site's pages in order, then, by your logic, they would have visited the character pages before the Charevo Gene page. And that would require us to provide all the information on the Charevo Gene as we've discussed, which would make the Charevo Gene page redundant.";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = natorBold + "Okay, it's bad enough that you're trying to spread your lies about that gene, so I'd take that whole page out either way. The point is, navigating this site IN ORDER is the logical thing to do.";
+                break;  
+            case(12):
+                document.getElementById("d").innerHTML = teleBold + "Oh, I'm certain some people don't wish to be bound by sequential boundaries in their web navigation. And they definitely could have gone to this page with me first.";
+                break; 
+             case(13):
+                document.getElementById("d").innerHTML = natorBold + "No they couldn't. You're image is online, so they could've seen it and wanted to start with you as host. But they'd know nothing about me when they navigate this place sequentially. Therefore, this page could not have been first.";
+                break;
+            case(14):
+                document.getElementById("d").innerHTML = teleBold + "Right, but we do mention the different pages to visit, which includes the stories section. Free stories to read featuring different characters is certainly a nice thing to include in this site. They could have seen you there and become intrigued. Your story is pretty interesting.";
+                break; 
+            case(15):
+                document.getElementById("d").innerHTML = natorBold + "Look, it's obviously more likely that someone will go through the character list in order. I am not the first one, so I wouldn't be first.";
+                break; 
+            case(16):
+                document.getElementById("d").innerHTML = teleBold + "Nator, it's a one in twelve chance. It's not impossible. Everyone could have their own first choice. We can't expect an absolute first choice.";
+                break;
+            case(17):
+                document.getElementById("d").innerHTML = natorBold + "Well, YOU can't. But I will.";
+                break;
+            case(18):
+                document.getElementById("d").innerHTML = teleBold + "So I'm right in my decision and assumption then.";
+                break; 
+            case(19):
+                document.getElementById("d").innerHTML = natorBold + ". . . I'm not saying that.";
+                break;     
         }
 
     }
@@ -209,26 +251,29 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
+                document.getElementById("d").innerHTML = pyraBold + "So here we have the character page for one of my Neo Brigade colleagues. You'll notice his poorly done Charevo Fairies on the right representing his Charevo Elements of Intelligence, Logic, and Data as well as the man himself, Nator AKA Nate 'I don't believe anything about the Charevo Gene despite the evidence presented' Rodriguez.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, we have the guidance from her Charevo Fairies. Since the guidance is based on the elements the fairies represent, well, you get the idea.";
+                document.getElementById("d").innerHTML = natorBold + "Okay. A few things. One: My nickname is Nator, which is the name that should go in quotes. Two: If you're using AKA, it's Real Name AKA Nickname. And three: Don't bring those Charevo Gene theories into my page.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = pyraBold + "If you'd like to see how many times you can go through the randomly selected guidance until you see it all, just keep clicking on the half beauty half unicorn, dragon, and princess to change the advice you see.";
+                document.getElementById("d").innerHTML = pyraBold + "Ugh. Okay, I know arguing with you over your denial of the Charevo Gene's existence is Tel-E's thing, but seriously. You've seen people with superpowers, yet you don't believe in the source?";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, you can see Beauty's powers and bio. I'd talk more about her, but, since this is the first character page and probably the first one you visited, I feel like I have to apologize for our creator's poor art skills.";
+                document.getElementById("d").innerHTML = natorBold + "I'm sure it's based on something else. All this other stuff Tel-E's talked about with the gene just seems so made up.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = pyraBold + "Believe me, NOBODY was consulted ahead of time for those Charevo Fairies. Frankly, I'm surprised he made us look as passable as we are. I guess compared to the other characters' Charevo Fairies, Beauty's looks okay. I'll definitely have to apologize for him A LOT along the way though.";
+                document.getElementById("d").innerHTML = pyraBold + "Talked about? You mean, she's demonstrated that stuff, right? Ugh. Forget it. Tel-E's got way more patience for this kinda thing.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = pyraBold + "I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
+                document.getElementById("d").innerHTML = natorBold + "Okay then. I'm sorry. But why would you even bring up that stuff at all? Seriously.";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = pyraBold + "Seriously, just look at how lazy he was when he drew our left and right facing images. I'm surprised he didn't just leave my scar on the opposite side when he used the flip tool on me and a bunch of other asymmetrical characters. Anyway, uh, yeah. This is Beauty. She's my friend. She's pretty nice and cool. Thanks for visiting.";
+                document.getElementById("d").innerHTML = pyraBold + "Well, you crossed out the part about your Charevo Gene giving you your powers and pretty much begged us not to talk about it at all, so I feel like this was an appropriate service for the public.";
                 break;
+             case(8):
+                document.getElementById("d").innerHTML = natorBold + "Disclaimer: I do not support the theory or perpetuation of the theory of the Charevo Gene.";
+                break;   
         }
     }
     else
@@ -236,20 +281,47 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+                document.getElementById("d").innerHTML = beautyBold + "Here's another one of my friends. It's Nator of the Neo Brigade! That's his Charevo Emblem on the left and Charevo Fairies on the right. They represent his Charevo Elements, which are Intelligence, Logic, and Data.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = beautyBold + "Anyway, that's my Charevo Emblem. Since I have the Charevo Trinity of Fiction, Imagination, and Femininity, that's a unicorn, a dragon, and a princess. If you look closely, you can see the emblem on my hand.";
+                document.getElementById("d").innerHTML = natorBold + "Ugh. Just get on with the non-Charevo slash actual information.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = beautyBold + "To the right, you'll see my Charevo Fairies. Since they're half me half the element they represent, that explains those appearances. But the Charevo Fairies also give advice based on their elements, and said advice can be seen below me. If you click on a Charevo Fairy, the corresponding element's guidance will change.";
+                document.getElementById("d").innerHTML = beautyBold + "Uh . . . sure thing, pal. Nator has some cool abilities, having built a robotic body for his brain. This includes some weapons he developed as well as some other gadgets. Apart from that . . . uh . . .";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = beautyBold + "You can also see a description of my powers and bio. And if you noticed a name in that bio you didn't recognize from those novellas, he'll be coming up in a future story. God, I love setting stuff up!";
+                document.getElementById("d").innerHTML = natorBold + "What's wrong, Beauty?";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = beautyBold + "I will say if you've seen the powers I have, you'll notice the hair powers, wardrobe ability, and female character transformations. Fun fact: That was originally all it was. But when our creator wanted to give me more limits to my power, he made it so I have to always smile when people look at me. So thank you, creator and element of Femininity.";
+                document.getElementById("d").innerHTML = beautyBold + "Nothing. It's just . . . apart from your mechanical body . . . what are your powers again?";
                 break;
+            case(6):
+                document.getElementById("d").innerHTML = natorBold + "Ha! Don't be silly. I don't have ";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = natorBold + "Ha! Don't be silly. I don't have powers like you guys. This is all me.";
+                break; 
+            case(8):
+                document.getElementById("d").innerHTML = beautyBold + "No way. You totally have the Charevo Gene. What's your schtick?";
+                break; 
+            case(9):
+                document.getElementById("d").innerHTML = natorBold + "Ugh. Fine. Let's see what you guys put in that table. Uh, it says here I have expert control of technology I make. I guess that would explain me being able to use weapons in my body, but I'm not buying that. Let's see. Ah, I also have an enhanced memory. So there's that.";
+                break; 
+            case(10):
+                document.getElementById("d").innerHTML = beautyBold + "So that's what you got outside your robot body? A memory and what else? Expert control of your own technology? So if you made your own TV remote, you'd be able to change the channel at will without pressing a button?";
+                break;  
+            case(11):
+                document.getElementById("d").innerHTML = natorBold + "I don't know. Probably. If that's what you say I can do, who knows?";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = beautyBold + "So you've got that and the ability to remember anything? I'm gonna be honest. I prefer my own powers. Good thing you got that robot body.";
+                break; 
+            case(12):
+                document.getElementById("d").innerHTML = natorBold + "You know I had to get hit by a car for me to have to use this thing.";
+                break; 
+            case(13):
+                document.getElementById("d").innerHTML = beautyBold + "Oh! I forgot about that. Sorry. Sorry. Gee, looks like I could really use that super memory of yours after all.";
+                break; 
         }
 
     }

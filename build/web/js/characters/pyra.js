@@ -187,20 +187,47 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
+                document.getElementById("d").innerHTML = teleBold + "Here you can see the character page for my good friend and Neo Brigade teammate, Bonnie Moto. You'll notice she wields the Charevo Trinity of Tolerance, Anger, and Indifference, giving her pyro-kinetic abilities. Now, I know that may seem intimidating along with two of those three Charevo Elements, but you'll see a great friend beneath her.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = teleBold + "Since her Charevo Trinity is Fiction, Imagination, and Femininity, the corresponding symbols are a unicorn, dragon, and princess as they are the symbols that represent her elements.";
+                document.getElementById("d").innerHTML = pyraBold + "Thanks for the intro, Tel-E. But, uh . . . you know you're supposed to say my hero name too when you do these, right?";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = teleBold + "To the right, you can see these symbols merged with Beauty herself, acting as the manifestation of her Charevo Fairies. Should you click on them, you can change the guidance shown from each of them in the blue section. Since Beauty is good, her fairies always provide good advice, hence I recommend the clicks.";
+                document.getElementById("d").innerHTML = teleBold + "Oh, I know. But I just figured if I said your name, Pyra, people would only think of you for being all fire powered and dangerous as opposed to being the mostly non-violent, peaceful, and helpful person you are.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = teleBold + "And below, you'll find Beauty's profile that includes her powers and below that is a taste of her background. Unlike everyone else in the Neo Brigade, Beauty doesn't have much experience in fighting villains. Actually, from a certain perspective . . . never mind. Let's not spoil anything.";
+                document.getElementById("d").innerHTML = pyraBold + "Ugh.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = teleBold + "It's worth noting that while Beauty is the lead character in our stories, she was only the second character conceived by our creator for our world. Again, I won't give anything away, but that character also influenced the powers she has.";
+                document.getElementById("d").innerHTML = teleBold + "What's wrong?";
                 break;
+            case(6):
+                document.getElementById("d").innerHTML = pyraBold + "What if some of our enemies are reading this? I don't need them all thinking I'm some softy. What if they think of doing something to harm a bunch of people in a large crowd, knowing I wouldn't do much about it. I don't need anyone jumping to these conclusions however accurate they may be.";
+                break; 
+            case(7):
+                document.getElementById("d").innerHTML = teleBold + "Right. I understand. So, allow me to rephrase. Pyra may be a hero for peace, but she can burn you right good with her fire of darkness if you get her mad enough.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = pyraBold + "Well, don't tell people THAT. Now people are gonna think I'm all about burning people with dangerous darkness. Seriously, I don't need to come across as threatening.";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = teleBold + "Okay. Then should we talk about how you value friendship as was proven by your sadness upon being alone after your previous friends left you after you got your powers.";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = pyraBold + "Ugh. You're making me look afraid to be alone and desperate to be with people. I can think of two problems with that, one being that I could be too focused on getting people to like me that I wouldn't stand up to them if they were villains.";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = teleBold + "Well, if you want, I could mention that your friends left you after you accidentally burned your best friend's brother. Maybe the fact that you are constantly heated so you're too hot too touch without getting burned.";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = pyraBold + "Are you kidding me? That won't help me make any friends. Do you think I'm trying to scare people away from me?";
+                break;
+            case(12):
+                document.getElementById("d").innerHTML = teleBold + "Ugh. I can read minds, and even I can't tell what you're thinking at this point. Once you figure it out, let me know. I'll help the user with another character.";
+                break;
+            case(13):
+                document.getElementById("d").innerHTML = pyraBold + "Alright. Just make sure they don't forget about me, the good stuff I mean, not that I care. Whatever.";
+                break;    
         }
 
     }
@@ -209,25 +236,19 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
+                document.getElementById("d").innerHTML = pyraBold + "Alright. So this here's my character page. If those images need explaining because our creator can't draw, that's supposed to be a punching bag, a fireball, and a cat on the left, and me as a punching bag, me as a fireball, and me as a cat on the right.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, we have the guidance from her Charevo Fairies. Since the guidance is based on the elements the fairies represent, well, you get the idea.";
+                document.getElementById("d").innerHTML = pyraBold + "Just for the record, I am NOT a cat person. I'm not much of any kind of person. That and those other symbols are supposed to represent my Charevo Trinity of Tolerance, Anger, and Indifference. So if no one's told you so far, that means I have dark pyro-kinetic abilities, which mainly includes the power to generate dark fire.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = pyraBold + "If you'd like to see how many times you can go through the randomly selected guidance until you see it all, just keep clicking on the half beauty half unicorn, dragon, and princess to change the advice you see.";
+                document.getElementById("d").innerHTML = pyraBold + "Of course, nobody ever talks about my power to absorb heat to help others. So if you think I'm all about hurting people, please keep that in mind.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, you can see Beauty's powers and bio. I'd talk more about her, but, since this is the first character page and probably the first one you visited, I feel like I have to apologize for our creator's poor art skills.";
+                document.getElementById("d").innerHTML = pyraBold + "Anyway, if you click on those terribly designed Charevo Fairies, you can display some new advice they give right below me. Full disclosure, I don't actually talk like those fairies. So don't expect me to turn into some dumb valley girl after you see what the Indifference Fairy says.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = pyraBold + "Believe me, NOBODY was consulted ahead of time for those Charevo Fairies. Frankly, I'm surprised he made us look as passable as we are. I guess compared to the other characters' Charevo Fairies, Beauty's looks okay. I'll definitely have to apologize for him A LOT along the way though.";
-                break;
-            case(6):
-                document.getElementById("d").innerHTML = pyraBold + "I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
-                break;
-            case(7):
-                document.getElementById("d").innerHTML = pyraBold + "Seriously, just look at how lazy he was when he drew our left and right facing images. I'm surprised he didn't just leave my scar on the opposite side when he used the flip tool on me and a bunch of other asymmetrical characters. Anyway, uh, yeah. This is Beauty. She's my friend. She's pretty nice and cool. Thanks for visiting.";
+                document.getElementById("d").innerHTML = pyraBold + "You can also read from my bio below if you want. Normally, the subject of a character page talks with the host about themselves. But since I'm both, I'm pretty much on my own here with no one to talk to, because that's the story of my life.";
                 break;
         }
     }
@@ -236,20 +257,35 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+                document.getElementById("d").innerHTML = beautyBold + "Oh, goody. Here's one of my best friends. It's Bonnie Moto AKA Pyra. I know she has the power to fire dark flames at people coming from her Charevo Trinity of Tolerance, Anger, and Indifference, but she can also be one of the nicest people I know, which you can see from her power to absorb heat and mix her fiery body into the air to avoid causing harm.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = beautyBold + "Anyway, that's my Charevo Emblem. Since I have the Charevo Trinity of Fiction, Imagination, and Femininity, that's a unicorn, a dragon, and a princess. If you look closely, you can see the emblem on my hand.";
+                document.getElementById("d").innerHTML = pyraBold + "Thanks for sharing that last little bit. The whole dangerous fireball label is best left ignored and forgotten.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = beautyBold + "To the right, you'll see my Charevo Fairies. Since they're half me half the element they represent, that explains those appearances. But the Charevo Fairies also give advice based on their elements, and said advice can be seen below me. If you click on a Charevo Fairy, the corresponding element's guidance will change.";
+                document.getElementById("d").innerHTML = beautyBold + "I guess it's a good thing our creator decided to make your character image your normal appearance rather than you in your dark ignited form.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = beautyBold + "You can also see a description of my powers and bio. And if you noticed a name in that bio you didn't recognize from those novellas, he'll be coming up in a future story. God, I love setting stuff up!";
+                document.getElementById("d").innerHTML = pyraBold + "You're telling me. I'll take five more scars over something that'll scare people away. Though, if you're saying I should tell the world our creator makes good decisions as an artist, that's not happening.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = beautyBold + "I will say if you've seen the powers I have, you'll notice the hair powers, wardrobe ability, and female character transformations. Fun fact: That was originally all it was. But when our creator wanted to give me more limits to my power, he made it so I have to always smile when people look at me. So thank you, creator and element of Femininity.";
+                document.getElementById("d").innerHTML = beautyBold + "He and I both care about how you're portrayed, Pyra. I didn't even mention the fact that if anyone touches you, they'll get burned from that side effect of your power keeping you heated at all times.";
                 break;
+            case(5):
+                document.getElementById("d").innerHTML = pyraBold + "I think our creator cares more about keeping characters interesting than giving us an easy time. He only gave me that side effect because he wanted some characters to stay away from the cliche that heroes never have any negative effects when they get powers.";
+                break;
+            case(6):
+                document.getElementById("d").innerHTML = beautyBold + "Well, he did the same with me, you know. At least you don't have to smile when people look at you to avoid your powers electrocuting you.";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = pyraBold + "Oh, I think my powers force me to present myself different than I naturally would a little more than you. At least YOU don't have to worry about your powers hurting people, particularly if you forget you can burn someone just by grabbing their hand.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = beautyBold + "You wanna trade? You won't hurt anyone with MY powers, but with your natural face and how often you smile at people, I'm sure the only one you'll be hurting is yourself.";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = pyraBold + "Well, you're the pretty one. You want I should throw in the scar too? Actually, on second thought, you've got a point. I sure ain't smiling at anyone, certainly not if they were all designed by our creator. That work's nothing to smile at.";
+                break;    
         }
 
     }

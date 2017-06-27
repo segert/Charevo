@@ -40,12 +40,12 @@ $(document).ready(function () {
     else if (character === "Tel-E")
     {
         document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
-        max = 5;
+        max = 8;
     }
     else if (character === "Pyra")
     {
         document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
-        max = 7;
+        max = 10;
     }
 
     x = 0;
@@ -222,6 +222,15 @@ function DialogueChangeMenu() {
             case(5):
                 document.getElementById("d").innerHTML = teleBold + "It's worth noting that while Beauty is the lead character in our stories, she was only the second character conceived by our creator for our world. Again, I won't give anything away, but that character also influenced the powers she has.";
                 break;
+            case(6):
+                document.getElementById("d").innerHTML = beautyBold + "Ooh. Tel-E, you're such a tease.";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = teleBold + "Well, certainly for spoiler sake, we did leave out a few details in your bio. That we should say. Not that it's not long enough as it is.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = beautyBold + "God, I can't wait for our novel to come out! Maybe we can talk a little more about . . . well, not just me, but . . . just talk more.";
+                break;  
         }
 
     }
@@ -245,9 +254,18 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = pyraBold + "Believe me, NOBODY was consulted ahead of time for those Charevo Fairies. Frankly, I'm surprised he made us look as passable as we are. I guess compared to the other characters' Charevo Fairies, Beauty's looks okay. I'll definitely have to apologize for him A LOT along the way though.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = pyraBold + "I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
+                document.getElementById("d").innerHTML = beautyBold + "Oh, I think you're being a little too harsh on him. He did his best with what he wanted for this site. Why do you have to call our creator out like this? Besides, Pyra, you look great.";
                 break;
             case(7):
+                document.getElementById("d").innerHTML = pyraBold + "YOU say I look great. But there's gonna be some people thinking we just look ugly. I know looking good isn't something I'm known for. But you? You might have too much undesired contrast in looks thanks to our creator's inability to draw.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = pyraBold + "Well, we don't look perfect, but I'm not gonna complain. But if you still have issues with this, I won't stop you if you need to vent about it.";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = pyraBold + "Thanks. Anyway, to continue my rant, ugh. Our creator sucks! I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
+                break;
+            case(10):
                 document.getElementById("d").innerHTML = pyraBold + "Seriously, just look at how lazy he was when he drew our left and right facing images. I'm surprised he didn't just leave my scar on the opposite side when he used the flip tool on me and a bunch of other asymmetrical characters. Anyway, uh, yeah. This is Beauty. She's my friend. She's pretty nice and cool. Thanks for visiting.";
                 break;
         }

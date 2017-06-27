@@ -40,7 +40,7 @@ $(document).ready(function () {
     else if (character === "Tel-E")
     {
         document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
-        max = 5;
+        max = 12;
     }
     else if (character === "Pyra")
     {
@@ -180,6 +180,9 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    var dinomightBold = "Dinomight: ";
+    dinomightBold = dinomightBold.bold();
 
     
     if (character === "Tel-E")
@@ -187,20 +190,45 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
+                document.getElementById("d").innerHTML = teleBold + "This, as you can see, is the character page for J Gang member, Dinomight. On the left, you'll find . . .";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = teleBold + "Since her Charevo Trinity is Fiction, Imagination, and Femininity, the corresponding symbols are a unicorn, dragon, and princess as they are the symbols that represent her elements.";
+                document.getElementById("d").innerHTML = dinomightBold + "Hey, beat it, space nerd! This is my page! Who told you you could come in here?";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = teleBold + "To the right, you can see these symbols merged with Beauty herself, acting as the manifestation of her Charevo Fairies. Should you click on them, you can change the guidance shown from each of them in the blue section. Since Beauty is good, her fairies always provide good advice, hence I recommend the clicks.";
+                document.getElementById("d").innerHTML = teleBold + "Well, the user selected your page to visit and chose me as the host. Also, our creator coded this site to allow the host to talk about each page, which includes yours.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = teleBold + "And below, you'll find Beauty's profile that includes her powers and below that is a taste of her background. Unlike everyone else in the Neo Brigade, Beauty doesn't have much experience in fighting villains. Actually, from a certain perspective . . . never mind. Let's not spoil anything.";
+                document.getElementById("d").innerHTML = dinomightBold + "He let YOU be a host and not me? Boy, that makes me madder 'n a dinomite lighter in a rainstorm. I oughta slap you 'cross that giant noggin o' yours so hard, you land in some other author's website!";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = teleBold + "It's worth noting that while Beauty is the lead character in our stories, she was only the second character conceived by our creator for our world. Again, I won't give anything away, but that character also influenced the powers she has.";
+                document.getElementById("d").innerHTML = teleBold + "I understand you're quite upset with me being here, but I really need to talk about your page. After that, I'll be on my way.";
                 break;
+            case(6):
+                document.getElementById("d").innerHTML = dinomightBold + "Hmph. Fine. Do what you been told to do. Just don't go movin' nothin' while yer here.";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = teleBold + "Right. Now then, on the left, we have Dinomight's Charevo Emblem and on the right are his Charevo Fairies, representing the brute's Charevo Trinity of Destruction, Ignorance, and Strength. Those elements together produce Dinomight's powers of enhanced strength as well as his ability to create an explosion with a punch, which you can see in the table just below.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = teleBold + "That said, that Mentality Element of Ignorance contributes to his weakness of his skull being the only non-durable part of his body. With Dinomight as a member of the villainous J Gang and myself a member of the Neo Brigade, it should be noted Dinomight and I have had a bit of a rivalry, which you can read about at the end of his bio, located at the very bottom if you wish.";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = dinomightBold + "Alright! You've spoken enough. Now, beat it!";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = teleBold + "Very well. I'm going. But before I do . . .";
+                break;
+            case(11):
+                var dinomightPosition = $("#character").position();
+                var x = dinomightPosition.left;
+                var y = dinomightPosition.top;
+                $("#emblem").animate({left: (x + 25), top: y});
+                document.getElementById("d").innerHTML = dinomightBold + "Hey! Whoa! Whoa! Whoa! What'd you do? I can't see here! I thought I told you not to move nothin'!";
+                break;
+            case(12):
+                document.getElementById("d").innerHTML = teleBold + "Teehee. Sorry if I took your double negatives too seriously. Though, personally, I think this page looks much nicer now.";
+                break;  
         }
 
     }
@@ -209,25 +237,25 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
+                document.getElementById("d").innerHTML = pyraBold + "And this is Dinomight's character page. He's the super strength and explosion punch wielding member of the J Gang. He's got a Charevo Trinity of Destruction, Ignorance, and Strength, two of those basically being the same thing the way he uses them. He's the standard strong guy with little intelligence, which you can see if you read his bio below. Not much to him, really.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, we have the guidance from her Charevo Fairies. Since the guidance is based on the elements the fairies represent, well, you get the idea.";
+                document.getElementById("d").innerHTML = dinomightBold + "Wait a minute. I've been alive for near seventeen years. I bet there's some more to me than that. I just haven't been told what that is. But I'm our creator's favorite character, so he's gotta have some trivia here, don't he?";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = pyraBold + "If you'd like to see how many times you can go through the randomly selected guidance until you see it all, just keep clicking on the half beauty half unicorn, dragon, and princess to change the advice you see.";
+                document.getElementById("d").innerHTML = pyraBold + "Pff. YOU'RE his favorite? Where are you getting that from?";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, you can see Beauty's powers and bio. I'd talk more about her, but, since this is the first character page and probably the first one you visited, I feel like I have to apologize for our creator's poor art skills.";
+                document.getElementById("d").innerHTML = dinomightBold + "Well, it was worth the guess. Besides, I'm pretty sure our creator's a sports fan, right?";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = pyraBold + "Believe me, NOBODY was consulted ahead of time for those Charevo Fairies. Frankly, I'm surprised he made us look as passable as we are. I guess compared to the other characters' Charevo Fairies, Beauty's looks okay. I'll definitely have to apologize for him A LOT along the way though.";
+                document.getElementById("d").innerHTML = pyraBold + "Are you trying to prove one of those Charevo Elements to us right now? Unless you count combat robotics as a sport, our creator cares next to nothing about sports. In fact, when he was designing you, he wanted to have you in a sports jersey, but he actually had to look up if a jersey is supposed to have the person's name with the number or the team name and number on the front. He didn't know both are acceptable.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = pyraBold + "I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
+                document.getElementById("d").innerHTML = dinomightBold + "Oh, heck. If he weren't who made me, I'd have to beat him silly just for that.";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = pyraBold + "Seriously, just look at how lazy he was when he drew our left and right facing images. I'm surprised he didn't just leave my scar on the opposite side when he used the flip tool on me and a bunch of other asymmetrical characters. Anyway, uh, yeah. This is Beauty. She's my friend. She's pretty nice and cool. Thanks for visiting.";
+                document.getElementById("d").innerHTML = pyraBold + "Throw in a few punches for me just for those stupid Charevo Fairies of yours. I don't know what that Mentality symbol is supposed to be, but it's not a cave. He'll tell you it's a cave, but I'm telling you. That's not a cave.";
                 break;
         }
     }
@@ -236,20 +264,26 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+                document.getElementById("d").innerHTML = beautyBold + "Here we have another member of the J Gang. His name is Barry Block, but his friends call him Dinomight. Uh, and I guess myself and the rest of his enemies call him Dinomight too. If you were disappointed that the Neo Brigade wasn't a team with a super strong punching fella, well, be disappointed no more! We have Dinomight.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = beautyBold + "Anyway, that's my Charevo Emblem. Since I have the Charevo Trinity of Fiction, Imagination, and Femininity, that's a unicorn, a dragon, and a princess. If you look closely, you can see the emblem on my hand.";
+                document.getElementById("d").innerHTML = dinomightBold + "Alright! I'm a fan favorite! Thanks for the hype, Beauty. I'll bash you up a little less next time we square off.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = beautyBold + "To the right, you'll see my Charevo Fairies. Since they're half me half the element they represent, that explains those appearances. But the Charevo Fairies also give advice based on their elements, and said advice can be seen below me. If you click on a Charevo Fairy, the corresponding element's guidance will change.";
+                document.getElementById("d").innerHTML = beautyBold + "Fan favorite? Uh . . . maybe if we're targeting an audience loving violence . . . perhaps? Personally, if we're talking favorites on your team, I'm more of a Cyhack girl. And our creator's probably a bit of a Tammy Time guy.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = beautyBold + "You can also see a description of my powers and bio. And if you noticed a name in that bio you didn't recognize from those novellas, he'll be coming up in a future story. God, I love setting stuff up!";
+                document.getElementById("d").innerHTML = dinomightBold + "Well, shoot, then who's a Dinomight girl? Come on! You know a strength feller's the way to go!";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = beautyBold + "I will say if you've seen the powers I have, you'll notice the hair powers, wardrobe ability, and female character transformations. Fun fact: That was originally all it was. But when our creator wanted to give me more limits to my power, he made it so I have to always smile when people look at me. So thank you, creator and element of Femininity.";
+                document.getElementById("d").innerHTML = beautyBold + "Well, I won't lie. I do like your ability to create explosions. And, I know Pyra's supposed to be the honest one on this site, but fun fact: Our creator gave you that power in an attempt to distinguish you from an existing character he based you on. I won't say the name of that character here. We'll mention that elsewhere. Personally, I'd prefer to throw my creator under the bus as few times as possible.";
                 break;
+            case(6):
+                document.getElementById("d").innerHTML = dinomightBold + "Oh, you wuss! If it were me, I'd throw the guy who made me under a tank before I drop it on him!";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = beautyBold + "If you're trying to get more people to like you, I don't think you should expect our creator to join the fan club. Just a heads up.";
+                break; 
         }
 
     }

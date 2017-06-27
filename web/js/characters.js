@@ -349,20 +349,23 @@ $(document).ready(function () {
 
         $("#otherlist").append("<li class = 'charnames'><a href = 'Characters/chieftrotterberg.html'>Chief Lou Trotterberg</a></li>");
 
-        if (character === "Beauty")
+        if (character === "Tel-E")
         {
             document.getElementById("oth").src = "images/chiefright1.png";
             document.getElementById("oth").alt = "Chief Placeholder";
-        }
-        else if (character === "Tel-E")
-        {
-            document.getElementById("oth").src = "images/chiefright1.png";
-            document.getElementById("oth").alt = "Chief Placeholder";
+            $("#oth").show();
         }
         else if (character === "Pyra")
         {
             document.getElementById("oth").src = "images/chiefright1.png";
             document.getElementById("oth").alt = "Chief Placeholder";
+            $("#oth").show();
+        }
+        else
+        {
+            document.getElementById("oth").src = "images/chiefright1.png";
+            document.getElementById("oth").alt = "Chief Placeholder";
+            $("#oth").show();
         }
 
         $("#AllOther").attr("class", "");
