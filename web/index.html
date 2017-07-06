@@ -19,6 +19,8 @@ and open the template in the editor.
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
         <script src="js/charevo.js"></script>
+
+
         <link href="css/charevo.css" rel="stylesheet" type="text/css">
         <link href="css/custom.css" rel="stylesheet" type="text/css">
 
@@ -67,9 +69,37 @@ and open the template in the editor.
     </head>
 
     <body ng-app="Demo">
+        <div id="bluescreen" class="bluescreen">
+            <div style="padding: 20px;">                      
+                <p style="font-size: 100px;">|:P</p>
+            A problem has been detected and your device has been shut down to prevent damage.
+            <br><br>
+            The problem seems to be caused by the awesomeness of Cyhack
+            <br><br>
+            MANUALLY_INITIATED_CRASH
+            <br><br>
+            If this is the first time you've seen this error screen, restart your computer. If this screen appears again, follow these steps:
+            <br>
+            Send ten thousand dollars to Gina "Cyhack" Mozetti.
+            <br>
+            If problems continue, repeat these steps.
+            <br>
+            Technical Information:
+            <br>
+            *** STOP: 0x000000ED(0x80F128D0, 0xC000009C, 0x00000000, 0x00000000)
+            <br><br>
+            <!--The Cyhack is queen of the stephenegert.com villains! You will all obey The Cyhack and read Stephen's stories at the stephenegert.com/beautystories. You will love these stories and characters and, when it comes out, you will spend all of your money on Stephen's novel, Beauty vs. the Boy of Many Beasts, featuring Cyhack. You will obey the Cyhack! -->
+            0101010001101000011001010010000001000011011110010110100001100001011000110110101100100000011010010111001100100000011100010111010101100101011001010110111000100000011011110110011000100000011101000110100001100101001000000111001101110100011001010111000001101000011001010110111001100101011001110110010101110010011101000010111001100011011011110110110100100000011101100110100101101100011011000110000101101001011011100111001100100001001000000101100101101111011101010010000001110111011010010110110001101100001000000110000101101100011011000010000001101111011000100110010101111001001000000101010001101000011001010010000001000011011110010110100001100001011000110110101100100000011000010110111001100100001000000111001001100101011000010110010000100000010100110111010001100101011100000110100001100101011011100010011101110011001000000111001101110100011011110111001001101001011001010111001100100000011000010111010000100000011101000110100001100101001000000111001101110100011001010111000001101000011001010110111001100101011001110110010101110010011101000010111001100011011011110110110100101111011000100110010101100001011101010111010001111001011100110111010001101111011100100110100101100101011100110010111000100000010110010110111101110101001000000111011101101001011011000110110000100000011011000110111101110110011001010010000001110100011010000110010101110011011001010010000001110011011101000110111101110010011010010110010101110011001000000110000101101110011001000010000001100011011010000110000101110010011000010110001101110100011001010111001001110011001000000110000101101110011001000010110000100000011101110110100001100101011011100010000001101001011101000010000001100011011011110110110101100101011100110010000001101111011101010111010000101100001000000111100101101111011101010010000001110111011010010110110001101100001000000111001101110000011001010110111001100100001000000110000101101100011011000010000001101111011001100010000001111001011011110111010101110010001000000110110101101111011011100110010101111001001000000110111101101110001000000101001101110100011001010111000001101000011001010110111000100111011100110010000001101110011011110111011001100101011011000010110000100000010000100110010101100001011101010111010001111001001000000111011001110011001011100010000001110100011010000110010100100000010000100110111101111001001000000110111101100110001000000100110101100001011011100111100100100000010000100110010101100001011100110111010001110011001011000010000001100110011001010110000101110100011101010111001001101001011011100110011100100000010000110111100101101000011000010110001101101011001011100010000001011001011011110111010100100000011101110110100101101100011011000010000001101111011000100110010101111001001000000111010001101000011001010010000001000011011110010110100001100001011000110110101100100001
+            </div>
+        </div>
         <div id="maindiv">
 
-            
+                                            
+                                         
+                                           
+                                                
+                                             
+                                                 
 
             <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
                    <div  ng-controller="DemoCtrl as vm">
@@ -93,22 +123,23 @@ and open the template in the editor.
 
             <nav>
                 <ul id = "menudiv" class = "ulmenu1" >
-                    <li class = "li-a-menu1-selected" > <a class = "menu-selected" href="index.html"><b>Home</b></a></li>
-                    <li id = "test" class = "limenu1"> <a class = "li-a-menu1" href="#about"><b>About</b></a>
+                    <li class = "li-a-menu1-selected" > <a id = "home" class = "menu-selected" href="index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "limenu1"> <a id = "about" class = "li-a-menu1" href="#about"><b>About</b></a>
                         <ul id = "testmenu" class = "sub-menu" >
                             <li class = "liabout"> <a id = "characters" class = "liabout-a" href="characters.html"><b>Characters</b></a></li>
                             <li class = "liabout"> <a id = "gene" class = "liabout-a" href="charevogene.html"><b>Charevo Gene</b></a></li>
+                            <li class = "liabout"> <a id = "author" class = "liabout-a" href="author.html"><b>The Author</b></a></li>
                             <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
                         </ul>
                     </li>
-                    <li id= "test2" class = "limenu1"> <a class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                    <li id= "test2" class = "limenu1"> <a id = "quiz" class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
                         <ul id="testmenu2" class = "sub-menu" >
                             <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
 
                         </ul>
                     </li>
 
-                    <li id= "test3" class = "limenu1"> <a class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                    <li id= "test3" class = "limenu1"> <a id = "stories" class = "li-a-menu1" href="#stories"><b>Stories</b></a>
                         <ul id= "testmenu3" class = "sub-menu" >
                             <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="beautystories.html"><b>Beauty Short Stories</b></a></li>
 
@@ -117,7 +148,7 @@ and open the template in the editor.
                     <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
      
                      </li> -->
-                    <li id= "test4" class = "limenu1"> <a class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                    <li id= "test4" class = "limenu1"> <a id = "miscellaneous" class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
                         <ul id= "testmenu4" class = "sub-menu">
                             <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="switchcharacter.html"><b>Switch Character</b></a></li>
                             <li class = "liabout"> <a id = "blog" class = "liabout-a" href="blog.html"><b>Blog</b></a></li>
@@ -128,19 +159,19 @@ and open the template in the editor.
 
 
             </nav>
-            
+
             <div id="formdiv">
                 <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
 
-                <!-- <p>Selected state: {{ state }}</p> -->
-                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
-                <span>
-                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
-                        <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
-                    </button> 
-                    <input type="submit" style="display: none"/>
-                </span>
-            </form>
+                    <!-- <p>Selected state: {{ state }}</p> -->
+                    <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                    <span>
+                        <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                            <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                        </button> 
+                        <input type="submit" style="display: none"/>
+                    </span>
+                </form>
             </div>
             <!--    <div style="width: 100%; position: absolute; top: 43px;">
                    <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
@@ -177,49 +208,52 @@ and open the template in the editor.
                     <div class = "footercontent">
                         <table class="footerlist">
                             <tr>
-                                <th><a href="index.html"><b>Home</b></a></th>
-                                
-                                
-                                
-                                
+                                <th><a id="subhome" href="index.html"><b>Home</b></a></th>
+
+
+
+
                             </tr>
                         </table>
                         <table class="footerlist">
                             <tr>
-                                <th><a href="#About"><b>About</b></a></th>
+                                <th><a id="subabout" href="#About"><b>About</b></a></th>
                             </tr>
                             <tr>
-                                <td><a href="characters.html">Characters</a></td>
+                                <td><a id="subcharacters" href="characters.html">Characters</a></td>
                             </tr>
                             <tr>
-                                <td><a href="charevogene.html">Charevo Gene</a></td>
-                            </tr>
-                        </table>
-                        <table class="footerlist">
-                            <tr>
-                                <th><a href="#Quiz"><b>Quiz</b></a></th>
+                                <td><a id="subcharevogene" href="charevogene.html">Charevo Gene</a></td>
                             </tr>
                             <tr>
-                                <td><a href="beautyquizzes.html">Beauty Quizzes</a></td>
+                                <td><a id="subauthor" href="author.html">The Author</a></td>
                             </tr>
                         </table>
                         <table class="footerlist">
                             <tr>
-                                <th><a href="#Stories"><b>Stories</b></a></th>
+                                <th><a id="subquiz" href="#Quiz"><b>Quiz</b></a></th>
                             </tr>
                             <tr>
-                                <td><a href="beautystories.html">Beauty Short Stories</a></td>
+                                <td><a id="subbeautyquizzes" href="beautyquizzes.html">Beauty Quizzes</a></td>
                             </tr>
                         </table>
                         <table class="footerlist">
                             <tr>
-                                <th><a href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                                <th><a id="substories" href="#Stories"><b>Stories</b></a></th>
                             </tr>
                             <tr>
-                                <td><a href="switchcharacter.html">Switch Character</a></td>
+                                <td><a id="subbeautystories" href="beautystories.html">Beauty Short Stories</a></td>
+                            </tr>
+                        </table>
+                        <table class="footerlist">
+                            <tr>
+                                <th><a id="submiscellaneous" href="#Miscellaneous"><b>Miscellaneous</b></a></th>
                             </tr>
                             <tr>
-                                <td><a href="blog.html">Blog</a></td>
+                                <td><a id="subswitchcharacter" href="switchcharacter.html">Switch Character</a></td>
+                            </tr>
+                            <tr>
+                                <td><a id="subblog" href="blog.html">Blog</a></td>
                             </tr>
                         </table>
 

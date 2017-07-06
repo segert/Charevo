@@ -21,6 +21,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "the Chief's page");
+        sessionStorage.setItem("memory", "the Chief's page");
+        sessionStorage.setItem("currentPage", "the Chief's page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "the Chief's page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Chief's page");
+        }
+        sessionStorage.setItem("currentPage", "the Chief's page");
+        
+        
+    }
 
     dialogue = 1;
     max = 0;

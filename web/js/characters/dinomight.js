@@ -21,6 +21,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "Dinomight's page");
+        sessionStorage.setItem("memory", "Dinomight's page");
+        sessionStorage.setItem("currentPage", "Dinomight's page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "Dinomight's page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Dinomight's page");
+        }
+        sessionStorage.setItem("currentPage", "Dinomight's page");
+        
+        
+    }
 
     dialogue = 1;
     max = 0;

@@ -23,6 +23,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "Race's page");
+        sessionStorage.setItem("memory", "Race's page");
+        sessionStorage.setItem("currentPage", "Race's page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "Race's page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Race's page");
+        }
+        sessionStorage.setItem("currentPage", "Race's page");
+        
+        
+    }
 
     dialogue = 1;
     max = 0;

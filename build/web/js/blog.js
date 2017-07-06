@@ -20,6 +20,23 @@ $(document).ready(function () {
     
     dialogue = 1;
     max = 0;
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "the Blog");
+        sessionStorage.setItem("memory", "the Blog");
+        sessionStorage.setItem("currentPage", "the Blog");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "the Blog")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Blog");
+        }
+        sessionStorage.setItem("currentPage", "the Blog");
+        
+        
+    }
 
 
     $("#allblogs").click(function () {

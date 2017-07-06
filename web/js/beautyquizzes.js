@@ -24,6 +24,23 @@ $(document).ready(function () {
 
 
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "the Beauty Quizzes page");
+        sessionStorage.setItem("memory", "the Beauty Quizzes page");
+        sessionStorage.setItem("currentPage", "the Beauty Quizzes page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "the Beauty Quizzes page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Beauty Quizzes page");
+        }
+        sessionStorage.setItem("currentPage", "the Beauty Quizzes page");
+        
+        
+    }
 
 
 

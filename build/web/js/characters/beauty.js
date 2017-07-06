@@ -9,6 +9,7 @@ $(document).ready(function () {
     character = sessionStorage.getItem("SessionCharacter");
 
     pageCharacter = "";
+    change = 0;
 
 
     checkResolution();
@@ -21,6 +22,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "Beauty's page");
+        sessionStorage.setItem("memory", "Beauty's page");
+        sessionStorage.setItem("currentPage", "Beauty's page");
+    }
+    else
+    {
+        if (sessionStorage.getItem("currentPage") !== "Beauty's page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Beauty's page");
+        }
+        sessionStorage.setItem("currentPage", "Beauty's page");
+
+
+    }
 
     dialogue = 1;
     max = 0;
@@ -45,7 +63,7 @@ $(document).ready(function () {
     else if (character === "Pyra")
     {
         document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
-        max = 10;
+        max = 23;
     }
 
     x = 0;
@@ -230,7 +248,7 @@ function DialogueChangeMenu() {
                 break;
             case(8):
                 document.getElementById("d").innerHTML = beautyBold + "God, I can't wait for our novel to come out! Maybe we can talk a little more about . . . well, not just me, but . . . just talk more.";
-                break;  
+                break;
         }
 
     }
@@ -260,13 +278,86 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = pyraBold + "YOU say I look great. But there's gonna be some people thinking we just look ugly. I know looking good isn't something I'm known for. But you? You might have too much undesired contrast in looks thanks to our creator's inability to draw.";
                 break;
             case(8):
-                document.getElementById("d").innerHTML = pyraBold + "Well, we don't look perfect, but I'm not gonna complain. But if you still have issues with this, I won't stop you if you need to vent about it.";
+                document.getElementById("d").innerHTML = beautyBold + "Well, we don't look perfect, but I'm not gonna complain. But if you still have issues with this, I won't stop you if you need to vent about it.";
                 break;
             case(9):
                 document.getElementById("d").innerHTML = pyraBold + "Thanks. Anyway, to continue my rant, ugh. Our creator sucks! I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
                 break;
             case(10):
                 document.getElementById("d").innerHTML = pyraBold + "Seriously, just look at how lazy he was when he drew our left and right facing images. I'm surprised he didn't just leave my scar on the opposite side when he used the flip tool on me and a bunch of other asymmetrical characters. Anyway, uh, yeah. This is Beauty. She's my friend. She's pretty nice and cool. Thanks for visiting.";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = beautyBold + "Wait. You mentioned my Charevo Trinity, but we need to include my resulting abilities too.";
+                break;
+            case(12):
+                document.getElementById("d").innerHTML = pyraBold + "Huh? Oh. Right. Well, I guess Beauty's main feature you'll notice straight away is that her Charevo Gene forces her to smile all the time or else it hurts her severely.";
+                break;
+            case(13):
+                document.getElementById("d").innerHTML = beautyBold + "Well . . . there's that. But also my power to create weapons out of my hair and transform into any fictional female character, giving me both their appearance and abilities.";
+                break;
+            case(14):
+                document.getElementById("d").innerHTML = pyraBold + "Meh. I feel like the inconvenient side effect is more interesting.";
+                break;
+            case(15):
+                document.getElementById("d").innerHTML = beautyBold + "Hey, I just thought of something.";
+                break;
+            case(16):
+                document.getElementById("d").innerHTML = pyraBold + "Go on.";
+                break;
+            case(17):
+                document.getElementById("d").innerHTML = beautyBold + "I can turn into any fictional girl character. And you and I are both fictional girls. Do you think I can transform into you?";
+                break;
+            case(18):
+                document.getElementById("d").innerHTML = pyraBold + "If you're asking for permission, I'd rather you didn't.";
+                break;
+            case(19):
+                document.getElementById("d").innerHTML = beautyBold + "Hmm. I'll give it a shot.";
+                if (change === 1)
+                {
+                    $("#character").fadeOut(function () {
+                        document.getElementById("character").src = "../images/beautyleft1.png";
+                        $("#character").fadeIn();
+                        change = 0;
+                    });
+                }
+                break;
+            case(20):
+                document.getElementById("d").innerHTML = beautyBold + "Whoa! It worked!";
+                if (change === 0)
+                {
+                    
+                    $("#character").fadeOut(function () {
+                        document.getElementById("character").src = "../images/pyraleft1.png";
+                        $("#character").fadeIn();
+                        change = 1;
+                    });
+                }
+
+                break;
+            case(21):
+                document.getElementById("d").innerHTML = pyraBold + "Okay. That's enough. Go back to yourself please.";
+                if (change === 2)
+                {
+                    $("#character").fadeOut(function () {
+                        document.getElementById("character").src = "../images/pyraleft1.png";
+                        $("#character").fadeIn();
+                        change = 1;
+                    });
+                }
+                break;
+            case(22):
+                document.getElementById("d").innerHTML = beautyBold + "What about this one?";
+                if (change === 1)
+                {
+                    $("#character").fadeOut(function () {
+                        document.getElementById("character").src = "../images/cremateleft1.png";
+                        $("#character").fadeIn();
+                        change = 2;
+                    });
+                }
+                break;
+            case(23):
+                document.getElementById("d").innerHTML = pyraBold + "Ugh. Actually, you can go back to the good one.";
                 break;
         }
     }

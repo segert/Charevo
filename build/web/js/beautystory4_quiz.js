@@ -14,6 +14,23 @@ $(document).ready(function() {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "the Level 4 Beauty Quiz");
+        sessionStorage.setItem("memory", "the Level 4 Beauty Quiz");
+        sessionStorage.setItem("currentPage", "the Level 4 Beauty Quiz");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "the Level 4 Beauty Quiz")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Level 4 Beauty Quiz");
+        }
+        sessionStorage.setItem("currentPage", "the Level 4 Beauty Quiz");
+        
+        
+    }
 
 
     $("#nextlevel1a").click(function() {

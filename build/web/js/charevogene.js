@@ -30,6 +30,23 @@ $(document).ready(function () {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "the Charevo Gene page");
+        sessionStorage.setItem("memory", "the Charevo Gene page");
+        sessionStorage.setItem("currentPage", "the Charevo Gene page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "the Charevo Gene page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Charevo Gene page");
+        }
+        sessionStorage.setItem("currentPage", "the Charevo Gene page");
+        
+        
+    }
 
     
     if (character === "Tel-E")

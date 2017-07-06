@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+
 $(document).ready(function () {
 
     character = sessionStorage.getItem("SessionCharacter");
@@ -21,6 +22,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "my page");
+        sessionStorage.setItem("memory", "my page");
+        sessionStorage.setItem("currentPage", "my page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "my page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", my page");
+        }
+        sessionStorage.setItem("currentPage", "my page");
+        
+        
+    }
 
     dialogue = 1;
     max = 0;
@@ -35,7 +53,7 @@ $(document).ready(function () {
     if (character === "Beauty")
     {
         document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
-        max = 5;
+        max = 17;
     }
     else if (character === "Tel-E")
     {
@@ -296,30 +314,39 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = beautyBold + "Nothing. It's just . . . apart from your mechanical body . . . what are your powers again?";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = natorBold + "Ha! Don't be silly. I don't have ";
-                break;
-            case(7):
                 document.getElementById("d").innerHTML = natorBold + "Ha! Don't be silly. I don't have powers like you guys. This is all me.";
                 break; 
-            case(8):
+            case(7):
                 document.getElementById("d").innerHTML = beautyBold + "No way. You totally have the Charevo Gene. What's your schtick?";
                 break; 
-            case(9):
+            case(8):
                 document.getElementById("d").innerHTML = natorBold + "Ugh. Fine. Let's see what you guys put in that table. Uh, it says here I have expert control of technology I make. I guess that would explain me being able to use weapons in my body, but I'm not buying that. Let's see. Ah, I also have an enhanced memory. So there's that.";
                 break; 
-            case(10):
+            case(9):
                 document.getElementById("d").innerHTML = beautyBold + "So that's what you got outside your robot body? A memory and what else? Expert control of your own technology? So if you made your own TV remote, you'd be able to change the channel at will without pressing a button?";
                 break;  
-            case(11):
+            case(10):
                 document.getElementById("d").innerHTML = natorBold + "I don't know. Probably. If that's what you say I can do, who knows?";
                 break;
             case(11):
-                document.getElementById("d").innerHTML = beautyBold + "So you've got that and the ability to remember anything? I'm gonna be honest. I prefer my own powers. Good thing you got that robot body.";
-                break; 
+                document.getElementById("d").innerHTML = beautyBold + "So you've got that and the ability to remember anything? I'm gonna be honest. It's fine, but not a very heroic skill set.";
+                break;
             case(12):
+                document.getElementById("d").innerHTML = natorBold + "Hey, what's wrong with having a good memory? I'll have you know I can remember all the pages on this site the user has visited so far.";
+                break;
+            case(13):
+                document.getElementById("d").innerHTML = beautyBold + "You can do what now?";
+                break;
+            case(14):
+                document.getElementById("d").innerHTML = natorBold + "You heard me. The user has visited " + sessionStorage.getItem("memory") + " . . . and that's it. My page here is last.";
+                break;
+            case(15):
+                document.getElementById("d").innerHTML = beautyBold + "Okay. I'll admit that's pretty impressive. I mean, it is if you're just going by page navigation through only the site and ignoring the back and forward buttons. But I prefer my own powers. Good thing you got that robot body.";
+                break;
+            case(16):
                 document.getElementById("d").innerHTML = natorBold + "You know I had to get hit by a car for me to have to use this thing.";
                 break; 
-            case(13):
+            case(17):
                 document.getElementById("d").innerHTML = beautyBold + "Oh! I forgot about that. Sorry. Sorry. Gee, looks like I could really use that super memory of yours after all.";
                 break; 
         }

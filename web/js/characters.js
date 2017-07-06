@@ -29,6 +29,24 @@ $(document).ready(function () {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "the Characters page");
+        sessionStorage.setItem("memory", "the Characters page");
+        sessionStorage.setItem("currentPage", "the Characters page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "the Characters page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Characters page");
+        }
+        sessionStorage.setItem("currentPage", "the Characters page");
+        
+        
+    }
 
     
     if (character === "Tel-E")

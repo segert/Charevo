@@ -21,6 +21,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "Tel-E's page");
+        sessionStorage.setItem("memory", "Tel-E's page");
+        sessionStorage.setItem("currentPage", "Tel-E's page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "Tel-E's page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Tel-E's page");
+        }
+        sessionStorage.setItem("currentPage", "Tel-E's page");
+        
+        
+    }
 
     dialogue = 1;
     max = 0;
@@ -187,20 +204,20 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
+                document.getElementById("d").innerHTML = teleBold + "Welcome to my very own character page. If you're visiting these pages for the first time, allow me to assit you. On the upper left is my Charevo Emblem of a sun, book, and light bulb, symbolizing my Charevo Trinity of Optimism, Knowledge, and Thought.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = teleBold + "Since her Charevo Trinity is Fiction, Imagination, and Femininity, the corresponding symbols are a unicorn, dragon, and princess as they are the symbols that represent her elements.";
+                document.getElementById("d").innerHTML = teleBold + "If you look to the right, you'll find my Charevo Fairies representing each element. Just below me, you can see a sample of the guidance they've provided me based on their elements. Should you click on a Charevo Fairy, the guidance displayed will change to a new one. So give them a click, and I'll be happy to share the wisdom I've received from these helpful sprites.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = teleBold + "To the right, you can see these symbols merged with Beauty herself, acting as the manifestation of her Charevo Fairies. Should you click on them, you can change the guidance shown from each of them in the blue section. Since Beauty is good, her fairies always provide good advice, hence I recommend the clicks.";
+                document.getElementById("d").innerHTML = teleBold + "And, finally, at the bottom is my bio, which you can read if you wish to learn more of my past. Just as a small nugget, you'll notice I am not from this world. I am from Planet Knowlgia, a planet in the Ariel Sector of the Titan Galaxy. It's a world populated by only women, intelligent women no less. Unfortunately, I was abducted from my home by a native of Knowlgia's neighboring planet Draco. It's interesting to note that unlike Knowlgia, Draco is populated by all men.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = teleBold + "And below, you'll find Beauty's profile that includes her powers and below that is a taste of her background. Unlike everyone else in the Neo Brigade, Beauty doesn't have much experience in fighting villains. Actually, from a certain perspective . . . never mind. Let's not spoil anything.";
+                document.getElementById("d").innerHTML = teleBold + "Both Draconians and Knowlgians are born through cloning, just in case you were wondering how those populations are maintained.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = teleBold + "It's worth noting that while Beauty is the lead character in our stories, she was only the second character conceived by our creator for our world. Again, I won't give anything away, but that character also influenced the powers she has.";
-                break;
+                document.getElementById("d").innerHTML = teleBold + "I've longed to return home, but I'm fortunate to have made friends with Race and the Neo Brigade where I continue to assist them in helping the people of Minor City using my abilities of telepathy, telekinesis, and energy projection. And the people of this city I help, surprisingly, includes a couple Draconians. Go figure.";
+                break;   
         }
 
     }
@@ -209,25 +226,37 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
+                document.getElementById("d").innerHTML = pyraBold + "So as you can see by all the blue, this here's the character page for my good pal, Tel-E Vega. She's our alien friend with the power to levitate, read minds, and shoot energy from her mind. I mean, she HAS those powers, but I can't guarantee that she'll use them to help anyone.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, we have the guidance from her Charevo Fairies. Since the guidance is based on the elements the fairies represent, well, you get the idea.";
+                document.getElementById("d").innerHTML = teleBold + "And just where is this disclaimer coming from?";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = pyraBold + "If you'd like to see how many times you can go through the randomly selected guidance until you see it all, just keep clicking on the half beauty half unicorn, dragon, and princess to change the advice you see.";
+                document.getElementById("d").innerHTML = pyraBold + "Oh, you know. You're just the one who values a fair fight over actually stopping villains efficiently. How often has your ability to read minds come into play in battle?";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = pyraBold + "Below that, you can see Beauty's powers and bio. I'd talk more about her, but, since this is the first character page and probably the first one you visited, I feel like I have to apologize for our creator's poor art skills.";
+                document.getElementById("d").innerHTML = teleBold + "Not often, as the lack of honor doesn't make me any better than whatever evil I oppose.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = pyraBold + "Believe me, NOBODY was consulted ahead of time for those Charevo Fairies. Frankly, I'm surprised he made us look as passable as we are. I guess compared to the other characters' Charevo Fairies, Beauty's looks okay. I'll definitely have to apologize for him A LOT along the way though.";
+                document.getElementById("d").innerHTML = pyraBold + "I think being someone who wants to stop end evil makes you good enough to warrant using your powers to your advantage. Ugh. I hope one day you get back to your home planet. Not so you can reunite with your friends and family. I just want them to hear what you've done so they can be proud of you for doing something stupid as a way of honoring them. Because if they didn't know about you choosing to fight fair, this whole thing would be a complete waste.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = pyraBold + "I mean, he just copied some generic clip art for most of the symbols to the Charevo Emblems you'll see, so don't think he was drawing based on his imagination for any of those.";
+                document.getElementById("d").innerHTML = teleBold + "Give me a break, won't you? You've done your fair share of holding back as well if I'm not mistaken.";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = pyraBold + "Seriously, just look at how lazy he was when he drew our left and right facing images. I'm surprised he didn't just leave my scar on the opposite side when he used the flip tool on me and a bunch of other asymmetrical characters. Anyway, uh, yeah. This is Beauty. She's my friend. She's pretty nice and cool. Thanks for visiting.";
+                document.getElementById("d").innerHTML = pyraBold + "Okay. That's not an argument. I've resisted going into battle because I'm afraid others will get hurt. You hold back to avoid opponents accusing you of cheating.";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = teleBold + "If you knew the women of my planet, you'd know they are quite capable of coming up with a solution that doesn't involve the utilization of our abilities for underhanded purposes.";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = pyraBold + "So if you went against that, it's because you're too incompetent to think of something else?";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = teleBold + "I would retort with a clever comeback where I imply that my time on your planet has forced me to adapt by lowering my IQ, but I choose to refrain from doing so.";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = pyraBold + "Ugh. Why am I friends with you again? Oh, right. Because no one else wants me for a friend. Thank you, reality our creator conceived for me.";
                 break;
         }
     }
@@ -236,19 +265,55 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+                document.getElementById("d").innerHTML = beautyBold + "Yay! Here we have the character page for one of my favorite people in the whole wide world who comes form a whole other wide world, Tel-E Vega. Her powers include energy projection, telekinesis, and . . .";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = beautyBold + "Anyway, that's my Charevo Emblem. Since I have the Charevo Trinity of Fiction, Imagination, and Femininity, that's a unicorn, a dragon, and a princess. If you look closely, you can see the emblem on my hand.";
+                document.getElementById("d").innerHTML = teleBold + "Telepathy!";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = beautyBold + "To the right, you'll see my Charevo Fairies. Since they're half me half the element they represent, that explains those appearances. But the Charevo Fairies also give advice based on their elements, and said advice can be seen below me. If you click on a Charevo Fairy, the corresponding element's guidance will change.";
+                document.getElementById("d").innerHTML = beautyBold + "Yes. As you can plainly see.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = beautyBold + "You can also see a description of my powers and bio. And if you noticed a name in that bio you didn't recognize from those novellas, he'll be coming up in a future story. God, I love setting stuff up!";
+                document.getElementById("d").innerHTML = teleBold + "Well, I believe Earth friends do finish each other's sentences from time to time. I guess I have the right power for that.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = beautyBold + "I will say if you've seen the powers I have, you'll notice the hair powers, wardrobe ability, and female character transformations. Fun fact: That was originally all it was. But when our creator wanted to give me more limits to my power, he made it so I have to always smile when people look at me. So thank you, creator and element of Femininity.";
+                document.getElementById("d").innerHTML = beautyBold + "Nice. Anyway, her Charevo Trinity that gives her those abilities are her elements of Optimism, Knowledge, and Thought. You can also . . .";
+                break;
+            case(6):
+                document.getElementById("d").innerHTML = teleBold + ". . . See the corresponding Charevo Fairies for those elements on the right along with their guidance below.";
+                break;
+            case(7):
+                document.getElementById("d").innerHTML = beautyBold + "Ah! You . . .";
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = teleBold + ". . . Got me again!";
+                break;
+            case(9):
+                document.getElementById("d").innerHTML = beautyBold + "Okay, this bit's running a bit dry now.";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = teleBold + "Agreed. My apologies.";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = beautyBold + "Anyway, if you don't have the power to read Tel-E's mind, what you could read is her bio at the bottom to learn more about her. Like the fact that she's from a planet of all women. That's gotta be the coolest place in the galaxy for sure.";
+                break; 
+            case(12):
+                document.getElementById("d").innerHTML = teleBold + "Well, not this galaxy. The Titan Galaxy. And it is quite a nice world if you don't mind living just a few million miles from a planet of all men.";
+                break; 
+            case(13):
+                document.getElementById("d").innerHTML = beautyBold + "Hmm. Is this like living next to a crazy neighbor in a sitcom? Because I could totally see that.";
+                break;
+            case(13):
+                document.getElementById("d").innerHTML = teleBold + "Um . . . It's more like living next to a territorial neighbor who declares war on anyone who sets foot on her yard without being granted permission. Oh! And with plenty of weapons and vicious creatures hoarded within, at least according to what I've been told.";
+                break;
+            case(14):
+                document.getElementById("d").innerHTML = beautyBold + "Uh . . . Okay. So basically a comedy-drama that's, like, ninety percent drama.";
+                break;
+            case(15):
+                document.getElementById("d").innerHTML = teleBold + "Give or take.";
+                break;
+            case(16):
+                document.getElementById("d").innerHTML = teleBold + "Yeah. I'll watch something else and stick with this planet for now.";
                 break;
         }
 

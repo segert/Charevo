@@ -36,6 +36,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "the Beauty Stories page");
+        sessionStorage.setItem("memory", "the Beauty Stories page");
+        sessionStorage.setItem("currentPage", "the Beauty Stories page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "the Beauty Stories page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Beauty Stories page");
+        }
+        sessionStorage.setItem("currentPage", "the Beauty Stories page");
+        
+        
+    }
 
 
 

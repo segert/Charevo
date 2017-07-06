@@ -281,6 +281,18 @@ section {
                     }               
 }
 
+.bluescreen{
+    background-color: #0012cb;
+    width: 100%;
+    color: white;
+    padding-bottom: 30px;
+    font-family: inherit;
+    overflow: auto;
+    word-wrap: break-word;
+    z-index: -4;
+    visibility: hidden;
+}
+ 
 .characterheader{
     position: relative; 
     left: 0%;
@@ -416,6 +428,12 @@ section {
     margin-bottom: 10px;
     //border-style: solid;
 }
+
+.clone{
+    
+}
+
+
 
 .div1 {
     background-color: lightgrey;

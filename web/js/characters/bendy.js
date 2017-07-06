@@ -21,6 +21,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "Bendy's page");
+        sessionStorage.setItem("memory", "Bendy's page");
+        sessionStorage.setItem("currentPage", "Bendy's page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "Bendy's page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Bendy's page");
+        }
+        sessionStorage.setItem("currentPage", "Bendy's page");
+        
+        
+    }
 
     dialogue = 1;
     max = 0;
@@ -31,6 +48,9 @@ $(document).ready(function () {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    var bendyBold = "Bendy: ";
+    bendyBold = bendyBold.bold();
 
     if (character === "Beauty")
     {
@@ -44,7 +64,7 @@ $(document).ready(function () {
     }
     else if (character === "Pyra")
     {
-        document.getElementById("d").innerHTML = pyraBold + "And now we have the character page of ol' Benjamin 'Bendy' Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
+        document.getElementById("d").innerHTML = bendyBold + "And now we have the character page of ol' Benjamin 'Bendy' Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
         max = 9;
     }
 

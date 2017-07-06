@@ -33,17 +33,17 @@ $(document).ready(function () {
     
     if (sessionStorage.getItem("firstPage") === null)
     {
-        sessionStorage.setItem("firstPage", "the Charevo Gene page");
-        sessionStorage.setItem("memory", "the Charevo Gene page");
-        sessionStorage.setItem("currentPage", "the Charevo Gene page");
+        sessionStorage.setItem("firstPage", "the Author page");
+        sessionStorage.setItem("memory", "the Author page");
+        sessionStorage.setItem("currentPage", "the Author page");
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "the Charevo Gene page")
+        if(sessionStorage.getItem("currentPage") !== "the Author page")
         {
-            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Charevo Gene page");
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Author page");
         }
-        sessionStorage.setItem("currentPage", "the Charevo Gene page");
+        sessionStorage.setItem("currentPage", "the Author page");
         
         
     }
@@ -51,53 +51,23 @@ $(document).ready(function () {
     
     if (character === "Tel-E")
     {
-        document.getElementById("emblem").src = "images/Emblems/tel-eemblem.png";
-        document.getElementById("emblem").alt = "Tel-E Emblem Placeholder";
-
-        document.getElementById("behaviorfairy").src = "images/Fairies/tel-eoptimismfairy.png";
-        document.getElementById("behaviorfairy").alt = "Tel-E Optimism Fairy Placeholder";
-
-        document.getElementById("mentalityfairy").src = "images/Fairies/tel-eknowledgefairy.png";
-        document.getElementById("mentalityfairy").alt = "Tel-E Knowledge Fairy Placeholder";
-
-        document.getElementById("identificationfairy").src = "images/Fairies/tel-ethoughtfairy.png";
-        document.getElementById("identificationfairy").alt = "Tel-E Thought Fairy Placeholder";
+        
 
         document.getElementById("d").innerHTML = teleBold + "Here is where you can learn all about the Charevo Gene, the piece of DNA that provides those born with it their powers. Though, only one in 32,700 people are born with it.";
         max = 7;
     }
     else if (character === "Pyra")
     {
-        document.getElementById("emblem").src = "images/Emblems/pyraemblem.png";
-        document.getElementById("emblem").alt = "Pyra Emblem Placeholder";
-
-        document.getElementById("behaviorfairy").src = "images/Fairies/pyratolerancefairy.png";
-        document.getElementById("behaviorfairy").alt = "Pyra Tolerance Fairy Placeholder";
-
-        document.getElementById("mentalityfairy").src = "images/Fairies/pyraangerfairy.png";
-        document.getElementById("mentalityfairy").alt = "Pyra Anger Fairy Placeholder";
-
-        document.getElementById("identificationfairy").src = "images/Fairies/pyraindifferencefairy.png";
-        document.getElementById("identificationfairy").alt = "Pyra Indifference Fairy Placeholder";
+        
 
         document.getElementById("d").innerHTML = pyraBold + "So here's where you can learn about the Charevo Gene. If you're not into reading anything beyond this dialogue box, here's the short story behind it.";
         max = 9;
     }
     else
     {
-        document.getElementById("emblem").src = "images/Emblems/beautyemblem.png";
-        document.getElementById("emblem").alt = "Beauty Emblem Placeholder";
+        
 
-        document.getElementById("behaviorfairy").src = "images/Fairies/beautyfictionfairy.png";
-        document.getElementById("behaviorfairy").alt = "Beauty Fiction Fairy Placeholder";
-
-        document.getElementById("mentalityfairy").src = "images/Fairies/beautyimaginationfairy.png";
-        document.getElementById("mentalityfairy").alt = "Beauty Imagination Fairy Placeholder";
-
-        document.getElementById("identificationfairy").src = "images/Fairies/beautyfemininityfairy.png";
-        document.getElementById("identificationfairy").alt = "Beauty Femininity Fairy Placeholder";
-
-        document.getElementById("d").innerHTML = beautyBold + "Ah, the Charevo Gene. The gene that only a certain number of people are born with to develop superpowers. And, coincidentally, the people who are most likely to be involved in a superhero story. That's our Charevo Gene, folks!";
+        document.getElementById("d").innerHTML = beautyBold + "";
         max = 5;
     }
 
@@ -233,31 +203,108 @@ function checkResolution(){
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
-    $(".geneinfo").css({"width": (window.screen.width * .80)});
-    $(".characterheader").css({"width": (window.screen.width * .80)});
+    $("#bio").css({"width": (window.screen.width * .85), "margin-top": (window.screen.height * .1), "left": (window.screen.width * .1)});
+    $(".characterinfo").css({"width": (window.screen.width * .85)});
+    //$(".characterheader").css({"width": (window.screen.width * .80)});
+    
+    bioWidth = (window.screen.width * .85);
+    bioMarginTop = (window.screen.height * .1);
+    bioLeft = (window.screen.width * .1);
+    
+    characterWidth = (window.screen.width * .85);
 
     if (window.screen.height < 500 && window.screen.width < 500 && window.screen.height < window.screen.width)
     {
-        $("#paddeddiv").css({"height": (window.screen.height * 2.00), "margin-bottom": (window.screen.height * 1.5)});
-        paddedHeight = (window.screen.height * 2.00);
+        $("#paddeddiv").css({"height": (window.screen.height * 2.20), "margin-bottom": (window.screen.height * 1.5)});
+        paddedHeight = (window.screen.height * 2.20);
         paddedMargin = (window.screen.height * 1.5);
+        
     }
     else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
     {
-        $("#paddeddiv").css({"height": (window.screen.height * 1.00), "margin-bottom": (window.screen.height * 1.5)});
-        paddedHeight = (window.screen.height * 1.00);
+        $("#paddeddiv").css({"height": (window.screen.height * 1.20), "margin-bottom": (window.screen.height * 1.5)});
+        paddedHeight = (window.screen.height * 1.20);
         paddedMargin = (window.screen.height * 1.5);
+    }
+    else if (window.screen.width > 1000 && window.screen.height > 1800)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * .20)});
+        //$(".characterinfo p").css({"font-size": 18});
+        paddedHeight = (window.screen.height * .20);
+        
+       /* document.getElementById("character").width = 700;
+        document.getElementById("character").height = 600;
+        document.getElementById("caricature").width = 600;
+        document.getElementById("caricature").height = 700;*/
+    }
+    else if (window.screen.width > 1000 && window.screen.height > 700)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 1.50)});
+        paddedHeight = (window.screen.height * 1.50);
+        
+        document.getElementById("character").width = 420;
+        document.getElementById("character").height = 430;
+        document.getElementById("caricature").width = 350;
+        document.getElementById("caricature").height = 520;
+    }
+    else if (window.screen.width > 700 && window.screen.height > 1000)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 1.50)});
+        paddedHeight = (window.screen.height * 1.50);
+        
+        document.getElementById("character").width = 300;
+        document.getElementById("character").height = 300;
+        document.getElementById("caricature").width = 250;
+        document.getElementById("caricature").height = 320;
     }
     else if (window.screen.width > 500)
     {
-        $("#paddeddiv").css({"height": (window.screen.height * 1.00)});
-        paddedHeight = (window.screen.height * 1.00);
+        $("#paddeddiv").css({"height": (window.screen.height * 1.20)});
+        paddedHeight = (window.screen.height * 1.20);
+        
+        document.getElementById("character").width = 180;
+        document.getElementById("character").height = 220;
+        document.getElementById("caricature").width = 150;
+        document.getElementById("caricature").height = 220;
+    }
+    else if (window.screen.height > 700)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 3.00), "margin-bottom": (window.screen.height * 1.5)});
+        paddedHeight = (window.screen.height * 3.00);
+        paddedMargin = (window.screen.height * 1.5);
+        
+        document.getElementById("character").width = 180;
+        document.getElementById("character").height = 220;
+        document.getElementById("caricature").width = 150;
+        document.getElementById("caricature").height = 220;
+        
+        $("#images").css({"margin-left": "-20px"});
+    }
+    else if (window.screen.height > 600)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * 5.00), "margin-bottom": (window.screen.height * 1.5)});
+        paddedHeight = (window.screen.height * 5.00);
+        paddedMargin = (window.screen.height * 1.5);
+        
+        document.getElementById("character").width = 180;
+        document.getElementById("character").height = 220;
+        document.getElementById("caricature").width = 150;
+        document.getElementById("caricature").height = 220;
+        
+        $("#images").css({"margin-left": "-20px"});
     }
     else
     {
-        $("#paddeddiv").css({"height": (window.screen.height * 2.00), "margin-bottom": (window.screen.height * 1.5)});
-        paddedHeight = (window.screen.height * 2.00);
+        $("#paddeddiv").css({"height": (window.screen.height * 6.90), "margin-bottom": (window.screen.height * 1.5)});
+        paddedHeight = (window.screen.height * 4.90);
         paddedMargin = (window.screen.height * 1.5);
+        
+        document.getElementById("character").width = 150;
+        document.getElementById("character").height = 170;
+        document.getElementById("caricature").width = 140;
+        document.getElementById("caricature").height = 210;
+        
+        $("#images").css({"margin-left": "-20px"});
     }
 }
 
@@ -266,8 +313,11 @@ function resizeResolution(){
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
-    $(".geneinfo").css({"width": (window.screen.width * .80)});
-    $(".characterheader").css({"width": (window.screen.width * .80)});
+    $("#bio").css({"width": bioWidth, "margin-top": bioMarginTop, "left": bioLeft});
+    $(".characterinfo").css({"width": characterWidth});
+    //$(".characterheader").css({"width": (window.screen.width * .80)});
+    
+    
 
     if (window.screen.height < 500 && window.screen.width < 500 && window.screen.height < window.screen.width)
     {
@@ -276,6 +326,12 @@ function resizeResolution(){
     else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
     {
         $("#paddeddiv").css({"height": paddedHeight, "margin-bottom": paddedMargin});
+    }
+    else if (window.screen.width > 1000 && window.screen.height > 1800)
+    {
+        $("#paddeddiv").css({"height": (window.screen.height * .20)});
+        //$(".characterinfo p").css({"font-size": 18});
+        paddedHeight = (window.screen.height * .20);
     }
     else if (window.screen.width > 500)
     {

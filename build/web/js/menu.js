@@ -9,7 +9,28 @@
 
 $(document).ready(function() {
 
-    
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        $("#home, #about, #quiz, #stories, #miscellaneous").html("<b>Cyhack</b>");
+        $("#characters").html("<b>Cyhack and Some Idiots</b>");
+        $("#gene").html("<b>Magical Biology</b>");
+        $("#beautyquizzes").html("<b>Quizzes About Some Blonde</b>");
+        $("#beautystories").html("<b>Unnecessary Prequels</b>");
+        $("#switchcharacter").html("<b>Girls! Girls! Girls! Flip Through Our Girls!</b>");
+        $("#blog").html("<b>Updates for No One</b>");
+        
+        $("#subhome").html("<b>Page of Just a Girl</b>");
+        $("#subabout").html("<b>Useless Trivia</b>");
+        $("#subcharacters").html("The Cyhack and the Rest");
+        $("#subcharevogene").html("Stupid Power Source");
+        $("#subquiz").html("<b>Exams! Yeah!</b>");
+        $("#subbeautyquizzes").html("Testing Your Memory on the Cyhack's City");
+        $("#substories").html("<b>Free Reading, Ya Cheapskate</b>");
+        $("#subbeautystories").html("Stories About 6 People, Only 1 Mentioned by Name");
+        $("#submiscellaneous").html("<b>No Category</b>");
+        $("#subswitchcharacter").html("Chicks on a Menu");
+        $("#subblog").html("Some Hero Ramblings");
+    }
     
     var color;
     $(".li-a-menu1:not(.li-a-menu1-selected)").mouseover(function() {
@@ -50,8 +71,8 @@ $(document).ready(function() {
     else
         $("#formdiv").css({"position": "relative", "background-color": "#98CAAA", "width": "100%", "height": (menuposition + 15) + "px", "top": menuposition + "px",});
     
-    $(".footers").css({"width": window.screen.width});
-    $(".footers").css({"height": (window.screen.height / 6)});
+    //$(".footers").css({"width": window.screen.width});
+    //$(".footers").css({"height": (window.screen.height / 6)});
     
     
     footerHeight = (window.screen.height / 6);
@@ -138,8 +159,10 @@ $(document).ready(function() {
     else
         $("#formdiv").css({"position": "relative", "background-color": "#98CAAA", "width": "100%", "height": (menuposition + 15) + "px", "top": menuposition + "px",});
     
-    $(".footers").css({"width": window.screen.width});
-    $(".footers").css({"height": (window.screen.height / 6)});
+    //$(".footers").css({"width": window.screen.width});
+    //$(".footers").css({"height": footerHeight});
+    
+    
     
     var position = $("#test").position();
     $("#testmenu").css({"position": "fixed", "left": position.left});

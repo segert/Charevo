@@ -21,6 +21,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "Fourize's page");
+        sessionStorage.setItem("memory", "Fourize's page");
+        sessionStorage.setItem("currentPage", "Fourize's page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "Fourize's page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Fourize's page");
+        }
+        sessionStorage.setItem("currentPage", "Fourize's page");
+        
+        
+    }
 
     dialogue = 1;
     max = 0;

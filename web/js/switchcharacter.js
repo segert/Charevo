@@ -23,6 +23,23 @@ $(document).ready(function () {
     beautyrotations = 0;
     telerotations = 0;
     pyrarotations = 0;
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "the Switch Character page");
+        sessionStorage.setItem("memory", "the Switch Character page");
+        sessionStorage.setItem("currentPage", "the Switch Character page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "the Switch Character page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Switch Character page");
+        }
+        sessionStorage.setItem("currentPage", "the Switch Character page");
+        
+        
+    }
 
 
 

@@ -21,6 +21,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    if (sessionStorage.getItem("firstPage") === null)
+    {
+        sessionStorage.setItem("firstPage", "Ninja's page");
+        sessionStorage.setItem("memory", "Ninja's page");
+        sessionStorage.setItem("currentPage", "Ninja's page");
+    }
+    else
+    {
+        if(sessionStorage.getItem("currentPage") !== "Ninja's page")
+        {
+            sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Ninja's page");
+        }
+        sessionStorage.setItem("currentPage", "Ninja's page");
+        
+        
+    }
 
     dialogue = 1;
     max = 0;
@@ -313,7 +330,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = beautyBold + "Thank you. Now then, for Ninja's powers . . . wait a minute. You're just saying you won't scare me again so you can scare me more when you do it again later.";
                 break;
             case(11):
-                document.getElementById("d").innerHTML = ninjaBold + "Heh heh heh. One's word is best taken for what's heard rather than for what's true. Good luck with the rest of the interpretation.";
+                document.getElementById("d").innerHTML = ninjaBold + "Heh heh heh. One's word is best taken for what's true rather than for what's heard. Good luck with the rest of the interpretation.";
                 $("#character").fadeIn(500);
                 $(this).clearQueue().stop();
                 break;
