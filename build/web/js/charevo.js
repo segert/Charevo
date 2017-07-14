@@ -13,6 +13,8 @@ $(document).ready(function () {
      $("nav").hide();
      $("#formdiv").hide();
      $(".footers").hide();*/
+    
+    
 
     $("#bluescreen").hide();
     //$("#bluescreen").css({"visibility": "visible"});
@@ -27,6 +29,21 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    var isIE = /*@cc_on!@*/false || !!document.documentMode;
+    if(isIE)
+    {
+        if(window.screen.width > 1500)
+            $("#character").animate({left: "31%"});
+        else if(window.screen.width > 1000 && window.screen.height > 1000)
+            $("#character").animate({left: "20%"});
+        else if(window.screen.width > 800)
+            $("#character").animate({left: "29%"});
+        else
+            $("#character").animate({left: "20%"});
+    }
+    
+    
 
     question = "";
     teleAddressed = 0;
@@ -35,14 +52,15 @@ $(document).ready(function () {
     rotate = 0;
     angle = 0;
 
-    var characters = ["Beauty", "Tel-E", "Pyra"];
+    //var characters = ["Beauty", "Tel-E", "Pyra"];
     //switchcharacter = "";
     //if(sessionStorage.getItem("SessionCharacter") === null)
-    switchcharacter = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
+    //if (sessionStorage.getItem("SessionCharacter") !== null)
+    //    switchcharacter = parent.document.URL.substring(parent.document.URL.indexOf('?char=') + 6, parent.document.URL.length);
     //else
     //   switchcharacter = sessionStorage.getItem("SessionCharacter");
-    if (characters.includes(switchcharacter))
-        sessionStorage.setItem("SessionCharacter", switchcharacter);
+    //if (characters.includes(switchcharacter))
+    //    sessionStorage.setItem("SessionCharacter", switchcharacter);
 
     if (sessionStorage.getItem("SessionCharacter") !== null)
         character = sessionStorage.getItem("SessionCharacter");
@@ -102,7 +120,7 @@ $(document).ready(function () {
 
 
 
-    if (sessionStorage.getItem("Cyhack") !== "true")
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
         if (character === "Tel-E")
         {

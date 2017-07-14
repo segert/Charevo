@@ -317,6 +317,8 @@ function incrementSwitch(newCharacter) {
 
         if (newCharacter === "Beauty")
         {
+            sessionStorage.setItem("SessionCharacter", "Beauty");
+            
             if (sessionStorage.getItem("beautySwitches") === null)
             {
                 sessionStorage.setItem("beautySwitches", 1);
@@ -328,6 +330,8 @@ function incrementSwitch(newCharacter) {
         }
         else if(newCharacter === "Tel-E")
         {
+            sessionStorage.setItem("SessionCharacter", "Tel-E");
+            
             if (sessionStorage.getItem("tel-eSwitches") === null)
             {
                 sessionStorage.setItem("tel-eSwitches", 1);
@@ -339,6 +343,8 @@ function incrementSwitch(newCharacter) {
         }
         else if(newCharacter === "Pyra")
         {
+            sessionStorage.setItem("SessionCharacter", "Pyra");
+            
             if (sessionStorage.getItem("pyraSwitches") === null)
             {
                 sessionStorage.setItem("pyraSwitches", 1);
@@ -351,7 +357,7 @@ function incrementSwitch(newCharacter) {
     }
     else if(newCharacter === "Cyhack")
     {
-        sessionStorage.setItem("Cyhack", "true");
+        sessionStorage.setItem("Cyhack", "false");
     }
 
 }
