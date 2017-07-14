@@ -15,6 +15,10 @@ html, body {
   background-color:#eeeeee;
   font-family: sans-serif;
   font-size: 16px;
+  
+  transform-origin: 50% 50%; /* IE 10+, Firefox, etc. */
+    -webkit-transform-origin: 50% 50%; /* Chrome */
+    -ms-transform-origin: 50% 50%; /* IE 9 */
 }
 /*
 @media (min-height: 1200px)
@@ -90,6 +94,84 @@ section {
     //position: fixed;
     //left: 7%;
     //background-color: #ccc;
+}
+
+
+body.rotate45 {
+    transform: rotate(45deg) ;
+    -webkit-transform: rotate(45deg) ;
+    -ms-transform: rotate(45deg) ;
+}
+body.rotate90 {
+    transform: rotate(90deg) ;
+    -webkit-transform: rotate(90deg) ;
+    -ms-transform: rotate(90deg) ;
+}
+body.rotate135 {
+    transform: rotate(135deg) ;
+    -webkit-transform: rotate(135deg) ;
+    -ms-transform: rotate(135deg) ;
+}
+body.rotate180 {
+    transform: rotate(180deg) ;
+    -webkit-transform: rotate(180deg) ;
+    -ms-transform: rotate(180deg) ;
+}
+body.rotate225 {
+    transform: rotate(225deg) ;
+    -webkit-transform: rotate(225deg) ;
+    -ms-transform: rotate(225deg) ;
+}
+body.rotate270 {
+    transform: rotate(270deg) ;
+    -webkit-transform: rotate(270deg) ;
+    -ms-transform: rotate(270deg) ;
+}
+body.rotate315 {
+    transform: rotate(315deg) ;
+    -webkit-transform: rotate(315deg) ;
+    -ms-transform: rotate(315deg) ;
+}
+
+#character {
+    transform-origin: 50% 50%; /* IE 10+, Firefox, etc. */
+    -webkit-transform-origin: 50% 50%; /* Chrome */
+    -ms-transform-origin: 50% 50%; /* IE 9 */
+}
+#character.rotate45 {
+    transform: rotate(45deg) ;
+    -webkit-transform: rotate(45deg) ;
+    -ms-transform: rotate(45deg) ;
+}
+#character.rotate90 {
+    transform: rotate(90deg) ;
+    -webkit-transform: rotate(90deg) ;
+    -ms-transform: rotate(90deg) ;
+}
+#character.rotate135 {
+    transform: rotate(135deg) ;
+    -webkit-transform: rotate(135deg) ;
+    -ms-transform: rotate(135deg) ;
+}
+#character.rotate180 {
+    transform: rotate(180deg) ;
+    -webkit-transform: rotate(180deg) ;
+    -ms-transform: rotate(180deg) ;
+}
+#character.rotate225 {
+    transform: rotate(225deg) ;
+    -webkit-transform: rotate(225deg) ;
+    -ms-transform: rotate(225deg) ;
+}
+#character.rotate270 {
+    transform: rotate(270deg) ;
+    -webkit-transform: rotate(270deg) ;
+    -ms-transform: rotate(270deg) ;
+}
+#character.rotate315 {
+    transform: rotate(315deg) ;
+    -webkit-transform: rotate(315deg) ;
+    -ms-transform: rotate(315deg) ;
 }
 
 

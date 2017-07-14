@@ -9,7 +9,7 @@ $(document).ready(function () {
     character = sessionStorage.getItem("SessionCharacter");
 
     pageCharacter = "";
-    
+
 
     checkResolution();
 
@@ -21,7 +21,7 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "Fourize's page");
@@ -30,17 +30,30 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "Fourize's page")
+        if (sessionStorage.getItem("currentPage") !== "Fourize's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Fourize's page");
         }
         sessionStorage.setItem("currentPage", "Fourize's page");
-        
-        
+
+
+    }
+
+    if (sessionStorage.getItem("characterVisits") === null)
+    {
+        sessionStorage.setItem("characterVisits", 1);
+    }
+    else
+    {
+
+        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
     }
 
     dialogue = 1;
     max = 0;
+    freeze = 0;
 
     var beautyBold = "Beauty: ";
     beautyBold = beautyBold.bold();
@@ -49,10 +62,13 @@ $(document).ready(function () {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
-        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
-        max = 5;
+        document.getElementById("d").innerHTML = "";
+
     }
     else if (character === "Tel-E")
     {
@@ -62,7 +78,12 @@ $(document).ready(function () {
     else if (character === "Pyra")
     {
         document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
-        max = 7;
+        max = 18;
+    }
+    else
+    {
+        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+        max = 5;
     }
 
     x = 0;
@@ -88,6 +109,7 @@ $(document).ready(function () {
         curident = ident;
         NewIdentification();
     });
+
 
 });
 
@@ -154,39 +176,47 @@ function NewIdentification() {
             break;
         case(1):
             $("#Identification").text("Vision: ");
-            break;  
+            break;
 
     }
 
 }
 
 function next() {
-    if (dialogue < max)
+    if (freeze === 0)
     {
-        dialogue++;
-        DialogueChangeMenu();
-        document.getElementById("prev").setAttribute("style", "opacity: 1");
-        document.getElementById("prev").disabled = false;
+        if (dialogue < max)
+        {
+            dialogue++;
+            DialogueChangeMenu();
+            document.getElementById("prev").setAttribute("style", "opacity: 1");
+            document.getElementById("prev").disabled = false;
+        }
+        if (dialogue === max)
+        {
+            document.getElementById("next").setAttribute("style", "opacity: .4");
+            document.getElementById("next").disabled = true;
+        }
     }
-    if (dialogue === max)
-    {
-        document.getElementById("next").setAttribute("style", "opacity: .4");
-        document.getElementById("next").disabled = true;
-    }
+
 }
 
 function prev() {
-    if (dialogue > 1)
+    if (freeze === 0)
     {
-        dialogue--;
-        DialogueChangeMenu();
-        document.getElementById("next").setAttribute("style", "opacity: 1");
-        document.getElementById("next").disabled = false;
-    }
-    if (dialogue === 1)
-    {
-        document.getElementById("prev").setAttribute("style", "opacity: .4");
-        document.getElementById("prev").disabled = true;
+
+        if (dialogue > 1)
+        {
+            dialogue--;
+            DialogueChangeMenu();
+            document.getElementById("next").setAttribute("style", "opacity: 1");
+            document.getElementById("next").disabled = false;
+        }
+        if (dialogue === 1)
+        {
+            document.getElementById("prev").setAttribute("style", "opacity: .4");
+            document.getElementById("prev").disabled = true;
+        }
     }
 }
 
@@ -197,12 +227,20 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
-    
+
     var fourizeBold = "Fourize: ";
     fourizeBold = fourizeBold.bold();
 
-    
-    if (character === "Tel-E")
+
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        document.getElementById("d").innerHTML = "";
+
+    }
+    else if (character === "Tel-E")
     {
         switch (dialogue)
         {
@@ -223,7 +261,7 @@ function DialogueChangeMenu() {
                 break;
             case(6):
                 document.getElementById("d").innerHTML = fourizeBold + "Hmph. No you don't. I was tormented in school for so long, yet you, some bizarre looking alien, goes to school and gets no ridicule whatsoever. Look at you! How does everyone accept the fact that this is an actual person so respectfully?";
-                break; 
+                break;
             case(7):
                 document.getElementById("d").innerHTML = teleBold + "Hey, it's not all been politeness. I've had some people appear taken aback at the sight of me. It wouldn't last, but it did occur.";
                 break;
@@ -235,10 +273,10 @@ function DialogueChangeMenu() {
                 break;
             case(10):
                 document.getElementById("d").innerHTML = fourizeBold + ". . .";
-                break; 
+                break;
             case(11):
                 document.getElementById("d").innerHTML = teleBold + "Ah. Sorry. I'm sensing that element of Envy arising.";
-                break;     
+                break;
         }
 
     }
@@ -253,26 +291,60 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = fourizeBold + "Just talk about me and my page, Neo girl!";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = pyraBold + "Ugh. Alright. So Fourize was a weakling kid named Ira Koolein who suffered from an inferiority complex where he'd see everyone around him as someone who would ruin his life. Then he got his powers, and . . . well, not much has changed really. He got his powers of heat and ice vision, but the rest of his team is way more interesting, so why don't we go take a look at those guys?";
+                document.getElementById("d").innerHTML = pyraBold + "Ugh. Fine. So Fourize was a weakling kid named Ira Koolein who suffered from an inferiority complex where he'd see everyone around him as someone who would ruin his life. Then he got his powers, and . . . well, not much has changed really. He got his powers of heat and ice vision, but the rest of his team is way more interesting, so why don't we go take a look at those guys?";
                 break;
             case(4):
                 document.getElementById("d").innerHTML = fourizeBold + "We are not going to those other pages! We're staying here! Now, continue with the rest of it!";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = pyraBold + "You know, Fourize, I'm looking at your abilities, and they're not really saying 'powerful and interesting' to me. They mostly seem like a generic minion if I'm being honest.";
+                document.getElementById("d").innerHTML = pyraBold + "You know, Fourize, I'm looking at your abilities, and . . . I don't know. Heat and ice vision just doesn't seem like much compared to the rest of your team.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = fourizeBold + "Generic!? That is such a lie! I am the leader of my own team! I'll have you know I'm more interesting and powerful than you're conveying to this audience.";
+                document.getElementById("d").innerHTML = fourizeBold + "What do you mean it doesn't seem like much? My powers are just as threatening as theirs. Here. I'll prove it.";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = pyraBold + "Well, a lot of us were inspired by (ripped off) some characters from the show, Teen Titans. Our creator based you on the character, See-More. Now, when it comes to eye abilities, that guy has, like, ten powers. You only have two. Now, I don't find that guy that interesting, so just how intrigued should people be with you at one fifth the interesting level?";
+                document.getElementById("d").innerHTML = fourizeBold + "Behold my ice vision!";
+                freeze = 1;
+                $("body").css("overflow", "hidden");
+
+                setTimeout(function () {
+                    freeze = 0;
+                    $("body").css("overflow", "auto");
+                }, 5000);
                 break;
             case(8):
-                document.getElementById("d").innerHTML = fourizeBold + "Don't you dare bring up that character again. Challenge my character and originality one more time and you'll find more than an evil eye directed at you.";
+                document.getElementById("d").innerHTML = pyraBold + "What was that?";
                 break;
             case(9):
+                document.getElementById("d").innerHTML = fourizeBold + "What? You didn't see it? I used my ice vision on this page and froze it.";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = pyraBold + "Hmmmm. No. The menu links and search bar were still active. The whole page wasn't frozen.";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = fourizeBold + "Well, part of it was. And even with that, I bet the user was terrified!";
+                break; 
+            case(12):
+                document.getElementById("d").innerHTML = pyraBold + "Yeah, no. Although, I hear Cyhack can do something similar, but, like, way better. Maybe the User should go pay her a visit.";
+                break;
+            case(13):
+                document.getElementById("d").innerHTML = fourizeBold + "We're not talking about her! We're still focused with me and what I can do. And what I just did was a sample of my ice vision. Wanna see my heat vision overheat the User's device? 'Cause I'll do it if you don't continue telling people what I can do.";
+                break;
+            case(14):
+                document.getElementById("d").innerHTML = pyraBold + "What you can do? Well, again, I'm looking at your powers, and they're not really saying 'powerful and interesting' to me. They mostly seem like a generic minion if I'm being honest.";
+                break;
+            case(15):
+                document.getElementById("d").innerHTML = fourizeBold + "Generic!? That is such a lie! I am the leader of my own team! I'll have you know I'm more interesting and powerful than you're conveying to this audience.";
+                break;
+            case(16):
+                document.getElementById("d").innerHTML = pyraBold + "Well, a lot of us were inspired by (ripped off from) some characters from the show, Teen Titans. Our creator based you on the character, See-More. Now, when it comes to eye abilities, that guy has, like, ten powers. You only have two. Now, I don't find that guy that interesting, so just how intrigued should people be with you at one fifth the interesting level?";
+                break;
+            case(17):
+                document.getElementById("d").innerHTML = fourizeBold + "Don't you dare bring up that character again. Challenge my character and originality one more time and you'll find more than an evil eye directed at you.";
+                break;
+            case(18):
                 document.getElementById("d").innerHTML = pyraBold + "Yeah. Sure. Take your time choosing between all those powers you have. Oh, wait. That's the other guy.";
-                break;   
+                break;
         }
     }
     else
@@ -311,10 +383,10 @@ function DialogueChangeMenu() {
                 break;
             case(9):
                 document.getElementById("d").innerHTML = fourizeBold + "It's Fourize! My name is Ira Koolein, known as Fourize! You know that, Bellavitz!";
-                break; 
+                break;
             case(10):
                 document.getElementById("d").innerHTML = beautyBold + "Yeah . . . I know things. And I certainly know more than I need to know of someone on this page.";
-                break; 
+                break;
             case(11):
                 document.getElementById("d").innerHTML = fourizeBold + "Okay, what's with all the passive aggressiveness here?";
                 break;
@@ -323,27 +395,28 @@ function DialogueChangeMenu() {
                 break;
             case(13):
                 document.getElementById("d").innerHTML = fourizeBold + "Ugh. You're holding THAT over my head now?";
-                break; 
+                break;
             case(14):
                 document.getElementById("d").innerHTML = beautyBold + "Oh, are you talking to me or my friend? Which one are you going after today?";
-                break;     
+                break;
         }
 
     }
 
 }
 
+
 function checkResolution() {
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     $(".footers").css({"width": window.screen.width});
     $(".footers").css({"height": (window.screen.height / 6)});
-    
-    
+
+
     footerHeight = (window.screen.height / 6);
-    
+
 
 
     if (window.screen.width > 1300 && window.screen.height > 1500)
@@ -354,17 +427,17 @@ function checkResolution() {
         $("#charactertable").css({"width": (window.screen.width * .5), "margin-top": (window.screen.height * .1), "left": (window.screen.width * .1), "margin-left": (window.screen.width * .1)});
 
         $("#fairies").css({"left": (window.screen.width * .7)});
-        
+
         bioinfoWidth = (window.screen.width * .85);
         biotableMarginTop = (window.screen.height * .1);
         bioguidancetableLeft = (window.screen.width * .1);
-        
+
         guidanceWidth = (window.screen.width * .46875);
         guidanceMarginTop = (window.screen.height * .5);
         guidancetableMarginLeft = (window.screen.width * .1);
-        
+
         tableWidth = (window.screen.width * .5);
-        
+
         fairiesLeft = (window.screen.width * .7);
 
         if (window.screen.width > 1800)
@@ -373,16 +446,16 @@ function checkResolution() {
 
             $("#character").css({"left": (window.screen.width * .35), "width": (window.screen.width * .25), "height": (window.screen.height * .45)});
             $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .2), "height": (window.screen.height * .3)});
-            
+
             charevofairyemblemWidth = (window.screen.width * .2);
             charevofairyemblemHeight = (window.screen.height * .3);
-            
+
             characterLeft = (window.screen.width * .35);
             characterWidth = (window.screen.width * .25);
             characterHeight = (window.screen.height * .45);
-            
+
             emblemLeft = (window.screen.width * .05);
-            
+
         }
         else
         {
@@ -390,18 +463,18 @@ function checkResolution() {
 
             $("#character").css({"left": (window.screen.width * .35), "width": (window.screen.width * .35), "height": (window.screen.height * .45)});
             $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
-        
+
             charevofairyemblemWidth = (window.screen.width * .3);
             charevofairyemblemHeight = (window.screen.height * .3);
-            
+
             characterLeft = (window.screen.width * .35);
             characterWidth = (window.screen.width * .35);
             characterHeight = (window.screen.height * .45);
-            
+
             emblemLeft = (window.screen.width * .05);
         }
         $("section").css({"height": (window.screen.height * 1.55)});
-        
+
         sectionHeight = (window.screen.height * 1.55);
     }
     else if (window.screen.width > 1000 && window.screen.height > 1000)
@@ -415,28 +488,28 @@ function checkResolution() {
         $("#fairies").css({"left": (window.screen.width * .7)});
         $("#character").css({"left": (window.screen.width * .35), "width": (window.screen.width * .35), "height": (window.screen.height * .45)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
-        
+
         bioinfoWidth = (window.screen.width * .85);
         //biotableMarginTop = (window.screen.height * .1);
         bioguidancetableLeft = (window.screen.width * .1);
-        
+
         guidanceWidth = (window.screen.width * .46875);
         guidanceMarginTop = "560px";
         guidancetableMarginLeft = (window.screen.width * .1);
-        
+
         tableWidth = (window.screen.width * .5);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeftWidth = (window.screen.width * .35);
         characterHeight = (window.screen.height * .45);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
-        
+
+
         if (window.screen.width > 1200 && window.screen.height > 1000)
         {
             $("section").css({"height": (window.screen.height * 2.25)});
@@ -454,14 +527,14 @@ function checkResolution() {
         $(".characterinfo").css({"width": (window.screen.width * .85)});
         $("#guidance").css({"width": (window.screen.width * .46875), "left": (window.screen.width * .1), "margin-left": (window.screen.width * .1)});
         $("#charactertable").css({"width": (window.screen.width * .5), "left": (window.screen.width * .1), "margin-left": (window.screen.width * .1)});
-    
+
         bioinfoWidth = (window.screen.width * .85);
         //biotableMarginTop = (window.screen.height * .1);
         bioguidancetableLeft = (window.screen.width * .1);
-        
+
         guidanceWidth = (window.screen.width * .46875);
         guidancetableLeftMarginLeft = (window.screen.width * .1);
-        
+
         tableWidth = (window.screen.width * .5);
     }
     else if (window.screen.height < 600 && window.screen.width < 600 && window.screen.height < window.screen.width)
@@ -476,27 +549,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .75)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .5)});
         $("section").css({"height": (window.screen.height * 9.95)});
-    
+
         bioWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .5);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .75);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 9.95);
     }
     else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
@@ -511,27 +584,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .75)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .5)});
         $("section").css({"height": (window.screen.height * 7.95)});
-        
+
         bioWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .5);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .75);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 7.95);
     }
     else if (window.screen.width >= 600)
@@ -546,27 +619,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .55)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
         $("section").css({"height": (window.screen.height * 2.95)});
-        
+
         bioinfoWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         //infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 2.95);
     }
     else if (window.screen.width > 400)
@@ -581,27 +654,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .55)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
         $("section").css({"height": (window.screen.height * 4.55)});
-        
+
         bioinfoWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         //infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 4.55);
     }
     else if (window.screen.height < 600)
@@ -616,27 +689,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .55)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
         $("section").css({"height": (window.screen.height * 7.55)});
-        
+
         bioinfoWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         //infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 7.55);
     }
     else
@@ -651,27 +724,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .55)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
         $("section").css({"height": (window.screen.height * 5.55)});
-        
+
         bioinfoWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         //infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 5.55);
     }
 }
@@ -680,11 +753,11 @@ function resizeResolution() {
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     $(".footers").css({"width": window.screen.width});
     $(".footers").css({"height": (window.screen.height / 6)});
-    
-    
+
+
     //footerHeight = (window.screen.height / 6);
 
 
@@ -704,7 +777,7 @@ function resizeResolution() {
 
             $("#character").css({"left": characterLeft, "width": characterWidth, "height": characterHeight});
             $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
-            
+
         }
         else
         {
@@ -728,8 +801,8 @@ function resizeResolution() {
         $("#fairies").css({"left": fairiesLeft});
         $("#character").css({"left": characterLeftWidth, "width": characterLeftWidth, "height": characterHeight});
         $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
-        
-        
+
+
         if (window.screen.width > 1200 && window.screen.height > 1000)
         {
             $("section").css({"height": sectionHeight});
@@ -759,8 +832,8 @@ function resizeResolution() {
         $("#character").css({"left": characterLeft, "width": characterWidth, "height": characterHeight});
         $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
         $("section").css({"height": sectionHeight});
-    
-        
+
+
     }
     else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
     {
@@ -774,8 +847,8 @@ function resizeResolution() {
         $("#character").css({"left": characterLeft, "width": characterWidth, "height": characterHeight});
         $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
         $("section").css({"height": sectionHeight});
-        
-       
+
+
     }
     else if (window.screen.width >= 600)
     {
@@ -789,7 +862,7 @@ function resizeResolution() {
         $("#character").css({"left": characterLeft, "width": characterWidth, "height": characterHeight});
         $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
         $("section").css({"height": sectionHeight});
-        
+
     }
     else if (window.screen.width > 400)
     {
@@ -806,7 +879,7 @@ function resizeResolution() {
 
     }
     else if (window.screen.height < 600)
-    {     
+    {
         $("#bio").css({"width": bioinfoWidth, "left": bioguidancetableLeft});
         $(".characterinfo").css({"width": bioinfoWidth});
         $("#guidance").css({"width": guidanceWidth, "margin-top": "360px", "left": bioguidancetableLeft, "position": "relative"});

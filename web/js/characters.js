@@ -31,6 +31,7 @@ $(document).ready(function () {
     pyraBold = pyraBold.bold();
     
     
+    
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "the Characters page");
@@ -48,8 +49,15 @@ $(document).ready(function () {
         
     }
 
-    
-    if (character === "Tel-E")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        document.getElementById("d").innerHTML = cyhackBold + "";
+
+    }
+    else if (character === "Tel-E")
     {
         document.getElementById("hero").src = "images/tel-eright1.png";
         document.getElementById("hero").alt = "Tel-E Placeholder";
@@ -464,8 +472,58 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
 
-    if (character === "Beauty")
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        switch (dialogue)
+        {
+            case(1):
+                document.getElementById("d").innerHTML = cyhackBold + "So, like any other world, we got some people. And, like most people, these people got some names. They could be heroes, they could be villains, they could be completely different, they could be from different cities you could select to narrow 'em down.";
+                break;
+            case(2):
+                document.getElementById("d").innerHTML = cyhackBold + "The point is, we got some list for ya of who we know and who you could know a little better. Why you would do that after you've already met me, the Cyhack has no clue. But just click on whoever you want. The Cyhack won't talk you into anyone in particular. I mean, you already went with me since I hacked this site.";
+                break;
+        }
+
+    }
+    else if (character === "Tel-E")
+    {
+        switch (dialogue)
+        {
+            case(1):
+                document.getElementById("d").innerHTML = teleBold + "And here's where you can see all the heroes, villains, and other characters in our stories. Just click each category to reveal them.";
+                break;
+            case(2):
+                document.getElementById("d").innerHTML = teleBold + "If you haven't selected a character from the search bar above, you can click on the ones that have their own character page available to see more information on them.";
+                break;
+            case(3):
+                document.getElementById("d").innerHTML = teleBold + "For now, we only have the people of Minor City, though that selection tab should give you some hint as to what city will be visited next.";
+                break;
+        }
+
+    }
+    else if (character === "Pyra")
+    {
+        switch (dialogue)
+        {
+            case(1):
+                document.getElementById("d").innerHTML = pyraBold + "So this is the page that lists all our characters. Pretty self explanatory. Just click on those words to reveal some names.";
+                break;
+            case(2):
+                document.getElementById("d").innerHTML = pyraBold + "And if you got some more clicks in you, you can also visit a page for a character if he or she has one linked here.";
+                break;
+            case(3):
+                document.getElementById("d").innerHTML = pyraBold + "You can also filter out the names by selecting from the city tab, which is pretty useless right now since you're only gonna be reading about people from Minor City.";
+                break;
+            case(4):
+                document.getElementById("d").innerHTML = pyraBold + "Oh, you noticed another city? Yeah, that's just our creator not telling you what he's working on. Personally, I would've just left it out so I wouldn't have to answer any questions about it.";
+                break;
+        }
+    }
+    else
     {
         switch (dialogue)
         {
@@ -483,40 +541,6 @@ function DialogueChangeMenu() {
                 break;
         }
 
-    }
-    if (character === "Tel-E")
-    {
-        switch (dialogue)
-        {
-            case(1):
-                document.getElementById("d").innerHTML = teleBold + "And here's where you can see all the heroes, villains, and other characters in our stories. Just click each category to reveal them.";
-                break;
-            case(2):
-                document.getElementById("d").innerHTML = teleBold + "If you haven't selected a character from the search bar above, you can click on the ones that have their own character page available to see more information on them.";
-                break;
-            case(3):
-                document.getElementById("d").innerHTML = teleBold + "For now, we only have the people of Minor City, though that selection tab should give you some hint as to what city will be visited next.";
-                break;
-        }
-
-    }
-    if (character === "Pyra")
-    {
-        switch (dialogue)
-        {
-            case(1):
-                document.getElementById("d").innerHTML = pyraBold + "So this is the page that lists all our characters. Pretty self explanatory. Just click on those words to reveal some names.";
-                break;
-            case(2):
-                document.getElementById("d").innerHTML = pyraBold + "And if you got some more clicks in you, you can also visit a page for a character if he or she has one linked here.";
-                break;
-            case(3):
-                document.getElementById("d").innerHTML = pyraBold + "You can also filter out the names by selecting from the city tab, which is pretty useless right now since you're only gonna be reading about people from Minor City.";
-                break;
-            case(4):
-                document.getElementById("d").innerHTML = pyraBold + "Oh, you noticed another city? Yeah, that's just our creator not telling you what he's working on. Personally, I would've just left it out so I wouldn't have to answer any questions about it.";
-                break;
-        }
     }
 
 }

@@ -39,6 +39,18 @@ $(document).ready(function () {
 
 
     }
+    
+    if (sessionStorage.getItem("characterVisits") === null)
+    {
+        sessionStorage.setItem("characterVisits", 1);
+    }
+    else
+    {
+        
+        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+    }
 
     dialogue = 1;
     max = 0;
@@ -50,10 +62,13 @@ $(document).ready(function () {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
-        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
-        max = 5;
+        document.getElementById("d").innerHTML = "";
+
     }
     else if (character === "Tel-E")
     {
@@ -64,6 +79,11 @@ $(document).ready(function () {
     {
         document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
         max = 23;
+    }
+    else
+    {
+        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+        max = 5;
     }
 
     x = 0;
@@ -221,7 +241,15 @@ function DialogueChangeMenu() {
     pyraBold = pyraBold.bold();
 
 
-    if (character === "Tel-E")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        document.getElementById("d").innerHTML = "";
+
+    }
+    else if (character === "Tel-E")
     {
         switch (dialogue)
         {

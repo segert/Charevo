@@ -30,6 +30,8 @@ $(document).ready(function () {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
     
     if (sessionStorage.getItem("firstPage") === null)
     {
@@ -47,28 +49,25 @@ $(document).ready(function () {
         
         
     }
-
     
-    if (character === "Tel-E")
+    if (sessionStorage.getItem("Cyhack") !== "true")
     {
+        document.getElementById("character").src = "images/authorcyhack.png"
+        document.getElementById("caricature").src = "images/caricaturecyhack.png"
         
-
-        document.getElementById("d").innerHTML = teleBold + "Here is where you can learn all about the Charevo Gene, the piece of DNA that provides those born with it their powers. Though, only one in 32,700 people are born with it.";
-        max = 7;
+        document.getElementById("d").innerHTML = cyhackBold + "Write me as a guy in your first draft, will ya? You sure Pyra and Tammy Time are still your favorites? Hmm? Oh! You guys! Greetings. And welcome to our creator's page. A bit of a nerd, though not a cool one like me. I wouldn't say he's that smart either. Sure, he's got a computer science degree and coded this site from scratch himself, but his writing decisions are significantly ludicrous. Someone should tell him how not to make supporting characters out of girls who have clear leading lady potential. It was bad enough that he didn't take the time to learn how to draw and just doodled me and said 'Eh, that's fine'. Seriously. Take an art and writing class, Egert!";
+    }
+    else if (character === "Tel-E")
+    {
+        document.getElementById("d").innerHTML = teleBold + "I'd like to introduce you to the individual who created us: Stephen Egert. You can read his bio below the two images, the one on the left having been taken about twenty times before he got a shot he liked. You can learn a little bit of his background here, which includes his love of television and the writers of his favorite shows, which is how he got into writing. Personally, I'm a fan of more intellectual and classic literature from folks such as Tom Wolfe, Harper Lee, J.D. Salinger, and Stephen King. But none of those people created me or inspired my creator, so my thanks to you, John Swartzwelder, Ken Keeler, Mike Scully, Patric Verrone, Mike Reiss, Jeff Martin, Eric Kaplan, and all those great folks, which . . . sadly don't include many women. Well, this is ironic then.";
     }
     else if (character === "Pyra")
     {
-        
-
-        document.getElementById("d").innerHTML = pyraBold + "So here's where you can learn about the Charevo Gene. If you're not into reading anything beyond this dialogue box, here's the short story behind it.";
-        max = 9;
+        document.getElementById("d").innerHTML = pyraBold + "Alright, so this page is . . . Ugh. Really? He had his own photo to work with and he still couldn't do a decent drawing of himself? Ugh. Anyway, so this is our creator's page. If you wanna learn more about him, just read the little bio here, of course that's a pretty big prerequisite. By the way, no. He did not have that photo of himself pointing to his left just lying around. He actually had that done for the lame joke of him and his drawing pointing to each other. Ugh. It's like watching your dad try to be cool on this page.";
     }
     else
     {
-        
-
-        document.getElementById("d").innerHTML = beautyBold + "";
-        max = 5;
+        document.getElementById("d").innerHTML = beautyBold + "And here's where you can read about our creator himself, Stephen Egert. Kind of an average guy for the most part. I think one of the most interesting things about him is that he wasn't interested in books for a number of years, but got into writing as he idolized TV writers, one of whom became a novelist. And our creator suddenly decided to write a book himself. So that shows that something you may not like when you're young could turn into something you love later on. And something else you like could help lead you to it even if you don't know it at first. So just stay with what you like, 'cause you never know what it might inspire for you.";
     }
 
 

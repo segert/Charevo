@@ -53,8 +53,15 @@ $(document).ready(function () {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
 
-    if (character === "Tel-E")
+    if (sessionStorage.getItem("Cyhack") !== "true")
+    {
+        document.getElementById("d").innerHTML = cyhackBold + "Hmm. I think I'm gonna take a bit of a break from these quizzes right here. That Neo chick is supposed to take over anyway. Don't worry, though. I'm sure the Cyhack may work her magic again if you pay attention. So just choose whichever quiz for whatever story you wanna take, and have fun. Hack ya Later!";
+
+    }
+    else if (character === "Tel-E")
     {
         document.getElementById("d").innerHTML = teleBold + "So if you've read those stories Beauty has told, you can take a quiz on them right here. Since they're her stories, Beauty will take over as host where she will ask you the questions and she and the rest of us will talk about them. You might just gain some insight into our creator's ideas and see our own perspectives should you participate.";
 

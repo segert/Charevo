@@ -7,9 +7,9 @@
 $(document).ready(function () {
 
     character = sessionStorage.getItem("SessionCharacter");
-    
+
     $("#sessioncharacter").hide();
-    
+
     if (character === "Tel-E")
     {
         document.getElementById("sessioncharacter").src = "images/tel-eleft1.png";
@@ -36,7 +36,7 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "the Beauty Stories page");
@@ -45,13 +45,13 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "the Beauty Stories page")
+        if (sessionStorage.getItem("currentPage") !== "the Beauty Stories page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Beauty Stories page");
         }
         sessionStorage.setItem("currentPage", "the Beauty Stories page");
-        
-        
+
+
     }
 
 
@@ -61,6 +61,15 @@ $(document).ready(function () {
     mouseouts = 0;
 
     defaultdialogue();
+
+    if (sessionStorage.getItem("Cyhack") !== "true")
+    {
+        $("#story1").html("<b>Follow the Leaders (TO YOUR DOOM!)</b>");
+        $("#story2").html("<b>Superheroes: The Game Show</b>");
+        $("#story3").html("<b>D for Dummies</b>");
+        $("#story4").html("<b>Pop Star Goes the Weasel</b>");
+        $("#story5").html("<b>Super Powered Soap Opera (Starring Cyhack)</b>");
+    }
 
 
     $("#story1").mouseover(function () {
@@ -111,7 +120,7 @@ $(document).ready(function () {
     });
 
     $("#story1").mouseout(function () {
-        if(mouseouts < 150)
+        if (mouseouts < 150)
             defaultdialogue();
 
         //$("#storycharacter").hide();
@@ -119,28 +128,28 @@ $(document).ready(function () {
         $("#story1").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story2").mouseout(function () {
-        if(mouseouts < 150)
+        if (mouseouts < 150)
             defaultdialogue();
         //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story2").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story3").mouseout(function () {
-        if(mouseouts < 150)
+        if (mouseouts < 150)
             defaultdialogue();
         //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story3").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story4").mouseout(function () {
-        if(mouseouts < 150)
+        if (mouseouts < 150)
             defaultdialogue();
         //$("#storycharacter").hide();
         $(this).clearQueue().stop();
         $("#story4").animate({backgroundColor: "", color: "#000000"}, 400);
     });
     $("#story5").mouseout(function () {
-        if(mouseouts < 150)
+        if (mouseouts < 150)
             defaultdialogue();
         //$("#storycharacter").hide();
         $(this).clearQueue().stop();
@@ -156,27 +165,35 @@ $(document).ready(function () {
     $(".storybutton").on("mouseleave", function () {
         mouseouts++;
         //document.getElementById("d").innerHTML = mouseouts;
-        if(mouseouts >= 150)
+
+        if (sessionStorage.getItem("Cyhack") !== "true" && mouseouts >= 70)
+        {
+            document.getElementById("d").innerHTML = teleBold + "Well, aren't you indecisive today. I changed my mind. You ain't readin' nothin' today. Too bad.";
+
+        }
+
+        if (mouseouts >= 150)
         {
             $("#storycharacter").hide();
             $(".storybutton").hide();
-            
-            $("section").css({"height": (sectionHeight * 1.3) });
-            
+
+            $("section").css({"height": (sectionHeight * 1.3)});
+
             $("#sessioncharacter").show();
             $("#sessioncharacter").animate({left: (window.screen.width * .35)});
-            
-            if (character === "Beauty")
-            {
-                document.getElementById("d").innerHTML = beautyBold + "Okay. That's enough of that. I'm sorry, but if you can't make up your mind to choose from five stories, I'm gonna have to ask you to go to somewhere else on this site. When you're ready to take your story choice more seriously, I'll let you come back. But, until then, no stories for you right now.";
-            }
-            else if (character === "Tel-E")
+
+
+            if (character === "Tel-E")
             {
                 document.getElementById("d").innerHTML = teleBold + "Right. I think it's time I cut you off. I'm sorry, but I've analyzed your thoughts, and you're clearly only interested in making me summarize these novellas for you. So if you won't select one to read, I'll have to nicely ask you to go somewhere else. Now, I know I've abruptly removed the stories for you, but try to take that as politely as possible.";
             }
             else if (character === "Pyra")
             {
                 document.getElementById("d").innerHTML = pyraBold + "Alright. That's it. I told you to pick something, but you're clearly not interested in the free material provided for you. So guess what? No story time for anyone. We're done here. Yeah, you thought I was kidding, huh? Nope. The stories are gone. If you come back, they'll be here. But if you screw around, you get nothing. Bye now.";
+            }
+            else
+            {
+                document.getElementById("d").innerHTML = beautyBold + "Okay. That's enough of that. I'm sorry, but if you can't make up your mind to choose from five stories, I'm gonna have to ask you to go to somewhere else on this site. When you're ready to take your story choice more seriously, I'll let you come back. But, until then, no stories for you right now.";
             }
         }
 
@@ -190,8 +207,31 @@ $(document).ready(function () {
         teleBold = teleBold.bold();
         var pyraBold = "Pyra: ";
         pyraBold = pyraBold.bold();
+        var cyhackBold = "Cyhack: ";
+        cyhackBold = cyhackBold.bold();
 
-        if (sessionStorage.getItem("SessionCharacter") === "Tel-E") {
+        if (sessionStorage.getItem("Cyhack") !== "true")
+        {
+            switch (story)
+            {
+                case(1):
+                    document.getElementById("d").innerHTML = cyhackBold + "Meh. You can skip this one. I'm not in it. I know this is the first story that introduces all the characters and what the Charevo Gene is, but I'm not in it. So just how important is it, really?";
+                    break;
+                case(2):
+                    document.getElementById("d").innerHTML = cyhackBold + "There's something about two smart girls getting into a battle of knowledge. But neither of those smart girls is the Cyhack, so what's the point? Am I right? You can skip this one.";
+                    break;
+                case(3):
+                    document.getElementById("d").innerHTML = cyhackBold + "Oh, now, this one you can skip. I mean, you can read it if you like seeing someone meet their hero for the first time. The Cyhack's her own hero, though, and I've met me a number of times. So anything with me's gotta be on your radar. But I'm not in this, so forget it.";
+                    break;
+                case(4):
+                    document.getElementById("d").innerHTML = cyhackBold + "Now, this one show's struggle with love and acceptance from multiple characters. It has plenty of emotion as they deal with their own insecurities while a whole host of backstory is explored that might get you to think of how you fit in with friends and what your own self-confidence is like compared to these characters. But the Cyhack's not in this, so forget it.";
+                    break;
+                case(5):
+                    document.getElementById("d").innerHTML = cyhackBold + "So this one features a guy who thinks he's the better cyborg in these stories, which, like the parts he used to build his body, is a complete load of garbage. But, despite such a flaw, the Cyhack stars in this one. So I can't recommend this one enough.";
+                    break;
+            }
+        }
+        else if (sessionStorage.getItem("SessionCharacter") === "Tel-E") {
             switch (story)
             {
                 case(1):
@@ -263,11 +303,17 @@ $(document).ready(function () {
         teleBold = teleBold.bold();
         pyraBold = "Pyra: ";
         pyraBold = pyraBold.bold();
+        cyhackBold = "Cyhack: ";
+        cyhackBold = cyhackBold.bold();
 
         if (mouseouts < 70)
         {
 
-            if (character === "Tel-E")
+            if (sessionStorage.getItem("Cyhack") !== "true")
+            {
+                document.getElementById("d").innerHTML = cyhackBold + "Oh, look! Uh, you can read, right? Yeah? Well, good news. These are the novellas our creator wrote for you people. Now, I know it's not the best idea to judge a story by just the title, but I'd say this is pretty accurate. What? You don't believe me? Well, fine. I'll give you my summaries too. You trust the Cyhack THAT much, right?";
+            }
+            else if (character === "Tel-E")
             {
                 document.getElementById("d").innerHTML = teleBold + "And here we have the novellas where myself and the Neo Brigade welcome Beauty to our team. If you're wondering about those titles, they're meant to look as if the villains are saying them with what's in parenthesis being specific to them. If you move the cursor over the title, I would be more than happy to provide a short synopsis for you.";
             }
@@ -282,8 +328,12 @@ $(document).ready(function () {
         }
         else if (mouseouts < 150)
         {
-            
-            if (character === "Tel-E")
+
+            if (sessionStorage.getItem("Cyhack") !== "true")
+            {
+                document.getElementById("d").innerHTML = cyhackBold + "Oh, look! Uh, you can read, right? Yeah? Well, good news. These are the novellas our creator wrote for you people. Now, I know it's not the best idea to judge a story by just the title, but I'd say this is pretty accurate. What? You don't believe me? Well, fine. I'll give you my summaries too. You trust the Cyhack THAT much, right?";
+            }
+            else if (character === "Tel-E")
             {
                 document.getElementById("d").innerHTML = teleBold + "Pardon me, but I've noticed you seem quite indecisive on which story to read. Might I suggest reading them all in sequence? I'd certainly recommend that over moving the cursor over the titles repeatedly. I mean, I like blue too, but I'm more of a reader myself. But, if you're not, I can suggest some other pages on this site for you.";
             }

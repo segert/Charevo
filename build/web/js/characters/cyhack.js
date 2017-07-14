@@ -37,6 +37,30 @@ $(document).ready(function () {
         
         
     }
+    
+    if (sessionStorage.getItem("characterVisits") === null)
+    {
+        sessionStorage.setItem("characterVisits", 1);
+    }
+    else
+    {
+        
+        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+    }
+    
+    if (sessionStorage.getItem("cyhackVisits") === null)
+    {
+        sessionStorage.setItem("cyhackVisits", 1);
+    }
+    else
+    {
+        
+        sessionStorage.setItem("cyhackVisits", parseInt(sessionStorage.getItem("cyhackVisits")) + 1);
+
+
+    }
 
     dialogue = 1;
     max = 0;
@@ -69,20 +93,13 @@ $(document).ready(function () {
         document.getElementById("prev").disabled = true;
     }
 
-    if (cyhack === 1)
-    {
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
 
-    }
-    else if (character === "Beauty")
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
-        document.getElementById("d").innerHTML = beautyBold + "Alright! Here's a good one. It's another villain, a female villain no less. We call her Cyhack. She's got a Charevo Emblem and Charevo Fairies like most everyone else with abilities here. For her, she's got Intelligence, Arrogance, and Technology, all elements mixed together to form a tough J Gang girl.";
-        //alert(document.getElementById("testsearch").innerHTML);
-        max = 14;
-        if (sessionStorage.getItem("CyhackDialogue") === "11")
-        {
-            sessionStorage.setItem("CyhackDialogue", 0);
-            DialogueChangeMenu();
-        }
+        document.getElementById("d").innerHTML = "";
+
     }
     else if (character === "Tel-E")
     {
@@ -93,6 +110,17 @@ $(document).ready(function () {
     {
         document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
         max = 7;
+    }
+    else
+    {
+        document.getElementById("d").innerHTML = beautyBold + "Alright! Here's a good one. It's another villain, a female villain no less. We call her Cyhack. She's got a Charevo Emblem and Charevo Fairies like most everyone else with abilities here. For her, she's got Intelligence, Arrogance, and Technology, all elements mixed together to form a tough J Gang girl.";
+        //alert(document.getElementById("testsearch").innerHTML);
+        max = 14;
+        if (sessionStorage.getItem("CyhackDialogue") === "11")
+        {
+            sessionStorage.setItem("CyhackDialogue", 0);
+            DialogueChangeMenu();
+        }
     }
 
     x = 0;
@@ -330,7 +358,12 @@ function DialogueChangeMenu() {
     cyhackBold = cyhackBold.bold();
 
 
-    if (character === "Tel-E")
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        document.getElementById("d").innerHTML = "";
+
+    }
+    else if (character === "Tel-E")
     {
         switch (dialogue)
         {

@@ -4,7 +4,7 @@
     if (sessionStorage.getItem("Cyhack") === "true")
     {
     app.value('customSelectDefaults', {
-                        displayText: 'Select an alternate and needless shortcut',
+                        displayText: 'Select a needless shortcut',
                         emptyListText: 'This thing here\'s empty',
                         emptySearchResultText: '"$0" doesn\'t match anything, stupid!',
                         addText: 'Add',

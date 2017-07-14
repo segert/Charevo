@@ -26,14 +26,18 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "the Level 1 Beauty Quiz")
+        if (sessionStorage.getItem("currentPage") !== "the Level 1 Beauty Quiz")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Level 1 Beauty Quiz");
         }
         sessionStorage.setItem("currentPage", "the Level 1 Beauty Quiz");
-        
-        
+
+
     }
+
+    question13acount = 0;
+    question13bcount = 0;
+    question13ccount = 0;
 
 
     $("#nextlevel1a").click(function () {
@@ -1565,29 +1569,120 @@ can start the quiz.");
         }
         else if (question === 16)
         {
-            if (dialogue === 1)
+            if (sessionStorage.getItem("Cyhack") !== "true")
             {
-                $("#score").show();
-                $("#score").text("Your score: " + correct + "/15");
-                if (correct === 15)
-                    $("#dialogue").html("<b>Beauty:</b> All right! Perfect score! 15 out of 15! Well done.");
-                else if (correct > 10)
-                    $("#dialogue").html("<b>Beauty:</b> Hey, you got a " + correct + " out of 15. Nicely done.");
-                else if (correct > 5)
-                    $("#dialogue").html("<b>Beauty:</b> Looks like you got a score of " + correct + " out of 15. Not bad.");
-                else if (correct > 1)
-                    $("#dialogue").html("<b>Beauty:</b> Whoa. You only got " + correct + " out of 15 questions right. Good try. Maybe you'll do better next time.");
-                else
-                    $("#dialogue").html("<b>Beauty:</b> Aw, what? You didn't get a single question right. Did you even read this story? Unless you're Race and you don't like reading about yourself, I'd go back and look at Story 1 for some reference.");
-            }
-            else if (dialogue === 2)
-            {
-                document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
-                document.getElementById("nextlevel1a").disabled = true;
-                $("#backquiz").show();
-                $("#dialogue").html("<b>Beauty:</b> Now that you've finished this, why not try another quiz? Just hit the button on the right to go back to the quiz menu.");
-            }
+                if (dialogue === 1)
+                {
+                    if (sessionStorage.getItem("quizVisits") === null)
+                    {
+                        sessionStorage.setItem("quizVisits", 1);
+                    }
+                    else
+                    {
+                        sessionStorage.setItem("quizVisits", parseInt(sessionStorage.getItem("quizVisits")) + 1);
+                    }
 
+                    if (sessionStorage.getItem("highscore") === null)
+                    {
+                        sessionStorage.setItem("highscore", "0 out of 15");
+                        sessionStorage.setItem("highscoredecimal", 0);
+                    }
+                    else
+                    {
+                        if (parseFloat(sessionStorage.getItem("highscoredecimal")) < 0)
+                        {
+                            sessionStorage.setItem("highscore", "0 out of 15");
+                            sessionStorage.setItem("highscoredecimal", 0);
+                        }
+                    }
+
+                    $("#score").show();
+                    $("#score").text("Your score: " + correct + "/15");
+                    if (correct === 15)
+                        $("#dialogue").html("<b>Beauty:</b> All right! Perfect score! 15 out of 15! Well done.");
+                    else if (correct > 10)
+                        $("#dialogue").html("<b>Beauty:</b> Hey, you got a " + correct + " out of 15. Nicely done.");
+                    else if (correct > 1)
+                        $("#dialogue").html("<b>Beauty:</b> Looks like you got a score of " + correct + " out of 15.");
+                    else
+                        $("#dialogue").html("<b>Beauty:</b> Aw, what? You didn't get a single question right. Did you even read this story? Unless you're Race and you don't like reading about yourself, I'd go back and look at Story 1 for some reference.");
+                }
+                else if (dialogue === 2 && correct !== 0)
+                {
+                    document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
+                    document.getElementById("nextlevel1a").disabled = true;
+                    $("#backquiz").show();
+                    $("#dialogue").html("<b>Beauty:</b> Now that you've finished this, why not try another quiz? Just hit the button on the right to go back to the quiz menu.");
+                }
+                else if (dialogue === 2)
+                {
+                    
+                    $("#dialogue").html("<b>Cyhack:</b> Heh heh heh. Not while the Cyhack's in charge, you don't.");
+                }
+                else if (dialogue === 3)
+                {
+                    correct = 0;
+                    $("#score").text("Your score: " + correct + "/15");
+                    $("#dialogue").html("<b>Beauty:</b> Huh? Wait! What? . . . Did I read that score wrong? Uh . . . okay. It looks like you got a 0. Sorry about that.");
+                }
+                else if (dialogue === 4)
+                {
+                    document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
+                    document.getElementById("nextlevel1a").disabled = true;
+                    $("#backquiz").show();
+                    $("#dialogue").html("<b>Beauty:</b> Think you can improve on your failure? Try again by going back to the quiz menu and do a different one. You have the best of the Cyhack's wishes for more lousy luck, loser.");
+                }
+                
+            }
+            else
+            {
+                if (dialogue === 1)
+                {
+                    if (sessionStorage.getItem("quizVisits") === null)
+                    {
+                        sessionStorage.setItem("quizVisits", 1);
+                    }
+                    else
+                    {
+                        sessionStorage.setItem("quizVisits", parseInt(sessionStorage.getItem("quizVisits")) + 1);
+                    }
+
+                    if (sessionStorage.getItem("highscore") === null)
+                    {
+                        sessionStorage.setItem("highscore", correct + " out of 15");
+                        sessionStorage.setItem("highscoredecimal", (correct / 15));
+                    }
+                    else
+                    {
+                        if (parseFloat(sessionStorage.getItem("highscoredecimal")) < (correct / 15))
+                        {
+                            sessionStorage.setItem("highscore", correct + " out of 15");
+                            sessionStorage.setItem("highscoredecimal", (correct / 15));
+                        }
+                    }
+
+                    $("#score").show();
+                    $("#score").text("Your score: " + correct + "/15");
+                    if (correct === 15)
+                        $("#dialogue").html("<b>Beauty:</b> All right! Perfect score! 15 out of 15! Well done.");
+                    else if (correct > 10)
+                        $("#dialogue").html("<b>Beauty:</b> Hey, you got a " + correct + " out of 15. Nicely done.");
+                    else if (correct > 5)
+                        $("#dialogue").html("<b>Beauty:</b> Looks like you got a score of " + correct + " out of 15. Not bad.");
+                    else if (correct > 1)
+                        $("#dialogue").html("<b>Beauty:</b> Whoa. You only got " + correct + " out of 15 questions right. Good try. Maybe you'll do better next time.");
+                    else
+                        $("#dialogue").html("<b>Beauty:</b> Aw, what? You didn't get a single question right. Did you even read this story? Unless you're Race and you don't like reading about yourself, I'd go back and look at Story 1 for some reference.");
+                }
+                else if (dialogue === 2)
+                {
+                    document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
+                    document.getElementById("nextlevel1a").disabled = true;
+                    $("#backquiz").show();
+                    $("#dialogue").html("<b>Beauty:</b> Now that you've finished this, why not try another quiz? Just hit the button on the right to go back to the quiz menu.");
+                }
+
+            }
         }
 
     }
@@ -1983,20 +2078,81 @@ can start the quiz.");
         {
             if ($("input[name=q]:checked").val() === "a")
             {
+                question13acount++;
+                if (question13acount < 30 && (question13bcount < 300 || question13ccount < 300))
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Nope. He wasn't desperate. Well, that's not true. He was pretty freakin' desperate. But that's just not the answer. Try again.");
+                }
+                else if (question13acount < 80 && (question13bcount < 300 || question13ccount < 300))
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
+                }
+                else if (question13acount < 150 && (question13bcount < 300 || question13ccount < 300))
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not a! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
+                }
+                else if (question13acount >= 300)
+                {
+                    missed = 0;
+                    $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
+                }
 
-                $("#dialogue").html("<b>Beauty:</b> Nope. He wasn't desperate. Well, that's not true. He was pretty freakin' desperate. But that's just not the answer. Try again.");
-                missed = 1;
+
+
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("<b>Beauty:</b> Well . . . yes and no. He wanted a powerful ally, but he wasn't not desperate and didn't not want to cut corners. Try another choice.");
-                missed = 1;
+                question13bcount++;
+
+                if (question13bcount < 30 && (question13acount < 300 || question13ccount < 300))
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Well . . . yes and no. He wanted a powerful ally, but he wasn't not desperate and didn't not want to cut corners. Try another choice.");
+                }
+                else if (question13bcount < 80 && (question13acount < 300 || question13ccount < 300))
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
+                }
+                else if (question13bcount < 150 && (question13acount < 300 || question13ccount < 300))
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not b! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
+                }
+                else if (question13bcount >= 300)
+                {
+                    missed = 0;
+                    $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
+                }
 
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                $("#dialogue").html("<b>Beauty:</b> Incorrect. Well, not exactly wrong. I mean, it's partly true, but I wouldn't say the others wrong, but those aren't all the correct answer, but . . . look, just click choice d so we can move on.");
-                missed = 1;
+                question13ccount++;
+
+                if (question13ccount < 30 && (question13acount < 300 || question13bcount < 300))
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Incorrect. Well, not exactly wrong. I mean, it's partly true, but I wouldn't say the others wrong, but those aren't all the correct answer, but . . . look, just click choice d so we can move on.");
+                }
+                else if (question13ccount < 80 && (question13acount < 300 || question13bcount < 300))
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
+                }
+                else if (question13ccount < 150 && (question13acount < 300 || question13bcount < 300))
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not c! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
+                }
+                else if (question13ccount >= 300)
+                {
+                    missed = 0;
+                    $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
+                }
 
             }
             else if ($("input[name=q]:checked").val() === "d")
@@ -2145,7 +2301,7 @@ function checkResolution()
     if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
     {
         $("section").css({"height": (window.screen.height * 1.9)});
-        
+
         $(".selector1").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .0385)});
         $(".selector2").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .462)});
         $(".selector3").css({"top": (window.screen.height * .35), "left": (window.screen.width * .0385)});
@@ -2160,10 +2316,10 @@ function checkResolution()
         $(".answer2").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .5)});
         $(".answer3").css({"top": (window.screen.height * .35), "left": (window.screen.width * .069)});
         $(".answer4").css({"top": (window.screen.height * .35), "left": (window.screen.width * .5)});
-        
+
         $(".quizimageleft").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
-            $(".quizimageright").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
-            $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .158), "width": (window.screen.width * .25)});
+        $(".quizimageright").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
+        $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .158), "width": (window.screen.width * .25)});
     }
     else if (window.screen.width > 700)
     {
@@ -2313,7 +2469,7 @@ function checkResolution2()
     if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
     {
         $("section").css({"height": (window.screen.height * 1.9)});
-        
+
         sectionHeight = (window.screen.height * 1.9);
 
         $(".selector1").css({"top": (window.screen.height * .226667), "left": (window.screen.width * .0385)});
@@ -2520,9 +2676,9 @@ function resizeResolution()
         $(".selector3").css({"top": selector34Top, "left": selector13Left});
         $(".selector4").css({"top": selector34Top, "left": selector24Left});
 
-        $(".answer1label").css({"top": answer12labelTop, "left":  answer13labelLeft});
+        $(".answer1label").css({"top": answer12labelTop, "left": answer13labelLeft});
         $(".answer2label").css({"top": answer12labelTop, "left": answer24labelLeft});
-        $(".answer3label").css({"top": answer34labelTop, "left":  answer13labelLeft});
+        $(".answer3label").css({"top": answer34labelTop, "left": answer13labelLeft});
         $(".answer4label").css({"top": answer34labelTop, "left": answer24labelLeft});
 
         $(".answer1").css({"top": answer12Top, "left": answer13Left});
@@ -2542,9 +2698,9 @@ function resizeResolution()
         $(".selector3").css({"top": selector34Top, "left": selector13Left});
         $(".selector4").css({"top": selector34Top, "left": selector24Left});
 
-        $(".answer1label").css({"top": answer12labelTop, "left":  answer13labelLeft});
+        $(".answer1label").css({"top": answer12labelTop, "left": answer13labelLeft});
         $(".answer2label").css({"top": answer12labelTop, "left": answer24labelLeft});
-        $(".answer3label").css({"top": answer34labelTop, "left":  answer13labelLeft});
+        $(".answer3label").css({"top": answer34labelTop, "left": answer13labelLeft});
         $(".answer4label").css({"top": answer34labelTop, "left": answer24labelLeft});
 
         $(".answer1").css({"top": answer12Top, "left": answer13Left});
@@ -2556,7 +2712,7 @@ function resizeResolution()
         if (window.screen.height > 1000)
         {
             $(".quizimageleft").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
-        $(".quizimageright").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+            $(".quizimageright").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
 
         }
 

@@ -38,6 +38,18 @@ $(document).ready(function () {
         
         
     }
+    
+    if (sessionStorage.getItem("characterVisits") === null)
+    {
+        sessionStorage.setItem("characterVisits", 1);
+    }
+    else
+    {
+        
+        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+    }
 
     dialogue = 1;
     max = 0;
@@ -49,11 +61,13 @@ $(document).ready(function () {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
-        document.getElementById("d").innerHTML = beautyBold + "And this is the character page for . . . wait. Where is he? Hello? Ninja? You there?";
-        max = 12;
-        $("#character").hide();
+        document.getElementById("d").innerHTML = "";
+
     }
     else if (character === "Tel-E")
     {
@@ -64,6 +78,12 @@ $(document).ready(function () {
     {
         document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
         max = 7;
+    }
+    else
+    {
+        document.getElementById("d").innerHTML = beautyBold + "And this is the character page for . . . wait. Where is he? Hello? Ninja? You there?";
+        max = 12;
+        $("#character").hide();
     }
 
     x = 0;
@@ -203,7 +223,15 @@ function DialogueChangeMenu() {
     ninjaBold = ninjaBold.bold();
 
     
-    if (character === "Tel-E")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        document.getElementById("d").innerHTML = "";
+
+    }
+    else if (character === "Tel-E")
     {
         switch (dialogue)
         {

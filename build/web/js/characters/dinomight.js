@@ -38,9 +38,23 @@ $(document).ready(function () {
         
         
     }
+    
+    if (sessionStorage.getItem("characterVisits") === null)
+    {
+        sessionStorage.setItem("characterVisits", 1);
+    }
+    else
+    {
+        
+        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+    }
 
     dialogue = 1;
     max = 0;
+    rotate = 0;
+    angle = 0;
 
     var beautyBold = "Beauty: ";
     beautyBold = beautyBold.bold();
@@ -49,10 +63,13 @@ $(document).ready(function () {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
-        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
-        max = 5;
+        document.getElementById("d").innerHTML = "";
+
     }
     else if (character === "Tel-E")
     {
@@ -63,6 +80,11 @@ $(document).ready(function () {
     {
         document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
         max = 7;
+    }
+    else
+    {
+        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+        max = 13;
     }
 
     x = 0;
@@ -88,6 +110,8 @@ $(document).ready(function () {
         curident = ident;
         NewIdentification();
     });
+    
+    rotatePage();
 
 });
 
@@ -190,6 +214,32 @@ function prev() {
     }
 }
 
+function rotatePage() {
+    setInterval(function () {
+        if (rotate === 1)
+        {
+            //checkCharacterLeft();
+            //$("#character").css({"left": "500px"});
+            //var characterImg = document.getElementById('character');
+            $("body").removeClass("rotate" + angle);
+            angle = (angle + 45) % 360;
+            $("body").addClass("rotate" + angle);
+            //characterImg.className = "rotate" + angle;
+            rotate = 0;
+
+        }
+        else if(angle !== 0)
+        {
+            $("body").removeClass("rotate" + angle);
+            angle = (angle + 45) % 360;
+            $("body").addClass("rotate" + angle);
+        }
+    }, 150);
+
+
+    //rotateTelE();
+}
+
 function DialogueChangeMenu() {
     var beautyBold = "Beauty: ";
     beautyBold = beautyBold.bold();
@@ -202,7 +252,15 @@ function DialogueChangeMenu() {
     dinomightBold = dinomightBold.bold();
 
     
-    if (character === "Tel-E")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        document.getElementById("d").innerHTML = "";
+
+    }
+    else if (character === "Tel-E")
     {
         switch (dialogue)
         {
@@ -216,7 +274,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = teleBold + "Well, the user selected your page to visit and chose me as the host. Also, our creator coded this site to allow the host to talk about each page, which includes yours.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = dinomightBold + "He let YOU be a host and not me? Boy, that makes me madder 'n a dinomite lighter in a rainstorm. I oughta slap you 'cross that giant noggin o' yours so hard, you land in some other author's website!";
+                document.getElementById("d").innerHTML = dinomightBold + "He let YOU be a host and not me? Boy, that makes me madder 'n a dinomite lighter in a rainstorm. I oughta slap you 'cross that giant noggin o' yours so hard, you'll land in some other author's website!";
                 break;
             case(5):
                 document.getElementById("d").innerHTML = teleBold + "I understand you're quite upset with me being here, but I really need to talk about your page. After that, I'll be on my way.";
@@ -287,18 +345,37 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = dinomightBold + "Alright! I'm a fan favorite! Thanks for the hype, Beauty. I'll bash you up a little less next time we square off.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = beautyBold + "Fan favorite? Uh . . . maybe if we're targeting an audience loving violence . . . perhaps? Personally, if we're talking favorites on your team, I'm more of a Cyhack girl. And our creator's probably a bit of a Tammy Time guy.";
+                document.getElementById("d").innerHTML = beautyBold + "Fan favorite? Uh . . . maybe if we're targeting an audience loving violence . . . perhaps? I feel like strength is a bit overrated, to be honest.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = dinomightBold + "Well, shoot, then who's a Dinomight girl? Come on! You know a strength feller's the way to go!";
+                document.getElementById("d").innerHTML = dinomightBold + "Overrated? You call flipping this site over overrated?"; 
                 break;
             case(5):
-                document.getElementById("d").innerHTML = beautyBold + "Well, I won't lie. I do like your ability to create explosions. And, I know Pyra's supposed to be the honest one on this site, but fun fact: Our creator gave you that power in an attempt to distinguish you from an existing character he based you on. I won't say the name of that character here. We'll mention that elsewhere. Personally, I'd prefer to throw my creator under the bus as few times as possible.";
+                document.getElementById("d").innerHTML = beautyBold + "Wait. What?"; 
                 break;
             case(6):
-                document.getElementById("d").innerHTML = dinomightBold + "Oh, you wuss! If it were me, I'd throw the guy who made me under a tank before I drop it on him!";
+                rotate = 1;
+                document.getElementById("d").innerHTML = dinomightBold + "Hnnnnnaaaaah!"; 
                 break;
             case(7):
+                document.getElementById("d").innerHTML = beautyBold + "Whoa!"; 
+                break;
+            case(8):
+                document.getElementById("d").innerHTML = dinomightBold + "How's that for ratin' and favorites?"; 
+                break; 
+            case(9):
+                document.getElementById("d").innerHTML = beautyBold + "Well, that was . . . something. I don't know how many fans that got you, though. Personally, if we're talking favorites on your team, I'm more of a Cyhack girl. And our creator's probably a bit of a Tammy Time guy."; 
+                break;     
+            case(10):
+                document.getElementById("d").innerHTML = dinomightBold + "Well, shoot, then who's a Dinomight girl? Come on! You know a strength feller's the way to go!";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = beautyBold + "Well, I won't lie. I do like your ability to create explosions. And, I know Pyra's supposed to be the honest one on this site, but fun fact: Our creator gave you that power in an attempt to distinguish you from an existing character he based you on. I won't say the name of that character here. We'll mention that elsewhere. Personally, I'd prefer to throw my creator under the bus as few times as possible.";
+                break;
+            case(12):
+                document.getElementById("d").innerHTML = dinomightBold + "Oh, you wuss! If it were me, I'd throw the guy who made me under a tank before I drop it on him!";
+                break;
+            case(13):
                 document.getElementById("d").innerHTML = beautyBold + "If you're trying to get more people to like you, I don't think you should expect our creator to join the fan club. Just a heads up.";
                 break; 
         }

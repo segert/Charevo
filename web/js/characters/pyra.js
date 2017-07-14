@@ -38,6 +38,18 @@ $(document).ready(function () {
 
 
     }
+    
+    if (sessionStorage.getItem("characterVisits") === null)
+    {
+        sessionStorage.setItem("characterVisits", 1);
+    }
+    else
+    {
+        
+        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+    }
 
     dialogue = 1;
     max = 0;
@@ -49,11 +61,13 @@ $(document).ready(function () {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
-        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
-        max = 17;
-        $("#character").hide();
+        document.getElementById("d").innerHTML = "";
+
     }
     else if (character === "Tel-E")
     {
@@ -64,6 +78,12 @@ $(document).ready(function () {
     {
         document.getElementById("d").innerHTML = pyraBold + "So here's the page for my friend, Beauty. On the top left, we have her Charevo Emblem. That's a unicorn, dragon, and princess for the Charevo Trinity of Fiction, Imagination, and Femininity for those of you keeping a record of this.";
         max = 7;
+    }
+    else
+    {
+        document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
+        max = 17;
+        $("#character").hide();
     }
 
     x = 0;
@@ -90,14 +110,13 @@ $(document).ready(function () {
         NewIdentification();
     });
 
-    var fadeIn = 0;
-    test = 0;
+    fadeIn = 0;
     $("#character").mouseover(function () {
 
         $("#character").fadeOut(300, function () {
             document.getElementById("character").src = "../images/empty.png";
             $("#character").show();
-            test = 1;
+            fadeIn = 1;
 
         });
 
@@ -106,13 +125,13 @@ $(document).ready(function () {
 
     $(":not(#character)").mouseover(function () {
 
-        if (test === 1)
+        if (fadeIn === 1)
         {
             $("#character").hide();
             $("#character").fadeIn(300);
 
             document.getElementById("character").src = "../images/pyraleft1.png";
-            test = 0;
+            fadeIn = 0;
         }
 
 
@@ -233,7 +252,15 @@ function DialogueChangeMenu() {
     pyraBold = pyraBold.bold();
 
 
-    if (character === "Tel-E")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        document.getElementById("d").innerHTML = "";
+
+    }
+    else if (character === "Tel-E")
     {
         switch (dialogue)
         {

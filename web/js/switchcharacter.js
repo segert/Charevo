@@ -23,7 +23,7 @@ $(document).ready(function () {
     beautyrotations = 0;
     telerotations = 0;
     pyrarotations = 0;
-    
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "the Switch Character page");
@@ -32,18 +32,50 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "the Switch Character page")
+        if (sessionStorage.getItem("currentPage") !== "the Switch Character page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Switch Character page");
         }
         sessionStorage.setItem("currentPage", "the Switch Character page");
-        
-        
+
+
+    }
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        $("#3").remove();
     }
 
+    if (sessionStorage.getItem("Cyhack") !== "true")
+    {
+        $("#d").html("<b>Cyhack:</b> And here we have the character selection screen. You started with me, but if you wanna hear from someone else as your new host, just select them on this page. Go ahead. I'm not the only one with a story and insight in this world.");
+        $('#myCarousel').on('slide.bs.carousel', function (ev) {
+            var id = ev.relatedTarget.id;
 
+            if (id === "0")
+            {
 
-    if (character === "Tel-E")
+                $("#d").html("<b>Cyhack:</b> Ooh, look at me. I'm Beauty. I look like I'm in such a good mood all the time and have so much fun with everything I do, which has nothing to do with the fact that I'm the main character in these stories. I'm the pretty girl, but I don't like being the pretty girl, and that's what makes me relatable, and that's why you should pick me as the host.");
+
+            }
+            else if (id === "1")
+            {
+
+                $("#d").html("<b>Cyhack:</b> 'Ello 'ello. I'm an alien! And I have an alien name! It's Tel-E, which sounds like what I call a TV, because even though I'm from another planet, I have an accent that sounds like I'm from England. I know you think that's a stupid idea, because I can read minds. Cheerio then, 'cause I see you're 'bout to skip right over me selection.");
+            }
+            else if (id === "2")
+            {
+
+                $("#d").html("<b>Cyhack:</b> Oh, is that a visitor? Well, I'm Pyra and I'm so depressed about not having more friends. But I'm not too sad that I won't be a sarcastic jerk around other people to punish them for being my friend. Ooh. I don't like a lot of people. But I don't wanna be alone. I'm sad. I don't care. I'm sad. I don't care. I have all these social problems, but I think you should choose me to hang out with on this site.");
+
+            }
+            else if (id === "3")
+            {
+                $("#d").html("<b>Cyhack:</b> Ooh. Look at me, I'm Cyhack. I . . . Wait. Uh oh. I shouldn't be here. Uh, hey there. No need to choose me. I'm already around. Just choose one of the other girls. What are you lookin' at? Go look at someone else! And click someone else! Just not me!");
+
+            }
+        });
+    }
+    else if (character === "Tel-E")
     {
         $("#a0").attr("class", "");
         $("#a1").attr("class", "active");
@@ -65,10 +97,10 @@ $(document).ready(function () {
                     });
                 }
                 beautyrotations++;
-                if((pyrarotations / 2) >= 21)
+                if ((pyrarotations / 2) >= 21)
                 {
                     $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you . . . wait. Have you seen Pyra? Ugh. Lemme guess. You took too long to choose a host didn't you? Sorry about that.");
-                
+
                 }
                 else
                     $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you probably already knew that since I'm the default character. Anyway, if you liked me at the start, I can talk to you some more. Just give me a click and I'll be your host again.");
@@ -82,11 +114,11 @@ $(document).ready(function () {
                         pyrarotations++;
                     });
                 }
-                
-                if((pyrarotations / 2) >= 21)
+
+                if ((pyrarotations / 2) >= 21)
                 {
                     $("#d").html("<b>Tel-E:</b> Hello again. Sorry if you were expecting someone else. There's only the three of us girls to choose from as . . . wait. Where did Pyra go? Oh dear. Sorry. She's usually shy around others. What? She was impatient with you? Oh. Right then. Well, just me and Beauty here for now.");
-                
+
                 }
                 else if (beautyrotations >= 1 && pyrarotations >= 1)
                 {
@@ -116,6 +148,11 @@ $(document).ready(function () {
                     $("#d").html("<b>Pyra:</b> Oh, hey. So . . . I guess I'm Pyra. Yeah. Alright, look, I know I'm not that happy and trivia focused like the other two, but if you just wanna hear me stick it to our creator and his ideas, then just choose me. Or don't. I'm not trying to make you or anything.");
                 }
             }
+            else if (id === "3")
+            {
+                $("#d").html("<b>Cyhack:</b> Testing");
+
+            }
         });
     }
     else if (character === "Pyra")
@@ -141,10 +178,10 @@ $(document).ready(function () {
                     });
                 }
                 beautyrotations++;
-                if((pyrarotations / 2) >= 21)
+                if ((pyrarotations / 2) >= 21)
                 {
                     $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you . . . wait. Did Pyra just leave? I didn't know we could do that. Well, Tel-E and I are still here if you'd like either of us as your host. Seriously? She just left?");
-                
+
                 }
                 else
                     $("#d").html("<b>Beauty:</b> Hi! I'm Beauty. Though, you probably already knew that since I'm the default character. Anyway, if you liked me at the start, I can talk to you some more. Just give me a click and I'll be your host again.");
@@ -159,12 +196,12 @@ $(document).ready(function () {
                     });
                 }
                 telerotations++;
-                if((pyrarotations / 2) >= 21)
+                if ((pyrarotations / 2) >= 21)
                 {
                     $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of . . . Uh oh. I'm sensing impatience and absence. Did something happen? And where's Pyra? She . . . oh. You must've taken too long then. Right. Just me and Beauty for now.");
-                
+
                 }
-                else 
+                else
                     $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of Planet Knowlgia. I've only been on Earth for a little less than a year, but I'm more knowledgable than you think. So if you'd like some more details on this world, why not select me as your host? Go on then.");
             }
             else if (id === "2")
@@ -208,10 +245,10 @@ $(document).ready(function () {
                     });
                 }
 
-                if((pyrarotations / 2) >= 21)
+                if ((pyrarotations / 2) >= 21)
                 {
                     $("#d").html("<b>Beauty:</b> Hi! Me again. So . . . wait. Where'd Pyra go? She was just here on the left. No? Uh . . . okay then. I was gonna remind you Tel-E and Pyra are still available, but I guess it's just Tel-E then. Take your time. We'll both still be here.");
-                
+
                 }
                 else if (pyrarotations >= 1 && telerotations >= 1)
                 {
@@ -233,12 +270,12 @@ $(document).ready(function () {
                 }
 
                 telerotations++;
-                if((pyrarotations / 2) >= 21)
+                if ((pyrarotations / 2) >= 21)
                 {
                     $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of Planet . . . hang on. Did this selection menu just get smaller?");
-                
+
                 }
-                else 
+                else
                     $("#d").html("<b>Tel-E:</b> Hello. I am Tel-E Vega of Planet Knowlgia. I've only been on Earth for a little less than a year, but I'm more knowledgable than you think. So if you'd like some more details on this world, why not select me as your host? Go on then.");
             }
             else if (id === "2")
@@ -265,6 +302,59 @@ $(document).ready(function () {
 
 
 });
+
+function incrementSwitch(newCharacter) {
+    if (newCharacter !== character && newCharacter !== "Cyhack")
+    {
+        if (sessionStorage.getItem("switches") === null)
+        {
+            sessionStorage.setItem("switches", 1);
+        }
+        else
+        {
+            sessionStorage.setItem("switches", parseInt(sessionStorage.getItem("switches")) + 1);
+        }
+
+        if (newCharacter === "Beauty")
+        {
+            if (sessionStorage.getItem("beautySwitches") === null)
+            {
+                sessionStorage.setItem("beautySwitches", 1);
+            }
+            else
+            {
+                sessionStorage.setItem("beautySwitches", parseInt(sessionStorage.getItem("beautySwitches")) + 1);
+            }
+        }
+        else if(newCharacter === "Tel-E")
+        {
+            if (sessionStorage.getItem("tel-eSwitches") === null)
+            {
+                sessionStorage.setItem("tel-eSwitches", 1);
+            }
+            else
+            {
+                sessionStorage.setItem("tel-eSwitches", parseInt(sessionStorage.getItem("tel-eSwitches")) + 1);
+            }
+        }
+        else if(newCharacter === "Pyra")
+        {
+            if (sessionStorage.getItem("pyraSwitches") === null)
+            {
+                sessionStorage.setItem("pyraSwitches", 1);
+            }
+            else
+            {
+                sessionStorage.setItem("pyraSwitches", parseInt(sessionStorage.getItem("pyraSwitches")) + 1);
+            }
+        }
+    }
+    else if(newCharacter === "Cyhack")
+    {
+        sessionStorage.setItem("Cyhack", "true");
+    }
+
+}
 
 function checkResolution() {
     //$(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");

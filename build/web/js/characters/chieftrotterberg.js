@@ -38,6 +38,18 @@ $(document).ready(function () {
         
         
     }
+    
+    if (sessionStorage.getItem("characterVisits") === null)
+    {
+        sessionStorage.setItem("characterVisits", 1);
+    }
+    else
+    {
+        
+        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+    }
 
     dialogue = 1;
     max = 0;
@@ -49,10 +61,13 @@ $(document).ready(function () {
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
 
-    if (character === "Beauty")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
-        document.getElementById("d").innerHTML = beautyBold + "And now we come to the character page of the Neo Brigade's boss, Chief Lou Trotterberg. Now, unlike the heroes and villains, the Chief has no powers, Charevo Emblem, or Charevo Fairies to display, although he does have a bio you can check out below.";
-        max = 5;
+        document.getElementById("d").innerHTML = "";
+
     }
     else if (character === "Tel-E")
     {
@@ -63,6 +78,11 @@ $(document).ready(function () {
     {
         document.getElementById("d").innerHTML = pyraBold + "And here we have the character page of the leader of the Neo Brigade. No. Not Race. The guy who's really in charge. That's his dad, Minor City Police Chief Lou Trotterberg.";
         max = 7;
+    }
+    else
+    {
+        document.getElementById("d").innerHTML = beautyBold + "And now we come to the character page of the Neo Brigade's boss, Chief Lou Trotterberg. Now, unlike the heroes and villains, the Chief has no powers, Charevo Emblem, or Charevo Fairies to display, although he does have a bio you can check out below.";
+        max = 5;
     }
 
 

@@ -49,7 +49,27 @@ $(document).ready(function () {
     }
 
     
-    if (character === "Tel-E")
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
+
+    if (sessionStorage.getItem("Cyhack") === "true")
+    {
+        document.getElementById("emblem").src = "images/Emblems/cyhackemblem.png";
+        document.getElementById("emblem").alt = "Cyhack Emblem Placeholder";
+
+        document.getElementById("behaviorfairy").src = "images/Fairies/cyhackintelligencefairy.png";
+        document.getElementById("behaviorfairy").alt = "Cyhack Intelligence Fairy Placeholder";
+
+        document.getElementById("mentalityfairy").src = "images/Fairies/cyhackarrogancefairy.png";
+        document.getElementById("mentalityfairy").alt = "Cyhack Arrogance Fairy Placeholder";
+
+        document.getElementById("identificationfairy").src = "images/Fairies/cyhacktechnologyfairy.png";
+        document.getElementById("identificationfairy").alt = "Cyhack Technology Fairy Placeholder";
+        
+        document.getElementById("d").innerHTML = cyhackBold + "Alright. I'll explain this so even you people can understand. We in this world have our powers. We also have DNA called the Charevo Gene. This gene GIVES US our powers. You with me so far?";
+                
+    }
+    else if (character === "Tel-E")
     {
         document.getElementById("emblem").src = "images/Emblems/tel-eemblem.png";
         document.getElementById("emblem").alt = "Tel-E Emblem Placeholder";
@@ -141,30 +161,30 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
 
-    if (character === "Beauty")
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = beautyBold + "Ah, the Charevo Gene. The gene that only a certain number of people are born with to develop superpowers. And, coincidentally, the people who are most likely to be involved in a superhero story. That's our Charevo Gene, folks!";
+                document.getElementById("d").innerHTML = cyhackBold + "Alright. I'll explain this so even you people can understand. We in this world have our powers. We also have DNA called the Charevo Gene. This gene GIVES US our powers. You with me so far?";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = beautyBold + "But it's not just the explanation for our powers, it's also the explanation for the marks you see on our hands.";
+                document.getElementById("d").innerHTML = cyhackBold + "If you're like the Cyhack, you're probably an absolute treasure, and you're also one of 32,700 people who are born with the Charevo Gene. Blah blah blah. Behavior, Mentality, and Identification Elements representing only you, life threatening incident or inheritence, boom, you get your powers.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = beautyBold + "Well, that, and those fairies that look like us and those marks. And, I don't care what you think. I look SUPER cute as a unicorn and dragon. And, sure, the Femininity Fairy looks nice too, but that's the only positive spin I can put on that.";
+                document.getElementById("d").innerHTML = cyhackBold + "Then there's the Charevo Fairies that tell you what to do based on their element. If you're good, they tell you to do good things. If they're bad, they tell you to hack this site and have all the control you want over everything. I think I picked the right option, clearly.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = beautyBold + "So, remember, for your powers, it's from the Charevo Trinity with the gene. That's Behavior, Mentality, and Identification. How you act, how you think, and how you're seen. In other words, how you're you. And those powers will come when you either experience life threatening danger or have parents with an active gene.";
-                break;
-            case(5):
-                document.getElementById("d").innerHTML = beautyBold + "I'd ramble for a little longer, but I'm sure Tel-E could tell you more.";
-                break;
+                document.getElementById("d").innerHTML = cyhackBold + "There's all these legends behind what the Charevo Gene is and what more power it can create, but what do I care? I can be smarter than I already am and merge technology into me. I got everything I need. Fourize, on the other hand . . . Look, he's a little less fun when he's all obsessive. That's all I'm sayin'.";
+                break; 
         }
 
     }
-    if (character === "Tel-E")
+    else if (character === "Tel-E")
     {
         switch (dialogue)
         {
@@ -192,7 +212,7 @@ function DialogueChangeMenu() {
         }
 
     }
-    if (character === "Pyra")
+    else if (character === "Pyra")
     {
         switch (dialogue)
         {
@@ -224,6 +244,28 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = pyraBold + "So to mask this existing idea as his own, he just looked at the Charevo Elements and made these sprites that look half like the person and half the element's symbol. He also thought of the 'super original' idea of these Charevo Fairies being used by the villains too where they're given negative guidance as opposed to the cliched positive wisdom. You're welcome for being honest, by the way.";
                 break;    
         }
+    }
+    else
+    {
+        switch (dialogue)
+        {
+            case(1):
+                document.getElementById("d").innerHTML = beautyBold + "Ah, the Charevo Gene. The gene that only a certain number of people are born with to develop superpowers. And, coincidentally, the people who are most likely to be involved in a superhero story. That's our Charevo Gene, folks!";
+                break;
+            case(2):
+                document.getElementById("d").innerHTML = beautyBold + "But it's not just the explanation for our powers, it's also the explanation for the marks you see on our hands.";
+                break;
+            case(3):
+                document.getElementById("d").innerHTML = beautyBold + "Well, that, and those fairies that look like us and those marks. And, I don't care what you think. I look SUPER cute as a unicorn and dragon. And, sure, the Femininity Fairy looks nice too, but that's the only positive spin I can put on that.";
+                break;
+            case(4):
+                document.getElementById("d").innerHTML = beautyBold + "So, remember, for your powers, it's from the Charevo Trinity with the gene. That's Behavior, Mentality, and Identification. How you act, how you think, and how you're seen. In other words, how you're you. And those powers will come when you either experience life threatening danger or have parents with an active gene.";
+                break;
+            case(5):
+                document.getElementById("d").innerHTML = beautyBold + "I'd ramble for a little longer, but I'm sure Tel-E could tell you more.";
+                break;
+        }
+
     }
 
 }

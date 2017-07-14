@@ -14,6 +14,7 @@ $(document).ready(function() {
         $("#home, #about, #quiz, #stories, #miscellaneous").html("<b>Cyhack</b>");
         $("#characters").html("<b>Cyhack and Some Idiots</b>");
         $("#gene").html("<b>Magical Biology</b>");
+        $("#author").html("<b>It's Eh-gert, Not Ee-gert!</b>");
         $("#beautyquizzes").html("<b>Quizzes About Some Blonde</b>");
         $("#beautystories").html("<b>Unnecessary Prequels</b>");
         $("#switchcharacter").html("<b>Girls! Girls! Girls! Flip Through Our Girls!</b>");
@@ -23,6 +24,7 @@ $(document).ready(function() {
         $("#subabout").html("<b>Useless Trivia</b>");
         $("#subcharacters").html("The Cyhack and the Rest");
         $("#subcharevogene").html("Stupid Power Source");
+        $("#subauthor").html("Some Schmuck With a Pencil");
         $("#subquiz").html("<b>Exams! Yeah!</b>");
         $("#subbeautyquizzes").html("Testing Your Memory on the Cyhack's City");
         $("#substories").html("<b>Free Reading, Ya Cheapskate</b>");

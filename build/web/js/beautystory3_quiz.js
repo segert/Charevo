@@ -31,6 +31,9 @@ $(document).ready(function() {
         
         
     }
+    
+    question13acount = 0;
+    question13bcount = 0;
 
 
     $("#nextlevel1a").click(function() {
@@ -1501,8 +1504,98 @@ can start the quiz.");
         }
         else if (question === 16)
         {
+            if (sessionStorage.getItem("Cyhack") !== "true")
+            {
+                if (dialogue === 1)
+                {
+                    if (sessionStorage.getItem("quizVisits") === null)
+                    {
+                        sessionStorage.setItem("quizVisits", 1);
+                    }
+                    else
+                    {
+                        sessionStorage.setItem("quizVisits", parseInt(sessionStorage.getItem("quizVisits")) + 1);
+                    }
+
+                    if (sessionStorage.getItem("highscore") === null)
+                    {
+                        sessionStorage.setItem("highscore", "0 out of 15");
+                        sessionStorage.setItem("highscoredecimal", 0);
+                    }
+                    else
+                    {
+                        if (parseFloat(sessionStorage.getItem("highscoredecimal")) < 0)
+                        {
+                            sessionStorage.setItem("highscore", "0 out of 15");
+                            sessionStorage.setItem("highscoredecimal", 0);
+                        }
+                    }
+
+                    $("#score").show();
+                    $("#score").text("Your score: " + correct + "/15");
+                    if (correct === 15)
+                        $("#dialogue").html("<b>Beauty:</b> All right! Perfect score! 15 out of 15! Well done.");
+                    else if (correct > 10)
+                        $("#dialogue").html("<b>Beauty:</b> Hey, you got a " + correct + " out of 15. Nicely done.");
+                    else if (correct > 1)
+                        $("#dialogue").html("<b>Beauty:</b> Looks like you got a score of " + correct + " out of 15.");
+                    else
+                        $("#dialogue").html("<b>Beauty:</b> Aw, what? You didn't get a single question right. Did you even read this story?");
+                }
+                else if (dialogue === 2 && correct !== 0)
+                {
+                    document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
+                    document.getElementById("nextlevel1a").disabled = true;
+                    $("#backquiz").show();
+                    $("#dialogue").html("<b>Beauty:</b> Now that you've finished this, why not try another quiz? Just hit the button on the right to go back to the quiz menu.");
+                }
+                else if (dialogue === 2)
+                {
+                    
+                    $("#dialogue").html("<b>Cyhack:</b> Ahahahaha. Not in my house, fools.");
+                }
+                else if (dialogue === 3)
+                {
+                    correct = 0;
+                    $("#score").text("Your score: " + correct + "/15");
+                    $("#dialogue").html("<b>Beauty:</b> Huh? Wait! What? . . . Did I read that score wrong? Uh . . . okay. It looks like you got a 0. Sorry about that.");
+                }
+                else if (dialogue === 4)
+                {
+                    document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
+                    document.getElementById("nextlevel1a").disabled = true;
+                    $("#backquiz").show();
+                    $("#dialogue").html("<b>Beauty:</b> Think you can improve on your failure? Try again by going back to the quiz menu and do a different one. You have the best of the Cyhack's wishes for more lousy luck, loser.");
+                }
+                
+            }
+            else
+            {
             if (dialogue === 1)
             {
+                if (sessionStorage.getItem("quizVisits") === null)
+                {
+                    sessionStorage.setItem("quizVisits", 1);
+                }
+                else
+                {
+                    sessionStorage.setItem("quizVisits", parseInt(sessionStorage.getItem("quizVisits")) + 1);
+                }
+                
+                if (sessionStorage.getItem("highscore") === null)
+                {
+                    sessionStorage.setItem("highscore", correct + " out of 15");
+                    sessionStorage.setItem("highscoredecimal", (correct / 15));
+                }
+                else
+                {
+                    if(parseFloat(sessionStorage.getItem("highscoredecimal")) < (correct / 15))
+                    {
+                        sessionStorage.setItem("highscore", correct + " out of 15");
+                        sessionStorage.setItem("highscoredecimal", (correct / 15));
+                    }
+                }
+                
                 $("#score").show();
                 $("#score").text("Your score: " + correct + "/15");
                 if (correct === 15)
@@ -1514,7 +1607,7 @@ can start the quiz.");
                 else if (correct > 1)
                     $("#dialogue").html("<b>Beauty:</b> Whoa. You only got " + correct + " out of 15 questions right. Good try. Maybe you'll do better next time.");
                 else
-                    $("#dialogue").html("<b>Beauty:</b> Aw, what? You didn't get a single question right. Did you even read this story? Unless you're Race and you don't like reading about yourself, I'd go back and look at Story 1 for some reference.");
+                    $("#dialogue").html("<b>Beauty:</b> Aw, what? You didn't get a single question right. Did you even read this story?");
             }
             else if (dialogue === 2)
             {
@@ -1525,6 +1618,7 @@ can start the quiz.");
             }
 
         }
+    }
 
     }
 
@@ -1573,7 +1667,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> That’s right. Of all the things wrong with Captain D’s show, being appropriate for kids is not one of them.");
                 //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1613,7 +1708,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> Yep. The Chief is quite a big fan of the daredevil and his show. It doesn’t seem like much of a surprise, seeing as how he doesn’t have such great taste in anything.");
                 //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1629,24 +1725,64 @@ can start the quiz.");
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                $("#dialogue").html("<b>Beauty:</b> Nope. Just . . . nope. That's all.");
-                missed = 1;
+                question13acount++;
+                if (question13acount < 30 && question13bcount < 300)
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Nope. Just . . . nope. That's all.");
+                }
+                else if (question13acount < 80 && question13bcount < 300)
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
+                }
+                else if (question13acount < 150 && question13bcount < 300)
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not a! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
+                }
+                else if (question13acount >= 300)
+                {
+                    missed = 0;
+                    $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
+                }
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("<b>Beauty:</b> Uh, no. Nothing to comment on the guy for here. Sorry.");
-                missed = 1;
+                question13bcount++;
+                if (question13bcount < 30 && question13acount < 300)
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Uh, no. Nothing to comment on the guy for here. Sorry.");
+                }
+                else if (question13bcount < 80 && question13acount < 300)
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
+                }
+                else if (question13bcount < 150 && question13acount < 300)
+                {
+                    missed = 1;
+                    $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not a! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
+                }
+                else if (question13bcount >= 300)
+                {
+                    missed = 0;
+                    $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
+                }
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
                 $("#dialogue").html("<b>Beauty:</b> Well, you'd think by the title, that would've been it, but sorry. Try again.");
-                missed = 1;
+                if (question13acount < 300 && question13bcount < 300)
+                    missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")
             {
                 $("#dialogue").html("<b>Beauty:</b> Correct. Captain D said those first two before he started his show. I know. They’re weird. But he’s an unusual guy.");
                 //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1666,7 +1802,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> That’s right. After Tammy Time trashed the classroom at the police station, the Chief suggested it might be destroyed again and canceled the class so Bendy could get those VIP passes.");
                 // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1698,7 +1835,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> Yes. I’m afraid that’s correct. In following the example of Captain D’s stupid show, Bendy wanted me act like I was his girlfriend to impress his hero.");
                 //$("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1730,7 +1868,8 @@ can start the quiz.");
 
                 $("#dialogue").html("<b>Beauty:</b> That is correct. Bendy mentioned the editing in his defense of Captain D’s show not having a disclaimer for kids to not imitate what they saw.");
                 // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1765,7 +1904,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> Correct. The Charevo Fairy that spoke to him then was Defiance.");
                 // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1791,7 +1931,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> That is correct. Cremate was the villain.");
                 // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1834,7 +1975,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> That’s right. Cremate’s kind of a beauty snob, so she felt like not draining Pyra of her looks was worth more to her than actually doing it.");
                 // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1855,7 +1997,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> Correct. Captain D said it was “Deez muscles” at that time as he flexed his arms.");
                 //  $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1894,7 +2037,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> Very good. As the optimist of the team, Tel-E was one who mentioned seeing good in others as being completely reasonable.");
                 // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1922,7 +2066,8 @@ can start the quiz.");
             {
                 $("#dialogue").html("<b>Beauty:</b> Very good. Like our creator, I’m a fan of animation and voice actors, and Mary Kay Burson is my favorite.");
                 // $("#prevlevel1a").attr("style", "opacity: .6");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -1950,7 +2095,8 @@ can start the quiz.");
             {
 
                 $("#dialogue").html("<b>Beauty:</b> Correct. Captain D’s power increases when he gets attacked. So rather than attack, Bendy let him use it all up by taking his hits.");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
@@ -2002,7 +2148,8 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "d")
             {
                 $("#dialogue").html("<b>Beauty:</b> Yes. That’s it. The Chief loves Captain D so much, he was going to let him sign his gun.");
-                $("#nextlevel1a").attr("style", "opacity: 1");
+                document.getElementById("nextlevel1a").setAttribute("style", "opacity: 1");
+                document.getElementById("nextlevel1a").disabled = false;
                 nextline = 1;
                 if (missed === 0)
                     correct++;
