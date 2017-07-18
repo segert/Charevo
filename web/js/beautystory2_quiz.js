@@ -5,6 +5,8 @@
  */
 
 $(document).ready(function () {
+    
+    
 
     checkResolution();
 
@@ -15,6 +17,9 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
+    
+    $("#formdiv").hide();
+    //$("#backquiz").show();
 
     if (sessionStorage.getItem("firstPage") === null)
     {
@@ -60,11 +65,10 @@ $(document).ready(function () {
         {
             if (dialogue === 1)
             {
-                $("#dialogue").html("<b>Beauty:</b> Hi");
+                $("#dialogue").html("<b>Beauty:</b> Hello, friends. I'll be presenting the quiz for the novella, Knowledge is Power (and none is just funny). Naturally, we'll be talking an awful lot about what happened in the story, so if you don't want any spoilers, please read the novella first.");
             }
             else if (dialogue === 2)
-                $("#dialogue").html("<b>Beauty:</b> Well, if you're ready to go. Just hit next, and we\n\
-can start the quiz.");
+                $("#dialogue").html("<b>Beauty:</b> Well, if you're ready to go. Just hit next, and we can start the quiz.");
             else if (dialogue === 3)
             {
                 dialogue = 0;
@@ -109,7 +113,7 @@ can start the quiz.");
             }
             else if (dialogue === 4)
             {
-                $("#dialogue").html("<b>Dinomight:</b> I don’t need no thoughts to get this buff. And I don’t need no thinkin’ for gettin’  girls like you interested neither.");
+                $("#dialogue").html("<b>Dinomight:</b> I don’t need no thoughts to get this buff. And I don’t need no thinkin’ for bein' better 'an you neither.");
             }
             else if (dialogue === 5)
             {
@@ -130,7 +134,7 @@ can start the quiz.");
                 });
                 $("#BeautyLeft1").show();
                 $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
-                $("#dialogue").html("<b>Beauty:</b> I find it more interesting that our creator gave you a British accent and made Dinomight southern. I guess you can never have too much contrast in a smart versus stupid conflict.");
+                $("#dialogue").html("<b>Beauty:</b> I find it more interesting that our creator gave you a British accent and made Dinomight southern. I guess you can never have too much contrast in a smart versus less smart conflict.");
             }
             else if (dialogue === 9)
             {
@@ -152,7 +156,7 @@ can start the quiz.");
                 });
                 $("#Tel-ERight1").show();
                 $("#Tel-ERight1").animate({left: (window.screen.width * .48)});
-                $("#dialogue").html("<b>Tel-E:</b> I take it back. Judge away.");
+                $("#dialogue").html("<b>Tel-E:</b> Of course there are always exceptions.");
             }
             else if (dialogue === 12)
             {
@@ -1674,7 +1678,7 @@ can start the quiz.");
         }
         else if (question === 17)
         {
-            if (sessionStorage.getItem("Cyhack") !== "true")
+            if (sessionStorage.getItem("Cyhack") === "true")
             {
                 if (dialogue === 1)
                 {
@@ -1712,7 +1716,7 @@ can start the quiz.");
                     else
                         $("#dialogue").html("<b>Beauty:</b> Aw, what? You didn't get a single question right. Did you even read this story? I know Tel-E doesn't like to cheat in games, but you are allowed to read Knowledge is Power ahead of time.");
                 }
-                else if (dialogue === 2 && correct !== 0)
+                else if (dialogue === 2 && correct === 0)
                 {
                     document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                     document.getElementById("nextlevel1a").disabled = true;
@@ -2410,7 +2414,7 @@ function checkResolution()
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
     $(".quizimageleft").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
-    $(".quizimageright").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
+    $(".quizimageright").css({"top": (window.screen.height * .32), "left": (window.screen.width * .8), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
 
     $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .76), "height": (window.screen.height * .078), "width": (window.screen.width * .19)});
     $("#score").css({"top": (window.screen.height * .2)});
@@ -2427,7 +2431,7 @@ function checkResolution()
     $("img").hide();
     $("#searchIcon").show();
     $("#BeautyLeft1").show();
-    $("#dialogue").html("<b>Beauty:</b> Hi");
+    $("#dialogue").html("<b>Beauty:</b> Hello, friends. I'll be presenting the quiz for the novella, Knowledge is Power (and none is just funny). Naturally, we'll be talking an awful lot about what happened in the story, so if you don't want any spoilers, please read the novella first.");
     $("#BeautyLeft1").animate({left: (window.screen.width * .35)});
 
     var position = document.getElementById("menudiv").clientHeight;
@@ -2452,8 +2456,7 @@ function checkResolution()
         $(".submitdiv").css({"top": position, "left": (window.screen.width * .69), "height": (window.screen.height * .1), "width": (window.screen.width * .31)});
     }
 
-    $("#formdiv").hide();
-    //$("#backquiz").show();
+    
 
 
 
@@ -2477,7 +2480,7 @@ function checkResolution()
         $(".answer4").css({"top": (window.screen.height * .35), "left": (window.screen.width * .5)});
 
         $(".quizimageleft").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
-        $(".quizimageright").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
+        $(".quizimageright").css({"top": (window.screen.height * .42), "left": (window.screen.width * .8), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
         $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .158), "width": (window.screen.width * .25)});
     }
     else if (window.screen.width > 700)
@@ -2500,7 +2503,7 @@ function checkResolution()
         if (window.screen.height > 1000)
         {
             $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
-            $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
+            $(".quizimageright").css({"top": (window.screen.height * .39), "left": (window.screen.width * .8), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
         }
 
     }
@@ -2516,7 +2519,7 @@ function checkResolution()
         }
 
         $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
-        $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $(".quizimageright").css({"top": (window.screen.height * .39), "left": (window.screen.width * .8), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
         $("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
         $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .118), "width": (window.screen.width * .25)});
     }
@@ -2769,7 +2772,7 @@ function resizeResolution()
 
 
     $(".quizimageleft").css({"top": quizimageTop, "height": quizimageHeight, "width": quizimageWidth});
-    $(".quizimageright").css({"top": quizimageTop, "height": quizimageHeight, "width": quizimageWidth});
+    $(".quizimageright").css({"top": quizimageTop, "right": "-20%", "height": quizimageHeight, "width": quizimageWidth});
 
 
     $("#backquiz").css({"top": backquizTop, "left": backquizLeft, "height": backquizHeight, "width": backquizWidth});
@@ -2846,7 +2849,7 @@ function resizeResolution()
         $(".answer4").css({"top": answer34Top, "left": answer24Left});
 
         $(".quizimageleft").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
-        $(".quizimageright").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+        $(".quizimageright").css({"top": quizimageTop, "right": "-20%", "width": quizimageWidth, "height": quizimageHeight});
         $("#backquiz").css({"top": backquizTop, "left": backquizLeft, "height": backquizHeight, "width": backquizWidth});
 
     }
@@ -2871,7 +2874,7 @@ function resizeResolution()
         if (window.screen.height > 1000)
         {
             $(".quizimageleft").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
-            $(".quizimageright").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+            $(".quizimageright").css({"top": quizimageTop, "right": "-20%", "width": quizimageWidth, "height": quizimageHeight});
 
         }
 
@@ -2890,7 +2893,7 @@ function resizeResolution()
         }
 
         $(".quizimageleft").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
-        $(".quizimageright").css({"top": quizimageTop, "width": quizimageWidth, "height": quizimageHeight});
+        $(".quizimageright").css({"top": quizimageTop, "right": "-20%", "width": quizimageWidth, "height": quizimageHeight});
         //$("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
         $("section").css({"margin-top": "50px", "padding-bottom": "0px", "width": sectionWidth, "height": sectionHeight});
 

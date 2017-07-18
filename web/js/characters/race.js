@@ -23,7 +23,7 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "Race's page");
@@ -32,26 +32,28 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "Race's page")
+        if (sessionStorage.getItem("currentPage") !== "Race's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Race's page");
+
+            if (sessionStorage.getItem("characterVisits") === null)
+            {
+                sessionStorage.setItem("characterVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+            }
         }
         sessionStorage.setItem("currentPage", "Race's page");
-        
-        
-    }
-    
-    if (sessionStorage.getItem("characterVisits") === null)
-    {
-        sessionStorage.setItem("characterVisits", 1);
-    }
-    else
-    {
-        
-        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
 
 
     }
+
+
 
     dialogue = 1;
     max = 0;
@@ -121,11 +123,11 @@ $(document).ready(function () {
                 direction = "left";
             else
                 direction = "right";
-            
+
             Move();
         }
-        else{
-            
+        else {
+
             moving = 0;
             $(this).clearQueue().stop();
         }
@@ -135,34 +137,34 @@ $(document).ready(function () {
 
 });
 
-function Move(){
-    
+function Move() {
+
     var topRandom = Math.floor(Math.random() * $("section").height());
-    
-    
-    
-    if(direction === "left")
+
+
+
+    if (direction === "left")
     {
-        
+
         document.getElementById("character").src = "../images/raceright1.png";
-        $("#character").animate({left: -500, top: topRandom}, 500, function(){
+        $("#character").animate({left: -500, top: topRandom}, 500, function () {
             direction = "right";
-            if(moving === 1)
+            if (moving === 1)
                 Move();
         });
     }
     else
     {
         document.getElementById("character").src = "../images/raceleft1.png";
-        $("#character").animate({left: (window.screen.width), top: topRandom}, 500, function(){
+        $("#character").animate({left: (window.screen.width), top: topRandom}, 500, function () {
             direction = "left";
-            if(moving === 1)
+            if (moving === 1)
                 Move();
         });
     }
-    
-    
-    
+
+
+
 }
 
 function NewBehavior() {
@@ -270,7 +272,7 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
-    
+
     var raceBold = "Race: ";
     raceBold = raceBold.bold();
 
@@ -310,13 +312,13 @@ function DialogueChangeMenu() {
                 break;
             case(8):
                 document.getElementById("d").innerHTML = raceBold + "Uh . . . I'll pass.";
-                break;   
+                break;
             case(9):
                 document.getElementById("d").innerHTML = teleBold + "Come on, Race. It's not like you being a leader here will result in people getting hurt if you fail. I'd say the worst that'll happen is you point the user to the wrong page or give some other inaccurate information.";
-                break;   
+                break;
             case(10):
                 document.getElementById("d").innerHTML = raceBold + "Thanks for the offer. But, really, you got a much better handle on this than me. I know there's no serious consequence, but if I screw up, I don't think people will be as forgiving to me. Everyone likes you, though. I think we can leave it as it is.";
-                break;  
+                break;
             case(11):
                 document.getElementById("d").innerHTML = teleBold + "Everyone likes me, you say? I think your father would disagree.";
                 break;
@@ -325,7 +327,7 @@ function DialogueChangeMenu() {
                 break;
             case(13):
                 document.getElementById("d").innerHTML = teleBold + "That's very nice of you, Race. I'm glad you were the second male I ever met after the first one almost ruined the whole gender for me. That said, I don't think the Fourize farce will convince him of me. And it certainly won't convince him to make me the new team leader, as I see you're thinking. I'm afraid you're stuck with the job.";
-                break; 
+                break;
             case(14):
                 document.getElementById("d").innerHTML = raceBold + "Oh, being leader sucks. I'm just gonna let you do your thing while I sit in my page here.";
                 break;
@@ -334,7 +336,7 @@ function DialogueChangeMenu() {
                 break;
             case(16):
                 document.getElementById("d").innerHTML = raceBold + "Am I still gonna look cute? Maybe I should stay here. I don't wanna disappoint people who only want you. ";
-                break;  
+                break;
         }
 
     }
@@ -371,22 +373,22 @@ function DialogueChangeMenu() {
                 break;
             case(8):
                 document.getElementById("d").innerHTML = raceBold + "Oh, come on. You wanna get Tel-E to verify it?";
-                break; 
+                break;
             case(9):
                 document.getElementById("d").innerHTML = pyraBold + "Get your best friend to read your mind? Oh yeah. She'll be totally honest about you. Anyway, I'm actually kinda glad you have some good abilities but are still incapable of leading a team well.";
-                break; 
+                break;
             case(10):
                 document.getElementById("d").innerHTML = raceBold + "Say what now? Me being bad at this is a good thing.";
                 break;
             case(11):
                 document.getElementById("d").innerHTML = pyraBold + "Absolutely. Think about it. Our creator based the Neo Brigade and J Gang on characters from Teen Titans. He needed a leader for the heroes, so he created you to be like Robin. But then he added his own ideas where you're not a good team leader who only got the job for the Chief being your dad. So now, if anyone looks at the two characters side by side, they'll think 'Oh, yeah. These two are nothing alike', which makes you look completely original. Our creator's inability to draw helps too.";
-                break; 
+                break;
             case(12):
                 document.getElementById("d").innerHTML = raceBold + "I'd still rather be a good leader if it only means calling our creator a hack.";
-                break; 
+                break;
             case(13):
                 document.getElementById("d").innerHTML = pyraBold + "Oh, yeah. He'll totally improve your character now.";
-                break; 
+                break;
         }
     }
     else
@@ -416,25 +418,25 @@ function DialogueChangeMenu() {
                 break;
             case(8):
                 document.getElementById("d").innerHTML = raceBold + "Yeah, well, the Chief's our boss and that was his decision. Don't blame me for any of this.";
-                break; 
+                break;
             case(9):
                 document.getElementById("d").innerHTML = beautyBold + "I guess so. I mean, you were someone with no experience leading a team and had no ability to run well. I'm sure if the Neo Brigade unanimously decided to elect their neurotic leader, that would reflect more poorly on them than you.";
-                break; 
+                break;
             case(10):
                 document.getElementById("d").innerHTML = raceBold + "Aw, come on. This stuff's already in my bio. Can we not draw attention any of it please?";
                 break;
             case(11):
                 document.getElementById("d").innerHTML = beautyBold + "Well, you already objected to me building you up. I guess the only thing I can do is embarrass you.";
-                break; 
+                break;
             case(12):
                 document.getElementById("d").innerHTML = raceBold + "Uh, that's okay. You can go back to saying the nicer things about me.";
-                break; 
+                break;
             case(13):
                 document.getElementById("d").innerHTML = beautyBold + "Oh! I just remembered. Fun fact: Our creator didn't know who all of us would be initially, but when he eventually thought about it, Tel-E and I were originally going to be white. But he later decided that it would be better if I was black and if Tel-E looked like a real alien and made her blue. So, as a result of that change, the one white character on our team is the guy who's name is Race. How's that for irony?";
                 break;
             case(14):
                 document.getElementById("d").innerHTML = raceBold + "Oh, did you have to bring THAT up?";
-                break; 
+                break;
         }
 
     }

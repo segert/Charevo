@@ -13,8 +13,8 @@ $(document).ready(function () {
      $("nav").hide();
      $("#formdiv").hide();
      $(".footers").hide();*/
-    
-    
+
+
 
     $("#bluescreen").hide();
     //$("#bluescreen").css({"visibility": "visible"});
@@ -29,21 +29,23 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
     var isIE = /*@cc_on!@*/false || !!document.documentMode;
-    if(isIE)
+    if (isIE)
     {
-        if(window.screen.width > 1500)
-            $("#character").animate({left: "31%"});
-        else if(window.screen.width > 1000 && window.screen.height > 1000)
+        $("#character").css({left: "-10%"});
+
+        if (window.screen.width > 1500)
+            $("#character").animate({left: "17%"});
+        else if (window.screen.width > 1000 && window.screen.height > 1000)
             $("#character").animate({left: "20%"});
-        else if(window.screen.width > 800)
+        else if (window.screen.width > 800)
             $("#character").animate({left: "29%"});
         else
             $("#character").animate({left: "20%"});
     }
-    
-    
+
+
 
     question = "";
     teleAddressed = 0;
@@ -51,6 +53,7 @@ $(document).ready(function () {
     change = 0;
     rotate = 0;
     angle = 0;
+    lostElements = 0;
 
     //var characters = ["Beauty", "Tel-E", "Pyra"];
     //switchcharacter = "";
@@ -128,7 +131,7 @@ $(document).ready(function () {
             document.getElementById("character").src = "images/tel-eleft1.png";
             document.getElementById("character").alt = "Tel-E Placeholder";
             max = 27;
- 
+
             visiblePage();
 
 
@@ -141,13 +144,13 @@ $(document).ready(function () {
             document.getElementById("d").innerHTML = pyraBold + "Hey. So you've chosen me, Pyra as your host. Now, Beauty may be the cheerful and friendly guide and Tel-E's the more detail-oriented one. Me? I'm here to make this site honest.";
             document.getElementById("character").src = "images/pyraleft1.png";
             document.getElementById("character").alt = "Pyra Placeholder";
-            
+
             position = $("#character").position();
-            
-            
+
+
             originalWidth = document.getElementById("character").width;
             originalHeight = document.getElementById("character").height;
-            
+
             $("#character").css({"width": (characterWidth * 1.5), "height": (characterHeight * 1.5)});
             characterWidth = characterWidth * 1.5;
             characterHeight = characterHeight * 1.5;
@@ -175,10 +178,151 @@ $(document).ready(function () {
         }
         else if (character === "Pyra")
         {
-            document.getElementById("d").innerHTML = pyraBold + "Hey. So you've chosen me, Pyra as your host. Now, Beauty may be the cheerful and friendly guide and Tel-E's the more detail-oriented one. Me? I'm here to make this site honest.";
+            if (sessionStorage.getItem("homeBurned") === "true")
+            {
+                document.getElementById("d").innerHTML = pyraBold + "Huh? What? You . . . you want me to be your host again. Even though I destroyed this page last time?";
+                max = 6;
+                sessionStorage.setItem("afterBurned", "true");
+                sessionStorage.setItem("homeBurned", "false");
+            }
+            else
+            {
+                document.getElementById("d").innerHTML = pyraBold + "Hey. So you've chosen me, Pyra as your host. Now, Beauty may be the cheerful and friendly guide and Tel-E's the more detail-oriented one. Me? I'm here to make this site honest.";
+                max = 6;
+                sessionStorage.setItem("afterBurned", "false");
+            }
             document.getElementById("character").src = "images/pyraleft1.png";
             document.getElementById("character").alt = "Pyra Placeholder";
-            max = 13;
+            max = 6;
+
+            $("#character").css({"cursor": "pointer"});
+
+
+            $("#character").mouseover(function () {
+                if (lostElements < 8)
+                    document.getElementById("d").innerHTML = pyraBold + "Whoa! Careful now. I'm not engulfed in flames right now, but my body isn't exactly 98.6. So, please, for your own safety, just get that cursor away from me. And don't even think of clicking me. I really don't want anyone getting hurt.";
+                else
+                    document.getElementById("d").innerHTML = pyraBold + "";
+            });
+
+            $("#character").mouseleave(function () {
+                if (lostElements < 8)
+                    DialogueChangeMenu();
+                else
+                    document.getElementById("d").innerHTML = pyraBold + "";
+            });
+
+
+            $("#character").click(function () {
+                switch (lostElements)
+                {
+                    case(0):
+                        location.href = "#homedisplay";
+                        $("#homedisplay").fadeOut(900, function () {
+                            lostElements = 1;
+                        });
+                        break;
+                    case(1):
+                        location.href = "#subcharacters";
+                        $("#subcharacters").fadeOut(900, function () {
+                            lostElements = 2;
+                        });
+                        break;
+                    case(2):
+                        location.href = "#subabout";
+                        $("#subabout").fadeOut(900, function () {
+                            lostElements = 3;
+                        });
+                        break;
+                    case(3):
+                        location.href = "#subhome";
+                        $(".footercontent2").fadeOut(900, function () {
+                            lostElements = 4;
+                        });
+                        break;
+                    case(4):
+                        location.href = "#subhome";
+                        $("#subquiz").fadeOut(900, function () {
+
+                        });
+
+                        $("#subhome").fadeOut(900, function () {
+                            lostElements = 5;
+                        });
+                        break;
+                    case(5):
+                        location.href = "#menudiv";
+                        $("#theForm").fadeOut(900, function () {
+                            lostElements = 6;
+                        });
+                        break;
+                    case(6):
+                        location.href = "#subbeautystories";
+
+                        $("#substories").fadeOut(900, function () {
+
+                        });
+                        $("#submiscellaneous").fadeOut(900, function () {
+
+                        });
+                        $("#subbeautystories").fadeOut(900, function () {
+                            lostElements = 7;
+                        });
+                        break;
+                    case(7):
+                        location.href = "#test3";
+                        $("#test3").fadeOut(900, function () {
+                            lostElements = 8;
+                        });
+                        break;
+                    case(8):
+                        location.href = "#subswitchcharacter";
+                        document.getElementById("prev").setAttribute("style", "opacity: .4");
+                        document.getElementById("prev").disabled = true;
+
+                        document.getElementById("next").setAttribute("style", "opacity: .4");
+                        document.getElementById("next").disabled = true;
+                        $("#subswitchcharacter").fadeOut(900, function () {
+                            location.href = "#subblog";
+                            $("#subblog").fadeOut(900, function () {
+                                location.href = "#test2";
+                                $("#test2").fadeOut(900, function () {
+                                    location.href = "#subbeautyquizzes";
+                                    $("#subbeautyquizzes").fadeOut(900, function () {
+                                        location.href = "#menudiv";
+                                        $("#formdiv").fadeOut(900, function () {
+                                            location.href = "#subauthor";
+                                            $("#subauthor").fadeOut(900, function () {
+                                                location.href = "#subcharevogene";
+                                                $("#subcharevogene").fadeOut(900, function () {
+                                                    location.href = "#maindiv2";
+                                                    $("#maindiv2").fadeOut(900, function () {
+                                                        location.href = "#test4";
+                                                        $("#test4").fadeOut(900, function () {
+                                                            location.href = "#test";
+                                                            $("#test").fadeOut(900, function () {
+                                                                location.href = "#menudiv";
+                                                                $("nav").fadeOut(900, function () {
+                                                                    lostElements = 9;
+
+                                                                    sessionStorage.setItem("homeBurned", "true");
+                                                                    document.getElementById("d").innerHTML = "";
+                                                                    location.href = "switchcharacter.html";
+                                                                });
+                                                            });
+                                                        });
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                        break;
+
+                }
+            });
         }
         else
         {
@@ -307,7 +451,7 @@ function next() {
     if (dialogue < max)
     {
         dialogue++;
-        
+
         document.getElementById("prev").setAttribute("style", "opacity: 1");
         document.getElementById("prev").disabled = false;
         DialogueChangeMenu();
@@ -323,7 +467,7 @@ function prev() {
     if (dialogue > 1)
     {
         dialogue--;
-        
+
         document.getElementById("next").setAttribute("style", "opacity: 1");
         document.getElementById("next").disabled = false;
         DialogueChangeMenu();
@@ -349,7 +493,7 @@ function DialogueChangeMenu() {
     $(".imgmenu1").css({"animation-name": "ljjlljl"});
 
 
-    if (sessionStorage.getItem("Cyhack") !== "true")
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
 
 
@@ -434,33 +578,33 @@ function DialogueChangeMenu() {
 
                     // Blink engine detection
                     var isBlink = (isChrome || isOpera) && !!window.CSS;
-                    if(isOpera)
+                    if (isOpera)
                         document.getElementById("d").innerHTML = cyhackBold + "I see you're using an Opera browser.";
-                    else if(isFirefox)
+                    else if (isFirefox)
                         document.getElementById("d").innerHTML = cyhackBold + "I see you're using a Firefox browser.";
-                    else if(isSafari)
+                    else if (isSafari)
                         document.getElementById("d").innerHTML = cyhackBold + "I see you're using a Safari browser.";
-                    else if(isIE)
+                    else if (isIE)
                         document.getElementById("d").innerHTML = cyhackBold + "I see you're using an Internet Explorer browser.";
-                    else if(isEdge)
+                    else if (isEdge)
                         document.getElementById("d").innerHTML = cyhackBold + "I see you're using a Microsoft Edge browser.";
-                    else if(isChrome)
+                    else if (isChrome)
                         document.getElementById("d").innerHTML = cyhackBold + "I see you're using a Google Chrome browser.";
                     else
                         document.getElementById("d").innerHTML = cyhackBold + "Hmm. I can't quite see what browser you're using.";
                     break;
                 case(17):
-                    if(window.screen.width < 450 && window.screen.height < 400)
+                    if (window.screen.width < 450 && window.screen.height < 400)
                         document.getElementById("d").innerHTML = cyhackBold + "And you're also on a device with a screen width of " + window.screen.width + " pixels and a screen height of " + window.screen.height + " pixels. Wait. What? Is this supposed to be Google Glass?";
-                    else if(window.screen.width < 440 && window.screen.height < 800)
+                    else if (window.screen.width < 440 && window.screen.height < 800)
                         document.getElementById("d").innerHTML = cyhackBold + "And you're also on a device with a screen width of " + window.screen.width + " pixels and a screen height of " + window.screen.height + " pixels. A smartphone user, are you?";
-                    else if(window.screen.width < 850 && window.screen.height < 1350)
+                    else if (window.screen.width < 850 && window.screen.height < 1350)
                         document.getElementById("d").innerHTML = cyhackBold + "And you're also on a device with a screen width of " + window.screen.width + " pixels and a screen height of " + window.screen.height + " pixels. A tablet user, are you?";
-                    else if(window.screen.width < 1050 && window.screen.height < 1500)
+                    else if (window.screen.width < 1050 && window.screen.height < 1500)
                         document.getElementById("d").innerHTML = cyhackBold + "And you're also on a device with a screen width of " + window.screen.width + " pixels and a screen height of " + window.screen.height + " pixels. A tablet user, are you? Or is this just a relatively small laptop?";
                     else
                         document.getElementById("d").innerHTML = cyhackBold + "And you're also on a device with a screen width of " + window.screen.width + " pixels and a screen height of " + window.screen.height + " pixels. I guess you prefer laptops and desktop computers to mobile devices, huh?";
-                    break;    
+                    break;
                 case(18):
                     if (sessionStorage.getItem("switches") === null)
                         document.getElementById("d").innerHTML = cyhackBold + "Hmm. It looks like you haven't even switched characters yet. And yet you would've had to switch to Tel-E since she's not the default character. Someone's been taking some shortcuts on this site. I like it.";
@@ -548,7 +692,7 @@ function DialogueChangeMenu() {
                 case(26):
                     rotate = 0;
                     document.getElementById("d").innerHTML = cyhackBold + "I see you plan on searching this site to click me to put this site . . . back to normal? Ugh! So you wanna interfere, Knowlgian? Let's go for another ride.";
-                    
+
                     break;
                 case(27):
                     rotate = 1;
@@ -560,14 +704,14 @@ function DialogueChangeMenu() {
         else if (character === "Pyra")
         {
             document.getElementById("prev").setAttribute("style", "opacity: .4");
-                    document.getElementById("prev").disabled = true;
+            document.getElementById("prev").disabled = true;
             switch (dialogue)
             {
                 case(1):
                     document.getElementById("d").innerHTML = pyraBold + "Hey. So you've chosen me, Pyra as . . . whoa. This is a little close.";
                     break;
                 case(2):
-                    
+
                     $("#character").animate({"width": originalWidth, "height": originalHeight});
                     document.getElementById("d").innerHTML = pyraBold + "Okay. That's better. Anyway . . . wait. Why's the previous dialogue button disabled?";
                     break;
@@ -591,28 +735,28 @@ function DialogueChangeMenu() {
                     break;
                 case(8):
                     document.getElementById("d").innerHTML = pyraBold + "So I have to share this page with YOU? Ugh. How did THIS happen?";
-                    break; 
+                    break;
                 case(9):
                     document.getElementById("d").innerHTML = cyhackBold + "Oh, don't worry. I won't get in your way. Here. I'll let you keep the whole screen to yourself.";
-                    break; 
+                    break;
                 case(10):
                     $("#character").animate({"width": (characterWidth * 1.2), "height": (characterHeight * 1.2), "left": (position.left / 1.3), "top": 0});
                     characterWidth = characterWidth * 1.2;
                     characterHeight = characterHeight * 1.2;
                     document.getElementById("d").innerHTML = pyraBold + "Aaaaaah. Oh boy! Oh boy!";
-                    break; 
+                    break;
                 case(11):
                     document.getElementById("d").innerHTML = cyhackBold + "What's wrong? The Cyhack's not in your way. Now, let the people see what's left of your pretty face.";
-                    break; 
+                    break;
                 case(12):
                     $("#character").animate({"width": (characterWidth * 1.2), "height": (characterHeight * 1.2), "left": (position.left / 1.3), "top": 0});
                     characterWidth = characterWidth * 1.2;
                     characterHeight = characterHeight * 1.2;
                     document.getElementById("d").innerHTML = pyraBold + "Stop! Someone's gonna get hurt at this distance! I could go right through the footer section and break the page. Oh, I just know I'm gonna ruin this place for people.";
-                    break; 
+                    break;
                 case(13):
                     document.getElementById("d").innerHTML = cyhackBold + "Ah. You're right. Here. Let me handle this.";
-                    break; 
+                    break;
                 case(14):
                     $("#character").animate({"width": (originalWidth * .2), "height": (originalWidth * .2), "left": 0, "top": 0});
                     originalWidth = characterWidth * .2;
@@ -621,28 +765,28 @@ function DialogueChangeMenu() {
                     break;
                 case(15):
                     document.getElementById("d").innerHTML = pyraBold + "Well, it's a bit far, but I'm not gonna complain.";
-                    break; 
+                    break;
                 case(16):
                     $("#character").animate({"width": (originalWidth * 6.2), "height": (originalHeight * 6.2), "left": -200, "top": 0});
                     originalWidth = characterWidth * 6.2;
                     originalHeight = characterHeight * 6.2;
                     document.getElementById("d").innerHTML = cyhackBold + "Just kidding!";
-                    break; 
+                    break;
                 case(17):
                     document.getElementById("d").innerHTML = pyraBold + "AAAAAAAAAAAAH! Go back! Go back! Go back! Go back! Go back! Please! Go back!";
-                    break; 
+                    break;
                 case(18):
                     document.getElementById("d").innerHTML = cyhackBold + "Oh, so sorry. I'm afraid the previous button has been disabled, so the early resolution is unavailable.";
-                    break; 
+                    break;
                 case(19):
                     document.getElementById("d").innerHTML = pyraBold + "Then fix it yourself!";
                     break;
                 case(20):
                     document.getElementById("d").innerHTML = cyhackBold + "Sorry. The Cyhack's gotta get to a new page to screw with, uh, I mean, help the User. Hack ya later!";
-                    break; 
+                    break;
                 case(21):
                     document.getElementById("d").innerHTML = pyraBold + "Wait! Come back! Uh . . . uh . . . okay. Okay, Bonnie. You'll be fine. Just wait for the User to click on Cyhack when she appears in a page where she shouldn't be or wait for them to close and reopen the window tab. They'll do it. They'll do it. It'll be fine. Oh, please let it be fine.";
-                    break;     
+                    break;
             }
 
         }
@@ -819,26 +963,47 @@ function DialogueChangeMenu() {
         }
         else if (character === "Pyra")
         {
-            switch (dialogue)
+            if (sessionStorage.getItem("afterBurned") === "true")
             {
-                case(1):
-                    document.getElementById("d").innerHTML = pyraBold + "Hey. So you've chosen me, Pyra as your host. Now, Beauty may be the cheerful and friendly guide and Tel-E's the more detail-oriented one. Me? I'm here to make this site honest.";
-                    break;
-                case(2):
-                    document.getElementById("d").innerHTML = pyraBold + "So if you wanna learn about my friends, my enemies, and what any of us have in common, select the appropriate pages from the About tab.";
-                    break;
-                case(3):
-                    document.getElementById("d").innerHTML = pyraBold + "You can also select from the Stories tab if you wanna read some free novellas. What are they and why so short, you ask? Well, just think of them as TV episodes as opposed to movies because we don't have that kind of budget on this site.";
-                    break;
-                case(4):
-                    document.getElementById("d").innerHTML = pyraBold + "Now, I know what you're thinking. Aren't these just five prequel stories to a novel we don't even need? Look, these novellas are free, okay? You don't like 'em? Well, what do you have to complain about?";
-                    break;
-                case(5):
-                    document.getElementById("d").innerHTML = pyraBold + "Anyway, if you read those, but don't wanna stop there, you can take a quiz on them. That's right. We're testing you after giving a reading assignment. So get to work.";
-                    break;
-                case(6):
-                    document.getElementById("d").innerHTML = pyraBold + "Of course, if you've had enough of me, you can always switch to one of the other girls. I don't care. Go for it. I mean . . . not that I want you to.";
-                    break;
+                switch (dialogue)
+                {
+                    case(1):
+                        document.getElementById("d").innerHTML = pyraBold + "Huh? What? You . . . you want me to be your host again. Even though I destroyed this page last time?";
+                        break;
+                    case(2):
+                        document.getElementById("d").innerHTML = pyraBold + "I mean . . . that was an accident, yeah. And . . . look. I've had a lot of problems keeping people around for long since I got my powers. There aren't many people who choose to make physical contact with me. Most everyone who does gets hurt from my constant external body heat.";
+                        break;
+                    case(3):
+                        document.getElementById("d").innerHTML = pyraBold + "What happened back there was something I never wish on anyone I want as a friend. So . . . all I can ask is that you be careful and not click me. Is that okay?";
+                        break;
+                    case(4):
+                        document.getElementById("d").innerHTML = pyraBold + "I hope I don't screw up your user experience here anymore. Let's just have some fun without me causing you harm.";
+                        break;
+                }
+            }
+            else
+            {
+                switch (dialogue)
+                {
+                    case(1):
+                        document.getElementById("d").innerHTML = pyraBold + "Hey. So you've chosen me, Pyra as your host. Now, Beauty may be the cheerful and friendly guide and Tel-E's the more detail-oriented one. Me? I'm here to make this site honest.";
+                        break;
+                    case(2):
+                        document.getElementById("d").innerHTML = pyraBold + "So if you wanna learn about my friends, my enemies, and what any of us have in common, select the appropriate pages from the About tab.";
+                        break;
+                    case(3):
+                        document.getElementById("d").innerHTML = pyraBold + "You can also select from the Stories tab if you wanna read some free novellas. What are they and why so short, you ask? Well, just think of them as TV episodes as opposed to movies because we don't have that kind of budget on this site.";
+                        break;
+                    case(4):
+                        document.getElementById("d").innerHTML = pyraBold + "Now, I know what you're thinking. Aren't these just five prequel stories to a novel we don't even need? Look, these novellas are free, okay? You don't like 'em? Well, what do you have to complain about?";
+                        break;
+                    case(5):
+                        document.getElementById("d").innerHTML = pyraBold + "Anyway, if you read those, but don't wanna stop there, you can take a quiz on them. That's right. We're testing you after giving a reading assignment. So get to work.";
+                        break;
+                    case(6):
+                        document.getElementById("d").innerHTML = pyraBold + "Of course, if you've had enough of me, you can always switch to one of the other girls. I don't care. Go for it. I mean . . . not that I want you to.";
+                        break;
+                }
             }
 
         }

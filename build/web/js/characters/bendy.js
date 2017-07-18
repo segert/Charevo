@@ -9,8 +9,8 @@ $(document).ready(function () {
     character = sessionStorage.getItem("SessionCharacter");
 
     pageCharacter = "";
-    
-    
+
+
 
     checkResolution();
 
@@ -22,7 +22,7 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "Bendy's page");
@@ -31,26 +31,28 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "Bendy's page")
+        if (sessionStorage.getItem("currentPage") !== "Bendy's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Bendy's page");
+
+            if (sessionStorage.getItem("characterVisits") === null)
+            {
+                sessionStorage.setItem("characterVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+            }
         }
         sessionStorage.setItem("currentPage", "Bendy's page");
-        
-        
-    }
-    
-    if (sessionStorage.getItem("characterVisits") === null)
-    {
-        sessionStorage.setItem("characterVisits", 1);
-    }
-    else
-    {
-        
-        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
 
 
     }
+
+
 
     dialogue = 1;
     max = 0;
@@ -61,7 +63,7 @@ $(document).ready(function () {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
-    
+
     var bendyBold = "Bendy: ";
     bendyBold = bendyBold.bold();
 
@@ -265,7 +267,7 @@ function DialogueChangeMenu() {
                 break;
             case(9):
                 document.getElementById("d").innerHTML = teleBold + "And finally, at the bottom, you'll find Bendy's powers listed along with a taste of his background.";
-                break;  
+                break;
         }
 
     }
@@ -294,12 +296,12 @@ function DialogueChangeMenu() {
             case(7):
                 document.getElementById("d").innerHTML = pyraBold + "The guidance from the fairies are below followed by his powers and weaknesses, and finally his bio. Once again, I must give a disclaimer: Our creator is NOT an artist.";
                 break;
-             case(8):
+            case(8):
                 document.getElementById("d").innerHTML = pyraBold + "I'm kinda doing Bendy a favor here, because, unless I pointed this out, I'm sure you'd assume Bendy designed those Charevo Fairies himself. But it was our creator, again, NOT an artist. I think his poor art skills are obvious when you look at that abomination of Bendy's Overconfidence fairy. Although, it's worth noting that the idea of the 10 and 7 playing cards to represent Overconfidence was supposed to be that an overconfident person playing Blackjack would hit on 17. So, based on that concept, I don't even think our creator's much of a writer either.";
-                break;   
-             case(9):
+                break;
+            case(9):
                 document.getElementById("d").innerHTML = pyraBold + "Now, that's not saying those other two fairies look any better. I kinda feel like our creator spent some extra effort on the Flexibility one, but then just said 'Oh yeah. I'm good at this', and then made no effort on the next one at all. Ugh. I can't even look at the Overconfidence Fairy. It only makes me wanna look at Bendy some more for contrast, which is another point against those stupid cards. Oh, and in case you couldn't catch it, that's supposed to be a lightning bolt on his shirt, which is also supposed to be formed by some 7's on that Overconfidence Fairy. I can't really add anything else, to be honest. These designs are just terrible.";
-                break;    
+                break;
         }
     }
     else

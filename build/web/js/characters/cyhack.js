@@ -20,47 +20,77 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "Cyhack's page");
         sessionStorage.setItem("memory", "Cyhack's page");
         sessionStorage.setItem("currentPage", "Cyhack's page");
+
+
+        if (sessionStorage.getItem("characterVisits") === null)
+        {
+            sessionStorage.setItem("characterVisits", 1);
+        }
+        else
+        {
+
+            sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+        }
+
+        if (sessionStorage.getItem("cyhackVisits") === null)
+        {
+            sessionStorage.setItem("cyhackVisits", 1);
+        }
+        else
+        {
+
+            sessionStorage.setItem("cyhackVisits", parseInt(sessionStorage.getItem("cyhackVisits")) + 1);
+
+
+        }
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "Cyhack's page")
+        if (sessionStorage.getItem("currentPage") !== "Cyhack's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Cyhack's page");
+
+
+
+
+            if (sessionStorage.getItem("characterVisits") === null)
+            {
+                sessionStorage.setItem("characterVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+            }
+
+            if (sessionStorage.getItem("cyhackVisits") === null)
+            {
+                sessionStorage.setItem("cyhackVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("cyhackVisits", parseInt(sessionStorage.getItem("cyhackVisits")) + 1);
+
+
+            }
         }
         sessionStorage.setItem("currentPage", "Cyhack's page");
-        
-        
-    }
-    
-    if (sessionStorage.getItem("characterVisits") === null)
-    {
-        sessionStorage.setItem("characterVisits", 1);
-    }
-    else
-    {
-        
-        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
 
 
     }
-    
-    if (sessionStorage.getItem("cyhackVisits") === null)
-    {
-        sessionStorage.setItem("cyhackVisits", 1);
-    }
-    else
-    {
-        
-        sessionStorage.setItem("cyhackVisits", parseInt(sessionStorage.getItem("cyhackVisits")) + 1);
 
 
-    }
 
     dialogue = 1;
     max = 0;
@@ -78,17 +108,15 @@ $(document).ready(function () {
     if (sessionStorage.getItem("Cyhack") === "true")
     {
         cyhack = 1;
-        cyhackTakeOver();
     }
 
-    if (sessionStorage.getItem("CyhackDialogue") === "11")
+    if (sessionStorage.getItem("cyhackVisits") === sessionStorage.getItem("HackVisit"))
     {
         dialogue = 11;
         cyhack = 0;
         max = 14;
-        
-        DialogueChangeMenu();
-        
+
+
         document.getElementById("prev").setAttribute("style", "opacity: .4");
         document.getElementById("prev").disabled = true;
     }
@@ -96,7 +124,7 @@ $(document).ready(function () {
     var cyhackBold = "Cyhack: ";
     cyhackBold = cyhackBold.bold();
 
-    if (sessionStorage.getItem("Cyhack") === "true")
+    if (sessionStorage.getItem("Cyhack") === "true" && sessionStorage.getItem("cyhackVisits") !== sessionStorage.getItem("HackVisit"))
     {
         document.getElementById("d").innerHTML = "";
 
@@ -116,9 +144,8 @@ $(document).ready(function () {
         document.getElementById("d").innerHTML = beautyBold + "Alright! Here's a good one. It's another villain, a female villain no less. We call her Cyhack. She's got a Charevo Emblem and Charevo Fairies like most everyone else with abilities here. For her, she's got Intelligence, Arrogance, and Technology, all elements mixed together to form a tough J Gang girl.";
         //alert(document.getElementById("testsearch").innerHTML);
         max = 14;
-        if (sessionStorage.getItem("CyhackDialogue") === "11")
+        if (sessionStorage.getItem("cyhackVisits") === sessionStorage.getItem("HackVisit"))
         {
-            sessionStorage.setItem("CyhackDialogue", 0);
             DialogueChangeMenu();
         }
     }
@@ -294,7 +321,7 @@ function next() {
         reloadPage = 0;
 
         sessionStorage.setItem("Cyhack", true);
-        sessionStorage.setItem("CyhackDialogue", 11);
+        sessionStorage.setItem("HackVisit", sessionStorage.getItem("cyhackVisits"));
         //var location = Math.floor(Math.random() * 22);
         var locationNum = 0;
         sessionStorage.setItem("location", locationNum);
@@ -358,7 +385,7 @@ function DialogueChangeMenu() {
     cyhackBold = cyhackBold.bold();
 
 
-    if (sessionStorage.getItem("Cyhack") === "true")
+    if (sessionStorage.getItem("Cyhack") === "true" && sessionStorage.getItem("cyhackVisits") !== sessionStorage.getItem("HackVisit"))
     {
         document.getElementById("d").innerHTML = "";
 
@@ -463,13 +490,13 @@ function DialogueChangeMenu() {
 
                 break;
             case(11):
-                document.getElementById("d").innerHTML = beautyBold + "So? Whaddaya think?";
+                document.getElementById("d").innerHTML = cyhackBold + "So? Whaddaya think?";
                 break;
             case(12):
                 document.getElementById("d").innerHTML = beautyBold + "Oh. Uh. Looks . . . interesting. Actually, this is a bit too tacky for my taste. You could change it back.";
                 break;
             case(13):
-                document.getElementById("d").innerHTML = beautyBold + "Nah. I like it this way. Though, if you can find me. Maybe I'll change it if you click me. Hack ya later.";
+                document.getElementById("d").innerHTML = cyhackBold + "Nah. I like it this way. Though, if you can find me, maybe I'll change it. Hack ya later.";
                 $("#character").animate({left: window.screen.width}, function () {
                     $("#character").hide();
                 });

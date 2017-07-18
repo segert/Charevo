@@ -59,7 +59,7 @@ $(document).ready(function () {
         {
             if (dialogue === 1)
             {
-                $("#dialogue").html("<b>Beauty:</b> Hi");
+                $("#dialogue").html("<b>Beauty:</b> Hey, guys. As you can see, I'll be hosting the quiz for the novella, To Love or to Die (as in me or you will). Now, if you're one of those people who like to take quizzes on fiction before going through the reading material, good for you. For the rest of you, standard disclaimer: SPOILERS AHEAD! Please read the novella before continuing. Thank you.");
             }
             else if (dialogue === 2)
                 $("#dialogue").html("<b>Beauty:</b> Well, if you're ready to go. Just hit next, and we\n\
@@ -88,8 +88,8 @@ can start the quiz.");
         else if (question === 1) {
             if (dialogue === 1)
             {
-                $("#NinjaRight1").show();
-                $("#NinjaRight1").animate({left: (window.screen.width * .48)});
+                $("#NinjaRight1").fadeIn();
+                $("#NinjaRight1").css({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Ninja:</b> They say a warrior is judged not by his strength but by the collective strength of those he can humiliate while remaining unscathed.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -104,9 +104,10 @@ can start the quiz.");
             }
             else if (dialogue === 3)
             {
-                $("#NinjaRight1").animate({left: (window.screen.width * .78)}, function () {
-                    $("#NinjaRight1").hide();
-                });
+                //$("#NinjaRight1").animate({left: (window.screen.width * .78)}, function () {
+                //    $("#NinjaRight1").hide();
+                //});
+                $("#NinjaRight1").fadeOut();
                 $("#PyraRight1").show();
                 $("#PyraRight1").animate({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Pyra:</b> Don’t listen to him. He’s just in his half-Zen half-jerk mode.");
@@ -116,8 +117,8 @@ can start the quiz.");
                 $("#Tel-ELeft1").animate({left: '-50px'}, function () {
                     $("#Tel-ELeft1").hide();
                 });
-                $("#NinjaLeft1").show();
-                $("#NinjaLeft1").animate({left: (window.screen.width * .18)});
+                $("#NinjaLeft1").fadeIn();
+                $("#NinjaLeft1").css({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Ninja:</b> I put on a good act when I need it. Half-Zen half-jerk is just a clouded image of one who’s all dangerous. Not that you’re Zen or a jerk, Pyra.");
             }
             else if (dialogue === 5)
@@ -131,9 +132,10 @@ can start the quiz.");
             }
             else if (dialogue === 7)
             {
-                $("#NinjaLeft1").animate({left: '-50px'}, function () {
-                    $("#NinjaLeft1").hide();
-                });
+                //$("#NinjaLeft1").animate({left: '-50px'}, function () {
+                //    $("#NinjaLeft1").hide();
+                //});
+                $("#NinjaLeft1").fadeOut();
                 $("#BeautyLeft1").show();
                 $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 $("#dialogue").html("<b>Beauty:</b> Anyway, like a number of characters, Ninja was inspired by one from Teen Titans. In this case, Ninja came from Kyd Wykkyd.");
@@ -178,8 +180,8 @@ can start the quiz.");
         else if (question === 2) {
             if (dialogue === 1)
             {
-                $("#NinjaRight1").show();
-                $("#NinjaRight1").animate({left: (window.screen.width * .48)});
+                $("#NinjaRight1").fadeIn();
+                $("#NinjaRight1").css({left: (window.screen.width * .48)});
                 $("#dialogue").html("<b>Ninja:</b> Just to give her that look of a deranged killer in case she needed more of it.");
                 $("#nextlevel1a").attr("style", "opacity: 1");
             }
@@ -221,13 +223,13 @@ can start the quiz.");
             }
             else if (dialogue === 7)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
-                $("#NinjaRight1").animate({left: (window.screen.width * .78)}, function () {
-                    $("#NinjaRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                //});
+                $("#NinjaRight1").fadeOut(function () {
+                    //$("#NinjaRight1").hide();
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -1450,7 +1452,7 @@ can start the quiz.");
         }
         else if (question === 16)
         {
-            if (sessionStorage.getItem("Cyhack") !== "true")
+            if (sessionStorage.getItem("Cyhack") === "true")
             {
                 if (dialogue === 1)
                 {
@@ -1488,7 +1490,7 @@ can start the quiz.");
                     else
                         $("#dialogue").html("<b>Beauty:</b> Aw, what? You didn't get a single question right. Did you even read this story? Unless you're Race and you don't like reading about yourself, I'd go back and look at Story 1 for some reference.");
                 }
-                else if (dialogue === 2 && correct !== 0)
+                else if (dialogue === 2 && correct === 0)
                 {
                     document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                     document.getElementById("nextlevel1a").disabled = true;
@@ -2124,7 +2126,7 @@ function checkResolution()
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
     $(".quizimageleft").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
-    $(".quizimageright").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
+    $(".quizimageright").css({"top": (window.screen.height * .32), "left": (window.screen.width * .8), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
 
     $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .76), "height": (window.screen.height * .078), "width": (window.screen.width * .19)});
     $("#score").css({"top": (window.screen.height * .2)});
@@ -2141,7 +2143,7 @@ function checkResolution()
     $("img").hide();
     $("#searchIcon").show();
     $("#BeautyLeft1").show();
-    $("#dialogue").html("<b>Beauty:</b> Hi");
+    $("#dialogue").html("<b>Beauty:</b> Hey, guys. As you can see, I'll be hosting the quiz for the novella, To Love or to Die (as in me or you will). Now, if you're one of those people who like to take quizzes on fiction before going through the reading material, good for you. For the rest of you, standard disclaimer: SPOILERS AHEAD! Please read the novella before continuing. Thank you.");
     $("#BeautyLeft1").animate({left: (window.screen.width * .35)});
 
     var position = document.getElementById("menudiv").clientHeight;
@@ -2153,7 +2155,7 @@ function checkResolution()
     }
     else
         $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
-    $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
+    $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .8), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
 
     if (window.screen.width > 550 && window.screen.width < 700 && window.screen.height > 900)
     {
@@ -2191,7 +2193,7 @@ function checkResolution()
         $(".answer4").css({"top": (window.screen.height * .35), "left": (window.screen.width * .5)});
 
         $(".quizimageleft").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
-        $(".quizimageright").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
+        $(".quizimageright").css({"top": (window.screen.height * .42), "left": (window.screen.width * .8), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
         $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .158), "width": (window.screen.width * .25)});
     }
     else if (window.screen.width > 700)
@@ -2214,7 +2216,7 @@ function checkResolution()
         if (window.screen.height > 1000)
         {
             $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
-            $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
+            $(".quizimageright").css({"top": (window.screen.height * .39), "left": (window.screen.width * .8), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
         }
 
     }
@@ -2230,7 +2232,7 @@ function checkResolution()
         }
 
         $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
-        $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $(".quizimageright").css({"top": (window.screen.height * .39), "left": (window.screen.width * .8), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
         $("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
         $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .118), "width": (window.screen.width * .25)});
     }

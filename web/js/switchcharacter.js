@@ -40,12 +40,12 @@ $(document).ready(function () {
 
 
     }
-    if (sessionStorage.getItem("Cyhack") === "true")
+    if (sessionStorage.getItem("Cyhack") !== "true")
     {
         $("#3").remove();
     }
 
-    if (sessionStorage.getItem("Cyhack") !== "true")
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
         $("#d").html("<b>Cyhack:</b> And here we have the character selection screen. You started with me, but if you wanna hear from someone else as your new host, just select them on this page. Go ahead. I'm not the only one with a story and insight in this world.");
         $('#myCarousel').on('slide.bs.carousel', function (ev) {
@@ -162,7 +162,10 @@ $(document).ready(function () {
         $("#0").attr("class", "item");
         $("#2").attr("class", "item active");
         //$("#1").remove()
-        $("#d").html("<b>Pyra:</b> Oh. You wanna hang with someone else? Okay. That's cool. I don't care. Beauty and Tel-E have time too. Just pick one of them and they'll be your new friend. I'll be here if you change your mind. Really . . . go ahead. I'm . . . I'm fine.");
+        if (sessionStorage.getItem("homeBurned") === "true")
+            $("#d").html("<b>Pyra:</b> I'm Sorry! I couldn't help it. I nearly destroyed the Home page! Please. Just . . . just choose another host. I'll only hurt you if you stick with me. Just leave me here. It's where I belong. Alone.");
+        else
+            $("#d").html("<b>Pyra:</b> Oh. You wanna hang with someone else? Okay. That's cool. I don't care. Beauty and Tel-E have time too. Just pick one of them and they'll be your new friend. I'll be here if you change your mind. Really . . . go ahead. I'm . . . I'm fine.");
 
 
         $('#myCarousel').on('slide.bs.carousel', function (ev) {
@@ -220,10 +223,18 @@ $(document).ready(function () {
                 else if (beautyrotations >= 1 && telerotations >= 1)
                 {
                     pyrarotations++;
-                    $("#d").html("<b>Pyra:</b> Well, look who's back. What? You wanted a fourth person to be here? Well, too bad. Our creator didn't wanna write for more than three hosts, and, for some reason, I got chosen as one of those hosts. So you can take another trip around this selection for someone if you want, but it's not gonna change.");
+                    if (sessionStorage.getItem("homeBurned") === "true")
+                        $("#d").html("<b>Pyra:</b> What are you doing back here? I said you can leave me alone! Unless you want someone causing more destruction everywhere she goes.");
+                    else
+                        $("#d").html("<b>Pyra:</b> Well, look who's back. What? You wanted a fourth person to be here? Well, too bad. Our creator didn't wanna write for more than three hosts, and, for some reason, I got chosen as one of those hosts. So you can take another trip around this selection for someone if you want, but it's not gonna change.");
                 }
                 else
-                    $("#d").html("<b>Pyra:</b> Oh. You wanna hang with someone else? Okay. That's cool. I don't care. Beauty and Tel-E have time too. Just pick one of them and they'll be your new friend. I'll be here if you change your mind. Really . . . go ahead. I'm . . . I'm fine.");
+                {
+                    if (sessionStorage.getItem("homeBurned") === "true")
+                        $("#d").html("<b>Pyra:</b> I'm Sorry! I couldn't help it. I nearly destroyed the Home page! Please. Just . . . just choose another host. I'll only hurt you if you stick with me. Just leave me here. It's where I belong. Alone.");
+                    else
+                        $("#d").html("<b>Pyra:</b> Oh. You wanna hang with someone else? Okay. That's cool. I don't care. Beauty and Tel-E have time too. Just pick one of them and they'll be your new friend. I'll be here if you change your mind. Really . . . go ahead. I'm . . . I'm fine.");
+                }
 
             }
         });
@@ -318,7 +329,8 @@ function incrementSwitch(newCharacter) {
         if (newCharacter === "Beauty")
         {
             sessionStorage.setItem("SessionCharacter", "Beauty");
-            
+            sessionStorage.setItem("homeBurned", "false");
+
             if (sessionStorage.getItem("beautySwitches") === null)
             {
                 sessionStorage.setItem("beautySwitches", 1);
@@ -328,10 +340,11 @@ function incrementSwitch(newCharacter) {
                 sessionStorage.setItem("beautySwitches", parseInt(sessionStorage.getItem("beautySwitches")) + 1);
             }
         }
-        else if(newCharacter === "Tel-E")
+        else if (newCharacter === "Tel-E")
         {
             sessionStorage.setItem("SessionCharacter", "Tel-E");
-            
+            sessionStorage.setItem("homeBurned", "false");
+
             if (sessionStorage.getItem("tel-eSwitches") === null)
             {
                 sessionStorage.setItem("tel-eSwitches", 1);
@@ -341,10 +354,10 @@ function incrementSwitch(newCharacter) {
                 sessionStorage.setItem("tel-eSwitches", parseInt(sessionStorage.getItem("tel-eSwitches")) + 1);
             }
         }
-        else if(newCharacter === "Pyra")
+        else if (newCharacter === "Pyra")
         {
             sessionStorage.setItem("SessionCharacter", "Pyra");
-            
+
             if (sessionStorage.getItem("pyraSwitches") === null)
             {
                 sessionStorage.setItem("pyraSwitches", 1);
@@ -355,9 +368,10 @@ function incrementSwitch(newCharacter) {
             }
         }
     }
-    else if(newCharacter === "Cyhack")
+    else if (newCharacter === "Cyhack")
     {
         sessionStorage.setItem("Cyhack", "false");
+        sessionStorage.setItem("homeBurned", "false");
     }
 
 }

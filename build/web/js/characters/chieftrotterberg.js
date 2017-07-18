@@ -21,7 +21,7 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "the Chief's page");
@@ -30,26 +30,28 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "the Chief's page")
+        if (sessionStorage.getItem("currentPage") !== "the Chief's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Chief's page");
+
+            if (sessionStorage.getItem("characterVisits") === null)
+            {
+                sessionStorage.setItem("characterVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+            }
         }
         sessionStorage.setItem("currentPage", "the Chief's page");
-        
-        
-    }
-    
-    if (sessionStorage.getItem("characterVisits") === null)
-    {
-        sessionStorage.setItem("characterVisits", 1);
-    }
-    else
-    {
-        
-        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
 
 
     }
+
+
 
     dialogue = 1;
     max = 0;

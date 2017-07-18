@@ -28,7 +28,7 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "Tammy Time's page");
@@ -37,26 +37,28 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "Tammy Time's page")
+        if (sessionStorage.getItem("currentPage") !== "Tammy Time's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Tammy Time's page");
+
+            if (sessionStorage.getItem("characterVisits") === null)
+            {
+                sessionStorage.setItem("characterVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+            }
         }
         sessionStorage.setItem("currentPage", "Tammy Time's page");
-        
-        
-    }
-    
-    if (sessionStorage.getItem("characterVisits") === null)
-    {
-        sessionStorage.setItem("characterVisits", 1);
-    }
-    else
-    {
-        
-        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
 
 
     }
+
+
 
     dialogue = 1;
     max = 0;
@@ -278,7 +280,7 @@ function DialogueChangeMenu() {
                 break;
             case(5):
                 document.getElementById("d").innerHTML = teleBold + "Well, I've received similar comments in the past, though they've been insults rather than job recommendations. But, er . . . thank you for assuming I look like part of a circus attraction, I guess. Anyway, getting back to the character page, you can find Tammy's Charevo Fairies on the upper right hand side if you scroll to look in that direction.";
-                break;  
+                break;
             case(6):
                 document.getElementById("d").innerHTML = tammyBold + "Ahahahahaha! I'm sorry, but those Charevo Fairies of me always crack me up. They got all the color with the symbols and everything. Man, I'm glad the colors are based on whatever clothes we wear, 'cause I'm never taking this clown suit off.";
                 break;
@@ -295,11 +297,11 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = tammyBold + "You wanna remind people? Tell joke shops to sell more of his glasses and also his movies. I've robbed about three stores after they got rid of the classic gags.";
                 break;
             case(11):
-                document.getElementById("d").innerHTML = teleBold + "You robbed stores just for changing merchandise? Why would you do that and not go to a new store?"; 
+                document.getElementById("d").innerHTML = teleBold + "You robbed stores just for changing merchandise? Why would you do that and not go to a new store?";
                 break;
             case(12):
-                document.getElementById("d").innerHTML = tammyBold + "They need to learn to respect the Marx man. Also, this chica needed the money."; 
-                break;    
+                document.getElementById("d").innerHTML = tammyBold + "They need to learn to respect the Marx man. Also, this chica needed the money.";
+                break;
 
         }
 
@@ -393,7 +395,7 @@ function DialogueChangeMenu() {
                 break;
             case(8):
                 document.getElementById("d").innerHTML = tammyBold + "Of course not. Do you see anything that says I'm a certified Clown College graduate in my bio? At least lemme wait 'til I can intern with a pro first.";
-                break;    
+                break;
         }
 
     }

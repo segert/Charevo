@@ -8,17 +8,17 @@ $(document).ready(function () {
     character = sessionStorage.getItem("SessionCharacter");
 
     checkResolution();
-    
-    
+
+
     $(window).resize(function () {
         resizeResolution();
-        
+
     });
-    
+
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
 
     dialogue = 1;
     max = 0;
@@ -29,9 +29,9 @@ $(document).ready(function () {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
-    
-    
-    
+
+
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "the Characters page");
@@ -40,13 +40,13 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "the Characters page")
+        if (sessionStorage.getItem("currentPage") !== "the Characters page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", the Characters page");
         }
         sessionStorage.setItem("currentPage", "the Characters page");
-        
-        
+
+
     }
 
     var cyhackBold = "Cyhack: ";
@@ -54,7 +54,37 @@ $(document).ready(function () {
 
     if (sessionStorage.getItem("Cyhack") === "true")
     {
-        document.getElementById("d").innerHTML = cyhackBold + "";
+        document.getElementById("d").innerHTML = "";
+
+        $("#Beauty").text("Get a Haircut, Ya Hippie!");
+        $("#Tel-E").text("The Blue Man Groupie");
+        $("#Pyra").text("Richard Pryor Girl");
+        $("#Race").text("Neurotic Kid Flash");
+        $("#Bendy").text("Jackass: The Superhero");
+        $("#Nator").text("The Six Dollar Man");
+        $("#Negator").text("Debbie Downer");
+        $("#Inflator").text("Up Up and Away!");
+        $("#Fourize").text("Doctor! My Eyes are Burning!");
+        $("#Cyhack").text("Women in STEM (Hacking and Products for Evil Included!)");
+        $("#Dinomight").text("80's Movie Jock");
+        $("#Ninja").text("Don Raphael");
+        $("#TammyTime").text("Party of One");
+        $("#ColdMiner").text("Señor Freeze");
+        $("#Cremate").text("Ashes to Ashes");
+        $("#Ferguson").text("Blooper Hunter");
+        $("#CaptainD").text("Evil Knieval");
+        $("#Trainor").text("Peaking in Two Years");
+        $("#OneOh").text("Two By Concatenation");
+        $("#Chief").text("What, what, what!?");
+        
+        document.getElementById("hero").src = "images/cyhackright1.png";
+        document.getElementById("hero").alt = "";
+
+        document.getElementById("villain").src = "images/cyhackright1.png";
+        document.getElementById("villain").alt = "";
+
+        document.getElementById("oth").src = "images/cyhackright1.png";
+        document.getElementById("oth").alt = "";
 
     }
     else if (character === "Tel-E")
@@ -119,19 +149,46 @@ $(document).ready(function () {
     $("#AllHero").click(function () {
         $("#herolist").empty();
 
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Beauty</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/tel-e.html'>Tel-E</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/pyra.html'>Pyra</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/race.html'>Race</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/bendy.html'>Bendy</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/nator.html'>Nator</a></li>");
-        $("#herolist").append("<li class = 'charnames'>Negator</li>");
-        $("#herolist").append("<li class = 'charnames'>Inflator</li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Beauty' href = 'Characters/beauty.html'>Beauty</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Tel-E' href = 'Characters/tel-e.html'>Tel-E</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Pyra' href = 'Characters/pyra.html'>Pyra</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Race' href = 'Characters/race.html'>Race</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Bendy' href = 'Characters/bendy.html'>Bendy</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Nator' href = 'Characters/nator.html'>Nator</a></li>");
+        $("#herolist").append("<li id='Negator' class = 'charnames'>Negator</li>");
+        $("#herolist").append("<li id='Inflator' class = 'charnames'>Inflator</li>");
 
-        if (character === "Beauty")
+        if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("hero").src = "images/beautyright1.png";
-            document.getElementById("hero").alt = "Beauty Placeholder";
+            document.getElementById("d").innerHTML = cyhackBold + "";
+
+            $("#Beauty").text("Get a Haircut, Ya Hippie!");
+            $("#Tel-E").text("The Blue Man Groupie");
+            $("#Pyra").text("Richard Pryor Girl");
+            $("#Race").text("Neurotic Kid Flash");
+            $("#Bendy").text("Jackass: The Superhero");
+            $("#Nator").text("The Six Dollar Man");
+            $("#Negator").text("Debbie Downer");
+            $("#Inflator").text("Up Up and Away!");
+            $("#Fourize").text("Doctor! My Eyes are Burning!");
+            $("#Cyhack").text("Women in STEM (Hacking and Products for Evil Included!)");
+            $("#Dinomight").text("80's Movie Jock");
+            $("#Ninja").text("Don Raphael");
+            $("#TammyTime").text("Party of One");
+            $("#ColdMiner").text("Señor Freeze");
+            $("#Cremate").text("Ashes to Ashes");
+            $("#Ferguson").text("Blooper Hunter");
+            $("#CaptainD").text("Evil Knieval");
+            $("#Trainor").text("Peaking in Two Years");
+            $("#OneOh").text("Two By Concatenation");
+            $("#Chief").text("What, what, what!?");
+
+        }
+
+        if (sessionStorage.getItem("Cyhack") === "true")
+        {
+            document.getElementById("hero").src = "images/cyhackright1.png";
+            document.getElementById("hero").alt = "";
             $("#hero").show();
         }
         else if (character === "Tel-E")
@@ -144,6 +201,12 @@ $(document).ready(function () {
         {
             document.getElementById("hero").src = "images/pyraright1.png";
             document.getElementById("hero").alt = "Pyra Placeholder";
+            $("#hero").show();
+        }
+        else
+        {
+            document.getElementById("hero").src = "images/beautyright1.png";
+            document.getElementById("hero").alt = "Beauty Placeholder";
             $("#hero").show();
         }
 
@@ -158,17 +221,44 @@ $(document).ready(function () {
     $("#MinorHero").click(function () {
         $("#herolist").empty();
 
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/beauty.html'>Beauty</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/tel-e.html'>Tel-E</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/pyra.html'>Pyra</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/race.html'>Race</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/bendy.html'>Bendy</a></li>");
-        $("#herolist").append("<li class = 'charnames'><a href = 'Characters/nator.html'>Nator</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Beauty' href = 'Characters/beauty.html'>Beauty</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Tel-E' href = 'Characters/tel-e.html'>Tel-E</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Pyra' href = 'Characters/pyra.html'>Pyra</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Race' href = 'Characters/race.html'>Race</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Bendy' href = 'Characters/bendy.html'>Bendy</a></li>");
+        $("#herolist").append("<li class = 'charnames'><a id='Nator' href = 'Characters/nator.html'>Nator</a></li>");
 
-        if (character === "Beauty")
+        if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("hero").src = "images/beautyright1.png";
-            document.getElementById("hero").alt = "Beauty Placeholder";
+            document.getElementById("d").innerHTML = cyhackBold + "";
+
+            $("#Beauty").text("Get a Haircut, Ya Hippie!");
+            $("#Tel-E").text("The Blue Man Groupie");
+            $("#Pyra").text("Richard Pryor Girl");
+            $("#Race").text("Neurotic Kid Flash");
+            $("#Bendy").text("Jackass: The Superhero");
+            $("#Nator").text("The Six Dollar Man");
+            $("#Negator").text("Debbie Downer");
+            $("#Inflator").text("Up Up and Away!");
+            $("#Fourize").text("Doctor! My Eyes are Burning!");
+            $("#Cyhack").text("Women in STEM (Hacking and Products for Evil Included!)");
+            $("#Dinomight").text("80's Movie Jock");
+            $("#Ninja").text("Don Raphael");
+            $("#TammyTime").text("Party of One");
+            $("#ColdMiner").text("Señor Freeze");
+            $("#Cremate").text("Ashes to Ashes");
+            $("#Ferguson").text("Blooper Hunter");
+            $("#CaptainD").text("Evil Knieval");
+            $("#Trainor").text("Peaking in Two Years");
+            $("#OneOh").text("Two By Concatenation");
+            $("#Chief").text("What, what, what!?");
+
+        }
+
+        if (sessionStorage.getItem("Cyhack") === "true")
+        {
+            document.getElementById("hero").src = "images/cyhackright1.png";
+            document.getElementById("hero").alt = "";
             $("#hero").show();
         }
         else if (character === "Tel-E")
@@ -183,6 +273,12 @@ $(document).ready(function () {
             document.getElementById("hero").alt = "Pyra Placeholder";
             $("#hero").show();
         }
+        else
+        {
+            document.getElementById("hero").src = "images/beautyright1.png";
+            document.getElementById("hero").alt = "Beauty Placeholder";
+            $("#hero").show();
+        }
 
         $("#AllHero").attr("class", "");
         $("#MinorHero").attr("class", "active");
@@ -195,14 +291,14 @@ $(document).ready(function () {
 
     $("#GrinHero").click(function () {
         $("#herolist").empty();
-        $("#herolist").append("<li class = 'charnames'>Negator</li>");
-        $("#herolist").append("<li class = 'charnames'>Inflator</li>");
+        $("#herolist").append("<li id='Negator' class = 'charnames'>Negator</li>");
+        $("#herolist").append("<li id='Inflator' class = 'charnames'>Inflator</li>");
 
-        if (character === "Beauty")
+        if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("hero").src = "";
+            document.getElementById("hero").src = "images/cyhackright1.png";
             document.getElementById("hero").alt = "";
-            $("#hero").hide();
+            $("#hero").show();
         }
         else if (character === "Tel-E")
         {
@@ -211,6 +307,12 @@ $(document).ready(function () {
             $("#hero").hide();
         }
         else if (character === "Pyra")
+        {
+            document.getElementById("hero").src = "";
+            document.getElementById("hero").alt = "";
+            $("#hero").hide();
+        }
+        else
         {
             document.getElementById("hero").src = "";
             document.getElementById("hero").alt = "";
@@ -228,21 +330,49 @@ $(document).ready(function () {
     $("#AllVillain").click(function () {
         $("#villainlist").empty();
 
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/fourize.html'>Fourize</a></li>");
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/cyhack.html'>Cyhack</a></li>");
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/dinomight.html'>Dinomight</a></li>");
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/ninja.html'>Ninja</a></li>");
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/tammytime.html'>Tammy Time</a></li>");
-        $("#villainlist").append("<li class = 'charnames'>Cold Miner</li>");
-        $("#villainlist").append("<li class = 'charnames'>Christy Ferguson</li>");
-        $("#villainlist").append("<li class = 'charnames'>Captain D</li>");
-        $("#villainlist").append("<li class = 'charnames'>Whitney Trainor</li>");
-        $("#villainlist").append("<li class = 'charnames'>One and Oh</li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='Fourize' href = 'Characters/fourize.html'>Fourize</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='Cyhack' href = 'Characters/cyhack.html'>Cyhack</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='Dinomight' href = 'Characters/dinomight.html'>Dinomight</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='Ninja' href = 'Characters/ninja.html'>Ninja</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='TammyTime' href = 'Characters/tammytime.html'>Tammy Time</a></li>");
+        $("#villainlist").append("<li id='ColdMiner' class = 'charnames'>Cold Miner</li>");
+        $("#villainlist").append("<li id='Cremate' class = 'charnames'>Cremate</li>");
+        $("#villainlist").append("<li id='Ferguson' class = 'charnames'>Christy Ferguson</li>");
+        $("#villainlist").append("<li id='CaptainD' class = 'charnames'>Captain D</li>");
+        $("#villainlist").append("<li id='Trainor' class = 'charnames'>Whitney Trainor</li>");
+        $("#villainlist").append("<li id='OneOh' class = 'charnames'>One and Oh</li>");
 
-        if (character === "Beauty")
+        if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("villain").src = "images/fourizeright1.png";
-            document.getElementById("villain").alt = "Fourize Placeholder";
+            document.getElementById("d").innerHTML = cyhackBold + "";
+
+            $("#Beauty").text("Get a Haircut, Ya Hippie!");
+            $("#Tel-E").text("The Blue Man Groupie");
+            $("#Pyra").text("Richard Pryor Girl");
+            $("#Race").text("Neurotic Kid Flash");
+            $("#Bendy").text("Jackass: The Superhero");
+            $("#Nator").text("The Six Dollar Man");
+            $("#Negator").text("Debbie Downer");
+            $("#Inflator").text("Up Up and Away!");
+            $("#Fourize").text("Doctor! My Eyes are Burning!");
+            $("#Cyhack").text("Women in STEM (Hacking and Products for Evil Included!)");
+            $("#Dinomight").text("80's Movie Jock");
+            $("#Ninja").text("Don Raphael");
+            $("#TammyTime").text("Party of One");
+            $("#ColdMiner").text("Señor Freeze");
+            $("#Cremate").text("Ashes to Ashes");
+            $("#Ferguson").text("Blooper Hunter");
+            $("#CaptainD").text("Evil Knieval");
+            $("#Trainor").text("Peaking in Two Years");
+            $("#OneOh").text("Two By Concatenation");
+            $("#Chief").text("What, what, what!?");
+
+        }
+
+        if (sessionStorage.getItem("Cyhack") === "true")
+        {
+            document.getElementById("villain").src = "images/cyhackright1.png";
+            document.getElementById("villain").alt = "";
             $("#villain").show();
         }
         else if (character === "Tel-E")
@@ -255,6 +385,12 @@ $(document).ready(function () {
         {
             document.getElementById("villain").src = "images/trainorright1.png";
             document.getElementById("villain").alt = "Whitney Trainor Placeholder";
+            $("#villain").show();
+        }
+        else
+        {
+            document.getElementById("villain").src = "images/fourizeright1.png";
+            document.getElementById("villain").alt = "Fourize Placeholder";
             $("#villain").show();
         }
 
@@ -269,21 +405,49 @@ $(document).ready(function () {
     $("#MinorVillain").click(function () {
         $("#villainlist").empty();
 
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/fourize.html'>Fourize</a></li>");
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/cyhack.html'>Cyhack</a></li>");
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/dinomight.html'>Dinomight</a></li>");
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/ninja.html'>Ninja</a></li>");
-        $("#villainlist").append("<li class = 'charnames'><a href = 'Characters/tammytime.html'>Tammy Time</a></li>");
-        $("#villainlist").append("<li class = 'charnames'>Cold Miner</li>");
-        $("#villainlist").append("<li class = 'charnames'>Christy Ferguson</li>");
-        $("#villainlist").append("<li class = 'charnames'>Captain D</li>");
-        $("#villainlist").append("<li class = 'charnames'>Whitney Trainor</li>");
-        $("#villainlist").append("<li class = 'charnames'>One and Oh</li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='Fourize' href = 'Characters/fourize.html'>Fourize</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='Cyhack' href = 'Characters/cyhack.html'>Cyhack</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='Dinomight' href = 'Characters/dinomight.html'>Dinomight</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='Ninja' href = 'Characters/ninja.html'>Ninja</a></li>");
+        $("#villainlist").append("<li class = 'charnames'><a id='TammyTime' href = 'Characters/tammytime.html'>Tammy Time</a></li>");
+        $("#villainlist").append("<li id='ColdMiner' class = 'charnames'>Cold Miner</li>");
+        $("#villainlist").append("<li id='Cremate' class = 'charnames'>Cremate</li>");
+        $("#villainlist").append("<li id='Ferguson' class = 'charnames'>Christy Ferguson</li>");
+        $("#villainlist").append("<li id='CaptainD' class = 'charnames'>Captain D</li>");
+        $("#villainlist").append("<li id='Trainor' class = 'charnames'>Whitney Trainor</li>");
+        $("#villainlist").append("<li id='OneOh' class = 'charnames'>One and Oh</li>");
 
-        if (character === "Beauty")
+        if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("villain").src = "images/fourizeright1.png";
-            document.getElementById("villain").alt = "Fourize Placeholder";
+            document.getElementById("d").innerHTML = cyhackBold + "";
+
+            $("#Beauty").text("Get a Haircut, Ya Hippie!");
+            $("#Tel-E").text("The Blue Man Groupie");
+            $("#Pyra").text("Richard Pryor Girl");
+            $("#Race").text("Neurotic Kid Flash");
+            $("#Bendy").text("Jackass: The Superhero");
+            $("#Nator").text("The Six Dollar Man");
+            $("#Negator").text("Debbie Downer");
+            $("#Inflator").text("Up Up and Away!");
+            $("#Fourize").text("Doctor! My Eyes are Burning!");
+            $("#Cyhack").text("Women in STEM (Hacking and Products for Evil Included!)");
+            $("#Dinomight").text("80's Movie Jock");
+            $("#Ninja").text("Don Raphael");
+            $("#TammyTime").text("Party of One");
+            $("#ColdMiner").text("Señor Freeze");
+            $("#Cremate").text("Ashes to Ashes");
+            $("#Ferguson").text("Blooper Hunter");
+            $("#CaptainD").text("Evil Knieval");
+            $("#Trainor").text("Peaking in Two Years");
+            $("#OneOh").text("Two By Concatenation");
+            $("#Chief").text("What, what, what!?");
+
+        }
+
+        if (sessionStorage.getItem("Cyhack") === "true")
+        {
+            document.getElementById("villain").src = "images/cyhackright1.png";
+            document.getElementById("villain").alt = "";
             $("#villain").show();
         }
         else if (character === "Tel-E")
@@ -298,6 +462,12 @@ $(document).ready(function () {
             document.getElementById("villain").alt = "Whitney Trainor Placeholder";
             $("#villain").show();
         }
+        else
+        {
+            document.getElementById("villain").src = "images/fourizeright1.png";
+            document.getElementById("villain").alt = "Fourize Placeholder";
+            $("#villain").show();
+        }
 
         $("#AllVillain").attr("class", "");
         $("#MinorVillain").attr("class", "active");
@@ -310,11 +480,11 @@ $(document).ready(function () {
     $("#GrinVillain").click(function () {
         $("#villainlist").empty();
 
-        if (character === "Beauty")
+        if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("villain").src = "";
+            document.getElementById("villain").src = "images/cyhackright1.png";
             document.getElementById("villain").alt = "";
-            $("#villain").hide();
+            $("#villain").show();
         }
         else if (character === "Tel-E")
         {
@@ -323,6 +493,12 @@ $(document).ready(function () {
             $("#villain").hide();
         }
         else if (character === "Pyra")
+        {
+            document.getElementById("villain").src = "";
+            document.getElementById("villain").alt = "";
+            $("#villain").hide();
+        }
+        else
         {
             document.getElementById("villain").src = "";
             document.getElementById("villain").alt = "";
@@ -341,12 +517,40 @@ $(document).ready(function () {
     $("#AllOther").click(function () {
         $("#otherlist").empty();
 
-        $("#otherlist").append("<li class = 'charnames'><a href = 'Characters/chieftrotterberg.html'>Chief Lou Trotterberg</a></li>");
+        $("#otherlist").append("<li class = 'charnames'><a id='Chief' href = 'Characters/chieftrotterberg.html'>Chief Lou Trotterberg</a></li>");
+        
 
-        if (character === "Beauty")
+        if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("oth").src = "images/chiefright1.png";
-            document.getElementById("oth").alt = "Chief Placeholder";
+            document.getElementById("d").innerHTML = cyhackBold + "";
+
+            $("#Beauty").text("Get a Haircut, Ya Hippie!");
+            $("#Tel-E").text("The Blue Man Groupie");
+            $("#Pyra").text("Richard Pryor Girl");
+            $("#Race").text("Neurotic Kid Flash");
+            $("#Bendy").text("Jackass: The Superhero");
+            $("#Nator").text("The Six Dollar Man");
+            $("#Negator").text("Debbie Downer");
+            $("#Inflator").text("Up Up and Away!");
+            $("#Fourize").text("Doctor! My Eyes are Burning!");
+            $("#Cyhack").text("Women in STEM (Hacking and Products for Evil Included!)");
+            $("#Dinomight").text("80's Movie Jock");
+            $("#Ninja").text("Don Raphael");
+            $("#TammyTime").text("Party of One");
+            $("#ColdMiner").text("Señor Freeze");
+            $("#Cremate").text("Ashes to Ashes");
+            $("#Ferguson").text("Blooper Hunter");
+            $("#CaptainD").text("Evil Knieval");
+            $("#Trainor").text("Peaking in Two Years");
+            $("#OneOh").text("Two By Concatenation");
+            $("#Chief").text("What, what, what!?");
+
+        }
+
+        if (sessionStorage.getItem("Cyhack") === "true")
+        {
+            document.getElementById("oth").src = "images/cyhackright1.png";
+            document.getElementById("oth").alt = "";
             $("#oth").show();
         }
         else if (character === "Tel-E")
@@ -356,6 +560,12 @@ $(document).ready(function () {
             $("#oth").show();
         }
         else if (character === "Pyra")
+        {
+            document.getElementById("oth").src = "images/chiefright1.png";
+            document.getElementById("oth").alt = "Chief Placeholder";
+            $("#oth").show();
+        }
+        else
         {
             document.getElementById("oth").src = "images/chiefright1.png";
             document.getElementById("oth").alt = "Chief Placeholder";
@@ -373,9 +583,44 @@ $(document).ready(function () {
     $("#MinorOther").click(function () {
         $("#otherlist").empty();
 
-        $("#otherlist").append("<li class = 'charnames'><a href = 'Characters/chieftrotterberg.html'>Chief Lou Trotterberg</a></li>");
+        $("#otherlist").append("<li class = 'charnames'><a id='Chief' href = 'Characters/chieftrotterberg.html'>Chief Lou Trotterberg</a></li>");
 
-        if (character === "Tel-E")
+        
+
+        if (sessionStorage.getItem("Cyhack") === "true")
+        {
+            document.getElementById("d").innerHTML = cyhackBold + "";
+
+            $("#Beauty").text("Get a Haircut, Ya Hippie!");
+            $("#Tel-E").text("The Blue Man Groupie");
+            $("#Pyra").text("Richard Pryor Girl");
+            $("#Race").text("Neurotic Kid Flash");
+            $("#Bendy").text("Jackass: The Superhero");
+            $("#Nator").text("The Six Dollar Man");
+            $("#Negator").text("Debbie Downer");
+            $("#Inflator").text("Up Up and Away!");
+            $("#Fourize").text("Doctor! My Eyes are Burning!");
+            $("#Cyhack").text("Women in STEM (Hacking and Products for Evil Included!)");
+            $("#Dinomight").text("80's Movie Jock");
+            $("#Ninja").text("Don Raphael");
+            $("#TammyTime").text("Party of One");
+            $("#ColdMiner").text("Señor Freeze");
+            $("#Cremate").text("Ashes to Ashes");
+            $("#Ferguson").text("Blooper Hunter");
+            $("#CaptainD").text("Evil Knieval");
+            $("#Trainor").text("Peaking in Two Years");
+            $("#OneOh").text("Two By Concatenation");
+            $("#Chief").text("What, what, what!?");
+
+        }
+
+        if (sessionStorage.getItem("Cyhack") === "true")
+        {
+            document.getElementById("oth").src = "images/cyhackright1.png";
+            document.getElementById("oth").alt = "";
+            $("#oth").show();
+        }
+        else if (character === "Tel-E")
         {
             document.getElementById("oth").src = "images/chiefright1.png";
             document.getElementById("oth").alt = "Chief Placeholder";
@@ -406,11 +651,11 @@ $(document).ready(function () {
         $("#otherlist").empty();
         //$("#otherlist").append("<li class = 'charnames'>Negator</li>");
 
-        if (character === "Beauty")
+        if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("oth").src = "";
+            document.getElementById("oth").src = "images/cyhackright1.png";
             document.getElementById("oth").alt = "";
-            $("#oth").hide();
+            $("#oth").show();
         }
         else if (character === "Tel-E")
         {
@@ -419,6 +664,12 @@ $(document).ready(function () {
             $("#oth").hide();
         }
         else if (character === "Pyra")
+        {
+            document.getElementById("oth").src = "";
+            document.getElementById("oth").alt = "";
+            $("#oth").hide();
+        }
+        else
         {
             document.getElementById("oth").src = "";
             document.getElementById("oth").alt = "";
@@ -472,7 +723,7 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
-    
+
     var cyhackBold = "Cyhack: ";
     cyhackBold = cyhackBold.bold();
 
@@ -484,7 +735,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = cyhackBold + "So, like any other world, we got some people. And, like most people, these people got some names. They could be heroes, they could be villains, they could be completely different, they could be from different cities you could select to narrow 'em down.";
                 break;
             case(2):
-                document.getElementById("d").innerHTML = cyhackBold + "The point is, we got some list for ya of who we know and who you could know a little better. Why you would do that after you've already met me, the Cyhack has no clue. But just click on whoever you want. The Cyhack won't talk you into anyone in particular. I mean, you already went with me since I hacked this site.";
+                document.getElementById("d").innerHTML = cyhackBold + "The point is, we got some list for ya of who we know and who you could know a little better. Why you would do that after you've already met me, the Cyhack has no clue. But just click on whoever you want. But I guess I'll let you choose whichever page to visit. I can't hack this site twice in a row, you know.";
                 break;
         }
 
@@ -545,20 +796,20 @@ function DialogueChangeMenu() {
 
 }
 
-function checkResolution(){
+function checkResolution() {
     $("#paddingdiv").attr("style", "height: " + (window.screen.height / 2) + "px");
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     $(".characterinfo").css({"width": (window.screen.width * .85)});
-        $(".characterheader").css({"width": (window.screen.width * .85)});
-        
-        infoWidth = (window.screen.width * .85);
-        headerWidth = (window.screen.width * .85);
-        
-        
-    
+    $(".characterheader").css({"width": (window.screen.width * .85)});
+
+    infoWidth = (window.screen.width * .85);
+    headerWidth = (window.screen.width * .85);
+
+
+
     if (window.screen.width < 700)
     {
         $("#hero").css({"right": "10px"});
@@ -571,29 +822,29 @@ function checkResolution(){
         $("#villain").css({"right": "30%"});
         $("#oth").css({"right": "30%"});
     }
-    
+
     if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
     {
-        $(".char-image-select").css({"width": "200px", "height": "300px" });
+        $(".char-image-select").css({"width": "200px", "height": "300px"});
     }
-    
+
     characterWidth = $("#hero").width();
     characterHeight = $("#hero").height();
     sectionWidth = window.screen.width;
     paddingHeight = (window.screen.height / 2);
 }
 
-function resizeResolution(){
+function resizeResolution() {
     $("#paddingdiv").attr("style", "height: " + paddingHeight + "px");
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     $(".characterinfo").css({"width": infoWidth});
-        $(".characterheader").css({"width": headerWidth});
-        
-        $(".char-image-select").css({"width": characterWidth, "height": characterHeight});
-    
+    $(".characterheader").css({"width": headerWidth});
+
+    $(".char-image-select").css({"width": characterWidth, "height": characterHeight});
+
     if (window.screen.width < 700)
     {
         $("#hero").css({"right": "10px"});
@@ -606,11 +857,11 @@ function resizeResolution(){
         $("#villain").css({"right": "30%"});
         $("#oth").css({"right": "30%"});
     }
-    
+
     if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
     {
         //$(".char-image-select").css({"width": "200px", "height": "300px" });
     }
-    
+
     //$("section").css({"width": sectionWidth});
 }

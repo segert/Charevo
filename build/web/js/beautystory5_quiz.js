@@ -55,7 +55,7 @@ $(document).ready(function () {
         {
             if (dialogue === 1)
             {
-                $("#dialogue").html("<b>Beauty:</b> Hi");
+                $("#dialogue").html("<b>Beauty:</b> Hey. So you're about to take the quiz for the novella, This Title is False (or I am true). If you enjoyed the story, have fun putting your knowledge to the test. If you haven't read it, then what on Earth are you doing here!? Spoilers lie ahead, silly. What are you expecting? If you're okay, feel free to continue.");
             }
             else if (dialogue === 2)
                 $("#dialogue").html("<b>Beauty:</b> Well, if you're ready to go. Just hit next, and we\n\
@@ -1793,7 +1793,7 @@ can start the quiz.");
         }
         else if (question === 18)
         {
-            if (sessionStorage.getItem("Cyhack") !== "true")
+            if (sessionStorage.getItem("Cyhack") === "true")
             {
                 if (dialogue === 1)
                 {
@@ -1831,7 +1831,7 @@ can start the quiz.");
                     else
                         $("#dialogue").html("<b>Beauty:</b> Aw, what? You didn't get a single question right. Did you even read this story?");
                 }
-                else if (dialogue === 2 && correct !== 0)
+                else if (dialogue === 2 && correct === 0)
                 {
                     document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                     document.getElementById("nextlevel1a").disabled = true;
@@ -1854,7 +1854,7 @@ can start the quiz.");
                     document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                     document.getElementById("nextlevel1a").disabled = true;
                     $("#backquiz").show();
-                    $("#dialogue").html("<b>Beauty:</b> Think you can improve on your failure? Try again by going back to the quiz menu and do a different one. You have the best of the Cyhack's wishes for more lousy luck, loser.");
+                    $("#dialogue").html("<b>Cyhack:</b> Think you can improve on your failure? Try again by going back to the quiz menu and do a different one. You have the best of the Cyhack's wishes for more lousy luck, loser.");
                 }
 
             }
@@ -2497,7 +2497,7 @@ function checkResolution()
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
     $(".quizimageleft").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
-    $(".quizimageright").css({"top": (window.screen.height * .32), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
+    $(".quizimageright").css({"top": (window.screen.height * .32), "left": (window.screen.width * .8), "height": (window.screen.height * .5), "width": (window.screen.width * .35)});
 
     $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .76), "height": (window.screen.height * .078), "width": (window.screen.width * .19)});
     $("#score").css({"top": (window.screen.height * .2)});
@@ -2514,7 +2514,7 @@ function checkResolution()
     $("img").hide();
     $("#searchIcon").show();
     $("#BeautyLeft1").show();
-    $("#dialogue").html("<b>Beauty:</b> Hi");
+    $("#dialogue").html("<b>Beauty:</b> Hey. So you're about to take the quiz for the novella, This Title is False (or I am true). If you enjoyed the story, have fun putting your knowledge to the test. If you haven't read it, then what on Earth are you doing here!? Spoilers lie ahead, silly. What are you expecting? If you're okay, feel free to continue.");
     $("#BeautyLeft1").animate({left: (window.screen.width * .35)});
 
     var position = document.getElementById("menudiv").clientHeight;
@@ -2526,7 +2526,7 @@ function checkResolution()
     }
     else
         $(".quizimageleft:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .22), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
-    $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
+    $(".quizimageright:visible").css({"top": (window.screen.height * .32), "left": (window.screen.width * .8), "left": (window.screen.width * .48), "height": (window.screen.height * .5), "width": (window.screen.width * .3)});
 
     if (window.screen.width > 550 && window.screen.width < 700 && window.screen.height > 900)
     {
@@ -2564,7 +2564,7 @@ function checkResolution()
         $(".answer4").css({"top": (window.screen.height * .35), "left": (window.screen.width * .5)});
 
         $(".quizimageleft").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
-        $(".quizimageright").css({"top": (window.screen.height * .42), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
+        $(".quizimageright").css({"top": (window.screen.height * .42), "left": (window.screen.width * .8), "width": (window.screen.width * .4), "height": (window.screen.height * .54)});
         $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .158), "width": (window.screen.width * .25)});
     }
     else if (window.screen.width > 700)
@@ -2587,7 +2587,7 @@ function checkResolution()
         if (window.screen.height > 1000)
         {
             $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
-            $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
+            $(".quizimageright").css({"top": (window.screen.height * .39), "left": (window.screen.width * .8), "width": (window.screen.width * .4), "height": (window.screen.height * .5)});
         }
 
     }
@@ -2603,7 +2603,7 @@ function checkResolution()
         }
 
         $(".quizimageleft").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
-        $(".quizimageright").css({"top": (window.screen.height * .39), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
+        $(".quizimageright").css({"top": (window.screen.height * .39), "left": (window.screen.width * .8), "width": (window.screen.width * .45), "height": (window.screen.height * .5)});
         $("section").attr("style", "margin-top: 50px; padding-bottom: 0px; width:100%; height: " + window.screen.height + "px");
         $("#backquiz").css({"top": (window.screen.height * .508), "left": (window.screen.width * .73), "height": (window.screen.height * .118), "width": (window.screen.width * .25)});
     }

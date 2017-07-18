@@ -33,23 +33,25 @@ $(document).ready(function () {
         if (sessionStorage.getItem("currentPage") !== "Pyra's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Pyra's page");
+
+            if (sessionStorage.getItem("characterVisits") === null)
+            {
+                sessionStorage.setItem("characterVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+            }
         }
         sessionStorage.setItem("currentPage", "Pyra's page");
 
 
     }
-    
-    if (sessionStorage.getItem("characterVisits") === null)
-    {
-        sessionStorage.setItem("characterVisits", 1);
-    }
-    else
-    {
-        
-        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
 
 
-    }
 
     dialogue = 1;
     max = 0;

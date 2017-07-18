@@ -9,7 +9,7 @@ $(document).ready(function () {
     character = sessionStorage.getItem("SessionCharacter");
 
     pageCharacter = "";
-    
+
 
     checkResolution();
 
@@ -21,7 +21,7 @@ $(document).ready(function () {
     $(window).on("orientationchange", function (event) {
         checkResolution();
     });
-    
+
     if (sessionStorage.getItem("firstPage") === null)
     {
         sessionStorage.setItem("firstPage", "Dinomight's page");
@@ -30,26 +30,28 @@ $(document).ready(function () {
     }
     else
     {
-        if(sessionStorage.getItem("currentPage") !== "Dinomight's page")
+        if (sessionStorage.getItem("currentPage") !== "Dinomight's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Dinomight's page");
+
+            if (sessionStorage.getItem("characterVisits") === null)
+            {
+                sessionStorage.setItem("characterVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+            }
         }
         sessionStorage.setItem("currentPage", "Dinomight's page");
-        
-        
-    }
-    
-    if (sessionStorage.getItem("characterVisits") === null)
-    {
-        sessionStorage.setItem("characterVisits", 1);
-    }
-    else
-    {
-        
-        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
 
 
     }
+
+
 
     dialogue = 1;
     max = 0;
@@ -110,7 +112,7 @@ $(document).ready(function () {
         curident = ident;
         NewIdentification();
     });
-    
+
     rotatePage();
 
 });
@@ -178,7 +180,7 @@ function NewIdentification() {
             break;
         case(1):
             $("#Identification").text("Strength: ");
-            break;  
+            break;
 
     }
 
@@ -228,7 +230,7 @@ function rotatePage() {
             rotate = 0;
 
         }
-        else if(angle !== 0)
+        else if (angle !== 0)
         {
             $("body").removeClass("rotate" + angle);
             angle = (angle + 45) % 360;
@@ -247,11 +249,11 @@ function DialogueChangeMenu() {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
-    
+
     var dinomightBold = "Dinomight: ";
     dinomightBold = dinomightBold.bold();
 
-    
+
     var cyhackBold = "Cyhack: ";
     cyhackBold = cyhackBold.bold();
 
@@ -303,7 +305,7 @@ function DialogueChangeMenu() {
                 break;
             case(12):
                 document.getElementById("d").innerHTML = teleBold + "Teehee. Sorry if I took your double negatives too seriously. Though, personally, I think this page looks much nicer now.";
-                break;  
+                break;
         }
 
     }
@@ -348,24 +350,24 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = beautyBold + "Fan favorite? Uh . . . maybe if we're targeting an audience loving violence . . . perhaps? I feel like strength is a bit overrated, to be honest.";
                 break;
             case(4):
-                document.getElementById("d").innerHTML = dinomightBold + "Overrated? You call flipping this site over overrated?"; 
+                document.getElementById("d").innerHTML = dinomightBold + "Overrated? You call flipping this site over overrated?";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = beautyBold + "Wait. What?"; 
+                document.getElementById("d").innerHTML = beautyBold + "Wait. What?";
                 break;
             case(6):
                 rotate = 1;
-                document.getElementById("d").innerHTML = dinomightBold + "Hnnnnnaaaaah!"; 
+                document.getElementById("d").innerHTML = dinomightBold + "Hnnnnnaaaaah!";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = beautyBold + "Whoa!"; 
+                document.getElementById("d").innerHTML = beautyBold + "Whoa!";
                 break;
             case(8):
-                document.getElementById("d").innerHTML = dinomightBold + "How's that for ratin' and favorites?"; 
-                break; 
+                document.getElementById("d").innerHTML = dinomightBold + "How's that for ratin' and favorites?";
+                break;
             case(9):
-                document.getElementById("d").innerHTML = beautyBold + "Well, that was . . . something. I don't know how many fans that got you, though. Personally, if we're talking favorites on your team, I'm more of a Cyhack girl. And our creator's probably a bit of a Tammy Time guy."; 
-                break;     
+                document.getElementById("d").innerHTML = beautyBold + "Well, that was . . . something. I don't know how many fans that got you, though. Personally, if we're talking favorites on your team, I'm more of a Cyhack girl. And our creator's probably a bit of a Tammy Time guy.";
+                break;
             case(10):
                 document.getElementById("d").innerHTML = dinomightBold + "Well, shoot, then who's a Dinomight girl? Come on! You know a strength feller's the way to go!";
                 break;
@@ -377,7 +379,7 @@ function DialogueChangeMenu() {
                 break;
             case(13):
                 document.getElementById("d").innerHTML = beautyBold + "If you're trying to get more people to like you, I don't think you should expect our creator to join the fan club. Just a heads up.";
-                break; 
+                break;
         }
 
     }
@@ -388,13 +390,13 @@ function checkResolution() {
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     $(".footers").css({"width": window.screen.width});
     $(".footers").css({"height": (window.screen.height / 6)});
-    
-    
+
+
     footerHeight = (window.screen.height / 6);
-    
+
 
 
     if (window.screen.width > 1300 && window.screen.height > 1500)
@@ -405,17 +407,17 @@ function checkResolution() {
         $("#charactertable").css({"width": (window.screen.width * .5), "margin-top": (window.screen.height * .1), "left": (window.screen.width * .1), "margin-left": (window.screen.width * .1)});
 
         $("#fairies").css({"left": (window.screen.width * .7)});
-        
+
         bioinfoWidth = (window.screen.width * .85);
         biotableMarginTop = (window.screen.height * .1);
         bioguidancetableLeft = (window.screen.width * .1);
-        
+
         guidanceWidth = (window.screen.width * .46875);
         guidanceMarginTop = (window.screen.height * .5);
         guidancetableMarginLeft = (window.screen.width * .1);
-        
+
         tableWidth = (window.screen.width * .5);
-        
+
         fairiesLeft = (window.screen.width * .7);
 
         if (window.screen.width > 1800)
@@ -424,16 +426,16 @@ function checkResolution() {
 
             $("#character").css({"left": (window.screen.width * .35), "width": (window.screen.width * .25), "height": (window.screen.height * .45)});
             $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .2), "height": (window.screen.height * .3)});
-            
+
             charevofairyemblemWidth = (window.screen.width * .2);
             charevofairyemblemHeight = (window.screen.height * .3);
-            
+
             characterLeft = (window.screen.width * .35);
             characterWidth = (window.screen.width * .25);
             characterHeight = (window.screen.height * .45);
-            
+
             emblemLeft = (window.screen.width * .05);
-            
+
         }
         else
         {
@@ -441,18 +443,18 @@ function checkResolution() {
 
             $("#character").css({"left": (window.screen.width * .35), "width": (window.screen.width * .35), "height": (window.screen.height * .45)});
             $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
-        
+
             charevofairyemblemWidth = (window.screen.width * .3);
             charevofairyemblemHeight = (window.screen.height * .3);
-            
+
             characterLeft = (window.screen.width * .35);
             characterWidth = (window.screen.width * .35);
             characterHeight = (window.screen.height * .45);
-            
+
             emblemLeft = (window.screen.width * .05);
         }
         $("section").css({"height": (window.screen.height * 1.55)});
-        
+
         sectionHeight = (window.screen.height * 1.55);
     }
     else if (window.screen.width > 1000 && window.screen.height > 1000)
@@ -466,28 +468,28 @@ function checkResolution() {
         $("#fairies").css({"left": (window.screen.width * .7)});
         $("#character").css({"left": (window.screen.width * .35), "width": (window.screen.width * .35), "height": (window.screen.height * .45)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
-        
+
         bioinfoWidth = (window.screen.width * .85);
         //biotableMarginTop = (window.screen.height * .1);
         bioguidancetableLeft = (window.screen.width * .1);
-        
+
         guidanceWidth = (window.screen.width * .46875);
         guidanceMarginTop = "560px";
         guidancetableMarginLeft = (window.screen.width * .1);
-        
+
         tableWidth = (window.screen.width * .5);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeftWidth = (window.screen.width * .35);
         characterHeight = (window.screen.height * .45);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
-        
+
+
         if (window.screen.width > 1200 && window.screen.height > 1000)
         {
             $("section").css({"height": (window.screen.height * 2.25)});
@@ -505,14 +507,14 @@ function checkResolution() {
         $(".characterinfo").css({"width": (window.screen.width * .85)});
         $("#guidance").css({"width": (window.screen.width * .46875), "left": (window.screen.width * .1), "margin-left": (window.screen.width * .1)});
         $("#charactertable").css({"width": (window.screen.width * .5), "left": (window.screen.width * .1), "margin-left": (window.screen.width * .1)});
-    
+
         bioinfoWidth = (window.screen.width * .85);
         //biotableMarginTop = (window.screen.height * .1);
         bioguidancetableLeft = (window.screen.width * .1);
-        
+
         guidanceWidth = (window.screen.width * .46875);
         guidancetableLeftMarginLeft = (window.screen.width * .1);
-        
+
         tableWidth = (window.screen.width * .5);
     }
     else if (window.screen.height < 600 && window.screen.width < 600 && window.screen.height < window.screen.width)
@@ -527,27 +529,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .75)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .5)});
         $("section").css({"height": (window.screen.height * 9.95)});
-    
+
         bioWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .5);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .75);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 9.95);
     }
     else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
@@ -562,27 +564,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .75)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .5)});
         $("section").css({"height": (window.screen.height * 7.95)});
-        
+
         bioWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .5);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .75);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 7.95);
     }
     else if (window.screen.width >= 600)
@@ -597,27 +599,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .55)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
         $("section").css({"height": (window.screen.height * 2.95)});
-        
+
         bioinfoWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         //infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 2.95);
     }
     else if (window.screen.width > 400)
@@ -632,27 +634,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .55)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
         $("section").css({"height": (window.screen.height * 4.55)});
-        
+
         bioinfoWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         //infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 4.55);
     }
     else if (window.screen.height < 600)
@@ -667,27 +669,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .55)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
         $("section").css({"height": (window.screen.height * 7.55)});
-        
+
         bioinfoWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         //infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 7.55);
     }
     else
@@ -702,27 +704,27 @@ function checkResolution() {
         $("#character").css({"left": (window.screen.width * .3), "width": (window.screen.width * .45), "height": (window.screen.height * .55)});
         $("#emblem").css({"left": (window.screen.width * .05), "width": (window.screen.width * .3), "height": (window.screen.height * .3)});
         $("section").css({"height": (window.screen.height * 5.55)});
-        
+
         bioinfoWidth = (window.screen.width * .95);
         bioguidancetableLeft = (window.screen.width * .01);
-        
+
         //infoWidth = (window.screen.width * .85);
-        
+
         guidanceWidth = (window.screen.width * .7);
-        
+
         tableWidth = (window.screen.width * .9);
-        
+
         charevofairyemblemWidth = (window.screen.width * .3);
         charevofairyemblemHeight = (window.screen.height * .3);
-        
+
         fairiesLeft = (window.screen.width * .7);
-        
+
         characterLeft = (window.screen.width * .3);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
-        
+
         emblemLeft = (window.screen.width * .05);
-        
+
         sectionHeight = (window.screen.height * 5.55);
     }
 }
@@ -731,11 +733,11 @@ function resizeResolution() {
     $(".footerlist li").attr("style", "margin-right: " + (window.screen.width / 16) + "px");
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
-    
+
     $(".footers").css({"width": window.screen.width});
     $(".footers").css({"height": (window.screen.height / 6)});
-    
-    
+
+
     //footerHeight = (window.screen.height / 6);
 
 
@@ -755,7 +757,7 @@ function resizeResolution() {
 
             $("#character").css({"left": characterLeft, "width": characterWidth, "height": characterHeight});
             $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
-            
+
         }
         else
         {
@@ -779,8 +781,8 @@ function resizeResolution() {
         $("#fairies").css({"left": fairiesLeft});
         $("#character").css({"left": characterLeftWidth, "width": characterLeftWidth, "height": characterHeight});
         $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
-        
-        
+
+
         if (window.screen.width > 1200 && window.screen.height > 1000)
         {
             $("section").css({"height": sectionHeight});
@@ -810,8 +812,8 @@ function resizeResolution() {
         $("#character").css({"left": characterLeft, "width": characterWidth, "height": characterHeight});
         $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
         $("section").css({"height": sectionHeight});
-    
-        
+
+
     }
     else if (window.screen.height < 900 && window.screen.width < 900 && window.screen.height < window.screen.width)
     {
@@ -825,8 +827,8 @@ function resizeResolution() {
         $("#character").css({"left": characterLeft, "width": characterWidth, "height": characterHeight});
         $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
         $("section").css({"height": sectionHeight});
-        
-       
+
+
     }
     else if (window.screen.width >= 600)
     {
@@ -840,7 +842,7 @@ function resizeResolution() {
         $("#character").css({"left": characterLeft, "width": characterWidth, "height": characterHeight});
         $("#emblem").css({"left": emblemLeft, "width": charevofairyemblemWidth, "height": charevofairyemblemHeight});
         $("section").css({"height": sectionHeight});
-        
+
     }
     else if (window.screen.width > 400)
     {
@@ -857,7 +859,7 @@ function resizeResolution() {
 
     }
     else if (window.screen.height < 600)
-    {     
+    {
         $("#bio").css({"width": bioinfoWidth, "left": bioguidancetableLeft});
         $(".characterinfo").css({"width": bioinfoWidth});
         $("#guidance").css({"width": guidanceWidth, "margin-top": "360px", "left": bioguidancetableLeft, "position": "relative"});

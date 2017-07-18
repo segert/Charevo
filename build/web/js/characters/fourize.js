@@ -33,23 +33,25 @@ $(document).ready(function () {
         if (sessionStorage.getItem("currentPage") !== "Fourize's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Fourize's page");
+
+            if (sessionStorage.getItem("characterVisits") === null)
+            {
+                sessionStorage.setItem("characterVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+            }
         }
         sessionStorage.setItem("currentPage", "Fourize's page");
 
 
     }
 
-    if (sessionStorage.getItem("characterVisits") === null)
-    {
-        sessionStorage.setItem("characterVisits", 1);
-    }
-    else
-    {
 
-        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
-
-
-    }
 
     dialogue = 1;
     max = 0;
@@ -323,7 +325,7 @@ function DialogueChangeMenu() {
                 break;
             case(11):
                 document.getElementById("d").innerHTML = fourizeBold + "Well, part of it was. And even with that, I bet the user was terrified!";
-                break; 
+                break;
             case(12):
                 document.getElementById("d").innerHTML = pyraBold + "Yeah, no. Although, I hear Cyhack can do something similar, but, like, way better. Maybe the User should go pay her a visit.";
                 break;

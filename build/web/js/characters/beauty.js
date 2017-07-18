@@ -34,23 +34,25 @@ $(document).ready(function () {
         if (sessionStorage.getItem("currentPage") !== "Beauty's page")
         {
             sessionStorage.setItem("memory", sessionStorage.getItem("memory").toString() + ", Beauty's page");
+
+            if (sessionStorage.getItem("characterVisits") === null)
+            {
+                sessionStorage.setItem("characterVisits", 1);
+            }
+            else
+            {
+
+                sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
+
+
+            }
         }
         sessionStorage.setItem("currentPage", "Beauty's page");
 
 
     }
-    
-    if (sessionStorage.getItem("characterVisits") === null)
-    {
-        sessionStorage.setItem("characterVisits", 1);
-    }
-    else
-    {
-        
-        sessionStorage.setItem("characterVisits", parseInt(sessionStorage.getItem("characterVisits")) + 1);
 
 
-    }
 
     dialogue = 1;
     max = 0;
@@ -353,7 +355,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = beautyBold + "Whoa! It worked!";
                 if (change === 0)
                 {
-                    
+
                     $("#character").fadeOut(function () {
                         document.getElementById("character").src = "../images/pyraleft1.png";
                         $("#character").fadeIn();
