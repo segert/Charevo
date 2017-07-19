@@ -32,9 +32,9 @@ $(document).ready(function () {
 
     }
 
-    question13acount = 0;
-    question13bcount = 0;
-    question13ccount = 0;
+    question11acount = 0;
+    question11bcount = 0;
+    question11ccount = 0;
 
 
     $("#nextlevel1a").click(function () {
@@ -148,15 +148,15 @@ can start the quiz.");
             }
             else if (dialogue === 9)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#PyraRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#PyraRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
-                $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                 document.getElementById("nextlevel1a").disabled = true;
@@ -970,13 +970,13 @@ can start the quiz.");
             }
             else if (dialogue === 10)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#TrainorRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#TrainorRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -1054,13 +1054,13 @@ can start the quiz.");
             }
             else if (dialogue === 8)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#RaceRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#RaceRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                 document.getElementById("nextlevel1a").disabled = true;
@@ -1235,13 +1235,13 @@ can start the quiz.");
             }
             else if (dialogue === 9)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#BendyRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#BendyRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                 document.getElementById("nextlevel1a").disabled = true;
@@ -1890,26 +1890,26 @@ can start the quiz.");
         }
         else if (question === 11)
         {
-
+            
             if ($("input[name=q]:checked").val() === "a")
             {
-
-                if (question13acount < 30 && (question13bcount < 300 || question13ccount < 300))
+                question11acount++;
+                if (question11acount < 30 && (question11bcount < 300 || question11ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> True. She was prohibited from playing other music. What else? Hint hint.");
                 }
-                else if (question13acount < 80 && (question13bcount < 300 || question13ccount < 300))
+                else if (question11acount < 80 && (question11bcount < 300 || question11ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
                 }
-                else if (question13acount < 150 && (question13bcount < 300 || question13ccount < 300))
+                else if (question11acount < 150 && (question11bcount < 300 || question11ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not a! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
                 }
-                else if (question13acount >= 300)
+                else if (question11acount >= 300)
                 {
                     missed = 0;
                     $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
@@ -1917,23 +1917,23 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                $("#dialogue").html("<b>Beauty:</b> She was jealous of her siblings? Well, if this was about someone all of us know pretty well, he'd agree this was true. But for Trainor, not quite.");
-                if (question13bcount < 30 && (question13acount < 300 || question13ccount < 300))
+                question11bcount++;
+                if (question11bcount < 30 && (question11acount < 300 || question11ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> She was jealous of her siblings? Well, if this was about someone all of us know pretty well, he'd agree this was true. But for Trainor, not quite.");
                 }
-                else if (question13bcount < 80 && (question13acount < 300 || question13ccount < 300))
+                else if (question11bcount < 80 && (question11acount < 300 || question11ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
                 }
-                else if (question13bcount < 150 && (question13acount < 300 || question13ccount < 300))
+                else if (question11bcount < 150 && (question11acount < 300 || question11ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not b! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
                 }
-                else if (question13bcount >= 300)
+                else if (question11bcount >= 300)
                 {
                     missed = 0;
                     $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
@@ -1942,22 +1942,23 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                if (question13ccount < 30 && (question13acount < 300 || question13bcount < 300))
+                question11ccount++;
+                if (question11ccount < 30 && (question11acount < 300 || question11bcount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> She received hate mail from them? Okay. Good. What else?");
                 }
-                else if (question13ccount < 80 && (question13acount < 300 || question13bcount < 300))
+                else if (question11ccount < 80 && (question11acount < 300 || question11bcount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
                 }
-                else if (question13ccount < 150 && (question13acount < 300 || question13bcount < 300))
+                else if (question11ccount < 150 && (question11acount < 300 || question11bcount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not c! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
                 }
-                else if (question13ccount >= 300)
+                else if (question11ccount >= 300)
                 {
                     missed = 0;
                     $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");

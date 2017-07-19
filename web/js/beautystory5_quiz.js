@@ -158,13 +158,13 @@ can start the quiz.");
             }
             else if (dialogue === 11)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
-                    //$("#BeautyLeft1").hide();
-                });
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").hide();
+                //});
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#NatorRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                 document.getElementById("nextlevel1a").disabled = true;
@@ -427,13 +427,13 @@ can start the quiz.");
             }
             else if (dialogue === 9)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
-                    //$("#BeautyLeft1").hide();
-                });
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").hide();
+                //});
                 $("#OneRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#OneRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                 document.getElementById("nextlevel1a").disabled = true;
@@ -753,13 +753,13 @@ can start the quiz.");
             }
             else if (dialogue === 13)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
-                    //$("#BeautyLeft1").hide();
-                });
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").hide();
+                //});
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#NatorRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                 document.getElementById("nextlevel1a").disabled = true;
@@ -1207,13 +1207,13 @@ can start the quiz.");
             }
             else if (dialogue === 16)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
-                    //$("#BeautyLeft1").hide();
-                });
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").hide();
+                //});
                 $("#OhRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#OhRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
                 document.getElementById("nextlevel1a").disabled = true;
@@ -1367,7 +1367,7 @@ can start the quiz.");
             else if (dialogue === 2)
             {
                 $("#BeautyLeft1").animate({left: '-50px'}, function () {
-                    //$("#BeautyLeft1").hide();
+                    $("#BeautyLeft1").hide();
                 });
                 $("#Tel-ELeft1").show();
                 $("#Tel-ELeft1").animate({left: (window.screen.width * .18)});
@@ -1765,13 +1765,13 @@ can start the quiz.");
             }
             else if (dialogue === 9)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
-                    //$("#BeautyLeft1").hide();
-                });
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").hide();
+                //});
                 $("#OneRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#OneRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: '35%'});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: '35%'});
                     $("#nextlevel1a").attr("style", "opacity: .6");
                     nextline = 1;
                     question = 18;

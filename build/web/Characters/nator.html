@@ -23,7 +23,7 @@ and open the template in the editor.
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
         <script src = "../js/characters/nator.js"></script>
-        
+
         <link href="../css/custom.css" rel="stylesheet" type="text/css">
 
         <style>
@@ -35,8 +35,8 @@ and open the template in the editor.
                 vertical-align: top;
                 padding: 10px;
             }
-            
-            
+
+
         </style>
 
 
@@ -47,7 +47,7 @@ and open the template in the editor.
 
         <div id="maindiv">
 
-            
+
 
             <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
                    <div  ng-controller="DemoCtrl as vm">
@@ -107,19 +107,18 @@ and open the template in the editor.
 
 
             </nav>
-            
+
             <div id="formdiv">
                 <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
 
-                <!-- <p>Selected state: {{ state }}</p> -->
-                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
-                <span>
-                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
-                        <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
-                    </button> 
-                    <input type="submit" style="display: none"/>
-                </span>
-            </form>
+                    <div custom-select="p.id as p.name for p in pages | filter: { name: $searchTerm } track by p.id" ng-model="page" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                    <span>
+                        <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                            <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                        </button> 
+                        <input type="submit" style="display: none"/>
+                    </span>
+                </form>
             </div>
             <!--    <div style="width: 100%; position: absolute; top: 43px;">
                    <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
@@ -183,7 +182,7 @@ and open the template in the editor.
                                         <li>Expert control of technology he creates or embodies</li>
                                         <li>Brute strength</li>
                                         <li>Enhanced memory</li>
-                                        
+
                                     </ul>
                                 </td>
                             </tr>
@@ -209,17 +208,17 @@ and open the template in the editor.
 
                             <p style = "margin-left: 50px; margin-right: 50px;">
                                 As a young boy, Nator was smarter than average kids, and later developed an advanced intellect and memory <strike>from his Charevo Gene</strike>, allowing him to control gadgets he made with ease. He had a hobby of drawing blueprints for different types of technology he would later build when he got older, which he did. One of his biggest inventions was the robotic body he made that could allow a human brain to function. 
-                                He developed in interest in health solutions so he could save lives with what he built. His parents were very impressed by his gadgets, but would not let him try out his mechanical body, because they thought that would be too dangerous. 
-                                <br><br>
-                                Although he was often very nice and energetic like a normal kid, other kids seemed a little uneasy when around him as a friend because of how smart he was. However, despite his intelligence, he was always sociable and decided not to skip any grades in school so he can be with his friends.
-                                He would even help them by being their tutor in many subjects, particularly logic and math, which he specializes in. He held a rivalry in math and science with the twins, Tiffany and Elsa Boole, and while he had the idea of a mechanical body for a while, he started building it just to show them up, in addition to hoping it could save a life.
-                                <br><br>
-                                On the night the alien ship Tel-E was on crashed in Minor City, Nator was walking home after tutoring a classmate. When it crashed, it caused several cars to go flying at him. This caused his body to get crushed, leading to his parents and doctors to take the mechanical body he built to keep his brain in to keep him alive. When he was kept alive in his robot body, he started out as just his robot skeleton look, and because of his powers to control his technology on a high level, he was able to walk and operate the whole body with his mind like it was his real body.
-                                He then decided to modify it by creating artificial skin and clothing for the body so he can look just like he did before the accident. To see what more he could do, mainly to protect himself from the dangerous criminals of Minor City, he customized his body with many technological weapons and objects for him to access at any time. 
-                                Over time, he wished he could get back to developing healthcare technology, and decided it may have been best not to include weapons in his body, because what he made wouldn't help anyone besides himself, but he finally found Bendy in trouble with Cold Miner and the Chill-dren to test out his weaponized mechanical body to do good. While finding his robot body to be a success in battle, he met the rest of the Neo Brigade and joined them to be a hero.
-                                <br><br>
-                                When with the Brigade, Nator is the intelligent inventor of the team, making the team communicators as well as the emergency computer system. He is never arrogant about his intelligence with his friends, although he does like to be proud of his intellect and sometimes has to argue with them over things that don’t make sense because of how logical he thinks. 
-                                His biggest nemesis is Cyhack, who would mock him for being nearly all robotic while Cyhack is just a cyborg, which Nator takes exception to since he needed to become mechanical to live while she just did it to look cool. His hobbies include building gadgets, playing Chess, and playing the drums.
+                            He developed in interest in health solutions so he could save lives with what he built. His parents were very impressed by his gadgets, but would not let him try out his mechanical body, because they thought that would be too dangerous. 
+                            <br><br>
+                            Although he was often very nice and energetic like a normal kid, other kids seemed a little uneasy when around him as a friend because of how smart he was. However, despite his intelligence, he was always sociable and decided not to skip any grades in school so he can be with his friends.
+                            He would even help them by being their tutor in many subjects, particularly logic and math, which he specializes in. He held a rivalry in math and science with the twins, Tiffany and Elsa Boole, and while he had the idea of a mechanical body for a while, he started building it just to show them up, in addition to hoping it could save a life.
+                            <br><br>
+                            On the night the alien ship Tel-E was on crashed in Minor City, Nator was walking home after tutoring a classmate. When it crashed, it caused several cars to go flying at him. This caused his body to get crushed, leading to his parents and doctors to take the mechanical body he built to keep his brain in to keep him alive. When he was kept alive in his robot body, he started out as just his robot skeleton look, and because of his powers to control his technology on a high level, he was able to walk and operate the whole body with his mind like it was his real body.
+                            He then decided to modify it by creating artificial skin and clothing for the body so he can look just like he did before the accident. To see what more he could do, mainly to protect himself from the dangerous criminals of Minor City, he customized his body with many technological weapons and objects for him to access at any time. 
+                            Over time, he wished he could get back to developing healthcare technology, and decided it may have been best not to include weapons in his body, because what he made wouldn't help anyone besides himself, but he finally found Bendy in trouble with Cold Miner and the Chill-dren to test out his weaponized mechanical body to do good. While finding his robot body to be a success in battle, he met the rest of the Neo Brigade and joined them to be a hero.
+                            <br><br>
+                            When with the Brigade, Nator is the intelligent inventor of the team, making the team communicators as well as the emergency computer system. He is never arrogant about his intelligence with his friends, although he does like to be proud of his intellect and sometimes has to argue with them over things that don’t make sense because of how logical he thinks. 
+                            His biggest nemesis is Cyhack, who would mock him for being nearly all robotic while Cyhack is just a cyborg, which Nator takes exception to since he needed to become mechanical to live while she just did it to look cool. His hobbies include building gadgets, playing Chess, and playing the drums.
                             </p>
 
                         </div>
@@ -236,98 +235,98 @@ and open the template in the editor.
 
 
             <footer id = "footer" class = "site-footer">
-                    <div class = "footercontent">
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="subhome" href="../index.html"><b>Home</b></a></th>
+                <div class = "footercontent">
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subhome" href="../index.html"><b>Home</b></a></th>
 
-                            </tr>
-                        </table>
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="subabout" href="#About"><b>About</b></a></th>
-                            </tr>
-                            <tr>
-                                <td><a id="subcharacters" href="../characters.html">Characters</a></td>
-                            </tr>
-                            <tr>
-                                <td><a id="subcharevogene" href="../charevogene.html">Charevo Gene</a></td>
-                            </tr>
-                            <tr>
-                                <td><a id="subauthor" href="../author.html">The Author</a></td>
-                            </tr>
-                        </table>
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="subquiz" href="#Quiz"><b>Quiz</b></a></th>
-                            </tr>
-                            <tr>
-                                <td><a id="subbeautyquizzes" href="../beautyquizzes.html">Beauty Quizzes</a></td>
-                            </tr>
-                        </table>
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="substories" href="#Stories"><b>Stories</b></a></th>
-                            </tr>
-                            <tr>
-                                <td><a id="subbeautystories" href="../beautystories.html">Beauty Short Stories</a></td>
-                            </tr>
-                        </table>
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="submiscellaneous" href="#Miscellaneous"><b>Miscellaneous</b></a></th>
-                            </tr>
-                            <tr>
-                                <td><a id="subswitchcharacter" href="../switchcharacter.html">Switch Character</a></td>
-                            </tr>
-                            <tr>
-                                <td><a id="subblog" href="../blog.html">Blog</a></td>
-                            </tr>
-                        </table>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subabout" href="#About"><b>About</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharacters" href="../characters.html">Characters</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharevogene" href="../charevogene.html">Charevo Gene</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subauthor" href="../author.html">The Author</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subquiz" href="#Quiz"><b>Quiz</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautyquizzes" href="../beautyquizzes.html">Beauty Quizzes</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="substories" href="#Stories"><b>Stories</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautystories" href="../beautystories.html">Beauty Short Stories</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="submiscellaneous" href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subswitchcharacter" href="../switchcharacter.html">Switch Character</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subblog" href="../blog.html">Blog</a></td>
+                        </tr>
+                    </table>
 
-                        <!--<ul class="footerlist">
-                            <li >
-                                <a href="index.html"><b>Home</b></a>
-                            </li>
-                            <li >
-                                <a href="#About"><b>About</b></a>
-                                <ul class="subfooterlist">
-                                    <li><a href="characters.html">Characters</a></li>
-                                    <li><a href="charevogene.html">Charevo Gene</a></li>
-                                    
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#Quiz"><b>Quiz</b></a>
-                                <ul class="subfooterlist">
-                                    <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#Stories"><b>Stories</b></a>
-                                <ul class="subfooterlist">
-                                    <li><a href="beautystories.html">Beauty Short Stories</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#Miscellaneous"><b>Miscellaneous</b></a>
-                                <ul class="subfooterlist">
-                                    <li><a href="switchcharacter.html">Switch Character</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                </ul>
-                            </li>
-                        </ul> -->
+                    <!--<ul class="footerlist">
+                        <li >
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li >
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="switchcharacter.html">Switch Character</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul> -->
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                    <div style="position: absolute; left: 47%;">
+                        <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
                     </div>
-                    <div class = "footercontent2">
-                        <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
-                        <div style="position: absolute; left: 47%;">
-                            <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
-                        </div>
-                    </div>
-                </footer>
+                </div>
+            </footer>
 
         </section>
-        
+
 
 
 
@@ -351,7 +350,7 @@ and open the template in the editor.
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
         <script src="../js/select_page.js" type="text/javascript"></script>
         <script src="../js/search_list.js" type="text/javascript"></script>
-        
+
         <script src="../js/menu.js"></script>
 
     </body>

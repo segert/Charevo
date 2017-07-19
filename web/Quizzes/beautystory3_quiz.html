@@ -17,9 +17,9 @@ and open the template in the editor.
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        
+
         <script src="../js/beautystory3_quiz.js"></script>
-        
+
         <link href="../css/custom.css" rel="stylesheet" type="text/css">
 
 
@@ -29,7 +29,7 @@ and open the template in the editor.
 
         <div id="maindiv">
 
-            
+
 
             <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
                    <div  ng-controller="DemoCtrl as vm">
@@ -89,19 +89,18 @@ and open the template in the editor.
 
 
             </nav>
-            
+
             <div id="formdiv">
                 <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
 
-                <!-- <p>Selected state: {{ state }}</p> -->
-                <div custom-select="s.id as s.name for s in states | filter: { name: $searchTerm } track by s.id" ng-model="state" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
-                <span>
-                    <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
-                        <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
-                    </button> 
-                    <input type="submit" style="display: none"/>
-                </span>
-            </form>
+                    <div custom-select="p.id as p.name for p in pages | filter: { name: $searchTerm } track by p.id" ng-model="page" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                    <span>
+                        <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                            <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                        </button> 
+                        <input type="submit" style="display: none"/>
+                    </span>
+                </form>
             </div>
             <!--    <div style="width: 100%; position: absolute; top: 43px;">
                    <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
@@ -175,95 +174,95 @@ and open the template in the editor.
 
             </div>
             <footer id = "footer" class = "site-footer">
-                    <div class = "footercontent">
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="subhome" href="../index.html"><b>Home</b></a></th>
+                <div class = "footercontent">
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subhome" href="../index.html"><b>Home</b></a></th>
 
-                            </tr>
-                        </table>
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="subabout" href="#About"><b>About</b></a></th>
-                            </tr>
-                            <tr>
-                                <td><a id="subcharacters" href="../characters.html">Characters</a></td>
-                            </tr>
-                            <tr>
-                                <td><a id="subcharevogene" href="../charevogene.html">Charevo Gene</a></td>
-                            </tr>
-                            <tr>
-                                <td><a id="subauthor" href="../author.html">The Author</a></td>
-                            </tr>
-                        </table>
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="subquiz" href="#Quiz"><b>Quiz</b></a></th>
-                            </tr>
-                            <tr>
-                                <td><a id="subbeautyquizzes" href="../beautyquizzes.html">Beauty Quizzes</a></td>
-                            </tr>
-                        </table>
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="substories" href="#Stories"><b>Stories</b></a></th>
-                            </tr>
-                            <tr>
-                                <td><a id="subbeautystories" href="../beautystories.html">Beauty Short Stories</a></td>
-                            </tr>
-                        </table>
-                        <table class="footerlist">
-                            <tr>
-                                <th><a id="submiscellaneous" href="#Miscellaneous"><b>Miscellaneous</b></a></th>
-                            </tr>
-                            <tr>
-                                <td><a id="subswitchcharacter" href="../switchcharacter.html">Switch Character</a></td>
-                            </tr>
-                            <tr>
-                                <td><a id="subblog" href="../blog.html">Blog</a></td>
-                            </tr>
-                        </table>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subabout" href="#About"><b>About</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharacters" href="../characters.html">Characters</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharevogene" href="../charevogene.html">Charevo Gene</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subauthor" href="../author.html">The Author</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subquiz" href="#Quiz"><b>Quiz</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautyquizzes" href="../beautyquizzes.html">Beauty Quizzes</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="substories" href="#Stories"><b>Stories</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautystories" href="../beautystories.html">Beauty Short Stories</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="submiscellaneous" href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subswitchcharacter" href="../switchcharacter.html">Switch Character</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subblog" href="../blog.html">Blog</a></td>
+                        </tr>
+                    </table>
 
-                        <!--<ul class="footerlist">
-                            <li >
-                                <a href="index.html"><b>Home</b></a>
-                            </li>
-                            <li >
-                                <a href="#About"><b>About</b></a>
-                                <ul class="subfooterlist">
-                                    <li><a href="characters.html">Characters</a></li>
-                                    <li><a href="charevogene.html">Charevo Gene</a></li>
-                                    
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#Quiz"><b>Quiz</b></a>
-                                <ul class="subfooterlist">
-                                    <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#Stories"><b>Stories</b></a>
-                                <ul class="subfooterlist">
-                                    <li><a href="beautystories.html">Beauty Short Stories</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#Miscellaneous"><b>Miscellaneous</b></a>
-                                <ul class="subfooterlist">
-                                    <li><a href="switchcharacter.html">Switch Character</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                </ul>
-                            </li>
-                        </ul> -->
+                    <!--<ul class="footerlist">
+                        <li >
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li >
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="switchcharacter.html">Switch Character</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul> -->
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
+                    <div style="position: absolute; left: 47%;">
+                        <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
                     </div>
-                    <div class = "footercontent2">
-                        <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Stephen Egert</p>
-                        <div style="position: absolute; left: 47%;">
-                            <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
-                        </div>
-                    </div>
-                </footer>
+                </div>
+            </footer>
 
 
         </section>

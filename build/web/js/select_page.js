@@ -51,20 +51,20 @@
 
     var module = angular.module('AxelSoft', []);
 
-   /* if (sessionStorage.getItem("Cyhack") === "true")
+    /* if (sessionStorage.getItem("Cyhack") === "true")
+     {
+     module.value('customSelectDefaults', {
+     displayText: 'Select ...',
+     emptyListText: 'There are no items to display',
+     emptySearchResultText: 'No results match "$0"',
+     addText: 'Add',
+     searchDelay: 300
+     });
+     }
+     else*/
     {
         module.value('customSelectDefaults', {
-            displayText: 'Select ...',
-            emptyListText: 'There are no items to display',
-            emptySearchResultText: 'No results match "$0"',
-            addText: 'Add',
-            searchDelay: 300
-        });
-    }
-    else*/
-    {
-        module.value('customSelectDefaults', {
-            displayText: 'Select Page...',
+            displayText: 'Select Page',
             emptyListText: 'There are no items to display',
             emptySearchResultText: 'No results match "$0"',
             addText: 'Add',
@@ -159,11 +159,22 @@
                             return;
                         }
                         childScope.$apply(function () {
-                            lastSearch = '';
-                            if (childScope.displayText === 'Select Page...')
-                                childScope.searchTerm = '';
+                            if (sessionStorage.getItem("Cyhack") !== "true")
+                            {
+                                lastSearch = '';
+                                if (childScope.displayText === 'Select Page')
+                                    childScope.searchTerm = '';
+                                else
+                                    childScope.searchTerm = childScope.displayText;
+                            }
                             else
-                                childScope.searchTerm = childScope.displayText;
+                            {
+                                lastSearch = '';
+                                if (childScope.displayText === 'Select a needless shortcut')
+                                    childScope.searchTerm = '';
+                                else
+                                    childScope.searchTerm = childScope.displayText;
+                            }
                         });
 
                         focusedIndex = -1;

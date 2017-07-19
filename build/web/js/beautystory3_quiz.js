@@ -32,8 +32,8 @@ $(document).ready(function() {
         
     }
     
-    question13acount = 0;
-    question13bcount = 0;
+    question4acount = 0;
+    question4bcount = 0;
 
 
     $("#nextlevel1a").click(function() {
@@ -363,13 +363,13 @@ can start the quiz.");
             }
             else if (dialogue === 9)
             {
-                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
+                 //$("#BeautyLeft1").animate({left: '-50px'}, function() {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#RaceRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#RaceRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -465,13 +465,13 @@ can start the quiz.");
             }
             else if (dialogue === 12)
             {
-                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
+                 //$("#BeautyLeft1").animate({left: '-50px'}, function() {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#CaptainDRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#CaptainDRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -680,9 +680,9 @@ can start the quiz.");
             }
             else if (dialogue === 13)
             {
-                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
+                 //$("#BeautyLeft1").animate({left: '-50px'}, function() {
                    // $("#BeautyLeft1").hide();
-                });
+                //});
                 $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                     $("#BeautyLeft1").show();
@@ -867,9 +867,9 @@ can start the quiz.");
             }
             else if (dialogue === 6)
             {
-                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
+                 //$("#BeautyLeft1").animate({left: '-50px'}, function() {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#BendyRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#BendyRight1").hide();
                     $("#BeautyLeft1").show();
@@ -1120,13 +1120,13 @@ can start the quiz.");
             }
             else if (dialogue === 11)
             {
-                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
+                 //$("#BeautyLeft1").animate({left: '-50px'}, function() {
                     //$("#BeautyLeft1").hide();
-                });
+               // });
                 $("#CaptainDRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#CaptainDRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -1227,13 +1227,13 @@ can start the quiz.");
             }
             else if (dialogue === 13)
             {
-                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
+                 //$("#BeautyLeft1").animate({left: '-50px'}, function() {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#NatorRight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#NatorRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -1311,13 +1311,13 @@ can start the quiz.");
             }
             else if (dialogue === 11)
             {
-                 $("#BeautyLeft1").animate({left: '-50px'}, function() {
+                 //$("#BeautyLeft1").animate({left: '-50px'}, function() {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#Tel-ERight1").animate({left: (window.screen.width * .78)}, function() {
                     $("#Tel-ERight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -1725,23 +1725,23 @@ can start the quiz.");
             if ($("input[name=q]:checked").val() === "a")
             {
 
-                question13acount++;
-                if (question13acount < 30 && question13bcount < 300)
+                question4acount++;
+                if (question4acount < 30 && question4bcount < 300)
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Nope. Just . . . nope. That's all.");
                 }
-                else if (question13acount < 80 && question13bcount < 300)
+                else if (question4acount < 80 && question4bcount < 300)
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
                 }
-                else if (question13acount < 150 && question13bcount < 300)
+                else if (question4acount < 150 && question4bcount < 300)
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not a! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
                 }
-                else if (question13acount >= 300)
+                else if (question4acount >= 300)
                 {
                     missed = 0;
                     $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
@@ -1749,23 +1749,23 @@ can start the quiz.");
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                question13bcount++;
-                if (question13bcount < 30 && question13acount < 300)
+                question4bcount++;
+                if (question4bcount < 30 && question4acount < 300)
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Uh, no. Nothing to comment on the guy for here. Sorry.");
                 }
-                else if (question13bcount < 80 && question13acount < 300)
+                else if (question4bcount < 80 && question4acount < 300)
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
                 }
-                else if (question13bcount < 150 && question13acount < 300)
+                else if (question4bcount < 150 && question4acount < 300)
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not a! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
                 }
-                else if (question13bcount >= 300)
+                else if (question4bcount >= 300)
                 {
                     missed = 0;
                     $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
@@ -1774,7 +1774,7 @@ can start the quiz.");
             else if ($("input[name=q]:checked").val() === "c")
             {
                 $("#dialogue").html("<b>Beauty:</b> Well, you'd think by the title, that would've been it, but sorry. Try again.");
-                if (question13acount < 300 && question13bcount < 300)
+                if (question4acount < 300 && question4bcount < 300)
                     missed = 1;
             }
             else if ($("input[name=q]:checked").val() === "d")

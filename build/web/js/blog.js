@@ -215,7 +215,7 @@ function checkResolution() {
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
-    $("#2017").css({"width": window.screen.width});
+    $("#2017").css({"width": (window.screen.width * .8)});
     $(".beautyblogfront").css({"width": (window.screen.width * .65)});
     $(".beautyblogtitle").css({"width": (window.screen.width * .6)});
 

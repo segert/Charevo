@@ -53,7 +53,7 @@ $(document).ready(function () {
     change = 0;
     rotate = 0;
     angle = 0;
-    lostElements = 0;
+    lostElements = -1;
 
     //var characters = ["Beauty", "Tel-E", "Pyra"];
     //switchcharacter = "";
@@ -201,47 +201,52 @@ $(document).ready(function () {
             $("#character").mouseover(function () {
                 if (lostElements < 8)
                     document.getElementById("d").innerHTML = pyraBold + "Whoa! Careful now. I'm not engulfed in flames right now, but my body isn't exactly 98.6. So, please, for your own safety, just get that cursor away from me. And don't even think of clicking me. I really don't want anyone getting hurt.";
-                else
-                    document.getElementById("d").innerHTML = pyraBold + "";
+                
             });
 
             $("#character").mouseleave(function () {
-                if (lostElements < 8)
+                if (lostElements < 0)
                     DialogueChangeMenu();
-                else
-                    document.getElementById("d").innerHTML = pyraBold + "";
+                
             });
 
 
             $("#character").click(function () {
+                if(lostElements === -1)
+                    lostElements = 0;
                 switch (lostElements)
                 {
                     case(0):
                         location.href = "#homedisplay";
+                        document.getElementById("d").innerHTML = pyraBold + "Hey! I told you not to click me! Oh no. I was afraid of this. My heat's affected the page. The Home button's gone. Please. Don't do that again.";
                         $("#homedisplay").fadeOut(900, function () {
                             lostElements = 1;
                         });
                         break;
                     case(1):
                         location.href = "#subcharacters";
+                        document.getElementById("d").innerHTML = pyraBold + "Ah! What are you doing? Didn't you hear me? I said not to click me. My body only inflicts mild burns to whatever touches it. Now another link just disappeared. If you keep clicking me, this'll happen again.";
                         $("#subcharacters").fadeOut(900, function () {
                             lostElements = 2;
                         });
                         break;
                     case(2):
                         location.href = "#subabout";
+                        document.getElementById("d").innerHTML = pyraBold + "No! I just lost another link! If I'm not making this clear, I need you to keep your hands off me or you'll get hurt! So, please, just keep that little hand off.";
                         $("#subabout").fadeOut(900, function () {
                             lostElements = 3;
                         });
                         break;
                     case(3):
                         location.href = "#subhome";
+                        document.getElementById("d").innerHTML = pyraBold + "Oh no. The copyright section is gone! Please stop. This page is falling apart one piece at a time. I told you to keep your hands off me! You'll only get hurt!";
                         $(".footercontent2").fadeOut(900, function () {
                             lostElements = 4;
                         });
                         break;
                     case(4):
                         location.href = "#subhome";
+                        document.getElementById("d").innerHTML = pyraBold + "No! Two links just got destroyed! It's getting worse. Please stop.";
                         $("#subquiz").fadeOut(900, function () {
 
                         });
@@ -252,12 +257,14 @@ $(document).ready(function () {
                         break;
                     case(5):
                         location.href = "#menudiv";
+                        document.getElementById("d").innerHTML = pyraBold + "Ah! The search bar's deteriorated. Ugh. For the love of God. What am I not being clear about? DON'T CLICK ME!";
                         $("#theForm").fadeOut(900, function () {
                             lostElements = 6;
                         });
                         break;
                     case(6):
                         location.href = "#subbeautystories";
+                        document.getElementById("d").innerHTML = pyraBold + "Oh boy. Not good. More of the footer links. You're really making me look bad here. Just please stop hurting yourself.";
 
                         $("#substories").fadeOut(900, function () {
 
@@ -271,12 +278,15 @@ $(document).ready(function () {
                         break;
                     case(7):
                         location.href = "#test3";
+                        document.getElementById("d").innerHTML = pyraBold + "Eek! Not again! Oh God. Why do the hosts have to stand here? Please. I really don't want to hurt you. And I can tell you won't last much longer if you click me again. So, I beg you, don't click me again. I mean it this time!";
                         $("#test3").fadeOut(900, function () {
                             lostElements = 8;
                         });
                         break;
                     case(8):
                         location.href = "#subswitchcharacter";
+                        document.getElementById("d").innerHTML = pyraBold + "Aaaaah! Another link! Oh no. Another link! Oh God! It's spreading! My fire's spreading! Everything's deteriorating one after the other! I can't stop any of this! . . . Uh . . . uh . . . It won't stop. Why won't it stop? . . . Okay. Hang on! I'm getting you out of here!";
+                        
                         document.getElementById("prev").setAttribute("style", "opacity: .4");
                         document.getElementById("prev").disabled = true;
 

@@ -14,11 +14,11 @@
 
     app.controller('DemoController', ['$scope', function ($scope) {
 
-            $scope.state = 0;
+            $scope.page = 0;
 
             if (sessionStorage.getItem("Cyhack") === "true")
             {
-                $scope.states = [
+                $scope.pages = [
                     {id: 'Charevo/Characters/beauty.html', name: 'Cosplay Girl'},
                     {id: 'Charevo/Characters/tel-e.html', name: 'She Came From Outer Space!'},
                     {id: 'Charevo/Characters/pyra.html', name: 'Generic Fire Girl Name'},
@@ -42,7 +42,7 @@
                 ];
             }
             else {
-                $scope.states = [
+                $scope.pages = [
                     {id: 'Charevo/Characters/beauty.html', name: 'Beauty'},
                     {id: 'Charevo/Characters/tel-e.html', name: 'Tel-E'},
                     {id: 'Charevo/Characters/pyra.html', name: 'Pyra'},
@@ -66,8 +66,8 @@
                 ];
             }
             $scope.goToPage = function () {
-                if ($scope.state !== 0)
-                    window.location.pathname = $scope.state;
+                if ($scope.page !== 0)
+                    window.location.pathname = $scope.page;
             };
 
 

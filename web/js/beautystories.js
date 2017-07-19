@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     defaultdialogue();
 
-    if (sessionStorage.getItem("Cyhack") !== "true")
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
         $("#story1").html("<b>Follow the Leaders (TO YOUR DOOM!)</b>");
         $("#story2").html("<b>Superheroes: The Game Show</b>");
@@ -210,7 +210,7 @@ $(document).ready(function () {
         var cyhackBold = "Cyhack: ";
         cyhackBold = cyhackBold.bold();
 
-        if (sessionStorage.getItem("Cyhack") !== "true")
+        if (sessionStorage.getItem("Cyhack") === "true")
         {
             switch (story)
             {
@@ -251,7 +251,7 @@ $(document).ready(function () {
                     break;
             }
         }
-        else if (character === "Pyra")
+        else if (sessionStorage.getItem("SessionCharacter") === "Pyra")
         {
             switch (story)
             {
@@ -309,7 +309,7 @@ $(document).ready(function () {
         if (mouseouts < 70)
         {
 
-            if (sessionStorage.getItem("Cyhack") !== "true")
+            if (sessionStorage.getItem("Cyhack") === "true")
             {
                 document.getElementById("d").innerHTML = cyhackBold + "Oh, look! Uh, you can read, right? Yeah? Well, good news. These are the novellas our creator wrote for you people. Now, I know it's not the best idea to judge a story by just the title, but I'd say this is pretty accurate. What? You don't believe me? Well, fine. I'll give you my summaries too. You trust the Cyhack THAT much, right?";
             }
@@ -329,7 +329,7 @@ $(document).ready(function () {
         else if (mouseouts < 150)
         {
 
-            if (sessionStorage.getItem("Cyhack") !== "true")
+            if (sessionStorage.getItem("Cyhack") === "true")
             {
                 document.getElementById("d").innerHTML = cyhackBold + "Oh, look! Uh, you can read, right? Yeah? Well, good news. These are the novellas our creator wrote for you people. Now, I know it's not the best idea to judge a story by just the title, but I'd say this is pretty accurate. What? You don't believe me? Well, fine. I'll give you my summaries too. You trust the Cyhack THAT much, right?";
             }

@@ -38,9 +38,9 @@ $(document).ready(function () {
 
     }
 
-    question13acount = 0;
-    question13bcount = 0;
-    question13ccount = 0;
+    question12acount = 0;
+    question12bcount = 0;
+    question12ccount = 0;
 
 
     $("#nextlevel1a").click(function () {
@@ -160,13 +160,13 @@ $(document).ready(function () {
             }
             else if (dialogue === 12)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#Tel-ERight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#Tel-ERight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -331,13 +331,13 @@ $(document).ready(function () {
             }
             else if (dialogue === 11)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#Tel-ERight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#Tel-ERight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -789,13 +789,13 @@ $(document).ready(function () {
             }
             else if (dialogue === 13)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                $//("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#FergusonRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#FergusonRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -862,13 +862,13 @@ $(document).ready(function () {
             }
             else if (dialogue === 8)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#FergusonRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#FergusonRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -1151,13 +1151,13 @@ $(document).ready(function () {
             }
             else if (dialogue === 11)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#PyraRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#PyraRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -1262,13 +1262,13 @@ $(document).ready(function () {
             }
             else if (dialogue === 14)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#Tel-ERight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#Tel-ERight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                   // $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -1374,13 +1374,13 @@ $(document).ready(function () {
             }
             else if (dialogue === 13)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#FergusonRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#FergusonRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .18)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .18)});
                 });
                 // $("#prevlevel1a").attr("style", "opacity: .6");
                 document.getElementById("nextlevel1a").setAttribute("style", "opacity: .4");
@@ -1651,13 +1651,13 @@ $(document).ready(function () {
             }
             else if (dialogue === 10)
             {
-                $("#BeautyLeft1").animate({left: '-50px'}, function () {
+                //$("#BeautyLeft1").animate({left: '-50px'}, function () {
                     //$("#BeautyLeft1").hide();
-                });
+                //});
                 $("#PyraRight1").animate({left: (window.screen.width * .78)}, function () {
                     $("#PyraRight1").hide();
-                    $("#BeautyLeft1").show();
-                    $("#BeautyLeft1").animate({left: (window.screen.width * .35)});
+                    //$("#BeautyLeft1").show();
+                    //$("#BeautyLeft1").animate({left: (window.screen.width * .35)});
                     $("#nextlevel1a").attr("style", "opacity: .6");
                     nextline = 1;
                     question = 17;
@@ -2165,23 +2165,23 @@ $(document).ready(function () {
 
             if ($("input[name=q]:checked").val() === "a")
             {
-                question13acount++;
-                if (question13acount < 30 && (question13bcount < 300 || question13ccount < 300))
+                question12acount++;
+                if (question12acount < 30 && (question12bcount < 300 || question12ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Sorry. Not quite. Tel-E was taught not to abuse her powers, but the answer's not quite so specific.");
                 }
-                else if (question13acount < 80 && (question13bcount < 300 || question13ccount < 300))
+                else if (question12acount < 80 && (question12bcount < 300 || question12ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
                 }
-                else if (question13acount < 150 && (question13bcount < 300 || question13ccount < 300))
+                else if (question12acount < 150 && (question12bcount < 300 || question12ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not a! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
                 }
-                else if (question13acount >= 300)
+                else if (question12acount >= 300)
                 {
                     missed = 0;
                     $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
@@ -2189,24 +2189,24 @@ $(document).ready(function () {
             }
             else if ($("input[name=q]:checked").val() === "b")
             {
-                question13bcount++;
+                question12bcount++;
 
-                if (question13bcount < 30 && (question13acount < 300 || question13ccount < 300))
+                if (question12bcount < 30 && (question12acount < 300 || question12ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Tel-E wants to honor the women of her planet? False. Wait. No. That came out wrong. She TOTALLY wants to honor them. That's just not the answer to the question. Lots of love to Planet Knowlgia though.");
                 }
-                else if (question13bcount < 80 && (question13acount < 300 || question13ccount < 300))
+                else if (question12bcount < 80 && (question12acount < 300 || question12ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
                 }
-                else if (question13bcount < 150 && (question13acount < 300 || question13ccount < 300))
+                else if (question12bcount < 150 && (question12acount < 300 || question12ccount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not b! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
                 }
-                else if (question13bcount >= 300)
+                else if (question12bcount >= 300)
                 {
                     missed = 0;
                     $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
@@ -2215,24 +2215,24 @@ $(document).ready(function () {
             }
             else if ($("input[name=q]:checked").val() === "c")
             {
-                question13ccount++;
+                question12ccount++;
 
-                if (question13ccount < 30 && (question13acount < 300 || question13bcount < 300))
+                if (question12ccount < 30 && (question12acount < 300 || question12bcount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Well, she does believe it's dishonorable, but that wasn't her only reason if you know what I mean.");
                 }
-                else if (question13ccount < 80 && (question13acount < 300 || question13bcount < 300))
+                else if (question12ccount < 80 && (question12acount < 300 || question12bcount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Okay. What part of 'That's not the right answer' don't you understand? Because that is not the correct answer. Please try again . . . with a different answer.");
                 }
-                else if (question13ccount < 150 && (question13acount < 300 || question13bcount < 300))
+                else if (question12ccount < 150 && (question12acount < 300 || question12bcount < 300))
                 {
                     missed = 1;
                     $("#dialogue").html("<b>Beauty:</b> Again, no! Stop guessing that! It's not c! Don't think if you keep guessing it I'll just mark it as correct. Because that's so not happening.");
                 }
-                else if (question13ccount >= 300)
+                else if (question12ccount >= 300)
                 {
                     missed = 0;
                     $("#dialogue").html("<b>Beauty:</b> Ugh. Alright! Fine! You win! I'll give you the point! There. Now, select choice d so we can move along. Just stop picking this answer.");
