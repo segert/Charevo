@@ -333,7 +333,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = fourizeBold + "We're not talking about her! We're still focused with me and what I can do. And what I just did was a sample of my ice vision. Wanna see my heat vision overheat the User's device? 'Cause I'll do it if you don't continue telling people what I can do.";
                 break;
             case(14):
-                document.getElementById("d").innerHTML = pyraBold + "What you can do? Well, again, I'm looking at your powers, and they're not really saying 'powerful and interesting' to me. They mostly seem like a generic minion if I'm being honest.";
+                document.getElementById("d").innerHTML = pyraBold + "What you can do? Well, again, I'm looking at your powers, and they're not really saying \"powerful and interesting\" to me. They mostly seem like a generic minion if I'm being honest.";
                 break;
             case(15):
                 document.getElementById("d").innerHTML = fourizeBold + "Generic!? That is such a lie! I am the leader of my own team! I'll have you know I'm more interesting and powerful than you're conveying to this audience.";

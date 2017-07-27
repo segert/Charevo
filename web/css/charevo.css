@@ -75,8 +75,6 @@ nav ul li:hover ul {
     color: white;
 }
 
-
-
 section {
    
    //width: 75vw;
@@ -642,6 +640,13 @@ body.rotate315 {
     color: blue;
 }
 
+.highlight{
+    
+    background-color: yellow; 
+    cursor: pointer;
+    color: blue;
+    
+}
 
 .hmenu1{
     color: aqua;
@@ -1188,6 +1193,23 @@ body.rotate315 {
     left: 600px;
     top: 100px;
     font-size:20px;
+}
+
+.storysegment{
+    padding-top: 20px; 
+    width: 75vw; 
+    //width: 870px;
+    //float:left; 
+    //margin:0 0.7px 0.2px 0; 
+    border:2px solid #3B587E; 
+    background:#FFFFFF;
+    border-radius: 25px;
+    padding-bottom: 60px;
+    margin-bottom: 50px;
+    position: relative; 
+    //left: 0%;
+    margin-left: 13%;
+    //border-style: solid;
 }
 
 .subfooterlist{

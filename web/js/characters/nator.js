@@ -299,7 +299,7 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = pyraBold + "So here we have the character page for one of my Neo Brigade colleagues. You'll notice his poorly done Charevo Fairies on the right representing his Charevo Elements of Intelligence, Logic, and Data as well as the man himself, Nator AKA Nate 'I don't believe anything about the Charevo Gene despite the evidence presented' Rodriguez.";
+                document.getElementById("d").innerHTML = pyraBold + "So here we have the character page for one of my Neo Brigade colleagues. You'll notice his poorly done Charevo Fairies on the right representing his Charevo Elements of Intelligence, Logic, and Data as well as the man himself, Nator AKA Nate \"I don't believe anything about the Charevo Gene despite the evidence presented\" Rodriguez.";
                 break;
             case(2):
                 document.getElementById("d").innerHTML = natorBold + "Okay. A few things. One: My nickname is Nator, which is the name that should go in quotes. Two: If you're using AKA, it's Real Name AKA Nickname. And three: Don't bring those Charevo Gene theories into my page.";

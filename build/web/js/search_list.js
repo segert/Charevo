@@ -37,7 +37,7 @@
                     {id: 'Charevo/switchcharacter.html', name: 'Dump a Girl for Another'},
                     {id: 'Charevo/blog.html', name: 'Somethin\' in the Paper Today'},
                     {id: 'Charevo/charevogene.html', name: 'Charevo Gina Mozetti'},
-                    {id: 'Charevo/author.html', name: 'Welcome to This Doofus .com'}
+                    {id: 'Charevo/author.html', name: 'Too Much Dialogue'}
 
                 ];
             }

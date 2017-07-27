@@ -158,7 +158,7 @@ function DialogueChangeMenu() {
                 $(this).clearQueue().stop();
                 break;
             case(7):
-                document.getElementById("d").innerHTML = teleBold + "Well, your wish is my command then.";
+                document.getElementById("d").innerHTML = teleBold + "Well, your wish is my command, I suppose.";
                 $("section").fadeOut(1000);
                 $(this).clearQueue().stop();
                 break;

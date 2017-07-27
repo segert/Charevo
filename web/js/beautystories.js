@@ -355,6 +355,8 @@ function checkResolution() {
     $("section").css({"margin-top": "50px", "padding-bottom": "100px", "width": window.screen.width, "height": window.screen.height});
     sectionWidth = window.screen.width;
     sectionHeight = window.screen.height;
+    
+    
 
     document.getElementById("storycharacter").width = (window.screen.width / 3.2);
     document.getElementById("storycharacter").height = (window.screen.height / 1.44);
@@ -370,7 +372,7 @@ function checkResolution() {
     if (window.screen.width < 400)
     {
         $(".storybutton").css({"font-size": "16px", "width": "300px"});
-        $("#stories").css({"margin-left": "0px"});
+        $("#storieslist").css({"margin-left": "0px"});
     }
     else if (window.screen.width < 600)
     {
@@ -413,7 +415,7 @@ function resizeResolution() {
     if (window.screen.width < 400)
     {
         $(".storybutton").css({"font-size": "16px", "width": "300px"});
-        $("#stories").css({"margin-left": "0px"});
+        $("#storieslist").css({"margin-left": "0px"});
     }
     else if (window.screen.width < 600)
     {

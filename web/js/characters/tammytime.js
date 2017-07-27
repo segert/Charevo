@@ -291,7 +291,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = tammyBold + "How dare you preface the legend's name with his occupation! Yes, I'm more of a Harpo girl, but show some respect. Everyone knows Groucho and his hilarious look.";
                 break;
             case(9):
-                document.getElementById("d").innerHTML = teleBold + "Well, according to your thoughts, the man was born in 1890. I think a good reminder of who he is might be necessary.";
+                document.getElementById("d").innerHTML = teleBold + "Well, according to your thoughts, the man was born in 1890. I think a good reminder of who he was might be necessary.";
                 break;
             case(10):
                 document.getElementById("d").innerHTML = tammyBold + "You wanna remind people? Tell joke shops to sell more of his glasses and also his movies. I've robbed about three stores after they got rid of the classic gags.";
@@ -317,7 +317,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = tammyBold + "And being something he likes, it's no surprise that I'm our creator's favorite character. I guess it's just a matter of time until I get my own spinoff story.";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = pyraBold + "Okay, first of all, I'M our creator's favorite. And second, you're just our creator's favorite in terms of the character design. Yours was the only one that our creator saw after drawing you where he said 'Finally! I got one right!' Looking at you and your wardrobe, though, I don't consider this much of an achievement.";
+                document.getElementById("d").innerHTML = pyraBold + "Okay, first of all, I'M our creator's favorite. And second, you're just our creator's favorite in terms of the character design. Yours was the only one that our creator saw after drawing you where he said \"Finally! I got one right!\" Looking at you and your wardrobe, though, I don't consider this much of an achievement.";
                 break;
             case(4):
                 document.getElementById("d").innerHTML = tammyBold + "But you are basically saying I look better than all the rest of you. And I'm clearly the one our creator is most proud of.";
@@ -335,7 +335,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = tammyBold + "As long as I look good, that's the only result I need. But I ask you again. You think one good looking girl is a problem?";
                 break;
             case(9):
-                document.getElementById("d").innerHTML = pyraBold + "Okay. I'll admit you look kinda cute. But let's not get hung up on the assumption that your more passable design means you're 'good looking'.";
+                document.getElementById("d").innerHTML = pyraBold + "Okay. I'll admit you look kinda cute. But let's not get hung up on the assumption that your more passable design means you're \"good looking\".";
                 break;
             case(10):
                 document.getElementById("d").innerHTML = tammyBold + "I disagree. But, again, one good one is a problem?";

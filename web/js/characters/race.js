@@ -378,16 +378,16 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = pyraBold + "Get your best friend to read your mind? Oh yeah. She'll be totally honest about you. Anyway, I'm actually kinda glad you have some good abilities but are still incapable of leading a team well.";
                 break;
             case(10):
-                document.getElementById("d").innerHTML = raceBold + "Say what now? Me being bad at this is a good thing.";
+                document.getElementById("d").innerHTML = raceBold + "Say what now? Me being bad at this is a good thing?";
                 break;
             case(11):
-                document.getElementById("d").innerHTML = pyraBold + "Absolutely. Think about it. Our creator based the Neo Brigade and J Gang on characters from Teen Titans. He needed a leader for the heroes, so he created you to be like Robin. But then he added his own ideas where you're not a good team leader who only got the job for the Chief being your dad. So now, if anyone looks at the two characters side by side, they'll think 'Oh, yeah. These two are nothing alike', which makes you look completely original. Our creator's inability to draw helps too.";
+                document.getElementById("d").innerHTML = pyraBold + "Absolutely. Think about it. Our creator based the Neo Brigade and J Gang on characters from Teen Titans. He needed a leader for the heroes, so he created you to be like Robin. But then he added his own ideas where you're not a good team leader who only got the job for the Chief being your dad. So now, if anyone looks at the two characters side by side, they'll think \"Oh, yeah. These two are nothing alike\", which makes you look completely original. Our creator's inability to draw helps too.";
                 break;
             case(12):
                 document.getElementById("d").innerHTML = raceBold + "I'd still rather be a good leader if it only means calling our creator a hack.";
                 break;
             case(13):
-                document.getElementById("d").innerHTML = pyraBold + "Oh, yeah. He'll totally improve your character now.";
+                document.getElementById("d").innerHTML = pyraBold + "Oh yeah. He'll totally improve your character now.";
                 break;
         }
     }
@@ -426,13 +426,13 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = raceBold + "Aw, come on. This stuff's already in my bio. Can we not draw attention any of it please?";
                 break;
             case(11):
-                document.getElementById("d").innerHTML = beautyBold + "Well, you already objected to me building you up. I guess the only thing I can do is embarrass you.";
+                document.getElementById("d").innerHTML = beautyBold + "Well, you already objected to me building you up. I guess the only thing I can do is embarrass you. You got any secrets I could share with the nice user.";
                 break;
             case(12):
                 document.getElementById("d").innerHTML = raceBold + "Uh, that's okay. You can go back to saying the nicer things about me.";
                 break;
             case(13):
-                document.getElementById("d").innerHTML = beautyBold + "Oh! I just remembered. Fun fact: Our creator didn't know who all of us would be initially, but when he eventually thought about it, Tel-E and I were originally going to be white. But he later decided that it would be better if I was black and if Tel-E looked like a real alien and made her blue. So, as a result of that change, the one white character on our team is the guy who's name is Race. How's that for irony?";
+                document.getElementById("d").innerHTML = beautyBold + "Oh! I just remembered. Fun fact: Our creator didn't know who all of us would be initially, but when he eventually thought about it, Tel-E and I were originally going to be white. But he later decided that it would be better if I was black and if Tel-E looked like a real alien and made her blue. So, as a result of that change, the one white character on our team is the guy called Race. How's that for irony?";
                 break;
             case(14):
                 document.getElementById("d").innerHTML = raceBold + "Oh, did you have to bring THAT up?";

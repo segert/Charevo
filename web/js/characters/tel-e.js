@@ -268,7 +268,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = teleBold + "Not often, as the lack of honor doesn't make me any better than whatever evil I oppose.";
                 break;
             case(5):
-                document.getElementById("d").innerHTML = pyraBold + "I think being someone who wants to stop end evil makes you good enough to warrant using your powers to your advantage. Ugh. I hope one day you get back to your home planet. Not so you can reunite with your friends and family. I just want them to hear what you've done so they can be proud of you for doing something stupid as a way of honoring them. Because if they didn't know about you choosing to fight fair, this whole thing would be a complete waste.";
+                document.getElementById("d").innerHTML = pyraBold + "I think being someone who wants to stop evil makes you good enough to warrant using your powers to your advantage. Ugh. I hope one day you get back to your home planet. Not so you can reunite with your friends and family. I just want them to hear what you've done so they can be proud of you for doing something stupid as a way of honoring them. Because if they didn't know about you choosing to fight fair, this whole thing would be a complete waste.";
                 break;
             case(6):
                 document.getElementById("d").innerHTML = teleBold + "Give me a break, won't you? You've done your fair share of holding back as well if I'm not mistaken.";
@@ -334,7 +334,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = beautyBold + "Hmm. Is this like living next to a crazy neighbor in a sitcom? Because I could totally see that.";
                 break;
             case(13):
-                document.getElementById("d").innerHTML = teleBold + "Um . . . It's more like living next to a territorial neighbor who declares war on anyone who sets foot on her yard without being granted permission. Oh! And with plenty of weapons and vicious creatures hoarded within, at least according to what I've been told.";
+                document.getElementById("d").innerHTML = teleBold + "Um . . . It's more like living next to a territorial neighbor who declares war on anyone who sets foot on his yard without being granted permission. Oh! And with plenty of weapons and vicious creatures hoarded within, at least according to what I've been told.";
                 break;
             case(14):
                 document.getElementById("d").innerHTML = beautyBold + "Uh . . . Okay. So basically a comedy-drama that's, like, ninety percent drama.";
@@ -343,7 +343,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = teleBold + "Give or take.";
                 break;
             case(16):
-                document.getElementById("d").innerHTML = teleBold + "Yeah. I'll watch something else and stick with this planet for now.";
+                document.getElementById("d").innerHTML = beautyBold + "Yeah. I'll watch something else and stick with this planet for now.";
                 break;
         }
 

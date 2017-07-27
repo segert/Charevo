@@ -82,7 +82,7 @@ $(document).ready(function () {
     }
     else if (character === "Pyra")
     {
-        document.getElementById("d").innerHTML = bendyBold + "And now we have the character page of ol' Benjamin 'Bendy' Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
+        document.getElementById("d").innerHTML = bendyBold + "And now we have the character page of ol' Benjamin \"Bendy\" Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
         max = 9;
     }
     else
@@ -248,7 +248,7 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = bendyBold + "Help obliterate evil! OBLITERATE! Not help literate evil. Help obliterate evil!";
                 break;
             case(3):
-                document.getElementById("d").innerHTML = teleBold + "Bendy, I'm reading the intro you wrote. And it says 'help all literate evil'. ";
+                document.getElementById("d").innerHTML = teleBold + "Bendy, I'm reading the intro you wrote. And it says \"help all literate evil\". ";
                 break;
             case(4):
                 document.getElementById("d").innerHTML = bendyBold + "Girl, I ain't supporting reading in the villain community. I'm here to destroy evil with my heroicness. Just take it from the top. And get it right this time.";
@@ -276,7 +276,7 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
-                document.getElementById("d").innerHTML = bendyBold + "And now we have the character page of ol' Benjamin 'Bendy' Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
+                document.getElementById("d").innerHTML = bendyBold + "And now we have the character page of ol' Benjamin \"Bendy\" Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
                 break;
             case(2):
                 document.getElementById("d").innerHTML = pyraBold + "Bendy, get outta my spot! You're not the host here.";
@@ -464,6 +464,9 @@ function checkResolution() {
         guidancetableLeftMarginLeft = (window.screen.width * .1);
 
         tableWidth = (window.screen.width * .5);
+
+        $("section").css({"height": (window.screen.height * 3.05)});
+        sectionHeight = (window.screen.height * 3.05);
     }
     else if (window.screen.height < 600 && window.screen.width < 600 && window.screen.height < window.screen.width)
     {

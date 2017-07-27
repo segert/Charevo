@@ -277,6 +277,8 @@ function checkResolution(){
 
     $(".geneinfo").css({"width": (window.screen.width * .80)});
     $(".characterheader").css({"width": (window.screen.width * .80)});
+    
+    geneWidth = (window.screen.width * .80);
 
     if (window.screen.height < 500 && window.screen.width < 500 && window.screen.height < window.screen.width)
     {
@@ -308,8 +310,8 @@ function resizeResolution(){
     $("#maindiv").attr("style", "position:relative; width: " + window.screen.width + "px");
     //$("#maindiv2").attr("style", "position:relative; width: " + window.screen.width + "px");
 
-    $(".geneinfo").css({"width": (window.screen.width * .80)});
-    $(".characterheader").css({"width": (window.screen.width * .80)});
+    $(".geneinfo").css({"width": geneWidth});
+    $(".characterheader").css({"width": geneWidth});
 
     if (window.screen.height < 500 && window.screen.width < 500 && window.screen.height < window.screen.width)
     {

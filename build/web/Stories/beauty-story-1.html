@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="../beauty.ico.png" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../css/charevo.css" rel="stylesheet" type="text/css">
+        <link href='styles.css?version=2' rel='stylesheet'>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <script src = "../js/beautystory1.js"></script>
+
+
+        <link href="../css/custom.css" rel="stylesheet" type="text/css">
+
+        <style>
+            #charactertable tr:nth-child(even){background-color: yellow}
+            #charactertable tr{
+                background-color:#e6e6e6;
+            }
+            #charactertable td{
+                vertical-align: top;
+                padding: 10px;
+            }
+
+
+        </style>
+        
+        <script>
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+
+
+
+    </head>
+
+    <body ng-app="Demo">
+
+        <div id="maindiv">
+
+
+
+            <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+                   <div  ng-controller="DemoCtrl as vm">
+               <div >
+                   <div ng-keyup="$event.keyCode === 13 && vm.goToPage()">
+                       <div sui-select indicating-text="select a page" on-select="vm.onSelect(model)" options="vm.countryOptions" model="vm.selected" label="Country: " searchable="true" disabled=""></div>
+                       <span>
+                       <button type="button" class="btn" style ="z-index: 2" ng-click="vm.goToPage()" >
+                           <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                       </button> 
+                       <input type="submit" style="display: none"/>
+                   </span> 
+                   </div>
+                   
+               </div>
+       
+                      
+           </div>
+        
+               </form> -->
+
+            <nav>
+                <ul id = "menudiv" class = "ulmenu1" >
+                    <li class = "limenu1" > <a id = "home" class = "li-a-menu1" href="../index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "li-a-menu1-selected"> <a id = "about" class = "menu-selected" href="#about"><b>About</b></a>
+                        <ul id = "testmenu" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "characters" class = "liabout-a" href="../characters.html"><b>Characters</b></a></li>
+                            <li class = "liabout"> <a id = "gene" class = "liabout-a" href="../charevogene.html"><b>Charevo Gene</b></a></li>
+                            <li class = "liabout"> <a id = "author" class = "liabout-a" href="author.html"><b>The Author</b></a></li>
+                            <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
+                        </ul>
+                    </li>
+                    <li id= "test2" class = "limenu1"> <a id = "quiz" class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                        <ul id="testmenu2" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="../beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+
+                        </ul>
+                    </li>
+
+                    <li id= "test3" class = "limenu1"> <a id = "stories" class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                        <ul id= "testmenu3" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="../beautystories.html"><b>Beauty Short Stories</b></a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+     
+                     </li> -->
+                    <li id= "test4" class = "limenu1"> <a id = "miscellaneous" class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                        <ul id= "testmenu4" class = "sub-menu">
+                            <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="../switchcharacter.html"><b>Switch Character</b></a></li>
+                            <li class = "liabout"> <a id = "blog" class = "liabout-a" href="../blog.html"><b>Blog</b></a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+            </nav>
+
+            <div id="formdiv">
+                <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
+
+                    <div custom-select="p.id as p.name for p in pages | filter: { name: $searchTerm } track by p.id" ng-model="page" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                    <span>
+                        <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                            <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                        </button> 
+                        <input type="submit" style="display: none"/>
+                    </span>
+                </form>
+            </div>
+            <!--    <div style="width: 100%; position: absolute; top: 43px;">
+                   <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
+               </div>
+            --> 
+        </div>
+
+
+        <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 2100px; position: relative;">
+            <h1 class = "heading" style="margin-bottom: 10%;">Beauty Stories</h1>
+            <div id="main-wrapper" class="page-wrap">
+                <div style = "margin-top: 65px;">
+
+
+                    <div class="dropdown" style="margin-bottom: 50px; margin-left: 13%;">
+                        <button id="dropbutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                            Select Story Feature
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="changeMenu('Normal')">Normal</a></li>
+                            <li><a href="../Beauty-Short-Stories.pdf">Open PDF</a></li>
+                            <li><a onclick="changeMenu('Character Commentary')">Character Commentary</a></li>
+                            <li><a onclick="changeMenu('Character Riffing')">Character Riffing</a></li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div id="story">
+
+                    <div class = "storysegment" >
+
+                        <p style = "margin-left: 50px; margin-right: 50px;">(Beauty talks about being alone in Minor City, looking at her Character Manual and flipping to the back to the picture of her and Couch Potato. She talks about how all the popular superheroes are known more for being solo than being in a team, but she never understood why working alone would be what the heroes would want. She’s feeling sad and suddenly gets electrocuted by her powers as a little girl looks at her. Beauty mentions how this is a part of her powers she never thought she’d have to experience again.)
+(Beauty gets up and realizes she’ll have to smile to survive in a big city, but knows it’ll be hard. As she feels all alone, she hears an explosion and runs to it. She sees Fourize shoot a heat beam in an alley. She then sees Race lying on the ground, relaxing. She then sees Fourize look at him and raise his glasses.)
+	“Got you now.” The guy with the glasses declared as another beam shot out his eyes to the guy in the costume.
+	“Hey! Look out!” I called to the kid lying down.
+	(Beauty knows she might not be alone, but she wasn’t going to let someone get hurt. Before she can intervene, Race darts out of the way, stopping right in front of Fourize who fires another beam. Race dodges it and then charges into Fourize.)
+	“Fourize, you really need to keep your eyes open a little more.” The speedy kid remarked. Suddenly, that guy he was fighting shot another beam that went through his glasses this time. All the fast kid had to do was take a super-fast step to the left as the beam wound up hitting a street light, encasing it in ice like it had been flash frozen. “Okay, how many more shots do you want before I take you to jail?”
+	“If you stop moving and thinking you're so big, just one!” The fighter with the glasses affirmed, shooting one more beam, which the fast guy dodged again by moving his head to the side.
+	“Just give up, Fourize. You should know how awesome I am by now.”
+	(Race starts walking forward as the ground suddenly turns to ice. Race slips and falls as Beauty is bewildered.)
+	“Whoa! What did you do?” The speedster questioned his opponent.
+	“Oh, I wish I could take credit for this, Race. But hey, you're the awesome one. I'm sure you can figure it out.” The glasses guy mocked his opponent as he stood up. He then pressed a button on his shoes, turning them into ice skates. “As for me, I'll just take these new shoes my pal Cyhack made and bid you a fond, see ya, sucker.”
+	(Fourize skates away.)
+	“Hey! Stop!” The speedster barked, getting up.
+	(Race tries to run after him, but he slips and falls forward. Fourize blasts him back near Beauty as he laughs. Race looks up at Beauty who has her mouth open slightly in awe.)
+	“Okay. I know. I screwed up. You can move along now.” The speedy hero sighed to me.
+        <span class="nohighlight" onclick="setDialogue(1)">“That . . . was . . . AWESOME!” I exclaimed like a fat comedic actor.</span>
+	“Excuse me?” The runner uttered in confusion.
+	“That speed! That fight! That . . . coolness! You're like a real superhero!”
+	“Uh, are you not from here?”
+	“Hey, Race!” A voice hollered from the distance.
+	(Nator flies in on his jet boots. Beauty describes him.)
+	“You take care of Fourize?” The rocket footed individual inquired the hero.
+	“No. He got away.” The speedster answered, ashamed.
+	“Fourize beat you? That's impossible. His ocular heat vision only travels at a fifteenth of your top speed. How could he have hit you?”
+	“Well, Nator, if you . . .”
+	(Pyra appears out of the air.)
+	“Hey, Race, did you get Fourize out of our hair?” The fiery girl queried the one called Race.
+	“No, Pyra. He got away.” Race repeated.
+	“Fourize . . . got away from YOU, Race. So, what? Does that make HIM our leader now?” The girl remarked with sarcasm and disbelief.
+	“He didn't outrun me. In case you haven't noticed, the sudden ice on the ground can slow a guy down.”
+	“For you, maybe.” The girl mumbled with her arms crossed, rolling her eyes.
+	“Yo, Race!” Another voice hollered from a distance.
+	(Bendy slides on the ice with his foot enlarged to form a snowboard. He then turns it back to normal.)
+	“I missed the action. Did Fourize get caught already?” The lanky fella presumed.
+	“No, Bendy. He got away.” Race replied in frustration from the question. As he answered, an odd looking girl appeared to levitate down to the group.
+	(Beauty describes Tel-E)
+	“Race . . .” The blue-skinned girl began.
+	“HE GOT AWAY!” Race barked at the girl.
+	“I was just going to ask if you were okay.”
+	“Oh . . . Sorry, Tel-E. Sorry.” Race apologized, defensive.
+	“Well, forget Fourize. Does anyone know where all this ice came from?” The guy called Nator queried the group. After that, the girl with the scars projected dark fire from her hands to melt the ice, but the flames did not do the job.
+	“Huh. No good. It's like the earth is frozen from the inside or something.” The fire girl noted, bewildered.
+	“Interesting. Race, do you have any idea what could've caused this?” The blue girl asked the team's leader.
+	“Okay, just let me think about this. Uh . . . uh . . .” Race said, somewhat anxious.
+	(The Brigade sees Beauty with her hands over her mouth as she's containing her excitement.)
+	“Uh, can we help you?” The girl who answered to the name  “Pyra” inquired, unsure of what I was doing there. Instead of answering right away, I just stayed frozen and continued staring at them like an idiot. As I did, the stretchy guy extended his neck out just a few inches from me.
+	“I think she means you, girl.” The stretcher informed me.
+	(Beauty looks at all of them and realizes there are other kids with powers like her and they seem like superheroes. She shrieks and freaks out in front of them.)
+	“Oh my God! Oh my God! Oh my God! You! All of you! Five of you! An actual superhero team! You're . . . you're . . . you're . . .” I incoherently rambled.
+	“We're the Neo Brigade.” Nator mentioned.
+	“Oh! You have a name too! Oh, I feel like I'm gonna explode! This is so cool!”
+	“Pff. Tourists.” The fire girl mumbled to herself.
+	“I'm sorry, but . . . I have NEVER seen a real life superhero before.”
+	“Well, that streak’s finished. Let’s go, guys.” The girl called Pyra uttered, quick to move from me to the end of meeting me, getting ready to turn around with her friends.
+	“Yeah. We gotta get going.” Nator added.
+	(Beauty realizes the Brigade is going to leave, but she wants them to be around longer. As she is hopeful for that, she realizes she didn’t have to initiate it)
+	“Wait. Hold on. Is that a Charevo Emblem on your hand?” The blue girl asked me.
+	“A what?” I uttered, looking at the tattoo on my hand.
+	“You know, the mark that represents the Behavior, Mentality, and Identification Elements of your Charevo Gene, which results in the super abilities you get.”
+	“Yeah right.” The cyborg muttered with his arms crossed.
+	“By the look of it, your elements are . . . Fiction, Imagination, and Femininity.” The British alien acknowledged, examining my hand. “Do you know what your powers are?”
+	“You guys wanna know about ME? Well, sure. Check this out.” I told them.
+	(Beauty shows off her shapeshifting and hair powers, impressing the Brigade.)
+	“Wow. Impressive.” The alien girl complimented me and my powers.
+	“You're telling me. Guys, we gotta let her join the team.” Race suggested as I squealed with giddiness at the idea.
+	(Beauty talks about how excited she was)
+	“Whoa whoa. Back up. We're not letting some blonde in the Brigade just because she has a slew of power.” The fire girl objected.
+	“Hey, yeah. What if she’s got some other powers that could collapse on us when we need her to do something useful?” Bendy suggested.
+	“Don’t be ridiculous. She wouldn’t have something that could hinder her or any of us.” Race optimistically claimed before turning back to me. “You don’t have anything else in you like that, do you? You don’t. Right?”
+	(Beauty talks about being nervous to answer the question, mentioning her powers forcing her to smile when people look at her or she gets shocked. She sees an opportunity to join the Brigade, mentioning how she wanted to be in a hero team, which didn’t work out, but this will let her fulfill her goal to help others and also not be alone. She ultimately decides what to tell them.)
+	“Uh . . . nope. Nothing but what I showed you.” I innocently lied.
+“See? She’s cool. She wouldn’t be a problem at all.” Race assured his group.
+“You don’t know that.” The scarred girl argued.
+	“She's right, Race. We don't even know what kind of experience she's had.” The cyborg added.
+	“Well, actually, I did just beat a villain called the Gamer about an hour ago.” I mentioned.
+	“You . . . beat the Gamer. You.” The cyborg incredulously said. “Now, that's impossible. No one can escape her tricks.”
+	“Yeah, she's lying. Let's go, Neo.” The fire girl told the team as she prepared to leave.
+		“She's not lying.” The alien informed the team leader. “I've analyzed her thoughts, and she really did defeat the Gamer.”
+	“You're a mind reader? Whoa!” I cried as I then spelled the word “Awesome” with my hair.
+	(Beauty becomes concerned that Tel-E will know about her side effect, but hides her concerns, hoping she won’t read her mind on that. She keeps her smile the whole time.)
+“So . . . am I in?”
+	“Absolutely!” Race replied. “Come on, guys. Whaddaya say? Nator?”
+	“Race, we just met this girl. You don't just invite someone like that to work with you just because she has some skill. Haven't you ever heard of background checks following a job interview? It doesn't make sense.” The robotic Nator argued against me.
+	“Yeah, but she can really help us out. Bendy?”
+	“Hey, man, she looks powerful, but unfamiliar power can lead to danger, which can only mean someone can get hurt. On the other hand, getting hurt is my thing, so I can go either way on this.” The rubber skinned fella answered.
+	“Okay. Pyra?”
+	“No. We don't need someone like her with us.” The fiery Pyra stated with cynicism.
+	“Tel-E?”
+	“Well, I do agree with Nator that it may be early for having her join us. But if you believe this is right, Race, I’ll support your decision.” The alien known as Tel-E told the team leader.
+	“Alright. That's good enough. The girl's in.” Race concluded as I jumped for joy at this opportunity. However, I could hear some grumbling from that team once he said that. “Look, let's just give her a try, and if she's no good, she's gone. Sound good?”
+	(The team sounds a little more okay with this. Beauty talks about how excited she was, but notes how some of the heroes weren't crazy about her being brought on and how Race was a little too interested in her. Beauty says she doesn’t care, because she just wants to make friends, and as long as she’s going to force herself to smile, it could pay off.)
+	“Alright, I guess we've been told you're with us now. Come on. We'll show you the team HQ.” Nator reluctantly told me.
+	(Nator's feet rocket himself into the air as Pyra ignites herself, Tel-E levitates, and Bendy's foot turns into a snowboard while Beauty morphs into Hawkette (Hawk Girl) to travel with them. Race tries to run with them, but he slips on the ice.)
+	“Wait! Guys? Little help?” Race called to the group as Tel-E then levitated him up with her.
+</p>
+
+                    </div>
+                        
+                    </div>
+                      
+
+                    
+
+                    <div id="paddeddiv" class="panel-heading" style = "height: 450px; position: relative;">
+
+                    </div>
+
+                </div>
+
+            </div>
+            <footer id = "footer" class = "site-footer">
+                <div class = "footercontent">
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subhome" href="../index.html"><b>Home</b></a></th>
+
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subabout" href="#About"><b>About</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharacters" href="../characters.html">Characters</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharevogene" href="../charevogene.html">Charevo Gene</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subauthor" href="../author.html">The Author</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subquiz" href="#Quiz"><b>Quiz</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautyquizzes" href="../beautyquizzes.html">Beauty Quizzes</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="substories" href="#Stories"><b>Stories</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautystories" href="../beautystories.html">Beauty Short Stories</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="submiscellaneous" href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subswitchcharacter" href="../switchcharacter.html">Switch Character</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subblog" href="../blog.html">Blog</a></td>
+                        </tr>
+                    </table>
+
+                    <!--<ul class="footerlist">
+                        <li >
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li >
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="switchcharacter.html">Switch Character</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul> -->
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Copyright © 2017 Stephen Egert. All Rights Reserved.</p>
+                    <div style="position: absolute; left: 47%;">
+                        <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+
+
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .4; " disabled="disabled"  onclick = "prev();">
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" onclick = "next();">
+                Next >>
+            </button>
+
+
+        </div>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="../js/select_page.js" type="text/javascript"></script>
+        <script src="../js/search_list.js" type="text/javascript"></script>
+
+
+        <script src="../js/menu.js"></script>
+
+    </body>
+</html>
+
