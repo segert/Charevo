@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" type="image/x-icon" href="../beauty.ico.png" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../css/charevo.css" rel="stylesheet" type="text/css">
+        <link href='styles.css?version=2' rel='stylesheet'>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <script src = "../js/beautystory2.js"></script>
+
+
+        <link href="../css/custom.css" rel="stylesheet" type="text/css">
+
+        <style>
+            #charactertable tr:nth-child(even){background-color: yellow}
+            #charactertable tr{
+                background-color:#e6e6e6;
+            }
+            #charactertable td{
+                vertical-align: top;
+                padding: 10px;
+            }
+
+
+        </style>
+
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
+        </script>
+
+
+
+    </head>
+
+    <body ng-app="Demo">
+
+        <div id="maindiv">
+
+
+
+            <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+                   <div  ng-controller="DemoCtrl as vm">
+               <div >
+                   <div ng-keyup="$event.keyCode === 13 && vm.goToPage()">
+                       <div sui-select indicating-text="select a page" on-select="vm.onSelect(model)" options="vm.countryOptions" model="vm.selected" label="Country: " searchable="true" disabled=""></div>
+                       <span>
+                       <button type="button" class="btn" style ="z-index: 2" ng-click="vm.goToPage()" >
+                           <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                       </button> 
+                       <input type="submit" style="display: none"/>
+                   </span> 
+                   </div>
+                   
+               </div>
+       
+                      
+           </div>
+        
+               </form> -->
+
+            <nav>
+                <ul id = "menudiv" class = "ulmenu1" >
+                    <li class = "limenu1" > <a id = "home" class = "li-a-menu1" href="../index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "li-a-menu1-selected"> <a id = "about" class = "menu-selected" href="#about"><b>About</b></a>
+                        <ul id = "testmenu" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "characters" class = "liabout-a" href="../characters.html"><b>Characters</b></a></li>
+                            <li class = "liabout"> <a id = "gene" class = "liabout-a" href="../charevogene.html"><b>Charevo Gene</b></a></li>
+                            <li class = "liabout"> <a id = "author" class = "liabout-a" href="author.html"><b>The Author</b></a></li>
+                            <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
+                        </ul>
+                    </li>
+                    <li id= "test2" class = "limenu1"> <a id = "quiz" class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                        <ul id="testmenu2" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="../beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+
+                        </ul>
+                    </li>
+
+                    <li id= "test3" class = "limenu1"> <a id = "stories" class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                        <ul id= "testmenu3" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="../beautystories.html"><b>Beauty Short Stories</b></a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+     
+                     </li> -->
+                    <li id= "test4" class = "limenu1"> <a id = "miscellaneous" class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                        <ul id= "testmenu4" class = "sub-menu">
+                            <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="../switchcharacter.html"><b>Switch Character</b></a></li>
+                            <li class = "liabout"> <a id = "blog" class = "liabout-a" href="../blog.html"><b>Blog</b></a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+            </nav>
+
+            <div id="formdiv">
+                <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
+
+                    <div custom-select="p.id as p.name for p in pages | filter: { name: $searchTerm } track by p.id" ng-model="page" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                    <span>
+                        <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                            <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                        </button> 
+                        <input type="submit" style="display: none"/>
+                    </span>
+                </form>
+            </div>
+            <!--    <div style="width: 100%; position: absolute; top: 43px;">
+                   <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
+               </div>
+            --> 
+        </div>
+
+
+        <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 2100px; position: relative;">
+            <h1 class = "heading" style="margin-bottom: 10%;">Beauty Stories</h1>
+            <div id="main-wrapper" class="page-wrap">
+                <div style = "margin-top: 65px;">
+
+
+                    <div class="dropdown" style="margin-bottom: 50px; margin-left: 13%;">
+                        <button id="dropbutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                            Select Story Feature
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="changeMenu('Normal')">Normal</a></li>
+                            <li><a href="../Beauty_Story_2.pdf">Open PDF</a></li>
+                            <li><a onclick="changeMenu('Character Commentary')">Character Commentary</a></li>
+                            <li><a onclick="changeMenu('Character Riffing')">Character Riffing</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div id="story">
+
+                        <div class = "storysegment" >
+
+                            <p id = "storydisplay" style = "margin-left: 50px; margin-right: 50px;">A lot of people are lucky to be born with talent. For a bunch of people in Minor City, they have the Charevo Gene to get superpowers. When I discovered my abilities, I couldn’t wait to practice with them. And within hours, I was just using them whenever I found the opportunity. Of course, that’s just me. Just because some people have talent, it doesn’t mean they’re ready to apply it when they have the chance.
+                                Sometimes talent can be viewed as something people don’t value. It can be an ability to help or harm. And, depending on the person, that can be a blessing or a curse. If you’re a hero or villain, the mindset can be different. Certainly for one villain we encountered that morning, he valued his abilities to hurt others.
+                                As I had just joined Minor City’s resident teenage superhero team, the Neo Brigade, we had all been informed of some attacks down at the city’s architecture museum. When we made it there, we found dozens of people fleeing the building with a number of sculptures of monuments in pieces inside. Luckily, no one was hurt, though we still had to get to whoever did this as we heard some more smashing down a hall.
+                                It was down in a large open area where we discovered the culprit: A kid with a red-headed crew cut, blue pants, a sports jersey with a “03” on the front along with a label saying “J Gang”, and a Charevo Emblem on his hands that looked like a wrecking ball, a cave, and a barbell. Oh. And also this kid was about twice our size with two of the biggest arms you’d ever see on a seventeen-year-old.
+                                Normally, museums have art pieces crooks would steal, preferably in a stealthy heist fashion. This guy wasn’t stealing anything. He just seemed to enjoy smashing everything for some reason, which he continued to do by applying what appeared to be the power of super strength to destroy several large model buildings, though I’m sure the real ones wouldn’t have been much of a challenge for him. We even saw him punching part of a large scale replica of Minor City, which happened to include a replica of our own Neo Brigade HQ.
+                                “Haha! Dinomight crushes everything. No one withstands the might! Hahaha!” Dinomight boasted as he smashed the model of the Brigade HQ one more time.
+                                Ready to clean up this mess, the Neo Brigade’s telekinetic and telepathic blue alien friend held her hand out and levitated the brute in the air as he continued holding onto a piece of that model building, though away from the other models.
+                                “Well, Dinomight, I guess it's fortunate you're this small in real life, otherwise, we'd need a hotel.” Tel-E commented.
+                                “Man, Dino, is this what you do at the beach? Just kick sandcastles to feel big?” Bendy joked.
+                                “Yes.” Dinomight plainly answered.
+                                Ready to do all the damage he could, Dinomight hurled that model piece at the Brigade as we all dodged it, scattering. For Tel-E, as she had to move away suddenly, she lost focus in her mind to keep Dinomight up telekinetically. This caused her to release her hold on him as he dropped to the floor, landing with a mighty thud.
+                                “He’s about to attack. Get ready, Beauty.” Nator cautioned me.
+                                Ugh. That name. Beauty. The superhero name that nobody wanted, so I just got stuck with it. That’s not true. But that was my hero name. Seriously, that’s a name that you would only give me if all you knew about me was that I'm forced to smile all the time and one of the three things associated with me was femininity. Ugh. I’m sorry. I guess I don’t have time to rant about this, though. At least my displeasure with that name kept me from concentrating on Nator alerting me to an attack as if I wasn’t expecting it from the guy smashing museum exhibits.
+                                Anyway, back to the fight.
+                                Nator and I stood next to each other as the bulky fella faced us from the middle of the room and suddenly stampeded towards us. To defend against this, I grew my hair in front of me into the form of a large laser cannon. After it hardened into the real thing, I fired a laser at Dinomight. I was expecting this to slow him down, but he just threw a punch at the beam, completely absorbing it and all the other shots I shot as he kept his fists out. Dinomight was just so big; he might as well have been a giant green mutant, for he absorbed all my attacks.
+                                Once that failed to work, Nator tried his hand by opening the target colored port on his mechanical chest to produce a cannon that generated some purple energy, which materialized a hard sphere-like projectile at the end of it. Nator’s cyborg body had all kinds of technological tricks he had developed. This was just another he had, which he wasn’t going to tell me about for some reason. But he had a cannon out of his chest, which fired that metal sphere at Dinomight.
+                                However, the brute caught the sphere with ease and threw it back at Nator like a dodgeball. Of course, Nator wasn’t playing catch with him. The cyborg got hit by his own projectile, getting knocked a few yards down, falling on his back.
+                                At that time, Pyra had ignited herself in dark fire, flying her shadowy flame above Dinomight who just tried swinging his arms at her like he was swatting a fly out of the air. Pyra shot her fire down at him, but he just held his arms out, blocking her flames with what seemed like near invincibility, for he was completely undeterred from the fire like it was water mist.
+                                While he defended this, Bendy tried his hand at getting an attack in by extending his arms out and enlarging his fists, taking a giant punch at the brute. However, Dinomight withstood this too and immediately grabbed Bendy by the wrists, which were still regular sized. Once he had that grip, he swung the stretcher around, lifting him up, and swinging him right into Pyra, knocking her out of the air.
+                                Race even tried darting at Dinomight with his speed, but to no effect. No matter what the Brigade tried, he was no closer to going down, but we weren’t ready to quit.
+
+                                Optional Dialogue B1
+
+                                One thing we hadn’t tried yet was an idea I went with next. I applied my character morphing power to transform into a girl about his size with his strength. It was a wrestler named Maula who I instantly used to grapple with Dinomight. He and I were both locked hand and hand as he had to deal with a whole other person this time. He was a bit bewildered by this and wound up getting forced back from my character’s strength.
+                                After I knocked him down the room, Race attempted to get some speedy hits in as he ran to the brute, but Dinomight quickly grabbed a large model building that was about twelve feet tall as part of a massive city display. As he held that building, he swung it at Race, hitting him away. Race didn’t have a chance at hurting him. Bless his heart, though.
+                                “You don’t look so tough. Come here and I’ll show you real combat.” I challenged the brute.
+                                Not taking my lack of respect for his size and abilities well, Dinomight ran at my strong character like an angry rhino. Now, I thought size and strength was the only thing he had going for him, but then his arms started glowing white. As he ran at me, he threw one more punch with his glowing arm that I was all set to grab to turn it on him. But after I held my hands up to grab him, he landed that punch, resulting in an explosion of all things.
+                                It was like he just punched a pack of dynamite. The blast just sent me flying back, causing me to transform back into my default self. I could feel the ringing in my head from getting caught in that detonation he created. And it felt worse as I was sent back and landed on Pyra whose heat only added to the blast.
+                                “Wow! He's strong AND his fists can make explosions?” I asked in disbelief and enthusiasm before Pyra threw me off of her.
+                                “Well, he's not called Dinomight just 'cause he can't spell.” Pyra remarked.
+                                Looking to finish off me and Pyra, Dinomight’s arms glowed again as he was ready to take another run at us. But, suddenly, Tel-E shot a blast of energy from her mind at the brute. This didn’t hurt him, but it certainly annoyed him a bit before the alien girl then levitated him up in the air again and held him against the wall.
+                                “What in the name o' chicken wire?” Dinomight exclaimed as Tel-E glared at him.
+                                “I apologize for inciting further roughhousing from you, but we really have an event at school to attend soon.” Tel-E eloquently informed the brute.
+                                “Haha. So I'm keepin' ya from yer learny castle, am I? Just as good. I can pummel you with my strength even more. I'll bet jus' stayin' away from them smart places is killin' you right now.” Dinomight laughed.
+                                “You are aware that we're currently in a museum, yes? In any case, any area of intellect far surpasses barbarous mayhem.”
+                                “Nuh-uh! Destruction ain't borin' like reading.”
+                                “Be that as it may, mind will always triumph over muscle.”
+                                “Mind don't bash chicks like you. And it don't do this either.”
+                                Tel-E had a good mental force on him for a while. Her levitation on someone can pretty much allow her to put some invisible force field around you to limit their movements. So this was basically pressing down on him to keep the brute restrained on the wall. But, amazingly, Dinomight was strong enough to break out of even that. He overpowered the telekinesis by slamming his fists on the wall, rupturing the building and causing part of the ceiling to cave in right over Tel-E.
+                                Fortunately, the Knowlgian levitated all the broken ceiling pieces and upper floor parts from crushing her or anyone else, even safely levitating several people who fell from upstairs to our floor slowly. While she kept everything in order with as little destruction as possible, in came Dinomight who Tel-E dropped from the wall. The Knowlgian saw him coming for her and fired some more energy beams from her mind, but Dinomight absorbed it all again by punching them.
+                                As Dinomight was just feet from her, Tel-E applied her telekinesis again to freeze him in place. But the guy was still just too strong. He managed to slowly walk to her as she continued her attempt to restrain this man-beast.
+                                “Looks like your mind can't match my muscle.” Dinomight claimed, inching his way over to the alien.
+                                Tel-E suddenly levitated a piece of the destroyed model buildings at Dinomight from behind.
+                                “Look out! Behind you!” Tel-E alerted her opponent.
+                                The brute chose not to heed this warning as that piece struck Dinomight in the back of the head as he fell down. Finally, he fell down! After this, Tel-E levitated him up to the ceiling and back down to the floor.
+                                “Go Tel-E!” I cheered.
+                                “Tel-E, you’re the telepath! You can learn his battle strategy!” Nator reminded the Knowlgian.
+                                We all decided to watch Tel-E do her thing against Dinomight and hung back. However, Dinomight recovered in a few seconds as Tel-E floated away from him to get some distance.
+                                “As Aristotle once said, 'the energy of the mind is the essence of life.'” Tel-E affirmed, shooting energy from her mind at the bulky villain. However, Dinomight, once again, swung his fists at the attack, negating it.
+                                “Your life ain't strong enough!” Dinomight remarked as he ran to the Brigade member.
+                                Tel-E was about to levitate him again, but Dinomight was a bit too quick and landed a hard punch on Tel-E, knocking her to the ground. It looked painful to start, but he was just getting started. Before the girl could recover, Dinomight grabbed her by the arm and punches her again, sending her back into a wall, leaving some noticeable cracks. Sensing peril, Tel-E took flight to get to a safer playing field.
+                                “Hey, I ain’t done with you yet!” Dinomight objected as he then leaped in the air.
+                                The brute didn’t just have power in his arms, it turns out. His legs were up to stuff too as he sprung himself right up to Tel-E’s height. As he was in the air, he grabbed her by the tail and pulled her back down, slamming her to the floor.
+                                This was bad enough, but then it turned to overkill as Dinomight, still holding her tail, just started swinging her over his head and down to the floor multiple times like an old chain.
+                                “So which did you say is better?” Dinomight gloated, attacking her again.
+                                This guy showed no mercy as he continued swinging Tel-E into things as she endured too much pain to even participate in the fight. She was just the rag doll for some punk kid who hated dolls as he kept hitting her around. This really was hard to watch, and it didn’t look much better near the end as he threw her down to the floor before finally grabbing her with one hand by the waist and holding her against the wall as Tel-E only held her head down. I’m just glad her hair was covering her pretty face, because I didn’t want to see just how beaten she was.
+                                “Did your mind withstand that?” Dinomight laughed like the bully he was. He then started wailing on my friend with his excessive strength while it proved even more painful to see. It was like watching a wrecking ball demolish a school.
+                                Tel-E looked just too weak as she tried to generate one more round of energy from her mind, but it just failed before she can even hit him.
+                                “You know, MY powers don’t go away when I get hurt.” The brute bragged while Tel-E still appeared weak.
+                                “Physical . . . strength . . . will never . . . beat . . . mental strength.” Tel-E insisted, struggling to remain conscious.
+                                As if he didn’t even want her saying another word, Dinomight just threw Tel-E to the floor one more time. That was when we saw his arms glow again. And, from what I knew after seeing him in action, there would have been no coming back from this.
+                                I wasn’t sitting this out anymore. Before he could blow up the girl, I grew my hair around Dinomight’s legs, tripping him up before I pulled him to me. I then lifted him up by the legs, holding him upside down in the air like a piñata. That’s when more of the team jumped in.
+                                As I held Dinomight up, Nator held his hand out and nodded to Race who used his power of giving super speed to project his circular speed waves at the cyborg. With Nator caught in that path, he applied his natural robotic abilities to disconnect his hand from his arm as a miniature rocket launched it out as the hand turned into a fist and flew to Dinomight at a blink and you’ll miss it velocity. Nator’s Race assisted fist wound up hitting Dinomight in the head, knocking him out instantly.
+                                “Yeah! Smart guys win!” Nator celebrated as his hand returned to him, reconnecting with his arm as Pyra helped Tel-E up after her brush with the brute.
+                                “You okay, Tel-E?” Pyra asked as she put the alien’s arm over her shoulder.
+                                “. . . More or less . . . Mostly less.” Tel-E weakly replied.
+                                “Tel-E, can you name the three-hundred-twenty-seventh digit of pi?” Nator inquired to test how okay she was like someone asking how many fingers they were holding up.
+                                “That's . . . not . . . something I would know.”
+                                “Hang on. You’ll be alright.” I assured the Knowlgian as I transformed into the character, Crimson Sorceress.
+                                Using the character’s magic abilities, I was able to heal Tel-E just by holding her hands. The red aura of my character transferred to the Knowlgian and cleared her face of all those bruises and cuts, restoring her prettier look. I don’t know how, but Crimson Sorceress’ powers even fixed the tears in her dress. Then again, it is magic. What’s to make sense of?
+                                As I fixed the alien up, Dinomight seemed to wake up, but not with any chance of jumping back into battle. We were just going to arrest him right there.
+                                However, before Dinomight could be apprehended, the shadows over the floor seemed to be expanding, even becoming darker. It was then that I found something rise from the shadows as if someone was melting in reverse, only with darkness surrounding them. This mysterious figure that emerged had an all dark look with two white eyes. He basically looked like Pyra in her ignited form without the flames. For some reason, I felt like I’ve seen someone else look just like this guy.
+                                As this person appeared, a portal in the shadows in the floor to suck Dinomight in, either saving him or capturing him. I wasn’t sure at that point.
+                                “Alright! The new guy!” Dinomight said in relief as the figure looked at him. “Don’t worry. You’ll get your chance at her. Just get me outta here!”
+                                It turns out this mysterious person was there to help the brute out, for his shadow portal swallowed Dinomight as he and the figure descended back into the floor. The mystery guy looked back at us before he and Dinomight vanished as we tried to catch them both. But they were gone. We won the battle, but Dinomight got away. With who? No one knew.
+                                “Whoa. They have someone else in their Gang now?” Race asked, surprised by what he saw.
+                                “Who’s they?” I queried the Brigade leader.
+                                “Nothing. You’ll find out soon.”
+                                So that was the end of that. Thankfully, the museum was safe from more damage and, more importantly, Tel-E was okay. Reporting to Race’s dad, the Minor City police chief, Lou Trotterberg, was another challenge, though. He wasn’t happy to hear that Dinomight got away. For him, a villain being loose is one of the worst things for him and his city, which makes sense. And you’d assume that villains being loose is all heroes like the Neo Brigade could think about in our day to day lives. But we weren’t doing this full-time. We also had school on our minds.
+                                At least, not yet. It was the end of August, and we still had a week until school would begin. However, there was a fun little event taking place at the Minor City high school that day. It was a quiz bowl Tel-E was going to participate in. So we all took off for the school together after reporting to the Chief.
+                                The quiz bowl was gonna be outdoors on the football field behind the school. When we got there, we could see a bunch of kids up in the bleachers while quiz bowl participants were seated at chairs in front of a stage on the field. Almost half the bleachers were full of students, a bigger crowd than I expected. As we approached the field, we even saw a large group of kids talking right next to the bleachers.
+                                I thought this would be fun. Just a nice event with friends. But as we walked forward by the crowd, we could see Pyra lagging behind for some reason.
+                                “Uh . . .” Pyra mumbled to herself as she stared at the school with her eyes widening.
+                                “Come on, Pyra! You comin’?” I called to the fire girl.
+                                “Yes, I’m coming!” Pyra irritably answered before sounding a bit defensive. “It just . . . looks a little crowded, seeing as how YOU’RE here now. I’ll uh . . . I’ll watch from the air particles. You go on ahead.”
+                                “Watch from where? Seriously? You’re not gonna watch with . . .” I partially objected before Pyra abruptly ignited herself in dark fire and mixed herself into the air. “Whoa. Uh . . . Can she still hear us?”
+                                I thought that was a little strange. Pyra just ditched us right there. I mean, she was still going to be present to watch the quiz bowl, but we couldn’t see or hear her. It was just her mixed into the air. There were plenty of seats available, so I had no clue what her reasoning was. All I know is I was alone in feeling this, because the rest of the team didn’t mind Pyra’s abrupt exit.
+                                “Alright, girl. Quiz bowl time! You ready to trivia up?” Bendy asked Tel-E, rubbing her shoulders like a coach with a boxer as the Knowlgian had her dress’ hood up like it was an old blue cloak.
+                                “Ready.” Tel-E replied, looking forward.
+                                “I said you ready?” Bendy reiterated, a little louder.
+                                “I said I’m ready.” Tel-E repeated, not reflecting the enthusiasm of the stretcher.
+                                “You better be! Your competition is waiting for you. They’re out there, girl!”
+                                “Alright, Bendy. Give her some room. It’s not like there’s students at this school to be scared of.” I assured him, putting my hand on his shoulder to lead him away from Tel-E.
+                                “Hey there, folks.” A kid said, stepping in front of us and waving his hand.
+                                Contradicting myself, I discovered this was no ordinary kid. He may have dressed normal, but he had dark yellow skin, short but spiky horns on his head, wolf-like claws with hairy arms, and fangs. This was pretty alarming to see at a school, so all I could do was yelp in alarm before growing my hair out to grab hold of this monster and raising him up in the air. It only seemed fair since my reaction to this guy included losing my smile and getting electrocuted thanks to the one negative thing about my powers.
+                                “Whoa nelly!” The yellow creature cried as he ascended in my hair.
+                                “Ellie! Stop! He’s a friend!” Tel-E informed me.
+                                “Really? But he looks like some alien monster. How can he be your fr . . .” I asked, not getting it as I then looked at Tel-E and stopped myself. “Oooooh. Right. My bad.”
+                                So this guy was an alien, but wasn’t evil. Whoops. I assumed he was gonna hurt us, but, thankfully, I was wrong. So to not make this too awkward, I set the alien kid down. But as I did so, I realized he wasn’t alone.
+                                “What is this!?” A second voice growled with a thick Spanish accent from across the school yard.
+                                I turned to this voice, and was surprised, though less alarmed, to find it belonged to what looked like a second alien our age. As I looked at this gentleman, he seemed to have all those features of his yellow friend, only with dark red skin.
+                                “Put him down! Or does your leader here teach you to stand against all defiance of her wrongdoing?” The red kid ordered, glaring at Tel-E and I. He looked like he was about to puff smoke out his nose like a dragon. But he softened up a bit when he saw Race, Bendy, and Nator. “Oh. What’s up, guys?”
+                                “Hey, El-Lo.” Race casually said to the red alien. “Beauty, these are our friends, El-Lo and Bo-Rey. They’re from the planet Draco. They’re aliens, but they’re totally nice and harmless. Just like Tel-E.”
+                                “Hmph. Not if you asked her.” The crimson El-Lo scoffed, continuing to glare at my aqua friend.
+                                “El-Lo, I never once implied I disliked you two. I really would like to be friends.” Tel-E appealed.
+                                “Yeah, come on, El-Lo. She don’t look vengeful. Sure there’s that possibility of her to be, but she ain’t.” Bo-Rey argued in his kind Southern accent.
+                                “I’ll be the judge of that.” El-Lo muttered with suspicion.
+                                I didn’t know what to ask about first. The fact that our school had three aliens attending or that El-Lo was so fixated on some potential act from Tel-E. Just what was this guy talking about? Tel-E couldn’t have been a bad person. She was one of the sweetest people I’ve met in Minor City. The concept of what this guy was implying seemed pretty out there. I mean, I didn’t know a whole lot about Tel-E, but she didn’t seem like one to make enemies.
+                                Or was she? I didn’t know her as long as El-Lo did. But I didn’t feel like this was something to go on about at that point. Instead, I decided to just break the ice with these guys.
+                                “O . . . kay. Well, I’m Ellie. I’m the newest member of their team. Sorry about the whole attacking you with my hair thing. I’m-I’m just new here is all.” I explained as I shook El-Lo and Bo-Rey’s hands.
+                                “Oh, that’s alright. So long as you’ll be protecting us from who-knows-what, you’ll fit in just fine ‘round here.” Bo-Rey stated like a gentleman.
+                                “Yeah. Sorry for thinking Vega here put you up to that. I’m sure you would’ve told her no.” El-Lo half-apologized. And, by that, I mean he apologized to me, but not to Tel-E. What was going on between those two, I wondered?
+                                “Riiiiight . . . So, uh, I guess you guys are ready for the quiz bowl then?” I asked the aliens, changing the subject.
+                                “Ready as I can be for Earth trivia after being on this planet for only two years.” Bo-Rey answered with realistic confidence.
+                                “Hey, I’m sure you’ll do fine. I bet you know more than Bendy, here.” Nator assured the yellow alien.
+                                “That’s right. Though I’m sure Tel-E will find a way to steal the game from him.” El-Lo suggested, bringing the conversation back to where it started.
+                                “Well, best of luck to you then.” Tel-E positively said, holding her hand out to Bo-Rey to shake.
+                                Bo-Rey was about to cordially shake his opponent’s hand, but before he could, El-Lo just put his hand on his shoulder and shook his head. It was like there was no guarantee of a good game or sportsmanship from Tel-E. So, the two just walked away after El-Lo’s implication and left the Knowlgian nothing else.
+                                “Nice meeting you!” I hollered, still with an awkward smile. Once they left, I decided to address the elephant in the room. “So what was that about? Tel-E, did you do something to them?”
+                                “I’d rather not talk about it.” Tel-E responded, leaving to take her seat with the other quiz bowl contestants.
+                                So there was something going on, I thought. This girl was hiding something. I knew it. I so wanted to talk to her and learn a bit more about how she got to Earth and who her parents were, but she just didn’t want to get into it.
+                                It was strange. I talked to El-Lo and Bo-Rey a little later and they even mentioned how they were the only aliens in the city and how both of them had parents who were galactic voyagers before deciding to settle down by moving to Earth. Apparently, they both felt alone as kids from another world, but gained their confidence back when they learned another kid from the same planet lived in the city.
+                                See, that’s a nice story to hear. Something I could certainly relate to. I would’ve loved to hear Tel-E’s story. If only she’d be willing to share it. Well, I guess that was for another time.
+                                For now, me and the Brigade just sat up in the bleachers while Tel-E was with Bo-Rey and several other kids in their chairs by the stage awaiting the competition.
+                                That was when the school’s principal, Georgie Chang finally approached the microphone on the stage to address her students.
+                                “Thank you, one and all for coming to our school's first annual summer quiz bowl.” Principal Chang welcomed everyone. “As you know, all the money we've made from ticket sales and entry fees will go to charity. So why don't we all give a warm welcome to the woman who came to us with this idea, Minor City's own celebrity, Christy Ferguson!”
+                                After the introduction, a woman approached the podium placed on stage with her own microphone. The podium had a kind of game flare to it with several nested colored circles with the woman’s name on it. All that was missing was some flashing lights.
+                                As I got a good look at the woman, I could see she had big orange curly hair, a leather jacket over a blue shirt, and gray pants under a purple skirt. It was then I recalled seeing this woman on TV before as I and a lot of other kids cheered as she arrived.
+                                “Christy who?” Bendy asked.
+                                “You know, the comedian who claims to know everything. Apparently, she's a game show host too.” I mentioned as the host began to speak.
+                                “Thank you, Georgie. Now, as you all know, we'll have several rounds of three students competing against each other to answer trivia questions. The person with the most points at the end of the game will be our winner.” Ferguson explained. “Now, I've decided there won't be buzzers or ringing in. I'll ask each contestant questions one at a time, and encourage everyone to make their best guesses, especially if you're completely clueless. So if you do well, good for you. If you stink, well, I guess you get expelled.”
+                                The audience laughed at this. I could tell this was gonna be fun. Ferguson has a reputation for being different than most game show hosts as we saw during the game.
+                                The quiz bowl was simple. There were three rounds with each round consisting of all the contestants competing in random groups of three. There were three contestant podiums across from Ferguson’s host podium where three kids would be asked a question one at a time while Principal Chang kept score on a chalkboard on stage with a points total under everyone’s name.
+                                For the game, every time someone was asked a question, if they’re right, they get a point. If they’re wrong, the next contestant in the line of three gets a chance to steal.
+                                The rounds went by as we noticed Tel-E doing pretty well. She always came across as one of the brightest people I met and the most eager to learn. She got almost every question she was asked correct.
+                                Of course, there were plenty of wrong answers from most everyone else. And, being a comedian, Christy Ferguson was quick to make fun of these responses. Some kids took these jokes well, some not. These kids included Bo-Rey who didn’t do nearly as well as Tel-E. Ferguson would respond to him with some tounge-in-cheek responses about how they couldn’t schedule the event to take place on his planet or he would’ve done much better. Tel-E didn’t have this problem though as she went into the last game with a score eclipsing Bo-Rey’s. I looked down at the bleachers to see El-Lo just seething at her as she went on stage again. 
+                                “Alright, time for the final round. As you can see by the score as written by your principal’s questionable handwriting, Tiffany Boole currently has three-hundred points. Very nice.” Ferguson announced as a girl on stage with a purple headband, green shirt, and green skirt smiled and nodded.
+                                “Boooooo!” Nator shouted at Tel-E’s opponent.
+                                “Tel-E Vega is tied for first with three-hundred points. Good work.” Ferguson continued as me and the team cheered for our friend while we could hear El-Lo booing that time. “And finally, we have Jordan who both currently and previously has ten points. Nice . . . try.”
+                                “It’s not my fault! You keep giving me the hard questions!” The less intelligent kid, Jordan, protested.
+                                “Really? Your opponents seem to get them right when you’re wrong. But, look, you can redeem yourself, ‘cause it’s your turn.” Ferguson informed Jordan as she read the next question from a card. “Who was the thirty-forth U.S. president?”
+                                “Oh! Uh, I know this one.”
+                                “Don’t lie to me.” Ferguson joked.
+                                “No wait. Uh . . . uh . . .”
+                                “Okay, just to be nice, I’ll give you a hint: He was president after Harry Truman.”
+                                “Okay. Okay . . .” Jordan mumbled, trying to think.
+                                “Alright. New question: Jordan, what number president was Harry Truman?”
+                                “I have no idea.”
+                                Me and the rest of the audience had a laugh at that. The Brigade told me later that Jordan may seem like a goof-off, but he’s actually a pretty nice guy, not that Ferguson cared about the nice guy part.
+                                “That’s all I needed to hear. Tiffany, thirty-forth president?” Ferguson asked Tel-E’s much smarter opponent.
+                                “Dwight Eisenhower.” Tiffany answered.
+                                “Correct. Next question to Tel-E . . . actually, Jordan, I’ll give you another try. Who wrote the Federalist papers?”
+                                “Uh . . . uh . . . the Federalists?” Jordan guessed as everyone laughed.
+                                “Never mind. Tel-E? Same question.”
+                                “Alexander Hamilton, James Madison, and John Jay.” Tel-E answered.
+                                “That is correct. Tel-E and Tiffany are tied again.” Ferguson announced. “Tell me, Jordan, how is it Tel-E has only been on this planet for less than a year and she knows more American history than you?”
+                                The game continued in this fashion of Tel-E and Tiffany Boole being neck and neck as they got to the final set of questions.
+                                “Okay, Jordan, here’s an easy one. In terms of pi, what is the circumference of a circle with a radius of eight?” Ferguson queried.
+                                “Oh! Uh, sixty-four pi?” Jordan guessed.
+                                “No. Tiffany?”
+                                “That would be sixteen pi.” Tiffany answered.
+                                “Correct. You know, Jordan, after hearing your answers, I think I know why teachers make so little money.” Ferguson joked. “Anyway, it’s all tied up again between Tel-E and Tiffany, and we have only one question left. And Tel-E, it is for you.”
+                                “Oh yeah. She's so got this.” Race noted with confidence in his best friend.
+                                “Here's your question: What is the three-hundred-twenty-seventh digit of pi?”
+                                “Oh wow. What are the odds?” I said.
+                                “One in infinity.” Nator replied.
+                                “Hey, it’s no problem, newbie. She’s got the advantage. I mean, she can just read the host’s mind for the answer. That’s why I bet so much money on her to win.” Bendy noted.
+                                “You actually bet money on this?” Race inquired.
+                                “Don’t worry. She can’t lose.”
+                                Tel-E paused to think about this. We couldn’t tell if she was reading Ferguson’s mind to get the answer or was just trying not to make her telepathy seem obvious by answering right away.
+                                “Umm . . . is it four?” Tel-E asked.
+                                “Sorry. It’s not.” Ferguson said.
+                                “What!?” Bendy exclaimed, outraged.
+                                “Jordan? Be honest. Do you know the answer?”
+                                “No. But I have a guess. I know it’s not four. So . . . is it five?” Jordan guessed with confidence.
+                                “I like your logic, but no. Tiffany? Three-hundred-twenty-seventh digit of pi to win?”
+                                “Is it zero?” Tiffany inquired.
+                                “We have a winner!”
+                                The audience cheered as Principal Chang brought a giant trophy up on stage, handing it to Tiffany Boole who smiled and waved to the crowd after shaking hands with Tel-E. As this went on, I looked to Bendy sitting right next to me with his face in his hands, so disappointed.
+                                “Congratulations, Tiffany. You win this nice new trophy. Tel-E, great job. Jordan, I’d like the names of all your teachers if you don’t mind.” Ferguson concluded.
+                                Tel-E walked off the stage as me and the Brigade went down the bleachers to meet with her in an empty area next to the stage. As we got there, Pyra suddenly appeared out of the air in her ignited form to join us.
+                                “Hey, uh . . . second place. Way to go.” I congratulated Tel-E, trying to make something out of her losing.
+                                “What happened? You coulda read Ferguson's mind and destroyed Tiffany! Why didn't you go for it?” Nator questioned the Knowlgian.
+                                “I just didn't want to.” Tel-E plainly admitted.
+                                “Didn't wanna? I was sure you'd know all the answers that way. Now I lost thirty-nine dollars on this. You know what that means, right?” Bendy complained.
+                                “Tel-E does not owe you money for not cheating.” Pyra sighed.
+                                With the fun having come to an end after that, it was time for us to return to our residence of the Neo Brigade HQ. I was ready to just relax and enjoy the end of the summer by hanging out and watching some TV, but the Chief wasn’t ready for me to be ready just yet. Since we all had to deal with Dinomight that morning, that meant everyone had to fill out a damage report in our office at the police station.
+                                I was still new to this, so as it was explained to me, we’re required to report the damages to public and private property, any Neo Brigade, police, or civilian injuries, and a bunch of other stuff that involved whether further damages were prevented and controlled and the various costs involved. It may have sounded like a lot to fill out in a few forms, and it was, but, as I learned a few hours earlier, when the name for a form under villain is Dinomight, you’re gonna be reporting a LOT of damage.
+                                Naturally, I wanted to just watch TV, but I could only go back to that after this work, which I tried to do as quickly as I could. But since this was my first time with this, I was having some trouble in certain spots. It’s like those medical forms you fill out where you know all your information, but some things might be worded differently than you remember. There’s just a lot you need to recall for something so important.
+                                Now, Tel-E was not new to this team. So she managed to finish her report in a matter of minutes, getting up from her cubicle just next to mine, and putting her form in the little folder stapled on the wall next to the exit leading back to the HQ. I knew I wasn’t gonna get out of here on time if I was by myself, so I just went for some help.
+                                “Hey, Tel-E. What do I fill out for property damage if Dinomight causes damage by hitting one of us into something?” I asked the alien, not sure what to do.
+                                “Oh, you can just include it for enemy and check the 'other' box for weapon use.” Tel-E informed me as she was ready to leave again.
+                                “Thanks. Oh, wait! How did you calculate estimated damage value?”
+                                “Oh, there's a book you can use to reference cost value for just about anything.” Tel-E acknowledged, pointing to a thick book on my desk.
+                                “Oh . . . thanks.”
+                                “But since you probably want to get out of here quickly, here. You can just use my answers for now.”
+                                Tel-E then took her form out of the folder and handed it to me, making sure the rest of the team doesn’t see her do this. I don’t think they heard what she said, so I guess she got away with helping me.
+                                “Wow. Are you sure? Aren't we supposed to write down what we each recall in damage?” I reminded her.
+                                “Right. But you're new here, and I figure bending the rules for a friend doesn't have to be too frowned upon.” Tel-E explained, showing me what she wrote.
+                                Well, that was nice of her. She really didn’t have to make it that simple for me. It was great to have a friend help out like that. With her form in my hand, I not only copied what she filled out, but also read it over for future reference when I would have to do another of these reports. As soon as I was done cheating while working for the police department, I put both of our forms in the folder and left the room as fast as I could.
+                                I know it was only to watch some TV, but hey, I like watching TV. Don’t most people, she asked to the people reading a novella? Well, anyway, I just ran down the hall back into the HQ and right to the lounge before taking one big leap over the couch to sit down and watch something good.
+                                “Four o’clock show! Four o’clock show! Time for the four o’clock show! And that . . . show . . . is . . .” I rambled to myself as I landed on the couch to grab the remote. However, I was too slow, for Tel-E was sitting there and levitated the remote to her.
+                                “A game show.” Tel-E concluded as she changed the channel to a show called Host Conquer.
+                                “Game shows? Not cartoons?” I moaned.
+                                “Not while you’re watching with me.” Tel-E said, respectfully.
+                                “Oh, I see. This is me owing you for getting me out of the office, isn't it.”
+                                “You call it owing me a favor. I call it giving you more free time to get acquainted with me over a show I enjoy.” Tel-E teased me, sitting up straight while I only slouched down having to watch the show. “Besides, what’s wrong with game shows?”
+                                “Nothing. They’re fine, I guess. I mean, if you’re fine with the network putting Mecha Clash on hiatus for more of these things.”
+                                Well, this was a letdown. I was the one planning to hijack the remote. But we were watching Host Conquer, I guess. I should probably explain the show before I complain.
+                                It’s actually pretty similar of a game to what Tel-E played at the school. It’s three contestants being asked questions in different rounds with each successive contestant getting a chance to steal from an incorrect answer. The twist in this is the host has a score as well where if someone gets the question wrong, those points go to the host’s score, so they have to beat that score as well. Also, at the end of the final round, the winning contestant is asked a series of questions to try and get a higher score than the host, winning the grand prize if they beat her.
+                                As I thought back to this game, something seemed more familiar about it.
+                                “Wait a minute. Host Conquer? Didn’t Christy Ferguson used to host this show?” I asked Tel-E.
+                                “I wouldn’t know. I’ve only started watching a few months ago.” Tel-E answered.
+                                She did! She did host Host Conquer. Now, that was actually a good show. I remember at the end of every round, the contestant with the lowest score would have something embarrassing like a pie in the face done to them by Ferguson who would spin a wheel to determine the outcome. But if Ferguson had the lowest score the contestants would get to do something to her.
+                                It always looked like fun, but, apparently, this new version with a new host did away with the end of round shenanigans. And, more importantly, there wasn’t anyone making fun of stupid answers anymore. The new host was just so dull compared to Ferguson, which you could tell from how he wasn’t even a comedian. He was a Minor City anchorman named Alex Barker who always wore a nice blue suit with a friendly smile, but he wasn’t fun. He was just some normal anchorman, and not even the charismatic and lovable buffoonish kind you’d see in Minneapolis.
+                                “So . . . this is the thing you’re into?” I awkwardly asked.
+                                “Indeed. Both educational, yet also entertaining through the competition format.” Tel-E answered.
+                                “And you sure you don’t wanna watch something else?”
+                                “I’m sure.”
+                                “Ugh. Alright. You win. Gee, I don’t know what you did to El-Lo to make him mad, but I hope you’re not doing it to me right now.” I jokingly remarked.
+                                You know that feeling when you tell a joke that’s not funny, but you know it’s not funny, but the other person is polite enough to give you a smile or fake laugh for your effort? Well, Tel-E turned to me and I was still waiting for that smile or fake laugh. It was just a flat expression across her face. I kept my own smile going to maybe lead her into that, and also to avoid being shocked by my powers, but it all just made me feel even more awkward, especially since it was over a dumb TV show. I really have to learn to say the right things more.
+                                To cut the awkward silence, whether intentional or not (mostly not), Race and Nator came into the lounge as the latter carried a laptop he set on the coffee table in front of the couch, sitting down.
+                                “Girls, we have a problem. My dad just sent us reports on some missing people that he wants us to investigate.” Race informed Tel-E and I as Bendy and Pyra walked in. The Brigade leader then showed us a folder of the police report, which contained pictures of the people Race alluded to.
+                                “Gee, there’s gotta be like thirty people there.” I commented, looking through the folder. “
+                                “Did the Chief mention any leads on where they could be?” Tel-E inquired.
+                                “Well, funny thing about that. He actually sent us a few videos of someone you might know.” Nator told us as he opened his laptop.
+                                Video evidence is certainly handy when investigating missing people. Though, this wasn’t so much evidence as it was something unorthodox to look through during a crime investigation. As Nator had these video files available, he played them for us. And, while we expected something totally serious, these videos only showed Christy Ferguson out on the street asking people questions. I had heard she had been doing her own web show after doing Host Conquer. This must have been that.
+                                “For twenty dollars, can you name one of the three branches of government?” Ferguson asked the woman, holding a microphone to her in one video.
+                                “Uh, I don’t know. Umm . . . the execution branch?” The woman guessed as the video had a buzz sound edited into the background.
+                                “Really? The execution branch, you say?”
+                                “Isn’t that the one with the president?”
+                                “Well, for Lincoln, Kennedy, Garfield, and McKinley maybe, but . . .” Ferguson quipped as the video cut to her asking another question. “For one-hundred dollars, who was Billy the Kid?”
+                                “Billy the Kid? I don't know. He sounds like a child.” The woman said as another buzz went off.
+                                “You think he's a child?”
+                                “Yes.”
+                                “So would you let your child play with Billy the Kid?”
+                                “My son gets along well with others. Sure.”
+                                “You think they'd play Cowboys and Indians well together?” Ferguson joked as the woman still didn’t get it.
+                                “Wow. Looks like the Chief has a sense of humor after all.” Bendy laughed as we watched.
+                                “Actually, that woman’s one of the missing people. Now, take a look at the date when she was reported missing and look at the date it was posted.” Nator told us as both dates turned out to be August 20th.
+                                “They’re the same. So?” Pyra asked.
+                                “Well, just look at the dates of all the missing people in the report. All of them are in Ferguson’s videos and the dates of the respective reports and videos are all identical.”
+                                “You think Ferguson might know something about the missing people?” Tel-E asked.
+                                “Hey, what if someone’s been contacting her about where to find these people? There could be someone using her to get to them.” I suggested. 
+                                “Well, whatever’s going on, my dad thinks we should see what Ferguson knows.” Race insisted.
+                                “And how are we supposed to find her? Ask Principal Chang?” Pyra asked.
+                                “No. We need to go to someone who would really know where she lives or where she would go.”
+                                “Hey, what about the people at the network where she hosted her old game show? It is in Minor City.” I suggested.
+                                “Whoa. I think it's a little early for a newbie like you to tell us what we should do.” Bendy laughed, dismissing me.
+                                “Have you an idea yourself?” Tel-E queried the stretcher.
+                                “. . . So, Beauty, the network of her show?” Bendy asked me, unable to come up with something.
+                                “Yeah, who better to ask about her than someone she's worked for?” I argued.
+                                “So that lady really had a TV show?” Pyra inquired.
+                                “Yeah. In fact, I still have some old tapes of her show. Way better than the new version. Come here and I'll show you.”
+                                I stormed off to my room, going through some personal items and a case of recreational stuff like DVDs and video games when I finally dug through the disks of TV shows I had recorded and/or downloaded. I then found an old disk of reruns labeled “Host Conquer”.
+                                With this disk, I went back down to the lounge and played it on the TV for everyone to see. As the show started, the original host, Christy Ferguson, about eight years younger, appeared with three contestants.
+                                “Okay, next question goes to Officer Lou Trotterberg.” Ferguson declared for her familiar contestant.
+                                “I'll take the TV Cop category, please.” Trotterberg requested.
+                                “Ha! Race, your dad was on this show?” Bendy asked, both surprised and thrilled.
+                                “I had no idea. He never told me he was on a non-news related show.” Race admitted with a smile.
+                                “Well, he must've had some reason for not telling you.” Nator said as we all watched.
+                                “Okay, Louie, you're way behind in last place, so here's an easy one: What deputy was Andy Taylor's sidekick?” Ferguson questioned on the show.
+                                “Oh! Uh . . . I know it's Barney something.” The Chief muttered as he began sweating.
+                                “His last name is the same as a woodwind instrument.”
+                                “Barney . . . Barney Clarinet!” Trotterberg answered as the audience laughed. “What? No? Barney Rubble!”
+                                “In . . . credibly wrong! That's twenty points to my score. But don't worry. I'm sure we've all confused Mayberry with Bedrock at some point.”
+                                “Well, there's his reason.” Pyra acknowledged as we all laughed. It got even better when it became the Chief's turn again.
+                                “Okay, Officer Trotterberg, from the Supreme Court category: What famous case held that statements made from interrogation may be used in a court of law if the defendant has been read his or her rights beforehand?” Ferguson queried, reading from her question card.
+                                “Oh, the Miranda Rights case. I forget what it's called.” The Chief admitted.
+                                “Come on, Louie, you're a cop. Isn't law supposed to be your specialty? You must know this when you arrest people.”
+                                “To be honest, I haven't made that many arrests.”
+                                “Okay, the person on trial was a guy named Ernesto Miranda. He was arrested in Phoenix Arizona. The case was in 1966. Would it help if I told you the Chief Justice was Earl Warren?” Ferguson remarked, trying to help the Chief as she got some more laughs.
+                                “Uh, Miranda v. . . . uh . . .”
+                                “There's a state in the name that I may or may not have mentioned.” Ferguson mentioned as she then looked to someone from behind a camera and smiled. “You'd better answer soon. My producer doesn't like me giving you so many hints.”
+                                This person wasn’t miced, but you could hear some faintly audible words coming from Ferguson’s producer who the camera cut to. Apparently, he was also motioning with his hands for her to cut it out and get back to doing the game right. I remember seeing this, and this was not the first time she had done this. She seemed to both really love her job and not care at all at the same time.
+                                “Yeah, I know I'm not supposed to give clues, but I'm helping people learn things.” Ferguson comically argued with her producer. “Hey, did you know Earl Warren was Chief Justice in 1966? You didn't? Oh, so you just have something against learning then?”
+                                “Wait! I got it now! Miranda v. Minnesota!” Trotterberg answered as the buzz sound for a wrong answer went off.
+                                “Nope. That’s twenty more points for me. But because I like you, Louie, I’ll let you try again.”
+                                “Okay. Miranda v. Maryland?”
+                                “Wrong. That’s another twenty points to me. Wanna risk me getting more points again?”
+                                “Miranda v. Boston?”
+                                “Not a state.”
+                                This went on for a bit as me and the Brigade all laughed at the Chief’s answers. It’s probably everyone’s dream: Your boss making a fool of himself in public.
+                                “I think I just found a few more reasons.” I laughed.
+                                Here’s something I’ll mention about the Brigade HQ as we continued chuckling. There are monitors in the building the Chief can call us on if he chooses not to contact anyone by our team communicators. These monitors actually lower from the ceiling either silently or after an alarm goes off if it’s an emergency. So, of course, we didn’t hear anything as a small screen descended a few feet from the ceiling behind us while we were watching the show.
+                                “Trotterberg here! Have you . . .” The Chief began as he then found us watching him look stupid on TV. “Hey! What are you watching!? What’s the meaning of this!?” 
+                                “Oh! Uh, hey, Dad.” Race stammered as he turned the show off.
+                                “Who gave you permission to watch me on that program?” The Chief roared.
+                                “Well, technically, you did, ‘cause I’m assuming you would’ve signed a release form that allows the network to broadcast your likeness on television for everyone to see you regardless of . . .” Nator answered before the Chief cut him off.
+                                “Oh, shut up, you! Listen, there have been some unknown robberies in the city, and I need you to be on the lookout for any suspicious activity.”
+                                “What about those missing people?” Race reminded his father.
+                                “Yeah, you should look into that too. And listen well: That Christy Ferguson is involved somehow.”
+                                “We’re on it, Chief!” Bendy assured the team’s boss.
+                                “Well, make sure of it. That Christy Ferguson must know something, and I want her to talk. Nobody makes a fool out of Louis Quentin Trotterberg!”
+                                While not with the intensity the Chief desired, I left the HQ with the Brigade and went through the city down to the network studio lot where Ferguson did her show. It was also home to another show, but the less said about that one, the better.
+                                What I should say, though, is that when we got to the lot, there were a couple police cars parked out front with someone talking to an officer who then walked away. This person must have just seen or heard something terrible. It wasn’t like us to just ignore this if it wasn’t yet reported to the Chief. So we approached him as we passed the officer.
+                                “Oh, what am I gonna do? I haven’t even been vice president for a week, and already I have to decide how to deal with this? How could this happen?” The man anxiously muttered to himself as he paced back and forth before we got to him.
+                                “Excuse me? Do you work here?” Race inquired.
+                                “Oh! The Neo Brigade! Uh, yes, I am the vice president of this network. I’m sorry. I can’t talk now. I’m in a bit of a pickle right now. The network president and one of our show’s stars are missing.”
+                                “Missing?” Race uttered as we all looked at each other.
+                                “We’ve tried calling their families for hours, and nobody knows where they are. They’ve just disappeared somehow.”
+                                “Well, we think Christy Ferguson may be able to help us find some other people who have disappeared. Could you tell us where we can find her?” Tel-E requested.
+                                “Christy Ferguson? Hmm. Very few of my colleagues have heard from her since we replaced her on her show. We haven’t even used that old studio over there since we got rid of her.” The executive explained as he pointed to a studio with “caution” tape surrounding it as the tape covered the doors. “But if you need her contact information, I think I can find it for you.”
+                                “Thanks. Hey. Quick question: Why isn’t the studio being used?” I asked, curious over this kind of decision.
+                                “Well, it’s just our way of distancing ourselves from her after what she did with her show. It was supposed to be for everyone, but then all those jokes and not taking it seriously, it was popular, but everyone finally decided after ten years that we had to go in a different direction.” The executive explained.
+                                Ugh. Well, this wasn’t new. Networks going in a different direction always means retooling and canceling good shows. It was such a shame since Ferguson was always the best thing about that show. I hoped she didn’t take getting fired too hard.
+                                The executive ran inside to get her information for us, but, as luck what have it, the best way of contacting her was to simply yell across the street. We actually saw her passing the studio lot, stopping to look at her old studio. She obviously missed her old gig. But she wasn’t alone. By her side was a short man with beige pants, a plaid shirt, and glasses, looking quite business-like as he even held a clipboard and pencil.
+                                As soon as we saw Ferguson, we took off after her.
+                                “Christy!” Tel-E called to the comedian as we approached her.
+                                “Oh, look, it’s the alien and her friends. You’re the smart one, right?” Ferguson commented.
+                                “We were wondering if you could answer a few questions about some of the people in those videos you’ve posted on the web?”
+                                “Which are super funny, by the way.” I clarified.
+                                “Gee, I normally ask the questions. Also, I’m in a bit of a hurry, but sure. What do you wanna know?” Ferguson inquired.
+                                “Well, a lot of those people you’ve been quizzing have gone missing. You wouldn’t know anything about that, would you?”
+                                “Sorry, but after I’ve finished asking them questions to make fun of them, that’s the last I hear of ‘em.”
+                                “So you wouldn’t know why people have been disappearing after being in your videos?” Nator questioned the game show host.
+                                “Believe me; I’m as surprised as you are about all this.”
+                                “Has anyone even asked you about the people you talked to before they went missing? Like, has anybody wanted you to tell them where they live?” Race queried.
+                                “Sorry. No one came to me about it at all.”
+                                “Fantastic. The one person we think would know something doesn’t know anything.” Pyra moaned.
+                                So our questions weren’t getting us any good answers, unfortunately. If Ferguson didn’t know anything, this was gonna be harder to solve than we though. And Ferguson says she knows everything, so that’s double surprising.
+                                With nothing left to ask her, the Brigade was all set to turn around and leave when I got a look at the gentleman she was with and thought back to the times the camera would cut to a certain someone on her show Ferguson knew.
+                                “Hey, aren’t you that guy who used to be on Christy’s show?” I queried the man.
+                                “What? Oh! Yes. I’m Al. I, uh, still work with her, mostly on her web show.” Al the producer sheepishly replied. “Christy, should we get going?”
+                                “Not yet. You know, Neo Brigade, I’d hate to leave you empty-handed after you were hoping I’d give some info worth your time. How ‘bout a little game? I can ask one of you a few questions.” Ferguson suggested.
+                                “Thanks. But we really must be going too.” Tel-E informed the host as she’s about to walk away.
+                                Before the Knowlgian could move any further, as I turned away, I saw a yellow aura suddenly surround Tel-E like a force field. As I turned further, the aura was connected to what looked like a yellow stream of energy. That stream appeared similar to something from a Sci-Fi horror movie as it kept moving back and forth like the lines monitoring someone’s heart rate. And as I turned all the way around, I noticed that stream coming from a little card held by Ferguson.
+                                “I insist we play. Maybe you’ll win something good.” Ferguson said.
+                                “So she DOES have powers!” Tel-E mumbled.
+                                “Guilty as charged.” Ferguson confirmed, holding up her hands to reveal her Charevo Emblem of a top hat, a book, and a buzzer. It turns out that represented the Charevo Elements of Presentation, Knowledge, and Competition. “Whenever I ask someone a question, I can give them anything if they get it right. Why don’t you play to get some nice new abilities?”
+                                “Whoa! You can give people powers? Oh yeah! Go for it, Tel-E!” I encouraged the Knowlgian, elbowing her in the arm.
+                                “Alright. If you’d like to assist.” Tel-E told the comedian, going along with her game.
+                                “Excellent. Okay, for the ability to teleport yourself and anyone else to wherever you want: In what war was the Battle of Sewell’s Point?” Ferguson queried.
+                                “Oh. I wasn’t expecting a question like that. Um, was that the American Revolution?”
+                                “Nope. Sorry. That was the American Civil War. Actually, just a month after the Battle of Fort Sumter.”
+                                Following that answer, the card Ferguson held floated from her hand and dematerialized into a ball of blue energy that suddenly shot into the comedian as she briefly glowed blue. Nobody knew how her powers worked apart from what she told us, but it was certainly being displayed in a new way.
+                                “Uh, wouldn’t you wanna ask something a little easier if you wanted to help us?” I asked, addressing that failure of assistance.
+                                “Hey, I’m not here to give prizes away. Besides, I can only ask questions I know the answer to, so why not make it fun?” Ferguson explained. She then applied her powers to take out another question card, which was actually formed from what looked like a white energy strip that came out of her head and into her hand, materializing into a card. With this in hand, she zapped Tel-E again, surrounding her in that aura. “Alright. Question two is for the powers of super strength and heat vision: What county borders the north of Somerset in England?”
+                                “Oh! I’ve seen it on the map. Is it Wiltshire?” Tel-E guessed.
+                                “Close. It’s actually Gloucestershire.”
+                                Now, I didn’t doubt Ferguson’s claim that she could give Tel-E new powers, but she seemed to be taking her time in actually doing it. She asked another question the Knowlgian didn’t get, resulting in her card turning into a blue ball of energy that returned to her yet again.
+                                “Uh, you realize not everyone with a British accent is from England.” Pyra acknowledged.
+                                “Yeah, have you ever watched a Sci-Fi movie?” I added.
+                                “Okay, well, I’m only giving you one more question and then I have to go. So pay attention.” Ferguson informed Tel-E as the comedian summoned another card from her head and used on the alien. “For the power of energy projection . . .”
+                                “Uh, sorry. But I already have that ability.” Tel-E noted.
+                                “Oh, this is a . . . different kind of energy power. Now, pay attention. What robot is the current heavyweight Mecha Clash champion?”
+                                “Ooh! I know! I know!” I shouted, putting my hand in the air like a know-it-all.
+                                “Sorry. I don't know this.” Tel-E replied as I was disappointed I wasn't the one playing.
+                                “No answer? Okay. No power for you.” Ferguson concluded as some more energy from her card went to her body. “Well, I better get going. Good luck to you. Let’s go, Al.”
+                                Rather than even give us one more shot at getting something from her, Ferguson and Al left, walking down the street in the direction of the police station.
+                                “Okay, guys. Let’s go see what else we can find.” Race told the team.
+                                “Seriously, Tel-E? Losing a trophy is one thing, but not reading her mind to get new powers? You have officially lost me.” Nator groaned.
+                                “I’m sorry. I just didn’t wish to cheat.” Tel-E clarified.
+                                “Why not? You’re not playing against anyone. Plus, there are some cool prizes involved.” I added.
+                                “I just don’t!” Tel-E affirmed, putting her foot down on the subject.
+                                “Ugh. Fine. But Tel-E, just for the future, if you get that last question again, EGGHEAD!” I screamed the last question’s answer at the end in Tel-E’s face as I put my hands on the sides of her head.
+                                Now, it was one thing for Ferguson to say she would help our team and then make it difficult for us to actually use her help. It was another for Tel-E to know Ferguson was making it difficult and not use her telepathy to make it MUCH less difficult and actually get those extra abilities the game show host promised. I mean, really.
+                                I remember falling in love with my powers the first time I discovered I could move my hair. And then with how I could form anything out of it and even transform into female characters with access to all those different abilities, I didn’t have to worry about getting electrocuted if you could see the smile on my face. If it was me, I would have read the game show host’s mind in a second if it meant I’d get a new power. Maybe I was just in too different a mindset, but I couldn’t see why Tel-E would pass up this opportunity to use power for more power.
+                                I was biting my tongue about this whole thing, though. If Tel-E wasn’t willing to talk about certain things, it probably wasn’t a good idea to grill her on something like this if it meant not building any awkwardness or tension with her.
+                                So as we saw Ferguson go off, I just kept my mouth shut on Tel-E’s decision. Not long after, Race got a call on his team communicator as he picked up to show the Chief on the screen.
+                                “Trotterberg here. I've just received reports on four new missing civilians.”
+                                “Uh, by any chance are two of them a TV star and network president?” I asked.
+                                “Yes. That would be Alex Barker and Leslie Diller. As for the others, it's two kid named Jordan Reidman and . . . what is this? Bo-Rey Eltanin.”
+                                “Jordan and Bo-Rey? They’re gone too?” Race asked in shock. “We just saw them this morning.”
+                                “Yeah, well, they’re gone right now. In any case, have you learned any information on that Christy Ferguson?”
+                                “No new leads I'm afraid. But we'll keep looking.”
+                                The Chief hung up.
+                                “Oh great. Now Jordan and Bo-Rey have gotten into this mess? I don't know how we'll ever learn anything on this.” Race moaned as we heard someone holler from down the street.
+                                “Win a game o' Three-card Monte! Who wants to play?” The man shouted.
+                                We turned and saw this guy at a table on the sidewalk, holding a deck of cards. He had a beard and curly brown hair with wide brown eyes. I know. Not that distinctive, but something about him made me feel like I’ve seen him before.
+                                “Three-card Monte? Oh, I am awesome at this!” Bendy proclaimed as he ran over to the table and got out some money. “I’ll put fifty bucks down, please.”
+                                “Oh no. Bendy, we discussed your gambling.” Race lectured the daredevil.
+                                “Don’t worry. Old Eagle Eyes Bendy here’s done this a million times. It wasn’t for money, but if it was, I’D be leading this team.”
+                                “I like your confidence, kid. I got three cards. Just pick the queen of hearts and you win.” The dealer assured Bendy.
+                                The dealer put the queen down on a set of cards before putting the top three on the table face down. He then shuffled them around to hide the queen while Bendy kept a sharp eye on the card he needed.
+                                “Take your pick, sir.” The dealer said like an honest gentleman.
+                                “Okay, I wanna go with the left one, but, Tel-E, can you confirm?” Bendy asked the telepath.
+                                “I am not helping you cheat.” Tel-E affirmed.
+                                “Fine. Show me the left one!”
+                                Going with Bendy’s choice, the dealer flipped his card over, but revealed it to be a three.
+                                “Oooooh! I’m sorry. Wrong card.” The dealer sympathized, taking Bendy’s money off the table.
+                                “Wait a minute.” Pyra intervened, picking up the card Bendy chose. She then exposed the extra thickness of the card by revealing it to really be two cards glued together with the back card being the queen Bendy was looking for. “Hey, Eagle Eyes, this guy cheated.”
+                                “Say what? Oh sure, so HE’S allowed to cheat.” Bendy complained, addressing Tel-E’s refusal to assist him.
+                                “Gotta go!” The dealer quickly said as he tried to run away.
+                                As the dealer tried to flee, first of all, running from Race. I know. But I just grew my hair out to form a lasso, grabbing him from below his armpits, pulling him back.
+                                “Give him his money back.” I demanded, though not without receiving an electric shock.
+                                “Uh, I got this, newbie. Just hang back” Bendy claimed, stepping in front of me. “You heard her. How ‘bout my winnings?”
+                                “Hey, look, please, I don’t want any trouble. I swear. I’m only trying to make the money back that was stolen from me.” The hustler anxiously explained.
+                                “Money was stolen?” Race asked.
+                                “Didn’t the Chief mention robberies earlier?” Nator reminded the team.
+                                “So who robbed you?”
+                                “It was that old game show host, Christy Ferguson.” The man answered.
+                                “Christy Ferguson?” Tel-E uttered, surprised to hear this.
+                                “It was so strange. I had cash in my wallet one minute. Then she showed up and started asking me these questions. After I got a few wrong, she and her producer friend just took off. But the weird thing is she somehow generated cards right out of her head. And whenever I got a question wrong, her cards turned into money that went right into her hands. After she left, I noticed my wallet was empty.”
+                                “Oh boy. Guys, I think Ferguson neglected to tell us all of her abilities.” Race mentioned.
+                                “She's gotta be the one behind all that theft.” Pyra agreed as I got a closer look at the guy.
+                                “Wait a minute. I recognize you. Weren't you a contestant on her old show?” I asked, finally getting a good look at him.
+                                “Oh yeah. He was on that one you showed us, Beauty.” Nator noted.
+                                “It's true. I came in second on her show, but I still did pretty bad. Christy said she wanted to see how well I would do today, which is why she came to me so I could be filmed for one of her videos. But then when she found that I got several questions right, she said she wasn't going to bother me again. After that, she told her producer it's time to see some more of her old dumb contestants. That's when I saw her producer's clipboard containing a list of names and addresses as he crossed me off.” The man recalled.
+                                “Of course. Ferguson must be able to steal from people who answer her questions incorrectly. She's got to be going after everyone who participated on her show.” Tel-E suggested.
+                                “That means she must’ve kidnapped the people in her videos. We’ve gotta keep her from getting to anyone else.” Race added.
+                                “But how are we supposed to know who she'll go after next. I mean, we know it's only the dumb contestants she wants. But that could be anyone.” I noted.
+                                Suddenly, Race’s communicator rang with Trotterberg appearing on the screen.
+                                “Help! HEEEEEEEELP!” The Chief cried in distress.
+                                “Dad, what's wrong?” Race asked.
+                                “It's her!” The Chief yelled as the communication cut off.
+                                We weren’t all telepaths, but everyone in the Brigade could sense trouble. Not waiting for anyone to call back, the whole team ran back to the police station. When we got there, it didn’t look like the building had been broken into, but upon entering, several officers were lying on the floor unconscious, others struggling to stand.
+                                Fortunately, everyone was still alive. But we didn’t see the Chief anywhere. So we all rushed to his office to look for him, praying he hadn’t been kidnapped.
+                                We went to the door with his name on it and walked in to the sight of him still being okay, thankfully. But with him was the Host Conquer hostess herself, Christy Ferguson who kept our boss restrained by holding one of the cards generated from her head out to the Chief. And just as it did with Tel-E, the cop could only remain motionless as she stood over him with Al by her side, looking a little sheepish.
+                                “Please! Leave me be! I have much stupider people on my staff. Take them instead!” The Chief pleaded.
+                                “Sorry, not buying it. Now, for the power of force field generation: What is the capital of Illinois?” Ferguson inquired.
+                                “I don't know. I don't keep track of all the cities. Uh, is it . . . East St. Louis?”
+                                “Wrong! Springfield.”
+                                Upon that answer being given, Ferguson’s card dematerialized into the form of a wave of energy, which flowed into the comedian just as it did when she quizzed Tel-E. Now, the Knowlgian didn’t get any abilities from earlier as Ferguson said she’d get as she got those questions wrong. But just as the host managed to rob people of their money by promising a cash prize if they were correct, which they weren’t, we could see the reason that energy went into the comedian when she received an incorrect response.
+                                “I know. I thought a city with record crime rates would be running a state too.” Ferguson joked as she then showed off the ability she mentioned, projecting a force field around her. “Al, you want me to get you some powers too?”
+                                “I really think we should just leave right away. We are in a police station after all.” Al reminded the comedian.
+                                “Oh, what? Am I going on too long again? Are we supposed to go to a commercial?” Ferguson remarked.
+                                “I’d listen to him if I were you.” Race interrupted from the door as the two turned to us.
+                                “Oh, kids, thank goodness! Remove this witch from my office at once!” The Chief commanded the team, still afraid of Ferguson.
+                                “Oh, hey, guys. You here to play my game again?” Ferguson casually inquired.
+                                “Don’t play nice, Christy. We know you were the one behind those missing contestants of yours.” Tel-E informed the host.
+                                “Oh, so NOW you guys know something. Well, did you know I can do this now?”
+                                This was the moment when we realized how Ferguson managed to gain the power to project a force field after offering the ability as a prize, but also offered some other prizes to Tel-E, none of which the alien won.
+                                Ferguson’s eyes just glowed red before projecting a ray of heat vision at the Neo Brigade, hitting Bendy out of the room while the rest of us got out of the way. While she may be funny and have a superior version of a TV show, it was clear this woman was dangerous. With that in mind, Pyra exuded her own flames at the comedian. However, not a single shadowy ash could penetrate Ferguson’s force field. I tried shooting my hair forward to grab her, but to no effect. Instead, she just shot my hair with her eyes, as it caught on fire, burning down to my head like a lit fuse before I used my powers to detach that part of my hair.
+                                “If any of you are trying to keep me from meeting people, you’ll have to try harder.” Ferguson mocked us before Nator tried to attack with a set of missiles from his chest. However, before he could attack, the game show host produced a card from her mind and used it to freeze Nator in place with its light stream. “Now for some real fun. For the power of levitation: What British general commanded the World War II Allied Invasion of Sicily along with Eisenhower?”
+                                “I don’t know. I don’t know any British generals.” Nator replied, unsure of what to say.
+                                “Sorry. We were looking for Harold Alexander.”
+                                That card floated up and into Ferguson as yet another blue ball of energy while she glowed from more power. Since he was no longer being asked a question, the aura surrounding Nator disappeared, making him free to move again. He took this time to fire a few more missiles from his chest. But with Ferguson’s new power, she managed to hold her hand out and stop the missiles in place.
+                                She would have been completely safe not using her newly acquired levitation on the missiles as she already had her force field, but then again, she wouldn’t have been able to levitate the explosives back at our team, which is the very next thing she did. Race used his speed to dodge the missiles with ease by darting around the room while I formed my own barrier by creating a large shield out of my hair, quickly solidifying into steel that blocked those projectiles as I could only look at this like a TV viewer.
+                                “Wow! Her powers are awesome!” I acknowledged with a little too much enthusiasm given the situation.
+                                As a couple more missiles flew, Pyra dodged them by mixing her fire into the air while Tel-E applied her own levitation to hold the projectiles in place in the air as they finally exploded on their own out of harm’s way.
+                                Meanwhile, the Chief was still on the floor cowering under his desk before peeking out for us to see him.
+                                “Please, while I insist you stop this menace, I don’t want anyone blowing things up in here. I just redecorated!” The Chief asserted as he hid under his desk again.
+                                This time, Ferguson lowered her force field and utilized one of the abilities she obtained from the second question Tel-E missed a little while ago to easily grab the Chief’s desk from a little bit of super strength. After lifting it up over her head, she exposed the Chief trying to hide and threw it over at Nator and Race, hitting them both as the desk broke into a hundred wooden pieces while they fell to the floor.
+                                Bendy and I were both ready to attack, but suddenly, another power Ferguson won was used against us. This time, it was the power of teleportation, for a burst of white light surrounded the comedian as she vanished before our eyes. We looked around to see where she could wind up, for we weren’t expecting her to leave without the Chief. After a few seconds of the room being clear, Ferguson reappeared right behind Bendy before she landed a strong punch on the stretcher, knocking him into me as I fell back.
+                                I tried growing my hair out to attack the hostess, but she summoned her force field just a little too quickly as my hair merely bounced off her barrier. This kept out anything that was on the outside of it, but not the inside, however.
+                                While Pyra had already mixed her fire into the air, the girl’s invisible ashes had been near Ferguson when the force field went up, allowing Pyra to reappear in her whole form inside the barrier. Before the comedian knew it, Pyra gave a hot punch on her as she fell back into the edge of her force field. Pyra was about ready to turn her flames back up on her, but Ferguson quickly generated a new card out of her head, freezing the fire girl.
+                                “Quick! For the power of hydro-kinesis: What Greek king defeated the Persian army at the Battle of the Persian Gate?” Ferguson asked.
+                                “Uh, Julius Caesar?” Pyra guessed.
+                                “Alexander the Great!”
+                                Another card of energy went into Ferguson, which gave her new power as she lowered her force field and shot a fire hose of water at the fire girl, sending her down the room near us. It was clear we needed to stop this woman as soon as possible or else she’d just get even more powerful. If we were to try and last a longer period of time, we had to at least start getting some questions right. But these questions were about things that Ferguson knew, which, while not obscure enough that no one could know and she couldn’t make fun of anyone for not knowing, were still pretty hard.
+                                At that point, Tel-E levitated the game show host in the air, not giving her a chance to play any more games.
+                                “Tell us where you’ve taken those people!” Tel-E demanded as she tried to attack with her mind energy as we saw some blue sparks of it from her mind. However, that ability appeared completely inactive as the Knowlgian gasped. “I can’t project my energy!”
+                                “Nope. You lost that power to me on the Mecha Clash question.” Ferguson reminded Tel-E, using her power against her by instantly shooting a beam of energy at her from the host’s mind. After hitting her, Ferguson created yet another card from her head to target Tel-E with. “But if you want it back, then for the power of energy projection: How many people have I captured in total?”
+                                “Tel-E, read her mind! You can get this one!” I told Tel-E as the difficulty level had increased to be worse than it already was.
+                                “. . . Thirty-seven?” Tel-E answered, not sounding certain.
+                                “Oh! Close. But no.” Ferguson replied.
+                                The host won that question, but her force field was still down. So the rest of us were all set to charge at her for a combined attack.
+                                However, while she already had the power of energy projection before, once that card entered her, she let out her mind’s new energy at us again, which was ten times stronger this time. With a single blast from her brain, the beam hit everyone with the force of a fire blast mixed with a nuclear reactor. Thankfully, we were all still okay somehow, though getting hit by Tel-E’s power wasn’t making us feel any better.
+                                Tel-E was the only one not caught in that energy blast. So to counter that, she used her levitation on a chair to throw at Ferguson. However, Ferguson displayed her own levitation she won from Nator, keeping the chair in place. Two powerful minds were at war as both tried to overpower the other by getting the chair to hit the other.
+                                Realizing the slow speed and low force resulting from contending with the other’s powers wouldn’t work, Ferguson suddenly zapped Tel-E with another card out of her head. This time, it was for more than just abilities. Tel-E was in danger of losing a lot more.
+                                “Alright, one more question. To get hit with a painful lightning blast if you’re wrong: Where am I hiding the people I kidnapped?” Ferguson inquired.
+                                “Okay, there’s no way she can pass on this.” Nator commented as we all looked on, still weak from the comedian’s last attack.
+                                Tel-E glared at the host, taking a pause. This was one of those questions we really had no answer to, because it was the question we kept asking ourselves. The only way of getting it right was for the Knowlgian to read the host’s mind and get the answer. To be honest, I couldn’t remember Tel-E using her telepathy at all since I saw her in battle. If there was ever a time to use it, it was now, to save herself from a brutal attack.
+                                Tel-E took a few seconds before answering as we could see what looked like focus in her eyes. It looked like she fished around in the comedian’s mind and had the answer right there. All she had to do was say it out loud. Ferguson would’ve been blasted by her own lightning prize. The Chief would be safe and we could find all those people she kidnapped. All this could be over. It just looked so easy. 
+                                “Come on. I don’t have all day. Where am I hiding the people I kidnapped?” Ferguson repeated as Tel-E took another pause before finally responding.
+                                “. . . I don’t know.” Tel-E answered, knowing what was coming as our jaws just dropped from what we just heard.
+                                “Well, I admire your choice to play fair. And . . . loser blast!” Ferguson declared with a grin as she pointed at the alien.
+                                I mean, we were simply speechless at that point. Tel-E had just the power to beat Ferguson, just the advantage we needed, and she didn’t use it. I just had a million questions going through my head at that point, but they all basically summarized into one word together. Why? Just why?
+                                That was when I wondered if she was gonna answer me at all, for Ferguson’s card floated into the air and dematerialized once again. Only, this time, it didn’t turn into a ball of energy manifesting powers. It turned into a bright yellow surge of electricity that zapped Tel-E in the blink of an eye, just as quickly as it would happen for anyone being struck by lightning. After getting hit, Tel-E let out a shriek before dropping to the floor, falling unconscious.
+                                “Tel-E!” Race and I cried, as I got up to attack the comedian.
+                                However, my smile had faded upon seeing all this occur, causing me to endure my own electrocution from my powers. As I stopped to contend with this, Ferguson levitated me in the air and brought me closer to her, allowing the game show host to punch me back to the end of the room with her super strength while I still had some strong electric shocks flowing through me.
+                                “Whoa. Slow down. I’ll tell you when it’s your turn. First, I have another contestant to deal with.” Ferguson insisted.
+                                The game show host looked around the room, feeling victorious, and finding the Chief attempting to crawl out of his office. Upon catching him in her sight, Ferguson caught him for real, levitating our boss up and over to her, turning him around so he could see her.
+                                “Please, don’t hurt me! I’m too important to die!” The Chief pleaded.
+                                “Too late, Louie. It’s time for you to return to where you caught my eye.” Ferguson concluded.
+                                No one knew what would come next for the Chief. Except for Ferguson, of course. She says she knows everything. And that’s when a white light generated from the host’s hands, projected at the cop. Before long, the Chief was completely engulfed in light, finally disappearing before our eyes just like Ferguson when she teleported herself the first time.
+                                “What have you done to him?” Race questioned the villain.
+                                “He’s with the others. I’d tell you where he is, but the host isn’t supposed to give away the answers.” Ferguson remarked.
+                                “I’ll make you give us the answers!”
+                                Angry and eager to stick up for his father, Race started to charge for the comedian to take some revenge attacks on her. But before he could use his speed to get to her, she brought out one more card to stop him in his tracks.
+                                “Not so fast. For the loser getting a set of cuffs chained around his or her ankles: Who was the original inventor of the telephone?” Ferguson asked.
+                                “Ha! Easy! Alexander Graham Bell!” Race answered with confidence, pointing at Ferguson who didn’t look worried.
+                                It certainly was a relief to see an easier answer thrown at us. And Race felt it too as he was about to run at Ferguson. However, Race actually wound up tripping as he did this, and, to his and everyone’s surprise, there were a pair of cuffs chained to his ankles.
+                                “Elisha Gray.” Ferguson said with a smirk over Race. “Okay, Al, we can go now.”
+                                As her producer came back into the room, Ferguson activated that same power she used on the Chief, beaming herself and Al out of the room completely, making their escape.
+                                They were just gone. We had a villain who obtained all kinds of abilities we didn’t think she could get. And we didn’t know where she, or all the people she abducted, had gone. Needless to say, this was nothing but a failure.
+                                After the other officers recovered from Ferguson’s attacks, we informed them of what happened as everyone tried to track down the Chief. Normally, when the Neo Brigade needs someone’s location, they use the tracking device on our team communicators. But the Chief wasn’t holding his when he was taken, so nobody could obtain his location.
+                                It all felt sad and disappointing, knowing someone I was working for, and trying to impress, was kidnapped while I tried to save him. We all wanted to save him, especially his son, Race. He may have been a jerk at times, but we weren’t wishing him to get abducted by villains.
+                                It certainly was difficult for us, knowing our boss was gone. I know a lot of people fantasize about going to work with their boss not being there, but you need that person for everything to function. Even if he was completely okay, he was the one who informed us of all the dangerous crimes taking place if we were gonna be at school or wherever. Without him, who knew what we could miss?
+                                I didn’t wanna think about that too much and risk getting shocked from not looking happy as I was surrounded by the rest of the Neo Brigade who were just lying on the sofas in the HQ’s lounge room. We all felt pretty dejected at this point, wondering what the plan was.
+                                Race was on the phone with the police as he tried to get whatever information he could to find his father. After he hung up, he wasn’t seeing much improvement though.
+                                “Well, no word on where the Chief or Ferguson is.” Race informed us, not feeling great.
+                                “And therefore, no leads on Jordan, Bo-Rey, and the other missing folks?” Nator assumed similarly.
+                                “I'm guessing you're not used to having to look for the Chief.” I inferred.
+                                “You kidding? We always think of plans to get away from old man Trotterberg.” Bendy informed me, lying on the couch upside down.
+                                “Well, now we have to find him and stop Ferguson.” Race noted.
+                                “What's the use? We don't have a chance at beating her?” Pyra mumbled with little hope.
+                                “Oh yeah? And why's that?”
+                                “Tel-E.” Pyra, Bendy, and Nator all said in unison.
+                                “Me?” Tel-E exclaimed, not appreciating the accusations.
+                                “Yeah, you coulda read her mind to get those questions right. Then you'd have those cooler powers she got.” Bendy told her, stretching his neck to her while his body still lied on the couch.
+                                “Yeah, and she wouldn't have gotten away either.” Pyra added.
+                                “Really, Tel-E! Ferguson's powers are based on what she knows versus what her opponent does not know. If you can know what she knows, you can beat her. You have telepathy! You are supposed to beat her every time!” Nator affirmed, moving his hands around and getting in Tel-E's face, slapping his hands at the end.
+                                “Excuse me. I am not required to use my telepathy at every opportunity.” Tel-E argued.
+                                “Yeah, guys. Give her a break.” I defended the Knowlgian. “Although, they do make a good point. Tel-E, why didn't you use your telepathy back there?”
+                                “Ugh. Look, I just don't believe in using it to hurt someone or gain any kind of unfair advantage against others. It's deceptive, dishonest, and dishonorable.”
+                                “And you’re . . . disappointing.” Pyra added, putting Tel-E’s hood over the alien’s face.
+                                “Well, I’m sorry for not obtaining tainted gains like the rest of you, but that’s how I choose to use my abilities. You agree with me, right, Race?”
+                                “Well, I mean, I respect your decision. But I really think you should’ve at least learned where my dad and all those people were taken.” Race admitted, trying not to offend his best friend.
+                                “I would have. But we were in battle, and I would’ve been tempted to learn her strategies and answers. And I don’t like to gain anything that can be used against someone in any conflict.” Tel-E asserted. “Beauty, what about you?”
+                                “Me? Well . . .” I mumbled, wondering how to respond. On the one hand, I was new and wanted to be as nice and respectful as I could. On the other hand, the idea of not putting her powers to good use in battle made absolutely no sense. “. . . I mean, you are capable of winning a fight with abilities that don’t involve quote ‘cheating’. Plus, they’re your powers, so it should be your choice how you use them, but . . .”
+                                Fortunately, I didn’t have to finish that.
+                                “Oh, come on! Why didn’t you use them to stop her? She was fighting smart. What’s wrong with you playing smart too? I mean, really!” Nator interrupted, echoing my negative thoughts I chose to keep to myself.
+                                “I’m sorry. But that’s just who I am. I’m not someone who uses telepathy dishonestly.” Tel-E firmly declared.
+                                “Well I say Tel-E needs to read more minds. Then we’d have her stopping more people like Christy Ferguson.” Nator suggested.
+                                “Oh yeah! They trick you, you trick ‘em back.” Bendy added.
+                                “Did you not just hear me say it? I don’t like using my telepathy that way.” Tel-E reminded everyone.
+                                “Well, then we’ll have to make you want to.” Pyra insisted.
+                                As uncomfortable as Tel-E was with what we were asking her to do, the whole team tried to come up with ideas to get her to see that good things happen through cheating. I could see what Tel-E was getting at with this being dishonest. But we were dealing with a cunning villain at this point, so we really needed her to just not be afraid to use her talents when needed.
+                                Everyone had something to try, starting with Bendy. For him, he set up a poker game on the circular table the team was supposed to have their own meetings at across from the lounge. It was just him and Tel-E sitting across from each other. As they played a few hands, Bendy was winning them all with both good and bad hands. And they were playing with real money, so there was an obvious benefit that came with having telepathy if you’re willing to use it.
+                                “Come on, Tel-E. What cards am I holding?” Bendy inquired, trying to get the alien to read his thoughts as he waved his cards back and forth.
+                                “I’m not pulling any cheap shots.” Tel-E asserted as she added to their pot. “In any case, I’ll bet a nickel.”
+                                “I’ll see your nickel.” Bendy said, throwing some change into the pot before increasing it further. “And I’ll raise you . . . ten dollars.”
+                                I looked at Bendy’s hand, and it was terrible. But all he really needed was his confidence on full display.
+                                “Am I bluffing, or am I really this good? Gee, I wonder if you can tell.” Bendy queried Tel-E, sounding like some evil villain.
+                                “. . . I fold.” Tel-E sighed, laying her cards down. “I only have two-pair.”
+                                “Haha! Queen high! Bendy wins again!” Bendy exclaimed, showing his cards and growing his hand over the pot to pull it back into his pile of winnings.
+                                “Bendy, I don’t think this is working.” I told the stretcher.
+                                “Well, nothing we can do but try for a twelfth time. Alright, Tel-E, ante up.”
+                                “Actually, I think we should try something else.” Race suggested.
+                                “Aw, come on! I still gotta make the money back I bet on Tel-E’s blunder at the school. What? No?”
+                                Much to Bendy’s disappointment, he only conned the Knowlgian out of two dollars and thirty-five cents in total before Race decided to play Tel-E in a game of Chess. They were both pretty evenly matched throughout the game as they only had a few pieces left near the end.
+                                “Okay, Tel-E, I know you wanna beat my Chess win record. I’m sure you wanna know my strategy.” Race tempted Tel-E as he made a move.
+                                This went on for a while as it would with such an intelligent girl and a guy who spends a lot of time worrying about making decisions right to succeed. Apparently, Race likes playing Chess, and Tel-E wasn’t so bad herself. This definitely took some time to get to the end, but they continued to play at their best before it all came to an end. And by “best”, that is without their powers.
+                                “Checkmate.” Race said as he completed his move.
+                                “Ugh. You know, Race, at least when Bendy’s idea failed, it took up less time than your little game. Here. Let me try something.” Pyra told the Brigade leader.
+                                It was the dark fire girl’s turn at converting Tel-E into a cunning strategist like Ferguson. And, like Ferguson, she went with the prize method, which made sense given the person we were dealing with.
+                                Pyra had mixed her fire into the air to disappear before returning with a box of items for her plan, coming back down the stairs.
+                                “Okay, I think we can do better with not giving her something to see here.” Pyra mentioned, blindfolding Tel-E. She then reached into the trunk of items and took out a book. “If you can guess what I’m holding, you get to keep it.”
+                                This seemed straightforward enough. Tel-E obviously didn’t have anything to go on with this guess, so this had to make her curious to read Pyra’s mind for at least a clue. However, she couldn’t make a guess at all.
+                                Pyra put the book away and tried offering a few more items as prizes, including a bowl of salad and even a cute little puppy. As Pyra is offering these things, she tells Tel-E that this is stuff she likes, reminding her that they could be all hers if she got them right. But it was to no avail. Tel-E still didn’t read her mind, which was just as well, because, while I would’ve loved to have that puppy around, I’m pretty sure it belonged to someone else, judging by the tags on its collar.
+                                “Okay, last one.” Pyra sighed, taking out what appeared to be Bendy’s electric guitar.
+                                “Hey, you . . .” Bendy objected before Pyra put her hand over his mouth, burning his face slightly, though not as his biggest concern.
+                                “Let her guess.”
+                                “I’m sorry. But I just don’t know. Uh, is it a new pencil case?” Tel-E randomly guessed.
+                                “Ugh. Forget it.” Pyra muttered, yanking off Tel-E’s blindfold and tossing Bendy’s guitar to him.
+                                “Oh! Oh, thank God! I’ll never let her touch you again, my friend.” Bendy said with relief as he clutched his guitar to him and kissed it a little.
+                                Now it was Nator’s turn to come up with a plan. He brought Tel-E into our team office at the police station, and, rather than offer up a prize, his idea was a little more . . . dangerous. It involved sticking a set of wires to Tel-E’s arms and another set sticking to Nator’s. These cables were all connected to a switch that Pyra held as she sat between them at the table in the middle of the room.
+                                “Guys, I really don’t feel comfortable with this.” Tel-E commented.
+                                “Well, we gotta keep trying. This one, though, yeah, I think it’s a bit much. Nator, do you really think this is worth doing?” I inquired.
+                                “Of course. I saw this in a movie. I’ll pick a card from the deck here and you’ll guess which one I’m holding. If you’re correct, Pyra will shock me. If you’re wrong, you get shocked. I’m certain you’ll wanna read my mind for this one.” Nator explained, picking up a card from the deck. “Now, what card is this?”
+                                “The . . . two of clubs?” Tel-E predicted as Nator revealed a different card.
+                                “Nope. Go ahead, Pyra.”
+                                Pyra pressed the button connected to Tel-E’s wires, sending shocks to her. It wasn’t as painful as the blast she had earlier, but I still thought she had enough of that, even if it was closer to my own electrocution.
+                                “Nator? You sure this is a good idea?” Race queried the cyborg.
+                                “Of course it is. She just needs to be motivated. Now, Tel-E, once again, what card am I holding?”
+                                “. . . Ace of spades?” Tel-E uttered, knowing she would be wrong.
+                                “Ten of hearts. Sorry.” Nator informed the Knowlgian as Pyra shocked her again and Nator drew another card. “Come on, Tel-E. Get into my head.”
+                                “Seven of diamonds?”
+                                “No. Three of hearts.”
+                                Nator has Pyra shock Tel-E again as she shrieked a little louder this time and breathing more heavily. I knew what this looked like from experience. She definitely seemed hurt.
+                                “Okay, Dr. Venkman, I think it’s time we moved on.” I told Nator.
+                                “Yeah, well, you’re still the new girl. I think everyone else has a better decision.” Nator ignored me.
+                                “Actually, I think she’s right. Let’s try something else.” Race agreed with me.
+                                “Guys, this HAS to work. Tel-E’s gonna have to use her telepathy to get outta this.” Nator argued, taking another card.
+                                “I’m not using it to have you electrocuted.” Tel-E asserted.
+                                “Oh yeah? You don’t wanna hurt me? Well . . . I still don’t believe in the Charevo Gene’s special element things.”
+                                “I don’t have to get upset about that.”
+                                “I . . . still think the original ruler of your home planet’s been dead for years.” Nator mentioned, trying to make Tel-E mad at him.
+                                “You can be ignorant however you want.”
+                                “Well, do you still want Pyra shocking you? You know, she says she’d burn sixteen kittens to get you to stop playing your clarinet.” Nator claimed.
+                                Not appreciating this apparent lie, Pyra pressed the button connected to Nator, shocking him this time.
+                                “AH! Man, that actually hurts.” Nator exclaimed after the shock.
+                                “Oh, this is ridiculous.” Tel-E muttered, taking the wires off her. “Look, guys. I admire the lengths you wish to go in order to help others, but I’d really rather not compromise who I am and my own integrity.”
+                                “Why not? It’s for a good cause. You know, helping others. It’s what you just said you liked.” I argued, trying to sound optimistic about making Tel-E do something she doesn’t want.
+                                “Not like this.”
+                                “But why? I mean, I can understand it being hard, but why is it so important that you not cheat, even for just one little moment that could solve everyone’s problems and save people who are in danger after you chose not to read minds?” I continued.
+                                “Beauty, just . . . don’t. Please.” Race implored, wanting to drop the subject altogether.
+                                “I don’t want to talk about it. Just accept it.” Tel-E maintained, this time, turning around.
+                                With her facing away from me and not keeping me in her sight, I decided I didn’t need to smile for this. I just couldn’t hold my tongue any longer. I had to let her know her not reading minds wasn’t helping anyone. She was just acting stubborn at this point. And all that frustration burst out of me with her refusal to explain her reasoning.
+                                “Accept it? I should accept you just keeping secrets from me when it applies to everyone else?” I queried, not satisfied with her not talking this time.
+                                “Beauty . . .” Pyra interrupted, not stopping me, though.
+                                “It’s only fair.” Tel-E responded, not raising her voice like I was.
+                                “What is so important about doing things fair, though? If you can help all those people and stop Ferguson, you still wouldn’t do it?” I reiterated, starting to sound like Nator.
+                                “Beauty, I-I think . . .” Pyra repeated while I just cut her off.
+                                “Ugh. Tel-E, El-Lo’s beginning to make a lot more sense about why he doesn’t trust you. In fact, I’m starting to think you care more about being sympathetic and nice to villains so they don’t dislike you than you care about your friends and people who actually deserve your help.”
+                                This was when I realized I may have taken this thing too far. Tel-E paused for a moment. And, rather than respond, she just turned to me, not happy. Just a sour look across her face. And as I was still really annoyed with her, I received a sudden electric shock through my neck as I grabbed it, seeing Tel-E look at me with nothing but her disappointment.
+                                The alien turned and walked off, leaving the office and slamming the door on the way out. I didn’t want anything like this. All I wanted was an answer. Just something we could talk about. But if I wasn’t gonna get her to talk to me about her before, I wasn’t gonna get it now. I was mad at first, but after I saw her look at me like that, I instantly regretted what I said, even more so after Pyra put her hand on my shoulder.
+                                “Ow!” I shrieked, moving away after feeling Pyra’s scorching touch.
+                                “If you’d stopped badgering her, I was trying to remind you that you were the one who was keeping secrets from us while your self-electrocution power almost got us killed against Cold Miner, you idiot.” Pyra informed me.
+                                The hot touch hurt enough, but I quickly received another electric shock from Pyra looking at me.  I then turned to the rest of the Brigade who looked at me in a way to suggest that I definitely said a few wrong things. They knew Tel-E better than I did, so of course they would know what to say to her. But with more people looking at me as I felt worse about what I said, a greater force of electrocution surged through me as if my own body was trying to punish me for this.
+                                Pyra was right. I was so afraid of the team finding out that my powers could hurt me if I didn’t smile for someone; Tel-E kept my secret from them even though it got us into trouble when we confronted the villain, Cold Miner. And here I was being so impatient with her.
+                                It was then that I knew this was all on me now, and if we were going to find Ferguson, the Chief, and everyone else, I had to make things right first. I needed to talk to Tel-E. But not like someone arguing with her. Just as a friend. That’s all I ever wanted from anyone here.
+                                I left the office and proceeded down the hall to the door leading to the HQ. As I peered through the window, I could see Tel-E sitting on the couch in the lounge, watching TV by herself. But she wasn’t just watching alone. She had her dress’ hood up as if she didn’t want anyone looking at her from the sides. I hadn’t seen her in that hood before as it covered her giant cat ears, her jewel headband, and most of her red hair. Of course, I hadn’t seen her get angry before.
+                                Taking a deep breath, I opened the door, entered the lounge, and approached her. As I did, I turned and saw her watching her favorite show, Host Conquer, the new version. I then joined her on the couch.
+                                “Hey.” I uttered, sitting next to her as she still gazed forward at the show.
+                                Tel-E said nothing.
+                                “I, uh . . . just wanted to say I’m sorry. I shouldn’t have said what I said. You have every right to not use your powers in a way that makes you uncomfortable. I know your powers are about who you are. It should be okay for you to keep some of you for yourself.” I apologized with all sincerity.
+                                That’s when Tel-E looked at me. And, as usual, I got an unexpected shock in my neck from my powers. I couldn’t exactly give a sincere apology while smiling, you know.
+                                “And I just want you to know that I appreciate you having kept this part of my powers a secret.” I continued. “I had just met you and you seemed so trusting of me when I didn’t have anyone to provide that trust. I joined this team to make friends, and . . . you were the first person I saw that made me think that could happen. I owe you for that faith. And you shouldn’t have to tell me everything about you if you don’t wish to. I should just trust you. And that’s what I’m going to do.”
+                                After hearing me apologize and sensing my sincerity, Tel-E gave me a smile before she lifted her hood. She seemed to be forgiving me, though still remained silent. Although, she opened her mouth slightly like she wanted to say something. But then she closed it and shifted her eyes, looking more reserved.
+                                “Anyway, we need a break from all this. How ‘bout we watch your favorite show, huh?” I suggested, turning up the volume on the TV so I could watch with her.
+                                “I’d like that.” Tel-E mumbled.
+                                So it sounded like we were good at that point. She definitely didn’t hate me. Mission accomplished. Taking all these issues off our minds for a few minutes, the two of us sat and watched Host Conquer together. And I wasn’t gonna look annoyed this time.
+                                “And for the Sports All Stars category, here is your question: What player for the Extreme City Worms formerly held the record for most consecutive homeruns before turning to a life of crime?” Alex Barker asked.
+                                “Carlos 'Kaboom' Sanchez!” Tel-E guessed.
+                                “Carlos 'Kaboom' Sanchez?” The TV contestant replied.
+                                “That is correct.” Barker confirmed.
+                                After that answer, I looked at her, quite surprised.
+                                “Okay, I don't know anything about sports, but how did YOU get that one?” I queried the Knowlgian.
+                                “Oh, well, I just read Bendy's mind a while ago and learned quite a bit on the subject of sporting events.” Tel-E explained.
+                                “But I thought you didn't like using telepathy to help you win a competition.”
+                                “It wasn't to win anything. It was only to learn new information and enrich my mind further. I do it all the time. Don't tell anybody, but I like to analyze the thoughts of everyone in the Brigade once in a while just to learn a few things. For example, your favorite TV character is called Deadnote, you play the harmonica and hope to learn the accordion, and you had a special shapeshifting friend before you met us. Yes?”
+                                “That's . . . right.” I confirmed, surprised.
+                                “See? It's fun to have knowledge.”
+                                “Okay, so you love knowledge and you love to learn. Why is it that you don't wanna learn to use that knowledge against people? Not . . . not that I’m taking issue with that.”
+                                I wanted to be as respectful as I could, but I just couldn’t help but remain curious. The last thing I wanted was to spark another argument, but I could tell it was time for me to start learning about Tel-E when she turned the TV off.
+                                “Ellie, I should come clean with you. It’s not fair that I keep you in the dark about all this, especially not after I promised to keep that secret for you. The truth is it wasn’t on faith that I did that. I was reading your mind that day, and I learned how you just wanted a friend after your former one went away. And, as the new girl in this city, you had this fear that you wouldn’t have anyone if we found out about your weakness. It just made sense for you to keep this hidden. I know the feeling to be afraid of having no one.” Tel-E explained.
+                                “You’ve felt that? Oh, well, obviously, since you’re from another world.” I presumed.
+                                “Well, it’s a bit more beyond that. Here. I’ll tell you everything. Where I come from, planet Knowlgia, everyone is incredibly peaceful.” Tel-E began.
+                                “Oh yeah. Isn't Knowlgia that planet that's supposedly inhabited by only super powered women?” I asked.
+                                “That's correct. All females with the Charevo Gene and powers from it. And as you'd expect, we often don't think of using our abilities for violence, only to help us in our daily lives. Growing up in such a peaceful environment, I was taught to never abuse my powers, which includes reading minds to gain anything over someone. Truthfully, even using my powers at all to fight villains is considered taboo.”
+                                “Really? So . . . why do you do it then?”
+                                “. . . Well . . . I guess you might as well know. I didn’t leave Knowlgia under my own free will.”
+                                “Ooh! Lemme guess. You were captured and sold into slavery before you escaped like the alien girls in the comics. Right?” I inferred, maybe a little too eager.
+                                “Um . . . No. But thank you for wishing I was.” Tel-E sarcastically answered.
+                                “Sorry.”
+                                “Actually, I probably would've preferred that. You see, one night after I visited a library by myself, an alien hunter appeared and took me from my home. He didn't do it for money, or anything. He just hunts super powered women for fun so he can keep them on his ship as prisoners. Naturally, Knowlgia was a prime hunting ground for him. He just captured me. I was kept all alone in a cell there for two scary years. Sure, I stayed optimistic to get through each day, but I knew I had to escape. So, knowing I wouldn't be pleasing anyone on Knowlgia, I used my powers to fight the hunter and crash his ship, which happened to land on Earth.”
+                                “You were there for TWO YEARS? And you've never been back home since then?”
+                                “No. I've learned to accept Earth as my new home. The Charevo Journal here is all I have left of Knowlgia.” Tel-E continued as she showed me a book.
+                                “The Charevo Journal?”
+                                “That's right. It's a book written by several women from my planet on all the known history, theories, elements, and abilities of the Charevo Gene, including information on various people who have the gene.”
+                                Tel-E opened this book, and it looked to include everything she talked about. There were pages on just the elements themselves with images of the symbols you’d find on a Charevo Emblem and the elements they represented. Some sections included images of different women with the elements and powers they had, along with different samples of guidance they’d receive from their Charevo Fairies, sprites representing a person’s Charevo Elements, which I saw speak to Race a couple days before.
+                                The section with the different women all seemed to be of women from Knowlgia. Only after I flipped through it did I reach a point where I could see Tel-E’s handwriting with images of the Neo Brigade and all their information.
+                                “Since I came into possession of the book, I’ve added my own acquired knowledge of the gene to it. Whenever I look at the journal, I always think of my home and what I’ve been taught. And integrity is no exception.” Tel-E concluded as her reason made more sense to me.
+                                “Gee, I guess it must be hard to go against the beliefs of your home. You choose to use your powers to fight, but only if you do it with honor.” I summarized.
+                                “That’s right. Even if it means getting walloped by Dinomight, I don’t utilize telepathy in battle. Occasionally for self-defense, but never to harm anyone.”
+                                I felt nothing but sympathy for Tel-E with every word she spoke. I hated being alone, but Tel-E’s story made me look like I had nothing to complain about. At least I left my home voluntarily. For her, all this change came out of nowhere. I know I would’ve hated to disappoint the people who cared about me.
+                                “Tel-E, I . . . I’m sorry again. I didn’t know.” I apologized.
+                                “That’s okay. I’m sorry for not being upfront with you sooner.” Tel-E replied.
+                                “Well, I was just really having these doubts about you. You not wanting to help us, and all that stuff El-Lo was saying. I just . . .” I continued before I stopped and thought about El-Lo. “Hey. You mentioned that alien hunter who kidnapped you. What planet was he from?”
+                                “That would be El-Lo’s home planet of Draco, I’m afraid.”
+                                “Huh. So a Draconian took you from your home. What is it about El-Lo that makes him so suspicious of you?” I inquired.
+                                “Just his own instincts, I suppose. He heard I was taken by a Draconian, so he assumes I’ll want revenge on all Draconians. Of course, I’d never want that.” Tel-E explained.
+                                “Well, that sounds a little unfair.”
+                                “Actually, that hunter was the first male I ever encountered, and part of me did have this thought that all men were cruel. But then I met Race, and that all went away. Still, I like to act my best no matter what El-Lo thinks. And, as long as I’m honoring the women of my planet, I’d like him to not think I’m some deceptive alien. That’s just who I am. Life is tough, but why should I make it tough for others?”
+                                After hearing all this, I could only admire Tel-E for sticking with what she believed in. I thought this was someone trying to withhold vital secrets from me. Instead, I was looking at a girl who, through everything she had been experienced, wasn’t letting any negative feelings influence her decision to just be a good person. 
+                                Apparently, as I looked through her Charevo Journal, I saw some of the images of marks the Brigade had on their Charevo Emblems. And the sun on the lower left of Tel-E’s hand meant her Behavior Element was Optimism. It certainly showed. I don’t know if even I could keep myself from having these feelings of hatred and darkness if I was taken from my family. But Tel-E proved to be someone strong enough not to do wrong just because wrong is done to her. Just like we saw, she kept her principles the whole time.
+                                “That’s quite a story.” I noted.
+                                “It’s the truth.” Tel-E said, not regretting any part of her.
+                                “You know, when my friend and I got our powers, we’d put on these fights for fun. Just amusing ourselves like we were on some TV show. Even now as I’ve transformed into characters, I sometimes feel like I’m doing a disservice to him to continue with that on my own without him. We were originally gonna be a team before that just fell apart.”
+                                “You miss him, don’t you.”
+                                “Yeah. And, just like you, I sometimes wonder if I were to see him again if he’d be okay with me having become a superhero without him. And then I think back to all the times we talked about the idea and what we could do, and while he gave up on moving forward, I like to think he’d be thrilled seeing me live out what we both wanted: To just help people by doing these amazing things.”
+                                “I think he’d be proud, even after that falling out you had.”
+                                “I think so too. Listen, I’m not gonna try talking you into something you don’t like. I just feel like what you’re doing now is something your friends and family would admire, however you did it. There’s just no way of knowing until you eventually hear from them. So I understand if you wanna be honest.”
+                                “Thanks, Ellie.”
+                                As we smiled from this conversation, sharing our stories, the Knowlgian and I finally hugged. I almost didn’t want to let her go, because she seemed like such a good friend and a good person, but also because she could use a friend more than anyone else on this planet.
+                                As we had that friendly embrace, the rest of the Neo Brigade walked in.
+                                “Well, judging by the civil conversation, I’d say the girls have made up.” Race pleasantly inferred.
+                                “Yeah, and judging by Beauty’s poor persuasion, Tel-E’s still of no help.” Nator commented as he sat on one of the three couches with the rest of the team.
+                                “And we still don’t know where Ferguson is keeping my dad and everyone else.” Race mentioned with similar pessimism. “We’ve gotta find some way of tracking them down. So . . . any suggestions?”
+                                The Brigade sat around the surrounding couches to think for a moment as we all went silent for a bit.
+                                “I got it!” Bendy shouted, clapping his hands once. “We get a big case of dynamite, stay with me, we stick it around an old garage, and one of us dresses as that sidekick of hers. We contact her, and tell her if she doesn’t release the people, we’ll blow him up.”
+                                “What if Al is with her when we contact her?” Pyra asked.
+                                “Oh yeah.” Bendy muttered, losing confidence in his plan. Truth be told, looking back, I think he just wanted to be blown up.
+                                “Well, we need SOME way of finding them. Now, think! Where would a game show host hide people?” Race asked as we started thinking again.
+                                “Wait. Remember what Ferguson said before she took the Chief? He said he would return to 'where he caught her eye'.” Nator reminded us.
+                                “So?” Pyra said, not getting it.
+                                “So . . . where would the two of them have first met?”
+                                So now we were starting to get somewhere. After some planning, we all headed down to what should have been the first place we looked, because it was in the first place we went to: The old studio that was sealed off on that TV lot. It was dark, and the caution tape was still up, so it had that eerie crime scene look, which was fitting as the crime was still going on. We all stood by the building.
+                                “You think this is the place?” Race inquired.
+                                “Well, it's not at your dad's house.” Nator answered.
+                                “So, what, are we just walking through the front door then?” Pyra questioned the entrance procedure.
+                                “No.” Race replied before looking to Tel-E and pointing up. And with that, the Knowlgian levitated the six of us up to the roof of the studio. “We go topside.”
+                                Seeing a way in, Race opened a hatch on the roof as we all jumped down one at a time, landing on the rafters below. I was the last to jump in, and, as I looked around, the first thing I could see was a bunch of lights as we were on the top level.
+                                Looking down, the area looked just like what that executive told us. It was the set for Host Conquer, looking just as it did when Christy Ferguson was the host. We could see the more colorful podiums, the spinning wheel of humiliation that would be for whoever lost a round, all of them were still there. They hadn’t even cleared the studio of the cameras that were just in front of the seats for the live audience.
+                                That’s when we looked to the audience seats. They weren’t empty like an abandoned studio would make you believe. They were full of people tied to them, two of them being our friends, Jordan Reidman and Bo-Rey Eltanin, and another being that woman Ferguson quizzed in that video Nator showed us. These were all the people Ferguson had captured.
+                                But not all the captives were in the audience. When I looked back at the Host Conquer set, there were three people at the contestant podiums standing upright with their hands all chained to the podiums. These three were the Chief, Alex Barker, the new Host Conquer host, and what turned out to be Leslie Diller, the president of the network. We found everyone, plus those two guys who that vice president reported were missing.
+                                Job well done, I thought. We just had to get everyone out of here. That’s when I looked closer and found Ferguson was in the studio, right there on the set with Al, her producer, as the two approached the Chief, Barker, and Diller who were struggling to break free.
+                                “Ho ho. Al, my friend, savor the sight. Three idiots captured.” Ferguson laughed, looking to the Chief, followed by Diller, and finally Barker. “One with dumb answers, one with dumb choices, and one who thinks he’s so smart, he’s ignorant to his stupidity.”
+                                “Hang on! I resent you calling me stupid! I’ll have you know I am one of Minor City’s most respected news reporters while you are just some comic.” Barker uh, . . . barked.
+                                “Oh boy.” Al mumbled as Ferguson did not look amused by Barker’s comment.
+                                “So you think you know better than me? Al, start filming.” Ferguson told her producer as she generated a card from her mind to zap Barker with it while Al turned on one of the cameras. “For the power of super speed: What is the hexadecimal value of the character uppercase F?”
+                                “What? I don't know. Six? What's a hexadecimal?” Barker said in confusion.
+                                “Well, I think we know who our loser is. The answer is 46. Same as your IQ.” Ferguson remarked as her card returned to her and provided her with more power. “You see who you replaced me with, Diller? After you fired me? You had a good host who made the show fun and actually knew the answers. And who did you put in my place? Some suit who just reads off cards.”
+                                “Christy, if this is about me firing you, I did it because the network was receiving complaints from viewers and contestants for your excessive insults to incorrect answers.” Diller defended himself.
+                                “That show was my life! And you just took it from me! Well, now I’m taking it back for everyone here to play where no one will ever find any of you.”
+                                “Someone will find us eventually!” Diller claimed.
+                                “No they won’t. I believe you decided to close this studio and seal it off so no one would use it again until you say so. Man, that decision was almost as dumb as you replacing me with All-Barker-No-Bite here.” Ferguson laughed as Al continued filming.
+                                “Al, why are you going along with this?” Diller queried the former producer.
+                                “Listen, I’m not crazy about the crime either, but, you know, you fired me too.” Al reminded the executive.
+                                “That’s because you kept letting her get away with giving hints and uncalled for jokes. We couldn’t let the audience think this was okay.”
+                                “Oh sure. So you wanted to get rid of all the fun, starting with me. Well, 46 you and 46 what you think! I’m gonna make you two wish you never fired and replaced me respectively.” Ferguson declared, sounding more serious.
+                                “Well, I see why you hate these two, but what do you want with me? Why am I here?” The Chief anxiously asked.
+                                “Ah, Louie, I just want you to play the same role you played on my show. Since I can gain from people getting my questions wrong, I need to keep you and all my old stupid contestants here. That way, I can ask you questions I know you’ll never get right and get whatever I want.” Ferguson explained. “You know, on my show, infinite stupidity was always infinite comedy. Now it’s infinite power.”
+                                Me and the Brigade continued to look on and listen in, and we didn’t like the sound of Ferguson’s plan. Her powers basically let her do anything she wanted by just asking people questions they don’t know. She has the power, all she needs is the people.
+                                “So that’s why she kidnapped all those people.” I realized out loud.
+                                “And why she did those videos and that contest at school. She was just trying to find the stupidest people to make her more powerful.” Nator noted.
+                                “Well, let’s get everyone outta there before she can capitalize on their answers.” Race told us.
+                                Suddenly, Pyra disappeared, mixing her fire into the air again. I was about to call out and look for her, just to know what she was doing, but we had to stay quiet. Ferguson didn’t know we were here. So, right after Pyra left, Tel-E levitated the rest of us down to the captive audience as quietly as she could.
+                                Race and I approached Bo-Rey first as he and everyone else was about to speak.
+                                “Shh. We’re here to help.” Race whispered to Bo-Rey, trying to untie the rope keeping his arms restrained.
+                                The people in those chairs knew to keep quiet so we could get them out while we started with Bo-Rey. We were ready to free him as we just repeated in our heads not to let Ferguson or Al spot us. If either of those two saw us, our plan was toast. Good news, the two of them didn’t spot us at that time. Bad news, we forgot to take into account another person spotting us.
+                                “Neo . . . Neo Brigade! Ace! Ace, help me! Get over here and stop this maniac!” The Chief hollered from across the studio. Shoot! There goes our cover! Sure enough, Ferguson and Al turned to the audience and discovered us as I became electrocuted from my powers as they caught my look of surprise. The game show host then utilized Tel-E’s power to shoot energy from her mind.
+                                “Oh, why does he know me?” Race moaned.
+                                As that attack head our way, the Brigade leader dodged it with his speed while I was the only one to get hit as the energy knocked me into the audience aisle stairs. After Race took off, he tried charging for Ferguson, but with almost every person we’ve seen her get a wrong answer from, there was something new from her. That’s when she took her prize she got from that question she asked Alex Barker and dodged Race with her own super speed.
+                                As surprised as I was to see her use this new velocity, I expected Race to react to her speed by running after her so the two could get into some cool speed match as I’d see two quick blurs running around and striking each other. That’s not what happened. Race charged for Ferguson who used her new speed to dodge him. And then he just stopped. He was so expecting the comedian to be where he ran, he just looked dumbfounded to find no one there. This allowed Ferguson to dash down from one set of stairs in the audience in half a second to speedily hit him right down the stage.
+                                Nator then jumped in via the rockets springing out his feet to boost himself into the air, hovering over Ferguson. He then released some miniature cannons out of the red ports on his palms, firing some proton beams at the game show host. At the same time, Bendy stretched his arms down to take a swing at her by enlarging his fists.
+                                Ferguson’s new speed allowed her to evade these attacks like Race would, not only remaining unharmed, but also grab Bendy by the elongated limb, swinging him with her enhanced strength right into Nator, knocking them both away near Race.
+                                “So you still wanna play my game, do you?” Ferguson asked, ready to bring us down again as she shot another energy beam at me. At that moment, I transformed into a rabbit-like sorceress character called Pamela and used her magic to absorb her attack.
+                                “Here to conquer the host as you'd say.” I remarked as I launched a magic orb of energy at her.
+                                Ferguson once again took the speed she got from quizzing Barker to dodge this attack and took a run at me. However, using my rabbit character’s magic, I was the one to project a force field to protect myself this time. Ferguson ran right into my magic barrier, bouncing back a few feet while Tel-E levitated the comedian back when she stopped to see I had a defense up.
+                                Seeing the Knowlgian float above her, she was ready to fire some energy she stole from her, but Pyra suddenly appeared next to the hostess a second time out of the air and landed another flaming punch to her, moving her head to the side, diverting her mind’s energy blast away from Tel-E to hitting just above the Chief’s head as he ducked with a terrified look on his face not dissimilar to when Ferguson picked his desk up over him.
+                                Pyra was about to project her flames at the comedian.
+                                “Hold it!” Ferguson interrupted as she quickly used another card from her head to stop Pyra. “I think I’ll make the prizes a little more interesting. To avoid being tied in chains that absorb all fire it touches: Approximately what temperature in Celsius is equal to absolute zero?”
+                                “What? Ugh. I don’t know. Like, zero degrees?” Pyra guessed like she saw a bad question on a test.
+                                With that incorrect answer, Ferguson’s card floated up in the air and flew directly at Pyra before it morphed into a set of chains that wrapped around her as she fell back on the floor. As nearly her whole body was covered in chains, she tried to exude some flames, though unable to break out of her restraints or even ignite in her dark fire as she continued struggling to get out.
+                                “The answer is negative two-seventy-three-point-fifteen.” Ferguson informed the fire girl with a grin.
+                                Suddenly, Nator launched his arm out from his mechanical body’s elbow joint as it rocketed its way towards Ferguson, knocking her down the stage. While the arm returned to Nator, he then launched his other arm out to do the same thing.
+                                Before that metal limb could get to Ferguson, she drew another card out of her head and froze Nator as well as his arm in place with its energy stream.
+                                “Quick! To keep you from being magnetized to the floor: According to Lou Costello, what is seven times thirteen?” Ferguson queried the math whiz.
+                                “Are you kidding? It’s ninety-one.” Nator answered, very sure of himself.
+                                Suddenly, to the shock of Nator, and I assume all the mathematicians reading this, the card flew right at Nator, causing him to briefly glow before a force pulled him face down to the floor, completely magnetized to it as Ferguson said.
+                                “Wait! What!?” Nator cried, confused.
+                                “Twenty-eight, Bud.” Ferguson clarified.
+                                Before Nator could object and ask for a judge’s opinion, Race fired his circular speed waves at Bendy, allowing him to throw a super-fast stretch punch at Ferguson before running down to trap the comedian under his enlarged hand like it was a giant spider web, pressing her against the wall. I can’t say I supported Bendy putting his hand all over the front of a woman, but he managed to restrain her well, that is, until she used her strength to push him off, allowing her to freeze him with a new question card that emerged from her head.
+                                “To prevent your body from being tied to Race: What female Egyptian Pharaoh died in 30 BC?” Ferguson queried.
+                                “Your momma!” Bendy laughed.
+                                Ferguson’s card quickly flew to Bendy, vanishing upon contact while his whole body floated over to Race, wrapping around him entirely as they were stuck together.
+                                “What? No! No! That wasn't my answer! It's Cleopatra, right? Right?” Bendy objected as was tied to the Brigade leader.
+                                Before she could go after anyone else in the team, I tried whipping my hair at Ferguson who only darted to the side with her super speed. Tel-E then arrived next to me to levitate some lights from the ceiling at her, but the comedian was still too fast.
+                                “Well, lookee here. Only two contestants remain.” Ferguson said with a smirk before she tried projecting mind energy at us as there was a brief spark from her head. However, her attack didn't occur at all.
+                                “Hmph. It appears your new powers aren't permanent.” Tel-E commented as she discovered her ability returned. The Knowlgian quickly utilized her mind energy to direct it from her head to Christy. But while Tel-E was able to attack again, Ferguson still had her super speed to avoid that shot with a simple step.
+                                “Once I deal with you two, my audience here will help me get it back.” Ferguson declared as she summoned another card that wound up hitting both Tel-E and I together with two separate energy streams. “Now, to avoid me having control over Beauty's hair: What is the C in E = MC2?”
+                                “The speed of light in a vacuum.” Tel-E answered correctly as she then turned to me with a smile. “No telepathy required for that.”
+                                Ferguson’s producer, Al, continued to film us with one of the studio’s cameras while Ferguson’s card floated to us and disappeared in a burst of harmless energy as my power remained under my control.
+                                We won that question, meaning we were free to attack. But before we could take the time to capitalize on that correct answer, Ferguson hit us both with another card simultaneously.
+                                “We’ll see how lucky you are this time. To keep me from controlling Tel-E’s levitation: What sci-fi sitcom debuted in August 1996 on the UPN network?” Ferguson asked.
+                                “Oh! Homeboys in Outer Space!” I replied.
+                                No. I don’t think Ferguson was expecting anyone to get that one, but I did. I watch a lot of TV, folks.
+                                Anyway, before I could celebrate, Ferguson quickly drew another card from her head to freeze me and my alien friend.
+                                “Alright, to avoid losing telepathy: How many miles of coastline does Florida have?” Ferguson queried.
+                                “1350.” Tel-E replied.
+                                Tel-E might not have been reading any minds, but she knew a lot more about the Earth than I thought. And I could tell Ferguson was well aware of who she was dealing with. Tel-E didn’t know everything, but she and I had some combined trivia knowledge that matched up well with what she knew. But Ferguson felt like she wasn’t going to take a chance on her and was ready to draw another card before Tel-E finished giving her answer. And the second Tel-E got the last answer right, Ferguson had another card freezing us.
+                                “You know I’m just gonna keep doing this. I’ve got a whole mental encyclopedia of questions to throw at you. Now, to avoid losing the power of levitation: What was Elvis Presley’s middle name?” Ferguson inquired.
+                                “Oh. Uh . . . I know this.” I muttered, trying to remember.
+                                “You got a bunch o’ names to choose from. Which one is for one of the most important names in rock ‘n’ roll?”
+                                “Tel-E? You can read her mind any time, or you can kiss your levitation goodbye.” I told the telepath.
+                                “I don’t care. I am not going to cheat.” Tel-E insisted.
+                                “Ugh. Come on. If you don’t, we’ll just get stuck on questions like ‘How many states held battles in the Civil War?’ and ‘When was Aaron Burr vice president?’. Wait. Aaron . . . Oh! It's Aaron!”
+                                Ding ding! I was right!
+                                “Yes! Oh, and Beauty, it's twenty-three and 1801 to 1805.” Tel-E informed me before Ferguson suddenly used another card on us.
+                                “I’ve got more questions than you have correct answers. I can keep this going all day.” Ferguson laughed.
+                                “Why not just ask the impossibly hard questions and beat them already?” Al suggested, impatient.
+                                “Oh, what, because you knew ALL those questions I just did? Alright, why don’t I ask you? How many studio albums did Elvis Presley have?” Ferguson mocked her producer friend.
+                                “I don’t know. Like, fifteen?”
+                                “It was twenty-four. Yeah. So how ‘bout I do my thing and you just keep standing there?”
+                                I could see Al sort of laughing at Ferguson insulting him as they two of them looked like how they would argue on the old Host Conquer. I was ready to just relax like I was watching TV, but then I had to remember this was serious. So I wasn’t giving my brain a break. We had another question coming.
+                                “Okay, now for the harder questions. For the loser to get hit with a deadly beam of energy: How fast is the speed of light?” Ferguson queried Tel-E and I.
+                                “How would anyone know that?” I asked, alarmed by such a question.
+                                “Hold on. Is it . . . 299,792,854 meters per second?” Tel-E guessed.
+                                “Close. But no. Al, you seem to know better than me. Do you know the answer?” Ferguson jokingly inquired her sidekick.
+                                “No.” Al mumbled.
+                                “No? You know why? Because I'm the host, not you. Hey, speaking of not a real host, Barker, what about you? You know the speed of light?”
+                                “I don't know.” Barker said, shaking his head.
+                                “That's right. You don't. It's 299,792,458 meters per second.” Ferguson told the host, knowing she was smarter than him. “See, Barker, if you had my powers, you'd only have about five questions you could ask.”
+                                At that point, Ferguson’s card turned into a burst of energy that shot at both Tel-E and I. This was quite a painful blast, a pretty unfair punishment for getting something wrong. But Ferguson was ready to try it again, zapping us with another card, not even giving us time to recover. 
+                                This wasn’t looking good. Ferguson’s powers depend on questions that she knows the answers to. And, from what she boasted, that was an awful lot. We couldn’t answer her questions forever, not with incorrect answers anyway. We needed something to use against her. Anything!
+                                “Hey! You afraid to ask the easier questions!?” Race shouted with Bendy still tied to him.
+                                “Yeah! Wrong answers ain't funny when you ask something so hard!” Bendy added.
+                                “Oh, so you don't like my game? Well, then let's make it more interesting.” Ferguson suggested, turning back to Tel-E and I. “This time you'll receive the prize of survival either way. For the next question, if you girls are right, I'll take a hit of powerful energy. If you're wrong, your friends take the hit.”
+                                I didn’t like this new system, and neither did Tel-E. The two of us girls who wound up in Minor City without any friends. This made the two of us getting hurt seem like nothing.
+                                “Now, what was my nickname in high school?” Ferguson asked as Tel-E and I knew we weren't going to get this one. We just looked at each other in silence with no idea of what to do. “No answer? Well, here's one from the Inquisitor!”
+                                At that point, with our incorrect answer, Ferguson’s card floated up and burst into four separate beams that took off to strike everyone else in the Neo Brigade while they were still restrained. Race and Bendy were tied together, so they essentially took a double hit, feeling all the worse from this attack. Tel-E and I wanted to go and see if they were okay, but Ferguson just drew another card on us.
+                                “Ferguson, leave our friends out of this!” Tel-E demanded.
+                                “Next question with the same results as the previous: When is my birthday?” Ferguson unfairly inquired again.
+                                “. . . January 13th?” Tel-E guessed.
+                                “Wrong! Al, can you guess THIS one? So help you if you're wrong.”
+                                “April 14th.” Al answered.
+                                “Darn right.”
+                                The card rose up and divided into another four energy blasts, doing the exact same as before as the cycle continued with Tel-E and I getting frozen by another card from Ferguson.
+                                “Beauty . . . Tel-E . . . please help.” Race groaned, feeling ready to fall unconscious.
+                                “Can't take . . . another one o' those.” Pyra mumbled, still weak and restrained.
+                                “Christy! Please! You have to stop!” Tel-E cried.
+                                “Sorry. Round's not over. Besides, if you couldn't stop me earlier, what makes you think you can stop me now? This is what happens when you try to disrupt my game.” Ferguson explained, not backing down. Still carrying complete control of everything, she finally read her card. “Now, for the grand prize of an energy blast even more devastating that it'll harm rubber just as much as regular skin . . .”
+                                “Say what now?” Bendy exclaimed, not liking the stakes.
+                                “. . . What did I have for breakfast this morning?”
+                                “And . . . we're dead.” Pyra remarked.
+                                “We need you, Tel-E. Think of the Knowlgians. Would they want powers used to let others die?” I asked, trying to get to her.
+                                As I implored Tel-E to help us out, she looked all the more conflicted, thinking this over before her Charevo Emblem on each hand glowed. As this occurred, her Charevo Fairies emerged from each hand. These were the creatures acting as physical embodiments of the Charevo Elements. For Tel-E, these elements being Optimism, Knowledge, and Thought meant her Charevo Fairies looked like Tel-E if she was a sun, a book, and a light bulb.
+                                And, as Race told me earlier, these sprites are supposed to give guidance based on their elements, as we then heard.
+                                “Thinking the best of yourself and the thoughts of others leads to the right decisions.” The Optimism Fairy informed Tel-E.
+                                “Accepting knowledge dishonestly is cheating, but not if it is for the right reason.” The Knowledge Fairy added.
+                                “When going against beliefs, one's mind can endure guilt. When rejecting a crucial opportunity, one's mind can suffer from regret.” The Thought Fairy concluded as the Fairies proceeded to fly back into Tel-E's hands.
+                                “Come on. No lifelines, here. What did I have for breakfast this morning?” Ferguson repeated.
+                                The Charevo Fairies seemed to encourage her to make a good decision, but I was beginning to lose some hope already. Ferguson had us. She could throw all the questions we didn’t know at Tel-E and I and there was nothing we could do about it. The Brigade was gonna get horribly attacked unless we gave an answer, which we didn’t have. All we could do was make a guess. I was ready to give it a shot with little optimism, but it was a good thing I didn’t.
+                                “French toast.” Tel-E answered, this time, quite sure.
+                                “And I'm sorry, but the answer is . . . wait what?” Ferguson uttered before realizing what the answer was.
+                                Surprising both Ferguson and I, the comedian’s card floated up again, revealing Tel-E’s answer beneath the question. The card then morphed into a ball of energy again, only it fired at the game show host, blasting her down the stage. I honestly didn’t think we’d get that one. But we did, and we were free to attack.
+                                With Ferguson down, Tel-E and I advanced down to the stage to stop her. But as she saw us coming, she utilized her super speed to disappear from our sights. After dodging any potential attacks, she appeared right behind us and zapped us in place with another question card.
+                                “Okay. Lucky guess. But now, to save your friends and these three contestants from a bolt of lightning . . .” Ferguson began, gesturing to Diller, Barker, and the Chief.
+                                “What? Me? No! Go back to just them!” The Chief pleaded while the comedian ignored him.
+                                “. . . What is my sister's name?”
+                                “Trick question! You don't have a sister.” Tel-E replied, just as confident as she was the last time.
+                                Ferguson’s card floated up, showing Tel-E’s answer just below its question. She was right again! And on a trick question, no less! And as the loser in this scenario, Ferguson only saw her card transform into a bolt of lightning, striking the comedian. She was visibly weakened as Ferguson struggled to stand after this. She was still lucky enough to withstand this kind of attack with her acquired super strength, but not lucky enough to stump Tel-E. But I was beginning to think this was more than just luck.
+                                “Uh . . . should I still be rolling?” Al asked, still holding the camera.
+                                “Tel-E! You . . . you . . .” I stammered in shock.
+                                “I did. Didn't I?” Tel-E remarked, pleased with herself. “Quick! Let's free everyone while we've got the chance.”
+                                “Nicely done, ladies!” The Chief complimented us before turning to his fellow captives, Diller and Barker. “I'm their supervisor. I'm in charge of all their victories.”
+                                While Ferguson was down, Tel-E and I were all set to free our friends from their restraints. We could see the relief in everyone’s eyes that they survived those questions. And we thought they all went through enough of Ferguson’s tricks, but the comedian wasn’t agreeing with us. In her exhaustion, she hit Tel-E and I with one more card.
+                                “. . . We're not . . . out of time just yet. I still have . . . one more question for you brats.” Ferguson breathed, trying to recover from her little self-destruction. “For everyone in this room but me . . .”
+                                “Uh, and Al?” Al mumbled, wanting to be safe.
+                                “. . . and Al, to be knocked into a coma by a destructive beam of light: What number am I thinking of?”
+                                “Eighty-three-billion-four-point-seven.” Tel-E answered, stating it as a simple fact.
+                                There was no denying it. The Knowlgian really did use her powers to take a peek at the answers, because there was no way she could have correctly guessed a question about what someone was thinking without actually knowing what she was thinking. But she did. And the card flew right out of Ferguson’s hand to shoot at the comedian with full force as she couldn’t continue at all and fell unconscious, along with Al.
+                                It was over. The contestants won. And as she was beaten, we finally freed the rest of the Neo Brigade and all the captives. Later as we got everyone out, the police arrived to arrest Ferguson, who had just woken up, as well as Al, her producer.
+                                “Officers, please, I didn’t abduct or harm anyone. Why am I being punished for this?” Al objected, not sounding thrilled.
+                                “Don’t lie to me, you! I know you were the one helping her find all those old contestants! Putting me on the list was your first mistake.” The Chief grumbled, shoving the producer into the police car with his boss.
+                                The car took off, taking the two away while I stood by the studio with the rest of the Neo Brigade. As the rest of us were together, former captives, Jordan and Bo-Rey, both ran up to us, focusing on Tel-E.
+                                “Oh, thank you! Thank you!” Jordan cried with relief to be free. “I thought I’d never make it outta there. Just for that, Tel-E, I’m gonna throw EVERY trivia competition for you.”
+                                “That sounds . . . unnecessary, but you’re welcome, Jordan.” Tel-E told him as he left while Bo-Rey approached her.
+                                However, before the yellow alien could speak, a crimson friend arrived. El-Lo had heard of Bo-Rey’s disappearance, and finally spotted him. Overjoyed at the sight of his pal, the red teen ran through the studio lot and hugged his fellow Draconian like a mother who had just found her child after getting separated.
+                                “Bo-Rey!” El-Lo cried in delight. “I’ve been searching for you since your parents said you were missing. So great to see you’re well.”
+                                We were glad to see him in one piece too. Him and Jordan and all the captives. I was sure El-Lo believed that, but then he saw Tel-E standing just mere feet from his best friend.
+                                “Who was it who took you? Was it Vega?” El-Lo questioned as he glared at my friend. “Explain yourself, Knowlgian? Just what do you want with him?”
+                                “Hey, calm down, El-Lo. Tel-E was the one responsible for saving me.” Bo-Rey explained. “You might wanna thank her instead of accusin’ her for once.”
+                                “It’s true. She did everything she could to save everyone. Even things she never wanted to do. She did it and saved your friend.” I added, defending the alien hero.
+                                “Hmph. The Knowlgian a savior? I find that hard to believe.” El-Lo stubbornly maintained. He was about to lead his yellow buddy away from her by grabbing his shoulder, but Bo-Rey resisted, pulling his arm away.
+                                “Well, I’ll just believe it for you.” Bo-Rey insisted, defying his friend. He then shook Tel-E’s hand like the gentleman he was. “Tel-E Vega, from myself AND El-Lo, thank you from the bottom of my heart for your help. You’ll always be a hero to me.”
+                                Tel-E returned the yellow Draconian’s gratifying smile, happy to be given that friendly handshake. He was certainly grateful enough that it didn’t matter what El-Lo felt. Bo-Rey was happy with her, and that’s what he cared about. 
+                                After giving Tel-E a handshake with his thanks, Bo-Rey walked away as El-Lo watched him go. He was relieved to see his friend safe, but the trust in his gratitude wasn’t exactly there. However, El-Lo didn’t say anything after that. Instead, he just looked back at Tel-E in silence, knowing there wasn’t much he could say after hearing Bo-Rey’s appreciation. He had that look of wanting to say something that he just couldn’t articulate an argument for. It was like he wanted to thank her, but couldn’t admit to be grateful.
+                                After one more glare directed at the Knowlgian, he left it at that and went back to join Bo-Rey. The crimson Draconian might not have valued Tel-E as a friend, but the rest of us did, more so now than ever.
+                                As the two male aliens made their exit, we decided to address the real hero of the team for her efforts. 
+                                “Alright, everyone, I believe we have another matter to investigate. Who here said above all else that they weren’t going to cheat?” I jokingly asked as I turned to Tel-E.
+                                “Teehee. Guilty.” Tel-E said with a modest smile.
+                                “Well, FINALLY you use your telepathy! Way to go Neo. I mean, sure, your timing could’ve been better, and . . .” Nator commented as Pyra hit him in the arm.
+                                “Nice save back there.” Pyra complimented the Knowlgian.
+                                “Yeah, you really showed your stuff. What made you change your mind about mentally gaining an advantage?” Race inquired.
+                                “Well, I guess I just needed a good reason.” Tel-E replied.
+                                “What? You mean her blasting you with her questions wasn't reason enough?” Bendy asked.
+                                “Actually, truth be told, if I was on my own, I probably would've let her win.” Tel-E admitted. “Winning a competition is not a good reason to abuse my powers. Neither is winning money, avoiding electric shocks, winning a battle, getting new abilities, or even protecting my own life. But when my friends are threatened, well, some powers are just worth using.”
+                                “Thanks, Tel-E. I know your people probably wouldn't have approved. We'll try not to pressure you anymore.” Race told his best friend.
+                                “Thank you. Although, I'd like to think my friends and family would've done the same.”
+                                After mentioning the women she knew and loved from her planet, Tel-E looked up to the night sky, gazing at the stars.
+                                “You'll see them again someday. I promise.” I vowed as Tel-E smiled back at me.
+                                “And you’ll see that friend of yours again. Just wait and see.” Tel-E assured me as we hugged once again.
+                                “Well, in the meantime, since Tel-E did just beat Christy Ferguson at her own game, that would make her the ultimate trivia champion, so . . .” Nator began.
+                                “You are not stealing Tiffany's trophy.” Tel-E insisted.
+                                “Come on! That girl is evil!”
+                                “Give it a rest. No one's gonna tempt Tel-E into anything. Although . . . I feel like our winner should at least get something.” I mentioned.
+                                Utilizing my powers one more time, I grew my hair out into the form of a big gold trophy, similar to the one she lost to Tiffany Boole earlier. It was shiny and flashy with a sculpture of her Charevo Emblem of a sun, book, and light bulb. But there was one important feature on the trophy I handed to my friend, which Tel-E instantly smiled at, seeing what I had engraved at the bottom: “First Place in Trivia, Integrity, and Friendship: Tel-E Vega”.
+                                No better champion to me.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div id="paddeddiv" class="panel-heading" style = "height: 450px; position: relative;">
+
+                    </div>
+
+                </div>
+
+            </div>
+            <footer id = "footer" class = "site-footer">
+                <div class = "footercontent">
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subhome" href="../index.html"><b>Home</b></a></th>
+
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subabout" href="#About"><b>About</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharacters" href="../characters.html">Characters</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharevogene" href="../charevogene.html">Charevo Gene</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subauthor" href="../author.html">The Author</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subquiz" href="#Quiz"><b>Quiz</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautyquizzes" href="../beautyquizzes.html">Beauty Quizzes</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="substories" href="#Stories"><b>Stories</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautystories" href="../beautystories.html">Beauty Short Stories</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="submiscellaneous" href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subswitchcharacter" href="../switchcharacter.html">Switch Character</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subblog" href="../blog.html">Blog</a></td>
+                        </tr>
+                    </table>
+
+                    <!--<ul class="footerlist">
+                        <li >
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li >
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="switchcharacter.html">Switch Character</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul> -->
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Copyright © 2017 Stephen Egert. All Rights Reserved.</p>
+                    <div style="position: absolute; left: 47%;">
+                        <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+
+
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .4; " disabled="disabled"  onclick = "prev();">
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" onclick = "next();">
+                Next >>
+            </button>
+
+
+        </div>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="../js/select_page.js" type="text/javascript"></script>
+        <script src="../js/search_list.js" type="text/javascript"></script>
+
+
+        <script src="../js/menu.js"></script>
+
+    </body>
+</html>
+

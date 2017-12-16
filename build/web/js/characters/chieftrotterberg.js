@@ -79,7 +79,7 @@ $(document).ready(function () {
     else if (character === "Pyra")
     {
         document.getElementById("d").innerHTML = pyraBold + "And here we have the character page of the leader of the Neo Brigade. No. Not Race. The guy who's really in charge. That's his dad, Minor City Police Chief Lou Trotterberg.";
-        max = 7;
+        max = 11;
     }
     else
     {

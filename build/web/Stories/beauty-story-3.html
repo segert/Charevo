@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" type="image/x-icon" href="../beauty.ico.png" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../css/charevo.css" rel="stylesheet" type="text/css">
+        <link href='styles.css?version=2' rel='stylesheet'>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <script src = "../js/beautystory3.js"></script>
+
+
+        <link href="../css/custom.css" rel="stylesheet" type="text/css">
+
+        <style>
+            #charactertable tr:nth-child(even){background-color: yellow}
+            #charactertable tr{
+                background-color:#e6e6e6;
+            }
+            #charactertable td{
+                vertical-align: top;
+                padding: 10px;
+            }
+
+
+        </style>
+
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
+        </script>
+
+
+
+    </head>
+
+    <body ng-app="Demo">
+
+        <div id="maindiv">
+
+
+
+            <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+                   <div  ng-controller="DemoCtrl as vm">
+               <div >
+                   <div ng-keyup="$event.keyCode === 13 && vm.goToPage()">
+                       <div sui-select indicating-text="select a page" on-select="vm.onSelect(model)" options="vm.countryOptions" model="vm.selected" label="Country: " searchable="true" disabled=""></div>
+                       <span>
+                       <button type="button" class="btn" style ="z-index: 2" ng-click="vm.goToPage()" >
+                           <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                       </button> 
+                       <input type="submit" style="display: none"/>
+                   </span> 
+                   </div>
+                   
+               </div>
+       
+                      
+           </div>
+        
+               </form> -->
+
+            <nav>
+                <ul id = "menudiv" class = "ulmenu1" >
+                    <li class = "limenu1" > <a id = "home" class = "li-a-menu1" href="../index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "li-a-menu1-selected"> <a id = "about" class = "menu-selected" href="#about"><b>About</b></a>
+                        <ul id = "testmenu" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "characters" class = "liabout-a" href="../characters.html"><b>Characters</b></a></li>
+                            <li class = "liabout"> <a id = "gene" class = "liabout-a" href="../charevogene.html"><b>Charevo Gene</b></a></li>
+                            <li class = "liabout"> <a id = "author" class = "liabout-a" href="author.html"><b>The Author</b></a></li>
+                            <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
+                        </ul>
+                    </li>
+                    <li id= "test2" class = "limenu1"> <a id = "quiz" class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                        <ul id="testmenu2" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="../beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+
+                        </ul>
+                    </li>
+
+                    <li id= "test3" class = "limenu1"> <a id = "stories" class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                        <ul id= "testmenu3" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="../beautystories.html"><b>Beauty Short Stories</b></a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+     
+                     </li> -->
+                    <li id= "test4" class = "limenu1"> <a id = "miscellaneous" class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                        <ul id= "testmenu4" class = "sub-menu">
+                            <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="../switchcharacter.html"><b>Switch Character</b></a></li>
+                            <li class = "liabout"> <a id = "blog" class = "liabout-a" href="../blog.html"><b>Blog</b></a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+            </nav>
+
+            <div id="formdiv">
+                <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
+
+                    <div custom-select="p.id as p.name for p in pages | filter: { name: $searchTerm } track by p.id" ng-model="page" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                    <span>
+                        <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                            <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                        </button> 
+                        <input type="submit" style="display: none"/>
+                    </span>
+                </form>
+            </div>
+            <!--    <div style="width: 100%; position: absolute; top: 43px;">
+                   <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
+               </div>
+            --> 
+        </div>
+
+
+        <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 2100px; position: relative;">
+            <h1 class = "heading" style="margin-bottom: 10%;">Beauty Stories</h1>
+            <div id="main-wrapper" class="page-wrap">
+                <div style = "margin-top: 65px;">
+
+
+                    <div class="dropdown" style="margin-bottom: 50px; margin-left: 13%;">
+                        <button id="dropbutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                            Select Story Feature
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="changeMenu('Normal')">Normal</a></li>
+                            <li><a href="../Beauty_Story_3.pdf">Open PDF</a></li>
+                            <li><a onclick="changeMenu('Character Commentary')">Character Commentary</a></li>
+                            <li><a onclick="changeMenu('Character Riffing')">Character Riffing</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div id="story">
+
+                        <div class = "storysegment" >
+
+                            <p id = "storydisplay" style = "margin-left: 50px; margin-right: 50px;">Heroes aren’t just people with superpowers who save the world from danger. They can be like anyone else you’ve seen. Heroes can be folks who inspire others, make people happy, and even make you see what your life could be by looking at their own path. Sure. This could include superheroes. I have a bunch of fictional and non-fictional heroes myself. And even when your hero has great powers and helps others, you might look up to them differently. For me, my heroes were my friends.
+                                It had only been a little over a week since I joined Minor City’s teen superhero squad, the Neo Brigade, but they were just the kind of people I would have wanted to be like even without seeing them fight crime. At that time, two of them stood out entirely: Race and Tel-E. One with super speed whose determination to be more than what he was led him to lead others despite the enormous pressure, the other a telepathic alien who’s remained positive and honorable despite all the evil she’s seen in her life. Two people I was happy to call friends.
+                                The other three in the Neo Brigade? I still needed some time to earn their respect, particularly one of them who, while he had powers and was called a hero, wasn’t exactly all that inspiring from what I knew about him so far. But if he was, I don’t know if I could imagine him doing anything wrong. That’s a frame of mind that comes with having a hero. You just don’t picture heroes doing anything but good things.
+                                Anyway, I’m sure everyone on the Brigade inspired at least someone in their lives. One person who I’m sure wasn’t on the list was our boss, Chief Trotterberg, for our day started with him coming into our team HQ and dragging us down to the police station next door, directing the group to a classroom with about fifteen desks in three rows.
+                                “This is so stupid.” Pyra complained, walking in.
+                                “I said get in there.” The Chief insisted, standing by the door as we all entered the room.
+                                “Is this really necessary?” Nator asked, reluctant to take part in what was coming.
+                                “If it’s mandatory, you can consider it necessary.”
+                                “Come on! We only have one week of summer left.” I objected.
+                                “Well, then you can spend it on the work you should’ve completed during the rest of the summer. Get inside!”
+                                “Dad, do we have to do this now?” Race inquired.
+                                “Of course, Ace. You wouldn’t want to be caught unprepared in the future, would you? Now be a good boy and take a seat. THAT GOES FOR ALL OF YOU!”
+                                After explaining it kindly to his son and barking at the rest of us, the entire Neo Brigade took seats at the classroom desks.
+                                “Now, as you’re all working for the police, it is required that you take the department’s CPR course.” The Chief began as we all groaned (except for Tel-E). “Once again, you are REQUIRED to do so. We all had to do it. You all have to do it too. No exceptions for anyone.”
+                                “Uh, question? I can transform into people with healing powers. Do I get a pass on this?” I queried, raising my hand, trying to get out of this.
+                                “No exceptions for anyone!” The Chief repeated. He then proceeded to play an old instructional video from a projector onto a screen. “Now, as part of the class, you’ll all have to watch this CPR training video originally made in the 80’s. If I hear any heckling, I’m starting it from the beginning!”
+                                Most of us only groaned again, a little louder this time.
+                                “I don’t know what you’re all so upset about. This seems like a good opportunity to learn if you ask me.” Tel-E commented like a teacher’s pet as Bendy looked out the window.
+                                “I think it’s an opportunity for you to just keep me from that cool bike show down there.” Bendy argued, pointing out the window to a group of guys on motorcycles doing stunts on a dirt field close to the police station. “Can I please skip this for that?”
+                                “Not an option! You all need to learn to keep people safe!” The Chief affirmed.
+                                “Okay, what if we compromise? I’ll listen to the audio version of the video while I watch the biker guys.”
+                                “No! Someone working for me has to focus on the safety of the public, not just fighting criminals who deserve it, as much as I see the latter as a priority.”
+                                The Chief turned the video on while no one was really paying attention. For someone like me with superpowers that cause me to get electrocuted if someone looks at me and I’m not smiling, this wasn’t exactly inspiring low voltage. Thankfully, the Chief wasn’t looking at me most of the time. Instead, his attention turned the team’s stretching pal, Bendy, who sat behind me looking out the window, gazing at the motorcycle stunts occurring off in the distance. The Chief immediately shut the blinds.
+                                As I tried to keep a smile going, I managed to sneak a handheld game into the room. While I hid the game from the Chief, alternating my eyes’ focus between the game and the video to make it look like I was paying attention, I suddenly felt something hit me in the back of the head.
+                                When I turned, I could see Bendy’s arm having stretched down, returning to its normal length as he held a paper football. He looked like he didn’t do anything, but I didn’t call him on this. I just turned back around instead. As I continued playing my game, I felt something strike my head again, even harder this time.
+                                I quickly turned and found Bendy snickering with Pyra next to him as she pointed at him. I just turned back around, trying to ignore him while also putting my foot on the paper football he flicked at me, moving it to me and keeping it from him. That was sure to be the end of it, I thought. Nope.
+                                Another flick to my head occurred, this time, it actually felt like a person’s fingers. I turned back and saw Bendy stretch his arm back from my head as he just hit me himself while Pyra laughed again. I was so annoyed with him that I glared at the stretcher, causing me to receive a shock through my neck as I grunted before the Chief told me to keep it down. Of course, he didn’t see or hear Bendy do anything wrong, which was too bad, because when I faced the front again, I received another flick to the head.
+                                Bendy knew about my weakness where I get electrocuted from not smiling at someone, so he just had to keep toying with me for his own amusement. He was seriously the most annoying person on this whole team. Ever since I joined them, he’s constantly made me the target of his jokes. And, with my powers, I just had to put up with this or I’d hurt myself. Sometimes all you can do with someone you don’t like where you can’t think positively is to just ignore them.
+                                However, in the corner of my eye, I could see his fingers stretching out to Tel-E who I was sitting next to. And as I turned one more time, I could see he had both hands elongated out to both of us. I mean, was this really necessary?
+                                Thankfully, before he could do something to either of us, we heard a big rumbling on the side of the building. Before any of us could turn to see what this was, part of the wall just smashed into pieces with a motorcycle flying through it and into the room, nearly hitting Bendy. Missed him by that much, I thought.
+                                “What in the . . . who’s interrupting my class?” The Chief barked, looking through the debris of the wall.
+                                Now, a motorcycle would’ve had to have a lot of force to go through a wall like that, and while no one was riding it, we looked outside near those motorcyclists on the dirt hill and found a strange girl with them. For one thing, this girl seemed to be dressed like a clown, wearing bright green pants, a yellow shirt, an orange jacket, a blue polka dotted tie, big red shoes, and colorful makeup. And, for another thing, this girl’s head was about the size of a small hot air balloon as it floated with her regular sized body above the dirt field. Not only that, but a bunch of other girls who looked exactly like her chased the bikers around using their motorcycles while the bikers tried running away on foot.
+                                This girl obviously had some powers of her own, which became evident when I saw she had a pair of Groucho glasses, a podium, and an air horn tattooed on her hands. This was clearly a Charevo Emblem, a mark for all super powered individuals.
+                                “Hola, losers. It's Tammy Time!” The girl laughed as she hovered over a bunch of bikers. Apparently, the air she was able to build in her head allowed her to propel herself at great speeds, as she then flew down to the ground, pounding into the earth on impact, creating an explosion of dirt in the air and launching a biker off the ground. Fortunately, he was flying in our direction, so before he could get hurt, Tel-E levitated him and his motorcycle to safety.
+                                “Oh no. Tammy Time is causing trouble. Darn. We'll have to leave the CPR class early.” Pyra sarcastically noted, pretending to be disappointed as we all looked to the Chief.
+                                “Oh, fine. Class dismissed.” The Chief muttered, not happy about letting us go.
+                                “Yes! Hello World! Let's get her!” Nator declared.
+                                As we all left the classroom in a hurry, we ran to the dirt field as this girl, Tammy Time, was about to hijack the motorcycles with all those doppelgangers of hers. It turns out, in addition to that head ability, the clown girl had the power to create clones of herself, which she used to steal those bikes.
+                                Those clones were about to hijack all the motorcycles, driving them off the field, but Pyra appeared and created a barrier of fire, blocking them from getting to the road. As they backed off, the original clown looked around to find the entire Neo Brigade surrounding her.
+                                “I'd say you picked a bad time for your fun, Tammy Time, but you got us out of a boring class. So we'll try not to beat you too hard.” Race told the multiplier.
+                                “Who's beating who now, Neo Brigade?” Tammy snickered as she looked at me. “Seriously, who's the new girl?”
+                                “The one beating you now.” I answered as I grew my hair out to form an extendable boxing glove.
+                                I shot this glove at Tammy, just as a joke, though also as a weapon, but she suddenly inflated her head to about ten times its original size and swung it down, destroying my boxing glove. Following her defense, she shrunk her head back down.
+                                “So that's my hello? Well, why don't you meet me some more? ManymanymanymanymanymanyMANY! Yahahaha!” Tammy Time laughed as she then produced copies of herself that moved out of her body like holograms.
+                                “Go Neo!” Race shouted as we ran into battle.
+                                So here we were with a girl who could mass produce her own minions for battle. To start it off, Race darted into several clones with his super speed while I grew my hair around a bunch of them to throw these clones to the side. At that time, Tel-E also projected energy from her mind at them as more kept running at our team. With each attack of ours, Tammy’s clones disappeared in a puff of pink fog.
+                                “I like this girl. Just when you think you've beaten her, you get to beat her again.” I remarked.
+                                “Be careful with this girl, Beauty.” Race warned me as he slammed into another clone. However, as the Brigade leader turned to me, four of Tammy Time's duplicates tackled him to the ground as one of them started to tie Race's ankles together with a chain.
+                                “Speak for yourself, oh wise leader.” One of Tammy's clones laughed.
+                                Suddenly, Tel-E levitated all the clones away from the area, freeing Race who untied himself. We continued fighting these duplicates as the real Tammy Time stayed back like an army general while she sent more clones out to attack. We wound up defeating most of these identical girls, but Tammy seemed to clone more of herself at a time than we could beat.
+                                In the middle of this brawl, I could see Nator ready to target the real Tammy.
+                                “Okay, multiplier, say hello to your multiplicand!” Nator declared, about to fire a laser from his hand at the copier.
+                                The cyborg took aim, but before he could attack, one of Tammy’s clones drove a motorcycle right into him, knocking Nator down the field. As he looked up, he could see more clones ready to drive into him with their bikes, but Pyra appeared just in time, blasting them all with her dark fire, creating nothing but pink smoke from those clones.
+                                “Your multiplicand?” Pyra uttered, noting how lame Nator sounded.
+                                “Yeah, you know. When you multiply, you have the multiplier and the multiplicand. Of course, if I hit her, then I could have said that's her ultimate product.” Nator explained.
+                                “Okay, you are SO the least threatening robot in existence.”
+                                Suddenly, the original Tammy Time joined the fray, inflating her skull and bashing it with boulder-like force into Pyra before swinging it at Nator and shrinking it back down after doing the job.
+
+                                Optional Dialogue C1
+
+                                As we continued all this chaos, hoping to keep her down, Tammy Time went with a new strategy, picking up a cinder block on the field. But before I could let her try anything, I extended my hair out to her, wrapping it around her leg, causing her to trip, still holding onto the cinderblock. I was about to pull her to me, but then she turned it around by inflating her head one more time, allowing her to float into the air. As she ascended, I was pulled with her as my hair was still caught on her leg. I decided to let go, detaching part of my hair to drop down.
+                                With Tammy hovering over us, she started spinning herself around as she held the cinderblock in front of her. To my surprise, the next thing I saw was several more cinderblocks generating near her with all of them plummeting down to the field, falling in different directions. As the team tried taking cover from these cinderblock duplicates raining down on us, I grew my hair out to form a protective overhead shield. I ducked underneath it as I could hear CLANG CLANG CLANG! The hard and heavy mass falling onto my metal barrier.
+                                “Whoa! She can clone herself AND anything she wants! That is awesome!” I declared, impressed by her powers.
+                                “You know, she can clone people too. Why don’t you go up and ask if she can make another of you she can control if you’re so excited?” Pyra sarcastically suggested. “Before you respond, please don’t think I was serious.”
+                                “You got nothing on me, guys! And now, my me’s, let's get the bikes and get lost!” Tammy Time ordered her clones.
+                                As exhilarating as this was, Tammy had us backed into a corner with all the clones she had. And she still had enough to steal all the motorcycles she wanted, which we could see begin driving away.
+                                However, before they could leave, Bendy wanted to really show her up by stretching his entire body around the dirt field, covering the whole perimeter like the ropes of a wrestling ring. And as he formed that border, several clones drove into his body, forcing them to bounce back in the opposite directions. And I mean bounce by launching back far, almost to the other end of the field as they had driven into him so fast.
+                                As they bounced back to the field, some of the motorcycles nearly hit us, but also came even closer to some of the bikers who were still on the field, watching the fight.
+                                “Ah! Bendy, be careful!” Tel-E told the stretcher.
+                                “Yeah, you could've hurt someone.” I added.
+                                “That's what I'm hoping for, Hairpiece.” Bendy laughed as he stretched his arms out to hit Tammy who floated to the ground and shrunk her head back to normal. However, the villain managed to produce several more clones that she formed into a barrier that absorbed Bendy's hit. The clones were all just bunched together; it was almost like my when my hair takes a shape, only not quite as strong. But it still did the job.
+                                “Keep hoping, Bendy.” Tammy Time laughed.
+                                Bendy and Tammy Time continued to do battle as Tammy dodged another stretching Bendy arm before producing more clones. Now, while it looked like only the original Tammy can duplicate herself, as long as she has a clone next to that clone, the newest clone can pass through that clone, appearing as if she was cloned by that clone. Is this making sense to anyone?
+                                Anyway, here’s what happened: Tammy wound up producing a number of copies that produced a line of clones, leading all the way up to Bendy before the last one in that line hit him away. The clones all returned to the original Tammy in that line. It was like she had Bendy’s stretching power from how one of her was at one position and another of her made it to the other position.
+                                Trying this again, Tammy produced another line of clones to hit the stretcher’s head, but Bendy dodged her this time. Determined to really give him a good attack, Tammy formed more duplicates in a line as Bendy started stretching himself away. Wherever Bendy’s body went, the line of clones followed as he tried escaping them by going up and down and across the field, Tammy’s army was still keeping up with him.
+                                “Whoa! Ha! Yeah! Can't keep up with me!” Bendy proclaimed as he ran from every newly produced clone.
+                                “You think so, do you? Look at me! I know how to annoy a punk like you.” Tammy argued as she kept producing more clones.
+                                “No way! I can be way more annoying than you no matter how much I have to look at your face.”
+                                As Tammy’s clones ignored the rest of Bendy’s body, the stretcher extended his leg out to the original Tammy, knocking her down.
+                                “Go on. Give me a challenge.” Bendy insisted.
+                                With the clown girl feeling like she could do better, her Charevo Emblem suddenly glowed as a feature of the Charevo Gene was displayed: The Charevo Fairies. Three creatures that represent a person’s Charevo Elements. For her, Tammy seemed to have the Behavior, Mentality, and Identification Elements of Tomfoolery, Monologue, and Attention, which appeared as Charevo Fairies to look like Tammy Time if she was a pair of Groucho Glasses, a podium, and an air horn, resembling the marks on her Charevo Emblem as well.
+                                One thing to note about these fairies is they are meant to provide guidance to a person to make them do the right thing, but these sprites looked different than the ones I saw appear to Race and Tel-E from earlier. They looked like they should, but they seemed to have this dark aura surrounding them. It was like Pyra had lit them up with her dark fire. Something didn’t look right.
+                                “Heehee hahaha! Thinking sillier is to think big.” Tammy's Tomfoolery Fairy chuckled.
+                                “Hey! Hey! HEY! Only the big guys get all the attention when everyone sees them!” Her Attention Fairy shouted.
+                                “The power of many can be nothing, for there is nothing like the power of one.” The Monologue Fairy added before they all flew back into Tammy. This didn’t sound like good advice, not to us anyway. But Tammy was about to try something new and bad, for she just gave us a grin.
+                                Being inspired by her other friends that carried her appearance, Tammy called all her clones back to her as they all floated back into her body.
+                                “Tel-E, aren’t the Charevo Fairies supposed to give positive guidance?” I asked the Charevo Gene expert.
+                                “I’ll show you the journal later, but that’s only for people who demonstrate good morals. If you’re evil, they’ll only encourage further evil.” Tel-E explained.
+                                “So the worse you are, the worse you can become? Well, what do you think Tammy’s fairies are gonna have her do?”
+                                “ManymanymanymanymanymanyMANY!” Tammy Time hollered.
+                                As if I needed a visual aid for that answer, the clown girl produced more clones, going wherever she wanted as long as they were near each other. But they weren’t all on the ground individually. The clones were positioned in a way that allowed Tammy Time to look not like a bunch of girls, but one fifty foot tall girl made up of all the individual clones. It was like a giant robot formed from smaller robots connected together.
+                                “Challenging enough for ya, Bendy?” Tammy chortled with all her clones in unison as she stomped around and swatted at each of us as we tried to attack.
+                                “You had to ask for it, didn't you?” Pyra mumbled to Bendy.
+                                Tammy continued hitting everyone away with her giant clone arms before picking up a cement block with those larger hands. And just like before, she swung her arm around, creating duplicate cement blocks with her powers to crush the team. I defended this by forming another shield to keep us safe, though. I even covered the nearby bikers and civilians who became further at risk. They were okay, and the team was protected as well. But it wasn’t enough. We needed an offense quick.
+                                Everyone in the team tried using their abilities to attack this clown giant. And while each hit caused several clones to disappear in their pink smoke, Tammy would instantly create new duplicates in their place. Nothing we did would work. I even tried forming my hair into a large cannon to fire at her, but, even with that kind of force, it still didn’t do the job.
+                                As we kept this up, Bendy suddenly made me go with his own bright idea. He didn’t even say anything to me at first. He just shoved himself into my hair cannon and yelled “FIRE!” If this wasn’t gonna work, I was all set to shoot him out of a cannon anyway. As he balled himself up inside, I just set it off, firing with him as my projectile.
+                                As he flew directly at Tammy Time’s clone giant, Bendy expanded himself into a large ball, about the size of Tammy’s head when inflated. Upon impact, he wound up penetrating the giant, going all the way through the torso, creating a huge puff of pink smoke as that hit caused all the other clones to collapse and fall to the ground before anymore duplicates could form.
+                                With that giant having fallen to pieces, the clones all disappeared in pink smoke as Bendy landed by retracting his body back to normal, catching a streetlight to swing around and slide to the ground.
+                                However, as he swung down, a girl our age was just passing by and nearly got hit by his extendable body. He may have been having a good time with this, but the girl was totally baffled as his legs nearly hit her in the head. The girl hurriedly ran from Bendy as he remained totally clueless. At least she and everyone else was safe, though. 
+                                “Oh yeah! Tammy Time is expired! I . . . wait where is she?” Bendy asked after celebrating. As it turns out, after the clones disappeared, the original Tammy was nowhere to be found.
+                                “She must've escaped before you slammed into her clone giant.” Tel-E suggested.
+                                “Aw, I wanted to rub it in her face. Oh well. Way to go Neo!”
+                                “Yeah, but you almost hurt all those people earlier.” Race reminded the stretcher.
+                                “Oh . . . but . . . they're okay, right?” Bendy sheepishly inquired.
+                                “Yeah, but they were almost hurt.”
+                                “Yeah, and if you were any more careless, they'd be injured and the Chief would make us watch more of that stupid video.” Pyra scolded Bendy.
+                                “Right, but it worked out. I'm not seeing the problem.” Bendy argued, still clueless.
+                                “Forget it.” Race sighed, finally dropping it.
+                                With all this over with, and no trace of Tammy Time, we all returned to the team HQ. Before we could relax after that fight, we had to let the Chief chew us out for not catching the clown girl and then do some paperwork for all the damage that was done. All in all, not a whole lot to report apart from a few motorcycles, since Bendy’s recklessness didn’t get anyone injured.
+                                Still, I had a feeling he was about to cause more trouble for us, hopefully, not with me having to take responsibility. I was still new to this team. All I wanted was to make friends with everyone. I wasn’t looking to risk the Chief singling me out if he wanted to fire someone.
+                                Fortunately, I didn’t have to feel so new, as I had already earned Race and Tel-E’s trust and friendship, not to mention I had also gotten the hang of filling out the post-battle damage report in the team’s office. I wasn’t just some new girl. I was part of a superhero team just like everyone else in the Neo Brigade. It was time to start feeling like one.
+                                After turning in my report, I returned to the HQ building next door to the police station and went straight to the lounge for some TV. I saw the remote on the couch as I slowly walked forward to grab it. Unfortunately, someone got there first, which would’ve been fine, except Bendy was who got there first, stretching his hand to pick up the remote before he even sat down.
+                                “Sorry, Newbie. I got the seniority; I get the remote.” Bendy declared as he then stretched his legs across the couch, leaving me no room to sit.
+                                “Oh . . . alright. And what are we watching then?” I asked, resisting the urge to glare at him to not let him bait me into another electric shock.
+                                “The only show to watch when I'm around: Captain D on the Way!”
+                                Ugh. Alright. So Bendy turned the TV on, changing the channel to this action show. I’d describe the show’s plot, but I’m still waiting for it to be written. It starred a daredevil who went by the name of Captain D, and . . . well, here’s the scene that came on: Some woman in a pink dress acting as a damsel in distress was being dangled over a pool of electric eels as a villain character stood over her on a nearby platform.
+                                “Mwahahahaha! Prepare to meet your demise. I do hope you enjoy introductions, for if the eels don't destroy you, you'd better be able to swim with no arms.” The villain cackled while the damsel only shrieked in terror some more.
+                                “You won't get away with this.” The damsel cried.
+                                “Oh no? And who's going to stop me?”
+                                “I dare you to think of who!” A voice called out, getting the villain's attention.
+                                The camera then panned to the star of the show, Captain D, standing on a higher platform with a heroic pose, putting each fist against his waist. This guy had some gelled up hair flipped up and wore a gray jumpsuit with two blue streaks going down the shirt to a big blue D on his chest while also sporting a red cape. He gave a confident smile to his enemy.
+                                “Captain D!” The villain and damsel exclaimed together.
+                                “You're still alive?” The villain questioned, incredulously.
+                                “Death can't keep up with Captain D.” The hero proclaimed.
+                                “Well, I suppose that makes one of you two.”
+                                Suddenly, but predictably, the villain cut the damsel’s ropes as she fell to the eel-infested pool. Before she reaches it, Captain D jumped down with a bungee cord already around his ankles, catching her. The villain is laughed, quite pleased, before the bungee cord retracted back before they could hit the water. As the hero character held the damsel, she was actually closer to the water and to danger than he was. When he finally came back up, he punched the villain and set the damsel down.
+                                “Oh man! Bungee over danger? I so gotta try that!” Bendy said in excitement as he continued to watch.
+                                “Oh . . . tell me, how have you survived all my traps?” The villain asked as he lay beaten on the floor.
+                                “I'm Captain D. And the D is for ‘Don't fool with me and my girl’.” Captain D concluded, pointing down to his enemy as the woman kissed her hero.
+                                And credits.
+                                But while I thought that was it. Captain D suddenly appeared above the scrolling names that were scrunched down to the bottom third of the screen.
+                                “Hi, kids. You think you’re daring? Well, I dare you to try my rescue techniques. If you can do that, maybe you can be a hero too.” Captain D addressed the audience.
+                                As the credits continued to roll, they covered the whole screen with the theme song playing. As this went on, Bendy decided to sing along, for his reason.
+                                “Oh, Captain D is on the way! You better not get in his way! Or else he'll have to make you pay! Because he dares to save the day! Captain D is on the way!” Bendy sang as he moved his arms, dancing to the music in his seat.
+                                “Eh, this show's overrated.” I mumbled, not impressed.
+                                “Er, wha? You dare to criticize the ultimate daredevil?” Bendy queried in shock.
+                                “Look, I know I watch a lot of TV, but come on. Aside from the overacting, this show is just lazy. It basically just has Captain D save a different woman from a different villain every episode.”
+                                “Yeah, but with a new cool set of stunts. And that's all I need to keep watching. Besides, what's wrong with a guy saving someone all the time?”
+                                “Pff. The only time they feature women on this show is to play the victim. Not the men. I mean, would it be so wrong if they had at least one female villain on the show?”
+                                “Well, I think they were gonna try that once, but something about a guy like Captain D hitting a woman just didn't test well.”
+                                As if I needed to see any more of him, a commercial came on as Captain D appeared.
+                                “Hey there, folks. Captain D here. I'll be appearing at the Minor City Coliseum this Saturday for a night of fun and daring stunts.” Captain D announced. As he spoke, there were clips of him performing dangerous stunts playing in the background. “If you like explosions, if you like dangerous animals, if you like to watch someone battle the odds as they stare death right in its ugly face before they just smack it away, then this is the show for you! So come on down to Minor City Coliseum at 8pm this Saturday. I dare you to be there!”
+                                Well, I wasn’t seeing this as too exciting a thing no matter what day it was gonna be. In contrast, I could see a strange look on Bendy’s face as he stared at the TV, remaining motionless and making sounds through his teeth like a teapot. As all of . . . THIS was contained in Bendy, Race suddenly came out from the office door, passing by.
+                                “Hey, guys.” Race casually said.
+                                “AAAAAAAAH!” Bendy screamed like a little girl as he then bounced his body around the room before he grabbed Race by the shirt. “CAN WE GO!? CAN WE GO!? CAN WE GO!? CAN WE GO!? CAN WE GO!? CAN WE GO!?”
+                                “Uh . . . what?”
+                                Cut to 8pm Saturday. And . . . I don’t know. Things just happened. Somehow Bendy convinced the entire Neo Brigade to go to Minor City Coliseum to see Captain D’s live show. Why he wanted us to go with him, who knows? All I knew was everyone else was going, and I figured a night out with friends was a night out with friends and not a night of me alone. So I was right there with them.
+                                It was late at night as there was a surprisingly large crowd of people in attendance at the stadium. There were seats circling around the whole arena on multiple levels with the center arena being a mostly dirt-like surface with a few slopes and several contraptions set up in different parts of its circumference.
+                                We all took our seats together on the lower level as were just a few feet down the stairs to the wall separating the audience from the arena.
+                                “I still can't believe we all have to go to this.” I moaned as we walked to our row.
+                                “Just bear with it. Hopefully, it won't be too long or too loud.” Tel-E told me.
+                                “Yeah, but I could be home right now where it's quiet and I don't have to wait for anything. Remind me again why all of us have to be here.”
+                                “Well, Bendy asked Race if he could go. Then Race made the mistake of telling him to ask the Chief and, well . . .”
+                                “Alright, everyone make room! Chief of police coming through. Hey! No blocking my seat! I paid for this ticket!” The Chief said, trying to walk down the row with a lot of people's legs in the way.
+                                So I thought it would be hard enough to try and get along with someone like Bendy who also liked Captain D’s show. You know, finding something to relate to. But, apparently, my boss was also a fan, so now things were about to get way more awkward, and that was just with our boss joining us at a live performance outside of work.
+                                “Ah, what a night for a show, am I right?” The Chief happily commented as he sat right between us, holding several hot dogs and sodas, looking surprisingly more loose than usual.
+                                “Chief, since when are you and Bendy a fan of the same thing?” I asked.
+                                “Oh, you mean Captain D? Are you kidding? A man who risks his life in the face of danger? Someone who does his own stunts to entertain with a show where he's there to serve the public? That is an American hero right there. And that's why I made this mandatory for you kids. To not miss an opportunity like this.” The Chief explained.
+                                “If this is mandatory, how’d Pyra get out of this?” I inquired.
+                                “She . . . has her reasons.” Tel-E answered, not feeling like it was her place to get into the details.
+                                “Yeah, her loss. Okay, enough o’ Pyra! Time for the pyro-technics!” Bendy shouted as he finally joined us, having gone to buy a ton of Captain D merchandise. He was holding pennants, bobbleheads, posters, a hat, and I think he was wearing four different Captain D shirts. “How awesome is all this?”
+                                “What awesome? The show hasn’t even started yet.” Nator acknowledged.
+                                “Yeah, but, like, the moment leading up to the thing where you just can’t wait. In a way, that’s more exciting, you know?”
+                                “In that case, why don’t we slow down time and increase the wait? He’ll be having the time of his life.” Tel-E whispered to me as I laughed before we finally heard some guitar music playing as an announcer spoke.
+                                “Ladies and gentlemen, are you ready to meet the man who puts the D in danger?” The announcer began as the crowd cheered.
+                                “Oh! I was wrong! The wait’s not as fun.” Bendy told us, pumped for the show.
+                                “Are you ready to meet the man who laughs at safety and remains passively indifferent to caution and speed limits?” The announcer added to more cheers, which was a strange thing to say with a cop in the audience. “Here he is. The man so daring; his body wishes it belonged to anyone else! The man so daring; he never mixes black with yellow! The man so daring; he makes his insurance lawyers sweat just lookin’ at him! The man so daring; he chooses to play the guitar and do this announcement while driving a motorcycle with his legs! Say hello to Captain D!”
+                                After that introduction, a spotlight lit up over an arena door below a few seats. This area under the spotlight showed up on a Jumbotron hanging from the stadium’s ceiling. As we looked to that spotlighted area and Jumbotron screen, Captain D came cruising out on a motorcycle wearing a headset. But he wasn’t just riding it; he was riding it by steering with his legs and playing his guitar, not even riding a motorcycle with a seat to lean against.
+                                As he came out, the crowd stood up to cheer along with Bendy and the Chief. As we saw the majority of the audience around us give the guy a standing ovation, Race, Tel-E, Nator, and I all felt obligated like anyone would to stand and clap too, our energy quite minimal in comparison. As Captain D drove through that arena, several flame jets spewed fire up from the ground as the daredevil weaved his bike through them all.
+                                As he drove, a monster truck suddenly emerged from a larger door on the side of the arena. The truck then slowly approached Captain D who turned around and drove straight into it. While I thought he was gonna just drive up to the truck and swerve out of the way, instead, he moved his feet up to his bike’s seat before jumping up in the air, landing on the truck’s hood. As if this wasn’t dangerous enough, as the truck continued moving, Captain D ran up over the window and onto the roof while his motorcycle continued moving forward below the truck. When he reached the end of the roof, he then jumped and flipped off the truck, landing on the seat of his motorcycle, driving around some more.
+                                At that point, he stood up on his moving bike, playing his guitar for the crowd who cheered louder for what they witnessed.
+                                However, while that guitar blared, and that motorcycle was still moving, a panel on the ground suddenly opened, revealing a pit of flames as a huge blaze fire rose up while his motorcycle continued moving towards it. He wasn’t even looking at it.
+                                Captain D just kept showboating until he kept his eye off the road for too long and wound up riding his motorcycle into the flame pit as a huge burst of fire shot out after he drove himself in. What followed was a loud gasp echoing through the crowd as we watched him get fried. We were just so horrified to see this kind of thing at a live show as I could only put my hands over my eyes the second he fell into the flames.
+                                “Wait. Wait. Watch this!” Bendy alerted me as I peered between my fingers.
+                                I didn’t know how this happened, but I saw two hands get a grip on the edge of the flame pit as someone emerged from those flames. Captain D survived! He climbed out and waved to the crowd again, receiving more applause for his death defiance, despite the fact that his suit was still on fire.
+                                But Captain D just kept going like the fire on him was nothing. Like falling in the flame pit was nothing.
+                                “He’s okay?” Race said, surprised.
+                                “Impossible!” Nator exclaimed, similarly.
+                                “Wait! Look at his hands!” Tel-E told us as I noticed a familiar looking set of marks on the daredevil that looked like a motorcycle, a caution barrier, and a rock. “Is that a Charevo Emblem?”
+                                “He’s got superpowers? Wow! So that’s how he does it!” I acknowledged, finally taking interest. “Tel-E, what’s he got?”
+                                “Well, I recognize Bendy’s Defiance. Let me see what else there is.” Tel-E said as she flipped through her Charevo Journal. However, Bendy just stretched his arm over to her and closed the book.
+                                “Earth to Knowlgian Poindexter! We’re not here to read! We’re here for speed!” Bendy interrupted.
+                                “What’s up, Minor City!?” Captain D hollered to more applause. “I’m feelin’ it. I’m feelin’ it, guys. Not pain, of course. I don’t feel none o’ that. But I’m not gonna be the only one to have fun tonight. You’re gonna be closer to the action than ever before. I’m going to jump the flame pit again. But this time, we’re gonna turn up the heat!” Captain D announced as the fire behind him became even bigger. “But we’re not stoppin’ with that. Who wants to volunteer to ride over these flames with me?”
+                                The audience went silent in response to that proposal. Hopefully, this was everyone just thinking he was out of his mind and not thinking they themselves weren’t the right people for this stunt.
+                                “Come on! I dare one o’ you to join me! Who’s it gonna be?” Captain D reiterated.
+                                “Volunteer to ride with a daredevil? He’s kidding, right?” I muttered, knowing how wrong that sounded.
+                                “Yeah, that’s like us asking someone to tag along when we fight the Minuteulator.” Race commented.
+                                “Hey, he’s a showman. He just wants people to not be afraid. You leave him alone!” The Chief ordered.
+                                “Come on. This is just asking for someone to help him not die alone. What idiot would volunteer for . . .” Nator began.
+                                “Me! Me! Me! Right here! Pick me!” Bendy hollered, catching the daredevil’s sight.
+                                “You sir! Get over here!” Captain D said, pointing to Bendy.
+                                After being called on as the only volunteer, Bendy wailed in excitement as he hurriedly stretched his legs over me to get to the stairs in the aisle. He knocked over a hot dog I was holding, but that didn’t slow him down at all. He just ignored me and ran down to the arena. Captain D met with him on the edge of that field.
+                                “What’s your name, son?” Captain D asked.
+                                “Ben Ducilman. Oh my God! Captain D knows me now!” Bendy screamed after answering and shaking his hero’s hand.
+                                “Heh heh. Nice to meet you, Ben. Now, you and I are gonna jump this flame pit. Just hold on tight and you’ll be fine. How’s that sound? Can you hold on to me as we ride?”
+                                “I’d never let you go, Mister D!”
+                                “Well, don’t worry. You’ll be fine. In fact, I’m so daring and confident you won’t get hurt . . .” Captain D began as a guy in a suit handed him a piece of paper. “I’m tearing up this obligatory waiver that would prevent any pending lawsuits should I be responsible for any physical and/or mental suffering to anyone participating in a stunt executed by this show!”
+                                Sounding like a cocky wrestler, Captain D tore up the legal document several times and threw the pieces in his lawyer’s face, producing more applause from the crowd. “Yeah! Watch us get sued!”, I guess.
+                                After talking up a big game of jumping flames with an audience member, Captain D proceeded to take Bendy over to his motorcycle, getting on it with Bendy holding him from behind. He gave Bendy a helmet, but the daredevil chose to forego safety, riding just as he did earlier with no regard for protecting his skull.
+                                Frankly, I couldn’t really see the appeal in watching this for most people. I mean, I like fighting villains who create potential danger like this, but only when I know I can handle it and get to have fun with my abilities. This was a guy needlessly risking his life for entertainment. I know he seemed to have his own powers, but just the idea itself was lost on me. It’s like going to a circus and watching the lion tamer lock himself in a cage with four beasts. The relief of the guy being okay is the only good part that comes at the end.
+                                But Bendy seemed to enjoy this as he held onto his hero who revved up his motorcycle. It was facing the dirt slope that was just in front of the flame pit. He finally took off with the stretcher on board, zooming his way up, holding onto the handles as a blast of flames ascended beneath him. At the speed he was going, it looked like he was gonna make it, and Bendy believed this too, a little too much, evidently.
+                                As soon as the motorcycle left the slope into the air, Bendy held his hands up in the air like he was on a roller coaster. Except, on a roller coaster, you have a safety belt or bar to keep you on the ride. Bendy only had a helmet. And, with nothing to keep him on, he suddenly fell off the motorcycle before it cleared the flame pit, plummeting into the inferno as Captain D just looked back to see his volunteer missing.
+                                An even louder gasp filled the seats, I’m guessing because this included people who worked at the show and weren’t expecting this. And as Captain D landed on the next slope, he quickly drove back near the pit and looked over it to see if Bendy was okay with a look of more surprise than worry, to be honest. I was completely shocked, myself. But not the rest of the Brigade who knew their teammate, for as my heart raced for what looked like Bendy’s demise, I just kept looking out to see if there was any way his powers would let him survive this like Captain D’s.
+                                When I was ready to scream out in shock, suddenly, Bendy’s hands stretched out from the pit as he hurled himself out of the flames, looking slightly scorched, though alive and well. He even showed off his Charevo Emblem for Captain D.
+                                “I’m okay!” Bendy yelled, putting his arms up in the adrenaline.
+                                Everyone suddenly burst into a round of applause, knowing he was alright and that the stunt seemed thrilling. Captain D gave Bendy a proud smile, shaking his hand while the stretcher looked like he wanted to cry right then. As they shook hands, the daredevil gestured to Bendy, eliciting more cheers as the two took a bow with everyone ecstatic. Me? It was cool. Sure. But I had some thoughts.
+                                Now, for an audience, a reaction is based on what they don’t know ahead of time. For Captain D and the audience, you’ll notice when Bendy gave his name, he did not say Bendy. He gave his normal name. So, obviously, this suggested to everyone that this was just some regular guy. Captain D also knew this as he knew Bendy wasn’t a plant for the show. No one knew he’d make it based on that.
+                                As for me, I knew he had powers. Of course. What I did not know was that Bendy had a degree of invincibility in his powers. Hence I was completely shocked at seeing him fall to get burned just as I was when Captain D did the same. I wished he could have told me what all his abilities included so I didn’t have to get frightened like that. Although, as I thought about it, I started to think he fell on purpose, either to imitate his hero and impress him, or just scare me and everyone for fun.
+                                After Bendy made it back to his seat, he was still overly enthusiastic about what he got to do. He participated in a stunt with his biggest hero, and made me fear for his life. That definitely sounded like something he’d be proud of. The show was full of all kinds of dangerous stunts performed by Captain D, which I was certain Bendy wanted to try for himself after. I just listened to him sitting next to me jumping out of his seat for all of it. I wasn’t exactly reflecting the energy, but at least I made it to the end with him.
+                                Once the show finished, we all walked out the stadium, staying together.
+                                “Well, that was a nice outing wasn’t it?” The Chief asked us, having enjoyed the night.
+                                “Yeah, not bad.” I commented, sounding lukewarm.
+                                “You dare sell that show short? It was the highlight of all highlights!” Bendy raved.
+                                “Right. You’re not just referring to your little inclusion in the event, no?” Tel-E remarked.
+                                “Well, I did get to meet Captain D. Doesn’t get better than that.” Bendy noted as he turned his attention to a crowd of people rushing to a side door. Upon close inspection, Captain D himself had just exited the building and people were after some autographs, which only meant . . . “Oh my God! It’s Captain D! Come on! We gotta meet him!”
+                                Suddenly, Bendy ran to the daredevil as fast as he could.
+                                “Seriously? I got math to do at home.” Nator complained.
+                                “Come on. We better keep an eye on him or we may lose Bendy forever.” Race noted as we walked to the crowd.
+                                While waiting his turn, Bendy was joined in the back of the mob by the rest of us. However, rather than wait for everyone to get their autographs, the Chief just started shoving his way through the crowd like a cop driving with his siren on to get the other drivers to pull over. If he had a handheld siren with him, I’m sure he would’ve blared it.
+                                “Okay. Chief of police here! Make a path! No blocking or you’re under arrest! I’m with the law!” The Chief shouted, forcing people to clear the way for him as he finally reached the daredevil. “Oh! Uh, Captain D? Hi. My-my name is Chief Lou Trotterberg. I’m the Chief of police of uh . . . where are we? Minor City! Chief of Minor City police. I’m a big fan. Can you sign my poster? I’d consider it a great service to the city if you did.”
+                                “Sure. Anything for the city, I suppose.” Captain D agreed, signing the Chief’s poster. “To Louie. Always dare to do good.”
+                                “Oh, thank you. Thank you. You know our town’s superheroes, the Neo Brigade? And one of them, Bendy, the one who rode with you back there? I’m-I’m his boss.”
+                                “Oh, Ben’s still here?” Captain D inquired, interested.
+                                “What up, Captain? It’s me!” Bendy hollered.
+                                “Hey, you’re the kid with the powers! That was pretty hardcore back there. A lot of people forget about my abilities, but you sure took me by surprise.”
+                                “Oh, I’ve been taking risks like that since before I got these powers. But I still know how to make it look exciting.”
+                                “Well, maybe you and I can talk some more some time. I’m shooting an episode of my TV show tomorrow and I’ve got two VIP passes to the set.” Captain D suggested as he gave Bendy the passes he took out of his jacket.
+                                “Tomorrow? Me? Hang out? With you? Captain D? On your show? I . . . I . . .” Bendy uttered, gasping at the end. However, Race put his hand over Bendy’s mouth while the stretcher’s head began expanding from the rush of excitement building in him.
+                                “Uh, sorry, but he can’t tomorrow. We’ve got a rescheduled CPR class to take, which we ALL have to go to.” Race explained.
+                                “Oh, but we can always reschedule. In fact, the room will probably get destroyed again, so why waste the time, right? Right. Of course he can go.” The Chief intervened as Race let go of Bendy’s mouth before he breathed again with his head shrinking back to normal.
+                                “Great! I'll see you tomorrow, Bendy. Until then, I gotta go. Thanks for coming, guys. Dare on!” Captain D hollered, saying goodbye.
+                                The crowd cheered for him as he got on his motorcycle and drove off while everyone left as soon as they saw him disappear over the horizon at the speed he was doing. As the daredevil took off, Bendy could only stare in awe at his hero as his attention turned to the passes.
+                                “Oh man. I’m gonna get to hang out with Captain D! Somebody kill me, ‘cause I’m goin’ to heaven!” Bendy uttered with a strange choice in words, about to drool on his passes.
+                                “Yes. That was a nice invitation. And of course with two passes, you'll be needing a guest. And I think I can make myself available.” The Chief suggested.
+                                “Hang on, Chief. Sorry, but someone here isn't a fan of the D's. And I ain't passin' the chance to convert someone to a fan by getting to know my hero.” Bendy clarified as he took the pass and stretched his arm and neck over to me. “And that future fan I'm taking is you, Beauty.”
+                                “Say what?” I uttered, surprised as he handed me the pass.
+                                “What!?” The Chief exclaimed.
+                                “That's right. I'm taking Beauty. You don't like him now, but I'm gonna make you like him.” Bendy insisted.
+                                “Uh, thanks. But . . . do I really have to? I mean, I heard Race and Nator say they don't like Captain D either.” I mentioned.
+                                “Hey, don't drag us into this.” Race told me, backing away and holding his hands up.
+                                “Oh come on! I don't wanna go. I already came here. Pyra didn't come. Why don't you make her go?” I suggested as I could feel some sparks flow through me as my smile went away at the thought of Bendy’s proposal. I quickly got it back to where it was, though.
+                                “Come on. You're gonna have fun. You'll get to be on a TV set. Plenty of free food. Hey, maybe they'll need extras.” Bendy attempted to convince me as he wrapped his neck around me.
+                                “I've never been to the making of a real TV show before.” I mumbled, smiling with the thought of being close to TV. However, I also kept in mind that this was for a really terrible show, which made me ready to pass on this. But then I thought of why I joined the Neo Brigade: to make friends. And Bendy wasn’t exactly being the least of a jerk to me. I figured spending some time with him might fix that. After weighing the pros and cons, I just went with what I wanted. “. . . Alright. I'm in.”
+                                “Yes! You will not be disappointed.”
+                                Alright. I wasn’t planning on any of this. But it looks like I was going with Bendy to see Captain D . . . again. I don’t know how I got brought into this. But, again, I had to look on the bright side of it. This was my chance to really get on Bendy’s good side with me so we could be friends.
+                                However, one person whose good side I wasn’t finding myself on was the gentleman I worked for who I turned to and found giving me a stone cold glare.
+                                “You only exist to destroy me, don't you.” The Chief flatly said with bitterness as I was forced to hold my awkward smile.
+                                Suffice it to say, I was not the most excited by the idea itself of spending time with Captain D, a guy who was happily all about explosions and stunts for a live show and starred in one of the worst shows for both women and viewers. Then again, part of me was excited to go to a real TV set. Seeing as this was for the taping of an ongoing show, it was sure to go better than when we encountered Christy Ferguson. So how bad could it be?
+                                The next day, I was ready to find out. Bendy woke me up bright and early, bursting into my room to have me get ready, even though it was 8 am and the taping was at noon. This was already annoying in that he woke me up so early, but also that he woke me up by actually coming into my room as I was sleeping. As you know, a person sleeping isn’t always asleep with a smile, so the resulting electric shock of him seeing me there was my own built-in alarm clock.
+                                So it was rough starting out, but I felt a little better when Bendy and I went off to the set. It was at the same studio lot where Christy Ferguson did her show. Bendy couldn’t contain his excitement, so it helped that he kept his mind on seeing his hero again and not playing any jokes on me.
+                                When we got there, we could see the set being entirely outdoors with different trailers by the building near some props and cameras. Captain D must have told people we were coming as everyone seemed pretty nice and welcoming. I didn’t really know a lot of the actors, but they seemed to like working with the daredevil. He did come across as nice when we met him, so it wasn’t a surprise there. Bad shows don’t always make bad people.
+                                Bendy and I watched a lot of the shooting done near a food table behind where the director sat. Most of our time there was spent just watching key grips set up lights, which meant I didn’t have to watch the scenes get shot that much. And even when I did, I didn’t have to hear the crummy dialogue as there weren’t any speakers attached to the boom mic. This was going better than I thought.
+                                “So, Beauty, whaddaya think so far?” Bendy asked.
+                                “Pretty cool.” I replied.
+                                “Really?” Bendy said, surprised. “Wow. I thought I’d have trouble converting you to a fan. I assumed you’d be forcing yourself to smile against your will in the atmosphere of a show you hate, or something. Of course, that would’ve been hilarious.”
+                                So it was pretty clear going into this that Bendy wasn’t as interested in making friends as I was. I knew he wanted me to like his show so I wouldn’t criticize it, but I doubted he wanted us to bond over it. He was still just as up for having fun with my misery as he was before. But, if that was his goal, I wasn’t gonna let him have any fun.
+                                “Well, I can learn to feel good about this environment, being a TV fan. The crew seem nice, the food’s good, and I don’t have to watch the whole story be filmed. It’s better than I expected.” I explained.
+                                “Have you talked to Captain D yet?” Bendy asked.
+                                “No.” I replied, wanting to add “hence the smile I have”, which I’m glad I didn’t, because I preferred to play it nice.
+                                “Good. I have a few rules for when you see him. One: Don't ask him any personal questions that'll make him hate me for inviting you. Two: Don't look him in the eye too long or you might scare him or make him forget about me. Three: If you show off your powers to him, don't do it in a way that'll make you look better than me. And four: Can you please pretend to be my girlfriend?”
+                                “What?” I exclaimed, losing my smile and getting an electric shock out of nowhere. I mean, being his friend, that’s great. Girlfriend? I’m not there yet.
+                                “Just smile and put your arm around me like we've been together. Please? I want Captain D to think I'm cool and have a hot girlfriend.” Bendy pleaded.
+                                “Is that the reason you brought me here?”
+                                “Well, I wouldn't say reason. That's kinda strong. More like . . . ulterior motive.”
+                                “Forget it. This is not a sitcom. And I am not your arm decoration.” I affirmed as Captain D approached us after he finished working on a scene.
+                                Now this was just demeaning. I’ve had to smile through a lot of things. I knew when I got to this city, I’d have to smile to stay alive while fighting bad guys, having to save lives, and getting hurt. But this was not something I expected.
+                                I seriously didn’t wanna go through with this at all. For one thing, Bendy seemed to enjoy imitating Captain D’s actions enough. He didn’t have to do the part of just having a girl by his side as an ornament for looking like a hero. As I thought about how wrong this was, I was beginning to wonder if I wanted Bendy’s friendship that badly. Yes, I wanted us to get along, but this was playing into his court a bit too far.
+                                “There he is. The indestructible Bendy!” Captain D said.
+                                “That's me. Hey, lemme show you what I can withstand. My super powered girl here can dish out a lot.” Bendy assured his hero as he put his arm around my waist.
+                                Responding to the stretcher's disregard to my lack of willingness to feign a relationship with him, I instantly grew my hair out to form it into a car crusher you'd find at a junkyard and crushed him over the head with it. But I kept my smile, so I didn’t go against his wishes entirely. His body was perfectly fine as he proved during that performance the night before.
+                                However, I could hear him scream as he got crushed. And this sounded real. Apparently, as I learned then, Bendy’s body is invincible, but his nerves are still active. He can still feel pain, at least to a degree. Captain D seems to be invincible without any pain whatsoever, but Bendy, not so much.
+                                “. . . See? All good.” Bendy mumbled, feeling dizzy. I felt sort of relieved that he could spin that into a positive reaction. I guess being in front of his hero meant he could smile through just about anything. I wish I had someone like that to bring along so I could abstain from electrocution.
+                                “Gee, you like that hurt. You sure you can handle that kinda force like me?” Captain D asked with skepticism.
+                                “What? Totally! I'm . . . I'm good. I feel good. No . . . pain at all with these powers.” Bendy lied.
+                                “Ah, good ol' crushers. That takes me back to my days as a stuntman. You know, they just don't make shows or movies as dangerous as they used to. Back then, I got to work with real dynamite after the actors were too nervous around it. Not that that was a problem for me, even before I got my invincibility.”
+                                Captain D could definitely withstand anything. But I couldn’t help but wonder what more there was to this guy. I mean, it’s not every day you meet a guy on TV with super abilities.
+                                “Speaking of which, what are your powers exactly? I know you must have something, what with that Charevo Emblem on your hands.” I acknowledged.
+                                “Beauty! Don't pry into the tattoo area.” Bendy whispered. “Uh, ignore her, Cap.”
+                                “No, wait a minute. You've got superpowers. How did you get them?”
+                                “Uh, we don't have to talk about that.” Bendy interrupted before whispering to me again. “Getting too personal with the questions, Bellavitz.”
+                                “Oh, that's a long story with lots of stunts and lots of asbestos. Sorry, but I gotta finish this last scene first.” Captain D informed us.
+                                “Okay. Thanks for the chat. You rock, D!” Bendy shouted to his hero before turning back to me, not pleased. “Gee, way to follow rules one, three, and four, Beauty.”
+                                Despite Bendy not caring how difficult he was making everything for me, I still wanted to stay on his good side. However, I wasn’t looking to pay much of a price for it. I should be allowed to speak my mind when I have questions. Bendy knew everything about his hero, but didn’t seem to know anything beyond the invincibility about what Captain D’s abilities were.
+                                Suddenly, as the daredevil left, a hoard of people carrying protest signs stormed onto the set. Believe me. I didn’t call them.
+                                “Two! Four! Six! Eight! Harmful stunts are what we hate! Six! Five! Four! Three! Go get rid of Captain D! Twenty-seven-point-three! Get daredevils off TV!” The protesters chanted.
+                                “Ugh. Not this again.” Captain D grumbled, putting his hand to his head before addressing the protesters. “We’re busy here, people. Can we do this another time?”
+                                “We will not be ignored again!” One of the protesters shouted.
+                                “Ugh. I gotta go.”
+                                “Two! Four! Six! Eight! Harmful stunts are what we hate!” The protesters reiterated as Captain D only looked more annoyed. 
+                                “Whoa! What’s going on?” Bendy asked.
+                                “I don’t know. But I think your hero’s got some other critics besides me.” I replied.
+                                “Your show encourages reckless behavior from children!” A protester claimed.
+                                “My son injured his skull trying to jump off the roof with a rope around his ankles after watching your show.” Another protester accused.
+                                “Alright. First of all, what I did on my show was with a bungee cord, not a rope. You can’t pin that on me. And second, my show does not encourage kids to hurt themselves intentionally.” Captain D argued.
+                                “You always dare them at the end of your show to attempt your dangerous stunts!” A protester alleged. “You're a terrible influence!”
+                                “Your show is harming our children!” Another protester added.
+                                The protesters continued to chant as Captain D was visibly not pleased with being barraged by complaints of parents. I could see some looks of resentment as he tried to keep from making eye contact with anyone and let them yell at him more.
+                                I have to say I wasn’t surprised people didn’t like his show, but I never really thought about how it could make kids do dangerous things. For me, I only focused on the bad writing, bad acting, and terrible treatment of women. Kids imitating what they saw him perform didn’t cross my mind. Obviously, Bendy was a clear example of this kind of viewer.
+                                As I looked at Bendy, he certainly wasn’t pleased to see these protesters any more than Captain D was. He took issue enough with me criticizing his favorite show, but seeing all these people accusing his hero of being a bad person was a whole other story. It was just that feeling of seeing people insult the thing you like that happens with fans. Sometimes, you can do the right thing and ignore it, not taking it too seriously. And sometimes, you can tell these people they’re wrong. Guess what Bendy did.
+                                “Whoa. Hold on. Shows don't harm children. Captain D doesn't harm children. Your kids not being raised with common sense harms children.” Bendy defended his hero. “Yeah, I said it. And by the way, Captain D is a professional. If your kids hurt themselves, maybe it's their fault for not being good enough to imitate what he does. Unlike me, of course, where I know what I'm doing.”
+                                “But this man specifically dares his viewers to imitate what he does.” A protester argued.
+                                “Yeah, his viewers. What if his target audience wasn't kids? What if it was people who knew how to jump off a roof and not get hurt?”
+                                “He specifically addresses kids at the end of his show.”
+                                “What if he wasn't talking to your kids? What if he was talking to someone else's kids and those kids were invincible just like him?”
+                                “Even if that was the case, that doesn't excuse him from our kids imitating what they saw on his show.”
+                                “What if they weren't watching his show? What if they were watching something else, and then they leaned on the remote, and the channel changed to his show, and they saw what he did by accident? It could be your kids' fault.”
+                                “My child has watched in its entirety. There's not even a disclaimer at the beginning to warn against the dangers of imitating the acts that take place.”
+                                “What if there was a disclaimer and you just didn't see it? What if there was one, but they had to edit the show down to twenty-two minutes and they couldn't cut anything else out that wasn't essential to the story, and they had to cut the length of the disclaimer down to a tenth of a second, and you're supposed to record the show and freeze frame so your kid can see it? Did you EVER think of any of that?”
+                                I know these arguments may have seemed a little odd, but Bendy was seriously committed to defending Captain D and his show. He sounded like this was all true stuff by his passion alone and that these were all completely legitimate excuses. He was like a lawyer who knew how to spin everything back at his client’s accuser like he prepared for all this.
+                                “Uh, Max, I'm afraid the protesters have started to spook some of the man-eating tigers. We'll have to finish this scene tomorrow.” The show's producer informed the daredevil.
+                                “. . . Keep me from doin' this, I oughta.” Captain D groaned under his breath before he turned to the protesters. “Alright. Okay, people, you can all leave me alone now! We're not up to anything that'll potentially offend you at the moment!”
+                                Hearing of a delay in production, the protesters appeared satisfied by their work and decided to leave while the show’s crew started putting their equipment away.
+                                “What? That's it? No more?” Bendy asked, disappointed.
+                                “I'm afraid so. Parents never understand the greatness that is danger. But they'll learn someday.” Captain D explained with a vow at the end. “Anyway, thanks for sticking up for me, Bendy. It's good to know I still have a fan who doesn't think I'm all bad.”
+                                “Oh, I would never turn on you, Captain D.” Bendy assured his hero with an earnest grin.
+                                “Thanks. Well, since we have to leave early, I'd hate for you to have to leave so soon too.” Captain D said as he walked to his motorcycle and picked up a helmet. “Wanna come for a ride?”
+                                “I get to ride with you? Oh! I'm gonna faint! Catch me, my hot girlfriend!”
+                                Bendy suddenly fell back with his hand over his head like he was fainting from the heat, expecting me to catch him. But after what he called me, I wasn’t gonna give him that. I just let him hit his head on the ground. He quickly sprung back up, though. Captain D then tossed him a helmet that Bendy was about to put on.
+                                “What are you doing with that thing? I was aiming for the trash can.” Captain D clarified, pointing to the trash bin next to Bendy.
+                                “Oh. Of course! Who needs this?” Bendy agreed.
+                                The stretcher then dunked the helmet into the trash like the part of a PSA that precedes a motorcycle crash. He then ran to Captain D, stretching his legs over the bike to take a seat behind the daredevil.
+                                “Does this mean I can go now?” I asked.
+                                “Sure. Just tell the guys I'll be out. I don't know if I'll ever go home.” Bendy told me as he began to gush over his hero, holding onto him from the back on the motorcycle.
+                                The two drove off.
+                                “Finally! Time to head back.” I said to myself as I was about to take off. “Then again, I guess I better keep an eye on Bendy. Maybe I'll get to see Captain D's powers in action.”
+                                “Yeah, maybe.” A teamster mumbled, passing by.
+                                I wasn’t getting anywhere with Bendy calling me a friend, but at least I knew there was a chance of seeing more of what Captain D was hiding. I tend to find people’s powers cool if I like the person or not. It seemed worth doing.
+                                At that point, I transformed into a character named Joanie J, woman who looked like a regular human, but had powerful jumping abilities, which I used to leap up to the roof of a building. From this height, I could see Captain D driving with Bendy, and followed them, jumping across rooftops with ease. I tried to stay undetected as they drove around a corner, stopping in front of a store.
+                                As I got a look at where they had stopped, apparently, it was a gun store, and Captain D was going inside, leaving Bendy to wait on his bike. This was strange, I thought. Captain D didn’t mention anything about stopping at a place like that. I figured maybe he was just out shopping for props to use in his next show, but as Bendy was waiting for him, Captain D suddenly returned within a couple minutes, holding a couple bags with him. I knew he couldn’t have gotten any guns that quickly. But as I looked closer, I could see them overflowing with money that fell to the ground.
+                                Where did that cash come from, I wondered, surprised? And did Bendy know this would happen? I couldn’t hear anything, but Captain D just handed the money to Bendy for him to hold as he looked a little confused, but didn’t say a word. Bendy just held the bags for him as the two drove off again. Now this, I had to check out.
+                                I followed them some more, staying on the rooftops while they continued moving with no regard for speed limits while I could see more money overflowing from the bags, flying into the street. They stopped again.
+                                This time, they were at a biker bar. It wasn’t too far from where those bikers were doing their stunts at that dirt field Tammy Time jumped them at. When they stopped, I expected Bendy to ask Captain D what was going on, or at least leave, but I didn’t see his mouth even move as he remained seated on the motorcycle. And the daredevil just motioned to him with his finger like he said he’d be right back.
+                                Captain D went inside, and I could hear some hollering from inside the bar. Within minutes, the daredevil returned as he had before, carrying money in his arms as he had Bendy just grow his arms out to hold it all. Bendy’s confused expression didn’t change. He just expanded his arms as Captain D dumped the cash with him.
+                                “Bendy, what are you doing?” I mumbled, watching all this.
+                                They drove off again. I didn’t know where Captain D was off to or what he was trying to do, but it wasn’t looking heroic.
+                                After I followed them some more, they stopped near a far off area as I hid on the closest rooftop I could. This area was a big construction site. No one but Captain D and Bendy were there. The daredevil got off his bike one more time and left Bendy waiting. There was nobody to rob, so I couldn’t guess what was to come next.
+                                The next thing I saw was Captain D running at full speed at the site, and taking a few punches at several scaffoldings supporting the structure. As he did this, I could see them all buckling, and finally breaking as it continued. I was right. He did have more to his power. It was super strength. Or, at least something close, because it took the daredevil a few hits before he could create any damage on those support frames.
+                                The building in progress was about three-hundred feet tall, but Captain D still just kept doing this while Bendy watched. Finally, when he used his strength to break one more scaffolding, the structure collapsed over him, piling a huge heap of metal on the daredevil. He had just destroyed the whole thing on his own. And with his invincibility, this was nothing to him, for he was completely fine as he lifted all the struts and panels off him, throwing them to the side with his power. He gave Bendy a confident grin as if he was showing off just for him.
+                                As I witnessed both robbery and destruction of property, I was starting to think I should have done something, but I was just standing there, waiting for Bendy to jump in and talk to his hero about what was going on. I thought he’d at least leave so he could tell someone this, but he didn’t. He just waited for Captain D to return where they finally drove off together.
+                                I probably should have stepped in, but this was all so shocking and confusing to see. All I could do was watch and process would I had just witnessed. Bendy’s hero had used his powers to commit crimes. The guy Bendy worshipped had destroyed a construction site right in front of him.
+                                I didn’t know how to approach this with Bendy being right there. All I could do was just let them drive off and go back to the HQ. When I got there, I just sat in my room, waiting for Bendy to get home. I didn’t know what all this was about, but we had to talk about this. At least someone had to, and I was the only witness to be someone.
+                                When I heard him come in and go up the stairs, I went out in the hall to confront him as he happily and casually met me.
+                                “Hello, Bendy.” I said, standing in his path.
+                                “Oh, hey, Beauty. One side, will ya?” Bendy uttered, stepping around me.
+                                “How was your time with Captain D? Anything interesting happen?” I inquired with a suspicious grin, playing it cool.
+                                “Oh, it was good. Yeah. Pretty good. Not much to talk about though.”
+                                “Really? I didn't think you'd be so brief after spending all that time with your favorite daredevil.”
+                                “Oh, I’m sure you can figure out all the awesome stuff I got to see him do and fill in the blanks yourself.”
+                                “Awesome stuff, huh? Hmm. Would that include those crimes Captain D committed while you helped him get away with it?” I finally accused the Brigade member.
+                                “What? Crimes? Captain D would never do anything wrong. He’s the greatest.” Bendy insisted. “I’m not gonna let you slander him like that! There is no evidence that he has ever done any evil!”
+                                “I saw him rob a few places while you just sat there and held the money as he drove you around.”
+                                “You what!? You spied on us!? That is outrageous! I can’t BELIEVE you would spy on me! You haven’t even been on this team that long. I don’t know if I can believe anything you say now. You are untrustworthy! You are out of line! You are beyond overstepping your bounds as someone who knows me! And you’re not gonna tell anyone what you saw, are you?” Bendy ranted, throwing his arms all around and walking back and forth before he finally switched gears and got on his knees to beg me at the end.
+                                “Bendy, I just wanna know . . .”
+                                “Oh, please! Don’t tell the Brigade! If they found out, then I’d get in so much trouble for covering this up! And Captain D could go to jail! I don’t want him to go to jail! I don’t! I just don’t! Think of the Captain, girl! Think of the Captain!” Bendy whimpered as he grasped my legs like a little kid to his mom. At that point, I simply picked him up using my hair and slapped him across the face with it.
+                                “Bendy, get a hold of yourself!”
+                                “Sorry.”
+                                “Look, just tell me what happened. Why didn't you stop him? You owe me at least some excuse.”
+                                I could tell Bendy didn’t want to talk about any of this. And it was obvious why as he began to talk.
+                                “I've been a fan of Captain D since I was eight. I'd buy his merchandise. I'd watch his show. I'd see him perform. And every time I thought of him, I’d just say to myself 'I wanna do what he does'. And I’d always attempt a lot of the stunts he did. I've worshipped the guy. And then when I rode with him, he told me he was gonna be even more daring than ever. And that’s when he started robbing those places. And when I saw him do that and destroying property just to get away with it, through it all, I could only tell myself it wasn't really happening and he was still the same cool guy I looked up to all those years.” Bendy explained.
+                                “. . . Look, I understand how hard it is to accept someone you look up to doing something wrong. But when you say you wanna do what he does, and you let him get away with doing wrong, you're doing exactly what he's doing.” I argued while sympathizing with him too. “Now, I'm going to tell the team about this, and . . .”
+                                “No! You can't!” Bendy pleaded again.
+                                “Bendy, you know Captain D is trouble, which is kind of a problem, right?”
+                                “I know, but I don't wanna be the guy to ruin his life! He knows I was with him, and he'll hate me for that! I don't want my hero to hate me! And who knows? Maybe that was just a one-time thing he did, you know? He’ll probably go back to not doin’ that tomorrow.”
+                                “Unbelievable! You're still in denial! And I’m still helping you cover this up. The Brigade has to know.” I asserted, turning around to go inform the team.
+                                “You do that, and . . . and . . . the Chief’s gonna have a problem with you!” Bendy warned as I stopped.
+                                The boss having a problem with me? Yeah. That’s something I should hear about.
+                                “What?” I asked, feeling worried.
+                                “That’s right. You know the Chief. He’s a fan just like me. He trusts me. If you snitch on Captain D to the Brigade, I’ll tell the Chief how you’re trying to ruin his life. How much longer do you think he’ll keep you on the team after he hears that?” Bendy threatened.
+                                “You . . . you wouldn’t.” I muttered as I received a sudden electric shock from looking at him with worry before turning away.
+                                “For the Captain, it’s all worth doing. And even if the Chief goes easy on you, if you tell everyone my secret, I will never trust you again. And I know how much being welcome in this team means to you, Beauty.”
+                                This was the point where I knew Bendy’s devotion to Captain D was going too far. Being complicit in his crimes was one thing, but he was gonna let him still do that by turning it around on me. I didn’t like anything Bendy was doing. It was all just wrong.
+                                But . . . what he said was right. If I snitched on his hero, I’d either lose his trust, get kicked off the team, or both. And I’m sure Bendy wouldn’t make anyone else in the Neo Brigade feel any better about me. He was ready to turn me into Captain D’s scapegoat. And I was gonna wind up with no friends at all.
+                                Why? Why did that have to be the price for coming forward and doing the right thing? Why did I have to keep a secret for someone just causing more harm with every second I stay quiet? I don’t know why I did what I did, but I had to go along with it. With my powers, or my weakness, rather, I couldn’t risk loneliness and frown shocks. Even if it meant having to help a jerk like Bendy.
+                                “Alright, Bendy. You win. I’ll keep my mouth shut.” I reluctantly relented.
+                                “You will? Yes! Thank you! Thank you!” Bendy celebrated, giving me a hug, completely changing his attitude.
+                                “Yeah. Alright. It’s your secret to tell. I’ll just let you tell them yourself when you’re ready.”
+                                “Awwwww! You're givin' me the pressure, and the guilt, and I'm off the hook, but I know this'll stick with me! Why do you have to torment me, girl?”
+                                “Sorry.”
+                                Suddenly, Bendy’s Charevo Fairies emerged from his hands. Just like Tammy Time’s from earlier, they resembled him and his the symbols on his Charevo Emblem, his being a pair of playing cards, a rubber band, and a motorcycle. They’re supposed to provide guidance based on the Charevo Elements they represent. Good advice for good people and bad advice for the bad, as I had learned. I wondered what kind Bendy was gonna get.
+                                “Sometimes, it's easy to defy rules one sets for you, but harder to defy the beliefs you choose.” Bendy's Defiance Fairy informed him.
+                                “Aaaaaah! Not you guys! Everyone leave me alone! Urrrrrgh!” Bendy cried, trying to ignore his Charevo Fairies. “Don’t worry. You’re still cool with me, Hairpiece.”
+                                As he winked at me and ran off, I was beginning to wonder if I made the right decision. Should I have really protected Captain D to save my place and friendship with the Neo Brigade? More importantly, was being Bendy’s friend that essential that I would cover up for him like that.
+                                I didn’t know what to think anymore. I was getting Bendy to like me, but I wasn’t happy with it. I just felt sort of empty inside as we weren’t bonding or talking like friends at all. He just liked me not talking about anything, because anything included his hero being a criminal.
+                                Somehow, the next day, Bendy talked me into visiting Captain D on his TV set again. Into the dragon’s nest, I suppose. Only, Bendy was the only knight with a sword that could destroy it and preferred to talk with it while keeping his princess with him. This was all feeling WAY too awkward. But Bendy pretended nothing bad had occurred.
+                                Captain D seemed to share Bendy’s attitude, and rightfully so. In his mind, the only person who witnessed his crimes was the guy who was always gonna keep his mouth shut. Well, him and the people he robbed, but, for some reason, that wasn’t reported yet.
+                                “Ah, there you two are. So what'd you think of that last jump I made over the piranha tank? Pretty cool, huh?” Captain D asked us after finishing a scene.
+                                “You mean after you escaped the tiger cage? Oh man! I can't wait to see it on the show!” Bendy complimented his hero, acting like nothing had happened the day before.
+                                “Yeah, very . . . theatrical.” I added, not knowing if I should say anything about the incident.
+                                “Yeah, I've had my fair share of dares with animals. Most of them didn't end too well, but I wasn't afraid. Like one time I . . .”
+                                Bendy wanted to go on with his story for another ten minutes, but he got a call on his team communicator. When he picked up, Race appeared on the screen.
+                                “Bendy! Beauty!” Race called to us.
+                                “Ugh. Race, this better be good. I'm kinda talkin' to the big guy here.” Bendy complained.
+                                “Sorry. I just thought I'd tell you the Chief reported something on a construction site that someone destroyed last night. Have you heard about that?”
+                                “Uh, no. No! I don't know nothin' about that! Who could've done that? And, hey, I'm sure it couldn't have been one person, uh, if there were any people involved at all. Heh. So no. I don't know anything about a destroyed building or any other crimes committed yesterday.” Bendy lied, stumbling through it as he covered everything up and even winked to Captain D at the end.
+                                “Okay. Just thought I'd tell you. Just be on the lookout for anything else that might happen.”
+                                Race hung up, not suspicious at all.
+                                “Thanks for not snitching, son. Well, I gotta get back to finishing this scene.” Captain D informed the stretcher, patting him on the shoulder before walking off.
+                                “I know I haven't used these team communicators that much, but Race can see you when you wink.” I commented as Bendy got nervous.
+                                Bendy and I watched Captain D shoot another scene for a few more minutes, when, all of a sudden, in the middle of one of the daredevil’s lines, those protesters returned to interrupt him.
+                                “Two! Four! Six! Eight! Harmful stunts are what we hate!” The protesters chanted as Captain D only looked more irritated to see them.
+                                “Cut!” The director yelled, turning to the protesters. “People, please. We're very busy here.”
+                                The director’s words didn’t mean anything to those people as they continued chanting. Not appreciating anyone giving the guy a bad work day, Captain D walked over to confront the mob.
+                                “Will you all please give this a rest? You don't even know what I'm going to do in this episode. If you're unhappy with what I've done before, why don't you run along and protest the executives in charge of the syndication reruns.” Captain D suggested with an argument that kind of made sense to me.
+                                “You can't be trusted to stay on television!” A mother claimed.
+                                “Your show is a threat to our children!” A father added.
+                                “Now, let's be reasonable here . . .” Captain D began.
+                                ““Two! Four! Six! Eight! Harmful stunts are what we hate! Six! Five! Four! Three! Go get rid of Captain D! Twenty-seven-point-three! Get daredevils off TV!” The protesters interrupted with more chanting.
+                                As everyone maintained their angry objections and holding their critical signs in the daredevil’s face, Captain D only looked angrier like he wanted to grab hold of one of them. I kept a close eye on him, though, ready to step in if he was about to do anything serious. Between me and Bendy, one of us had to jump in should the situation demand it.
+                                “ALRIGHT!” Captain D screamed as the protesters became silent. The daredevil suddenly went from angry to calm. “. . . I understand your concerns over the effects my stunts may have on your children. And while I cannot defend every result that occurs following what I do, I must tell you that I do encourage safety in addition to seeking action. And that is why, in light of the objections you all have to my 'daring' persona, I have arranged to give a televised speech at the demolition of the old Milton's Electronics building downtown tonight at six pm where I will speak on the importance of safety, which, I can assure you, your kids will learn to appreciate and use themselves.”
+                                After hearing this, the protesters talked amongst themselves, appearing content with this promise.
+                                “I encourage you all to attend early so I can answer questions.” Captain D noted.
+                                I hadn’t heard of him speaking at that electronics building, but he seemed to make that his plan. The protesters still didn’t like him encouraging danger, but they weren’t going to stop him from encouraging safety. Feeling like they could work with this, the protesters all left the set, satisfied.
+                                “Well, look at that. You didn't have to give any lame arguments this time.” I commented to Bendy.
+                                “See? I knew all along he was a good dude.” Bendy said with the utmost of confidence.
+                                Captain D walked over to us.
+                                “Oh, Bendy, I almost forgot. After I finish this scene, do you wanna come along for another ride?” Captain D offered.
+                                “Another one? I'm in!” Bendy replied, excited.
+                                “Uh, are you sure that's a good idea?” I asked, skeptical.
+                                “Pff. You worry too much.”
+                                Suddenly, Bendy received another call from Race on his Brigade communicator.
+                                “Guys!” Race cried.
+                                “Captain D didn't do nothin'!” Bendy instinctively yelled before remaining calm again. “I mean . . . uh . . . what up, Race?”
+                                “You two gotta get down to the gym. Cremate's on the loose.”
+                                “Cremate?” I uttered, not aware of who that was.
+                                “Ooh. Cremate.” Bendy said, sounding interested.
+                                Race hung up as Bendy and I knew we had to someone to stop.
+                                “Sorry, D, but we gotta split. Some crazy fire lady's about to burn down the gym.” Bendy explained. At that point, I formed my hair into a jetpack to propel me upward as Bendy held onto my ankles. “Maybe we can meet again later!”
+                                “Oh, we will! We will.” Captain D hollered, waving goodbye as we took off.
+                                If nothing else, this did seem like a good way of taking our minds off whatever Captain D might have been doing next if Bendy went for another ride. So we continued flying through the city, landing right near the city’s gym, meeting with the rest of the Neo Brigade.
+                                As the six of us entered the building, the first thing we could see was a large gymnasium with the walls on fire and many people crowded near the center as a circle of flames surrounded them, lit up close to the exits. Some folks were injured, others were just frightened, but everyone was trapped as they were forced to stay near a boxing ring in the center of the gym.
+                                As we looked up, we found a woman in about her early thirties with a small dark red women’s sports top, a long red skirt with a slit down one side, red boots, blue makeup, and long beautiful dark hair. She also wore boxing gloves, using them to spar with another woman who just looked scared, trying to defend herself from the punches thrown at her. The woman in red finally delivered a knockout punch to her opponent who was lying on the floor of the ring in pain.
+                                After knocking her out, the woman took off one of her gloves, revealing a wedding ring as well as a Charevo Emblem of a diamond, lemon, and star on her hand. This lady was no doubt the one called Cremate, and she definitely wasn’t here for exercise. 
+                                “Ah, there we are. Another opponent for the fun of it, and more power for the winner.” Cremate declared, putting her hand on the woman’s shoulder as the two began to glow.
+                                At that moment, the unconscious woman’s face appeared more wrinkled as Cremate then picked her up with one hand and tossed her out of the ring near a group of other people who looked beaten and wrinkled. Apparently, this villain can drain people of their beauty to grow more powerful. Additionally, she was pyro kinetic, and after tossing her opponent away, she shot some flames over someone’s head to intimidate them.
+                                “You! Next up!” Cremate demanded some anxious guy.
+                                Before this gentleman could get in the ring as another victim, Pyra shot a dark fireball at an unsuspecting Cremate, knocking her down. When she looked up, she found all of us standing by the door, ready to tag in for that guy.
+                                “Don’t you have to get home to your husband in prison, Cremate?” Pyra shouted to the villain.
+                                “At least I have the looks to get a husband.” Cremate taunted our friend who didn’t appreciate that remark. “Besides, I think you have a building to save.”
+                                Just to make it harder on us, Cremate shot a round of fire at the walls and ceiling of the gym. From the look of this, the building was burning faster. So that meant we just had to take care of Cremate faster.
+                                “Go Neo!” Race yelled as we were all about to rush the ring to attack. However, before we could leap into action, Cremate projected some more fire around her captives.
+                                “Ah ah ah. Careful now.” Cremate laughed as she threatened the people.
+                                We all just stopped as Pyra backed away even further down near the exit. With us going nowhere, Cremate shot a fireball at the team as it exploded on us, knocking us back near Pyra.
+                                “Oh man. Gotta stop Cremate, but she’ll hurt people if we do? Why me?” Race mumbled, getting up after that attack.
+                                “I got this!” Bendy announced, stretching his arm between Cremate and the people surrounding the boxing ring.
+                                Bendy then expanded his arm to block Cremate’s fire from hurting anyone else. As he held his arm in that position, he jumped into the ring with Cremate, wrapping his leg around her. I thought that would hold her as Bendy’s body is made of rubber and indestructible, but the boxing model then used her powers to disappear in a burst of flames, mixing her ashes into the air like Pyra. After a couple seconds, she reappeared in front of Bendy, using her strength to send him flying out of the ring with one punch of her flaming fist.
+                                Suddenly, Nator fired an energy cannon from his arm at the boxer who dodged it as her eye turned to Tel-E standing next to him, trying to levitate her hostages away from danger. Picking up on this rescue attempt, Cremate hurled another fireball, hitting both Tel-E and Nator, causing her hostages to remain where they were.
+                                Her body ignited in bright red fire again, reminiscent of Pyra, about to throw another attack their way. Before she could do this, though, I soaked the woman with a water cannon I had formed after growing my hair into it as I stepped into the ring with her.
+                                “And you are?” Cremate asked, unimpressed as she projected a ray of fire at my weapon. But before she could hit me, I transformed into a character called Aquara who had plenty of water to match in that she was completely made of it, absorbing her attack.
+                                “Anyone I need.” I replied as I used my character to project even more water from my hands at the villainess.
+                                Cremate was stunned for just a moment, but managed to project a fire blast at the ceiling as part of it fell on top of me. In this moment of me getting hit by the ceiling panels, I wasn’t able to defend in time as I saw Cremate take a run at me and give another flaming punch, hitting me hard out of the ring as I morphed back to normal.
+                                “Anyone else worthy of staying in my presence?” Cremate inquired in her arrogance.
+                                “Right here!” Pyra declared as she finally stepped in to fight. She did so by shooting her own fire at Cremate who unfortunately managed to absorb it without even flinching. That’s four abilities she shared with Pyra, it turns out.
+                                “Anyone at all? No?”
+                                “Don't ignore me!”
+                                Suddenly, Pyra flew right at Cremate whose superior strength allowed her to grab the dark fire girl’s hands with ease. I could see by looking at the wrinkled fighters she boxed with that as Cremate held Pyra’s hands, she was about to suck her dry for even more strength and fire power. Fortunately, she felt perfect enough as she was.
+                                “Hmph. Someone's already drained you of your beauty.” Cremate remarked.
+                                Rejecting her as a power source, Cremate finally swung Pyra around before flinging her out of the ring as the girl landed near the gym’s exit. And that’s when we noticed a visitor enter the building as the doors opened.
+                                It was Captain D.
+                                “I smelled action. Looks like I got here just in time.” The daredevil commented with no fear.
+                                “Captain D! What are you doing here? I mean, I know fire doesn't bother you. You're you! But we kinda got some action that's a little outta your league in one department.” Bendy told the daredevil.
+                                “I dare you to find me a challenge. Leave this to me.”
+                                Bendy didn’t think his hero was actually looking to fight Cremate, but the daredevil stepped forward with confidence as the model spotted him.
+                                “So someone thinks he's a hero 'cause he plays one on TV, huh? Well, play with this!” Cremate remarked as she shot a scorching ball of fire at the daredevil.
+                                “Don't worry! I'll protect you!” Bendy affirmed as he stretched his body out to form a wall in front of his hero.
+                                “No need, son.”
+                                Feeling like he was a hero, Captain D pushed Bendy away, taking the hit himself. With the powers he boasted, he remained completely unharmed.
+                                “I do my own stunts.” Captain D said with confidence, walking up to Cremate.
+                                “I see. How 'bout another?” Cremate suggested as she ignited herself in fire and flew around the gym and slammed into Captain D with the increased force.
+                                This hit knocked Captain D near the middle of the gym in front of the boxing ring. Cremate then shot another fireball to follow up, getting a direct hit. However, he got up, feeling just fine.
+                                “Wow! It's like he didn't even get hit. He really is invincible.” I noted, impressed by his resilience.
+                                “See? He takes a hit way better than you, Hairpiece.” Bendy told me, feeling good about his hero.
+                                “That all you got? Come on! I've pummeled actors tougher than you!” Captain D challenged the villainess, waving his fingers towards him like he was saying “Bring it on.”
+                                “I've got more than some brute like you can take!” Cremate yelled as she flew to him again.
+                                The boxer model landed and punched Captain D a few more times, repeatedly throwing jab after jab at him as she had put her boxing gloves on. She continued punching the daredevil as he backed up, taking all the hits. This went on for a good minute as Captain D didn’t even look visibly bruised. He withstood it all. Cremate, on the other hand, appeared to tire out as her punches began to slow.
+                                Once the model’s out of breath panting became more audible than her hits, Captain D finally grabbed her wrist before she could land another attack.
+                                “I can take more than you can imagine.” Captain D assured Cremate.
+                                Suddenly, more of Captain D’s power was displayed as he threw a punch at Cremate, rivaling the strength she acquired with her power severely. This punch sent her flying all the way to the end of the gym. We all looked on, astonished at his strength.
+                                “. . . Who are you?” Cremate asked in exhaustion.
+                                “I'm Captain D. And the D stands for 'Deez muscles'.” Captain D answered with pride like at the end of his show as he flexed his arms.
+                                “That was sick! You're like a hero just like on your show!” Bendy celebrated. “Oh! This is just what I wanted.”
+                                “Thanks. But the real fun is about to begin.”
+                                I wasn’t expecting him to suddenly save the day after what I saw the night before. That being said, I don’t think anyone was expecting what came next.
+                                Suddenly, fire came fuming out of Captain D’s own hands like it did with Cremate’s. Apparently, his powers allowed him to also copy Cremate’s abilities. Pretty cool, I thought. That is, until he copied both the powers and use of said powers. He projected his own flames out, directing it at the building, causing it to burn even more.
+                                “Whoa! What are you doing?” Race queried.
+                                “It's time for some real danger.” Captain D replied, not finding anything wrong with the extra flames.
+                                “The new ability is impressive. Yes. But we still have to evacuate the vicinity or someone will get hurt!” Tel-E alerted the daredevil.
+                                “And why should that be a problem? Daredevils shouldn't be the only ones who get to experience the thrill of danger. Adrenaline doesn't exist with safety. It's time for more people to learn the joy of meeting absolute peril.”
+                                “I knew you were no good!” I accused him as I grew my hair to him, wrapping it around his arms. However, as soon as I did, he swung his arm over to one side with me along with it. This move made me slam into one end of the gym before he swung me over his head again while I crashed to the floor in front of the Brigade, receiving an electric shock for not looking happy about getting attacked as the group looked at me.
+                                “Daredevils only grow better with bigger danger, which is why I came here to tangle with Cremate. With my powers, not only am I invincible, but I can absorb any force or power and produce it tenfold. Cremate shoots her flames and hits me with her strength? I can shoot bigger flames and hit even harder.”
+                                Putting that claim to practice, Captain D produced a larger wave of fire at the Brigade, which we all managed to dodge as he just continued to create more flames in front of him.
+                                “What makes you think you can just burn this place down?” Race questioned the daredevil.
+                                “Ha! I've cheated death so many times. I can get away with anything. That's the fun of taking risks.” Captain D declared, deadly serious.
+                                Suddenly, the daredevil ceased the flame projection, for he had done just enough to the building. He then charged for a wall and ran right through it like it was made of paper. As he penetrated it, the building rumbled harder, starting to collapse.
+                                “We gotta get outta here!” Nator yelled.
+                                “With everyone else too, you mean!” Pyra reminded him.
+                                There was no time left. Race instantly used his speed to run everyone out of the gym to safety while I grew my hair out to grab some people myself and Tel-E levitated a few more to the exit. Everyone helped to evacuate when we finally got all those people out in time. As we did this, Pyra stood in the middle of the burning building, trying to absorb as much of the fire as she could. She was trying to save the gym, but it was too late. Too much of the building had already come down.
+                                “Pyra, there's no time! Come on!” I yelled.
+                                “Don't tell me what to do! I can still save most of this place!” Pyra insisted, still absorbing the flames.
+                                As if enough wasn’t going on, Captain D suddenly came crashing in through another wall. It was the moment he crashed in again when the building was so ruptured that it all came down at once.
+                                Before it collapsed, we all left as Pyra disappeared in the air. As we left, Captain D decided not to leave with us. Instead, he just held his arms out, seeming to welcome the building collapse on top of him. He looked like someone at peace with imminent death, except his invincibility didn’t help with that look.
+                                The rest of us all made it outside when the gym finally came down in a pile of rubble. We all just wanted to take some time to recover as Cremate was with us, still unconscious.
+                                “First Cremate, now this? How did THIS happen?” Race moaned.
+                                “No one appears to be hurt. That’s good news. Where's Captain D?” Tel-E inquired.
+                                “He went back into the gym last I saw him.” I mentioned.
+                                The whole Neo Brigade started searching through the building debris. The burnt steel and wood was all piled about six feet up as we picked up all the rubble we could to find the dangerous TV star.
+                                After about a minute of searching, Captain D suddenly emerged, standing up and pushing all the rubble out of his way. As soon as we saw him, the guy who destroyed the gym to endanger everyone he could, he raised his arms out again and brought his hands together with one hard clap. This created a massive shockwave that sent the whole Brigade flying back a few feet as we fell to the ground. It was like Captain D had the strength of a mutant monster that made even his clap so strong.
+                                “Ha! And that was only a one story building.” Captain D commented with satisfaction on his power. “Well, I gotta go! Thanks again, Bendy!”
+                                Captain D finally escaped on his nearby motorcycle before we all recovered from that clap.
+                                “Okay. That guy is bad news. But you have to admit. His powers are pretty awesome.” I noted.
+                                “Yeah, whatever. Let's just stop him before he goes on another rampage.” Pyra told everyone.
+                                “Agreed. There's no doubt he’ll only try to put more people at risk after that little speech of his.” Tel-E added.
+                                “Yeah, maybe. But hey. Maybe that was all he wanted, to destroy the gym. He's probably had his moment and doesn't have anything else in mind. Come on. He's a good guy. Right?” Bendy suggested as the Brigade looked at him in confusion.
+                                “A good guy? Bendy, he just burned down a gym and stayed to let it crush him. The dude's crazy.” Nator insisted.
+                                “Nator's right, Bendy. Captain D is dangerous.” Race agreed.
+                                “Yeah. You must know of his true nature. Right?” I reminded Bendy, hinting at what he saw his hero do the day before.
+                                “What? No! Why would I know Captain D as a bad guy when I've seen him just be cool? I mean, it's not like I saw him rob a gun store. You know? I didn't see him hold up a biker bar. I didn't see him destroy a construction site last night while I was riding with him and just sat back and did nothing.” Bendy denied what he saw, even though no one really asked him about it directly.
+                                “You knew!” Tel-E accused the stretcher. “You knew he was doing wrong all along!”
+                                “Okay, fine! Yes! I knew he was bad! Okay? I'm sorry.” Bendy admitted.
+                                “You knew about him? And you didn't tell anyone!?” Race questioned in outrage.
+                                “Bendy, when you see someone commit a crime and you choose not to do something, you don't sweep it under the rug. You gotta tell someone.” Pyra scolded him.
+                                “To be fair, Beauty saw him too that day and did nothing, so it’s not entirely my fault.” Bendy mentioned, stretching his neck to me at the end. All I could think when he said that was “Are you kidding me?” He wanted me to keep the secret and he’s trying to bring me down with him? I’m the one trying to be nice and this is what I get? “Beauty, help me out here, will ya?”
+                                That was when my smile went away. I kept it up through most of the time seeing Cremate threaten innocent gym-goers, seeing Cremate and Captain D burn the gym down, and seeing Captain D just look more evil than ever. But even I have my limits. I just took the electric shock right there to show Bendy how I felt. I was done wanting him as a friend.
+                                “You threaten to make the Chief get rid of me for talking about this and you want me to take responsibility for you?” I queried him, willing to take another shock before I looked away from him. “You’re on your own, Ducilman. I don’t know why I tried so hard to be nice to you.”
+                                In the corner of my eye, I could see disappointment in Bendy’s face. And as the rest of the Brigade turned to him, I looked back, seeing I wasn’t in anyone’s main focus.
+                                “So you don’t just keep quiet, you force someone else to keep quiet? Bendy, are you even TRYING to be ethical?” Tel-E questioned the stretcher, sounding more outraged.
+                                “Hey, guys. It’s not what you think.” Bendy defensively argued.
+                                “I can’t believe you’d be so complicit in this.” Pyra scolded him.
+                                “And why would you keep this secret? Why would you see a crime and do absolutely nothing?” Race interrogated as Bendy started to sweat.
+                                “BECAUSE! I . . . I saw him be bad, but all I could think of was 'He could still be good.' I mean, it's not like a few bad deeds define someone. So I figured he was still okay. That's all.” Bendy explained.
+                                “There's nothing wrong with thinking someone can be good, but you should've told us about him.” Tel-E argued.
+                                “Yeah, we could've stopped him sooner! And now we don't know if he can be stopped at all.” Nator added.
+                                “I know! I'm sorry! I didn't think he'd actually be THIS evil. I . . . I really screwed up.” Bendy apologized, feeling all the more guilty as he held his head down.
+                                “Yeah. No kidding.” Nator said with bitterness.
+                                “I hope those extra episodes of his show from him being out of jail are worth you looking the other way on this.” Pyra mumbled, similarly.
+                                “I’m sorry. Believe me, I didn’t mean for people to get hurt.” Bendy explained.
+                                “Yeah. Sure. You daredevils are all the same.”
+                                I was glad the Brigade knew Bendy had kept all this from them and they finally knew Captain D was no good. The more they knew, the better. But, while I was happy to see Bendy scolded by the Brigade for what he did, as it went on, I don’t know. It looked like they were a little too angry with him. He deserved to be told off, but this much? Bendy was a real jerk, for sure, but . . . I think I was feeling bad for him.
+                                “Well, we gotta go after him now. Anyone know where we might find him?” Race inquired.
+                                “Captain D mentioned going to the Milton's Electronics building when it gets torn down tonight at six. That's an hour from now!” I informed the team.
+                                “And isn't that building, like, thirty stories tall?” Pyra asked.
+                                “If he gets there and that falls on him, that equals thirty times the power of a gym he'll get. He'll be unstoppable!” Nator noted, having done the math.
+                                “Unless we stop him first.” Tel-E mentioned.
+                                “Right. Let's go get him!” Bendy announced.
+                                “Oh no. You're not going. You'll probably just let your hero go again. We don't need you talking us out of fighting him.” Pyra insisted.
+                                “What? I will not!”
+                                “Yes you will. You see too much good in him. I know how biased you are about the guy.” Nator argued.
+                                “I'm all for capturing Captain D, but don't you think leaving Bendy behind is a tad excessive?” Tel-E interjected.
+                                “No. You’re right.” Bendy admitted, sounding more monotone. “I'd only screw this up. You go on ahead. I'll be at the HQ.”
+                                And that was the end of that. I was completely in the clear with the rest of the Neo Brigade. There was nothing left to hide. But as Bendy finally admitted his mistakes and walked off on his own, part of me just didn’t see this the way the team did.
+                                “Bendy, wait.” I called to the stretcher. But he just kept walking, not even replying to say he wasn’t gonna join us.
+                                Bendy may have been a jerk, but seeing him off on his own like that didn’t make me feel any better, at least not when you consider his overall intentions. Tel-E was right. He didn’t have to be excluded from this whole thing. I just wanted him to accept the fact that his hero was a complete psycho who we had to stop. If he was willing to put his past feelings aside and stand up to the guy, I was all for it. Unfortunately, no one trusted that he could fully set aside those feelings, not even Bendy himself.
+                                It was just the five of us this time. And, like it or not, however much of either I felt, we had to deal with Captain D without Bendy.
+                                With that location I disclosed in mind, we set off for the old building for the Milton’s Electronics company. This was a successful phone, computer, and engineering business, but they had already left for an even larger headquarters somewhere else while this building was to be replaced with something different, and scheduled to be blown up that night. And as the company only had the one location for their large business while also renting some floors to smaller companies that were also moving with them, the building was about thirty stories tall. So we had to get Captain D out before he could gain immense power from getting crushed by it.
+                                When we got there, we couldn’t find any sign of the daredevil outside, so that meant we had to go in to look for him. We checked around everywhere, looking in every room and going up one floor at a time.
+                                “Beauty, are you sure he's here?” Nator inquired as we all looked around on the fifteenth floor.
+                                “I'm telling you, he said he'd be here. He's gotta be on one of these floors.” I asserted.
+                                “Well, he'd better be. This place is scheduled to get blown up in forty minutes.” Pyra reminded me.
+                                “I don’t know why we’re taking her direction so seriously. What do we trust her for?” Nator whispered to Pyra who nodded.
+                                “Shh. I'm sensing a presence down that hall.” Tel-E informed the group.
+                                “Captain D?” Race asked.
+                                “. . . Plus a few others . . .”
+                                Tel-E wasn’t sure what was nearby exactly, but we heard Captain D’s name, and that was enough. When we got to the end of the empty corridor, we were expecting to find the daredevil. What we found was something more than we were hoping, for we turned to a doorway leading to an area full of people. Unless they were demolition workers, they really shouldn’t have been there, but even then, it looked worse. These people were all tied and gagged in chairs in a corner of the room. And, sure enough, Captain D was standing in the front with a cocky strut, not as the only familiar face I saw as I got a good look at everyone.
+                                “The protesters!” I quietly gasped.
+                                “I should thank you all for coming early like I asked. I hope this experience will make you see danger as more fun than you previously thought. That's if you live. If you don't, hey, that's the life of a daredevil. Just as long as you go out big.” Captain D orated to his captives. “Whatever the outcome, all I know is none of you will be criticizing me ever again like my parents, the doctors.”
+                                “That's enough, Captain D!” Race shouted, getting the daredevil's attention. I wasn’t prepared for this as the shock of seeing people held hostage in a building about to blow turned into a literal shock from my powers going into my neck.
+                                “Yeah, that's our sneak attack. Nice job, Race.” Pyra sighed, rolling her eyes.
+                                “Ah, the Neo Brigade, I had a feeling you'd show up.” Captain D told us, not alarmed at all.
+                                “So I see this is how you respond to your critics? Gee, I guess if everyone did this, we'd have some pretty lousy shows still on the air.” I remarked, getting a smile back as I could insult the stunt guy.
+                                “So you're here to stop me, then? Well, go ahead. I dare ya.” Captain D challenged us.
+                                “We are, and we will. Go Neo!” Race cried as we all started to attack.
+                                Before we could, though, Captain D projected a large wave of fire at the team as I formed a shield out of my hair to protect the group. Even though I had this defense up, the daredevil continued using his fire on it, to no effect. And, eventually, the flames died down as he tried to shoot some more, but only got a few ashes left puffing from his hands.
+                                “Ha! Out of juice already?” I laughed.
+                                “Hmph. Must’ve used up all of Cremate’s fire. No problem. I still got the strength.” Captain D mentioned, running to me.
+                                I wasn’t willing to bet my shield attached to my head would protect me from his brute force, so I quickly rolled out of the way as the rest of the Brigade scattered. As soon as we did, Captain D wound up crashing through the wall into the adjacent room.
+                                Taking the opportunity, Pyra ignited herself in dark fire and flew like a fireball into him, knocking him further down the room with as much force as she could. To add to that, Tel-E came in and projected energy from her mind at Captain D, sending him further down as he rolled on the floor. Those attacks may have LOOKED good, but the daredevil got up without even having to dust himself off.
+                                “Ha! Thank you!” Captain D snickered before he shot the same energy back at the Knowlgian from his hands.
+                                He was still absorbing power from getting hit. I still felt pretty excited by the challenge, but that went away when I realized we were in a building about to explode, so it was best not to dawdle. Instead, I grew my hair out to swing at his legs, trying to knock him off his feet. However, he dodged my hair, jumping over and ducking it when I moved it up, before he finally shot his newly acquired energy at my hair, cutting it. He then projected another energy blast at me, which I blocked like I did with the fire, growing my hair out in front of me.
+                                To deter him from that, Pyra suddenly flew herself in from the side and shot some fire at Captain D who, with his strength, withstood the force of it, remaining on his feet, and, with his invincibility, didn’t feel a thing. As the TV “actor” got hit with the flames, he then used it like a battery, projecting his own dark fire at me. My hair blocked his attack, but it didn’t save itself from getting caught on fire, forcing me to detach that part of my hair as Captain D went on to simultaneously shoot Pyra and I with his energy from both hands in different directions, blasting me down one way and causing her to land near Nator. 
+                                “Feel free to jump in anytime to help us out.” Pyra noted, referring to Nator's lack of participation.
+                                “I'm sorry. But this whole battle seems kinda pointless to me. I mean, how do you beat someone who's invincible?” Nator asked.
+                                “We just gotta try.” Race told him as he darted for Captain D.
+                                Race used his super speed to run around the daredevil, taking a few hits at him, but Captain D just stood there, stoic, taking all the hits, not even showing any sign of feeling hurt. As the Brigade leader took his run around him, he couldn’t see what damage his quick punches were doing, which is why he made the mistake of stopping right in front of Captain D to inspect the job he had done. That was when he found there was not a scratch on the villain whatsoever.
+                                “Keep trying.” Captain D laughed as he simply slapped Race down to the end of the room with the back of his hand. “Seriously, who do you think I am? I’m Captain D. And the D is for ‘Don’t mess with Captain D’.”
+                                “And what’s that D for? You’re stuck in a recursive loop.” Nator acknowledged as the daredevil quickly shot some energy at Nator who jumped out of the way after screaming.
+                                Captain D turned back to Race, about to beat him some more, only for the speedster to be saved by Tel-E who levitated him up in the air. The daredevil countered by instantly throwing a dark fireball from his hand at the Knowlgian as the resulting explosion forced her to drop him.
+                                At that point, Nator’s chest opened up to reveal a strong fan-like device to create enough wind to force Captain D down the room. As he got further down, this seemed like a good way of not allowing him to move or use flames, but that didn’t work on all his abilities. As Nator’s device blew our opponent away from us, the daredevil suddenly shot another round of energy at Nator, breaking his wind machine and knocking him to the floor.
+
+
+                                Optional Dialogue 2
+
+                                As we kept trying whatever we could to bring this guy down, Pyra tried flying at Captain D while Race ran at him some more, but he punched them both away at both sides as he slowly walked forward to me. After all this, I knew force wasn’t going to do anything, so all I could do was try and restrain the guy, using my hair to do whatever I could think to just keep him from moving.
+                                Not challenging his invincibility this time, I grew my hair into a device to shoot some bolas at his feet, wrapping them completely around his ankles. He just used his strength to pull his leg out and rip the restraints right off, continuing to walk. I then turned my hair into a weapon for shooting a net at him, which I did, covering him completely, at least before he effortlessly ripped it apart with his hands, throwing the mesh to the side. That was when I grew my hair completely around him, forming it into a giant steel cage, trapping him for about three seconds as he pulled the bars aside like it was made of rubber and stepping out, getting closer to me. And that was the moment I knew I had nothing to stop him, for I could feel my powers electrocuting me as my smile went away, sensing the danger of Captain D winning.
+                                The rest of the team still tried as Nator shot his own hand from his body with it attached to an extendable cable to hit the daredevil. Race used his speed waves on Nator to have him launch his metal fist at full speed while Pyra tried shooting even more fire at him and Tel-E and I projected as much energy as we could at him, her using her mind and me using an energy gun I made from my hair. All of this, even together, did nothing against the invincible Captain D who just stood there like a statue.
+                                “Getting desperate, are we?” Captain D asked with a grin.
+                                At that point, the stuntman jumped and slammed his fist down, slamming the floor with his new power, causing most of the floor to collapse as he and everyone fell one floor down. All of us were hurt, except for Captain D who may have landed on his back, but only got more powerful from the force that would have injured him.
+                                Before Captain D could get up, I used the last of my strength to look away, not letting anyone see me feel unable to go on. Judging by how all of this was going, I realized we needed to fight fire with fire. We had Pyra, but she clearly wasn’t the fire after all Captain D absorbed from her attacks. No matter what, he was just gonna get even stronger. I couldn’t even think of a good enough character that could slow him down, at least, not after the beating we had all taken.
+                                That was when I got up and ran out the room.
+                                “Guys! We need a new plan! I'm gonna get help!” I alerted the team.
+                                “What help? This guy can't be beaten!” Nator argued as he was still nearly beaten.
+                                “I'd listen to him if I were you. Invincibility has no weakness.” Captain D laughed.
+                                The daredevil just laughed at the idea of me wanting to try; he didn’t even try to stop me. He knew he had everything in the palm of his hand. All those risks he had taken in his life, why shouldn’t he have believed he could get away with this? Well, I wasn’t having this. He could get away with a crummy show, but he wasn’t getting himself and innocent people blown up. I had to do something.
+                                But not just me. As soon as I fled the area, I went down to the Neo Brigade HQ as fast as I could. I ran through the front entrance and ran upstairs. I didn’t know which room was Bendy’s, but as I made it up the stairs, I could hear some slow electric guitar music echoing through the halls.
+                                “Bendy?” I called out.
+                                The guitar still played. As it led me down to its source, I could hear it more closely. I recognized the music. It was the theme to Captain D’s TV show, only . . . a lot sadder. The notes were there, but the tempo was all slow and not as exciting. It was like the version of a show’s theme song that would play during a sad moment in the show.
+                                I opened a door, revealing Bendy inside his room. But he wasn’t his normal energetic self. No. What I saw was Bendy lying on the floor in front of his bed with his torso on the floor and his legs stretched up to the bed. With his top half on the floor, he just played his guitar with soft and sad notes, looking up at the ceiling. As I looked up, I found a Captain D on the Way poster up where he looked.
+                                In fact, his whole room was full of Captain D merchandise. More posters, toys, lunchboxes, pens, you name it, anything the daredevil put his face on, Bendy had it. This was stuff I could tell the guy had been collecting his whole life. He really did live for his hero.
+                                As he looked around, playing his guitar, surrounded my merchandise, he finally stopped playing and stretched his hand to a plush Captain D doll he kept on his bed. He brought it down to the floor to look at, just full of disappointment and sadness. After looking at the doll with his hero’s likeness, his face looked angrier and more frustrated, looking at this thing.
+                                Bendy then stretched his arm with the doll over to a small trash can in the corner of his room. He held the doll over it, about to drop it in. He wanted to get rid of it once and for all. But he couldn’t do it. He held his hand there for a few seconds, but just stretched his hand back to him before stretching it out over the can again. He was about to drop it again, but pulled it back one more time. He then held it over the can once more, holding it longer, but finally brought his whole arm back to him as he clutched the doll to his chest as I could see a tear coming from his eye. He looked like someone trying to quit smoking, or any addiction to something harmful that he couldn’t help but love. He just couldn’t quit.
+                                But I could see Bendy didn’t really want to continue with having Captain D in his life. He had no clue how to handle this. I knew Captain D was his hero, but I didn’t really know how much he meant to him.
+                                “Bendy?” I uttered, coming in. He saw me, but he gave no answer. It was very strange seeing Bendy so silent. “The team's in trouble. We need you to help us deal with Captain D.”
+                                “No you don't.” Bendy mumbled, depressed.
+                                “Come on, Bendy. Captain D's killing us out there. We need your help.”
+                                “Why bother? I'd only get in the way.”
+                                “But none of us are doing well against him. It's not like you can make us worse.”
+                                “. . . I'm sure I'd find some way to screw you guys up. I can't look at Captain D without immediately thinking of everything I love about him. If you hate him and you can't beat him, what hope do I have?”
+                                It was clear Bendy wasn’t up for fighting Captain D. And why should he have been after what he meant to him? But I had to try talking to him. He wasn’t gonna come out of this alone.
+                                “He was just in my life for so long.” Bendy sadly mumbled before I even opened my mouth. “I hadn’t seen someone so full of confidence and energy before I saw him. He just looked so fun. I wanted to be just like him. My family, we didn’t hang out that much in the beginning. But then we’d all watch his show and have a great time. Captain D brought us together. He brought me and the Neo Brigade together. I never would’ve met them if I hadn’t tried to be like him and jump into danger after I got my powers. Everything I did, I thought of being like him. Now what am I if I’m going against the guy who made me who I am?”
+                                “You’re Benjamin Ducilman.” I sincerely answered as he kept his gaze on the ceiling. “Your life doesn’t have to be based on someone else’s. You don’t have Captain D’s powers. You have YOUR powers. You’re the one on this team. Not him.”
+                                Bendy looked up as I already had a soft smile while I tried cheering him up.
+                                “But how can I face him after all that? Even now, I can still only think of him as the guy who inspired me.” Bendy asked as I began to think of how we weren’t all that different.
+                                “I know how you feel. You've worshipped Captain D for years. And then after all that time, you finally met your hero a couple days ago. I could imagine that must've been the most thrilling moment of your life. And then the next day you saw that person do something you never thought he would do. I understand not wanting to think of your hero having done anything wrong. I'll never forget when I first met my childhood hero, the voice actress Mary Kay Burson. I knew she played some of my favorite characters and loved her and her work. And then a couple years ago, I saw on the news that she was arrested for beating her husband unconscious after having a nervous breakdown. It all took me by surprise when this person I looked up to had actually gone to jail. But then a couple weeks later after she got paroled, I got to meet her at Fiction Con. She was funny and self-deprecating on her panel, she was very nice, and she even signed my Alex Specter season 2 DVD. She was just who I wanted her to be as I was so excited. I didn't think of her going to jail at all that day. It was as if I just removed that part of her from my memory. And that's just what you did. You saw your hero the way you wanted. Nobody likes to focus on the bad.” I explained, reminiscing myself. “I guess my point is that you're not the only one who's gone through this denial. But that doesn't mean you can't get past it when you want to. Sometimes you have to look at yourself and ask if your perception of this person is what YOU want or what your hero wants.”
+                                After listening to me, Bendy finally got to his feet.
+                                “You think I can confront Captain D?” Bendy asked.
+                                “You saw him as good because you wanted to. You can see him as bad if you want to. He may have shaped a lot of your life, but no one knows you as ‘Captain D’s fan’. You’re Ben Ducilman. Bendy. Your decisions are your own. Not someone else’s.” I told him.
+                                Bendy looked down for a moment to think about this. Suddenly, his Charevo Fairies emerged from his hands in the small light of his Charevo Emblem’s glow. The three of them all hovered over the stretcher.
+                                “Defying reality versus belief is one's ultimate weakness.” Bendy's Defiance Fairy told him.
+                                “One's character becomes stronger by becoming open to other thoughts.” The Flexibility Fairy added.
+                                “Too much confidence can be fine if it's in the right idea. Too much confidence in the wrong idea leads to destruction.” The Overconfidence Fairy concluded.
+                                The fairies then flew back into him as Bendy looked even more conflicted. I could tell he needed time to think this all over some more.
+                                But I couldn’t give too much time for an answer, for that building was about to go up, and Captain D was about to become more powerful than ever. After talking to Bendy, I quickly returned to face the stunt jerk, hoping things would go better this time.
+                                As I got to the fifteenth floor, passing the fourteenth and seeing the room with the destroyed ceiling, I found Captain D right where he was when we found him the first time. He was right near the hostages as the rest of the Neo Brigade had decided to stick around and fight while I was gone. Unfortunately, there was little done, for they were all unconscious, lying near the daredevil’s feet.
+                                As if this wasn’t bad enough, the building was close to getting demolished as there was about three minutes remaining. It would have helped if there was a demolition crew outside to stop the imminent explosion and not time bombs implanted in random parts of the building, but we didn’t have time to complain about that.
+                                “It's almost time. Ultimate power, a big bang to take, all of you people out of my way, oh I can hardly wait.” Captain D eagerly rambled to himself. “I know. I'll play my show's theme song. I'm sure you're all familiar with that.”
+                                In contrast to Bendy’s sad rendition, Captain D took out a guitar he had brought into the room earlier and played the song from his show it its usual style. Oh, it gets better. He sang too.
+                                “Oh, Captain D is on the way! You better not get in his way!” Captain D sang. Although, his song was cut short when I suddenly slapped him in the back of the head with my hair. He turned to me, looking quite annoyed with this interruption.
+                                “What? Are you gonna make me pay?” I remarked.
+                                “Well lookee here. It seems you came to join your friends after all.” Captain D commented, pointing to the Brigade as they were still lying on the floor. “I can’t tell if you’re being daring or just stupid.”
+                                “I don’t know. But I just thought I’d find someone who can dare to be stupid way better than you.”
+                                As I gestured with my hands to the doorway, Bendy stretched himself inside, not feeling any more dour than he was when he was at that TV taping.
+                                “Miss me?” Bendy asked, ready to fight.
+                                “Hey, Bendy, you here to watch me go down with this building?” Captain D inquired, happy to see his fan.
+                                “Oh, I’m here to see you go down alright.”
+                                Eager to confront this guy and ditch his fan club, Bendy quickly elongated his arm out to punch Captain D in the face, producing a surprised look on his face.
+                                “You give daredevils a bad name!” Bendy objected, punching Captain D again, knocking him further down the room. “I used to wanna be just like you. But after seeing who you really are, I’d rather be like me instead.”
+                                Bendy threw another stretched out punch at the daredevil while I grew my hair in back of our opponent, holding it out like a string tied at both ends, causing him to trip and fall on his back.
+                                “I’m disappointed in you, Bendy. I thought you were cool. I thought you had potential. I actually thought you’d want to experience danger the way I envision it.” Captain D scolded Bendy.
+                                “I like going into danger for fun too, D. But there’s more to being a daredevil than getting away with things. It shouldn’t be about putting others at risk. It’s about taking your own risks and being the only one to suffer from them if you fail. Safety for others is important too.” Bendy affirmed.
+                                “So you want your own risks then? Well, who am I to say no to that?” Captain D stated as he finally shot a laser at Bendy from his hands.
+                                Bendy dodged these blasts, stretching his body all around before these attacks stopped. Captain D could see he was all out of Tel-E’s mind energy, so he reached into his other pocket and projected Pyra’s dark fire at Bendy, getting him caught in the inferno. Bendy’s powers allowed his body to withstand this punishment, but not without feeling most of the intense burning that comes with getting caught in a fire blast.
+                                As the daredevil kept that up, I attacked from the side, growing my hair over Captain D, wrapping it around him. I then formed it into some rope to keep him down. That went about as well as those other restraints I tried earlier as Captain D burned the rope with ease before hurling a fireball at me. I quickly grew my hair out to form a shield to block this before Bendy suddenly wrapped his whole body around the daredevil, keeping him from making another attack.
+                                “Let’s see how much fire you can really take.” Captain D mumbled as he exuded fire from his body with Bendy on him.
+                                “Urgh! Ah! I’ve . . . had . . . worse!” Bendy muttered, struggling to endure the heat.
+                                “Hmph. I knew you didn’t have what it takes.”
+                                Captain D turned up the heat with more flames before finally using his acquired strength to force Bendy off as the stretcher fell to the floor. The daredevil stood over his former fan as he cracked his knuckles.
+                                With him distracted again, it was my turn once again to attack. This time, I used my character transforming ability to become a character named Kat Kittenell. She was basically an anthropomorphic cat character with an arsenal of Sci-Fi weapons and some martial arts skills. Once I transformed, I kicked Captain D away from my friend.
+                                “He hung out with you for two days. Bendy’s more daring than you’ll ever be.” I insisted.
+                                Not taking that claim lightly, Captain D angrily made another punch, making a loud grunt while I ducked to the floor and kicked him again. He took a few more swipes as I dodged some more, doing several backflips to avoid him. However, as I backed away in a straight line, he caught on and finally projected an enormous blast of dark fire at me that I couldn’t dodge at all. Once I got caught in that blast, I had to morph back to normal. As I collapsed to the floor, the daredevil prepared to shoot some more flames, but seemed to have run out of what Pyra hit him with. So, instead, he grabbed me by the hair, about to inflict some more pain.
+                                Bendy tried to save the day by getting up and punching Captain D again, not inflicting any pain whatsoever. Even so, Bendy tried again with another punch before his former hero grabbed hold of his fist while his other hand held my hair. And, like a mentally disabled powerhouse, Captain D applied his strength to crush Bendy’s fist. His hand may have been fine with no bones broken and nothing bleeding, but Bendy could still feel the pain as he dropped to the floor, grunting through it all.
+                                “No one’s more daring than Captain D. I’m invincible! And look at you. You’re actually getting hurt.” Captain D laughed.
+                                “You know, Bendy’s the one who can feel pain and you can’t. So if he does stuff where he has a better chance of getting hurt, he’s the better daredevil. If this were a video game, you’re just getting by with some big cheat code.” I acknowledged.
+                                This comment didn’t sit well with the daredevil who angrily threw both Bendy and I to the side of the room. When I landed, the next thing I saw was Captain D furiously running down to throw another punch at us. Bendy didn’t see this, so I just pushed him out of the way as I could see his fist just feet from us. 
+                                As we dodged this, Captain D wound up punching the wall, though not creating such a big hole that time. Keep in mind, earlier when he charged for the Brigade, he ran right through the wall. Not so right there. And he seemed to look a bit tired by how loud he was breathing after that attack.
+                                At that point, I could see the Brigade in the corner of the room, starting to wake up.
+                                “Bendy?” Race uttered, coming to.
+                                “We’ll deal with him! You guys just get everyone to safety!” Bendy told the team.
+                                “I’m on it.” Tel-E assured us.
+                                Tel-E immediately levitated the Neo Brigade as well as all the hostages out a large broken window, evacuating everyone just in time, much to the daredevil’s objection.
+                                “You’re gonna ruin everything!” Captain D growled at us.
+                                “Oh no. You screwed this up yourself.” Bendy corrected him.
+                                Displaying his anger further, Captain D took another run at Bendy, slamming him across the room.
+                                “Hey, you know, that felt a little softer than before.” Bendy commented.
+                                “That’s it! Get Captain D to use up all his acquired force!” I told the stretcher as we dodged Captain D charging at us again like a couple of bullfighters.
+                                “Got it! Hey, Captain D! Does the D stand for ‘Dummy’ or ‘Duh’? You always cover up the most obvious ones!” Bendy taunted his hero.
+                                “Today, it stands for ‘Domination’!” Captain D declared.
+                                It happened with all those other abilities the daredevil gained, it could happen with this one, although, strength was the ability he obtained the most of after both hitting and getting hit by things. But Bendy was up for it. He let Captain D slam him down the room again while I just stayed off to the side.
+                                “Hey, D! Bendy says your show’s full of plot holes!” I shouted, making Captain D angrier as he went after Bendy some more.
+                                Bendy made no move to get out of the way. He continued to take a beating as Captain D punched him again.
+                                “And Bendy wanted me to ask you this. Did you call yourself D because that's how critics grade all your episodes?” I called out.
+                                Not even thinking this was something coming from me, Captain D wailed on Bendy some more as the stretcher powered through this.
+                                “Oh! And Bendy knows why you have a different girlfriend in each episode of your show! He says it’s ‘cause only a couple days is the longest the ladies can stand you!” I lied.
+                                “Okay. Saying that is pretty daring o’ you. I’ll give you that.” Captain D complimented Bendy before punching him again.
+                                “Come on! That . . . that the best you can do?” Bendy mocked the daredevil, asking for more, trying to recover from the attacks.
+                                Suddenly, Captain D took a run at Bendy, punching him repeatedly as his target moved down the room. This looked reminiscent of Captain D getting pummeled by Cremate earlier. Only, Bendy wasn’t seeing this as all too pleasant as he took the super strong blows.
+                                “I see you getting hurt. You’re just some weak kid after all.” Captain D laughed as he continued wailing on Bendy.
+                                With each punch, though, Bendy’s grunts softened as he stayed on his feet while Captain D looked to slow down. Punch after punch, that was just more of his strength decreasing. He may have gained a bit of it from punching the rest of us because of the equal and opposite reaction to his fists hitting something hard. But Bendy’s powers made him more rubbery, and, while Bendy could withstand that and get hurt, Captain D’s fists weren’t getting anything. It was like punching a pillow.
+                                Finally, Captain D came to a stop as he was too tired to fight at that point. All his acquired strength was gone, the last of the power his invincibility absorbed.
+                                “Looks like you’re the one getting weak. All outta force, Captain D student?” Bendy laughed as Captain D threw one more weak punch as the stretcher grabbed his fist. “That’s right. I said it.”
+                                With Captain D weak, I finally grew my hair out to wrap the daredevil in chains. And he wasn’t breaking out of that restraint this time.
+                                “That was awesome, Bendy! You sure know how to take a beating.” I complimented the rubber hero before I addressed Captain D. “So Ensign D, you got beat by a fan, your hostages have escaped, and you’ve got no more absorbed force. Looks like you’re done.”
+                                Bendy and I agreed. This was all looking pretty good for us. But we were met with an odd response. Captain D wasn’t angry. Not even disappointed. He was actually laughing. Laughing maniacally like fake hero would.
+                                “Uh, did I miss something funny earlier?” Bendy asked.
+                                “Did you forget already? This building’s scheduled to blow up in fifteen seconds. Once that happens, I’ll have more power than ever!” Captain D explained.
+                                “Well, that’s taking the fun outta this, huh?”
+                                “We gotta go!” I cried as I formed a jetpack out of my hair while I also formed a mechanical claw to grab hold of Captain D.
+                                “I’ll get you out faster. Hold on.” Bendy told me.
+                                With only a few seconds left, Bendy enlarged his hands to grab Captain D and I, swinging us around and letting us go as we flew out the open window way on the other side of the building. My jetpack wouldn’t have made it in time, but I was out then. Once I found I was outside, I activated my jetpack, and hovered in the air, holding the daredevil the whole time.
+                                The second I started hovering, I looked back and saw Bendy still in the building as he was still running to the window.
+                                “Bendy! Get Ou . . .” I yelled.
+                                Before I could finish that, KABOOM!
+                                Explosives went off all around the building as the structure instantly collapsed in different sections with Bendy still inside. The last I could see of him was a whole ceiling coming down on him as he vanished in debris. He was right in the center of the building, having a whole top section collapse on him as he fell fifteen stories to the ground for the bottom section.
+                                I was shocked and worried for him, praying he would be okay. That was all I could do. I knew he could survive falling down a flame pit, but this? Knowing what he was capable of, I had a shred of optimism as I flew Captain D down to the ground, meeting up with the Neo Brigade as the hostages were freed. All I can say is I’m glad I knew that ability or I wouldn’t have gotten through that moment at all.
+                                “Hello world! You actually beat Captain D!” Nator celebrated.
+                                “Yeah! Way to go Neo. Uh, Beauty? Where’s Bendy?” Race asked, looking around.
+                                “Oh . . . Bendy? Well . . . uh, how indestructible did you say he was again?” I nervously inquired as we all looked to the demolished building.
+                                We all searched and searched through rubble. Very little remained from the debris. We all just called his name, but there was no answer. This wasn’t like him, I thought. He was so quick, coming out of the flame pit for applause, why wasn’t he being so quick this time? This couldn’t be how I would lose him, I thought. Not like this. Not after I discovered what a good guy he really was. Not after I thought I would finally have him as a friend.
+                                “Bendy! Are you there?” I shouted.
+                                “He’s gotta be here. He’s gotta.” Pyra mumbled.
+                                “Hang on. I’m picking up thought patterns. Over there!” Tel-E alerted us, pointing to the center of the rubble.
+                                We all trudged through the rubble, hoping to find some trace of him. Just to know he was okay.
+                                Suddenly, part of the rubble began to move. And, though missing that cue by a few minutes, we found Bendy emerge from the wreckage, standing tall and intact.
+                                “I’M OKAY! YEAH!” Bendy rejoiced as he shouted into the air and threw his arms up in celebration. However, he still felt a great deal of pain when he did. “Ah! My shoulder! Oh! . . . Man, I shouldn’t have done that.”
+                                “Bendy! You made it!” I said with delight, about to high five him. “Uh, okay, so what doesn’t hurt?”
+                                “I’ll be fine. It’s all good.”
+                                “Good to have you back in one piece.” Tel-E commented.
+                                “Yeah. You really stepped up.” Race added.
+                                “Thanks, guys.” Bendy muttered, still kind of exhausted as he could still joke his way through it. “So, Pyra, were you scared that I almost died?”
+                                “Don’t even try with me.” Pyra mumbled.
+                                “Yeah. You’re not so big.” Captain D commented as we all looked at him, still restrained.
+                                By the way, before I came back to the building, I informed the police about this as several cop cars were parked nearby. Captain D was quickly arrested as he was led into a police car.
+                                Apparently, after I told some of the other cops about all this, they also told the Chief who arrived. And, as a fan of Captain D, he had some opinions.
+                                “This is an outrage! Who would arrest a man as noble as Captain D? Who? Who?” The Chief barked. “It was you, wasn’t it, Beauty? Oh, I know it was you. You framed him. You can’t stand Captain D, so you wanted him gone. It was all part of your plan since you infiltrated this team.”
+                                The last thing on my mind was the Chief getting into conflict with me for telling him the daredevil was evil. So I was just totally blindsided by those accusations. I knew there was a chance of me getting kicked off the team if I provided some hear-say about Captain D being a villain, but after corroboration from the rest of the team and the hostages, I thought I wouldn’t be at risk at all. But I was, as it turns out. Thankfully, I didn’t have to argue with him.
+                                “Hey, back off, Chief.” Bendy objected, stepping in. “Captain D really did commit those crimes. I was there. I saw him do it. Why would she wanna mislead you into any of this? If you wanna get mad at someone, I was the one who didn’t report those earlier crimes.”
+                                “Okay. So it wasn’t Beauty’s fault for this, but there must be some explanation for why you want Captain D imprisoned.” The Chief suggested.
+                                “Chief, you know that guy tried to kill a bunch of people, right?” Nator informed our boss.
+                                “Impossible! If you ask me, those people were getting in the way of one of his stunts. Why would he do something wrong? It doesn’t make sense! It doesn’t, I tell you!” The Chief argued as the car holding Captain D drove away. The Chief finally decided to chase after it on foot. “Wait. Wait! Come back! I still need him to sign my gun! Just let me give it to him for a few minutes so I can get a picture of him with it!”
+                                We just watched the Chief run off, not even trying to stop him.
+                                “Man, that guy’s got fanboy problems.” Bendy laughed.
+                                “I’m sure he’ll get over it soon. Thanks again for saving us, Bendy. Sorry about not believing in you. I know it must’ve been hard for you to fight your hero. I should’ve known you’d be able to do it.” Race complimented his friend.
+                                “Thanks. But I couldn’t have done it without a little support.” Bendy admitted as he turned to me and punched me in the arm. “Listen, Ellie, I’m sorry if I’ve been a bit of a jerk since you joined us, especially these last few days. I just kinda like messing around with new friends. But, all that stuff I did, I was wrong. You really should’ve ratted me and Captain D out. I deserved it.”
+                                I was pleased to see this honest side of Bendy. Just as I got to see when he talked about Captain D. Well, not about Captain D. About liking Captain D. About himself. That’s what I was more interested in.
+                                “Look, I know you’re here to make friends and help people. I shouldn’t be someone who ruins that for you. So, from here on out, no more of me being a jerk. Sound good?” Bendy proposed.
+                                “No jerks, no Captain D, no complaints here.” I answered with a smile. “And, yeah, I know we’ve had some issues, but I’m glad we can move past that. And don’t worry. I’ll always have your back. Friends?”
+                                “Oh, I am SO keepin’ you around, Hairpiece.” Bendy said, pleased as he and I high fived each other and shook hands.
+                                “Right. Not just to make you look cool, I assume?” I inferred, giving him a friendly punch to the arm back.
+                                “In battle? Of course?”
+                                “Only if I get to use your invincible bod as a human shield.”
+                                Bendy and I exchanged a few more punches after that. Oh yeah. We were good.
+                                The next day, I was about to put Captain D behind me entirely. We all were. The struggles and damage had been done. All the drama had past. It was all over. Time to move on to something else, I thought.
+                                That’s why I was so surprised that morning to go to the lounge area and find Bendy on the couch, still watching Captain D’s show. I was almost expecting the network to cancel the show, or at least pull it from syndication. Apparently, there was a whole marathon going, so they clearly weren’t gonna distance themselves from their star. But Bendy wasn’t moving past him either, strangely.
+                                “You’re still watching this show?” I asked, bewildered.
+                                “Just ‘cause I hate what Captain D did and what he believes, doesn’t mean I can’t still watch his show or love what I loved about him. I can like him on the show and know when to hate him when he has to go to jail. I mean, it’s not like you’ve cut that Burson lady outta your life entirely.” Bendy explained.
+                                “Fair point.”
+                                “Besides, I can whoop him any time he tries to commit a crime. You know, Captain D still gets to come out of jail every once in a while to film is show.”
+                                “Who would authorize a villain to be given periodic time out of jail?”
+                                “What’d I miss? Oh, shoot! It’s almost over!” The Chief moaned. “Once they start making the new shows, I’d better not have any disruptions.”
+                                “Never mind.” I uttered, rolling my eyes.
+                                As the show was still on, I could see the episode involve the daredevil about to be blown up as he was wearing a straitjacket wired with a bomb as a timer counted down. He then got on a cart with a rocket on the back, activating it to launch him out the building and into a saw mill where a giant saw cut the straitjacket off him. As he was free, he ran out the saw mill while the timer still counted down before the mill exploded.
+                                “Ah, now that's the man to watch. The world needs more entertainment from people who don't fake what he does. He does his own stunts, you know.” The Chief rambled before he left. At that point, the show ended and Captain D appeared on screen again.
+                                “Hi, kids. You think you’re daring? Well, I dare you to try my rescue techniques. If you can do that, maybe you can be a hero too.” Captain D told the audience.
+                                “Oh, I can do better than you, ya big phony! 'Cause at least I can get hurt!” Bendy challenged his hero, pointing at the TV before he started to walk off. “Alright, let's see. Straitjacket, giant buzz saw, rocket cart. Hey, Nator! You got any dynamite I can borrow?”
+                                Seeing him so excited to do something stupid inspired by a guy he used to love who’s now in jail, rather than just tell him this was wrong, I just smiled and rolled my eyes, thinking “Oh, that Bendy.” I sat down on the couch to change the channel. But as I grabbed the remote, I happily grew my hair next to me into the form of a stick of dynamite. As it solidified, I grabbed it and held it up.
+                                As if he knew I’d be so generous, Bendy ran back and grabbed the dynamite as we gave each other a quick smile. He ran off again while I went back to the TV. I changed the channel to one of my favorite cartoons, Alex Specter. As I watched the character I transformed into many times fight these fun ghost villains on this show I loved, I’d hear the title character speak with the voice of Mary Kay Burson.
+                                The more I heard the voice and thought back to all the videos I watched of Burson doing the voice, the more I thought of the day I met her and what came before. All I can say is I’m so glad Burson never became a super villain I had to fight and put in jail. I could only imagine her being free every time I saw her. But if I had to, I’m keeping Bendy by my side. Sometimes, your friends just make better heroes. 
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div id="paddeddiv" class="panel-heading" style = "height: 450px; position: relative;">
+
+                    </div>
+
+                </div>
+
+            </div>
+            <footer id = "footer" class = "site-footer">
+                <div class = "footercontent">
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subhome" href="../index.html"><b>Home</b></a></th>
+
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subabout" href="#About"><b>About</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharacters" href="../characters.html">Characters</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharevogene" href="../charevogene.html">Charevo Gene</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subauthor" href="../author.html">The Author</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subquiz" href="#Quiz"><b>Quiz</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautyquizzes" href="../beautyquizzes.html">Beauty Quizzes</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="substories" href="#Stories"><b>Stories</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautystories" href="../beautystories.html">Beauty Short Stories</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="submiscellaneous" href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subswitchcharacter" href="../switchcharacter.html">Switch Character</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subblog" href="../blog.html">Blog</a></td>
+                        </tr>
+                    </table>
+
+                    <!--<ul class="footerlist">
+                        <li >
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li >
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="switchcharacter.html">Switch Character</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul> -->
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Copyright © 2017 Stephen Egert. All Rights Reserved.</p>
+                    <div style="position: absolute; left: 47%;">
+                        <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+
+
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .4; " disabled="disabled"  onclick = "prev();">
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" onclick = "next();">
+                Next >>
+            </button>
+
+
+        </div>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="../js/select_page.js" type="text/javascript"></script>
+        <script src="../js/search_list.js" type="text/javascript"></script>
+
+
+        <script src="../js/menu.js"></script>
+
+    </body>
+</html>
+

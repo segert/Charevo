@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Charevo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" type="image/x-icon" href="../beauty.ico.png" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../css/charevo.css" rel="stylesheet" type="text/css">
+        <link href='styles.css?version=2' rel='stylesheet'>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <script src = "../js/beautystory4.js"></script>
+
+
+        <link href="../css/custom.css" rel="stylesheet" type="text/css">
+
+        <style>
+            #charactertable tr:nth-child(even){background-color: yellow}
+            #charactertable tr{
+                background-color:#e6e6e6;
+            }
+            #charactertable td{
+                vertical-align: top;
+                padding: 10px;
+            }
+
+
+        </style>
+
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-toggle').dropdown();
+            });
+        </script>
+
+
+
+    </head>
+
+    <body ng-app="Demo">
+
+        <div id="maindiv">
+
+
+
+            <!-- <form ng-app="sui.select" ng-submit="vm.goToPage()" id="theForm" name = "theForm" style="position: absolute; left: 5px; top: 3px; z-index: 2;">
+                   <div  ng-controller="DemoCtrl as vm">
+               <div >
+                   <div ng-keyup="$event.keyCode === 13 && vm.goToPage()">
+                       <div sui-select indicating-text="select a page" on-select="vm.onSelect(model)" options="vm.countryOptions" model="vm.selected" label="Country: " searchable="true" disabled=""></div>
+                       <span>
+                       <button type="button" class="btn" style ="z-index: 2" ng-click="vm.goToPage()" >
+                           <img id = "searchIcon" src="images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                       </button> 
+                       <input type="submit" style="display: none"/>
+                   </span> 
+                   </div>
+                   
+               </div>
+       
+                      
+           </div>
+        
+               </form> -->
+
+            <nav>
+                <ul id = "menudiv" class = "ulmenu1" >
+                    <li class = "limenu1" > <a id = "home" class = "li-a-menu1" href="../index.html"><b>Home</b></a></li>
+                    <li id = "test" class = "li-a-menu1-selected"> <a id = "about" class = "menu-selected" href="#about"><b>About</b></a>
+                        <ul id = "testmenu" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "characters" class = "liabout-a" href="../characters.html"><b>Characters</b></a></li>
+                            <li class = "liabout"> <a id = "gene" class = "liabout-a" href="../charevogene.html"><b>Charevo Gene</b></a></li>
+                            <li class = "liabout"> <a id = "author" class = "liabout-a" href="author.html"><b>The Author</b></a></li>
+                            <!-- <li class = "liabout"> <a id = "cities" class = "liabout-a" href="cities.html"><b>Cities</b></a></li> -->
+                        </ul>
+                    </li>
+                    <li id= "test2" class = "limenu1"> <a id = "quiz" class = "li-a-menu1" href="#quiz"><b>Quiz</b></a>
+                        <ul id="testmenu2" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautyquizzes" class = "liabout-a" href="../beautyquizzes.html"><b>Beauty Quizzes</b></a></li>
+
+                        </ul>
+                    </li>
+
+                    <li id= "test3" class = "limenu1"> <a id = "stories" class = "li-a-menu1" href="#stories"><b>Stories</b></a>
+                        <ul id= "testmenu3" class = "sub-menu" >
+                            <li class = "liabout"> <a id = "beautystories" class = "liabout-a" href="../beautystories.html"><b>Beauty Short Stories</b></a></li>
+
+                        </ul>
+                    </li>
+                    <!-- <li class = "limenu1"> <a id = "switch" class = "li-a-menu1" href="switchcharacter.html"><b>Switch Character</b></a>
+     
+                     </li> -->
+                    <li id= "test4" class = "limenu1"> <a id = "miscellaneous" class = "li-a-menu1" href="#Miscellaneous"><b>Miscellaneous</b></a>
+                        <ul id= "testmenu4" class = "sub-menu">
+                            <li class = "liabout"> <a id = "switchcharacter" class = "liabout-a" href="../switchcharacter.html"><b>Switch Character</b></a></li>
+                            <li class = "liabout"> <a id = "blog" class = "liabout-a" href="../blog.html"><b>Blog</b></a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+
+
+            </nav>
+
+            <div id="formdiv">
+                <form id="theForm" name = "theForm" ng-submit="goToPage()" ng-controller="DemoController" style="position: absolute; left: 5px; top: 3px; z-index: 1;">
+
+                    <div custom-select="p.id as p.name for p in pages | filter: { name: $searchTerm } track by p.id" ng-model="page" ng-keyup="$event.keyCode === 13 && goToPage()"></div>
+                    <span>
+                        <button type="button" class="btn" style ="z-index: 2" ng-click="goToPage()">
+                            <img id = "searchIcon" src="../images/search.png" alt="Search Placeholder" style="z-index: 2; width:20px;height:20px;">
+                        </button> 
+                        <input type="submit" style="display: none"/>
+                    </span>
+                </form>
+            </div>
+            <!--    <div style="width: 100%; position: absolute; top: 43px;">
+                   <img id = "test" src="images/pexels-photo.jpeg" alt="Beauty Placeholder" style="width:100%;height:200px;"> 
+               </div>
+            --> 
+        </div>
+
+
+        <section style = "width: 100vw; margin-top: 50px; padding-bottom: 100px;  height: 2100px; position: relative;">
+            <h1 class = "heading" style="margin-bottom: 10%;">Beauty Stories</h1>
+            <div id="main-wrapper" class="page-wrap">
+                <div style = "margin-top: 65px;">
+
+
+                    <div class="dropdown" style="margin-bottom: 50px; margin-left: 13%;">
+                        <button id="dropbutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                            Select Story Feature
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a onclick="changeMenu('Normal')">Normal</a></li>
+                            <li><a href="../Beauty_Story_4.pdf">Open PDF</a></li>
+                            <li><a onclick="changeMenu('Character Commentary')">Character Commentary</a></li>
+                            <li><a onclick="changeMenu('Character Riffing')">Character Riffing</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div id="story">
+
+                        <div class = "storysegment" >
+
+                            <p id = "storydisplay" style = "margin-left: 50px; margin-right: 50px;">As the new girl to anything, you might find it hard to fit in with those who are less new. Whether it’s for making friends in school or a teenage superhero squad, it can be tough. And I should know, as I was doing both those things. Well, those two as the same thing, but still.
+                                Having come to Minor City with (mostly) no one, making friends was all I needed to get by. I didn’t need the whole world to like me, nobody does. Just a few friends was sufficient. Sounds simple enough, but fitting in just isn’t as easy for everyone. I had been in the Neo Brigade for a couple weeks now and only three out of the five in that group saw me as a friend. Relatively speaking, not that good of a start.
+                                But as difficult as it can be for someone who sees herself as different to feel like she belongs with others, I imagine it’s harder for someone to break away from a crowd. When you and everyone else have something in common, you might wish to be different, but this one thing you and all these people share is too much to make you stand out. Assimilation and escape, two opposites, but they have their struggles.
+                                Anyway, I was dealing with the assimilation problem as I tried to spend more time with the Neo Brigade. Just savor every moment with each of them with the time I was allowed. And this was pretty necessary of an outing, for we were all entering our junior year of high school. And just before the year started, we decided to look at colleges early, and started the day by taking a tour of Minor City University.
+                                We were all part of a tour with a number of other kids, walking the campus with our guide. Well, almost all of us. Me and Neo Brigade members Race, Tel-E, Bendy, and Nator. Pyra, meanwhile, was noticeably absent. I didn’t know what it was, but it seemed like everywhere I went with the team, she was the one who wouldn’t come along. I didn’t know if this had to do with me being there or what, but whatever it was, she had definitely been avoiding every chance she could to talk to me. So the rest of us just went along with the college tour without her.
+                                “And if you look just past the Humanities building, you can see our school library where you can choose to study and conduct research, or if you're stressed from studying, relax in the lounge area.” Our tour guide informed us, gesturing to the buildings.
+                                “Wow. Very nice.” Tel-E uttered, gazing at the library.
+                                “Man, I can't wait for college. Where's Pyra? Why isn't she with us?” I asked.
+                                “Oh, uh, this tour really isn't Pyra's thing.” Race mentioned.
+                                “Yeah, besides, who's ready for college when we have school starting tomorrow? Man, she's got the right idea.” Bendy moaned.
+                                “Oh, lighten up, Bendy. Look. Plenty of skateboarders around here. You like that, right?” Nator mentioned.
+                                “I guess.”
+                                “Another group of students getting a head start on bettering their education. Always nice to see.” What appeared to be an eleven-year-old child commented, rather maturely as he walked by.
+                                “Mayor Tempuna, how nice to see you again.” Tel-E told the kid.
+                                “Wait. Mayor?” I uttered, confused.
+                                I had only been in Minor City for such a short time, so I still had a lot to see and learn. I just wasn’t expecting to learn so much at a school so quickly.
+                                “This is Minor City’s mayor, Arnold Tempuna. He may look like a child, but he’s actually been around for a long time. No one really knows how long, though.” Race explained.
+                                “And we’re not going to press him on this, right, Nator?” Tel-E reminded her cyborg friend.
+                                “. . . I guess.” Nator reluctantly silenced his curiosity.
+                                “Mayor, this is Beauty, the Neo Brigade’s newest member.” Tel-E introduced me.
+                                “Nice to meet you, . . . Mayor.” I cordially said, shaking his hand as he stood almost two feet below me with his height, the height of a child as he seemed to appear, but I guess wasn’t. I was still trying to process the whole thing.
+                                “Surprising youthful appearance for a city official, isn’t it?” Mayor Tempuna remarked. “Don’t worry. At my real age, I can assure you with the years of experience I’ve gained, I’ve maintained a professional attitude as well as a great deal respect from everyone I’ve worked with in addition to maintaining my child-like exterior.”
+                                “One side, Pint Size!” A skateboarder shouted, skating by us and jumping his board off a two foot rock near the mayor and finally jumping over him with no regard for his safety. The skateboarder skated off to laugh at the politician who had ducked that move.
+                                “But, uh, even the most respected of us can’t receive the same from everybody, I suppose.” Tempuna commented, seeming to be used to the ridicule of how he looked despite, apparently, being many years old. “Well, nice meeting you, Beauty. Neo Brigade, children, best of luck to you all this year.”
+                                The child-like mayor strolled off as we all waved goodbye. He seemed nice, and certainly got along with the Neo Brigade. I was still a bit curious what his actual age was if he wasn’t a real kid. It must have been brought up at some point. But I guess he was pretty okay if no one considered it an issue for him to be Minor City’s mayor.
+                                Still, I’m sure he must have had to deal with a lot of ridicule from time to time like with that skateboarder. It’s a shame that can still happen to someone a lot of people liked.
+                                Anyway, after the mayor left, we continued our tour of the campus.
+                                “And here we have our university theater and music hall, and if you'll look off to your left, you'll see our school's fabulous stadium where we've hosted many school football matches as well as a number of music acts. We do have one that will take place this week. Tickets are still available if any of you are interested.” The tour guide continued as we looked at the stadium.
+                                We could see several football players near the tour outside the stadium about to start practice. However, rather than act like a team, we could see them arguing with each other. And that argument turned into physical fighting as they shoved each other back and forth. And the shoving turned into actual punches being thrown. With that football fight escalating, we weren’t sure if we should intervene. Also, Bendy took a picture of the fight for the tour.
+                                Finally, the school football coach blew his whistle as soon as he saw what was going on.
+                                “Alright! Break it up now! What is this all about now?” The coach yelled to his team.
+                                “It's Richardson, sir! He stole my wallet and then poked me in the ribs.” One of the players explained.
+                                “No! Wong stole my wallet and then slapped the back of my head!” Another player objected. Suddenly, he jerked forward as if he was getting hit, only nobody did it. “Ah! See? He did it again! Hey! Quit it!”
+                                “I didn't even touch you!” The first player argued as he then jerked forward like someone hit him. “Ah! Who did that?”
+                                “Enough! No one hit either of you two!” The coach affirmed. At that point, one of the players' moved his head to the side frequently, again, as if there was someone hitting him.
+                                “Someone did! Ah! And . . . if you can't . . . see him . . . do it . . . then . . . I'm not . . . feeling good about this team at all . . . Ah! That's it!” The player said as he appeared to get hit before finally punching the guy standing behind him who didn't do a thing.
+                                The team started fighting again at the same level they were at before the coach showed up. At least, for a few seconds before they just got even angrier with each other.
+                                “Gee, sports are fun.” I sarcastically remarked.
+                                “Hey, they're just misunderstood.” Bendy argued.
+                                “Wait a second. Someone really was there. I'm sensing someone moving to that tree.” Tel-E mentioned.
+                                While those student athletes continued fighting and blaming each other for hitting everyone, we went down by a green to check out what Tel-E was picking up. We walked to the large tree nearby when suddenly, a kid our age in a gray hoodie and black pants appeared literally out of nowhere, holding a giant sack in his hands. He then reached into it and took a couple wallets out as he put on a mischievous looking grin.
+                                As I was informed by the Neo Brigade, this mysterious bandit went by the name of Ninja. And, looking at his hands with three marks of a burglar mask, slingshot, and throwing star, this guy definitely had the Charevo Gene, specifically, with the powers of invisibility and teleportation.
+                                “Heh heh heh heh. Always fun messing with those who lack the knowledge of a true enemy.” Ninja laughed with a husky voice, looking at the bickering team and then at his loot. “It doesn't hurt to profit from it either.”
+                                “Oh, we can find some way to hurt you for that.” Race remarked, getting his attention.
+                                “The Neo Brigade? No! A ninja is not supposed to be detected!”
+                                “Detect this, ya big thief!” Bendy announced as he stretched his arm up to the tree to punch the teen villain.
+                                The rubber Brigade member tried hitting him, but Ninja did a forward flip to dodge the attack, jumping off the tree and landing on the stretched arm. He then slid down the elongated limb all the way to the rest of Bendy before he got to the end and kicked the stretcher in the head.
+                                Moving to our vicinity, Ninja showed off his athletic skills by immediately landing kicks on both Tel-E and Nator while I tried whipping him with my hair. But after attacking Nator, within a second, he saw my hair move and teleported away, just quickly fading from our sight. After he warped away, my hair missed him and wound up hitting Race instead.
+                                As we looked around, we saw Ninja appeared on top of the tree where he stood before. After spotting him, Nator opened a red port on his shoulder, releasing a silver cannon, which he used to fire several lasers at our opponent. The shots may have been quick, but Ninja’s reflexes allowed him to jump across each branch of that tree and dodge every attack. One laser blast missed, but cut the branch he stood on, though Ninja suddenly disappeared out of sight again.
+                                “Where'd he go?” I asked as he suddenly appeared and hit Race to the ground.
+                                The thing about that last attack was Race got hit while Ninja was invisible, but when he landed his attack, there was a sudden flash of our opponent looking slightly faded before becoming completely invisible again. It seems Ninja’s invisibility is limited if he creates noise. This seemed like a good way of finding him, but this guy just worked with it and remained as quiet as ever.
+                                With Ninja having disappeared again, Race decided we could use some help as he then looked at his hands while his Charevo Emblem suddenly started blinking.
+                                “Pyra! Ninja's on the loose at Minor City University! We need you to get over here!” Race ordered, looking at his hand for some reason.
+                                “Uh . . . What was that?” I asked.
+                                “It’s this thing where if you have powers, you can contact someone through their Charevo Elements. Look, I’ll explain it later.” Race hastily summarized as Nator looked for our opponent.
+                                “Come on, you big sneak. Where are you?” Nator mumbled, pointing a cannon from his arm into the air.
+                                “Are you sure you should be pointing that thing around in a school?” Tel-E inquired with uncertainty.
+                                “You’re right. Why don't I just wait for him to tell us where he is so I can be safe about it?” Nator sarcastically replied. “You got a better idea?”
+                                “We can think before we act. Speaking of which, I can sense him now.” Tel-E informed him, putting her hand to her head. “There!”
+                                Getting a position on him, the Knowlgian projected a surge of energy from her mind at Ninja who quickly reappeared, but managed to duck her shot, rolling forward. He then got close to Tel-E, kicking her legs and knocking her down. I could see Race about to charge at Ninja, but he anticipated the same thing and teleported again just as Race took off. This time, Ninja appeared right to the side of the Brigade leader before sticking his foot out. Before Race could stop his attack, Ninja tripped him as he charged at full speed, causing him to tumble forward right on top of Tel-E.
+                                Nator tried taking one more shot at the teleporter with his energy arm cannon, but Ninja jumped out of the way as the shot hit Bendy instead.
+                                “You can't win! I'm the one with the weapons!” Nator claimed.
+                                “Ah, but a ninja requires no weapon of his own to win, for he can adapt and obtain his own weapon.” Ninja informed the cyborg.
+                                Remaining as elusive as ever, Ninja turned invisible yet again as Nator tried to keep an eye out for where he might go. Suddenly, Ninja appeared in his faint invisibility from every punch he then threw at the surprised Nator. As he went from invisible to slightly visible, he rapidly hit the cyborg in certain parts of his arm and chest. This didn’t hurt him, although, the attack did cause Nator’s right arm to involuntarily detach from his shoulder right where the red circular port was marked. Once the arm fell off, Ninja kicked the dismembered cyborg away.
+                                “But stealing a weapon works too. Heh heh heh heh.” Ninja laughed, picking up Nator's arm and taking a few shots at us with the arm’s laser cannon. A martial artist using a gun? Well, now I’ve seen everything.
+                                Ninja then teleported to the roof of a nearby building, taking a few more shots from a higher vantage point like a deranged sniper.
+
+                                Optional Dialogue D1
+
+                                As we all kept dodging the partially friendly fire, I finally grew my hair into the form of a jetpack to take off and fly up to Ninja. I managed to dodge the next few attacks, but only before the mischievous athlete suddenly fired a laser at a large tree, cutting it down as it fell towards me. Fortunately, I dodged the tree when it came down, but I turned and found it was tumbling down to a blonde girl in a blue hat near the building, watching our fight. That’s when it all went from fun to dangerous as my smile went away and I could feel an electric shock flow through me from Ninja looking at me without a grin. But I wasn’t the one at risk of real harm; that girl was.
+                                I’m sure I would’ve wanted to be near the action to witness it all too rather than evacuate to safety, but I needed to help her quickly. So I abandoned Ninja and flew all the way down to land in front of the girl. As the tree was about to crush the both of us, I grew my hair forward to form two giant hands that grabbed the tree, using the strength of my hair to keep it up before setting it to the side.
+                                “That was too close. Thank you.” The girl cried with relief as we both smiled briefly.
+                                “Look out!” I alerted her, pushing her out of the way as Ninja shot a laser down at us.
+                                This laser wound up hitting me as I not only felt the pain of getting hit by a laser, but reacted with another frown that resulted in more electric shocks as the girl looked at me with concern.
+                                Ninja, meanwhile, was totally in the clear. I don’t think we even landed a single attack on him. So it seemed fitting for him to feel as victorious as he was at that moment.
+                                “Time for me to take my leave. Though it seems like I'm forgetting something. Oh, right.” Ninja mentioned before teleporting away. He then teleported back to the roof, holding the sack full of wallets he stole earlier. “There we go. Later, losers!”
+                                Ninja was about to make his getaway by running on the rooftops. However, just as he started running, another super powered kid who could appear out of nowhere appeared from the air in a puff of dark fire, blocking his path. It was Pyra who had finally arrived.
+                                “Gah!” Ninja shrieked upon seeing Pyra.
+                                “Hello, loser.” Pyra said with a smirk.
+                                “So the cat came out to play, huh? Tag! You're it!”
+                                Suddenly, Ninja held Nator’s arm out and shot a missile from another cannon it carried, directing the projectile at Pyra. The fire girl just stood there, though, letting the missile explode as it got to her, creating a small ball of fire and smoke surrounding her.
+                                That may have looked bad, but Pyra’s powers allowed her to absorb all the fire and smoke into her body, becoming even more powerful as she then projected some dark flames at Ninja. However, keeping his defense record going, he dodged all her shots, jumping and weaving out of the way of every shadowy blaze that fired at him.
+                                As Ninja avoided these attacks, the fire didn’t just vanish right away, though. There were actually a few tall trees and taller buildings right behind Pyra’s target. While Ninja continued to evade harm, Pyra’s fire hit those trees and buildings as we noticed it beginning to spread while other people were nearby. They could see the flames travel down the trees while parts of the buildings still burned. This looked worrisome for everyone, but Pyra’s focus remained on Ninja as she hadn’t noticed any of this.
+                                “You should know I don't take kindly to people who force me to go outside during my me time.” Pyra grumbled as she exuded a larger wave of fire down at Ninja.
+                                Pyra’s opponent teleported away from this attack as it then created a larger resulting inferno in front of her. But she still didn’t see it, for Ninja instantly teleported in front of her and kicked her to the floor of the roof. Ninja then decided to toy with her by running away near the burning trees and buildings as Pyra got up and pursued him, igniting herself in dark flames, allowing her to fly.
+                                Ninja just used his athletic skills to leap across the rooftops with ease while Pyra was in the air, trying to throw more fire at him. But he continued to dodge every deadly attack she had. And with a deadly attack missing a target, it could easily hit an unintended target. Pyra kept trying to hit him from above while he kept avoiding her and a couple more buildings were catching fire. And she was completely oblivious to this.
+                                “Hold still and let me burn you!” Pyra groaned.
+                                “Pyra! Careful!” Race warned her as the dark fire on the school started to spread even further.
+                                “I got it!” I assured him as I transformed into my watery character Soaka. I then used her hydro kinetic abilities to extinguish most of the fire as Pyra continued to chase Ninja.
+                                As Pyra flew above Ninja, she mixed her fire into the air, disappearing completely. While Ninja ran, he looked up to find his attacker gone. As his head was turned, Pyra suddenly reappeared right in Ninja’s path, appearing in a burst of dark fire before settling it into her normal look. The elusive fighter thought he was free until he turned his head forward again and found Pyra lighting her hand on fire and giving him one hard flaming punch in the face, knocking him down for the first time today.
+                                As Ninja was lying on the rooftop for those few seconds to recover from that attack, Pyra then grabbed him by the neck of his shirt and dragged him over to the edge of the building before dangling him over the side, holding him by the shirt with one hand. As she held him, her hand began to burn in front of a concerned Ninja.
+                                “Tell me, how long can your shirt keep from burning?” Pyra asked with a wicked smirk.
+                                “Longer than what you’ve done down there.” Ninja laughed, looking at all the dark fire below him.
+                                Confused by her rival’s cockiness, Pyra looked down to see that whole area of the campus engulfed in dark flames. It looked like we had been there to stop an arsonist when it was actually Pyra who had done more damage than Ninja.
+                                Shocked to see what she had done, with a horrified look on her face, Pyra just threw Ninja to the side on the roof and ignited in flames to fly to the fire she started.
+                                Not letting him off the hook that easily, Nator fired a mechanical claw from the end of his non-detached arm, grabbing hold of Ninja and pulling him down to the ground, taking his arm back.
+                                When Pyra frantically made it near the large flaming tree, she was about to absorb the flames back into her. That is, until I got there first and had my watery Soaka character’s body all around the area, putting out all the flames by shooting water in all different directions. While operating as a human fire hose, clearing the flames from the trees and buildings, the fire was out as I even accidentally soaked Pyra, causing her flame to go out as she then fell to the ground. I could see the relief on the faces of everyone witnessing the flames extinguished along with the look of Pyra glaring at me, not pleased.
+                                With Ninja beaten and the fire out, I morphed back to normal as everyone cheered for me and the Neo Brigade.
+                                “Thank you. Thank you. No need to get too excited.” I modestly told the crowd.
+                                “Come on. Just soak it all in.” Race said as he was happy to get the recognition.
+                                “I don’t know. I’d say beating the bad guys is more fun than getting attention for it. But I guess this is good too.”
+                                “I was the one who stopped Ninja. You know, before you drenched me.” Pyra clarified, stepping forward as she was still soaked.
+                                “Oh no. It’s her.” One of the college kids uttered in anxiety as Pyra approached them.
+                                A bunch of the kids nervously backed away from Pyra who looked at them all as they stared at her like she was a tiger that would pounce on them if they made any sudden movements. Pyra then looked back at the trees and buildings that were aflame as the gritty black burn marks still remained, unable to be removed.
+                                When Pyra looked back at the kids who remained apprehensive, she began to reflect a similar look of concern before slowly backing away herself. Pretty soon, she had backed up all the way to the side of the vicinity, not even standing near the rest of the Neo Brigade, or anyone for that matter. She was just off on her own as those anxious college kids looked a little more relaxed.
+                                As the kids were all happy to see everything okay, that girl in the hat who I saved from the falling tree seemed especially grateful as she approached us.
+                                “Thank you so much again, guys. I would’ve been a goner if you weren’t here.” The girl thanked us.
+                                “Well, actually, it was my arm that caused the tree to fall down on you, and Pyra was the one who caused all that fire, so . . .” Nator acknowledged before Bendy enlarged his hand and put it over the cyborg’s head, keeping him from talking.
+                                “Yeah, we’re just here to help. Go on then.” Bendy said, covering up what Nator told her.
+                                “My name’s Brittney Trainor. And lemme just say you guys are welcome in the music hall any time. I am in there most of the time, of course. I play clarinet.” Brittney informed the team, sounding kind of ahead of herself as she shook my hand.
+                                “Why, thank you. I play clarinet too. Oh, and I apologize if this sounds rude, but is that a camera you have on your cap?” Tel-E inquired, pointing to the lens coming out of Brittney’s hat.
+                                “Oh. Yeah. It’s just this thing I do were I document what I see in recordings. It’s just a little hobby, but I got your whole fight on this thing. You can check it out online anytime.”
+                                “Wow. That’s awesome. We gotta start making recordings of our battles. It’s enough like it is on TV already, you know.” I suggested.
+                                “Wait. Hold on. Did you say your name is Brittney Trainor?” Bendy asked, noting the familiarity of her name.
+                                “I did. I guess you’ve probably heard of my sister, Whitney.” Brittney mentioned, pointing to a billboard just outside the campus entrance.
+                                As we looked to that giant sign off in the distance, we saw a picture of a blonde girl resembling Brittney, looking just a little younger than her. The girl had bright blue makeup and was dressed in a small midriff bearing pink top, pink shorts, and pink boots with images of swords going down them as well as jewels on her heels. She also seemed to have shoulder pads with foam spikes and a tiara with a ruby embedded in it. On her shorts, she even wore a belt with a pouch containing a deck of cards.
+                                This wasn’t any ordinary girl. This was the teen pop star, Whitney Trainor, one of the most popular new singers, and the most famous Minor City native. The billboard included this giant image of her along with a sign saying she would be performing at the college in a couple days.
+                                “Whitney Trainor’s your sister?” I asked, interested.
+                                “Whoa! And she’s coming to Minor City?” Bendy cried, even more excited.
+                                “And we’re only hearing about this now?” Nator questioned.
+                                “Pff. Would it be any different if we heard about it after her concert?” Pyra muttered, not sharing in our enthusiasm.
+                                “Oh man, I am so seein’ her!” Ninja said as he looked at the billboard while he was still tied up.
+                                “You know what, Ninja? I’m in a good mood today. I think we’ll let you go. But first . . .” Race began as he held onto Ninja and looked to the football team. “Hey, guys! Here’s your wallets back!”
+                                Race tossed the sack of wallets to the team who was in that crowd that cheered for us.
+                                “Oh, and here’s the guy who took ‘em and made you all paranoid.” Race added, tossing the restrained Ninja to them. Needless to say, the football team wasn’t going to let him off like Race did.
+                                Anyway, after we concluded our tour of the college, we returned to the Neo Brigade HQ. As most of us were hanging out in the lounge area after filling out our damage reports following our run-in with Ninja, we were watching TV when a commercial came on, advertising Whitney Trainor’s upcoming concert.
+                                The commercial started by showing clips of Trainor performing live, singing and dancing with a whole host of production effects being used around her. There were fog machines, flames, lights and glitter together that looked like magic taking place. Her show had everything. It was a short montage of clips followed by a message from Trainor herself. The commercial seemed pretty sparse, but those few seconds were all she needed.
+                                “Hey, guys. Your pal, Whitney here. I’m so excited to return to my home town of Minor City. Hope to see you all there this Friday.” Trainor addressed the audience with a smile as she concluded the commercial by blowing a kiss.
+                                “Man, is she perfect or what?” Bendy articulated in excitement.
+                                “Her show does appear entertaining.” Tel-E acknowledged.
+                                “You know, I’m not always into most modern musicians, but anyone who wears spikey medieval shoulder pads, to me, is pretty freakin’ cool.” I commented.
+                                “I’m sure Whitney’s exactly the kind of singer my dad would shame me for watching before comparing her to all the ‘good’ singers of his day.” Race noted.
+                                “So we’re all getting tickets?” Nator inferred.
+                                “Oh, no question.”
+                                I knew this was gonna be cool. I’ve never been to a Whitney Trainor concert, but I could tell it would be fun. It’s been fun enough most of the time when I would fight villains with the Neo Brigade, but going to a concert with friends would’ve been the most fun if none of us were superheroes.
+                                Eager for the six of us to go to the show, I left the lounge and ran up the stairs as fast as I could to give Pyra the news that we would all be going out together. I went to her room and opened the door, finding the girl alone, lying on her bed as she played her bass guitar for herself.
+                                “Hey, Pyra.” I said, coming in.
+                                “What do you want?” Pyra asked, not happy to see me.
+                                “Oh, right. You’re still thinking about before. Look, I’m sorry I stole your spotlight and got rid of all that fire before you.”
+                                “Whatever. Just forget it.”
+                                “Okay. I, uh, I just thought I’d tell you Race is gonna get tickets for the Whitney Trainor concert.”
+                                “Uh, and why would you think of telling me that?”
+                                “Because . . . the six of us are gonna go.” I told her.
+                                “What six? There’s just the five of you?” Pyra inquired.
+                                “Well . . . I mean, all six of us, including you.”
+                                “Yeah, I don’t think so.”
+                                “You mean you don’t wanna go?”
+                                “No, I can’t wait to see live pop music because Whitney Trainor’s so great.” Pyra sarcastically replied. “Of course I don’t wanna go.”
+                                “Okay. Why would you not want to go to a Whitney Trainor concert?” I questioned her, almost laughing at this idea.
+                                “Well, let’s see. I don’t like Whitney Trainor. Therefore, I don’t like Whitney Trainor concerts.” Pyra answered, getting up to leave.
+                                “Come on. She’s cool. What don’t you like about her?”
+                                “Uh, she’s an attention hog, she’s all phony about being nice, she dresses like it’s a hundred degrees, she uses excessive auto tune, and her music is just stupid.” Pyra explained, listing with her fingers before leaving as I followed her down the hall and down the stairs.
+                                “Okay, first off, those last two are basically the same thing. And second, you have to go. It’s gonna be fun!” I argued.
+                                “Fun is a subjective term. You have your examples of it. I have mine. And a Trainor concert is not on my list.”
+                                “But you have to go. Everyone’s going.”
+                                “Just because everyone else likes something, doesn’t mean I’m required to like it too. Believe it or not, people are allowed to be different. If they weren’t, then everyone would have the same Charevo Trinity.” Pyra refused, showing me the Charevo Emblem on her hand as she walked to the kitchen by the lounge area.
+                                “True. But, Pyra, you never go anywhere with us. I really think if we spend more time together, well, we might actually become better friends.”
+                                “We are not friends.” Pyra clarified as I realized how since I’ve joined the Neo Brigade, she’s been the least welcoming. “And taking me to a Whitney Trainor concert isn’t going to convert me. It’d be like bringing an environmentalist to a clear cutting event.”
+                                “You’re really not interested in this?”
+                                “I couldn’t be less interested in Whitney Trainor.” Pyra affirmed, pouring herself a drink in the kitchen.
+                                “Who’s not interested in Trainor?” Bendy asked, stretching his neck into the room. Tel-E and Nator then joined him.
+                                “Pyra doesn’t wanna go to the concert.” I informed the team.
+                                “Oh, right. ‘Cause Pyra’s too cool for what’s cool.” Bendy laughed, not surprised. “If you ask me, she’s just jealous she’s not as popular as Trainor.”
+                                “I’m not jealous of anyone!” Pyra asserted, giving Bendy a glare before looking away, not wanting to talk about that idea. “I just don’t like her or her music. Simple.”
+                                “Come on, Bonnie. Give her a chance. You might enjoy yourself if you go.” Tel-E reasoned with her friend.
+                                “Yeah, and no one who’s gone to see her has EVER had a negative experience.” Nator added, holding up a flyer for the concert. “Just look at these reviews: ‘Trainor’s show makes you feel like you’re seeing your biggest dreams come true.’ ‘Concert-goers unanimously agree that Trainor will always make you have a good time.' 'While there may be some fault in her music, there is no way for anyone to not be satisfied when watching Trainor live.'”
+                                “You heard the robot. It is impossible to not like Trainor.” Bendy concluded.
+                                “Well, obviously, it IS possible, because I have proved to be someone who does not like Whitney Trainor.” Pyra argued.
+                                “Your counterexample notwithstanding, she is, like, one of the biggest singers in the world right now.” Nator acknowledged.
+                                “Name six of her songs.”
+                                “Okay. Uh, 'Love Me as You See Me', and uh . . . uh, that other one. Race, you know the one I'm talkin' about. That one with the big bass line. Uh . . .”
+                                “See? Even someone with a super powered memory doesn't know her songs. I don't know why you guys would wanna go see her.”
+                                “We only wish to have some fun.” Tel-E told her.
+                                “Yeah, well, even if I did like her and knew as much as you people, let's say I went to the concert and I knew only three songs. I might enjoy myself for those three out of seventeen songs, but that still leaves fourteen I know nothing about. And in that time, you can't leave, you can't request a song to be played again, you have to sit through every song. Now, is going there and paying for a ticket just to stay there for two hours really worth it if you'll only have fun for a limited amount of time?” Pyra argued.
+                                “Wow. She's turned into you.” Bendy commented to Nator.
+                                “Bonnie, is this about all the people you’ll have to be around at the concert?” Tel-E inquired.
+                                “What? No! Not everything I want to avoid has to be about that. Can we just drop this now?” Pyra answered, tired of our questions.
+                                “Well, Race is getting us tickets now. It would be nice if you joined us. Are you sure we can't change your mind?” Tel-E inquired.
+                                “Let me make this clear. I do not want to see Whitney Trainor. I will not see her with a goat. I will not see her on a boat. I would not could not in the rain. I will not will not on a train. I do not like Whitney Trainor. I do not like her, for I hate her.”
+                                There was no arguing with her anymore. Pyra had absolutely no interest in the concert, even if it was for all of us to spend time together. I guess her Charevo Elements were a bit of a hint along with how she acted. According to Tel-E, Pyra’s Charevo Trinity was Tolerance, Anger, and Indifference. Those three together probably don’t blend together to form such a social person.
+                                Pyra really didn’t want to go. She pulled out all the arguments you could make against this idea, so her resistance wasn’t gonna diminish at all, which was too bad. She always looked like she could use some fun as she spent so much time on her own.
+                                The one thing that stayed in my mind after the end of Pyra’s refusal was Tel-E’s earlier question. What did Pyra mean when she said not everything she wants to avoid is about people around her? Was she not telling me something? I mean, besides just not talking to me at all like usual? I wanted to ask about this, but then I realized her response wouldn’t be as nice as Tel-E’s earlier refusal whenever I inquired about her past.
+                                But I didn’t have time to ask right away, because Race walked into the kitchen, having come from the door leading to our team’s office at the police station.
+                                “Well, good news: I got the tickets. Bad news: There were only four left. Two of us can’t go.” Race informed the team.
+                                “Thank God! You can leave me outta this now.” Pyra uttered as she took a sip of her drink.
+                                “Alright, so that means one of the five of us can’t go either. We’ll have to decide this somehow in a fair, impartial, and NOT IT!” Bendy said before shouting and holding up his hands. He then looked around, expecting someone else to say “Not It” like him, but we were too mature at that point. “What? No one’s doin’ my thing?”
+                                “Here. Why don’t we just draw straws?” I suggested, forming five straws out of my hair. “Odd one out gets no ticket.”
+                                “If you ask me, you’re all odd enough.” Pyra remarked as we all grabbed a straw.
+                                “Wait a minute. Beauty’s only been here a couple weeks. Why should one of us have to miss the concert for her if she gets to go?” Nator asked.
+                                “Can you just be fair and wait ‘til you need to complain?” Tel-E tiredly requested the cyborg who wasn’t as keen to me being on the team, though not as noticeably as Pyra.
+                                “Okay, one, two, three!” Race said as we all revealed our straws. And unfortunately, I got the short one. Not very nice when you’re the one who came up with the idea.
+                                “See? Nothing to complain about.” Tel-E acknowledged, pointing to Nator’s long straw with her own.
+                                “Yeah! Winner! Winner! Winner! Winner! Loser!” Bendy laughed as he pointed to Race, Nator, Tel-E, and himself before pointing at me. He then shifted his attitude to be more sympathetic. “Uh, good game. Sorry you can’t go.”
+                                “Shoot!” I mumbled, frustrated.
+                                “Sorry, Beauty. Rules are rules.” Race informed me as he high fived Nator.
+                                “Well, it’s alright. I guess I’ll just stay home Friday night. I’m sure I can keep myself busy with Pyra.”
+                                “Oh, I doubt we’ll be spending any time together just because we’re gonna be here together.” Pyra mentioned, walking away from me.
+                                A friendly outing would have been helpful for anyone getting to know each other, but, with Pyra, that wasn’t gonna happen. And even after I found out I was getting shut out due to my own terrible luck, while it seemed like Pyra and I being alone would give us a chance of focusing on each other, nope.
+                                I didn’t know what this was, but we just weren’t getting along. You know how you might be working with someone in school on a project and you want to make friends beyond the schoolwork, but the other person just wants to look at you as someone she works with, not making any effort to be your friend? Well, Pyra was just hoping this project could be over as soon as possible. In a situation like that, there’s very little you can do to convince her otherwise. I just had to tell myself that maybe she just didn’t want to give me a chance at making friends, just like how she didn’t want to give Whitney Trainor a chance.
+                                If I was going to learn anything about what Pyra’s deal was, I just had to find stuff out when I least expected it. Speaking of which, a few days later, I was finally attending my first day at Minor City High.
+                                It was the beginning of the school year, and the Brigade and I were all set to start it off. Being the new girl, I had to prepare myself a bit, but Tel-E offered to go to school with me early just to show me around and go over my schedule. That must have felt good for her as she was obviously the next newest person to the city on the team. Overall, there wasn’t anything too tricky to remember about where to go. I was ready to start the day.
+                                I felt good about school as I compared schedules with the rest of the Brigade, and I had almost every class with at least one of them. And as a number of kids entered the building, many I recognized from the quiz bowl a couple weeks earlier, I ran into some of my Neo Brigade friends.
+                                Though we did chat with some of their own friends who were at that event, including a popular girl named Sarah who had long brown hair with a bright smile as she saw Tel-E and I, a fan of the team, it looked like. We also ran into Jordan Reidman, one of the guys Christy Ferguson kidnapped. Apparently, he had a reputation in the school too, so I was meeting a bunch of popular kids to start off, which was nice. Not that I wasn’t interested in the other nice people I met, mind you.
+                                A few classes in, and I eventually made it to history class where it was me and the entire Neo Brigade scheduled for the same class. This was gonna be fun, I thought. When I got to the room, I took my seat at a desk near Race, Tel-E and Nator who had already arrived as a few more familiar faces filled the room.
+                                “So, Ellie, what do you think of our school so far?” Race inquired as he sat in the desk next to me and Tel-E while Nator was behind him.
+                                “Not bad. So does everyone just act like you’re normal kids even though they know you’re superheroes?” I asked.
+                                “Oh, everyone gets used to who we are. It only took about a week before no one was surprised to see a blue Knowlgian with a tail in class.” Tel-E noted.
+                                “Though, to be fair, it took about eight weeks for El-Lo and I before you.” Our yellow alien friend, Bo-Rey mentioned as he sat next to Tel-E.
+                                “Hmph. Not like everyone is used to having a Knowlgian around.” Our red alien associate, El-Lo added, less enthuised as he came in, sitting behind Bo-Rey. 
+                                Next to come in was a girl with short black hair and glasses in a blue tank top and a long white skirt who held her books close to her chest, seeming slightly hunched over as if she was expecting something dangerous to occur. Looking at the city we were in, that was understandable.
+                                Looking at her closer, this appeared to be the same girl we saw a few days ago when we encountered a villain named Tammy Time. As Bendy stopped his foe, he nearly hurt the girl in the end as she fled upon seeing him stretch so close to her. She was in our class, and I wasn’t sure if she knew Bendy was gonna be there with her, because guess who was next to show up.
+                                As the girl carefully walked down the room, she was about to sit at the desk in front of me. And that was when Bendy came in, lying face down on the floor, and stretching his body across the room, going in between the desks like a worm in the grid of a 2D computer game. I didn’t know if he was stretching like this all the way from his last class, but he definitely started from well outside the room. And he didn’t get up until he got to his seat, which was the very desk the girl ahead of him was about to take. Bendy actually stretched himself under the desk and into the seat just as the girl sat down. She didn’t see him sliding up the chair behind her, causing her to sit right on his lap once he made it.
+                                “Eek!” The girl shrieked, quickly getting up, not knowing what she was sitting on, before finally turning to see Bendy. “You?”
+                                “Sup, Jackie.” Bendy casually said as the lower part of his body stretched over to him from the floor.
+                                “Do you always have to be so random?” Jackie questioned, annoyed.
+                                “Hey, I’m just bein’ me. If I was random, I’d be acting like someone different every day.” Bendy argued.
+                                “Ugh. I swear if you weren’t surrounded by more responsible heroes, I’d just . . . ugh! Just the thought of depending on you!” Jackie groaned, walking to the back of the room for her desk.
+                                “Jackie, would you like us to keep an eye on him so you can join us?” Tel-E inquired.
+                                “Thanks, but I’d prefer to keep him in front of me.”
+                                So that was one of the Brigade’s friends, Jackie Ling. She seemed to like most of the team. But I guess that didn’t exempt Bendy from unfavorable opinions as he’d do things she found aggravating. From the way she kept her eyes focused on the stretcher, she probably didn’t look at him any differently than she would with any of the villains we’ve encountered. She just thought he could surprise her at any moment.
+                                After Jackie took her seat, two more girls walked in, one of them wearing dark makeup with blonde hair partially died silver and a gray shirt under a black jacket with a black skirt and black boots. The girl next to her carried a couple of water bottles while wearing a purple t-shirt, white shorts, and her dark hair in a ponytail. She also appeared to have a cocky smirk on her face as she approached Race at his desk as her friend passed him and went to her seat in the back.
+                                “Hey, Speedy! You run over enough water this summer? Well, you missed some!” The girl laughed as she then took the cap off one of her bottles and just threw water right in his face.
+                                On top of that, the girl then held her larger water bottle over him and poured some, apparently, hotter water all over Race and his books while he just sat there and took it. I could see him grimacing from being slightly scalded by that second bottle. I considered telling this girl off, but was surprised to not see the Brigade leader or any of his friends do anything, so I just sat there, confused while this girl continued to make a fool of my friend.
+                                “Uh, yeah. Good one, Marcy. Looking forward to another good year!” Race called to the girl, taking it in good fun.
+                                “Is . . . she a friend of yours?” I asked.
+                                “Well, she’s not a fan of the Neo Brigade, so . . .”
+                                “A good year is when Fourize and his crew finally stick it to you this time, loser!” The mean girl, Marcy, mocked Race again.
+                                “Okay. I’ll tell him you’re still rootin’ for the guy.” Race assured this bully of his, again, sounding friendly, though uneasy.
+                                “Yeah, you better!” Marcy said with a threatening tone before turning to her silver haired friend seated next to her. “Hey, Anna, you with me on this or what?”
+                                “Heroes or villains? Sure. Two sides I just HAVE to love or hate. Whatever.” Marcy’s friend, Anna, sighed.
+                                One thing’s for sure, I was certainly meeting people. It was an interesting group. A little too interesting given who my friends were, if you ask me.
+                                “So . . . have you guys done something in the city I don’t know about? I mean, what is with these girls?” I whispered to Tel-E, looking at Jackie, Marcy, and Anna.
+                                “Sometimes there’s nothing to know. A Charevo Gene may be used to help others, but it doesn’t guarantee unanimous admiration. Some people just don’t see others like everyone else.” Tel-E answered.
+                                I guess you can’t really force people to like you, even if you are a superhero. Still, I found it so odd that Race would be bullied even after getting his powers. I would’ve thought he’d get Marcy to cut it out, but he seemed to accept it. Between Marcy picking on Race, Jackie being afraid of Bendy, and even El-Lo not trusting Tel-E, I guess superheroes can have their critics. Particularly, Anna whose flat stare at the floor suggested her being more interested in anything else, not even cheering her friend against the Neo Brigade.
+                                But it wasn’t just the other kids who didn’t see they had to kiss anyone’s feet. As we talked, our history teacher, Mr. Koolein, entered the room. He had some whitish brown hair, glasses, a sweatervest over a tie and white shirt along with brown pants and dark shoes. He looked somewhat familiar as I looked at all these features to him.
+                                “Alright, everyone take your seats. Don’t make anybody cut into our forty minutes by asking bad questions or making me tell you to be quiet.” Mr. Koolein sternly articulated to the class as he set a laptop down on a desk and opened it.
+                                “Uh, Mr. Koolein? Yeah. Does this count as a bad question, and how much time am I eating up right now? Just asking for a friend.” Jordan jokingly asked, raising his hand.
+                                “Quiet!”
+                                “Well, he seems fun. I bet when Pyra comes in, he’s gonna repeat himself for her.” I whispered to Tel-E.
+                                “Right. Um. Ellie, there’s something you should know.” Tel-E mumbled.
+                                “Ahem.” Mr. Koolein interrupted, standing over us. “When I say I don’t want to tell you to be quiet, do you think that gives you the liberty to talk freely? Hmm?”
+                                “No, Mr. Koolein.”
+                                “Good. Now, everyone just pipe down or I’ll have to extend the class by double the time you kids cause me to waste. Is that what you want?”
+                                All the kids say no in unison as Jordan said yes just as a joke before changing it to a no. At that point, I looked around and noticed Pyra still wasn’t in class yet. I knew she was scheduled to be here, but no Pyra. Looking at this teacher, I was sure she’d be scolded severely for coming in late. Where was she, I wondered? But I couldn’t think of that for too long on account of I couldn’t think of too many negative thoughts with my powers.
+                                It’s no secret that most of the time in school, class isn’t the most thrilling, and you’re not really going to smile through the majority of it. That’s why I had to put on the appearance of as a good a student as I could, keeping my smile going to avoid getting electrocuted. I felt like this would be difficult having a teacher who wanted everything taken seriously and might be put off by seeing a smile in his class. Nonetheless, I went with it, surviving the first day of Mr. Koolein.
+                                As Mr. Koolein continued the class as sternly as he could, the bell rang as we were all free to move on to someone more welcoming to kids on their first day of school. Pyra still didn’t show up, though. I figured she may have known she’d be late and didn’t want any lecturing from Koolein.
+                                As soon as class ended, Race reached into his partially drenched backpack.
+                                “Hey, guys, look what came in the mail this morning.” Race said, revealing the concert tickets in his hand.
+                                “Alright! They made it!” Bendy celebrated as he and everyone else took their tickets. He then held his in front of me, more from his own excitement than to be a jerk, which I preferred. “Here’s your ticket, Beauty. I . . . oh, that’s right. You don’t get a ticket. You’re stuck with Pyra tonight. Ha!”
+                                “I can hear you, Bendy!” Pyra called to him.
+                                “Pyra?” I muttered, hearing her voice from the front of the room.
+                                I got up to look for her, thinking her flames were in the air this whole time. As I got to the front of the room, Bendy suddenly stretched his neck to get a look at the laptop Mr. Koolein had on his desk.
+                                As I looked to Bendy’s viewpoint, I turned and found Pyra on the laptop screen. It was really her in class all along. And, as I got a view of the background, I could see what appeared to be the Neo Brigade HQ. She was sitting at the round table where we first walk in.
+                                “Listen, when I said she’s stuck with you, I meant that you’re saving her from the clutches of Whitney Trainor, which we’ll all be suffering through.” Bendy lied.
+                                “Yeah, sure. That’s EXACTLY what you meant.” Pyra mumbled from the laptop, rolling her eyes.
+                                “Whoa. Pyra, what are you still doing home?” I asked.
+                                “She attends her classes remotely.” Tel-E explained.
+                                “Really? Cool. But why?”
+                                “I don’t wanna talk about it.” Pyra muttered.
+                                “Well, I know this is my first time in a Minor City school, but as far as I know, this isn’t a common thing for most people.”
+                                “I said I don’t wanna talk about it!” Pyra insisted.
+                                “Yeah, but . . .”
+                                “Okay, class is over! That's enough now. Just be on your way.” Mr. Koolein interrupted, closing the laptop and ending our conversation entirely.
+                                Well, that was odd. Pyra didn’t go to school in person. I suppose this was a relief for me, because Tel-E implied that she’s been doing this for a while before I got here. So her ditching us during the college tour and everywhere else wasn’t because of me being there. But if that wasn’t her reason, than what was it? I knew she didn’t like me, but why would she stay away? Was there someone else on the team she didn’t like? Bendy, possibly, but I felt like there was something more to it than that. Something no one was telling me.
+                                All I could do was speculate, for everyone in the Neo Brigade I asked on this subject told me Pyra doesn’t like people discussing it. So there went my chances on that.
+                                As we went through our classes without her, we eventually made it to the end of the day where we all left the school to walk home together. As we started walking, Race took out his Neo Brigade communicator to make a quick call. I looked and saw Pyra pop up on his device’s screen.
+                                “So since you're here and we won't see you tonight, do you want us to see if we can bring you and Beauty back anything?” Race offered. “We can get you one of those t-shirts with Trainor's tour dates on 'em.”
+                                “I'll pass. The less I have to see from that concert, the better.” Pyra mumbled.
+                                “Yeah, besides, I hate those shirts. I mean, what's the point of wearing a shirt that's only relevant for one year?” I asked.
+                                “I know. And, like, are you supposed to circle the dates where you were present?” Pyra added, agreeing with me to my surprise.
+                                As we talked, Minor City High’s popular girl, Sarah, rushed past us, standing in front of Race.
+                                “You guys gotta hurry! Whitney Trainor is gonna be down at the mall parking lot to do a small free preview show in fifteen minutes!” Sarah alerted us as she then continued running.
+                                “Whoa! Did you hear that, Pyra? Whitney . . .” Bendy excitedly began before Pyra hung up on us.
+                                “How long into that sentence did you think she would stick around?” Nator asked.
+                                We all hurriedly ran to the mall, which had a huge open parking lot filled with kids and a stage in back. The area was clearly reserved as many cars were parked on the side of the street for people who just wanted to do some shopping. As we got to that crowd to see what was going on, everyone was full of enthusiasm for what was coming, though some a little unsure of what this would be compared to the actual concert.
+                                The lot was full, though. And we could hear some music playing behind us. As we turned, a limo pulled up in front. The doors opened. And there she was.
+                                In all her beauty and charisma, Whitney Trainor stepped out. Her hair flowing in the breeze and her smile brightening the sunny day even further. She approached the lot as the whole crowd went nuts.
+                                “It's her! Oh man. I gotta record this!” I said to myself, thrilled as I grew my hair out to form a camera pointed at the pop star.
+                                I recorded her as she didn’t even use any security staff to escort her to the stage. She just walked through the crowd on her own like we were all her friends. Though, since she was on a schedule, she wanted to make her unplanned appearance finish on time, so she held her hands out at the crowd and moved them in opposite directions once as if she wanted her fans to disperse to make a path for her. And they did.
+                                Trainor proceeded forward like she had her own red carpet with velvet rope separating everyone from her. But she still smiled and waved, high fiving everyone she could, even stopping for a few quick pictures. We were far off in the back, but Bendy decided to stretch the top half of his body out just to get a quick high five. I wasn’t sure if she knew who he was, but she was totally unfazed and slapped his hand with love. After that, Bendy returned to us, feeling quite elated.
+                                Trainor finally got up to the stage, grabbing the mic.
+                                “Hello, everyone! I am feeling the love here. Do you guys love me?” Trainor shouted to the crowd as we all hollered for her. “Good. ‘Cause I love you too!”
+                                We all cheered again after basically being prompted. We were all just so excited to see her. Knowing Pyra, she definitely wouldn’t have liked any of this, likely preferring to stay silent as a nonconformist.
+                                “I know some of you can’t make it to my show tonight, so I thought I’d stop by and not leave any of you empty handed. And here we go!” Trainor informed us.
+                                After her cue, an instrumental music track to her hit song, “Love Me As You See Me”, started playing as a few colorful lights started going on and off in sequence. It was relatively smaller in the production value compared to her normal concert, but as Trainor began to sing and dance to the song, it all just felt electrifying. I was pretty satisfied as it started.
+                                While I recorded, I could see more of the pink lights shine on the pop star. She was just looking more beautiful and radiant as the lights made her look like she was glowing. A pink aura just seemed to surround her. My heart was racing from how exhilarating this all felt to see her. I know I’ve been excited to go into battle with actual villains using my own superpowers, but strangely, this felt right up there.
+                                I didn’t know what it was. The more I looked at Trainor sing and dance with those lights on her, the more I felt like I was in some new world of happiness. Like I was escaping all my worries. I couldn’t think of anything else as I gazed at the pop star. There was nothing but a huge smile on my face, which was all I needed to not feel any concern in life.
+                                The longer I gazed at Trainor performing, the more I felt like I was no longer watching her. The feeling was electrifying. When I looked at her, I felt an incredible sensation like I was looking at a princess in a medieval castle as I stood at the edge of a beautiful forest with birds chirping and a pretty waterfall flowing down to a nearby stream with villagers dancing under a pink sky with a rainbow soaring across, not even remaining stationary.
+                                It was beautiful. I could still hear Trainor’s music, but it didn’t seem like I was watching her at all. Instead, I was in this beautiful fantasy world, not just in a medieval village, but with many evil robots, various militarized monsters carrying medieval weapons, and even a few villains I had seen in TV and video games fighting an army of warriors. As they fought, anyone getting hurt would only disappear like a ghost and reappear somewhere else to fight. They were all even singing in battle as if they thought it was all for the fun of someone watching. And that someone watching was me. This fantasy world looked amazing.
+                                What’s more is while I saw this musical battle with Trainor’s music in the background, I could see a mysterious figure in a long black robe. This person removed his hood. And I felt like I recognized him. I did. It was an old friend. At least, it sure looked like him. Was it really him, though?
+                                “Come with me, Ellie. We got some bad guys to fight and people to help.” The familiar looking figure softly told me, extending his hand out to me. His hand. It had the mark of a unicorn, a dragon, and a television on the back of it.
+                                It WAS him. With his hand held out, I was about to reach out and grab it. That smile never left my face. It only grew when I saw this person. We were about to fight a whole hoard of monsters together. Me and him.
+                                But as I grabbed his hand, a sudden burst of white flashed in my eyes. The next thing I remembered seeing was Whitney Trainor having just finished her song.
+                                “Sorry I can’t do some more, but I gotta go. I love you all! And for those of you who have tickets, I’ll see you tonight!” Trainor concluded to more applause as she ran off the stage to her limo while everyone was still ecstatic.
+                                She took off right there and then. She was fantastic. I had no clue what that feeling was when I watched her perform, but I so wanted some more of it. It was too perfect.
+                                I’ve really never seen Trainor perform live. It was too bad that was all I was gonna get, though. Seeing her made me want to stay in that little fantasy world she gave me. Still, as thrilling as that was, I couldn’t help but think of how weird it was too. It was like I didn’t know what was going on when I saw her. I was just lost in the song, seeing something totally different.
+                                And it wasn’t just me. Everyone had the same feeling. It was like we had all witnessed something magical. As the Neo Brigade and I walked home, we couldn’t get the experience out of our heads. Trainor was just that awesome.
+                                “Was that mind blowing or what? It was like heaven!” Bendy raved.
+                                “Oh man. I can’t believe we get another two and a half hours of that tonight.” Race noted.
+                                “I know. I felt like I was in a world where only happiness existed when she performed.” Tel-E recalled.
+                                “I’m telling you. Those reviews did not lie.” Nator added.
+                                “Yeah. I felt like I didn’t want it to end. And then it did for Beauty.” Bendy laughed, holding his ticket over me. “Sorry. It’s just that after watching her sing, it’s either her or you. You understand.”
+                                “Ooooooh. I shouldn’t have seen her. I felt like I could forget about the whole thing before. Now I can’t stop thinking about her! I’d give literally anything to see that concert now!” I moaned as I thought about someone else.
+                                When we all got to the HQ, we found Pyra sitting on the couch in the lounge, playing her bass.
+                                “Hey, guys. So how was your little pre-show?” Pyra flatly asked. “Tell me everything.”
+                                “Oh my God. Where to begin? Well, Trainor did this song where . . .” I began, too excited.
+                                “I was kidding.” Pyra flatly interrupted.
+                                While she was uninterested in this, we had another person who was absent from the event. That was the Neo Brigade’s boss, Chief Lou Trotterberg. It’s not out of the ordinary for him to check up on us every now and then, but, this time, he had a few more officers with him. Now, the police station is right next door, but they don’t really accompany the Chief on his visits.
+                                “Oh. Hey, Dad.” Race said.
+                                “Hello, Neo Brigade.” The Chief casually articulated like nothing was going on but like something was about to happen.
+                                The Chief looked like he was in a good mood and even came across as having a very business-like composure as any good boss would have. He even kept a very calm tone in his speech as he addressed each individual member of the Brigade while we were all lined up for him. He walked down the line to speak to each of us briefly.
+                                “Hello, Race. You being a good boy? Very nice. Hello, Bendy. Always a pleasure. Hello, Nator. Keeping that mech clean? Very good. Hello, Pyra. You’re looking well. Hello, Beauty. Staying out of trouble? Good. Hello, Tel-E. You’re under arrest.”
+                                Suddenly, the officers approached Tel-E and put her in handcuffs. Seeing this only made me surprised and anxious as my smile went away again, causing me to become electrocuted as the Chief looked at all of us.
+                                “Excuse me?” Tel-E uttered, bewildered.
+                                “What are you doing?” Race asked, flabbergasted.
+                                “I’m arresting a criminal. That’s what I’m doing.” The Chief informed us. “Tel-E Vega, you are under arrest for kidnapping and destruction of property.”
+                                “This is ridiculous. What have I done that warrants such charges?” Tel-E questioned.
+                                “Yeah! And with what evidence?” I added, getting shocked again.
+                                “Oh, you want evidence? You think I don’t have evidence? Well, I have evidence. I have it on this tape right here!” The Chief asserted, holding up a video tape.
+                                The Chief then hit a button on the wall to lower a monitor from the ceiling, which he put the tape into. A video played as it seemed to show a music store.
+                                “Exhibit A: Security footage from the Trainor Pianos piano store. Just twenty minutes ago! And yes, we do act on these police calls promptly.” The Chief acknowledged the video as it played.
+                                I could see the time at the corner of the screen, and he was right. It was from twenty minutes before. But what did Tel-E have to do with any of this? I was afraid to ask.
+                                While it looked quiet at first, suddenly, a red haired girl walked in. A red haired girl with blue skin, and cat ears, and a tail, and a Charevo Emblem of a sun, book, and light bulb. Uh oh. This looked exactly like Tel-E.
+                                It was strange, though, for while Tel-E was wearing her normal blue dress with us, in the video, she was in a wedding dress. Now, I know even if this was her, she’d be smart enough to know a wedding dress wasn’t such a good disguise. Even with the veil, we could still see the blue skin as well as her Charevo Emblem.
+                                As Tel-E entered the store in the video, we saw her project her mind energy at the whole store, destroying pianos and keyboards, every instrument she saw, though without any sound from this video. They were all in pieces. I didn’t know what I was watching, but it looked like the act of a super powered criminal. Not my friend at all.
+                                After the store was vandalized, the two owners who were hiding behind a counter, were suddenly levitated in the air by Tel-E. The Knowlgian finally had them both float out the door as we could see her fly off with them in the background outside.
+                                “That is you, is it not? Unless you know any other redheads with blue skin and a tail and the same abilities you possess.” The Chief accused the alien.
+                                “Well, no. But that’s not me! This can’t be real!” Tel-E insisted. “And even if it was, why am I in a wedding dress?”
+                                “Well, perhaps we can add petty larceny to your list of crimes.”
+                                “But Tel-E would never go on a rampage like that.” Race argued.
+                                “He’s right. This makes no sense. Look at the time of the video. Tel-E was with us watching Whitney Trainor then. We were all there.” I noted, pointing to the video’s time.
+                                “Is that so?” The Chief asked with skepticism. “Nator, you can remember everything. Tell me, do you recall seeing Tel-E in your sights at the time of the incident in question?”
+                                “Of course I remember seeing . . .” Nator began as he thought back a little harder. “Actually, you know what? I don't remember looking at Tel-E once that whole time. All I know is I only saw Whitney Trainor on stage, and then I couldn't focus on anything else, and before I knew it, her performance was over.”
+                                “So you didn't see her at all, did you? Well, no alibi? No innocence! Let's go, Tel-E!” The Chief concluded, grabbing Tel-E's arm.
+                                “This isn't right.” Tel-E objected.
+                                “Yeah, that's what they all say. Now, let's get you to our jail before we send you to Charevo Penitentiary with the rest of the Charevo Gene wielding villains. I'm sure they can't wait to see you again after you put them there.”
+                                “Chief, you seem to be enjoying this a little too much.”
+                                “Oh, well, I've just never been responsible for capturing a super powered crook. I usually leave that to you kids. Now I finally got one! This one's goin' right in the ol' resume.”
+                                None of us knew what to say. Tel-E had to have been innocent. But the Chief wouldn’t look at it this way. He just led Tel-E away from us, walking her to the exit.
+                                “Dad! No!” Race cried.
+                                “You're making a mistake! I swear she was with us!” I protested.
+                                “That's enough out of you!” The Chief barked, turning back around. At that moment, I dropped to my knees, feeling another set of electric shocks for choosing not to smile seeing my best friend get taken to jail. “Now, leave this to police business, and if I hear another word about this, I'll write you all up for harboring a criminal! Good day.”
+                                The Chief finally took the alien out the building as the officers shut the door behind them just as Tel-E looked back at her friends with concern. Race then turned to Nator.
+                                “You couldn't have lied?” Race queried the cyborg as he was upset to see his best friend go.
+                                Tel-E was gone. It all seemed so bizarre. We were all having fun one minute and then twenty minutes later it’s nothing but misery. I know the Chief didn’t seem to like Tel-E that much, but he could’ve at least heard us out.
+                                All I could feel was pain inside. My best friend was taken away. Not the first time that’s happened. Tel-E was the one going to jail. Who knows who would be next to leave me? And how they would go? Would I have been alone again? I couldn’t bear to think of all the possibilities.
+                                Fortunately, she wasn’t gone just yet. The Chief allowed one of us to talk to her. Race really wanted to do it as the Knowlgian was his best friend for a lot longer. But he knew what she meant to me too as she was one of the first people in Minor City to put her genuine trust in me. So Race let me be the one to talk.
+                                I was on my team communicator speaking with Tel-E as she was in an office, though still being interrogated by the Chief.
+                                “Now, I will ask you again. Where are you keeping Linda and Mark Trainor?” The Chief asked Tel-E, shining a light in her face.
+                                “I didn't kidnap them. So I don't know.” Tel-E replied.
+                                “Lying to me isn't going to get you out of this.”
+                                “I would think not, because if I lied, I'd be telling you that I really did kidnap them.”
+                                “DON'T GET SMART WITH ME! Now I'll ask again. Where are you keeping the Trainors?”
+                                “I don't know where they are. Now, can I please go back to my one phone call?”
+                                “Very well, but I'll be watching. I wouldn't want you ordering any attacks on anyone else.”
+                                Tel-E looked back at her communicator to talk to me.
+                                “So not making any progress, huh?” I assumed.
+                                “I don't know how this could have happened. I hate to say it, but it looks like Trotterberg's going to put me in prison in the morning.”
+                                “Oh, geez. But I know you didn’t do any of that. Just because I didn’t see you, it doesn’t mean you weren’t there. I heard you. You were marveling at Trainor just like I was. This isn’t fair.”
+                                “Well, it doesn’t seem like the Chief cares what’s fair.”
+                                “But you can’t go. I just got to know you. And from how long you’ve been on Earth, you’re just starting to know us.”
+                                “Oh, I’ve learned a lot in that brief time. But you and the Brigade . . . there’s so much more.”
+                                I wanted to talk to her for hours, but it just didn’t work that way.
+                                “Alright! Time’s up!” The Chief interrupted, taking Tel-E’s communicator.
+                                “Wait! We’re not finished!” I objected.
+                                “I say you are! And I’m the boss here.”
+                                The Chief abruptly hung up as the communicator’s screen went to black. I slammed it down, frustrated. It couldn’t have ended so soon, but the Chief felt it was just soon enough. I barely got a chance to speak to her, and I was about to just accept that and feel all the more upset.
+                                That was when I saw my Charevo Emblem blinking. It wasn’t making any blinking noise, but it was blinking just like Race’s at the college tour. At that point, I could hear Tel-E’s voice.
+                                “Ellie?” Tel-E whispered in my head.
+                                “Whoa! Tel-E! Is that you?” I asked, looking around for if she was actually in the room.
+                                “Yes. And don’t be alarmed. This is only part of the Charevo Communication.”
+                                “The what?”
+                                “A method of communicating through Charevo Genes. You only need to think of a person’s Charevo Trinity to establish a connection to a person. The Chief took my communicator, but we can still use this.” Tel-E explained.
+                                “So any of us can do this? Wow. I thought this was just part of your own telepathy.”
+                                “Well, it works. Listen, the Chief stepped out of the room, so we’ll have to make this quick.”
+                                “Right. So, uh, did he say if there was anything you could do to be let out?” I inquired.
+                                “No. He’s really adamant on me having kidnapped those people. I’m afraid I’m stuck here until the real abductor is caught. And then I’m off to Charevo Penitentiary. After that, my Charevo Gene will be inactive and I won’t be able to communicate with you at all. ”
+                                “Hang in there, Tel-E. We'll try to clear your name by then.”
+                                Apparently, Charevo Penitentiary was a prison designed to neutralize all effects of a person’s Charevo Gene. But she was no villain. All I could think about was helping Tel-E get out of this. Unfortunately, my thoughts shifted to include something else, much to my shame.
+                                “Well, I guess it won't be too bad. Just look at the bright side. This means you'll get to go to the concert tonight after all, seeing as I can't go.” Tel-E informed me.
+                                Okay, nobody judge me. But while I wanted to keep Tel-E from going to prison, I did see this as a nice opportunity.
+                                “Yeah . . . well, it may be a while 'til we can help you. So, like I said, just hang in there, Tel-E. See ya.” I told my friend as I hung up. “Woo! Yes! The ticket is mine! Hello, Trainor!”
+                                “Um. Beauty? I’m still here.” Tel-E awkwardly mentioned.
+                                “Oh. Uh . . .”
+                                “Just think of the Charevo Trinity of one person on the communication channel and you’ll be out of it.”
+                                “Oh. Okay. Thanks.
+                                Alright. So that was a little embarrassing. All I could do was quickly think of the elements of Optimism, Knowledge, and I Thought. After that, my Charevo Emblem stopped blinking as I had hung up for real that time. Acting like that snafu didn’t happen, I just celebrated to myself again.
+                                “Yeah! I'm goin'! I'm goin'! I wasn't before, but now I'm goin'! Not Tel-E! 'Cause I . . .” I sang and danced by myself to the news before I realized what I was doing. “Wait. I can't go. Not with Tel-E in jail. I gotta stay and help clear her name. But then again, she did tell me I could have her ticket, so that does mean I have permission. No! Tel-E is your friend! She accepted you on the team before most everyone else did! But still, she didn't say I shouldn't go. She would've said something if she didn't want me to go. No! She doesn't have to say anything! She trusts you to get her out. Yeah, but everyone else is already going so . . .”
+                                This was quite a dilemma I put myself into. On the one hand, there was such an obvious choice based on what I wanted for myself in the first place when I was alone in the city for the first time. On the other hand, I had just seen Trainor perform, and it was just pure magic. Her show seemed like it was worth a couple friends. Ugh. I felt horrible about wanting this, but I kept going back and forth with myself to weigh these two options.
+                                “Aaaah. Someone please give me a sign for what I should do!” I screamed at the ceiling.
+                                As if it worked when someone wanted them to come out every time, my Charevo Emblem glowed, revealing my Charevo Fairies emerging from my hands. Three fairy creatures that actually don’t even resemble actual magic fairies, but, instead, resemble a blend of myself and the symbols on my Charevo Emblem. The three of them, representing my Charevo Elements of Fiction, Imagination, and Femninity were basically me as a unicorn, dragon, and princess.
+                                They all floated out of my hands and hovered over me.
+                                “What you have with you is real and important while what you see from afar and love can be misleading and false.” My Fiction Fairy cautioned me.
+                                “What one imagines herself wanting is often not what she is happier with.” The Imagination Fairy added.
+                                “A girl of true nobility remains loyal to those who are forever true, no matter how much they conflict with what is good for a moment.” The Femininity Fairy affirmed.
+                                “Okay, you guys just sound totally biased right now.” I criticized the Charevo Fairies as they flew back into my hands.
+                                “Apparently you do too.” Pyra noted, coming into the room.
+                                “Oh. Hi, Pyra.”
+                                “You in some kind of unnecessary conflict?”
+                                “Well, I'm sure you could care less, but I just don't know what to do. I wanna go to the concert, but it just doesn't seem right, knowing Tel-E has to be in jail for me to go. What should I do?” I asked as I explained my problem.
+                                “Unbelievable. You're actually considering letting Tel-E go to prison. And for what? Some concert?” Pyra muttered, critical of how I thought. “Frankly, going to see Whitney Trainor is wrong in any situation.”
+                                “I know I shouldn't be thinking about this. But you don't know what it was like seeing Trainor.”
+                                “Oh, I think I know. And I don't think it's worth seventy bucks.”
+                                “No. You don't understand. I can't explain it, but when she performed, it was like magic.”
+                                “Like magic. Right. As in it shouldn't exist?”
+                                “Okay. You don't believe me? Here. I recorded it.” I informed her, taking out the camera I used from my hair. “You can see for yourself. And trust me. You won't be able to take your eyes off her after a few seconds.”
+                                Eager to prove my point and let Pyra see the truth about Trainor, I took out my camera and played the video I recorded for her. It was right as the pop star began her song with her dancing. Needless to say, the fire girl wasn’t sold.
+                                “Ugh. She reminds me of you. I already wanna take my eyes off her.” Pyra mumbled.
+                                “Okay, so she may not be as impressive on video, but trust me, it's gonna get better.” I assured her.
+                                “Wait. Is she glowing?”
+                                “I thought it was the lights, but now that you mention it . . .”
+                                We were on the part of the pink lights over Trainor as we could see the pop star almost looking like she was glowing pink. And as it went on for a few more seconds, I could see her doing some dancing I didn’t remember from when I was there. In fact, this was about when I felt so enamored by seeing Trainor perform that I thought I was in some beautiful fantasy world.
+                                As we saw her at this point I couldn’t remember seeing, I realized her body actually was glowing pink. And on top of that, her eyes were glowing as well, in addition to some new images appearing on her hands. 
+                                “Okay. No way is that the lights.” Pyra acknowledged as we got a closer look at her. “Look! Are those tattoos on her hands normal?”
+                                “Whoa! That's a Charevo Emblem! Whitney Trainor has superpowers? Awesome! Just when you thought she couldn't get any cooler!”
+                                Pyra sighed as I thought this whole thing was pretty cool. I mean, Trainor’s hands were totally blank before, but they just faded in on her hands when she began to glow. It was like the pink aura brushed some makeup off her hands that hid the Charevo Emblem, even though that’s not what happened. It just showed up somehow.
+                                I was so curious to see what Trainor’s powers were. Anyone who knows me knows that, good or bad, I love seeing someone with superpowers. But I don’t love what everyone does with them. Case in point, as Trainor glowed in that aura, she summoned a figure in a body of pink light with the figure’s pink colored silhouette appearing first before the actual appearance took shape.
+                                As that figure materialized in that pink energy, Pyra and I could see that Trainor had summoned a girl dressed in white with a tail. Looking close, that white was a wedding dress. And that tail belonged to what seemed to be a duplicate of one of our good friends.
+                                “Wait. Tel-E?” I uttered.
+                                “Not Tel-E. Tel-E in a wedding dress. The one that ransacked the piano store!” Pyra acknowledged.
+                                As Trainor continued to perform with no one in the audience, myself included, providing any audible reaction to this, the pop star then pointed to the side of the stage. Taking this as some command, this bridal copy of Tel-E flew off in that direction while Trainor went back to her song.
+                                “I don't know how. But it looks like Trainor's been behind this whole thing.” I realized out loud.
+                                “Ha! I knew she was no good. And you all thought I was crazy for not liking her.” Pyra scoffed. “But one thing just doesn't add up. That piano store was owned by Trainor's parents. Why would she target them?”
+                                Before we could think about what we just saw, the HQ’s alarm went off as the rest of the non-incarcerated Neo Brigade gathered around a monitor that descended from the ceiling near the main entrance.
+                                “Trotterberg here. I've just received word that the Minor City symphony hall is under attack. I don't know who would do this now that I have Tel-E captured right here, but, regardless, everyone get down there on the double!” The Chief ordered us.
+                                “Wait! Chief! We just discovered something you should know.” I informed him.
+                                “I said on the double!”
+                                Not letting me talk (again), the Chief hung up on me (again) while the monitor rose up after the screen went to black. I wanted to call him back and talk about Trainor, but I guess that had to wait.
+                                Following our boss’ orders, the five of us took off to the Minor City symphony hall to investigate the attacks. No, I was not trying to kill time before clearing my friend’s name so I could go to that concert.
+                                Anyway, when we got to the symphony building, it was supposed to look like any other classical theater type building. But as clean, classy, and orderly as expected it to appear, the symphony hall was basically destroyed. At least from the outside on the front of the building. There were broken exterior walls with smashed signs and windows and even some parts of the stairs leading to the doors being cracked. Also, the doors were completely ripped off.
+                                Seeing us there to investigate, the building’s owner rushed to the team.
+                                “Thank goodness you’re here. There are monsters creating chaos here!” The hall owner cried.
+                                “Monsters? Cool! What kind?” I asked with too much excitement. “I mean, uh . . . how awful.”
+                                “Well, you know those Beethoven fans. You just can’t calm ‘em down, I guess.” Bendy remarked.
+                                “That’s not all. A cellist and a violin player are missing! Those monsters have not left, so I’m sure they’re still inside!” The owner mentioned, still anxious.
+                                “More people getting kidnapped? Oh, when does this end?” Race mumbled to himself. “Okay. Everyone split up and take out whatever monsters you find. Hopefully, we’ll find those people.”
+                                With Race’s advice, we all split up, searching the building individually.
+                                I went to an upper floor, finding many halls with claw marks on the wallpaper and destroyed paintings with glass cases for displaying older instruments all completely shattered, along with the instruments destroyed. A number of these violins and cellos looked like antique carvings from past generations as they were displayed next to other more recently used musical tools. They seemed so perfect before, but they were all reduced to mere strings and splinters.
+                                There was so much havoc created prior to our arrival, that’s for sure. However, I couldn’t find any monsters. And that was too bad. I was really in the mood for fighting some. I only had normal super villain humans to deal with in Minor City so far.
+                                “There are no monsters here. What a rip off. Last time I go anywhere there’s classical music.” I muttered to myself.
+                                “Alright! Just the kind of gifts a girl wants.” A voice said down a hall.
+                                As I listened closely, the voice came from a nearby corridor on my floor. I followed it as the person continued to speak. I slowly inched my way closer to the end of one hall, leading to a perpendicular hall going to the left. Once turned the corner, there she was.
+                                Whitney Trainor herself was in the corridor. Just a few yards down from where I stood. Afraid she would see me, I slid my back against the wall to the other side of that corner, remaining undetected. But I still needed to keep an eye on her.
+                                Putting my character transformations to good use, I morphed into one called Camille Wonder, and applied her invisibility power to vanish from sight as I looked back down that hall with no one spotting me.
+                                As I looked at Trainor again, I could see she wasn’t alone. There were monsters in the building, alright. Strange green pig-nosed horned creatures garbed in battle armor stood beside the pop star. They seemed dressed as though they were part of some medieval army.
+                                This image in front of me looked quite familiar, for when I saw Trainor perform, I had seen this world of warriors and monsters fighting. These creatures looked exactly like those monsters I saw in that fantasy of mine. They were some army trolls with Trainor along with a human warlock that I saw fighting those warriors. That sorcerer was dressed in a blue robe, holding a staff with a blue orb at the end.
+                                I didn’t know how those things had gotten there in the first place. When I saw Trainor on stage, it looked like it was all in my imagination, but could they have been real? They certainly acted real, for a few more horned trolls entered the hall from the opposite side I was on as they brought two people with them.
+                                These people both had bags over their heads as the monsters held them. These must’ve been those missing musicians the theater owner mentioned.
+                                “After all, all anyone wants is their family.” Trainor declared, taking the bags off the heads of the captives after she referred to them as “gifts”. “Hey, Rodney. Hey, Courtney. Long time no see.”
+                                “Whitney!? What . . . what’s going on?” The male questioned, bewildered by the situation.
+                                “Don’t tell me these monsters are yours!” The female uttered, looking at the beasts Trainor seemed to be commanding.
+                                “Well, not my own. I got ‘em from some other girl, but if we’re talking about who can control them to capture you two, that would be me.” Trainor confirmed, giving me a hint of her powers. “So how do you like what I’ve done to your fancy symphony hall? Not such a great place for music anymore, is it?”
+                                “Our sister destroying our theater? You . . . why?” Rodney questioned, revealing themselves as siblings.
+                                “Whitney, I thought you were a disgrace to music before, but now you're just being criminal.” Whitney's sister, Courtney, criticized.
+                                “Hmm. I'm not feeling the love from you two. I could correct that, but I don't think you two are worth having as fans.” Trainor insisted as she then addressed the warlock standing beside her. “Send them away.”
+                                The robed warlock began mumbling unintelligibly as his staff began to emit some blue fog from its orb. He then pointed the staff at the pop star’s siblings, seeming to cast a spell on them. As he finished his incantation, the two were engulfed in blue energy, finally beginning to dematerialize.
+                                “Say hi to Mom and Dad for me.” Trainor sang as she waved them goodbye.
+                                The two then disappeared entirely with the warlock shrouding himself in his energy to vanish with the captives. This was all so shocking to watch, the kind of power Trainor seemed to be in control of that she would use on her own brother and sister.
+                                With Rodney and Courtney gone, Whitney used her abilities on her monster crew she had in the hall to force them all to disappear in a bright light as her eyes glowed pink yet again. This turned them to a pink silhouette first before they faded away. It was basically the reverse of how that duplicate of Tel-E in a wedding dress appeared when Pyra and I saw her on that video.
+                                Speaking of which, after the monsters went away, Trainor summoned the bridal version of Tel-E again, entering the scene just as she did on stage.
+                                “Now that that's done, you can help me see if there's anything else worth taking from this place.” Trainor suggested to the fake Tel-E.
+                                My reconnaissance was over. It was time to act. I immediately morphed back to my default visible form and grew my hair into the form of a metal claw to spring out and grab Trainor. Surprised by this ambush, the singer turned to me.
+                                “That's gonna have to wait, Trainor!” I asserted.
+                                “You? You're one of my fans from that pre-show. You're Beauty of the Neo Brigade.” Trainor presumed.
+                                “That's right. And I think you forgot to tell your fans not to record a concert. I know you're responsible for those kidnappings. And I know you summoned those creatures and that fake Tel-E too. You know, the real one, my friend, is in jail because of you.”
+                                Suddenly, the fake Tel-E projected her mind energy at my claw hook, destroying it and freeing her master. Trainor barely had to brush herself off from getting free, for she knew what she had in her wheelhouse, not that I was entirely aware.
+                                “So you figured out my powers, huh? Well, yes. I can use a person's greatest dreams and desires against them.” Trainor mentioned, feeling good about what she can do.
+                                “Okay. I didn't know that exactly.” I mumbled as the fake Tel-E shot another beam of energy at me. I was ready to fight back, but then the Tel-E bride floated in front of Trainor, protecting her.
+                                “Kinda hard to fight one of your best friends, isn't it?” Trainor noted with confidence.
+                                The pop star snapped her fingers as she and her eyes glowed again. Immediately afterwards, more pink light energy filled the room before materializing into some actual people and creatures. Surrounding Trainor and I were evil robots, various militarized monsters carrying more medieval weapons, and even a few villains I had seen in TV and video games alongside human warriors. I know, right?
+                                I was impressed with the army Trainor managed to create as we seemed to have similar tastes. So I was eager to take on whatever she had to offer. They all charged for me as I proceeded to fight them one at a time, growing my hair into different weapons to attack. They weren’t that tough, so it all just seemed like fun.
+                                Seriously, fighting robots, monsters, and fictional villains that I knew couldn’t hurt me? Who wouldn’t want this? I can remember getting one good shot with my hair in the form of a giant hammer, knocking a villain character all the way down the hall, nearly hitting Trainor who had to jump to the side. That villain was a video game bad guy named Billy Biter, basically, a huge plant monster with tree roots for feet and arms, leaves for wings, and a giant flower bulb with teeth for a giant head. Needless to say, it felt good taking the bigger guy down.
+                                But then I noticed something peculiar. These enemies were actually singing in unison as they fought. It was like a musical with the different groups, monsters, robots, villains, and warriors, alternating in parts of the song. I know Trainor’s all about music, but fighting those enemies just felt a little too fun and much too familiar.
+                                “Woo! Yeah! Fighting monsters and robots! I was waiting for that!” I screamed as I got lost in the thrill of the fight. “Wait. Have I seen these guys before?”
+                                “In your dreams.” Trainor replied. “Remember? All this is from a dream you had when you and those other people were in my trance. I put you in the dream. I have access to everything in your dream. And it's meant to include your greatest fantasies so you'll never wanna wake up.”
+                                “So that's why people like you so much. You make them see what they want to see, and all they remember is you performing.” I inferred, thinking back to all those people and monsters from that earlier fantasy I had. Although, I didn’t recall the Billy Biter character being there. But I couldn’t think about that then, for Trainor quickly made her own Tel-E levitate me up to a wall.
+                                “Now you've figured it out. Lemme show you how I create those dreams.” Trainor suggested with a smirk. Her eyes then began to glow as I knew that only meant trouble.
+                                “No! Not looking at the eyes!” I asserted, closing my eyes and trying to turn my head away.
+                                Unfortunately, I couldn’t keep my face entirely out of Trainor’s view, for I could feel the resulting electric shocks zap me from not smiling at the pop star.
+                                “So I see your struggling is taking its toll.” Trainor commented, aware of my weakness. “Just give in. You’ll feel much better.”
+                                The fake Tel-E continued using her telekinesis on me, forcing my head to turn forward with my eyes directed towards Trainor’s. But I still resisted. I couldn’t let her put me in some hypnotic trance.
+                                “Ah! No! I’m not . . .” I objected as I received another electric shock. My powers were sure to kill me quicker than Trainor’s, but I had to fight it. That’s when Trainor used a second friend of mine against me.
+                                “It’s okay, Ellie.” The summoned creature resembling the video game villain, Billy Biter, calmly assured me.
+                                I looked at the creature. He still carried that menacing mutant plant look, but with more of a calm smile to him. That was when a beam of light surrounded him. But it wasn’t the pink energy Trainor brought up to summon and remove her fantasy creations. It was the white energy that resembled what would come up whenever I’d morph into a character. Or when another person I knew morphed into a character.
+                                Billy Biter was covered in nothing but white before transforming himself into him. The guy I saw in that dream. The one I came to Minor City with originally before we split up. My best friend in the whole world from back home in Ohio. Tyler Vitti.
+                                Seeing my friend brought back a ton of good memories. Us watching cartoons and playing video games together, us discovering our powers together, us putting on character fights together, us creating our Character Manual reference guide together, us dreaming of becoming superheroes together . . . together. As all those memories flashed by, I could only smile at him, not having to worry about a single electric shock.
+                                Tyler approached me as he stood next to Trainor with a similar smile on his face.
+                                “Like I said, it's not so bad. You'll love what you see.” Trainor insisted as our eyes met. “Now go to your happy place. You'll like it there.”
+                                I still looked at Tyler, but my eyes also met with Trainor’s glowing ones. That was when I realized I was in trouble. “No! Don’t look at him! None of this is real!” That was all I could tell myself in the split second before I found myself no longer looking at Trainor or what looked like my friend.
+                                The next thing I saw was just pure joy. The Neo Brigade appeared. But we weren’t in that hall. Trainor was gone. Instead, we were all fighting monsters, robots, and sorcerers, and dragons, all coming at us as were talking and laughing with each other.
+                                I could see everyone using every single power they had on whatever enemy came at them. This was a world of incredible Sci-Fi fantasy, and the Brigade was all dressed differently for this world. Race wore an archer’s uniform as he wore some red mechanical goggles to give him a good view of the land. Tel-E looked like a princess, though she already kind of looked like one, but she also wore a wizard’s hat while holding a spell book. Bendy had some black starship captain’s uniform on as he was also covered with small bombs. Pyra was dressed as a knight, wearing a full suit of armor that seemed to ignite with her dark flames as she even carried a flaming sword to match the different magic swords of her enemies. And Nator still had his Sci-Fi movie thing going by having weapons from his body, though his human skin was partially removed, revealing most of his mechanical body he kept beneath it.
+                                Everyone looked like how I wished they would dress as heroes in real life, even though I decided to do the same. But it was just what I wanted. I felt more like I was in an interactive action show or virtual reality video game than I was before coming to this world. And the team didn’t just look amazing, but they all valued my presence. It was like the five of us had been friends for years, particularly me and Pyra. She and I were acting like a true team, defending each other from enemies, playing off one another in our attacks. She even gave and accepted compliments well. This was something we were clearly missing before.
+                                I knew all about what Trainor had done and how she put me in this world, but part of me (well, most of me) really didn’t care. She was right. This was where I wanted to be. The version of a superhero life I’d envision for myself. No one would get seriously hurt, there wasn’t as much danger, only fun battles with easily beaten enemies in a place of imagination. I didn’t know how to come out of the trance, but it wasn’t gonna be miserable in the meantime. I had everything I wanted. Friends and fun action.
+                                And the friends part became even more to hold onto. As the Brigade and I celebrated, my vision suddenly faded in a flash of light before I found myself in a new part of this world. This time, I could see myself floating in the air surrounded by a beautiful array of stars in space. Suddenly, a dream cloud formed over me as I looked up to find the Neo Brigade beginning another fight in another land near a giant river. They were having fun, and I was eager to join them.
+                                That was when the dream clouded disappeared. And I turned around, finding someone else. It was Tyler Vitti again. My best friend with me once more. At least, in this made up world. But it felt just as right to have him with me.
+                                “Hey, Ellie. You ready for battle?” Tyler eagerly asked as we floated around in this fantasy world.
+                                I couldn’t say anything as this was stuff I was seeing in a dream.
+                                “Oh? You wanna know what we’re fighting against? Take a look.” Tyler alerted me as he took my hand.
+                                Suddenly, Tyler and I found ourselves by that beautiful river near the Neo Brigade as the whole scenery changed. As I got a closer look at who they were fighting, I could see they were all a bunch of TV and video game villains. The ones Tyler and I loved seeing the most when we were growing up together. The kind we would fantasize about fighting against as a superhero team. Our original plan.
+                                “Well, what are we waiting for? We’re sure to save a few people from these guys. Besides, the best way to stop villain characters is with hero characters. Let’s do it!” Tyler proposed.
+                                Tyler and I grabbed hands as we both glowed in our white lights and transformed into different characters to go off and fight those villains alongside my new friends. All the people I cared so much about were right there with me. We were never apart. It was like a TV show I always dreamed of being in. I was so ready to fight with Tyler by my side for the first time since we defeated the Gamer in Minor City.
+                                This really was one of the best dreams I had. The kind where I would never stop smiling, even in my sleep. I didn’t have to worry about anyone waking me up by triggering my electric shocks. Everything looked perfect. I just didn’t want to wake up.
+                                As I continued to marvel at all this, it all just stopped as the next thing I saw before I could see the Neo Brigade with me and Tyler together was a blurry image of the side of my bed at the Brigade’s HQ with Pyra standing over me
+                                “Alright, Tyler! Let’s get that fire monster!” I mumbled out loud as I was starting to come to.
+                                “Wake up!” Pyra yelled as she seemed to have been using her powers to create a large amount of heat on my shoulders. As soon as I woke up, I had to bat them down a little as they were so hot. “Sorry. Here. Lemme get that.”
+                                Using her less dangerous abilities, Pyra put her hands over both my shoulders and absorbed the heat she put on them.
+                                “Pyra?” I asked, looking around, surprised to be back home. “What happened?”
+                                “Well, we didn't find any monsters, but we found you passed out on the floor. Do your powers make it so you always smile when you're unconscious?” Pyra asked.
+                                “The Brigade. Where are the guys?”
+                                “They just left for the concert. I told them there was something up with Trainor, but they didn't believe me. Pff. Just like guys to ditch you in favor of some pretty girl.”
+                                “I was afraid of that. They could be in trouble.”
+                                Apparently, Pyra had been watching TV in my room while she waited for me to wake up. I looked up to find the news come on with a reporter speaking.
+                                “This is Joanne Oliver reporting from the Minor City symphony music hall where just after the kidnapping of the owners of Trainor's Pianos, pop star Whitney Trainor's parents, Mark and Linda Trainor, Whitney's brother and sister Rodney and Courntey Trainor have been reported kidnapped as well.” Joan Oliver introduced the story as the camera widened to show her with Whitney Trainor herself. “I'm here with Whitney Trainor. Whitney, how does it feel knowing your family is missing?”
+                                “Oh, it's awful, Joanne! I mean, I haven't been back in Minor City in months. And when I finally return, my family is gone. No one should have to experience something as tragic as this.” Trainor answered as she looked like she was crying.
+                                “There there. You're very strong, getting through this. Will you continue to hold your concert tonight as scheduled?”
+                                “I probably shouldn’t. But it would not be appropriate for me to disappoint the fans. So the concert at Minor City University will go on. And hopefully, the love of these people will help me get through this difficult time. I can only pray that my sister Brittney who attends that school will be safe.”
+                                This was about as fake as I could imagine Trainor acting. This whole time she had been after her parents and just looked all sweet and innocent as soon as the cameras went on.
+                                “Well, Beauty, you were right about one thing: Trainor sure knows how to put on a show.” Pyra remarked.
+                                “Pyra, that cellist and violinist that went missing were her brother and sister, and Trainor was the one who kidnapped them. It turns out her powers let her put people in a trance where they only see their greatest desires before she can control them herself.”
+                                “So she put you in a trance? Gee, and I thought I was the only one who'd fall asleep having to watch her.”
+                                “Well, she's captured her brother and sister. And the owners of that piano store were her parents. Trainor's going after her family!” I alerted Pyra.
+                                “And that means her sister Brittney's next.”
+                                “And that means we gotta get down to the university and save her before Trainor gets to her. Come on!”
+                                I was all set to leave, running to the door. But, as I looked back, Pyra wasn’t moving at all.
+                                “Uh . . . you know . . . I'm all for stopping Trainor, but . . . I'd rather not take part. Best of luck, though.” Pyra stammered as she seemed surprisingly reluctant and stand-offish.
+                                “What? Why don't you wanna go help Brittney?” I asked.
+                                “I don't not wanna help, I just . . . it's nothing. It's just better if I'm not there.”
+                                “That's ridiculous. Come on. We gotta go. Hey. You'll get to hurt Whitney Trainor.” I insisted, giving her an incentive as Pyra looked conflicted.
+                                “Well . . . okay.”
+                                With that, Pyra and I took off for the college. She ignited herself in flames to fly while I grew my hair into the form of a jetpack again.
+                                During our flight, however, I couldn’t help but wonder why Pyra didn’t want to go with me to stop Trainor. Did she really not want to be around me that much that she would be fine not doing anything to stop Trainor? That couldn’t have been it, I thought. I kind of got the fact that she didn’t like me much, but she wasn’t as assertive about not wanting to go like that was it. She was actually more pensive in her response. It was like she was saying she shouldn’t go rather than that she didn’t want to go. Strange.
+                                Anyway, when we got to the college, we found the music and arts building where we needed to go.
+                                “Okay. There. Brittney said she hangs out in the music hall. Hopefully, we can find her there.” I mentioned as I saw the music building. Pyra and I proceeded to fly down to it.
+                                “Uh, you . . . you know what? Why don't you go in there and look for her? I'll stay here and look out for anything suspicious.” Pyra suggested, still sounding unusually nervous.
+                                “Oh . . . alright. Be careful.”
+                                As Pyra stood outside to keep an eye out for Whitney, I ran into the building, down the halls, looking for where Brittney would be. All I could do was pray her sister hadn’t gotten to her first. After a couple minutes, I finally heard some clarinet music coming from a room in a hall not far from where I first came in. I opened the door, and there she was, Brittney Trainor playing clarinet all by herself.
+                                “Brittney!” I cried as I found her.
+                                “Oh! Beauty! I wasn't expecting you here. I wasn't really expecting anyone since most everybody's going to my sister's concert.”
+                                “That's what I came to warn you about. You're in danger and your sister's gone nuts.”
+                                Before I could continue, the wall suddenly came crashing in with Pyra being thrown right through it, landing right in front of us. She was okay, but as Brittney and I looked outside, we could see a little of her sister’s presence. It wasn’t the pop star, but it was a dragon. A small, but fearsome twenty foot tall red dragon. And as it gave a chilling stare to the three of us, a puff of smoke exuded from its nose.
+                                “AAAAAH! What is that?” Brittney shrieked in terror, getting behind me.
+                                “Whoa! That looks like the dragon I fought while I was in Trainor's trance!” I excitedly pointed out.
+                                “Exactly what are your greatest desires?” Pyra inquired, sounding a little worried about me.
+                                I could see the dragon about to come through the building to get Brittney. But before I could let that happen, I grew my hair into a giant fist, punching the beast back. It landed on its back, but quickly got back on its feet, letting out a thunderous roar as Pyra and I went outside to deal with it.
+                                I went to punch it some more, but he quickly swatted my hair fist away before running up to hit me back with his other claw. As I fell to the ground, the dragon inhaled and let out a huge breath of fire at me, about as strong as Pyra’s own fire abilities. Fortunately, I blocked it in time by raising my hair out in front of me. However, while I was safe, my hair caught on fire and not in my control anymore, so I had to detach it as Pyra tried to fight the beast.
+                                This was one of those dragons I saw myself and the Neo Brigade fighting in my fantasy. Fighting it with Pyra seemed like it would be fun as it was in the dream. But as I thought about what the creature was, I realized the fun part of it may have involved me and the Neo Brigade being a bit stronger than normal, because we weren’t able to beat it right away.
+                                In fact, as the dragon was about to stomp down on Pyra, she quickly ignited herself in dark fire, mixing it into the air, avoiding the monster’s foot. She then reappeared above in front of it and projected her own flames, engulfing the whole front part of the beast. It was sure to force any target back or have them get tired, but the flames didn’t do a thing. The dragon was moving as if it hadn’t been burned at all.
+                                “Ugh. You had to dream a dragon that's heat resistant?” Pyra grumbled.
+                                “I'd be more worried about his other breath if I were you.” I warned her, not remembering what the other breath was.
+                                The dragon inhaled again as it switched things up and shot a huge stream of water at Pyra and I, hitting us both with cannon-like force. As we both got drenched, the water doused Pyra getting rid of her flame and making my hair so heavy that I couldn’t get it to move. As we were lying next to each other, we knew this was gonna slow us down a bit.
+                                “Water. You had to give him water.” Pyra sighed while I just gave her a guilty smile.
+                                Suddenly, we heard a shriek near the edge of the music hall. Brittney was outside trying to make a run for it. But her evacuation was no good. The dragon ran to the girl and picked her up with its claw, flapping its wings, and taking off with the Trainor sibling.
+                                We couldn’t let the pop star have her way with more of her family. Pyra and I got up, about to go after the beast. But my own fantasies backfired once again, for as the dragon took flight, it just disappeared into the night, fading from our sight in a split second as if a wizard had summoned it somewhere.
+                                “Oh, that's right. That dragon can teleport.” I recalled as Pyra rolled her eyes.
+                                “Well, great. Now how are we gonna find the Trainors?” Pyra queried as we just stood there to think of a solution.
+                                “I know! Brittney's live video feed. Brittney told us about that camera she keeps in her hat to film what she sees. We can just go online and see where she is.”
+                                “. . . Okay. How can you remember that far back, yet you can't remember seeing Tel-E when you saw Trainor?”
+                                Pyra’s questioning of my memory aside, I grew my hair out into the form of a laptop, totally making it the real thing. I sat down and searched for Brittney Trainor’s webcast. After about a minute, I was on her website with her own music and academic info with a link to a live video stream. As I could see by the counter on the side, I was the only person watching, which was one more person than Whitney Trainor wanted, for I could see from the point of view of Brittney and that camera she had.
+                                As Pyra and I watched the video, we couldn’t see exactly where she was, but could see her and the rest of her family by her side. Her parents, Mark and Linda, who we recognized from that security footage of “Tel-E” kidnapping them, were on her left. When she looked to her right, we could see Rodney and Courtney Trainor, her brother and sister who were musicians at that symphony hall. They were all together, but their hands and feet were all tied up. But at least they were still okay.
+                                As the family continued struggling to get out of their restraints, I looked in the background to find them surrounded by a bunch of metal poles with what looked like a large metal platform about twenty feet above them. They were all sitting on grass with a few lights lit up around them as we could see some boxes, speakers, and wires all near a large purple curtain off in the distance from where they were. We could also see a large burlap sack just a few feet in front of them.
+                                Part of the curtain moved with a section opening as someone finally came in and slowly approached the family. It was Whitney Trainor.
+                                “Well, look at this. I was wondering when any of you would finally come see me perform.” Trainor articulated with authority as she looked down at her family as her captives.
+                                “Whitney, I don't know what has gotten into you, but you'd better release us, right now!” Trainor's father demanded.
+                                “Sorry, Dad. You and Mom couldn't stop me from following my dreams and performing pop music. And you're not going to stop me now.”
+                                “Whitney, why are you acting out against us? What have we done to incur this kind of behavior from you?” Trainor's mother queried as the pop star only glared at her family.
+                                “Do you know what it's like to grow up without anyone in your family loving you for who you are? You two just loved classical music so much; you had to force it on me. You couldn't deal with pop music, just because I liked it. I thought I'd get you to appreciate me when I learned to play piano, but that of course didn't fly.”
+                                “You quit the school band after a week. You threw away your potential.” Her father objected.
+                                “The band wasn't who I was! I wanted to play fun songs, but the band didn't have those, and you wouldn't allow it. Remember the list of songs you gave me that you said were the only songs I was allowed to play and listen to? God forbid I should choose to be different! You only loved me for the parts that you wanted.”
+                                “Whitney, we only wanted you to prosper as a proper musician just like your brother and sisters.” Her mother admitted.
+                                “Oh right. The three perfect siblings. I remember how small everyone would make me feel when your names came up. Even during Christmas when all our relatives would come over, you'd all play a nice classical song for them. And just because I even asked to play what I wanted for them, I'd get sent to my room while you got all the attention. Everybody loves Courtney, Rodney, and Brittney, but not Whitney.”
+                                “It's not our fault they paid attention to us. Mom and Dad made us play for them.” Courtney reminded her sister.
+                                “And did they make you join the school band too? Do you know how many of your school concerts I had to go to so Dad could force me to video tape each of you performing in first chair? Do you know how many of your solos I had to watch while you just got even more attention? And then Mom would guilt me by saying 'Everyone loved Rodney's performance. They keep asking 'Why haven't we seen Whitney in the band?' 'Didn't you raise Whitney to play music too?' 'When's Whitney going to play a solo for us?' '. You three knew how I felt about being shunned, and you only supported Mom and Dad's restrictions and favoritism, just because you didn't like my different desires.”
+                                “Well, you ran away and became this music superstar. Why'd you have to come after us?” Rodney queried her.
+                                That was when Whitney reached for the big sack in front of her family.
+                                “You see this? This is all the hate mail I've received in the two years I've been doing this.” Trainor acknowledged, pouring a bunch of envelopes in the sack over her family. “And they're all from you! Not only did you never once support me, you had to keep shaming me for doing what I loved. You seriously couldn't accept me at all! Just because I wasn't the fourth kid you wanted! What I did never hurt anyone before. But now that I have these powers, I'm gonna go out there and make you and everyone else love me. And after the show, I think I'll see what dreams from the crowd I should use on you if you resist.”
+                                The pop star turned around in her bitterness, about to go on stage as she started to walk away.
+                                “Whitney, we're sorry if we didn't give you the attention you needed as a child.” Her mother apologized. “I know we should have listened to you more and we probably shouldn’t have tried to force you into what you’re not. But whatever your father and I did, it was because we love our children. And we love you, Whitney.”
+                                The singer stopped. It was like she started thinking about what she had done. We couldn’t see her face, but I don’t know if she was a hundred percent focused on just making her family suffer.
+                                I thought maybe she’d reconsider her plans, just maybe. But that was when her Charevo Emblem glowed, and her own Charevo Fairies emerged from her hands. The symbols on her emblem looked like an airhorn, a magic wand, and an eye. So her Charevo Fairies appeared as a cross between her and all three of those things. But they were also shrouded in a dark aura that moved all around them. It was an aura of evil.
+                                “Those who stand in the way of your greatest fantasies are meant to be destroyed!” The fairy that resembled a magic wand asserted.
+                                The Charevo Fairies flew back into her as the pop star was briefly surrounded by the dark aura of the creatures who gave her the guidance someone like her gets. And that was evil guidance for an evil girl.
+                                “It’s too late for you now. If you wrote me a letter to say how you felt, things could've been different.” Trainor uttered, walking away again.
+                                “Whitney, you've got all this fame now. Everyone loves you. Why do you need to force it out of us?” Brittney questioned.
+                                “After a life of no love from you, for me, it's gotta be all or nothing.” 
+                                Trainor finally pulled the curtain up and left the area and her family behind.
+                                Wow. Just wow. You hear all these tabloid stories about celebrities having dark personal lives, but this one takes the cake. Trainor’s parents didn’t support her and she had all this jealousy towards her siblings, so now she’s kidnapped them? That’s definitely a bit much. Her childhood sounded so messed up, but also sad. All those fans and yet nothing from the people she loved.
+                                “Wow.” Pyra mumbled, echoing my own thoughts.
+                                “I know. I wouldn't wanna grow up like her.” I added. “Anyway, did you hear all that noise in the background?”
+                                “Sounds like they're at the stadium.”
+                                “Yeah, and it looks like they're under the stage. So now we know where to go.”
+                                “Right. Uh . . . look, you seem powerful enough. Why don't you take this one and . . . and I'll go home?” Pyra meekly suggested, not making much eye contact with me.
+                                “What's wrong? You said you wanted to fight Trainor.” I reminded her.
+                                “I know, but . . .”
+                                “What's wrong with you? You've been acting much less . . . together with yourself lately. Is there something you wanna talk about?”
+                                “No! I don't have to talk about anything! Let's just go!”
+                                Pyra instantly ignited herself and flew off towards the stadium while I followed her with a jetpack from my hair. We were both set to confront Trainor, but I still thought Pyra was being a bit odd.
+                                If her lack of willingness to stop Trainor wasn’t out of the ordinary enough with Pyra, it all became much weirder when the two of us flew over the Minor City University stadium. The whole place was lit with the huge lights shining down on the place while the stage was all set up on the edge of a far end of the area. A couple giant video screens were also on different ends of the stadium for the audience.
+                                We both looked down at the crowd, and there were easily a few thousand people who showed up for Trainor. They were cheering, eager for a show from the girl who seemingly makes everyone happy. But while we had that view of the thousands of people below us, as we flew to the back of the stage, Pyra’s flame suddenly went out.
+                                Just like when she got soaked, her dark fire form was gone, and she was back to regular Pyra. And she couldn’t fly like this. Once she lost the flames, she started plummeting down to the stadium before I grew my hair out in time to catch her.
+                                “Whoa! Hold together! The concert's already starting.” I alerted Pyra.
+                                Some music started, and the crowd got louder. And as the screens showed Whitney Trainor, looking just as pretty and sweet as the audience knew her, they got even louder while the pop star came out on stage. I noticed her Charevo Emblem wasn’t showing, though. Somehow, she was able to hide it.
+                                “Hello, Minor City! I've been wondering if you can help me out. I've got a little question that's been on my mind: Do you love me?” Trainor innocently asked the crowd as they all cheered. “Thank you. I love you too! But you're about to love me more!”
+                                As the music continued, Trainor wasted no time putting her powers to use. That pink aura surrounded her body once again as everyone stared at either her or the video screens. She knew how quickly she could have everyone fall under her spell and had her eyes glow to really put the crowd into a deep beautiful fantasy world of their own.
+                                Pyra and I looked away as soon as her eyes glowed, but we could see the crowd below us. Not a downer among them. All of them were completely painted with a smile and a dead expression in their eyes. Even Race, Bendy, and Nator who we saw on the lower level were completely entranced, totally unaware of whom they were looking at.
+                                Trainor had everyone in her trance, which meant she was about to have access to just about anything they could dream of. She continued to sing her song even though no one could really hear it. Pyra and I, on the other hand, flew to the side of the stage to put a stop to this. We stood to the side as she was totally oblivious to our presence.
+                                As the pop star sang, I finally interrupted her fun by growing my hair down to her and punching her down with it. She looked pretty annoyed to see someone disrupt her show. And with this being two of her critics keeping her from singing, I could sense some serious anger dwelling in that pop star.
+                                “Remember me? I'm someone who doesn't love you.” I taunted the pop star as she looked up at me, annoyed. “Now, let your family go or we’ll have to beat you and do it ourselves!”
+                                “Excuse me? I don’t share the love with anyone who crashes the stage.” Trainor insisted as she used her powers to summon part of someone’s dreams as her eyes glowed.
+                                The singer had some pink light energy form an object in her hands. As it turns out, it was a sword from my own dream. A sword that could shoot flames, which one of those monsters used. I tried to grow my hair out to attack again, but she just swung that weapon down and cut the end of my hair each time I tried to strike her. This wound up making part of my hair catch on fire and becoming ineffective.
+                                “You think I can’t force you out of here myself? You know, your dreams look pretty fun with the weaponry you provide me. Have you forgotten how I can use the dreams and desires of anyone who looks into my eyes?” Trainor reminded me.
+                                Pyra appeared in her dark fire out of the air right next to me, absorbing the flames in my hair, getting it back to normal and in my control.
+                                “You dress like that, and you think anyone’s looking at your eyes?” Pyra remarked as I laughed. Not taking that well, Trainor made her eyes glow as she looked at us.
+                                “Ah! Don’t look at her!” I shouted as Pyra and I looked away.
+                                Rather than try and get in our sight right away, Trainor summoned some more dream pieces to the stage to help her. They weren’t from mine this time. As she formed one figure out of her pink energy, it resembled Nator. But it didn’t look exactly like him. He was dressed in a track suit with a gold medal around his neck that seemed to have the words “Olympic Mathematics Champion” engraved on it. Apparently, Nator’s fantasy involved looking at himself as opposed to mine where it was all from my point of view as I was doing things in the dream, which explained Nator having seen himself for Trainor to summon him. 
+                                Anyway, as he took form, Nator fired lasers from a cannon on his arm, which Pyra and I quickly dodged.
+                                “Your friends have their own desires too. Like your pal, Nator here. He sure fancies himself the math expert.” Trainor commented, putting her hands on his shoulders.
+                                This version of Nator used a few more weapons on us that Pyra and I have never seen the real Nator use. He projected some green lasers from his hands at the floor, as the lasers went around us, seeming to form a graph. There was an x and y axis that continued further than where we stood on both ends while a second laser representing line graph data went behind us from the y axis. Suddenly, the area we were in, which was below the data line generated a surge of electricity below us, shocking me and Pyra and causing us to collapse to the floor.
+                                “As a side note, I have a thing for smart guys.” Trainer mentioned, holding Nator close.
+                                Countering that move, I grew my hair out to form a cannon, firing a cannonball at the fake cyborg. However, Trainor used her powers again to conjure a piece of another person’s dreams. This time, it was Bendy’s, and in a pink light, there he was. A version of Bendy appeared, dressed as his former idol, Captain D, complete with the white suit and red cape. Just something to remind everyone: Captain D turned out to be a super villain who Bendy brought himself to fight against, renouncing his devotion to the guy. So I wasn’t sure if Bendy’s fantasy involved him still wanting to become Captain D or just taking over for him and doing a better job of it.
+                                Well, whatever the case, when this fake Bendy showed up, he was right in front of Nator. And, with his rubber body and stretching powers, he let the cannonball plow into his stomach as it forced part of his body to move back before it bounced the cannonball back at me at a similar speed. I ducked to the floor as soon as I saw the projectile fly at my head.
+                                “Of course, that doesn't mean I have to exclude anyone.” Trainor noted as she projected more fire from her flame sword that went right through Bendy who withstood it and let the sword project fire at me. I then created a flamethrower from my hair to match the force.
+                                This worked for a few seconds as Bendy just ran through both sets of flames before finally punching me when he got to my position. I extended my hair out to hit him back as I turned to Nator who brought out another math weapon to aim at me. Suddenly, it went off, and it projected energy in the form of all the digits of pi in order. It was just 3.1415926, I’m not doing the whole thing. These numbers were deadly. That’s all there is to know.
+                                Defending from this, I morphed into a character that can absorb energy, a purple alien made of stone named Chroma. With her powers, I took all the successive digits into her body and projected them back at both Nator and Bendy.
+                                They were both stunned momentarily, but Trainor made up for this by getting in on the action herself, holding her flame sword and swinging it within an inch of my purple face as I could feel the heat. She swung it again as I kept dodging before retaliating with some of Chroma’s energy blasts that I projected at the pop star. She held her sword out to defend the attack, though it did send her sliding back on her feet a little.
+                                I tried taking a run at her to hit Trainor with Chroma’s stone fist, but the pop star continued to surprise me with her sword lighting in pink, seeming to vanish. While I thought it would just be to leave her weaponless, it actually swapped out for a new sword, one that looked similar, but could project wind. Trainor swung this new blade out, blowing me further back near Pyra.
+                                As I looked to the fire girl, I realized that she had been staying back this entire time, not making any move to fight.
+                                “I could use a hand here!” I called to Pyra.
+                                I tried to get her to jump in, but she just stood there. She had that look of uncertainty on her face like there was something she could see, looking at Trainor, that I couldn’t. I had no clue what this was, but Pyra wouldn’t take a step forward.
+                                As I saw her remain passive, Bendy and Nator ran to me to continue our little brawl. But Pyra wasn’t the only one doing nothing at this point. Trainor got to sit back and watch her ripoffs of the Brigade members fight for her.
+                                As I dealt with the Bendy and Nator duplicates with the latter being between me and Pyra, in the corner of my eye, I could see her hands light up with dark fire like she was ready to attack him and even the playing field. She took a few steps closer to us, but then Pyra ditched her flames and backed up again.
+                                With Pyra choosing not to intervene, as I was mostly focused on Bendy, Nator suddenly launched his fist out on a spring loaded cable attached to his wrist, hitting me away from Bendy. I was quick to get up and continue this fight, waiting to see what Pyra would do, but she remained idle.
+
+                                Optional Dialogue 1
+
+                                As this battle went on, Pyra saw Trainor on the other side as Bendy, Nator, and I were busy with our fight between them. Trainor just had this smug look on her face like she knew people in their dream forms were far superior to the real thing, and she had nothing but fictional stuff on her side.
+                                The more confident Trainor was in herself, the more flames Pyra emitted as she glared at the pop star. The fire girl finally ignited herself in full flame to fly over my battle and hover above the pop star. She was about twenty feet up with the perfect vantage point to land a shot on Trainor.
+                                However, as Pyra was way up there with a perfect view of the singer and the audience who were still lost in their happy dream worlds, her flames went out again. And I wasn’t able to catch her this time. Her non-ignited self just dropped back to the stage.
+                                When Pyra got up, she found Trainor right in front of her with the enormous crowd behind Trainor. But, rather than take the opportunity to attack as she was within a few feet from our opponent, Pyra just stood still, looking forward, with not a flame lit from her hands.
+                                “What's wrong? You got stage fright?” Trainor asked, pointing her sword at Pyra.
+                                “I . . . I'm here to fight!” Pyra insisted, but with little confidence.
+                                “You're afraid of something, aren't you.”
+                                “N-no.”
+                                “Oh yes you are.” Trainor affirmed as her eyes began to glow. I didn't look at them long enough as I was still fighting Bendy and Nator, but I could tell Pyra was about to be put in her trance. “I know your greatest desires, Pyra. Go to sleep and you can see what you've always wanted.”
+                                “What I've always wanted.” Pyra repeated, falling into the trance.
+                                “Pyra! No!” I yelled as I transformed back to normal.
+                                It was too late. After I blasted my two enemies away from me, I could still see Pyra standing still, but she was smiling this time. She was staring at the pop star like everyone before her. The one time I got to see her smile, and it was all from corruption.
+                                “Well, now that she's out, I'm sure she won't mind leaving in style.” Trainor remarked as she summoned a new sword again, this time, an electric sword (I think my dream had like nine different swords).
+                                Trainor held her electric sword up, ready to blast Pyra with it. Pyra made no move to come out of her trance. She was a smiling wide-eyed sitting duck. I knew she was tough against heat and could withstand some strong attacks. But this was something right out of my head. I didn’t know how strong it was. Could it have seriously injured her? There’s no way I could live with myself knowing something I essentially created would lead to Pyra’s demise. As I saw that sword held up, I dropped my fight with Bendy and Nator and turned to the girls.
+                                “No!” I screamed, running over to them.
+                                As Trainor brought her sword down with electricity flowing through it, I stormed off as fast as I could to her, growing my hair out in the process. I reached them both, standing between them and bringing my hair up to stop the sword. I tried to harden it into the form of a stone hand to grab the weapon. But as Trainor had already begun her attack, it pierced my hair before it could fully go from hair to stone. And I had a sword going right to my head.
+                                On top of the electric shocks I felt from Trainor seeing worried little me see a sword swinging down on me, the blade generated its own electric blast, resulting in a painful explosion rushing through Pyra and I. The shockwave was so fierce, I didn’t know if either of us would survive the attack.
+                                The sword wound up sending us flying back just like any other strong attack. This one hit us so hard; the two of us wound up flying all the way through the back of the stage and out the stadium. I didn’t know what hurt more, my neck from the impact as I hit the back of the stage, or the rest of my body from the thousands of volts of the sword. That was mainly because I was already unconscious by the time the electricity hit me. I might not have felt it, but I was far outside the stadium in the woods.
+                                Being the one hit by an electric sword much closer, having been awake the whole time, I started to wish I was back in that fantasy world. I didn’t know what difference it made for Pyra as she smiled through it all. But even as it seemed painless for her, I still doubt Pyra would’ve liked Trainor any better. That pop star was crazy.
+                                Thankfully, as Pyra and I were lying right outside the woods near the stadium, we were both okay as the two of us finally woke up and Pyra came out of her trance. Although, I had to wake her up first by moving her shoulder, which didn’t feel as good, touching someone whose body was constantly heated. We both struggled to get off the ground after feeling the aches in our bones from Trainor’s attack. But I managed to stand while my legs just felt all wobbly.
+                                “Ah! Wh . . . what happened?” Pyra asked, waking up.
+                                “Trainor beat us good. That girl sure knows how to use her resources.” I answered, exhausted. “You feeling alright?”
+                                “Yeah. Mostly. You?”
+                                “I’ll bounce back soon enough. Standing in front of you to get hit with an electric sword takes a lot out of a girl, though.” I replied as Pyra looked surprised that I would take a hit for her. “Now, I was kind of expecting her to outsmart us with all the dream tools she has, but what I wasn't expecting was your fighting, or lack thereof, back there.”
+                                “I don't wanna talk about it.” Pyra mumbled, getting to her feet and looking away from me.
+                                “Come on, Pyra. You can tell me. What happened? Why couldn't you fight?”
+                                “I was fighting just fine. Maybe you were the one who had problems.”
+                                “Pyra, you of all people should've been able to fight Trainor, but you missed it out there. What's going on?”
+                                “Nothing! I don't have to tell you anything!” Pyra insisted, not willing to talk like she was a little kid arguing to her parents.
+                                “Come on, I know it's something.” I argued.
+                                “You don't know anything.
+                                “Well, that's why I'm asking. Pyra, I've tried getting to know you better, but all you do is just shut me out. Now, I know you wouldn't want Trainor to win unless you weren't a hero. So I just want to know. What happened back there? Why didn't you fight her?” I interrogated her as she finally turned back to face me.
+                                “I'M AGORAPHOBIC! OKAY?” Pyra screamed.
+                                The girl said nothing after that. She just sat down on a curb in front of the street, still facing away from me. Facing away from everyone.
+                                “So it all makes sense. Not going on the college tour, attending school from home, you couldn't be around a crowd of people.” I realized out loud as Pyra just remained silent. “Um. Aren't you gonna mock me by saying that's what agoraphobia means?”
+                                “Eh, do it yourself. I'm not in the mood.” Pyra glumly mumbled as I then sat next to her.
+                                “I don't understand. You're around me and the Brigade all the time. And I've seen you fight multiple villains. You've never had a problem before.”
+                                “It's not crowds in general I don't like. Sometimes it can only be a few people.”
+                                “Then what is it exactly?”
+                                Evidently, Pyra still didn’t want to talk, but there were a lot of things that have happened recently that she didn’t want. I guess she figured this wouldn’t make much of a difference.
+                                “It started after I got my powers. Before then, I had a bunch of friends. They were pretty different from me, but I still fit in with them like with the Brigade. They knew how critical I could be of them, but we always got along. So after I got my powers, I gave my friends a little demonstration just to have fun with them. But, obviously, the first day isn't always when you're the best at anything.” Pyra recounted.
+                                “What happened?” I inquired.
+                                “. . . My best friend had her kid brother with her. And as I showed off my powers, I lost control briefly, and some flames got on her brother's arm. I saw him screaming at the horror of being burned and looking back at me while he was hurt. I tried to help him, but my friend told me to stay away from him. To stay away from everyone. And her being the popular one of the group, everyone avoided me. She just told everyone else to avoid me. I became an outcast from that day forward.”
+                                “So you never had another friend after that?”
+                                “I was too afraid to be around anyone. I was afraid I'd hurt someone, and I still am. Any innocent person who I hurt would just think I'm scary. Sometimes I don't even need to hurt anybody for people to be afraid. Now, whenever I’m around most anyone, I can only worry what they’ll think of me. I couldn’t even go home to my parents out of fear that I’d hurt them too. Being alone has always been my safest bet. It wasn’t until I met the Neo Brigade where it was okay for me to hurt bad guys and where there were people who didn’t mind if I hurt them that I was finally able to have some friends. This group is the only one where I feel accepted.”
+                                This wasn’t the same girl I met two weeks ago. I thought she was nothing but cool and indifferent with everyone. She looked like she didn’t care what anyone thought of her. But to hear her feel the anguish and regret of being turned away by friends, you can imagine my surprise to see her in this state.
+                                It just sounded so sad. Her powers seemed to cause her life to fall apart. Mine always seemed like an enormous blessing. I suppose that’s what the Charevo Gene was all about, though. Specific powers for specific people. And I guess not every power can make everyone safe. Some things you just have to be careful with. But Pyra didn’t deserve her consequences. No one deserves to be left alone.
+                                “I understand feeling insecure about how others see you. I’ve been trying to feel accepted as a member of this team. Whenever I’m around you, I only wonder if you’ve liked me any better each time. It’s only natural for someone who feels like they’re alone to not want to disappoint anybody.” I explained.
+                                “Hmph. Well, I’m sure you were always popular with everyone else before you joined the Brigade. You’re the one with the looks and I’m just the one with the scars.” Pyra muttered.
+                                “You think I was popular? Looking at me, I seemed alright, but just talking to me, people would see a video game playing, comic book collecting, cartoon and superhero fan. If you’ve ever been to my town, how many people do you think I was able to fit in with?”
+                                “Heh. Nerd.” Pyra snickered.
+                                “Exactly. Sure, I could’ve had loads of friends if I didn’t talk about what I liked, but then I wouldn’t have been myself. Just like you. You shouldn’t have to be insecure about who you are, especially when you meet new people.”
+                                “I guess there are some people who do like me as part of the Neo Brigade. But . . . that’s from afar. They don’t know me up close. That’s when I’m the most of a hazard. And that’s when they see me as just that. A hazard. Just look at my body. It’s constantly heated like a stove. I can’t even have someone touch me without them feeling terrible burns. How close can I expect anyone to be after they really know me?”
+                                As Pyra kept her head down, feeling sad, I leaned over and hugged her. She was understandably surprised as I held her like that. I could feel the burning of her body as I pressed myself right against it. I felt like I was holding onto a boiling cauldron of witches brew. It was as agitating as she warned. But I didn’t care.
+                                Pyra’s heat went right through her shirt and into my arms and yet I just couldn’t let her go. If I could let Pyra remember there are people who care about her, I would gladly take all the mild burns. Hugging her may have been bad for me, but not her. I could only hold her closer, enduring the pain of it all, but trying to absorb it from her. All the turmoil that was built up in her, all the sadness she experienced, all her depression. Just to take some of that off her. All I could do was give her that embrace.
+                                “There are always friends for everyone, no matter what.” I affirmed, holding my head against hers while it lay on my shoulder as I suppressed the heat as best I could.
+                                “You . . . you can’t continue this forever, though. Aren’t you afraid . . . ?” Pyra muttered as I held her. And she was right, the heat was feeling more intense. And, while I wanted to keep her as close as possible, I did eventually have to let go.
+                                “. . . Pyra, I know you’re . . . aware of yourself, but you can’t let that stop you from bringing people closer if they’re willing to take a chance.”
+                                “But who I am is still dangerous. What if I end up hurting someone that nobody can be around me at all?”
+                                “No one’s going to force you to go out and be around new people all the time. But if you don’t take the chance and you only think about what people might think of you, you’re just letting people like Trainor win.” I affirmed. “And I don’t think having no one notice you is worth letting her win.”
+                                Suddenly, Pyra’s Charevo Emblem glowed before her Charevo Fairies flew out of her hands. The three creatures that represented her Charevo Elements of Tolerance, Anger, and Indifference floated over her, taking the form of a mixture of herself and the symbols on her emblem, which were a punching bag, a flame, and a cat.
+                                “To tolerate one’s own self is to believe tolerance will come from others.” The Tolerance Fairy mentioned.
+                                “When you’re angry at yourself, you’re your own worst obstacle!” The Anger Fairy asserted.
+                                “Like, when you don’t care for what others care about, your will is, like, the strongest.” The Indifference Fairy apathetically affirmed.
+                                The Charevo Fairies finally flew back into Pyra’s hands as she looked down to think about what they told her.
+                                “Hey, I know this isn’t the right time, but those fairies are really cool. It’s like we’re heroes in a video game and those are our sidekicks to guide us.” I offhandedly commented while Pyra looked at me like I was nuts. “Sorry.”
+                                “Heh. I feel like I should hang out with you more. I can just have you here to make me look easier to talk to.” Pyra laughed as I did too.
+                                “Oh yeah? At least I talk to more people than you.” I joked.
+                                “Yeah, I don’t think online game chat rooms count as talking to people.”
+                                “Well, I’m sure you’d rather spend more time talking to your bass than anyone else.”
+                                “Yeah, ‘cause it doesn’t have to talk back to me. Why? What instrument do you play?”
+                                “I play the harmonica.” I told her as she tried to hold in her laughter. “What?”
+                                “Nothing. I’m just trying to figure out how someone like you wound up with this exterior.” Pyra remarked, waving her hand around my body.
+                                “Oh, you think I seem annoying now? Well, listen to this.”
+                                Continuing this fun banter, I grew my hair to form a harmonica in my hands. It was real and completely in tune as I readily played it, playing the tune of Whitney Trainor’s hit song, Love Me As You See Me. Playing a pop song on a harmonica was goofy enough, but it was just enough for a critic like Pyra to respond.
+                                “Hey! Hey! Careful! I might burn you!” Pyra joked with a smile.
+                                “Well, speaking of which, do you think you can burn the real one?” I asked as Pyra finally got up with her fists clenched.
+                                “Let’s go bust that diva down the charts.”
+                                And Pyra was back! Right as she declared her being ready to fight, she ignited herself in dark fire as I stood up with her to return to the stadium. I didn’t know if it was me, her Charevo Fairies, or the fact that we could still hear Trainor’s music in the background, but Pyra was all set to finish this. And good for her. I wasn’t planning on fighting anyone alone.
+                                Pyra and I went off to the stadium and snuck behind the stage as Trainor finished her set. After saying goodbye to everyone before her encore, we could actually see the pop star going behind the stage to go through that curtain that hung over the side of it. Trainor didn’t see us when we arrived, but when we saw her go underneath the stage, we knew exactly what this was for.
+                                When we followed the singer, sliding the curtain over and entering, we found Trainor’s family still tied up as the pop star approached them.
+                                “Well, I just had a good two hours performing for ten thousand people. What's the largest audience any of you have ever performed for?” Trainor queried, feeling a sense of authority over her family.
+                                “You don't deserve such an audience!” Trainor's father objected. “Ever since you disobeyed us and bought that synthesizer, you’ve always just been trouble to us.”
+                                “See? None of you ever loved me! Well, guess what? I just performed for ten thousand people who do. And thanks to my abilities, I now have ten thousand dreams to try on you.”
+                                “Whitney. Don’t do this!” Brittney begged.
+                                Trainor glowed pink one more time as the pop star was about to summon something to use on her family. What it was, I had no idea. But there were thousands of fantasies she could pull from. It could have been more dangerous than anything I had seen in my own dreams. It was time to put a stop to this.
+                                “I’d listen to them if I were you!” I called to the pop star as she turned to find us, not amused.
+                                “And if you don’t, then you’ll listen to us. Let your family go!” Pyra added.
+                                “Ugh. You really can’t just stay in your happy place like everyone else? Fine. I’ll just have to do it again. And this time, no one’s waking anyone up until I say so.” Trainor insisted as her eyes started glowing again.
+                                Before Trainor could put us in a fantasy world again, Pyra shot a fireball at the stage panel above the pop star, causing pieces of the stage to fall on her. As Trainor was distracted by this, I then grew my hair out to her, keeping it over the top of her face, blindfolding the singer.
+                                “You can’t put us to sleep if you can’t see us!” I reminded the pop star. With her unable to put us in the trance, I quickly grabbed her with my hair and lifted her up, hurling her through that hole Pyra made in the ceiling to the stage, getting her away from her family. As Pyra and I were ready to battle, I looked at her and knew what she needed. “I’ll get the Trainors out of here. You go stop Whitney!”
+                                “On it!” Pyra uttered as she ignited herself in dark fire to start flying up to the stage before she stopped. “Oh, and Beauty? Thanks.”
+                                After we smiled at each other, I saw Pyra fly off to the top of the stage. As I started to untie Trainor’s family, there was a monitor in front of them, showing the whole stage as Pyra was facing Trainor down, ready to fight. As I saw the two of them, I could see Trainor glow pink again, summoning that flame sword from my fantasy that she used against us earlier.
+                                “I really must say, your friend’s dreams are a fantasy girl’s best friend.” Trainor commented as she swung the sword at Pyra. 
+                                Luckily, Pyra dodged it as she suddenly grappled with the pop star’s weapon and absorbed all the fire from the sword, making herself stronger. She then punched Trainor back, but unfortunately, she stopped to look at all the people in the audience again. And just like before, Pyra wasn’t feeling in a position to fight.
+                                “Oh boy. That looks like even more people than last time.” Pyra mumbled with a look of fear on her face.
+                                “Well, I see you’re having trouble facing your biggest fear. It’s not too late to go back to a world where those fears don’t exist.” Trainor commented, causing her eyes to glow as she was about to put Pyra in her trance again.
+                                “No! I’m not interested in what you’re offering!” Pyra refused, looking away.
+                                “You sure about that? I’ve seen what you want most. I can show you right now. I can let you see what you want.” Trainor reminded Pyra, sounding quite seductive as usual.
+                                “I don’t want what’s not real!”
+                                Rejecting her offer, Pyra shot a fireball at Trainor. But before the flames could hit the pop star, she glowed pink again to summon another person in a flash of pink light who materialized in front of her. This person held her tattooed hands out to absorb the blast. These tattoos, however, were made up of a punching bag, flame, and cat as I found this new fantasy person to be a girl with black hair, a purple shirt, and blue pants.
+                                This was clearly a version of Pyra, but it looked very little like her at the same time. She had the same wardrobe, the same powers (mostly), the same Charevo Emblem, but her face looked different. There was no burn scar on the side of her face.
+                                Pyra was surprised to see this version of herself as she seemed to recognize it as the person she saw while she was in her trance. Trainor’s power of making her see things that made her happy allowed the pop star to bring this new Pyra out. But it was more than just herself without scars that Pyra relished seeing in her dreams.
+                                After summoning this duplicate of Pyra, Trainor took it a step further, generating more pink light energy that materialized around her into the form of various people. A number of these folks resembled kids from our school, including Jordan, Marcy, El-Lo, Anna, and Sarah. There were a few adults with them as well as a few young kids. All these people surrounded the Pyra duplicate.
+                                “Look! Our hero!” Sarah cried, adoring Trainor's Pyra.
+                                “She's here to save us yet again!” Marcy added.
+                                “I wanna be just like you, Pyra!” A little girl said, hugging the fake Pyra.
+                                “I love you!” A little boy cheered, hugging her too as Sarah leaned in to hold her close as well.
+                                As those kids hugged the copy of Pyra, they didn’t seem to feel any heat from her. She looked entirely safe and heroic. Everyone just adored this new version of Pyra, cheering her on and smiling at her while she gave a cute smile back. This Pyra was beloved by all and everything the real Pyra wanted.
+                                All the real Pyra could do was gaze at this version of herself in awe. It was her fantasy come to life. She couldn’t turn away.
+                                “That's right. Take a nice long look. You want to be adored. You don't want anyone to be afraid of you.” Trainor told Pyra.
+                                “It looks so wonderful.” Pyra mumbled, still looking at how little kids were hugging the fake version of her.
+                                “Just submit to it now. You can see this all you want if you just continue to look this way. You'll see yourself as you've always wanted.”
+                                Pyra looked all the more tempted to let Trainor give her what she wanted and put her in a trance where she won’t have to worry about anyone being afraid of her. Pyra just put on a smile to think of how much more she could see of this.
+                                I continued to watch this on the video monitor as I untied Trainor’s family who watched it too.
+                                “Come on, Pyra. Fight it!” I said to myself.
+                                “Yeah! Show her what happens to a family black sheep!” Rodney added as I got to thinking how this all started.
+                                “Right. About that, quick question: Exactly how different is your resentment towards Whitney now compared to before she kidnapped you?”
+                                While I talked to Trainor’s family, the pop star was just about to put Pyra to sleep again. I could only hope she wouldn’t succumb to this fake happiness. She had to be stronger than that.
+                                “Just look at me. And you’ll see something so beautiful.” Trainor promised with her eyes glowing as I tried looking away. 
+                                Pyra struggled as she still looked forward with a smile. She just had to look away to avoid any problems. But apparently, Pyra didn’t need to. She still looked forward, but her fawning suddenly ceased, along with her smile. She was tempted at first, but then she became all the more focused, no longer letting Trainor have another positive reaction.
+                                “Oh, I’ll look at you. But I wouldn’t say I’m looking at anything beautiful.” Pyra remarked with her sarcastic grin.
+                                “What? How . . . how are you not going to sleep?” Trainor asked, surprised.
+                                “I told you. I’m not interested in what you’ve got.” Pyra affirmed, shooting her fire at Trainor who had her own version of Pyra block the attack.
+                                The fake Pyra ignited herself in flames to fly at the real one, about to strike her, but our Pyra grabbed hold of both the fake one’s fists. While the duplicate was still on fire, Pyra used her powers to absorb the heat into her, putting the fake version’s flame out. As the phony fire girl was back to her normal look, Pyra punched this ripoff away as the fake Pyra and all the people from her dream became surrounded in a burst of pink light and disappeared from reality.
+                                Pyra then walked over to Trainor who continued to keep her eyes glowing pink, facing the fire girl, but to no effect. I didn’t know how, but Pyra was fighting off the happy dream like it meant nothing to her. It was as if she was completely immune to the pop star’s powers.
+                                “This is impossible. No one ever resists me.” Trainor cried, still trying to entrance Pyra.
+                                “I guess you finally found someone who knows better.” Pyra commented, walking towards the singer.
+                                At that point, Trainor went back to taking parts of people’s fantasies and summoning a magic orb that I recognized from my own dream. Yeah, I have a lot of fantasy stuff in an imaginary place that makes me happy. Don’t be so surprised.
+                                “Why won’t you just go to your happy place?” Trainor queried in frustration as she suddenly used the orb to project a burst of lightning at Pyra who instantly mixed herself into the air to dodge the attack. As Trainor looked around to find where she went, Pyra quickly appeared in front of her and swatted the orb out of her hand.
+                                “You can show me what I want. You can make me see all kinds of things that I’d like. But like I feel about your music and everything else about you that’s fake, I don’t care!” Pyra affirmed.
+                                The Neo Brigade member finally gave one hard punch to the pop star, knocking her to the floor. As I had already finished freeing Trainor’s family, I went up to the stage after that. Seeing the singer down, I quickly grew my hair over to her and formed some metal braces over her arms and legs, pinning her down to the stage as the restraints took form.
+                                The pop star was finished at that point. She couldn’t move, she couldn’t entrance anyone, and just the shock of seeing someone not like her even after using her powers to force them into it was too much for her to even glow pink and use any more fantasies. Pyra just stood over Trainor, about to finish her off.
+                                “I thought I just had to hate you for your music and popularity. Thanks for making it even easier.” Pyra mumbled, about to attack again as her hands lit up. Meanwhile, Trainor looked like she was about to cry, and it wasn’t about losing.
+                                “I . . . I just wanted everyone to love me.” Trainor whimpered as she lay restrained on the floor while her family came out from below the stage to see her in this state.
+                                As I walked down to the two girls, I could tell Pyra still wasn’t pleased about being manipulated. But, as much as she hated the pop star, her hands lost their fire. And, in that moment, she went from angry to a calmer mood like she wasn’t just finishing a fight with someone.
+                                “I know how you feel.” Pyra sympathized, looking down, away from Trainor. “I’ve had issues about wanting people to like me too. It can be hard to go through life knowing what someone thinks of you. All you can do is pray that there’s something about you they like. And even if there is something, you just don’t wanna screw it up.”
+                                “It’s just hard to deal with negative opinions.” Trainor muttered.
+                                “And it’s even harder when they make you feel like who you are is wrong. I get it. But you don’t need the love of the whole world. Sometimes all you need is one good friend.” Pyra concluded as she looked at me while I could only give a brighter smile.
+                                I thought beating Trainor would’ve been a good victory in itself. But Pyra calling me a friend? That’s worth a whole lot more. And I feel like me calling her the same meant about as much to her too. And as I stood by her, Pyra suddenly hugged me. I was surprised to see her as the one to initiate this. But I didn’t care. I just hugged her back, glad to have her with me.
+                                Although, while I appreciated this moment, I could still feel those fears of hers as this hug didn’t seem as . . . physically pleasant as the one before. I wanted to make her feel good, but I kinda had to say something then.
+                                “Pyra? . . . Pyra?” I awkwardly whispered, trying not to scream.
+                                “Yeah?” She asked.
+                                “Your external body heat? It’s uh . . . a bit hotter.”
+                                “Oh! Sorry. Sorry. Must’ve been all that fire I absorbed.” Pyra apologized immediately letting go of me while I only felt like I was holding a boiling pot. “Here. I got it.” 
+                                Pyra held her hands over me and absorbed any extra heat from my body, cooling me down by a lot, as the two of us smiled again.
+                                That night was as special for me as any day could have been. We stopped Trainor, everyone at the stadium came out of their trance, and I had a new friend. What more could you ask for?
+                                The next day got even better as I watched the news with the Neo Brigade at the team HQ. As you would expect, they were talking about Trainor being a super villain, and we saw video of her being arrested just after the concert as she was being led into a police van with bright lights surrounding its interior. As she went inside, I could see her Charevo Emblem on her hands become more faint.
+                                “Man, a music star everyone loved goes to jail? Didn’t see that comin’.” Bendy commented.
+                                “What goes up must come down, I suppose.” Nator added.
+                                “I still can’t believe she put us all in that trance of happiness. I guess you were right, Pyra.” Race acknowledged.
+                                “Yeah, I am NEVER going to get attracted to an evil girl ever again.” Bendy half-promised.
+                                “I sincerely doubt that.” Pyra uttered with skepticism.
+                                “No, but you said she was evil and we really just wanted to go to the concert. We’re sorry we didn’t listen to you.” Race apologized.
+                                “Eh, don’t worry about it. I would’ve told you she was evil even if I didn’t know about her.”
+                                “Well, it looks like she’ll be alright in prison. Trainor’s family promised they’d visit her. I guess it’s the least they can do, seeing as how they kinda screwed her up.” I mentioned as we watched the news, which showed Trainor’s family hugging the pop star as she went into the police van. It was nice that they were willing to forgive her after she went mad from seeking approval.
+                                Speaking of reunions, we heard the door open from the HQ’s main entrance, and there was Tel-E arriving with a smile, out of jail.
+                                “Hello, everyone. I’m home.” Tel-E happily announced.
+                                “Alright! We missed you, Tel-E!” Race cried with delight, hugging his best friend.
+                                “I must thank you for exposing Trainor and stopping her. I would’ve been on the next bus to Charevo Penitentiary if not for you.”
+                                “Yeah, Race was SO brave as he sat there and got lost in the eyes of a pop star.” Pyra sarcastically remarked as Race had an embarrassed grin on his face. “Trainor getting beaten was all me and Beauty, Vega.”
+                                “Yeah, Pyra crushed her out there. See? And she said she would never go to a Whitney Trainor concert.” I joked.
+                                “Well, thanks to me, that’ll be the last one either of us will have to go to. You’re welcome, Beauty.” Pyra laughed.
+                                “Thanks to you? Yeah, sure. You went there all on your own. You know how I helped you back there.”
+                                “Yeah, after you were ready to see her and stare off into a world of make believe. I put an end to her career and you know it.”
+                                “Yeah, that’s a good way to meet music people. She’ll put an end to your career.”
+                                “Hey, just get your harmonica out and play some TV theme songs and I can save you the embarrassment.”
+                                Pyra and I continued to laugh and joke around together like I was hoping we would get to do. As we looked like the best of friends, everyone else just kind of looked at us.
+                                “Beauty and Pyra? Getting along?” Tel-E asked, perplexed. “How long was I in jail?”
+                                I was so glad to finally be accepted by Pyra. She may have been difficult, but she has a life I had to understand first. Something I’m sure she’d want others to know. And I’m glad I did. It’s not all about being sarcastic to people for her. Beneath it was one of the best friends you could ask for. And I think she was seeing a little of that in me as well as we talked.
+                                “Seriously, thanks for everything back there.” Pyra mumbled to me.
+                                “Any time. But I’m assuming this doesn’t mean I’ll be seeing you in school on Monday, does it.” I inferred.
+                                “No. I’m not quite there yet. All those fears still exist. But that doesn’t mean I won’t accept your support in the future.”
+                                “I’m sure you’ll get passed those fears someday. And you can always count on us until then.”
+                                Pyra smiled. She didn’t say anything, but that said more than I needed. She knew there were people who cared. That’s all it would take.
+                                After we resolved everything with Pyra and I being good, Tel-E being out of jail, and Trainor taking her place, it looked like nothing more needed to be done. Unfortunately, not everyone was up to date as a monitor suddenly lowered in front of the team as we all looked to it and saw the Chief pop up on the screen.
+                                “Trotterberg here! I’ve made a rather provocative discovery recently. It seems some new security footage from the Symphony Hall has revealed the true kidnapper of that cellist and violinist to be none other than Whitney Trainor herself. I have the evidence right here and I’ve already released Tel-E. You can thank me later.” The Chief explained.
+                                “Uh, Chief? We already figured that out. We took her down yesterday.” Pyra informed our boss, resisting the urge to point out his stupidity even more.
+                                “I’m still talking! Like I said, I’ve gone over the footage. And it looks like I’ll need you to help put this Trainor character away.”
+                                “Chief, again, Trainor got sent to prison last night.” I reminded him as he still didn’t get it.
+                                “Quiet! I’m showing you the video! Now, pay attention!”
+                                The video screen suddenly cut to some footage of Trainor with the warlock in the theater where she teleported her brother and sister away while I then stepped in to confront her. There wasn’t anything new based on what I had already seen that I thought seemed relevant at all, and everyone else on the team agreed.
+                                “Ugh. I’ve seen this already.” I moaned.
+                                “We know what happens.”  Nator added as he started to leave.
+                                “Boring!” Bendy heckled, walking out.
+                                “Let him figure it out.” Race sighed, leaving the room as only me, Tel-E, and Pyra were left.
+                                “Yeah, I’ve seen enough of Trainor. I’m not sticking around for this.” Pyra noted as the three of us began to exit.
+                                “Indeed. We know that’s not me.” Tel-E acknowledged after she saw Trainor’s fake version of her on the screen.
+                                “Hey! Hang on. I just thought of something. Trainor has the ability to summon part of a person's greatest desires, and when she created that figure of Tel-E to kidnap her parents, Tel-E was wearing a wedding dress.” I acknowledged.
+                                “So someone's greatest desires involve Tel-E being in a wedding dress?” Pyra asked as she looked at Tel-E. “You've got a secret admirer.”
+                                “It seems I do.” Tel-E said, intrigued.
+                                “Ooh. Someone likes you. Someone wants to marry you.” I sang, teasing the alien girl.
+                                “Either that or stalk her. Welcome to Earth, Tel-E.” Pyra noted.
+                                “No. Someone totally likes her.” I argued as I looked at the Chief's video. It was at the point where Trainor put me in her trance, and as Trainor had her Tel-E bride next to her, she then summoned a person our age wearing a tuxedo next to her, but his face wasn't visible yet. “Look! There's your guy!”
+                                Tel-E, Pyra, and I all looked closer at the screen in curiosity. We could see the guy in the tuxedo about to turn around where we could get a glimpse of his face. However, before we could see him, the video abruptly cut off and went back to the Chief on the screen.
+                                “You see? Now THAT is incriminating!” The Chief told us as he came on.
+                                Yeah. That was a bit anticlimactic. We were certainly disappointed to see the video cut to the Chief, as the Brigade seems to be whenever they see the Chief unexpectedly. But while we weren’t gonna find someone with Tel-E, I did find some folks more important. And they were right there with me in that room. Two of the best friends a girl could have, no fantasies required.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div id="paddeddiv" class="panel-heading" style = "height: 450px; position: relative;">
+
+                    </div>
+
+                </div>
+
+            </div>
+            <footer id = "footer" class = "site-footer">
+                <div class = "footercontent">
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subhome" href="../index.html"><b>Home</b></a></th>
+
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subabout" href="#About"><b>About</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharacters" href="../characters.html">Characters</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subcharevogene" href="../charevogene.html">Charevo Gene</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subauthor" href="../author.html">The Author</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="subquiz" href="#Quiz"><b>Quiz</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautyquizzes" href="../beautyquizzes.html">Beauty Quizzes</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="substories" href="#Stories"><b>Stories</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subbeautystories" href="../beautystories.html">Beauty Short Stories</a></td>
+                        </tr>
+                    </table>
+                    <table class="footerlist">
+                        <tr>
+                            <th><a id="submiscellaneous" href="#Miscellaneous"><b>Miscellaneous</b></a></th>
+                        </tr>
+                        <tr>
+                            <td><a id="subswitchcharacter" href="../switchcharacter.html">Switch Character</a></td>
+                        </tr>
+                        <tr>
+                            <td><a id="subblog" href="../blog.html">Blog</a></td>
+                        </tr>
+                    </table>
+
+                    <!--<ul class="footerlist">
+                        <li >
+                            <a href="index.html"><b>Home</b></a>
+                        </li>
+                        <li >
+                            <a href="#About"><b>About</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="characters.html">Characters</a></li>
+                                <li><a href="charevogene.html">Charevo Gene</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Quiz"><b>Quiz</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautyquizzes.html">Beauty Quizzes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Stories"><b>Stories</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="beautystories.html">Beauty Short Stories</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#Miscellaneous"><b>Miscellaneous</b></a>
+                            <ul class="subfooterlist">
+                                <li><a href="switchcharacter.html">Switch Character</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                            </ul>
+                        </li>
+                    </ul> -->
+                </div>
+                <div class = "footercontent2">
+                    <p style="text-align: center; padding: 10px; opacity: .7; font-size: 13px;">Copyright © 2017 Stephen Egert. All Rights Reserved.</p>
+                    <div style="position: absolute; left: 47%;">
+                        <!-- <a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=localhost:8080/Charevo/index.html&digit=style/plain/6/&reloads=1" alt="" title="" border="0"></a><br /><a href="http://" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a> -->
+                    </div>
+                </div>
+            </footer>
+
+        </section>
+
+
+
+
+        <div class = "footers">
+            <button id = "prev" class = "prevbutton" style = "opacity: .4; " disabled="disabled"  onclick = "prev();">
+                << Prev
+            </button>
+
+            <p id = "d" class = "pfooter"></p>
+
+            <button id = "next" class = "nextbutton" onclick = "next();">
+                Next >>
+            </button>
+
+
+        </div>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+        <script src="../js/select_page.js" type="text/javascript"></script>
+        <script src="../js/search_list.js" type="text/javascript"></script>
+
+
+        <script src="../js/menu.js"></script>
+
+    </body>
+</html>
+

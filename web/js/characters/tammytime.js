@@ -81,7 +81,7 @@ $(document).ready(function () {
     else if (character === "Tel-E")
     {
         document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
-        max = 5;
+        max = 12;
     }
     else if (character === "Pyra")
     {
@@ -91,7 +91,7 @@ $(document).ready(function () {
     else
     {
         document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
-        max = 5;
+        max = 10;
     }
 
     x = 0;
@@ -381,19 +381,19 @@ function DialogueChangeMenu() {
             case(5):
                 document.getElementById("d").innerHTML = beautyBold + "Lose the outfit, and maybe I'll think about the plausibility.";
                 break;
-            case(5):
+            case(6):
                 document.getElementById("d").innerHTML = tammyBold + "Well, that's not happening.";
                 break;
-            case(5):
+            case(7):
                 document.getElementById("d").innerHTML = beautyBold + "Yeah. I didn't think so. But, hey. Good for you. You look like a fun villain to fight. And in a city where our creator doesn't want most of the heroes and villains to be in a colorful hero or villain costume, I'm happy to see a nice exception slip through.";
                 break;
-            case(6):
+            case(8):
                 document.getElementById("d").innerHTML = tammyBold + "Thanks. I'm just getting ready to be a clown when Fourize is done needing me as a villain. Why keep the costume in the closet all that time, am I right?";
                 break;
-            case(7):
+            case(9):
                 document.getElementById("d").innerHTML = beautyBold + "So you're not a real clown yet? Gee, I thought in between working with the J Gang, you did kids' birthday parties on the weekends.";
                 break;
-            case(8):
+            case(10):
                 document.getElementById("d").innerHTML = tammyBold + "Of course not. Do you see anything that says I'm a certified Clown College graduate in my bio? At least lemme wait 'til I can intern with a pro first.";
                 break;
         }

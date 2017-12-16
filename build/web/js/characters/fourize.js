@@ -75,7 +75,7 @@ $(document).ready(function () {
     else if (character === "Tel-E")
     {
         document.getElementById("d").innerHTML = teleBold + "Here we have the page for our lead character, Beauty. The astute site surfer might notice the mark on her hand, which you can see on the top-left. That is her Charevo Emblem.";
-        max = 5;
+        max = 11;
     }
     else if (character === "Pyra")
     {
@@ -85,7 +85,7 @@ $(document).ready(function () {
     else
     {
         document.getElementById("d").innerHTML = beautyBold + "Hey! It's my character page! Okay. So there's a lot to cover, so let's start with the top left. If you haven't visited the Charevo Gene page, check it out and come back so I can explain this.";
-        max = 5;
+        max = 14;
     }
 
     x = 0;

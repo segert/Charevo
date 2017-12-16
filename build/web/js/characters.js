@@ -29,6 +29,9 @@ $(document).ready(function () {
     teleBold = teleBold.bold();
     var pyraBold = "Pyra: ";
     pyraBold = pyraBold.bold();
+    
+    var cyhackBold = "Cyhack: ";
+    cyhackBold = cyhackBold.bold();
 
 
 
@@ -85,6 +88,10 @@ $(document).ready(function () {
 
         document.getElementById("oth").src = "images/cyhackright1.png";
         document.getElementById("oth").alt = "";
+        
+        document.getElementById("d").innerHTML = cyhackBold + "So, like any other world, we got some people. And, like most people, these people got some names. They could be heroes, they could be villains, they could be completely different, they could be from different cities you could select to narrow 'em down.";
+        
+        max = 2;
 
     }
     else if (character === "Tel-E")
@@ -230,8 +237,7 @@ $(document).ready(function () {
 
         if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("d").innerHTML = cyhackBold + "";
-
+            
             $("#Beauty").text("Get a Haircut, Ya Hippie!");
             $("#Tel-E").text("The Blue Man Groupie");
             $("#Pyra").text("Richard Pryor Girl");
@@ -252,6 +258,8 @@ $(document).ready(function () {
             $("#Trainor").text("Peaking in Two Years");
             $("#OneOh").text("Two By Concatenation");
             $("#Chief").text("What, what, what!?");
+            
+            $("#heropadding").css({"padding-bottom": "250px"});
 
         }
 
@@ -293,6 +301,36 @@ $(document).ready(function () {
         $("#herolist").empty();
         $("#herolist").append("<li id='Negator' class = 'charnames'>Negator</li>");
         $("#herolist").append("<li id='Inflator' class = 'charnames'>Inflator</li>");
+        
+        if (sessionStorage.getItem("Cyhack") === "true")
+        {
+            
+            $("#Beauty").text("Get a Haircut, Ya Hippie!");
+            $("#Tel-E").text("The Blue Man Groupie");
+            $("#Pyra").text("Richard Pryor Girl");
+            $("#Race").text("Neurotic Kid Flash");
+            $("#Bendy").text("Jackass: The Superhero");
+            $("#Nator").text("The Six Dollar Man");
+            $("#Negator").text("Debbie Downer");
+            $("#Inflator").text("Up Up and Away!");
+            $("#Fourize").text("Doctor! My Eyes are Burning!");
+            $("#Cyhack").text("Women in STEM (Hacking and Products for Evil Included!)");
+            $("#Dinomight").text("80's Movie Jock");
+            $("#Ninja").text("Don Raphael");
+            $("#TammyTime").text("Party of One");
+            $("#ColdMiner").text("Señor Freeze");
+            $("#Cremate").text("Ashes to Ashes");
+            $("#Ferguson").text("Blooper Hunter");
+            $("#CaptainD").text("Evil Knieval");
+            $("#Trainor").text("Peaking in Two Years");
+            $("#OneOh").text("Two By Concatenation");
+            $("#Chief").text("What, what, what!?");
+            
+            $("#heropadding").css({"padding-bottom": "250px"});
+
+        }
+        
+        
 
         if (sessionStorage.getItem("Cyhack") === "true")
         {
@@ -344,8 +382,7 @@ $(document).ready(function () {
 
         if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("d").innerHTML = cyhackBold + "";
-
+            
             $("#Beauty").text("Get a Haircut, Ya Hippie!");
             $("#Tel-E").text("The Blue Man Groupie");
             $("#Pyra").text("Richard Pryor Girl");
@@ -419,8 +456,7 @@ $(document).ready(function () {
 
         if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("d").innerHTML = cyhackBold + "";
-
+            
             $("#Beauty").text("Get a Haircut, Ya Hippie!");
             $("#Tel-E").text("The Blue Man Groupie");
             $("#Pyra").text("Richard Pryor Girl");
@@ -441,6 +477,8 @@ $(document).ready(function () {
             $("#Trainor").text("Peaking in Two Years");
             $("#OneOh").text("Two By Concatenation");
             $("#Chief").text("What, what, what!?");
+            
+            $("#villainpadding").css({"padding-bottom": "250px"});
 
         }
 
@@ -485,6 +523,8 @@ $(document).ready(function () {
             document.getElementById("villain").src = "images/cyhackright1.png";
             document.getElementById("villain").alt = "";
             $("#villain").show();
+            
+            $("#villainpadding").css({"padding-bottom": "250px"});
         }
         else if (character === "Tel-E")
         {
@@ -522,8 +562,7 @@ $(document).ready(function () {
 
         if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("d").innerHTML = cyhackBold + "";
-
+            
             $("#Beauty").text("Get a Haircut, Ya Hippie!");
             $("#Tel-E").text("The Blue Man Groupie");
             $("#Pyra").text("Richard Pryor Girl");
@@ -589,8 +628,7 @@ $(document).ready(function () {
 
         if (sessionStorage.getItem("Cyhack") === "true")
         {
-            document.getElementById("d").innerHTML = cyhackBold + "";
-
+            
             $("#Beauty").text("Get a Haircut, Ya Hippie!");
             $("#Tel-E").text("The Blue Man Groupie");
             $("#Pyra").text("Richard Pryor Girl");

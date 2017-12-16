@@ -52,8 +52,10 @@ $(document).ready(function () {
 
     }
 
+    $("#characterdiv").css({left: "-300px"});
+    $("#characterdiv").hide();
 
-
+    prevdialogue = 1;
     dialogue = 1;
     max = 0;
 
@@ -82,8 +84,9 @@ $(document).ready(function () {
     }
     else if (character === "Pyra")
     {
+        prevdialogue = 1;
         document.getElementById("d").innerHTML = bendyBold + "And now we have the character page of ol' Benjamin \"Bendy\" Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
-        max = 9;
+        max = 13;
     }
     else
     {
@@ -276,13 +279,28 @@ function DialogueChangeMenu() {
         switch (dialogue)
         {
             case(1):
+                prevdialogue = 1;
                 document.getElementById("d").innerHTML = bendyBold + "And now we have the character page of ol' Benjamin \"Bendy\" Ducilman, the bravest, strongest, and by far the handsomest hero of Minor City as well as the most popular member of the Neo Brigade. When the ladies need a savior who will stand up to those stepping on them and the law, Bendy is there to give them what they need and then some. When the ladies need a man of action who's more than a suave stallion, but a defender of all that a decent human values, Bendy is the only one to . . .";
                 break;
             case(2):
                 document.getElementById("d").innerHTML = pyraBold + "Bendy, get outta my spot! You're not the host here.";
+                if (prevdialogue !== 1)
+                {
+                    $("#characterdiv").animate({left: "-300px"}, function () {
+                        $("#characterdiv").hide();
+                    });
+                }
                 break;
             case(3):
                 document.getElementById("d").innerHTML = bendyBold + "Aw, come on! I'm almost done. I mean, unless you wanna read the intro I wrote for my page yourself?";
+                prevdialogue = 3;
+                $("#characterdiv").show();
+                $("#characterdiv").animate({left: characterLeft}, function () {
+                    //$("#characterdiv").show();
+                });
+                //$("#characterdiv").animate({left: characterLeft}, function () {
+                //$("#characterdiv").hide();
+                // });
                 break;
             case(4):
                 document.getElementById("d").innerHTML = pyraBold + "Oh, sure. I can't wait to talk about that made up claim that you're at all strong, popular, and handsome. I think the user wants actual information about you and how bad our creator's ideas are, you being one of them. Now, get lost.";
@@ -291,15 +309,27 @@ function DialogueChangeMenu() {
                 document.getElementById("d").innerHTML = bendyBold + "Fine. I'll go. This page is no good anyway. I think I'll suggest the user click the Miscellaneous tab, go to the Switch Character page, and choose the far nicer Beauty or Tel-E as the new host before returning here. I'm out.";
                 break;
             case(6):
-                document.getElementById("d").innerHTML = pyraBold + "You had me at 'This page is no good'. Alright. Back to this mess here. So we have Bendy's Charevo Emblem to the left and his Charevo Fairies to the right with the symbols and fairies representing his Charevo Trinity of Overconfidence, Flexibility, and Defiance.";
+                document.getElementById("d").innerHTML = pyraBold + "You had me at 'This page is no good'. Well, bye now.";
                 break;
             case(7):
-                document.getElementById("d").innerHTML = pyraBold + "The guidance from the fairies are below followed by his powers and weaknesses, and finally his bio. Once again, I must give a disclaimer: Our creator is NOT an artist.";
+                document.getElementById("d").innerHTML = bendyBold + "Uh . . . I can't go yet, actually. I've been told I have to stay until the user goes somewhere else.";
                 break;
             case(8):
-                document.getElementById("d").innerHTML = pyraBold + "I'm kinda doing Bendy a favor here, because, unless I pointed this out, I'm sure you'd assume Bendy designed those Charevo Fairies himself. But it was our creator, again, NOT an artist. I think his poor art skills are obvious when you look at that abomination of Bendy's Overconfidence fairy. Although, it's worth noting that the idea of the 10 and 7 playing cards to represent Overconfidence was supposed to be that an overconfident person playing Blackjack would hit on 17. So, based on that concept, I don't even think our creator's much of a writer either.";
+                document.getElementById("d").innerHTML = pyraBold + "Oh, well at least you thought this through.";
                 break;
             case(9):
+                document.getElementById("d").innerHTML = bendyBold + "Hey, girl, I can wait just fine while you go through my page here. I'll just wait for now.";
+                break;
+            case(10):
+                document.getElementById("d").innerHTML = pyraBold + "Alright. Good. Back to this mess here. So we have Bendy's Charevo Emblem to the left and his Charevo Fairies to the right with the symbols and fairies representing his Charevo Trinity of Overconfidence, Flexibility, and Defiance.";
+                break;
+            case(11):
+                document.getElementById("d").innerHTML = pyraBold + "The guidance from the fairies are below followed by his powers and weaknesses, and finally his bio. Once again, I must give a disclaimer: Our creator is NOT an artist.";
+                break;
+            case(12):
+                document.getElementById("d").innerHTML = pyraBold + "I'm kinda doing Bendy a favor here, because, unless I pointed this out, I'm sure you'd assume Bendy designed those Charevo Fairies himself. But it was our creator, again, NOT an artist. I think his poor art skills are obvious when you look at that abomination of Bendy's Overconfidence fairy. Although, it's worth noting that the idea of the 10 and 7 playing cards to represent Overconfidence was supposed to be that an overconfident person playing Blackjack would hit on 17. So, based on that concept, I don't even think our creator's much of a writer either.";
+                break;
+            case(13):
                 document.getElementById("d").innerHTML = pyraBold + "Now, that's not saying those other two fairies look any better. I kinda feel like our creator spent some extra effort on the Flexibility one, but then just said 'Oh yeah. I'm good at this', and then made no effort on the next one at all. Ugh. I can't even look at the Overconfidence Fairy. It only makes me wanna look at Bendy some more for contrast, which is another point against those stupid cards. Oh, and in case you couldn't catch it, that's supposed to be a lightning bolt on his shirt, which is also supposed to be formed by some 7's on that Overconfidence Fairy. I can't really add anything else, to be honest. These designs are just terrible.";
                 break;
         }
@@ -378,7 +408,7 @@ function checkResolution() {
             charevofairyemblemWidth = (window.screen.width * .2);
             charevofairyemblemHeight = (window.screen.height * .3);
 
-            characterLeft = (window.screen.width * .35);
+            characterLeft = (window.screen.width * .45);
             characterWidth = (window.screen.width * .25);
             characterHeight = (window.screen.height * .45);
 
@@ -395,7 +425,7 @@ function checkResolution() {
             charevofairyemblemWidth = (window.screen.width * .3);
             charevofairyemblemHeight = (window.screen.height * .3);
 
-            characterLeft = (window.screen.width * .35);
+            characterLeft = (window.screen.width * .45);
             characterWidth = (window.screen.width * .35);
             characterHeight = (window.screen.height * .45);
 
@@ -432,7 +462,8 @@ function checkResolution() {
 
         fairiesLeft = (window.screen.width * .7);
 
-        characterLeftWidth = (window.screen.width * .35);
+        characterLeftWidth = (window.screen.width * .45);
+        characterLeft = (window.screen.width * .45);
         characterHeight = (window.screen.height * .45);
 
         emblemLeft = (window.screen.width * .05);
@@ -462,6 +493,7 @@ function checkResolution() {
 
         guidanceWidth = (window.screen.width * .46875);
         guidancetableLeftMarginLeft = (window.screen.width * .1);
+        characterLeft = (window.screen.width * .45);
 
         tableWidth = (window.screen.width * .5);
 
@@ -495,7 +527,7 @@ function checkResolution() {
 
         fairiesLeft = (window.screen.width * .7);
 
-        characterLeft = (window.screen.width * .3);
+        characterLeft = (window.screen.width * .4);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .75);
 
@@ -530,7 +562,7 @@ function checkResolution() {
 
         fairiesLeft = (window.screen.width * .7);
 
-        characterLeft = (window.screen.width * .3);
+        characterLeft = (window.screen.width * .4);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .75);
 
@@ -565,7 +597,7 @@ function checkResolution() {
 
         fairiesLeft = (window.screen.width * .7);
 
-        characterLeft = (window.screen.width * .3);
+        characterLeft = (window.screen.width * .4);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
 
@@ -600,7 +632,7 @@ function checkResolution() {
 
         fairiesLeft = (window.screen.width * .7);
 
-        characterLeft = (window.screen.width * .3);
+        characterLeft = (window.screen.width * .4);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
 
@@ -635,7 +667,7 @@ function checkResolution() {
 
         fairiesLeft = (window.screen.width * .7);
 
-        characterLeft = (window.screen.width * .3);
+        characterLeft = (window.screen.width * .4);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
 
@@ -670,7 +702,7 @@ function checkResolution() {
 
         fairiesLeft = (window.screen.width * .7);
 
-        characterLeft = (window.screen.width * .3);
+        characterLeft = (window.screen.width * .4);
         characterWidth = (window.screen.width * .45);
         characterHeight = (window.screen.height * .55);
 

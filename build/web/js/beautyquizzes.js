@@ -56,9 +56,9 @@ $(document).ready(function () {
     var cyhackBold = "Cyhack: ";
     cyhackBold = cyhackBold.bold();
 
-    if (sessionStorage.getItem("Cyhack") !== "true")
+    if (sessionStorage.getItem("Cyhack") === "true")
     {
-        document.getElementById("d").innerHTML = cyhackBold + "Hmm. I think I'm gonna take a bit of a break from these quizzes right here. That Neo chick is supposed to take over anyway. Don't worry, though. I'm sure the Cyhack may work her magic again if you pay attention. So just choose whichever quiz for whatever story you wanna take, and have fun. Hack ya Later!";
+        document.getElementById("d").innerHTML = cyhackBold + "Hmm. I think I'm gonna take a bit of a break from these quizzes right here. That Neo chick is supposed to take over anyway. Don't worry, though. I'm sure the Cyhack may work her magic again if you pay attention. So just choose whichever quiz for whatever story you wanna take, and have fun. Hack ya later!";
 
     }
     else if (character === "Tel-E")
